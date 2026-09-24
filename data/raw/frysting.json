@@ -1,0 +1,120 @@
+{
+  "snid_utgafa": 1,
+  "verk": "P0.3 — frysting hrágagna (issue #2)",
+  "sofn": {
+    "vedur-quakes": {
+      "heiti": "vedur-quakes",
+      "mappa": "data/raw/vedur-quakes",
+      "adferd": "afrit",
+      "skyring": "334 yfirfarnir SIL-jarðskjálftar á Reykjanesi 1.11.2023–1.1.2024, stærð 3–7 og dýpt 0–50 km. Hráa svarið frá api.vedur.is/quakes/events með provenance. Leyfi: CC BY 4.0.",
+      "les_skrifta": "src/python/vinnsla/ (P1.2, issue #6)",
+      "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/raw/vedur-quakes",
+      "upprunarepo": "Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe",
+      "frosid_utc": "2026-09-24T11:20:17Z",
+      "fjoldi_skraa": 2,
+      "staerd_baet": 94707,
+      "fjoldi_sannreyndra": 1,
+      "skrar": [
+        {
+          "slod": "events.json",
+          "staerd_baet": 93233,
+          "sha256": "a535359ea84346426d5ce7fccf4ce8e5158b712e4fc66378dae4b291f771fa9a",
+          "stadfest_vid_provenance": true
+        },
+        {
+          "slod": "provenance.json",
+          "staerd_baet": 1474,
+          "sha256": "50eaf98df948c012c6da2c3057953d187b96f20b45a065fc1df3dd1c17256f09",
+          "stadfest_vid_provenance": false
+        }
+      ]
+    },
+    "hagstofan": {
+      "heiti": "hagstofan",
+      "mappa": "data/raw/hagstofan",
+      "adferd": "afrit",
+      "skyring": "Brautskráning af háskólastigi (json-stat2) úr SKO04208b.px: innritunarár 2017, tímapunkturinn n+3. Fjórar skrár — lýsigögn, fyrirspurn, svar og provenance.",
+      "les_skrifta": "src/python/vinnsla/ (P1.3, issue #7)",
+      "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/raw/hagstofan",
+      "upprunarepo": "Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe",
+      "frosid_utc": "2026-09-24T11:20:17Z",
+      "fjoldi_skraa": 4,
+      "staerd_baet": 4565,
+      "fjoldi_sannreyndra": 3,
+      "skrar": [
+        {
+          "slod": "metadata.json",
+          "staerd_baet": 1338,
+          "sha256": "d190f9917d448f9185670f261dd636b00888e26e38eba1f78297d8164f59278f",
+          "stadfest_vid_provenance": true
+        },
+        {
+          "slod": "provenance.json",
+          "staerd_baet": 548,
+          "sha256": "8ccf87388cbaa2b16c40c57d3f93ec2d3b154818c745c1616adae61ca84be5c6",
+          "stadfest_vid_provenance": false
+        },
+        {
+          "slod": "query.json",
+          "staerd_baet": 1022,
+          "sha256": "84ce79544fd561818f24d3ac1fd390e07923856dbe698cd8212ac5a5118fd117",
+          "stadfest_vid_provenance": true
+        },
+        {
+          "slod": "response.json",
+          "staerd_baet": 1657,
+          "sha256": "65b2d13ae435052ff2aadb029de6b9cf21f5fa2ca9d3f359d369d8d95e787024",
+          "stadfest_vid_provenance": true
+        }
+      ]
+    },
+    "vedurstodvar": {
+      "heiti": "vedurstodvar",
+      "mappa": "data/raw/vedurstodvar",
+      "adferd": "ny_sofnun",
+      "skyring": "Ósíaður stöðvalisti Veðurstofunnar, 778 stöðvar, sóttur einu sinni af api.vedur.is/weather/stations. NÝ SÖFNUN — ekkert eldra eintak er til, svo tölurnar víkja frá gömlu síðunni. Leyfi: CC BY 4.0.",
+      "les_skrifta": "src/python/vinnsla/vedurstodvar_samanburdur.py; P1.4 (issue #8)",
+      "uppruni": "https://api.vedur.is/weather/stations",
+      "upprunarepo": null,
+      "frosid_utc": "2026-09-24T11:22:18Z",
+      "fjoldi_skraa": 2,
+      "staerd_baet": 153633,
+      "fjoldi_sannreyndra": 1,
+      "fjoldi_stodva": 778,
+      "skrar": [
+        {
+          "slod": "provenance.json",
+          "staerd_baet": 1468,
+          "sha256": "a0db79c7a749c78fa4eb0812c2834782108b2342374bbcb8645b628b5dec1e80",
+          "stadfest_vid_provenance": false
+        },
+        {
+          "slod": "stations-20260924T112218Z.json",
+          "staerd_baet": 152165,
+          "sha256": "d8404ec4a7dc84ba57adf6a03674e4ca0417d8bb79a1cbd44586ab9faf7e27f4",
+          "stadfest_vid_provenance": true
+        }
+      ]
+    }
+  },
+  "ofryst": [
+    {
+      "heiti": "tmdb",
+      "af_hverju": "TMDB_TOKEN er ekki til í umhverfinu né í .env, svo ekkert er hægt að sækja. Ekkert eintak er á disknum heldur — aðeins samantektin í docs/vidmid/generated/phoebe-tmdb-summary.md er eftir af safninu.",
+      "hvad_vantar": "TMDB_TOKEN í .env",
+      "skrad_utc": "2026-09-24T11:33:18Z"
+    }
+  ],
+  "uppfaert_utc": "2026-09-24T11:33:18Z",
+  "fjoldi_skraa": 8,
+  "staerd_baet": 252905,
+  "skrad_annars_stadar": [
+    {
+      "heiti": "mbl",
+      "mappa": "data/raw/mbl",
+      "fryst_i": "P0.1 (issue #30)",
+      "provenance": "docs/vidmid/provenance.json",
+      "stadfest_med": "python3 src/python/vidmid/provenance.py stadfesta"
+    }
+  ]
+}

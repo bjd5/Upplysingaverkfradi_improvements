@@ -1,0 +1,26 @@
+{
+  "provider": "Veðurstofa Íslands",
+  "endpoint": "https://api.vedur.is/weather/stations",
+  "documentation": "https://api.vedur.is/weather/openapi.json",
+  "method": "GET",
+  "parameters": {},
+  "request_url": "https://api.vedur.is/weather/stations",
+  "request_headers": {
+    "Accept": "application/json",
+    "User-Agent": "Upplysingaverkfradi-rannsokn/1.0 (+https://github.com/bjd5/Upplysingaverkfradi_improvements)"
+  },
+  "response_file": "stations-20260924T112218Z.json",
+  "response_headers": {
+    "content-type": "application/json",
+    "date": "Thu, 24 Sep 2026 11:22:20 GMT"
+  },
+  "fetched_at_utc": "2026-09-24T11:22:18Z",
+  "sha256": "d8404ec4a7dc84ba57adf6a03674e4ca0417d8bb79a1cbd44586ab9faf7e27f4",
+  "response_bytes": 152165,
+  "station_count": 778,
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "collection_method": "ny_sofnun",
+  "note_is": "NÝ SÖFNUN. Ekkert eldra eintak er til: gamla verkefnið sótti stöðvalistann upp á nýtt í hverri byggingu og vistaði svarið aldrei. Tölurnar hér víkja því frá þeim sem gamla síðan birti, og gamla síðan var sjálf aldrei stöðug milli bygginga. Samanburðurinn við frosna viðmiðið er í docs/vedurstodvar-samanburdur.md.",
+  "note_filters_is": "Ósíað svar. Síurnar active, polygon og station_id velja úr þessu sama mengi, svo síuðu svörin fjögur sem gamla síðan sótti eru reiknuð staðbundið úr þessu eintaki."
+}

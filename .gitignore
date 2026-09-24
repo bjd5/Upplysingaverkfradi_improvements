@@ -12,6 +12,14 @@ data/raw/*
 # Undanþága (P0.1, issue #30): mbl-eintakið er EINA eintakið sem til er —
 # hráa svarið var aldrei í git og hverfur með vélinni sé það ekki fryst hér.
 !data/raw/mbl/
+# Undanþágur (P0.3, issue #2): frystu hrágögnin. Þau eru FRUMGAGN og ekki
+# afleiða — grunninn á að vera hægt að endurbyggja úr þeim án nets (regla 5).
+# Söfnin eru lítil (undir 0,3 MB samtals) og eiga því heima í git.
+!data/raw/vedur-quakes/
+!data/raw/hagstofan/
+!data/raw/vedurstodvar/
+!data/raw/README.md
+!data/raw/frysting.json
 data/processed/*
 !data/processed/.gitkeep
 *.sqlite

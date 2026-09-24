@@ -1,0 +1,35 @@
+{
+  "provider": "Veðurstofa Íslands",
+  "endpoint": "https://api.vedur.is/quakes/events",
+  "documentation": "https://api.vedur.is/quakes/openapi.json",
+  "method": "GET",
+  "parameters": {
+    "start_time": "2023-11-01T00:00:00+00:00",
+    "end_time": "2024-01-01T00:00:00+00:00",
+    "depth_min": 0,
+    "depth_max": 50,
+    "size_min": 3,
+    "size_max": 7,
+    "polygon": "POLYGON((-23 64.1,-23 63.7,-21.5 63.7,-21.5 64.1,-23 64.1))",
+    "type": "earthquake",
+    "evaluation_mode": "manual",
+    "format": "json",
+    "system": "sil"
+  },
+  "request_url": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A00&depth_min=0&depth_max=50&size_min=3&size_max=7&polygon=POLYGON%28%28-23+64.1%2C-23+63.7%2C-21.5+63.7%2C-21.5+64.1%2C-23+64.1%29%29&type=earthquake&evaluation_mode=manual&format=json&system=sil",
+  "request_headers": {
+    "x-vi-api-version": "2026-08-06",
+    "Accept": "application/json",
+    "User-Agent": "IDN302G-Skjalftavaktin/1.0 (educational reproducible analysis)"
+  },
+  "fetched_at_utc": "2026-09-10T11:46:23Z",
+  "sha256": "a535359ea84346426d5ce7fccf4ce8e5158b712e4fc66378dae4b291f771fa9a",
+  "response_bytes": 93233,
+  "selected_event_count": 334,
+  "observation_interval": {
+    "start_inclusive": "2023-11-01T00:00:00+00:00",
+    "end_exclusive": "2024-01-01T00:00:00+00:00"
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/"
+}
