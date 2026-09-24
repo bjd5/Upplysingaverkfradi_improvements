@@ -1,7 +1,13 @@
 /* ===========================================================================
    tokens.css — sjónræna kerfið (regla 3.1)
-   ÖLL gildi fyrir liti, letur, bil og skugga eru skilgreind HÉR.
-   Enginn harðkóðaður litur eða px-tala í öðrum CSS-skrám.
+   ÖLL gildi fyrir liti, letur, bil, stærðir og skugga eru skilgreind HÉR.
+   Engin px-tala og enginn harðkóðaður litur í öðrum CSS-skrám.
+
+   Skjáþrep eru eina undantekningin: media queries taka ekki við CSS-breytum,
+   svo þrepin eru skráð hér að neðan og notuð óbreytt annars staðar.
+     sm  40rem (640px)  — raster fer í tvær súlur
+     md  48rem (768px)  — víðari umgjörð, fótur í súlum
+     lg  64rem (1024px) — lárétt valmynd, síðuhaus í tveimur súlum
    =========================================================================== */
 
 :root {
@@ -66,9 +72,11 @@
   --thyngd-medium:   500;
   --thyngd-feit:     700;
 
-  --linuhaed-thett:  1.25;
+  --linuhaed-thett:    1.25;
   --linuhaed-venjuleg: 1.65;
   --stafabil-thett: -0.015em;
+  --stafabil-vitt:   0.06em;
+  --undirstrik-bil:  0.2em;
 
   /* --- Bil: 4px grunneining, öll bil eru margfeldi af henni -------------- */
   --bil-1:  0.25rem;
@@ -82,17 +90,30 @@
   --bil-24: 6rem;
 
   /* --- Form og dýpt ------------------------------------------------------- */
-  --radius-sm: 4px;
-  --radius:    8px;
-  --radius-lg: 14px;
+  --radius-sm:    4px;
+  --radius:       8px;
+  --radius-lg:    14px;
+  --radius-pilla: 999px;
+
+  --rammi-breidd:       1px;
+  --rammi-breidd-breid: 4px;   /* áherslukantur vinstra megin á einingum */
+  --fokus-breidd:       3px;
+  --lyfta:              2px;   /* hversu hátt eining lyftist við yfirsvif */
 
   --skuggi-sm: 0 1px 2px rgb(10 15 21 / 6%);
   --skuggi:    0 2px 4px rgb(10 15 21 / 6%), 0 8px 20px rgb(10 15 21 / 7%);
   --skuggi-lg: 0 4px 8px rgb(10 15 21 / 8%), 0 16px 40px rgb(10 15 21 / 10%);
 
-  /* --- Grind og hreyfing --------------------------------------------------- */
-  --breidd-efnis: 72rem;
+  /* --- Grind, stærðir og lög ---------------------------------------------- */
+  --breidd-efnis:   72rem;
   --breidd-lesmals: 38rem;   /* ~70 stafir á línu — besta læsni */
+  --breidd-hlidar:  20rem;   /* staðreyndadálkur í síðuhaus */
+  --haed-haus:      4rem;
+  --smellisvaedi:   44px;    /* lágmarks smelliflötur — regla 3.5 */
+
+  --lag-haus:    50;
+  --lag-yfirlag: 100;
+
   --hradi: 180ms;
   --ferill: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -110,9 +131,13 @@
     --tengill:        #6cbcd4;
     --tengill-yfir:   #a9cdd9;
     --adal-50:        #10222b;
+    --adal-200:       #3d7c91;
     --ahersla-100:    #2b1a0f;
     --ahersla-700:    #e08a4a;
     --fokus:          #e08a4a;
+    --i-lagi:         #4cc38a;
+    --advorun:        #e0a33a;
+    --villa:          #f2857c;
     --skuggi-sm: 0 1px 2px rgb(0 0 0 / 40%);
     --skuggi:    0 2px 4px rgb(0 0 0 / 40%), 0 8px 20px rgb(0 0 0 / 45%);
     --skuggi-lg: 0 4px 8px rgb(0 0 0 / 45%), 0 16px 40px rgb(0 0 0 / 50%);

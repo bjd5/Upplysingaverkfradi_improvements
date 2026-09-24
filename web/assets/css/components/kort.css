@@ -14,11 +14,12 @@
 }
 
 .kort {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: var(--bil-6);
   background: var(--bak-upphaekkad);
-  border: 1px solid var(--rammi);
+  border: var(--rammi-breidd) solid var(--rammi);
   border-radius: var(--radius-lg);
   box-shadow: var(--skuggi-sm);
   transition: box-shadow var(--hradi) var(--ferill),
@@ -29,15 +30,23 @@
 .kort:hover {
   box-shadow: var(--skuggi);
   border-color: var(--rammi-sterkur);
-  transform: translateY(-2px);
+  transform: translateY(calc(-1 * var(--lyfta)));
 }
+
+/* Fókusumgjörðin á að umlykja allt kortið, ekki bara textatengilinn. */
+.kort:focus-within {
+  outline: var(--fokus-breidd) solid var(--fokus);
+  outline-offset: var(--bil-1);
+}
+.kort:focus-within .kort__tengill:focus-visible { outline: none; }
 
 .kort__tala {
   font-family: var(--letur-fyrirsogn);
   font-size: var(--texti-2xl);
-  color: var(--adal-500);
+  color: var(--tengill);
   line-height: 1;
   margin-bottom: var(--bil-2);
+  max-width: none;
 }
 
 .kort h3 {
@@ -52,8 +61,17 @@
   flex: 1;
 }
 
-/* Allt kortið verður smellanlegt út frá tenglinum — án þess að tapa fókus */
-.kort__tengill { font-weight: var(--thyngd-medium); text-decoration: none; }
+/* Allt kortið verður smellanlegt út frá tenglinum — án þess að tapa fókus. */
+/* Yfirborðið nær yfir allt kortið (::before), en tengillinn sjálfur heldur
+   fullri smellihæð svo krafan sé mælanleg á honum líka (regla 3.5).       */
+.kort__tengill {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--smellisvaedi);
+  font-weight: var(--thyngd-medium);
+  text-decoration: none;
+  margin-top: auto;
+}
 .kort__tengill::after { content: " →"; }
 .kort__tengill::before {
   content: "";
@@ -61,4 +79,3 @@
   inset: 0;
   border-radius: var(--radius-lg);
 }
-.kort { position: relative; }

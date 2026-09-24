@@ -1,0 +1,84 @@
+/* sidu-haus.css — efsti hluti hverrar undirsíðu.
+   Svarar þremur spurningum strax (regla 3.2):
+     Hvar er ég?           flokkur + fyrirsögn
+     Hvað er hér?          inngangur
+     Hvert get ég farið?   staðreyndadálkur og tenglar til hliðar        */
+
+.sidu-haus {
+  display: grid;
+  gap: var(--bil-8);
+  grid-template-columns: 1fr;
+  padding-bottom: var(--bil-8);
+  border-bottom: var(--rammi-breidd) solid var(--rammi);
+}
+
+@media (min-width: 64rem) {
+  .sidu-haus {
+    grid-template-columns: 1fr var(--breidd-hlidar);
+    gap: var(--bil-12);
+    align-items: start;
+  }
+}
+
+.sidu-haus__flokkur {
+  display: inline-block;
+  margin: 0 0 var(--bil-3);
+  padding: var(--bil-1) var(--bil-3);
+  background: var(--ahersla-100);
+  color: var(--ahersla-700);
+  border-radius: var(--radius-pilla);
+  font-size: var(--texti-xs);
+  font-weight: var(--thyngd-medium);
+  letter-spacing: var(--stafabil-vitt);
+  text-transform: uppercase;
+  max-width: none;
+}
+
+.sidu-haus h1 { margin-bottom: var(--bil-4); }
+
+.sidu-haus__inngangur {
+  font-size: var(--texti-lg);
+  color: var(--texti-daufur);
+  margin-bottom: 0;
+}
+
+/* --- Staðreyndadálkur til hliðar ---------------------------------------- */
+.sidu-haus__hlid {
+  padding: var(--bil-6);
+  background: var(--bak-upphaekkad);
+  border: var(--rammi-breidd) solid var(--rammi);
+  border-radius: var(--radius-lg);
+}
+
+.sidu-haus__hlid-titill {
+  margin: 0 0 var(--bil-4);
+  font-family: var(--letur-texti);
+  font-size: var(--texti-xs);
+  font-weight: var(--thyngd-feit);
+  text-transform: uppercase;
+  letter-spacing: var(--stafabil-vitt);
+  color: var(--texti-daufur);
+}
+
+.stadreyndir { margin: 0; }
+
+.stadreyndir > div {
+  padding-block: var(--bil-3);
+  border-top: var(--rammi-breidd) solid var(--rammi);
+}
+.stadreyndir > div:first-child { border-top: 0; padding-top: 0; }
+.stadreyndir > div:last-child { padding-bottom: 0; }
+
+.stadreyndir dt {
+  font-size: var(--texti-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--stafabil-vitt);
+  color: var(--texti-daufur);
+}
+
+.stadreyndir dd {
+  margin: var(--bil-1) 0 0;
+  font-size: var(--texti-sm);
+  color: var(--texti);
+  overflow-wrap: anywhere;
+}

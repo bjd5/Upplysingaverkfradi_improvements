@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aðferðafræði — Upplýsingaverkfræði</title>
-  <meta name="description" content="Hvernig gögnin eru sótt, hreinsuð og geymd í rannsóknarverkefninu, og hvaða takmarkanir fylgja þeim.">
+  <title>Reglulegar segðir á fréttaforsíðu — Upplýsingaverkfræði</title>
+  <meta name="description" content="Fyrirsagnir og tenglar dregnir út úr vistaðri forsíðu mbl.is með reglulegum segðum.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
@@ -31,9 +31,9 @@
           <li><a class="valmynd__tengill" href="skjalftavaktin.html">Skjálftavaktin</a></li>
           <li><a class="valmynd__tengill" href="hagstofan.html">Hagstofan</a></li>
           <li><a class="valmynd__tengill" href="vedurstodvar.html">Veðurstöðvar</a></li>
-          <li><a class="valmynd__tengill" href="mbl-regex.html">mbl.is</a></li>
+          <li><a class="valmynd__tengill" href="mbl-regex.html" aria-current="page">mbl.is</a></li>
           <li><a class="valmynd__tengill" href="phoebe-tolfraedi.html">Phoebe</a></li>
-          <li><a class="valmynd__tengill" href="adferdafraedi.html" aria-current="page">Aðferðafræði</a></li>
+          <li><a class="valmynd__tengill" href="adferdafraedi.html">Aðferðafræði</a></li>
         </ul>
       </nav>
     </div>
@@ -42,7 +42,7 @@
   <nav class="braudmylsna umgjord" aria-label="Brauðmylsna">
     <ol>
       <li><a href="../index.html">Forsíða</a></li>
-      <li><span aria-current="page">Aðferðafræði</span></li>
+      <li><span aria-current="page">Reglulegar segðir á fréttaforsíðu</span></li>
     </ol>
   </nav>
 
@@ -51,105 +51,52 @@
 
       <div class="sidu-haus">
         <div class="sidu-haus__adal">
-          <p class="sidu-haus__flokkur">Um rannsóknina</p>
-          <h1>Aðferðafræði</h1>
-          <p class="sidu-haus__inngangur">Hvaðan gögnin koma, hvernig þau eru hreinsuð og geymd, og hvaða takmarkanir fylgja hverri niðurstöðu. Þessi síða er forsenda þess að rannsóknin sé endurtekjanleg.</p>
+          <p class="sidu-haus__flokkur">Rannsókn 04 · Textagreining</p>
+          <h1>Reglulegar segðir á fréttaforsíðu</h1>
+          <p class="sidu-haus__inngangur">Æfing í reglulegum segðum: fyrirsagnir, tenglar og tímastimplar dregnir út úr vistuðu eintaki af forsíðu mbl.is. Greint er á afriti sem er geymt í verkefninu, ekki á forsíðunni eins og hún er hverju sinni.</p>
         </div>
         <aside class="sidu-haus__hlid" aria-labelledby="stadreyndir-titill">
           <h2 class="sidu-haus__hlid-titill" id="stadreyndir-titill">Um þessa síðu</h2>
           <dl class="stadreyndir">
             <div>
-              <dt>Gagnaflæði</dt>
-              <dd>Vefþjónusta → hrágögn → SQL-grunnur → JSON → vefsíða</dd>
+              <dt>Heimild</dt>
+              <dd>mbl.is — vistuð forsíða</dd>
             </div>
             <div>
-              <dt>Geymsla</dt>
-              <dd>Öll svör vistuð óbreytt með tímastimpli</dd>
-            </div>
-            <div>
-              <dt>Skjölun</dt>
-              <dd><code>docs/heimildir.md</code> og <code>docs/adferdafraedi.md</code></dd>
+              <dt>Aðferð</dt>
+              <dd>Reglulegar segðir (<code>re</code> í Python-staðalsafninu)</dd>
             </div>
             <div>
               <dt>Staða síðunnar</dt>
-              <dd>Beinagrind — kaflar í vinnslu</dd>
+              <dd>Beinagrind — greining í vinnslu</dd>
             </div>
           </dl>
         </aside>
       </div>
 
-      <article class="efni" aria-labelledby="flaedi-titill">
-
-        <h2 id="flaedi-titill">Gagnaflæðið</h2>
-        <p>
-          Flæðið er einstefna og má aldrei rjúfa. Hvert skref skilar af sér
-          skrá sem næsta skref les — það er ástæðan fyrir því að hægt er að
-          endurreikna hverja einustu tölu frá upprunalegu svari
-          vefþjónustunnar.
-        </p>
-        <ol>
-          <li>
-            <strong>Söfnun.</strong> Kallað er í vefþjónustuna og svarið vistað
-            óbreytt í <code>data/raw/</code> með tímastimpli. Hrágögnum er
-            aldrei breytt eftir á.
-          </li>
-          <li>
-            <strong>Hreinsun.</strong> Gögnin eru samræmd, villur skráðar og
-            forsendur sem gefnar eru skjalfestar.
-          </li>
-          <li>
-            <strong>Geymsla.</strong> Hreinsuðu gögnin fara í SQL-grunninn, sem
-            verður eingöngu til úr númeruðum migration-skrám.
-          </li>
-          <li>
-            <strong>Útflutningur.</strong> Niðurstöður eru fluttar út sem JSON
-            í <code>web/gogn/</code>, með uppfærsludagsetningu.
-          </li>
-        </ol>
-        <p>
-          Vefsíðan sem þú ert á talar aldrei sjálf við vefþjónustu eða
-          gagnagrunn. Hún les eingöngu tilbúnu JSON-skrárnar, og það er
-          ástæðan fyrir því að hún er hröð og stendur óbreytt þótt þjónustan
-          liggi niðri.
-        </p>
-
-        <h2 id="heimildir">Heimildir</h2>
+      <article class="efni" aria-labelledby="efni-titill">
+        <h2 id="efni-titill">Greiningin</h2>
         <div class="bidstada">
           <p class="bidstada__merki">
             <span class="bidstada__punktur" aria-hidden="true"></span>
             Efni í vinnslu
           </p>
           <p class="bidstada__skyring">
-            Heimildaskráin birtist hér þegar gagnasöfnunin hefur farið fram.
-            Hver færsla fær þjónustuheiti, slóð, dagsetningu og þær breytur sem
-            notaðar voru. Skráin er haldin jafnóðum í
-            <code>docs/heimildir.md</code>.
+            Greiningin birtist hér þegar gögnin hafa verið sótt, hreinsuð og
+            flutt út úr gagnagrunninum. Beinagrindin lofar engum tölum sem hún
+            hefur ekki — þangað til má lesa um aðferðina á
+            <a href="adferdafraedi.html">aðferðafræðisíðunni</a>.
           </p>
         </div>
-
-        <h2 id="takmarkanir">Takmarkanir</h2>
-        <div class="bidstada">
-          <p class="bidstada__merki">
-            <span class="bidstada__punktur" aria-hidden="true"></span>
-            Efni í vinnslu
-          </p>
-          <p class="bidstada__skyring">
-            Þekktar takmarkanir gagnanna eru birtar hér, ekki faldar. Þær eru
-            skráðar jafnóðum og þær koma í ljós — meðal annars hvaða gagnasöfn
-            breytast milli fyrirspurna og hvaða niðurstöður eru því bundnar við
-            tiltekna dagsetningu.
-          </p>
-        </div>
-
       </article>
 
       <nav class="naesta-skref" aria-labelledby="naesta-skref-titill">
         <h2 class="naesta-skref__titill" id="naesta-skref-titill">Hvert get ég farið næst?</h2>
         <ul>
           <li>
-            <a href="../index.html">
-              <span class="naesta-skref__hlutverk">Byrja hér</span>
-              <span class="naesta-skref__heiti">Forsíða</span>
+            <a href="phoebe-tolfraedi.html">
+              <span class="naesta-skref__hlutverk">Rannsókn</span>
+              <span class="naesta-skref__heiti">Plass og tengsl</span>
             </a>
           </li>
           <li>
@@ -159,9 +106,9 @@
             </a>
           </li>
           <li>
-            <a href="phoebe-tolfraedi.html">
-              <span class="naesta-skref__hlutverk">Rannsókn</span>
-              <span class="naesta-skref__heiti">Plass og tengsl</span>
+            <a href="adferdafraedi.html">
+              <span class="naesta-skref__hlutverk">Um aðferðina</span>
+              <span class="naesta-skref__heiti">Aðferðafræði</span>
             </a>
           </li>
         </ul>

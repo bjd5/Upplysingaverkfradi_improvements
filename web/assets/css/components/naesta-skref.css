@@ -1,0 +1,66 @@
+/* naesta-skref.css — hvert er hægt að fara næst, neðst á hverri undirsíðu.
+   Engin síða má vera blindgata (regla 3.2).                             */
+
+.naesta-skref {
+  margin-top: var(--bil-16);
+  padding-top: var(--bil-8);
+  border-top: var(--rammi-breidd) solid var(--rammi);
+}
+
+.naesta-skref__titill {
+  margin: 0 0 var(--bil-6);
+  font-family: var(--letur-texti);
+  font-size: var(--texti-xs);
+  font-weight: var(--thyngd-feit);
+  text-transform: uppercase;
+  letter-spacing: var(--stafabil-vitt);
+  color: var(--texti-daufur);
+}
+
+.naesta-skref ul {
+  display: grid;
+  gap: var(--bil-4);
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 40rem) {
+  .naesta-skref ul { grid-template-columns: repeat(3, 1fr); }
+}
+
+.naesta-skref li { max-width: none; }
+
+.naesta-skref a {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bil-1);
+  height: 100%;
+  min-height: var(--smellisvaedi);
+  padding: var(--bil-4) var(--bil-6);
+  background: var(--bak-upphaekkad);
+  border: var(--rammi-breidd) solid var(--rammi);
+  border-left: var(--rammi-breidd-breid) solid var(--adal-400);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--texti);
+  transition: border-color var(--hradi) var(--ferill),
+              box-shadow var(--hradi) var(--ferill);
+}
+.naesta-skref a:hover {
+  border-color: var(--rammi-sterkur);
+  border-left-color: var(--adal-500);
+  box-shadow: var(--skuggi-sm);
+  color: var(--texti);
+}
+
+.naesta-skref__hlutverk {
+  font-size: var(--texti-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--stafabil-vitt);
+  color: var(--texti-daufur);
+}
+
+.naesta-skref__heiti { font-weight: var(--thyngd-medium); }
+.naesta-skref__heiti::after { content: " →"; }

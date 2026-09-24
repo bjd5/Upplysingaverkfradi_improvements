@@ -15,6 +15,14 @@ from pathlib import Path
 
 ROT = Path(__file__).resolve().parents[1]
 PYTHON_ROT = ROT / "src" / "python"
+ENDURBYGGINGARSKRIFTA = ROT / "scripts" / "endurbyggja-grunn.sh"
 
 if str(PYTHON_ROT) not in sys.path:
     sys.path.insert(0, str(PYTHON_ROT))
+
+
+def skrifa_migration(mappa: Path, numer: int, heiti: str, sql: str) -> Path:
+    """Skrifar migration-skrá í prófunarmöppu og skilar slóðinni."""
+    slod = mappa / f"{numer:03d}_{heiti}.sql"
+    slod.write_text(sql, encoding="utf-8")
+    return slod
