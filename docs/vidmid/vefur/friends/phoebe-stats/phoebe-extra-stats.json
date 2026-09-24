@@ -1,0 +1,761 @@
+{
+  "question": "Aðrar tolfraeðilegar niðurstoður um Phoebe",
+  "talkativeness": {
+    "total_lines": 7483,
+    "total_words": 83788,
+    "words_per_line": 11.2,
+    "median_words_per_line": 8,
+    "longest_line_words": 156,
+    "one_word_lines": 886,
+    "question_lines": 2151,
+    "question_line_pct": 28.75,
+    "exclamation_lines": 2690,
+    "exclamation_line_pct": 35.95,
+    "words_per_line_ranking": [
+      {
+        "character": "phoebe",
+        "words_per_line": 11.2
+      },
+      {
+        "character": "joey",
+        "words_per_line": 10.99
+      },
+      {
+        "character": "rachel",
+        "words_per_line": 10.88
+      },
+      {
+        "character": "ross",
+        "words_per_line": 10.82
+      },
+      {
+        "character": "chandler",
+        "words_per_line": 10.61
+      },
+      {
+        "character": "monica",
+        "words_per_line": 10.17
+      }
+    ]
+  },
+  "top_episodes_by_lines": [
+    {
+      "episode_code": "0523",
+      "season": 5,
+      "title": "The One In Vegas",
+      "phoebe_lines": 87,
+      "phoebe_line_share_pct": 18.39
+    },
+    {
+      "episode_code": "1017-1018",
+      "season": 10,
+      "title": "Friends - 10.17-10.18 - The Last One",
+      "phoebe_lines": 85,
+      "phoebe_line_share_pct": 16.7
+    },
+    {
+      "episode_code": "0423",
+      "season": 4,
+      "title": "The One With Ross's Wedding Parts I and II",
+      "phoebe_lines": 77,
+      "phoebe_line_share_pct": 20.59
+    },
+    {
+      "episode_code": "1012",
+      "season": 10,
+      "title": "Friends - 10.12 - The One With Phoebe's Wedding",
+      "phoebe_lines": 71,
+      "phoebe_line_share_pct": 26.1
+    },
+    {
+      "episode_code": "0514",
+      "season": 5,
+      "title": "The One Where Everyone Finds Out",
+      "phoebe_lines": 63,
+      "phoebe_line_share_pct": 24.32
+    },
+    {
+      "episode_code": "0615-0616",
+      "season": 6,
+      "title": "The One That Could Have Been",
+      "phoebe_lines": 62,
+      "phoebe_line_share_pct": 12.84
+    },
+    {
+      "episode_code": "0624",
+      "season": 6,
+      "title": "The One With The Proposal",
+      "phoebe_lines": 62,
+      "phoebe_line_share_pct": 13.48
+    },
+    {
+      "episode_code": "0513",
+      "season": 5,
+      "title": "The One With Joey's Bag",
+      "phoebe_lines": 61,
+      "phoebe_line_share_pct": 29.47
+    },
+    {
+      "episode_code": "0711",
+      "season": 7,
+      "title": "The One With All The Cheesecake",
+      "phoebe_lines": 57,
+      "phoebe_line_share_pct": 24.36
+    },
+    {
+      "episode_code": "0723",
+      "season": 7,
+      "title": "The One With Chandler and Monica’s Wedding",
+      "phoebe_lines": 57,
+      "phoebe_line_share_pct": 13.8
+    },
+    {
+      "episode_code": "0823",
+      "season": 8,
+      "title": "The One Where Rachel Has A Baby",
+      "phoebe_lines": 57,
+      "phoebe_line_share_pct": 14.43
+    },
+    {
+      "episode_code": "0521",
+      "season": 5,
+      "title": "The One With The Ball",
+      "phoebe_lines": 56,
+      "phoebe_line_share_pct": 23.33
+    },
+    {
+      "episode_code": "0305",
+      "season": 3,
+      "title": "The One With Frank Jr.",
+      "phoebe_lines": 55,
+      "phoebe_line_share_pct": 25.35
+    },
+    {
+      "episode_code": "0916",
+      "season": 9,
+      "title": "916 - The One With The Boob Job",
+      "phoebe_lines": 55,
+      "phoebe_line_share_pct": 26.83
+    },
+    {
+      "episode_code": "0503",
+      "season": 5,
+      "title": "The One Hundredth",
+      "phoebe_lines": 52,
+      "phoebe_line_share_pct": 28.73
+    }
+  ],
+  "bottom_episodes_by_lines": [
+    {
+      "episode_code": "0108",
+      "season": 1,
+      "title": "The One Where Nana Dies Twice",
+      "phoebe_lines": 16,
+      "phoebe_line_share_pct": 9.76
+    },
+    {
+      "episode_code": "0214",
+      "season": 2,
+      "title": "The One With the Prom Video",
+      "phoebe_lines": 16,
+      "phoebe_line_share_pct": 8.51
+    },
+    {
+      "episode_code": "0215",
+      "season": 2,
+      "title": "The One Where Ross and Rachel...You Know",
+      "phoebe_lines": 16,
+      "phoebe_line_share_pct": 7.77
+    },
+    {
+      "episode_code": "0312",
+      "season": 3,
+      "title": "The One With All The Jealousy",
+      "phoebe_lines": 16,
+      "phoebe_line_share_pct": 8.65
+    },
+    {
+      "episode_code": "0319",
+      "season": 3,
+      "title": "The One With The Tiny T-shirt",
+      "phoebe_lines": 16,
+      "phoebe_line_share_pct": 9.25
+    },
+    {
+      "episode_code": "0812",
+      "season": 8,
+      "title": "The One Where Joey Dates Rachel",
+      "phoebe_lines": 16,
+      "phoebe_line_share_pct": 7.31
+    },
+    {
+      "episode_code": "0712",
+      "season": 7,
+      "title": "The One Where They’re Up All Night",
+      "phoebe_lines": 15,
+      "phoebe_line_share_pct": 9.15
+    },
+    {
+      "episode_code": "0819",
+      "season": 8,
+      "title": "The One With Joey’s Interview",
+      "phoebe_lines": 15,
+      "phoebe_line_share_pct": 7.58
+    },
+    {
+      "episode_code": "0102",
+      "season": 1,
+      "title": "The One With The Sonogram at the End",
+      "phoebe_lines": 14,
+      "phoebe_line_share_pct": 8.38
+    },
+    {
+      "episode_code": "0121",
+      "season": 1,
+      "title": "The One With The Fake Monica",
+      "phoebe_lines": 14,
+      "phoebe_line_share_pct": 8.54
+    },
+    {
+      "episode_code": "0501",
+      "season": 5,
+      "title": "The One After Ross Says Rachel",
+      "phoebe_lines": 12,
+      "phoebe_line_share_pct": 5.31
+    },
+    {
+      "episode_code": "0114",
+      "season": 1,
+      "title": "The One With the Candy Hearts",
+      "phoebe_lines": 11,
+      "phoebe_line_share_pct": 8.21
+    },
+    {
+      "episode_code": "0520",
+      "season": 5,
+      "title": "The One With The Ride Along",
+      "phoebe_lines": 11,
+      "phoebe_line_share_pct": 4.93
+    },
+    {
+      "episode_code": "0106",
+      "season": 1,
+      "title": "The One With The Butt",
+      "phoebe_lines": 10,
+      "phoebe_line_share_pct": 5.92
+    },
+    {
+      "episode_code": "0421",
+      "season": 4,
+      "title": "The One With the Invitation",
+      "phoebe_lines": 10,
+      "phoebe_line_share_pct": 4.48
+    }
+  ],
+  "top_episodes_by_share": [
+    {
+      "episode_code": "0513",
+      "season": 5,
+      "title": "The One With Joey's Bag",
+      "phoebe_line_share_pct": 29.47,
+      "phoebe_lines": 61
+    },
+    {
+      "episode_code": "0110",
+      "season": 1,
+      "title": "The One With The Monkey",
+      "phoebe_line_share_pct": 28.99,
+      "phoebe_lines": 49
+    },
+    {
+      "episode_code": "0503",
+      "season": 5,
+      "title": "The One Hundredth",
+      "phoebe_line_share_pct": 28.73,
+      "phoebe_lines": 52
+    },
+    {
+      "episode_code": "0907",
+      "season": 9,
+      "title": "The One With Ross's Inappropriate Song",
+      "phoebe_line_share_pct": 26.88,
+      "phoebe_lines": 43
+    },
+    {
+      "episode_code": "0916",
+      "season": 9,
+      "title": "916 - The One With The Boob Job",
+      "phoebe_line_share_pct": 26.83,
+      "phoebe_lines": 55
+    },
+    {
+      "episode_code": "0323",
+      "season": 3,
+      "title": "The One With Ross's Thing",
+      "phoebe_line_share_pct": 26.29,
+      "phoebe_lines": 46
+    },
+    {
+      "episode_code": "0623",
+      "season": 6,
+      "title": "The One With The Ring",
+      "phoebe_line_share_pct": 26.13,
+      "phoebe_lines": 52
+    },
+    {
+      "episode_code": "1012",
+      "season": 10,
+      "title": "Friends - 10.12 - The One With Phoebe's Wedding",
+      "phoebe_line_share_pct": 26.1,
+      "phoebe_lines": 71
+    },
+    {
+      "episode_code": "0318",
+      "season": 3,
+      "title": "The One With The Hypnosis Tape",
+      "phoebe_line_share_pct": 26.09,
+      "phoebe_lines": 42
+    },
+    {
+      "episode_code": "0305",
+      "season": 3,
+      "title": "The One With Frank Jr.",
+      "phoebe_line_share_pct": 25.35,
+      "phoebe_lines": 55
+    },
+    {
+      "episode_code": "0411",
+      "season": 4,
+      "title": "The One With Phoebe’s Uterus",
+      "phoebe_line_share_pct": 24.53,
+      "phoebe_lines": 39
+    },
+    {
+      "episode_code": "0711",
+      "season": 7,
+      "title": "The One With All The Cheesecake",
+      "phoebe_line_share_pct": 24.36,
+      "phoebe_lines": 57
+    },
+    {
+      "episode_code": "0514",
+      "season": 5,
+      "title": "The One Where Everyone Finds Out",
+      "phoebe_line_share_pct": 24.32,
+      "phoebe_lines": 63
+    },
+    {
+      "episode_code": "0806",
+      "season": 8,
+      "title": "The One With The Halloween Party",
+      "phoebe_line_share_pct": 23.83,
+      "phoebe_lines": 51
+    },
+    {
+      "episode_code": "0209",
+      "season": 2,
+      "title": "The One With Phoebe's Dad",
+      "phoebe_line_share_pct": 23.81,
+      "phoebe_lines": 50
+    }
+  ],
+  "signature_topics": [
+    {
+      "topic": "y'know",
+      "phoebe_uses": 190,
+      "whole_script_uses": 1044,
+      "phoebe_share_pct": 18.2
+    },
+    {
+      "topic": "oh my god",
+      "phoebe_uses": 174,
+      "whole_script_uses": 996,
+      "phoebe_share_pct": 17.47
+    },
+    {
+      "topic": "sing/song",
+      "phoebe_uses": 74,
+      "whole_script_uses": 479,
+      "phoebe_share_pct": 15.45
+    },
+    {
+      "topic": "massage",
+      "phoebe_uses": 46,
+      "whole_script_uses": 115,
+      "phoebe_share_pct": 40.0
+    },
+    {
+      "topic": "smelly cat",
+      "phoebe_uses": 24,
+      "whole_script_uses": 40,
+      "phoebe_share_pct": 60.0
+    },
+    {
+      "topic": "vegetarian/meat",
+      "phoebe_uses": 23,
+      "whole_script_uses": 60,
+      "phoebe_share_pct": 38.33
+    },
+    {
+      "topic": "karma/spirit/psychic",
+      "phoebe_uses": 18,
+      "whole_script_uses": 28,
+      "phoebe_share_pct": 64.29
+    },
+    {
+      "topic": "guitar",
+      "phoebe_uses": 16,
+      "whole_script_uses": 55,
+      "phoebe_share_pct": 29.09
+    },
+    {
+      "topic": "grandma",
+      "phoebe_uses": 11,
+      "whole_script_uses": 31,
+      "phoebe_share_pct": 35.48
+    },
+    {
+      "topic": "aura",
+      "phoebe_uses": 1,
+      "whole_script_uses": 3,
+      "phoebe_share_pct": 33.33
+    }
+  ],
+  "aliases_and_family": [
+    {
+      "term": "ursula",
+      "occurrences": 78
+    },
+    {
+      "term": "buffay",
+      "occurrences": 52
+    },
+    {
+      "term": "princess consuela",
+      "occurrences": 6
+    },
+    {
+      "term": "banana hammock",
+      "occurrences": 5
+    },
+    {
+      "term": "regina phalange",
+      "occurrences": 2
+    }
+  ],
+  "phoebe_mentions_of_people_by_season": [
+    {
+      "season": 1,
+      "mike": 0,
+      "david": 2,
+      "ursula": 1,
+      "frank": 0,
+      "gary": 0,
+      "duncan": 0,
+      "roger": 3,
+      "parker": 0
+    },
+    {
+      "season": 2,
+      "mike": 0,
+      "david": 0,
+      "ursula": 0,
+      "frank": 3,
+      "gary": 0,
+      "duncan": 2,
+      "roger": 1,
+      "parker": 0
+    },
+    {
+      "season": 3,
+      "mike": 0,
+      "david": 0,
+      "ursula": 4,
+      "frank": 14,
+      "gary": 0,
+      "duncan": 0,
+      "roger": 0,
+      "parker": 0
+    },
+    {
+      "season": 4,
+      "mike": 0,
+      "david": 0,
+      "ursula": 2,
+      "frank": 9,
+      "gary": 0,
+      "duncan": 0,
+      "roger": 0,
+      "parker": 0
+    },
+    {
+      "season": 5,
+      "mike": 0,
+      "david": 0,
+      "ursula": 1,
+      "frank": 5,
+      "gary": 4,
+      "duncan": 0,
+      "roger": 0,
+      "parker": 0
+    },
+    {
+      "season": 6,
+      "mike": 0,
+      "david": 0,
+      "ursula": 1,
+      "frank": 3,
+      "gary": 0,
+      "duncan": 0,
+      "roger": 0,
+      "parker": 0
+    },
+    {
+      "season": 7,
+      "mike": 0,
+      "david": 9,
+      "ursula": 1,
+      "frank": 0,
+      "gary": 0,
+      "duncan": 0,
+      "roger": 0,
+      "parker": 0
+    },
+    {
+      "season": 8,
+      "mike": 0,
+      "david": 1,
+      "ursula": 6,
+      "frank": 0,
+      "gary": 0,
+      "duncan": 0,
+      "roger": 3,
+      "parker": 7
+    },
+    {
+      "season": 9,
+      "mike": 56,
+      "david": 17,
+      "ursula": 0,
+      "frank": 0,
+      "gary": 0,
+      "duncan": 0,
+      "roger": 0,
+      "parker": 0
+    },
+    {
+      "season": 10,
+      "mike": 23,
+      "david": 0,
+      "ursula": 1,
+      "frank": 6,
+      "gary": 0,
+      "duncan": 0,
+      "roger": 0,
+      "parker": 0
+    }
+  ],
+  "distinctive_words_note": "z-gildi ur log-odds hlutfalli með Dirichlet-prior (Monroe, Colaresi & Quinn 2008). Ha jakvaeð gildi = orð sem Phoebe notar hlutfallslega miklu oftar en hinir fimm.",
+  "distinctive_words_top": [
+    {
+      "word": "ooh",
+      "z_score": 16.007,
+      "phoebe_count": 195,
+      "others_count": 224,
+      "phoebe_per_10k": 23.27,
+      "others_per_10k": 4.83
+    },
+    {
+      "word": "cause",
+      "z_score": 10.525,
+      "phoebe_count": 139,
+      "others_count": 252,
+      "phoebe_per_10k": 16.59,
+      "others_per_10k": 5.43
+    },
+    {
+      "word": "mike",
+      "z_score": 10.261,
+      "phoebe_count": 67,
+      "others_count": 59,
+      "phoebe_per_10k": 8.0,
+      "others_per_10k": 1.27
+    },
+    {
+      "word": "frank",
+      "z_score": 8.84,
+      "phoebe_count": 40,
+      "others_count": 12,
+      "phoebe_per_10k": 4.77,
+      "others_per_10k": 0.26
+    },
+    {
+      "word": "massage",
+      "z_score": 8.208,
+      "phoebe_count": 35,
+      "others_count": 17,
+      "phoebe_per_10k": 4.18,
+      "others_per_10k": 0.37
+    },
+    {
+      "word": "yay",
+      "z_score": 7.699,
+      "phoebe_count": 34,
+      "others_count": 24,
+      "phoebe_per_10k": 4.06,
+      "others_per_10k": 0.52
+    },
+    {
+      "word": "umm",
+      "z_score": 7.033,
+      "phoebe_count": 186,
+      "others_count": 567,
+      "phoebe_per_10k": 22.2,
+      "others_per_10k": 12.23
+    },
+    {
+      "word": "uh-huh",
+      "z_score": 6.989,
+      "phoebe_count": 58,
+      "others_count": 101,
+      "phoebe_per_10k": 6.92,
+      "others_per_10k": 2.18
+    },
+    {
+      "word": "david",
+      "z_score": 6.418,
+      "phoebe_count": 27,
+      "others_count": 25,
+      "phoebe_per_10k": 3.22,
+      "others_per_10k": 0.54
+    },
+    {
+      "word": "song",
+      "z_score": 5.196,
+      "phoebe_count": 27,
+      "others_count": 41,
+      "phoebe_per_10k": 3.22,
+      "others_per_10k": 0.88
+    },
+    {
+      "word": "ass",
+      "z_score": 4.977,
+      "phoebe_count": 37,
+      "others_count": 75,
+      "phoebe_per_10k": 4.42,
+      "others_per_10k": 1.62
+    },
+    {
+      "word": "mother",
+      "z_score": 4.853,
+      "phoebe_count": 31,
+      "others_count": 58,
+      "phoebe_per_10k": 3.7,
+      "others_per_10k": 1.25
+    },
+    {
+      "word": "voice",
+      "z_score": 4.791,
+      "phoebe_count": 19,
+      "others_count": 24,
+      "phoebe_per_10k": 2.27,
+      "others_per_10k": 0.52
+    },
+    {
+      "word": "uhm",
+      "z_score": 4.715,
+      "phoebe_count": 40,
+      "others_count": 90,
+      "phoebe_per_10k": 4.77,
+      "others_per_10k": 1.94
+    },
+    {
+      "word": "y'know",
+      "z_score": 4.595,
+      "phoebe_count": 190,
+      "others_count": 722,
+      "phoebe_per_10k": 22.68,
+      "others_per_10k": 15.57
+    },
+    {
+      "word": "oooh",
+      "z_score": 4.454,
+      "phoebe_count": 18,
+      "others_count": 25,
+      "phoebe_per_10k": 2.15,
+      "others_per_10k": 0.54
+    },
+    {
+      "word": "except",
+      "z_score": 4.407,
+      "phoebe_count": 24,
+      "others_count": 43,
+      "phoebe_per_10k": 2.86,
+      "others_per_10k": 0.93
+    },
+    {
+      "word": "ohh",
+      "z_score": 4.326,
+      "phoebe_count": 89,
+      "others_count": 291,
+      "phoebe_per_10k": 10.62,
+      "others_per_10k": 6.28
+    },
+    {
+      "word": "cab",
+      "z_score": 4.249,
+      "phoebe_count": 21,
+      "others_count": 36,
+      "phoebe_per_10k": 2.51,
+      "others_per_10k": 0.78
+    },
+    {
+      "word": "name",
+      "z_score": 4.233,
+      "phoebe_count": 72,
+      "others_count": 224,
+      "phoebe_per_10k": 8.59,
+      "others_per_10k": 4.83
+    },
+    {
+      "word": "cat",
+      "z_score": 4.053,
+      "phoebe_count": 34,
+      "others_count": 82,
+      "phoebe_per_10k": 4.06,
+      "others_per_10k": 1.77
+    },
+    {
+      "word": "sweet",
+      "z_score": 4.029,
+      "phoebe_count": 41,
+      "others_count": 108,
+      "phoebe_per_10k": 4.89,
+      "others_per_10k": 2.33
+    },
+    {
+      "word": "babies",
+      "z_score": 3.857,
+      "phoebe_count": 31,
+      "others_count": 75,
+      "phoebe_per_10k": 3.7,
+      "others_per_10k": 1.62
+    },
+    {
+      "word": "god",
+      "z_score": 3.718,
+      "phoebe_count": 282,
+      "others_count": 1220,
+      "phoebe_per_10k": 33.66,
+      "others_per_10k": 26.31
+    },
+    {
+      "word": "pregnant",
+      "z_score": 3.607,
+      "phoebe_count": 30,
+      "others_count": 76,
+      "phoebe_per_10k": 3.58,
+      "others_per_10k": 1.64
+    }
+  ]
+}

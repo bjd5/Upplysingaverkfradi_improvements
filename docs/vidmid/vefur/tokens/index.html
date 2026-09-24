@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="is" xml:lang="is"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tokennotkun – Phoebe</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../tokens/bjorn.html" rel="next">
+<link href="../reflections/ottar.html" rel="prev">
+<link href="../img/hi/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-48b423595647f4d965ce203b23b276d8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-fea70a228e37f9567efd30b6e6291295.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Engar niðurstöður",
+    "search-matching-documents-text": "Skjöl sem passa",
+    "search-copy-link-title": "Afrita krækju í leitarglugga",
+    "search-hide-matches-text": "Fela aðrar samsvarandi niðurstöður",
+    "search-more-match-text": "önnur samsvörun í þessu skjali",
+    "search-more-matches-text": "aðrar samsvaranir í þessu skjali",
+    "search-clear-button-title": "Eyða",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Hætta við",
+    "search-submit-button-title": "Senda inn",
+    "search-label": "Leita"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/hi/hi_named_logo-is.svg" alt="" class="navbar-logo light-content">
+    <img src="../img/hi/hi_named_logo-is.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Phoebe</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Leita"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Víxla stiklurönd" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">Heim</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../team.html"> 
+<span class="menu-text">Teymið</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../project-management.html"> 
+<span class="menu-text">Verkefnastjórn</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tokens/index.html"> 
+<span class="menu-text">Tokennotkun</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe"> <i class="bi bi-github" role="img" aria-label="GitHub repo">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Víxla hliðarslá" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tokens/index.html">Tokennotkun</a></li><li class="breadcrumb-item"><a href="../tokens/index.html"><span class="chapter-title">Tokennotkun</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Víxla hliðarslá" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Heim</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../team.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Teymið</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Verkefnastjórn</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Þemaverkefni · Skjálftavaktin</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Víxla undirkafla">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capstone/earthquakes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Skjálftavaktin · jarðskjálftagögn</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Git, erindrekar og endurtækar skýrslur</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Víxla undirkafla">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lotur/git-ai-reproducible/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Inngangur</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lotur/git-ai-reproducible/git.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lotur/git-ai-reproducible/agents.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Erindrekar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lotur/git-ai-reproducible/reproducible-reports.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Endurtækar skýrslur</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Vefþjónustur</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Víxla undirkafla">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lotur/vefthjonustur/hagstofan.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1A — Hagstofan: hverjir ljúka BS-námi?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lotur/vefthjonustur/vedurstofan.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Veðurstofan (æfing 1B)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Reglulegar segðir</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Víxla undirkafla">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lotur/regex/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Inngangur</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lotur/regex/mbl.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">mbl.is — regex</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Rökfræði og mengi</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Víxla undirkafla">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lotur/logic-sets/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Inngangur</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">SQL grunnatriði</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Víxla undirkafla">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lotur/sql-basics/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Inngangur</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">SQL framhald</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Víxla undirkafla">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lotur/sql-advanced/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Inngangur</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Myndræn framsetning</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Víxla undirkafla">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lotur/storytelling/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Inngangur</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Friends</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Víxla undirkafla">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../friends/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Friends-gagnasagan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../friends/uppahalds-video.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Okkar uppáhalds video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../friends/phoebe-statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Phoebe statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phoebe-central-perk.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Phoebe syngur í Central Perk</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../friends/phoebe-tribute.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Phoebe tribute</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Ígrundanir</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Víxla undirkafla">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reflections/sveinn.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sveinn Jóhann Þórðarson</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reflections/bjorn.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Björn Davíðsson</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reflections/ottar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Óttar Ögmundsson</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Tokennotkun</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Víxla undirkafla">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tokens/index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Tokennotkun</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tokens/bjorn.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tokennotkun — Björn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tokens/ottar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tokennotkun — Óttar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tokens/sveinn.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tokennotkun — Sveinn</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Á þessari síðu</h2>
+   
+  <ul>
+  <li><a href="#teljarar" id="toc-teljarar" class="nav-link active" data-scroll-target="#teljarar">Teljarar</a></li>
+  <li><a href="#samanburður-eftir-vikum" id="toc-samanburður-eftir-vikum" class="nav-link" data-scroll-target="#samanburður-eftir-vikum">Samanburður eftir vikum</a></li>
+  <li><a href="#tölurnar-á-bak-við-teljarana" id="toc-tölurnar-á-bak-við-teljarana" class="nav-link" data-scroll-target="#tölurnar-á-bak-við-teljarana">Tölurnar á bak við teljarana</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tokens/index.html">Tokennotkun</a></li><li class="breadcrumb-item"><a href="../tokens/index.html"><span class="chapter-title">Tokennotkun</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Tokennotkun</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Þessi síða heldur utan um hversu marga <strong>tokena</strong> hvert okkar hefur notað í gervigreindarverkfærum við vinnu á verkefninu. Token er sá búti sem mállíkan les og skrifar í — hvorki orð né stafur, heldur eitthvað þar á milli — og talan er því gróf mæling á umfangi, ekki á gæðum eða vinnuframlagi.</p>
+<p>Tölurnar koma úr <code>data/tokens/tokens.csv</code>, sameiginlegri skrá teymisins. Ekkert gildi er slegið inn í þessa síðu: teljararnir eru summa allra færslna hvers og eins og uppfærast sjálfkrafa þegar skráin er uppfærð.</p>
+<!-- Gögnin eru lesin inn í skjalið við render.
+
+     Ástæðan fyrir þessari leið: `data/` liggur utan Quarto-verkefnisins, sem er
+     mappan `site/`. Quarto afritar aðeins gögn innan verkefnisins yfir í
+     `docs/`, svo `FileAttachment("../../data/…")` skilar 404 á GitHub Pages þótt
+     renderið gangi upp. Include-skammstöfunin les skrána á byggingartíma og bakar
+     hana inn í skjalið, svo síðan sækir enga skrá í vafra lesandans.
+     (Include-skammstöfun Quarto er notuð hér að neðan; hún er vísvitandi ekki
+     endurtekin í skýringartexta, því Quarto myndi þenja hana þar líka.)
+
+     Vanti skrána fellur renderið með villu frá Quarto um að hún finnist ekki.
+     Það er ætlunin: skráin verður til í `/tokens-data` skrefinu (issue #42) og
+     þarf að vera komin inn áður en þessi síða er byggð. Betra er að byggingin
+     stöðvist en að síðan birti tómar eða tilbúnar tölur. -->
+<script type="text/plain" id="tk-gogn">
+tímastimpill,nafn,tokens,tokens_inntak,tokens_uttak,session,grein,issue,persona,verkfæri,heimild
+2026-08-25T09:15:00,Björn,10000,,,,,,,,
+2026-08-26T14:20:00,Sveinn,5000,,,,,,,,
+2026-08-27T10:30:00,Óttar,25000,,,,,,,,
+2026-08-28T09:45:00,Sveinn,35000,,,,,,,,
+2026-09-01T13:40:00,Björn,20000,,,,,,,,
+2026-09-01T16:05:00,Björn,15000,,,,,,,,
+2026-09-02T11:00:00,Óttar,30000,,,,,,,,
+2026-09-03T15:10:00,Sveinn,20000,,,,,,,,
+2026-09-16T14:54:00,Björn,316600,,,claude-code-2026-09-16-perf,perf/tokens-an-jupyter,81,,Claude Code (Opus 5),"Handvirk afturvirk skráning úr PR #82 (issue #81); önnur lota en þessi grein. Kvótamunur lotunnar, ekki usage-yfirlit: agent-loggið á þeirri grein skráði ≈260 þús. kl. 14:54 UTC og 316.600 er síðari uppsöfnuð mæling sömu lotu, svo tímastimpillinn er áætlaður. Sama lota vann líka perf/bygging-og-hledsla og telst hér einu sinni."
+2026-09-16T23:04:00,Björn,210000,,,claude-code-2026-09-16-tokenskraning,feat/tokenskraning-agenta,83,devops,Claude Code (Opus 5),"Handvirk afturvirk skráning. Kvótamunur lotunnar við skráningu (≈210 þús.), ekki usage-yfirlit. Framhald af #42. Engir undiragentar."
+
+</script>
+<div id="gogn" class="cell hidden">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="51" data-source-offset="-549"><pre class="sourceCode js"><code class="sourceCode javascript" style="counter-reset: source-line 50;"><span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>LIDID <span class="op">=</span> [</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">nafn</span><span class="op">:</span> <span class="st">"Björn"</span><span class="op">,</span> <span class="dt">slod</span><span class="op">:</span> <span class="st">"bjorn.html"</span>}<span class="op">,</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">nafn</span><span class="op">:</span> <span class="st">"Óttar"</span><span class="op">,</span> <span class="dt">slod</span><span class="op">:</span> <span class="st">"ottar.html"</span>}<span class="op">,</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">nafn</span><span class="op">:</span> <span class="st">"Sveinn"</span><span class="op">,</span> <span class="dt">slod</span><span class="op">:</span> <span class="st">"sveinn.html"</span>}</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="co">// ── Lestur skrárinnar ────────────────────────────────────────────────────────</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>radir <span class="op">=</span> {</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> reitur <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"tk-gogn"</span>)<span class="op">;</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>reitur) {</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    <span class="cf">throw</span> <span class="kw">new</span> <span class="bu">Error</span>(</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Gagnareiturinn `tk-gogn` fannst ekki. Hann verður til efst á þessari "</span> <span class="op">+</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      <span class="st">"síðu, þar sem `data/tokens/tokens.csv` er lesin inn í skjalið."</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  <span class="co">// `﻿` getur fylgt skrám sem eru vistaðar sem UTF-8 með BOM; d3 skilar</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>  <span class="co">// þá fyrsta dálkanafninu með ósýnilegum staf fremst.</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> texti <span class="op">=</span> reitur<span class="op">.</span><span class="at">textContent</span><span class="op">.</span><span class="fu">replace</span>(<span class="ss">/</span><span class="sc">^</span><span class="ss">﻿/</span><span class="op">,</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">trim</span>()<span class="op">;</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>texti) {</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    <span class="cf">throw</span> <span class="kw">new</span> <span class="bu">Error</span>(<span class="st">"`data/tokens/tokens.csv` er tóm."</span>)<span class="op">;</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> d3<span class="op">.</span><span class="fu">csvParse</span>(texti)<span class="op">;</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>dalkar <span class="op">=</span> radir<span class="op">.</span><span class="at">columns</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="co">// ── Dálkarnir ────────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="co">// `/tokens-data` á CSV-ið og ræður endanlegum dálkanöfnum. Þessi síða er unnin</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="co">// samhliða því skrefi, svo hér er tekið við þeim rithætti sem til greina kemur</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="co">// frekar en að síðan falli á einum stafsetningarmun. Listarnir eru þeir sömu og</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="co">// persónusíðurnar lesa, svo síðurnar séu sammála um skrána.</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="co">//</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="co">// Vikudálkur er ekki í skránni og hér er ekki leitað að honum: ein lína er ein</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="co">// session með tímastimpli, ekki vikusamtala. Vikan er reiknuð úr stimplinum í</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="co">// kaflanum „Vikur“ hér að neðan.</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">finnaDalk</span>(dalkar<span class="op">,</span> kostir<span class="op">,</span> lysing) {</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> fyrir <span class="op">=</span> <span class="kw">new</span> <span class="bu">Map</span>(dalkar<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> [d<span class="op">.</span><span class="fu">trim</span>()<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">,</span> d]))<span class="op">;</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">const</span> kostur <span class="kw">of</span> kostir) {</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (fyrir<span class="op">.</span><span class="fu">has</span>(kostur)) <span class="cf">return</span> fyrir<span class="op">.</span><span class="fu">get</span>(kostur)<span class="op">;</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>  <span class="cf">throw</span> <span class="kw">new</span> <span class="bu">Error</span>(</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    <span class="vs">`Fann engan </span><span class="sc">${</span>lysing<span class="sc">}</span><span class="vs">-dálk í tokens.csv. Leitað var að: </span><span class="sc">${</span>kostir<span class="op">.</span><span class="fu">join</span>(<span class="st">", "</span>)<span class="sc">}</span><span class="vs">. `</span> <span class="op">+</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    <span class="vs">`Dálkar skrárinnar eru: </span><span class="sc">${</span>dalkar<span class="op">.</span><span class="fu">join</span>(<span class="st">", "</span>)<span class="sc">}</span><span class="vs">.`</span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="co">// Sé samtöludálkur til staðar er hann notaður einn; annars eru allir</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="co">// token-dálkar lagðir saman (t.d. inntak + úttak). Þessi röð kemur í veg fyrir</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="co">// tvítalningu ef skráin geymir bæði sundurliðun og samtölu.</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">finnaTokenDalka</span>(dalkar) {</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> fyrir <span class="op">=</span> <span class="kw">new</span> <span class="bu">Map</span>(dalkar<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> [d<span class="op">.</span><span class="fu">trim</span>()<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">,</span> d]))<span class="op">;</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">const</span> samtala <span class="kw">of</span> [<span class="st">"tokens"</span><span class="op">,</span> <span class="st">"token"</span><span class="op">,</span> <span class="st">"tokens_alls"</span><span class="op">,</span> <span class="st">"alls"</span><span class="op">,</span> <span class="st">"samtals"</span>]) {</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (fyrir<span class="op">.</span><span class="fu">has</span>(samtala)) <span class="cf">return</span> [fyrir<span class="op">.</span><span class="fu">get</span>(samtala)]<span class="op">;</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> hlutar <span class="op">=</span> dalkar<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">.</span><span class="fu">includes</span>(<span class="st">"token"</span>))<span class="op">;</span></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (hlutar<span class="op">.</span><span class="at">length</span>) <span class="cf">return</span> hlutar<span class="op">;</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>  <span class="cf">throw</span> <span class="kw">new</span> <span class="bu">Error</span>(</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    <span class="vs">`Fann enga token-dálka í tokens.csv. Dálkar skrárinnar eru: </span><span class="sc">${</span>dalkar<span class="op">.</span><span class="fu">join</span>(<span class="st">", "</span>)<span class="sc">}</span><span class="vs">.`</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>d_nafn <span class="op">=</span> <span class="fu">finnaDalk</span>(dalkar<span class="op">,</span> [<span class="st">"nafn"</span><span class="op">,</span> <span class="st">"name"</span><span class="op">,</span> <span class="st">"liðsmaður"</span><span class="op">,</span> <span class="st">"lidsmadur"</span>]<span class="op">,</span> <span class="st">"nafn"</span>)</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>d_stimpill <span class="op">=</span> <span class="fu">finnaDalk</span>(</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>  dalkar<span class="op">,</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"tímastimpill"</span><span class="op">,</span> <span class="st">"timastimpill"</span><span class="op">,</span> <span class="st">"timestamp"</span><span class="op">,</span> <span class="st">"dagsetning"</span><span class="op">,</span> <span class="st">"date"</span><span class="op">,</span> <span class="st">"tími"</span><span class="op">,</span> <span class="st">"timi"</span>]<span class="op">,</span></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>  <span class="st">"tímastimpils"</span></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>d_tokens <span class="op">=</span> <span class="fu">finnaTokenDalka</span>(dalkar)</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="co">// ── Umbreytingar ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="co">// Samanburðarlykill fyrir nöfn: lágstafir án broddstafa. „Björn“, „björn“ og</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="co">// „Bjorn“ eiga öll að lenda á sömu manneskju. Skrár sem fara í gegnum verkfæri</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="co">// án UTF-8 tapa gjarnan broddunum, og þá á síðan ekki að telja núll á mann sem</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="co">// hefur augljóslega skráð notkun.</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>lykill <span class="op">=</span> nafn <span class="kw">=&gt;</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>  (nafn <span class="op">??</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">trim</span>()<span class="op">.</span><span class="fu">normalize</span>(<span class="st">"NFD"</span>)<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/</span><span class="sc">\p</span><span class="ss">{M}/gu</span><span class="op">,</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="co">// Les tölu úr CSV-reit og hunsar þúsundaskil (bil, punkt eða kommu).</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>semHeiltala <span class="op">=</span> gildi <span class="kw">=&gt;</span> {</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> hreint <span class="op">=</span> <span class="bu">String</span>(gildi <span class="op">??</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/</span><span class="sc">[^\d-]</span><span class="ss">/g</span><span class="op">,</span> <span class="st">""</span>)<span class="op">;</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> tala <span class="op">=</span> <span class="pp">parseInt</span>(hreint<span class="op">,</span> <span class="dv">10</span>)<span class="op">;</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Number</span><span class="op">.</span><span class="fu">isFinite</span>(tala) <span class="op">?</span> tala <span class="op">:</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="co">// ── Vikur ────────────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="co">// Skráin geymir tímastimpil á hverja færslu, ekki vikunúmer (sjá</span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="co">// `data/tokens/README.md`). Vikan er því reiknuð hér, svo lesa megi vikur — og</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="co">// hvaða önnur tímabil sem er — út úr sömu gögnunum án þess að þau séu skráð</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="co">// oftar en einu sinni.</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="co">// Aðeins dagsetningarhlutinn ræður vikunni, svo hann er lesinn beint úr</span></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="co">// strengnum í stað `new Date(texti)`. Ástæðan er að ISO-strengur með klukkan en</span></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="co">// án tímabeltis er lesinn sem staðartími, en dagsetning ein og sér sem UTC. Sami</span></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="co">// dagur gæti þá lent í sitt hvorri vikunni eftir því hvort klukkan fylgdi með.</span></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>lesaDagsetningu <span class="op">=</span> gildi <span class="kw">=&gt;</span> {</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> hlutar <span class="op">=</span> <span class="bu">String</span>(gildi <span class="op">??</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">trim</span>()<span class="op">.</span><span class="fu">match</span>(<span class="ss">/</span><span class="sc">^(\d{4})</span><span class="ss">-</span><span class="sc">(\d{1,2})</span><span class="ss">-</span><span class="sc">(\d{1,2})</span><span class="ss">/</span>)<span class="op">;</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>hlutar) <span class="cf">return</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [<span class="op">,</span> ar<span class="op">,</span> manudur<span class="op">,</span> dagur] <span class="op">=</span> hlutar<span class="op">.</span><span class="fu">map</span>(<span class="bu">Number</span>)<span class="op">;</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Miðnætti í UTC: reikningurinn hér að neðan telur í heilum sólarhringum og má</span></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>  <span class="co">// ekki lenda í sumartímaskiptum.</span></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> dagsetning <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>(<span class="bu">Date</span><span class="op">.</span><span class="fu">UTC</span>(ar<span class="op">,</span> manudur <span class="op">-</span> <span class="dv">1</span><span class="op">,</span> dagur))<span class="op">;</span></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>  <span class="co">// `Date.UTC` veltir ógildum gildum yfir í næsta mánuð í stað þess að hafna</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>  <span class="co">// þeim — 2026-13-45 yrði 2027-02-14. Þá lenti færslan í rangri viku án þess</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>  <span class="co">// að nokkur sæi það, svo hér er gætt að því að dagsetningin lesist eins til</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>  <span class="co">// baka. Persónusíðurnar hafna sömu færslu með villu frá `fromisoformat`.</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> gild <span class="op">=</span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    dagsetning<span class="op">.</span><span class="fu">getUTCFullYear</span>() <span class="op">===</span> ar <span class="op">&amp;&amp;</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>    dagsetning<span class="op">.</span><span class="fu">getUTCMonth</span>() <span class="op">===</span> manudur <span class="op">-</span> <span class="dv">1</span> <span class="op">&amp;&amp;</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>    dagsetning<span class="op">.</span><span class="fu">getUTCDate</span>() <span class="op">===</span> dagur<span class="op">;</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> gild <span class="op">?</span> dagsetning <span class="op">:</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="co">// ISO 8601: vikan hefst á mánudegi og vika 1 er sú sem inniheldur fyrsta</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="co">// fimmtudag ársins. Vikuárið er því ekki alltaf almanaksárið — 31. desember</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="co">// getur tilheyrt viku 1 næsta árs, og þess vegna fylgir árið vikumerkinu.</span></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="co">// Ritvenjan `ÁÁÁÁ-Wnn` er sú sama og persónusíðurnar nota, svo lesandi sem fer</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="co">// á milli síðnanna sjái sama vikuheitið á báðum stöðum.</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="co">// Reiknað í höndunum af því að hvorki staðalbúnaður Observable né d3 kunna</span></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="co">// ISO-vikunúmer, og luxon er ekki á síðunni.</span></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>isoVika <span class="op">=</span> dagsetning <span class="kw">=&gt;</span> {</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Fimmtudagur sömu viku ræður bæði vikuárinu og vikunúmerinu.</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> fimmtudagur <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>(dagsetning<span class="op">.</span><span class="fu">getTime</span>())<span class="op">;</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> vikudagur <span class="op">=</span> (fimmtudagur<span class="op">.</span><span class="fu">getUTCDay</span>() <span class="op">+</span> <span class="dv">6</span>) <span class="op">%</span> <span class="dv">7</span><span class="op">;</span>  <span class="co">// mánudagur = 0</span></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>  fimmtudagur<span class="op">.</span><span class="fu">setUTCDate</span>(fimmtudagur<span class="op">.</span><span class="fu">getUTCDate</span>() <span class="op">-</span> vikudagur <span class="op">+</span> <span class="dv">3</span>)<span class="op">;</span></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> ar <span class="op">=</span> fimmtudagur<span class="op">.</span><span class="fu">getUTCFullYear</span>()<span class="op">;</span></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> vika1 <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>(<span class="bu">Date</span><span class="op">.</span><span class="fu">UTC</span>(ar<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">4</span>))<span class="op">;</span>  <span class="co">// 4. janúar er alltaf í viku 1</span></span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> skekkja <span class="op">=</span> (vika1<span class="op">.</span><span class="fu">getUTCDay</span>() <span class="op">+</span> <span class="dv">6</span>) <span class="op">%</span> <span class="dv">7</span><span class="op">;</span></span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>  vika1<span class="op">.</span><span class="fu">setUTCDate</span>(vika1<span class="op">.</span><span class="fu">getUTCDate</span>() <span class="op">-</span> skekkja <span class="op">+</span> <span class="dv">3</span>)<span class="op">;</span></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> vika <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>((fimmtudagur <span class="op">-</span> vika1) <span class="op">/</span> (<span class="dv">7</span> <span class="op">*</span> <span class="dv">24</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">1000</span>))<span class="op">;</span></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {ar<span class="op">,</span> vika<span class="op">,</span> <span class="dt">merki</span><span class="op">:</span> <span class="vs">`</span><span class="sc">${</span>ar<span class="sc">}</span><span class="vs">-W</span><span class="sc">${</span><span class="bu">String</span>(vika)<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">2</span><span class="op">,</span> <span class="st">"0"</span>)<span class="sc">}</span><span class="vs">`</span>}<span class="op">;</span></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a><span class="co">// Röðunarlykill sem raðar viku 9 á undan viku 10, líka án núllfyllingar.</span></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>vikuRod <span class="op">=</span> (a<span class="op">,</span> b) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> tolur <span class="op">=</span> v <span class="kw">=&gt;</span> (<span class="bu">String</span>(v)<span class="op">.</span><span class="fu">match</span>(<span class="ss">/</span><span class="sc">\d+</span><span class="ss">/g</span>) <span class="op">??</span> [])<span class="op">.</span><span class="fu">map</span>(<span class="bu">Number</span>)<span class="op">;</span></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [ta<span class="op">,</span> tb] <span class="op">=</span> [<span class="fu">tolur</span>(a)<span class="op">,</span> <span class="fu">tolur</span>(b)]<span class="op">;</span></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(ta<span class="op">.</span><span class="at">length</span><span class="op">,</span> tb<span class="op">.</span><span class="at">length</span>)<span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> munur <span class="op">=</span> (ta[i] <span class="op">??</span> <span class="op">-</span><span class="dv">1</span>) <span class="op">-</span> (tb[i] <span class="op">??</span> <span class="op">-</span><span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (munur) <span class="cf">return</span> munur<span class="op">;</span></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">String</span>(a)<span class="op">.</span><span class="fu">localeCompare</span>(<span class="bu">String</span>(b)<span class="op">,</span> <span class="st">"is"</span>)<span class="op">;</span></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="co">// ── Samlagning ───────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>uppgjor <span class="op">=</span> {</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> perMann <span class="op">=</span> <span class="kw">new</span> <span class="bu">Map</span>(LIDID<span class="op">.</span><span class="fu">map</span>(m <span class="kw">=&gt;</span> [<span class="fu">lykill</span>(m<span class="op">.</span><span class="at">nafn</span>)<span class="op">,</span> <span class="dv">0</span>]))<span class="op">;</span></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> vikur <span class="op">=</span> <span class="kw">new</span> <span class="bu">Set</span>()<span class="op">;</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">const</span> rad <span class="kw">of</span> radir) {</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> nafn <span class="op">=</span> <span class="fu">lykill</span>(rad[d_nafn])<span class="op">;</span></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="op">!</span>perMann<span class="op">.</span><span class="fu">has</span>(nafn)) <span class="cf">continue</span><span class="op">;</span></span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    perMann<span class="op">.</span><span class="fu">set</span>(</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      nafn<span class="op">,</span></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      perMann<span class="op">.</span><span class="fu">get</span>(nafn) <span class="op">+</span> d3<span class="op">.</span><span class="fu">sum</span>(d_tokens<span class="op">,</span> d <span class="kw">=&gt;</span> <span class="fu">semHeiltala</span>(rad[d]))</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> dagsetning <span class="op">=</span> <span class="fu">lesaDagsetningu</span>(rad[d_stimpill])<span class="op">;</span></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (dagsetning) vikur<span class="op">.</span><span class="fu">add</span>(<span class="fu">isoVika</span>(dagsetning)<span class="op">.</span><span class="at">merki</span>)<span class="op">;</span></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Finnist enginn liðsmaður er nafnadálkurinn ekki sá sem við héldum — það er</span></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>  <span class="co">// villa í skránni eða í lestrinum, ekki gild niðurstaða. Vanti hins vegar</span></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>  <span class="co">// einn af þremur er núll rétt svar: sá hefur ekki skráð notkun enn.</span></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>[<span class="op">...</span>perMann<span class="op">.</span><span class="fu">values</span>()]<span class="op">.</span><span class="fu">some</span>(t <span class="kw">=&gt;</span> t <span class="op">&gt;</span> <span class="dv">0</span>)) {</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    <span class="cf">throw</span> <span class="kw">new</span> <span class="bu">Error</span>(</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Engar færslur fyrir Björn, Óttar eða Svein í tokens.csv. Athugaðu "</span> <span class="op">+</span></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      <span class="vs">`ritháttinn á </span><span class="sc">${</span>d_nafn<span class="sc">}</span><span class="vs">-dálknum.`</span></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> alls <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(perMann<span class="op">.</span><span class="fu">values</span>())<span class="op">;</span></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> rodadar <span class="op">=</span> [<span class="op">...</span>vikur]<span class="op">.</span><span class="fu">sort</span>(vikuRod)<span class="op">;</span></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    alls<span class="op">,</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    <span class="dt">teljarar</span><span class="op">:</span> LIDID<span class="op">.</span><span class="fu">map</span>(m <span class="kw">=&gt;</span> ({</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      <span class="op">...</span>m<span class="op">,</span></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      <span class="dt">tokens</span><span class="op">:</span> perMann<span class="op">.</span><span class="fu">get</span>(<span class="fu">lykill</span>(m<span class="op">.</span><span class="at">nafn</span>))<span class="op">,</span></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      <span class="dt">hlutfall</span><span class="op">:</span> alls <span class="op">?</span> (<span class="dv">100</span> <span class="op">*</span> perMann<span class="op">.</span><span class="fu">get</span>(<span class="fu">lykill</span>(m<span class="op">.</span><span class="at">nafn</span>))) <span class="op">/</span> alls <span class="op">:</span> <span class="dv">0</span></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    }))<span class="op">,</span></span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    <span class="dt">timabil</span><span class="op">:</span> {</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fyrsta</span><span class="op">:</span> rodadar[<span class="dv">0</span>] <span class="op">??</span> <span class="st">""</span><span class="op">,</span></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      <span class="dt">sidasta</span><span class="op">:</span> rodadar[rodadar<span class="op">.</span><span class="at">length</span> <span class="op">-</span> <span class="dv">1</span>] <span class="op">??</span> <span class="st">""</span><span class="op">,</span></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fjoldi</span><span class="op">:</span> rodadar<span class="op">.</span><span class="at">length</span></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>teljarar <span class="op">=</span> uppgjor<span class="op">.</span><span class="at">teljarar</span></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>alls <span class="op">=</span> uppgjor<span class="op">.</span><span class="at">alls</span></span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>timabil <span class="op">=</span> uppgjor<span class="op">.</span><span class="at">timabil</span></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a><span class="co">// ── Snið ─────────────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a><span class="co">// Íslensk þúsundaskil með fastabili og tugakomma, eins og á öðrum síðum vefsins.</span></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>isFmt <span class="op">=</span> d3<span class="op">.</span><span class="fu">formatLocale</span>({<span class="dt">decimal</span><span class="op">:</span> <span class="st">","</span><span class="op">,</span> <span class="dt">thousands</span><span class="op">:</span> <span class="st">" "</span><span class="op">,</span> <span class="dt">grouping</span><span class="op">:</span> [<span class="dv">3</span>]<span class="op">,</span> <span class="dt">currency</span><span class="op">:</span> [<span class="st">""</span><span class="op">,</span> <span class="st">""</span>]})</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>fInt <span class="op">=</span> isFmt<span class="op">.</span><span class="fu">format</span>(<span class="st">",d"</span>)</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>fPct <span class="op">=</span> x <span class="kw">=&gt;</span> isFmt<span class="op">.</span><span class="fu">format</span>(<span class="st">",.1f"</span>)(x) <span class="op">+</span> <span class="st">" %"</span></span></code></pre></div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-1">
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-2">
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-3">
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-4">
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-5">
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-6">
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-7">
+<div id="ojs-cell-1-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-8">
+<div id="ojs-cell-1-8" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-9">
+<div id="ojs-cell-1-9" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-10">
+<div id="ojs-cell-1-10" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-11">
+<div id="ojs-cell-1-11" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-12">
+<div id="ojs-cell-1-12" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-13">
+<div id="ojs-cell-1-13" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-14">
+<div id="ojs-cell-1-14" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-15">
+<div id="ojs-cell-1-15" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-16">
+<div id="ojs-cell-1-16" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-17">
+<div id="ojs-cell-1-17" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-18">
+<div id="ojs-cell-1-18" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-19">
+<div id="ojs-cell-1-19" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div id="gogn-20">
+<div id="ojs-cell-1-20" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="253" data-source-offset="0"><pre class="sourceCode js"><code class="sourceCode javascript" style="counter-reset: source-line 252;"><span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a><span class="co">// Tímabilið er sótt í gögnin frekar en skrifað inn, svo textinn eldist ekki.</span></span>
+<span id="cb2-254"><a href="#cb2-254" aria-hidden="true" tabindex="-1"></a><span class="co">// Vikurnar eru reiknaðar úr tímastimplum færslnanna, sbr. `isoVika` að ofan.</span></span>
+<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a><span class="fu">md</span><span class="vs">`</span><span class="sc">${</span></span>
+<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a>  timabil<span class="op">.</span><span class="at">fjoldi</span> <span class="op">===</span> <span class="dv">1</span></span>
+<span id="cb2-257"><a href="#cb2-257" aria-hidden="true" tabindex="-1"></a>    <span class="op">?</span> <span class="vs">`Gögnin ná yfir eina viku (</span><span class="sc">${</span>timabil<span class="op">.</span><span class="at">fyrsta</span><span class="sc">}</span><span class="vs">)`</span></span>
+<span id="cb2-258"><a href="#cb2-258" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span> timabil<span class="op">.</span><span class="at">fjoldi</span> <span class="op">&gt;</span> <span class="dv">1</span></span>
+<span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a>      <span class="op">?</span> <span class="vs">`Gögnin ná yfir </span><span class="sc">${</span>timabil<span class="op">.</span><span class="at">fjoldi</span><span class="sc">}</span><span class="vs"> vikur, frá </span><span class="sc">${</span>timabil<span class="op">.</span><span class="at">fyrsta</span><span class="sc">}</span><span class="vs"> til </span><span class="sc">${</span>timabil<span class="op">.</span><span class="at">sidasta</span><span class="sc">}</span><span class="vs">`</span></span>
+<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a>      <span class="op">:</span> <span class="st">"Ekki tókst að lesa dagsetningar úr gögnunum"</span></span>
+<span id="cb2-261"><a href="#cb2-261" aria-hidden="true" tabindex="-1"></a><span class="sc">}</span><span class="vs">, og teymið hefur alls notað **</span><span class="sc">${</span><span class="fu">fInt</span>(alls)<span class="sc">}</span><span class="vs"> tokena**.`</span></span></code></pre></div>
+<div id="inngangur" class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<section id="teljarar" class="level2">
+<h2 class="anchored" data-anchor-id="teljarar">Teljarar</h2>
+<div id="odometer" class="cell">
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="282" data-source-offset="-665"><pre class="sourceCode js"><code class="sourceCode javascript" style="counter-reset: source-line 281;"><span id="cb3-282"><a href="#cb3-282" aria-hidden="true" tabindex="-1"></a>SNUNINGAR <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb3-283"><a href="#cb3-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-284"><a href="#cb3-284" aria-hidden="true" tabindex="-1"></a>hoegur <span class="op">=</span> <span class="bu">window</span><span class="op">.</span><span class="fu">matchMedia</span>(<span class="st">"(prefers-reduced-motion: reduce)"</span>)<span class="op">.</span><span class="at">matches</span></span>
+<span id="cb3-285"><a href="#cb3-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-286"><a href="#cb3-286" aria-hidden="true" tabindex="-1"></a><span class="co">// ── Ein stafarúlla ───────────────────────────────────────────────────────────</span></span>
+<span id="cb3-287"><a href="#cb3-287" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">rulla</span>(stafur<span class="op">,</span> rod) {</span>
+<span id="cb3-288"><a href="#cb3-288" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Rúllan geymir 0–9 endurtekið og er færð upp þar til rétti stafurinn stendur</span></span>
+<span id="cb3-289"><a href="#cb3-289" aria-hidden="true" tabindex="-1"></a>  <span class="co">// í glugganum. Af því að *allar* rúllur geyma alla tíu stafina fá þær sömu</span></span>
+<span id="cb3-290"><a href="#cb3-290" aria-hidden="true" tabindex="-1"></a>  <span class="co">// breidd af sjálfu sér — engin þörf á `tabular-nums`, sem er undir hælinn</span></span>
+<span id="cb3-291"><a href="#cb3-291" aria-hidden="true" tabindex="-1"></a>  <span class="co">// lagt hvort letrið styður.</span></span>
+<span id="cb3-292"><a href="#cb3-292" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> gluggi <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"span"</span>)<span class="op">;</span></span>
+<span id="cb3-293"><a href="#cb3-293" aria-hidden="true" tabindex="-1"></a>  gluggi<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">"tk-reel"</span><span class="op">;</span></span>
+<span id="cb3-294"><a href="#cb3-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-295"><a href="#cb3-295" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> bord <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"span"</span>)<span class="op">;</span></span>
+<span id="cb3-296"><a href="#cb3-296" aria-hidden="true" tabindex="-1"></a>  bord<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">"tk-strip"</span><span class="op">;</span></span>
+<span id="cb3-297"><a href="#cb3-297" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> hringur <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> hringur <span class="op">&lt;=</span> SNUNINGAR<span class="op">;</span> hringur<span class="op">++</span>) {</span>
+<span id="cb3-298"><a href="#cb3-298" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">let</span> t <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> t <span class="op">&lt;=</span> <span class="dv">9</span><span class="op">;</span> t<span class="op">++</span>) {</span>
+<span id="cb3-299"><a href="#cb3-299" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> reitur <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"span"</span>)<span class="op">;</span></span>
+<span id="cb3-300"><a href="#cb3-300" aria-hidden="true" tabindex="-1"></a>      reitur<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">"tk-digit"</span><span class="op">;</span></span>
+<span id="cb3-301"><a href="#cb3-301" aria-hidden="true" tabindex="-1"></a>      reitur<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="bu">String</span>(t)<span class="op">;</span></span>
+<span id="cb3-302"><a href="#cb3-302" aria-hidden="true" tabindex="-1"></a>      bord<span class="op">.</span><span class="fu">appendChild</span>(reitur)<span class="op">;</span></span>
+<span id="cb3-303"><a href="#cb3-303" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-304"><a href="#cb3-304" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-305"><a href="#cb3-305" aria-hidden="true" tabindex="-1"></a>  gluggi<span class="op">.</span><span class="fu">appendChild</span>(bord)<span class="op">;</span></span>
+<span id="cb3-306"><a href="#cb3-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-307"><a href="#cb3-307" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> lokastada <span class="op">=</span> SNUNINGAR <span class="op">*</span> <span class="dv">10</span> <span class="op">+</span> <span class="bu">Number</span>(stafur)<span class="op">;</span></span>
+<span id="cb3-308"><a href="#cb3-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-309"><a href="#cb3-309" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (hoegur) {</span>
+<span id="cb3-310"><a href="#cb3-310" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Lesandi sem hefur beðið um minni hreyfingu fær töluna strax og kyrra.</span></span>
+<span id="cb3-311"><a href="#cb3-311" aria-hidden="true" tabindex="-1"></a>    bord<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">transform</span> <span class="op">=</span> <span class="vs">`translateY(-</span><span class="sc">${</span>lokastada<span class="sc">}</span><span class="vs">em)`</span><span class="op">;</span></span>
+<span id="cb3-312"><a href="#cb3-312" aria-hidden="true" tabindex="-1"></a>    gluggi<span class="op">.</span><span class="at">rulla</span> <span class="op">=</span> () <span class="kw">=&gt;</span> {}<span class="op">;</span></span>
+<span id="cb3-313"><a href="#cb3-313" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb3-314"><a href="#cb3-314" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Vinstri stafirnir stöðvast fyrst og þeir hægri síðast, svo talan les sig</span></span>
+<span id="cb3-315"><a href="#cb3-315" aria-hidden="true" tabindex="-1"></a>    <span class="co">// eins og hún sé að telja sig upp í rétt gildi.</span></span>
+<span id="cb3-316"><a href="#cb3-316" aria-hidden="true" tabindex="-1"></a>    bord<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">transform</span> <span class="op">=</span> <span class="st">"translateY(0)"</span><span class="op">;</span></span>
+<span id="cb3-317"><a href="#cb3-317" aria-hidden="true" tabindex="-1"></a>    gluggi<span class="op">.</span><span class="at">rulla</span> <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb3-318"><a href="#cb3-318" aria-hidden="true" tabindex="-1"></a>      bord<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">transition</span> <span class="op">=</span></span>
+<span id="cb3-319"><a href="#cb3-319" aria-hidden="true" tabindex="-1"></a>        <span class="vs">`transform </span><span class="sc">${</span><span class="dv">900</span> <span class="op">+</span> rod <span class="op">*</span> <span class="dv">140</span><span class="sc">}</span><span class="vs">ms cubic-bezier(0.22, 1, 0.36, 1)`</span><span class="op">;</span></span>
+<span id="cb3-320"><a href="#cb3-320" aria-hidden="true" tabindex="-1"></a>      bord<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">transform</span> <span class="op">=</span> <span class="vs">`translateY(-</span><span class="sc">${</span>lokastada<span class="sc">}</span><span class="vs">em)`</span><span class="op">;</span></span>
+<span id="cb3-321"><a href="#cb3-321" aria-hidden="true" tabindex="-1"></a>    }<span class="op">;</span></span>
+<span id="cb3-322"><a href="#cb3-322" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-323"><a href="#cb3-323" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> gluggi<span class="op">;</span></span>
+<span id="cb3-324"><a href="#cb3-324" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-325"><a href="#cb3-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-326"><a href="#cb3-326" aria-hidden="true" tabindex="-1"></a><span class="co">// ── Eitt spjald ──────────────────────────────────────────────────────────────</span></span>
+<span id="cb3-327"><a href="#cb3-327" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">spjald</span>(d) {</span>
+<span id="cb3-328"><a href="#cb3-328" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> stafir <span class="op">=</span> <span class="fu">fInt</span>(d<span class="op">.</span><span class="at">tokens</span>)<span class="op">;</span></span>
+<span id="cb3-329"><a href="#cb3-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-330"><a href="#cb3-330" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> kort <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"a"</span>)<span class="op">;</span></span>
+<span id="cb3-331"><a href="#cb3-331" aria-hidden="true" tabindex="-1"></a>  kort<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">"tk-card"</span><span class="op">;</span></span>
+<span id="cb3-332"><a href="#cb3-332" aria-hidden="true" tabindex="-1"></a>  kort<span class="op">.</span><span class="at">href</span> <span class="op">=</span> d<span class="op">.</span><span class="at">slod</span><span class="op">;</span></span>
+<span id="cb3-333"><a href="#cb3-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-334"><a href="#cb3-334" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> nafn <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"span"</span>)<span class="op">;</span></span>
+<span id="cb3-335"><a href="#cb3-335" aria-hidden="true" tabindex="-1"></a>  nafn<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">"tk-name"</span><span class="op">;</span></span>
+<span id="cb3-336"><a href="#cb3-336" aria-hidden="true" tabindex="-1"></a>  nafn<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> d<span class="op">.</span><span class="at">nafn</span><span class="op">;</span></span>
+<span id="cb3-337"><a href="#cb3-337" aria-hidden="true" tabindex="-1"></a>  kort<span class="op">.</span><span class="fu">appendChild</span>(nafn)<span class="op">;</span></span>
+<span id="cb3-338"><a href="#cb3-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-339"><a href="#cb3-339" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> talan <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"span"</span>)<span class="op">;</span></span>
+<span id="cb3-340"><a href="#cb3-340" aria-hidden="true" tabindex="-1"></a>  talan<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">"tk-value"</span><span class="op">;</span></span>
+<span id="cb3-341"><a href="#cb3-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-342"><a href="#cb3-342" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Rúllurnar eru sjónræn framsetning; hjálpartæki lesa töluna úr `tk-sr`, sem</span></span>
+<span id="cb3-343"><a href="#cb3-343" aria-hidden="true" tabindex="-1"></a>  <span class="co">// er falin sjónrænt en stendur í textanum. Þannig verður aðgengilegt heiti</span></span>
+<span id="cb3-344"><a href="#cb3-344" aria-hidden="true" tabindex="-1"></a>  <span class="co">// hlekksins „Björn 942 400 tokenar 41,0 % af heild“ án þess að stafarúllurnar</span></span>
+<span id="cb3-345"><a href="#cb3-345" aria-hidden="true" tabindex="-1"></a>  <span class="co">// séu lesnar upp staf fyrir staf.</span></span>
+<span id="cb3-346"><a href="#cb3-346" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> rullur <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"span"</span>)<span class="op">;</span></span>
+<span id="cb3-347"><a href="#cb3-347" aria-hidden="true" tabindex="-1"></a>  rullur<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">"tk-odo"</span><span class="op">;</span></span>
+<span id="cb3-348"><a href="#cb3-348" aria-hidden="true" tabindex="-1"></a>  rullur<span class="op">.</span><span class="fu">setAttribute</span>(<span class="st">"aria-hidden"</span><span class="op">,</span> <span class="st">"true"</span>)<span class="op">;</span></span>
+<span id="cb3-349"><a href="#cb3-349" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> rod <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-350"><a href="#cb3-350" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">const</span> stafur <span class="kw">of</span> stafir) {</span>
+<span id="cb3-351"><a href="#cb3-351" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (stafur <span class="op">&gt;=</span> <span class="st">"0"</span> <span class="op">&amp;&amp;</span> stafur <span class="op">&lt;=</span> <span class="st">"9"</span>) {</span>
+<span id="cb3-352"><a href="#cb3-352" aria-hidden="true" tabindex="-1"></a>      rullur<span class="op">.</span><span class="fu">appendChild</span>(<span class="fu">rulla</span>(stafur<span class="op">,</span> rod))<span class="op">;</span></span>
+<span id="cb3-353"><a href="#cb3-353" aria-hidden="true" tabindex="-1"></a>      rod <span class="op">+=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb3-354"><a href="#cb3-354" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb3-355"><a href="#cb3-355" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> skil <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"span"</span>)<span class="op">;</span></span>
+<span id="cb3-356"><a href="#cb3-356" aria-hidden="true" tabindex="-1"></a>      skil<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">"tk-sep"</span><span class="op">;</span></span>
+<span id="cb3-357"><a href="#cb3-357" aria-hidden="true" tabindex="-1"></a>      rullur<span class="op">.</span><span class="fu">appendChild</span>(skil)<span class="op">;</span></span>
+<span id="cb3-358"><a href="#cb3-358" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-359"><a href="#cb3-359" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-360"><a href="#cb3-360" aria-hidden="true" tabindex="-1"></a>  talan<span class="op">.</span><span class="fu">appendChild</span>(rullur)<span class="op">;</span></span>
+<span id="cb3-361"><a href="#cb3-361" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-362"><a href="#cb3-362" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> lesin <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"span"</span>)<span class="op">;</span></span>
+<span id="cb3-363"><a href="#cb3-363" aria-hidden="true" tabindex="-1"></a>  lesin<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">"tk-sr"</span><span class="op">;</span></span>
+<span id="cb3-364"><a href="#cb3-364" aria-hidden="true" tabindex="-1"></a>  lesin<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> stafir<span class="op">;</span></span>
+<span id="cb3-365"><a href="#cb3-365" aria-hidden="true" tabindex="-1"></a>  talan<span class="op">.</span><span class="fu">appendChild</span>(lesin)<span class="op">;</span></span>
+<span id="cb3-366"><a href="#cb3-366" aria-hidden="true" tabindex="-1"></a>  kort<span class="op">.</span><span class="fu">appendChild</span>(talan)<span class="op">;</span></span>
+<span id="cb3-367"><a href="#cb3-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-368"><a href="#cb3-368" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> eining <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"span"</span>)<span class="op">;</span></span>
+<span id="cb3-369"><a href="#cb3-369" aria-hidden="true" tabindex="-1"></a>  eining<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">"tk-unit"</span><span class="op">;</span></span>
+<span id="cb3-370"><a href="#cb3-370" aria-hidden="true" tabindex="-1"></a>  eining<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="st">"tokenar"</span><span class="op">;</span></span>
+<span id="cb3-371"><a href="#cb3-371" aria-hidden="true" tabindex="-1"></a>  kort<span class="op">.</span><span class="fu">appendChild</span>(eining)<span class="op">;</span></span>
+<span id="cb3-372"><a href="#cb3-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-373"><a href="#cb3-373" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> hlutfall <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"span"</span>)<span class="op">;</span></span>
+<span id="cb3-374"><a href="#cb3-374" aria-hidden="true" tabindex="-1"></a>  hlutfall<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">"tk-share"</span><span class="op">;</span></span>
+<span id="cb3-375"><a href="#cb3-375" aria-hidden="true" tabindex="-1"></a>  hlutfall<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="vs">`</span><span class="sc">${</span><span class="fu">fPct</span>(d<span class="op">.</span><span class="at">hlutfall</span>)<span class="sc">}</span><span class="vs"> af heild`</span><span class="op">;</span></span>
+<span id="cb3-376"><a href="#cb3-376" aria-hidden="true" tabindex="-1"></a>  kort<span class="op">.</span><span class="fu">appendChild</span>(hlutfall)<span class="op">;</span></span>
+<span id="cb3-377"><a href="#cb3-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-378"><a href="#cb3-378" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> kort<span class="op">;</span></span>
+<span id="cb3-379"><a href="#cb3-379" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-380"><a href="#cb3-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-381"><a href="#cb3-381" aria-hidden="true" tabindex="-1"></a><span class="co">// ── Tölurnar lagaðar að breidd spjaldanna ────────────────────────────────────</span></span>
+<span id="cb3-382"><a href="#cb3-382" aria-hidden="true" tabindex="-1"></a><span class="co">// Hversu breið talan verður fer bæði eftir fjölda tölustafa og eftir letrinu,</span></span>
+<span id="cb3-383"><a href="#cb3-383" aria-hidden="true" tabindex="-1"></a><span class="co">// svo hvorugt er hægt að giska á í stílskránni. Hér er breiddin mæld.</span></span>
+<span id="cb3-384"><a href="#cb3-384" aria-hidden="true" tabindex="-1"></a><span class="co">//</span></span>
+<span id="cb3-385"><a href="#cb3-385" aria-hidden="true" tabindex="-1"></a><span class="co">// Öll þrjú spjöldin fá sömu leturstærð — þá sem þrengsta talan þolir. Ef hver</span></span>
+<span id="cb3-386"><a href="#cb3-386" aria-hidden="true" tabindex="-1"></a><span class="co">// teljari væri stækkaður í sitt eigið hámark yrði sá sem hefur flesta stafi</span></span>
+<span id="cb3-387"><a href="#cb3-387" aria-hidden="true" tabindex="-1"></a><span class="co">// minnstur, og röðin læsi eins og tölurnar væru misjafnlega mikilvægar.</span></span>
+<span id="cb3-388"><a href="#cb3-388" aria-hidden="true" tabindex="-1"></a>HAMARK <span class="op">=</span> <span class="fl">2.4</span>  <span class="co">// rem — stærðin þegar nóg pláss er</span></span>
+<span id="cb3-389"><a href="#cb3-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-390"><a href="#cb3-390" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">passa</span>(rod) {</span>
+<span id="cb3-391"><a href="#cb3-391" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> spjold <span class="op">=</span> [<span class="op">...</span>rod<span class="op">.</span><span class="fu">querySelectorAll</span>(<span class="st">".tk-card"</span>)]<span class="op">;</span></span>
+<span id="cb3-392"><a href="#cb3-392" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> rullur <span class="op">=</span> spjold<span class="op">.</span><span class="fu">map</span>(k <span class="kw">=&gt;</span> k<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">".tk-odo"</span>))<span class="op">;</span></span>
+<span id="cb3-393"><a href="#cb3-393" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> sidasta_breidd <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb3-394"><a href="#cb3-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-395"><a href="#cb3-395" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> stilla <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb3-396"><a href="#cb3-396" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Aðeins breidd raðarinnar skiptir máli: hún ræður bæði dálkafjöldanum og</span></span>
+<span id="cb3-397"><a href="#cb3-397" aria-hidden="true" tabindex="-1"></a>    <span class="co">// breidd hvers spjalds. Án þessarar varnar myndi hæðarbreytingin, sem</span></span>
+<span id="cb3-398"><a href="#cb3-398" aria-hidden="true" tabindex="-1"></a>    <span class="co">// leturstærðin sjálf veldur, ræsa vaktarann aftur.</span></span>
+<span id="cb3-399"><a href="#cb3-399" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> breidd_radar <span class="op">=</span> rod<span class="op">.</span><span class="at">clientWidth</span><span class="op">;</span></span>
+<span id="cb3-400"><a href="#cb3-400" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (breidd_radar <span class="op">===</span> sidasta_breidd) <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb3-401"><a href="#cb3-401" aria-hidden="true" tabindex="-1"></a>    sidasta_breidd <span class="op">=</span> breidd_radar<span class="op">;</span></span>
+<span id="cb3-402"><a href="#cb3-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-403"><a href="#cb3-403" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Mælt við fulla stærð, svo hlutföllin séu þau sömu í hvert sinn — annars</span></span>
+<span id="cb3-404"><a href="#cb3-404" aria-hidden="true" tabindex="-1"></a>    <span class="co">// myndi hver keyrsla mæla útkomu þeirrar síðustu og talan skreppa saman.</span></span>
+<span id="cb3-405"><a href="#cb3-405" aria-hidden="true" tabindex="-1"></a>    rullur<span class="op">.</span><span class="fu">forEach</span>(r <span class="kw">=&gt;</span> (r<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">fontSize</span> <span class="op">=</span> <span class="vs">`</span><span class="sc">${</span>HAMARK<span class="sc">}</span><span class="vs">rem`</span>))<span class="op">;</span></span>
+<span id="cb3-406"><a href="#cb3-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-407"><a href="#cb3-407" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> hlutfall <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb3-408"><a href="#cb3-408" aria-hidden="true" tabindex="-1"></a>    spjold<span class="op">.</span><span class="fu">forEach</span>((kort<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-409"><a href="#cb3-409" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> stilar <span class="op">=</span> <span class="fu">getComputedStyle</span>(kort)<span class="op">;</span></span>
+<span id="cb3-410"><a href="#cb3-410" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> laust <span class="op">=</span></span>
+<span id="cb3-411"><a href="#cb3-411" aria-hidden="true" tabindex="-1"></a>        kort<span class="op">.</span><span class="at">clientWidth</span> <span class="op">-</span></span>
+<span id="cb3-412"><a href="#cb3-412" aria-hidden="true" tabindex="-1"></a>        <span class="pp">parseFloat</span>(stilar<span class="op">.</span><span class="at">paddingLeft</span>) <span class="op">-</span></span>
+<span id="cb3-413"><a href="#cb3-413" aria-hidden="true" tabindex="-1"></a>        <span class="pp">parseFloat</span>(stilar<span class="op">.</span><span class="at">paddingRight</span>)<span class="op">;</span></span>
+<span id="cb3-414"><a href="#cb3-414" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Breidd talnanna er lögð saman úr rúllunum sjálfum. `.tk-odo` er</span></span>
+<span id="cb3-415"><a href="#cb3-415" aria-hidden="true" tabindex="-1"></a>      <span class="co">// flex-hlutur sem teygist yfir allt spjaldið, svo breidd hans segir</span></span>
+<span id="cb3-416"><a href="#cb3-416" aria-hidden="true" tabindex="-1"></a>      <span class="co">// ekkert um hvað talan tekur mikið pláss.</span></span>
+<span id="cb3-417"><a href="#cb3-417" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> breidd <span class="op">=</span> [<span class="op">...</span>rullur[i]<span class="op">.</span><span class="at">children</span>]<span class="op">.</span><span class="fu">reduce</span>((s<span class="op">,</span> b) <span class="kw">=&gt;</span> s <span class="op">+</span> b<span class="op">.</span><span class="at">offsetWidth</span><span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb3-418"><a href="#cb3-418" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (breidd <span class="op">&gt;</span> <span class="dv">0</span>) hlutfall <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(hlutfall<span class="op">,</span> laust <span class="op">/</span> breidd)<span class="op">;</span></span>
+<span id="cb3-419"><a href="#cb3-419" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb3-420"><a href="#cb3-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-421"><a href="#cb3-421" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> staerd <span class="op">=</span> HAMARK <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="dv">1</span><span class="op">,</span> hlutfall)<span class="op">;</span></span>
+<span id="cb3-422"><a href="#cb3-422" aria-hidden="true" tabindex="-1"></a>    rullur<span class="op">.</span><span class="fu">forEach</span>(r <span class="kw">=&gt;</span> (r<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">fontSize</span> <span class="op">=</span> <span class="vs">`</span><span class="sc">${</span>staerd<span class="sc">}</span><span class="vs">rem`</span>))<span class="op">;</span></span>
+<span id="cb3-423"><a href="#cb3-423" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb3-424"><a href="#cb3-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-425"><a href="#cb3-425" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="st">"ResizeObserver"</span> <span class="kw">in</span> <span class="bu">window</span>) {</span>
+<span id="cb3-426"><a href="#cb3-426" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Vaktarinn keyrir strax við `observe`, svo hann sér bæði um fyrstu</span></span>
+<span id="cb3-427"><a href="#cb3-427" aria-hidden="true" tabindex="-1"></a>    <span class="co">// stillinguna — röðin er ekki komin í skjalið þegar spjöldin verða til —</span></span>
+<span id="cb3-428"><a href="#cb3-428" aria-hidden="true" tabindex="-1"></a>    <span class="co">// og um það þegar glugginn breytist.</span></span>
+<span id="cb3-429"><a href="#cb3-429" aria-hidden="true" tabindex="-1"></a>    <span class="kw">new</span> <span class="fu">ResizeObserver</span>(stilla)<span class="op">.</span><span class="fu">observe</span>(rod)<span class="op">;</span></span>
+<span id="cb3-430"><a href="#cb3-430" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb3-431"><a href="#cb3-431" aria-hidden="true" tabindex="-1"></a>    <span class="fu">requestAnimationFrame</span>(stilla)<span class="op">;</span></span>
+<span id="cb3-432"><a href="#cb3-432" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-433"><a href="#cb3-433" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-434"><a href="#cb3-434" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-435"><a href="#cb3-435" aria-hidden="true" tabindex="-1"></a><span class="co">// ── Röðin af spjöldum ────────────────────────────────────────────────────────</span></span>
+<span id="cb3-436"><a href="#cb3-436" aria-hidden="true" tabindex="-1"></a>kpi <span class="op">=</span> {</span>
+<span id="cb3-437"><a href="#cb3-437" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> rod <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"div"</span>)<span class="op">;</span></span>
+<span id="cb3-438"><a href="#cb3-438" aria-hidden="true" tabindex="-1"></a>  rod<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">"tk-row"</span><span class="op">;</span></span>
+<span id="cb3-439"><a href="#cb3-439" aria-hidden="true" tabindex="-1"></a>  teljarar<span class="op">.</span><span class="fu">map</span>(spjald)<span class="op">.</span><span class="fu">forEach</span>(k <span class="kw">=&gt;</span> rod<span class="op">.</span><span class="fu">appendChild</span>(k))<span class="op">;</span></span>
+<span id="cb3-440"><a href="#cb3-440" aria-hidden="true" tabindex="-1"></a>  <span class="fu">passa</span>(rod)<span class="op">;</span></span>
+<span id="cb3-441"><a href="#cb3-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-442"><a href="#cb3-442" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Rúllurnar fara ekki af stað fyrr en spjöldin sjást. Sé teljarinn neðan við</span></span>
+<span id="cb3-443"><a href="#cb3-443" aria-hidden="true" tabindex="-1"></a>  <span class="co">// brún gluggans er hreyfingin annars búin áður en lesandinn kemur að honum.</span></span>
+<span id="cb3-444"><a href="#cb3-444" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> raesa <span class="op">=</span> () <span class="kw">=&gt;</span> rod<span class="op">.</span><span class="fu">querySelectorAll</span>(<span class="st">".tk-reel"</span>)<span class="op">.</span><span class="fu">forEach</span>(r <span class="kw">=&gt;</span> r<span class="op">.</span><span class="fu">rulla</span>())<span class="op">;</span></span>
+<span id="cb3-445"><a href="#cb3-445" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (hoegur <span class="op">||</span> <span class="op">!</span>(<span class="st">"IntersectionObserver"</span> <span class="kw">in</span> <span class="bu">window</span>)) {</span>
+<span id="cb3-446"><a href="#cb3-446" aria-hidden="true" tabindex="-1"></a>    <span class="fu">raesa</span>()<span class="op">;</span></span>
+<span id="cb3-447"><a href="#cb3-447" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb3-448"><a href="#cb3-448" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> vaktari <span class="op">=</span> <span class="kw">new</span> <span class="fu">IntersectionObserver</span>((faerslur<span class="op">,</span> sjalfur) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-449"><a href="#cb3-449" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (faerslur<span class="op">.</span><span class="fu">some</span>(f <span class="kw">=&gt;</span> f<span class="op">.</span><span class="at">isIntersecting</span>)) {</span>
+<span id="cb3-450"><a href="#cb3-450" aria-hidden="true" tabindex="-1"></a>        <span class="fu">raesa</span>()<span class="op">;</span></span>
+<span id="cb3-451"><a href="#cb3-451" aria-hidden="true" tabindex="-1"></a>        sjalfur<span class="op">.</span><span class="fu">disconnect</span>()<span class="op">;</span></span>
+<span id="cb3-452"><a href="#cb3-452" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb3-453"><a href="#cb3-453" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span> {<span class="dt">threshold</span><span class="op">:</span> <span class="fl">0.4</span>})<span class="op">;</span></span>
+<span id="cb3-454"><a href="#cb3-454" aria-hidden="true" tabindex="-1"></a>    vaktari<span class="op">.</span><span class="fu">observe</span>(rod)<span class="op">;</span></span>
+<span id="cb3-455"><a href="#cb3-455" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-456"><a href="#cb3-456" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> rod<span class="op">;</span></span>
+<span id="cb3-457"><a href="#cb3-457" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div id="odometer-1">
+<div id="ojs-cell-3-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div id="odometer-2">
+<div id="ojs-cell-3-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div id="odometer-3">
+<div id="ojs-cell-3-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div id="odometer-4">
+<div id="ojs-cell-3-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div id="odometer-5">
+<div id="ojs-cell-3-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div id="odometer-6">
+<div id="ojs-cell-3-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div id="odometer-7">
+<div id="ojs-cell-3-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<p>Smelltu á spjald til að sjá vikulega sundurliðun: <a href="../tokens/bjorn.html">Björn</a>, <a href="../tokens/ottar.html">Óttar</a> og <a href="../tokens/sveinn.html">Sveinn</a>.</p>
+</section>
+<section id="samanburður-eftir-vikum" class="level2">
+<h2 class="anchored" data-anchor-id="samanburður-eftir-vikum">Samanburður eftir vikum</h2>
+<p>Teljararnir segja hversu mikið hver hefur notað alls. Þeir segja ekki <strong>hvenær</strong> — og það er einmitt spurningin þegar þrír vinna saman: vinnur teymið jafnt og þétt, eða koma törnin á sitt hvorum tímanum hjá hverjum?</p>
+<div id="cell-fig-tokenar-teymi" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-tokenar-teymi" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Súlurit með þremur súlum á hverri viku, einni fyrir hvern liðsmann. Lárétti ásinn sýnir vikur verkefnisins og lóðrétti ásinn fjölda tokena.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tokenar-teymi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-tokenar-teymi-output-1.png" alt="Súlurit með þremur súlum á hverri viku, einni fyrir hvern liðsmann. Lárétti ásinn sýnir vikur verkefnisins og lóðrétti ásinn fjölda tokena." width="1420" height="741" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tokenar-teymi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Mynd&nbsp;25.1: Vikuleg tokennotkun allra þriggja, hlið við hlið. Einn litur á mann, sami litur og á persónusíðunni hans.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Súlurnar standa hlið við hlið en ekki staflaðar: stafli svarar spurningunni „hvað notaði teymið alls“, sem teljararnir að ofan svara nú þegar. Hér er spurningin samanburður milli manna, og þá þarf hver súla að hefjast á sama grunni. Liðsmaður sem á enga færslu tiltekna viku fær núll en ekki gat, svo vikurnar standist á.</p>
+</section>
+<section id="tölurnar-á-bak-við-teljarana" class="level2">
+<h2 class="anchored" data-anchor-id="tölurnar-á-bak-við-teljarana">Tölurnar á bak við teljarana</h2>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="510" data-source-offset="0"><pre class="sourceCode js"><code class="sourceCode javascript" style="counter-reset: source-line 509;"><span id="cb4-510"><a href="#cb4-510" aria-hidden="true" tabindex="-1"></a><span class="co">// Sömu tölur og teljararnir sýna, á formi sem má lesa nákvæmlega, afrita og</span></span>
+<span id="cb4-511"><a href="#cb4-511" aria-hidden="true" tabindex="-1"></a><span class="co">// bera saman. Rúllurnar eru sjónræn framsetning; taflan er gagnasafnið.</span></span>
+<span id="cb4-512"><a href="#cb4-512" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;table class="table table-sm tk-tafla"&gt;</span></span>
+<span id="cb4-513"><a href="#cb4-513" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;caption&gt;Heildarfjöldi tokena á mann, sömu tölur og teljararnir sýna.&lt;/caption&gt;</span></span>
+<span id="cb4-514"><a href="#cb4-514" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;thead&gt;</span></span>
+<span id="cb4-515"><a href="#cb4-515" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;tr&gt;</span></span>
+<span id="cb4-516"><a href="#cb4-516" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;th scope="col"&gt;Liðsmaður&lt;/th&gt;</span></span>
+<span id="cb4-517"><a href="#cb4-517" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;th scope="col" class="tk-num"&gt;Tokenar&lt;/th&gt;</span></span>
+<span id="cb4-518"><a href="#cb4-518" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;th scope="col" class="tk-num"&gt;Hlutfall&lt;/th&gt;</span></span>
+<span id="cb4-519"><a href="#cb4-519" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/tr&gt;</span></span>
+<span id="cb4-520"><a href="#cb4-520" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/thead&gt;</span></span>
+<span id="cb4-521"><a href="#cb4-521" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;tbody&gt;</span></span>
+<span id="cb4-522"><a href="#cb4-522" aria-hidden="true" tabindex="-1"></a><span class="vs">    </span><span class="sc">${</span>teljarar<span class="op">.</span><span class="fu">map</span>(t <span class="kw">=&gt;</span> <span class="fu">html</span><span class="vs">`&lt;tr&gt;</span></span>
+<span id="cb4-523"><a href="#cb4-523" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;th scope="row" class="tk-radhaus"&gt;&lt;a href="</span><span class="sc">${</span>t<span class="op">.</span><span class="at">slod</span><span class="sc">}</span><span class="vs">"&gt;</span><span class="sc">${</span>t<span class="op">.</span><span class="at">nafn</span><span class="sc">}</span><span class="vs">&lt;/a&gt;&lt;/th&gt;</span></span>
+<span id="cb4-524"><a href="#cb4-524" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;td class="tk-num"&gt;</span><span class="sc">${</span><span class="fu">fInt</span>(t<span class="op">.</span><span class="at">tokens</span>)<span class="sc">}</span><span class="vs">&lt;/td&gt;</span></span>
+<span id="cb4-525"><a href="#cb4-525" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;td class="tk-num"&gt;</span><span class="sc">${</span><span class="fu">fPct</span>(t<span class="op">.</span><span class="at">hlutfall</span>)<span class="sc">}</span><span class="vs">&lt;/td&gt;</span></span>
+<span id="cb4-526"><a href="#cb4-526" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/tr&gt;`</span>)<span class="sc">}</span></span>
+<span id="cb4-527"><a href="#cb4-527" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;tr class="tk-samtala"&gt;</span></span>
+<span id="cb4-528"><a href="#cb4-528" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;th scope="row" class="tk-radhaus"&gt;Alls&lt;/th&gt;</span></span>
+<span id="cb4-529"><a href="#cb4-529" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;td class="tk-num"&gt;</span><span class="sc">${</span><span class="fu">fInt</span>(alls)<span class="sc">}</span><span class="vs">&lt;/td&gt;</span></span>
+<span id="cb4-530"><a href="#cb4-530" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;td class="tk-num"&gt;</span><span class="sc">${</span><span class="fu">fPct</span>(alls <span class="op">?</span> <span class="dv">100</span> <span class="op">:</span> <span class="dv">0</span>)<span class="sc">}</span><span class="vs">&lt;/td&gt;</span></span>
+<span id="cb4-531"><a href="#cb4-531" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/tr&gt;</span></span>
+<span id="cb4-532"><a href="#cb4-532" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/tbody&gt;</span></span>
+<span id="cb4-533"><a href="#cb4-533" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/table&gt;`</span></span></code></pre></div>
+<div id="tafla" class="cell-output cell-output-display">
+<div id="ojs-cell-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Athugasemd</span>Um gögnin
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>data/tokens/tokens.csv</code> er sameiginleg skrá fyrir teymið og verður til í <code>/tokens-data</code> skrefinu (sjá issue #42) — hún er ekki skrifuð af þessari síðu. Talan fyrir hvern liðsmann er summa allra færslna hans í skránni, óháð viku. Sé skráin með sundurliðun í inntaks- og úttakstokena eru báðir dálkar taldir með, en sé samtöludálkur til staðar er hann notaður einn og sér svo ekkert tvítelst.</p>
+<p>Skráin er lesin inn í HTML-skjalið við render, svo síðan sækir enga skrá í vafra lesandans. Ástæðan er að <code>data/</code> liggur utan Quarto-verkefnisins, sem er mappan <code>site/</code>, og skilar sér því ekki inn í <code>docs/</code> við byggingu.</p>
+<p>Nánari lýsing á dálkunum er í <code>data/tokens/README.md</code>.</p>
+</div>
+</div>
+</div>
+<style>
+/* Teljaraspjöldin. Stílarnir eru hafðir hér frekar en í `styles/hi-book.scss`
+   svo þeir haldist við þá einu síðu sem notar þá — sameiginlega stílskráin
+   liggur undir öllum köflum vefsins. */
+
+.tk-row {
+  display: grid;
+  /* 11rem er valið svo öll þrjú spjöldin komist í eina röð í textadálki
+     bókarinnar; við 15rem duttu þau í 2 + 1, sem les eins og eitt þeirra sé
+     afgangur. Í síma fellur röðin niður í einn dálk. Talan sjálf sér um sig:
+     `passa` minnkar letrið ef spjaldið þrengist. */
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1rem;
+  margin: 1.75rem 0;
+}
+
+.tk-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 1.25rem 1.25rem 1.1rem;
+  border: 1px solid #dcdee6;
+  border-top: 3px solid #223dc4;
+  border-radius: 6px;
+  background: #fff;
+  color: #262626;
+  text-decoration: none;
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+
+.tk-card:hover,
+.tk-card:focus-visible {
+  color: #262626;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(38, 38, 38, 0.1);
+  transform: translateY(-2px);
+}
+
+.tk-card:focus-visible {
+  outline: 2px solid #223dc4;
+  outline-offset: 2px;
+}
+
+.tk-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #223dc4;
+  letter-spacing: 0.01em;
+}
+
+.tk-value {
+  margin: 0.35rem 0 0.1rem;
+}
+
+/* Rúlluröðin. `overflow: hidden` á hverri rúllu er glugginn sem sýnir einn staf
+   í einu; `height: 1em` heldur honum við eina línu. Leturstærðin er sett í
+   `passa`; gildið hér er það sem sést ef sú skrifta nær ekki að keyra. */
+.tk-odo {
+  display: flex;
+  align-items: flex-end;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.tk-reel {
+  display: block;
+  height: 1em;
+  overflow: hidden;
+  /* Rúllurnar eru flex-hlutar og mega ekki þrengjast — annars klippast stafir
+     af í stað þess að letrið minnki, sem er það sem `passa` sér um. */
+  flex: none;
+}
+
+.tk-strip {
+  display: block;
+  will-change: transform;
+}
+
+.tk-digit {
+  display: block;
+  height: 1em;
+  line-height: 1;
+  text-align: center;
+}
+
+/* Þúsundaskilin eru bil, ekki tákn — mjórra en heilt stafabil svo talan haldist
+   sem ein heild. */
+.tk-sep {
+  display: block;
+  width: 0.22em;
+  flex: none;
+}
+
+.tk-unit {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.tk-share {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Talan eins og hjálpartæki lesa hana. Falin sjónrænt, en hvorki `display: none`
+   né `visibility: hidden` — hvort tveggja tæki hana líka úr talgervlinum. */
+.tk-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Taflan er byggð í Observable-reit, svo hún fær ekki `.table`-stílana sem
+   Quarto setur á markdown-töflur. Hér er munurinn brúaður. */
+.tk-tafla {
+  margin: 1.25rem 0;
+}
+
+.tk-tafla caption {
+  caption-side: bottom;
+  padding-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.tk-tafla .tk-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.tk-tafla .tk-radhaus {
+  font-weight: 400;
+}
+
+.tk-tafla .tk-samtala th,
+.tk-tafla .tk-samtala td {
+  font-weight: 600;
+  border-top: 2px solid #dcdee6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tk-card {
+    transition: none;
+  }
+  .tk-card:hover,
+  .tk-card:focus-visible {
+    transform: none;
+  }
+}
+</style>
+
+
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8g4pSA4pSAIExpw7Bpw7Ag4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG4vLyBSw7bDsGluIGVyIGbDtnN0IG9nIHPDuiBzYW1hIG9nIMOtIGlzc3VlICM0Miwgc3ZvIHRlbGphcmFybmlyIHN0YW5kaSBhbGx0YWYgZWlucy5cbi8vIGBzbG9kYCB2w61zYXIgw6EgcGVyc8OzbnVzw63DsHVuYSBzZW0gdmVyw7B1ciB0aWwgw60gYC90b2tlbnMtcGVyc29uYWAgc2tyZWZpbnUuXG4vL1xuLy8gQXRodWdpw7AgYC5odG1sYCwgZWtraSBgLnFtZGA6IFF1YXJ0byB1bXJpdGFyIGAucW1kYC1obGVra2kgeWZpciDDrSBgLmh0bWxgIMOtXG4vLyBtYXJrZG93bi10ZXh0YSwgZW4gc25lcnRpciBla2tpIHN0cmVuZ2kgaW5uaSDDrSBrw7PDsGFyZWl0dW0uIFbDpnJpIGAucW1kYCBza3JpZmHDsFxuLy8gaMOpciBteW5kaSBzbWVsbHVyIMOhIHNwamFsZGnDsCBsZW5kYSDDoSBza3LDoSBzZW0gZXIgZWtraSB0aWwgw60gYGRvY3MvYC5cbi8vIE1hcmtkb3duLWhsZWtraXJuaXIgbmXDsGFyIMOhIHPDrcOwdW5uaSBub3RhIMO+dsOtIGAucW1kYCBvZyDDvmVzc2lyIGAuaHRtbGAuXG5MSURJRCA9IFtcbiAge25hZm46IFwiQmrDtnJuXCIsIHNsb2Q6IFwiYmpvcm4uaHRtbFwifSxcbiAge25hZm46IFwiw5N0dGFyXCIsIHNsb2Q6IFwib3R0YXIuaHRtbFwifSxcbiAge25hZm46IFwiU3ZlaW5uXCIsIHNsb2Q6IFwic3ZlaW5uLmh0bWxcIn1cbl1cblxuLy8g4pSA4pSAIExlc3R1ciBza3LDoXJpbm5hciDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbnJhZGlyID0ge1xuICBjb25zdCByZWl0dXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcInRrLWdvZ25cIik7XG4gIGlmICghcmVpdHVyKSB7XG4gICAgdGhyb3cgbmV3IEVycm9yKFxuICAgICAgXCJHYWduYXJlaXR1cmlubiBgdGstZ29nbmAgZmFubnN0IGVra2kuIEhhbm4gdmVyw7B1ciB0aWwgZWZzdCDDoSDDvmVzc2FyaSBcIiArXG4gICAgICBcInPDrcOwdSwgw75hciBzZW0gYGRhdGEvdG9rZW5zL3Rva2Vucy5jc3ZgIGVyIGxlc2luIGlubiDDrSBza2phbGnDsC5cIlxuICAgICk7XG4gIH1cbiAgLy8gYO+7v2AgZ2V0dXIgZnlsZ3Qgc2tyw6FtIHNlbSBlcnUgdmlzdGHDsGFyIHNlbSBVVEYtOCBtZcOwIEJPTTsgZDMgc2tpbGFyXG4gIC8vIMO+w6EgZnlyc3RhIGTDoWxrYW5hZm5pbnUgbWXDsCDDs3PDvW5pbGVndW0gc3RhZiBmcmVtc3QuXG4gIGNvbnN0IHRleHRpID0gcmVpdHVyLnRleHRDb250ZW50LnJlcGxhY2UoL17vu78vLCBcIlwiKS50cmltKCk7XG4gIGlmICghdGV4dGkpIHtcbiAgICB0aHJvdyBuZXcgRXJyb3IoXCJgZGF0YS90b2tlbnMvdG9rZW5zLmNzdmAgZXIgdMOzbS5cIik7XG4gIH1cbiAgcmV0dXJuIGQzLmNzdlBhcnNlKHRleHRpKTtcbn1cblxuZGFsa2FyID0gcmFkaXIuY29sdW1uc1xuXG4vLyDilIDilIAgRMOhbGthcm5pciDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbi8vIGAvdG9rZW5zLWRhdGFgIMOhIENTVi1pw7Agb2cgcsOmw7B1ciBlbmRhbmxlZ3VtIGTDoWxrYW7DtmZudW0uIMOeZXNzaSBzw63DsGEgZXIgdW5uaW5cbi8vIHNhbWhsacOwYSDDvnbDrSBza3JlZmksIHN2byBow6lyIGVyIHRla2nDsCB2acOwIMO+ZWltIHJpdGjDpnR0aSBzZW0gdGlsIGdyZWluYSBrZW11clxuLy8gZnJla2FyIGVuIGHDsCBzw63DsGFuIGZhbGxpIMOhIGVpbnVtIHN0YWZzZXRuaW5nYXJtdW4uIExpc3Rhcm5pciBlcnUgw75laXIgc8O2bXUgb2dcbi8vIHBlcnPDs251c8Otw7B1cm5hciBsZXNhLCBzdm8gc8Otw7B1cm5hciBzw6l1IHNhbW3DoWxhIHVtIHNrcsOhbmEuXG4vL1xuLy8gVmlrdWTDoWxrdXIgZXIgZWtraSDDrSBza3LDoW5uaSBvZyBow6lyIGVyIGVra2kgbGVpdGHDsCBhw7AgaG9udW06IGVpbiBsw61uYSBlciBlaW5cbi8vIHNlc3Npb24gbWXDsCB0w61tYXN0aW1wbGksIGVra2kgdmlrdXNhbXRhbGEuIFZpa2FuIGVyIHJlaWtudcOwIMO6ciBzdGltcGxpbnVtIMOtXG4vLyBrYWZsYW51bSDigJ5WaWt1cuKAnCBow6lyIGHDsCBuZcOwYW4uXG5mdW5jdGlvbiBmaW5uYURhbGsoZGFsa2FyLCBrb3N0aXIsIGx5c2luZykge1xuICBjb25zdCBmeXJpciA9IG5ldyBNYXAoZGFsa2FyLm1hcChkID0+IFtkLnRyaW0oKS50b0xvd2VyQ2FzZSgpLCBkXSkpO1xuICBmb3IgKGNvbnN0IGtvc3R1ciBvZiBrb3N0aXIpIHtcbiAgICBpZiAoZnlyaXIuaGFzKGtvc3R1cikpIHJldHVybiBmeXJpci5nZXQoa29zdHVyKTtcbiAgfVxuICB0aHJvdyBuZXcgRXJyb3IoXG4gICAgYEZhbm4gZW5nYW4gJHtseXNpbmd9LWTDoWxrIMOtIHRva2Vucy5jc3YuIExlaXRhw7AgdmFyIGHDsDogJHtrb3N0aXIuam9pbihcIiwgXCIpfS4gYCArXG4gICAgYETDoWxrYXIgc2tyw6FyaW5uYXIgZXJ1OiAke2RhbGthci5qb2luKFwiLCBcIil9LmBcbiAgKTtcbn1cblxuLy8gU8OpIHNhbXTDtmx1ZMOhbGt1ciB0aWwgc3Rhw7BhciBlciBoYW5uIG5vdGHDsHVyIGVpbm47IGFubmFycyBlcnUgYWxsaXJcbi8vIHRva2VuLWTDoWxrYXIgbGFnw7BpciBzYW1hbiAodC5kLiBpbm50YWsgKyDDunR0YWspLiDDnmVzc2kgcsO2w7Aga2VtdXIgw60gdmVnIGZ5cmlyXG4vLyB0dsOtdGFsbmluZ3UgZWYgc2tyw6FpbiBnZXltaXIgYsOmw7BpIHN1bmR1cmxpw7B1biBvZyBzYW10w7ZsdS5cbmZ1bmN0aW9uIGZpbm5hVG9rZW5EYWxrYShkYWxrYXIpIHtcbiAgY29uc3QgZnlyaXIgPSBuZXcgTWFwKGRhbGthci5tYXAoZCA9PiBbZC50cmltKCkudG9Mb3dlckNhc2UoKSwgZF0pKTtcbiAgZm9yIChjb25zdCBzYW10YWxhIG9mIFtcInRva2Vuc1wiLCBcInRva2VuXCIsIFwidG9rZW5zX2FsbHNcIiwgXCJhbGxzXCIsIFwic2FtdGFsc1wiXSkge1xuICAgIGlmIChmeXJpci5oYXMoc2FtdGFsYSkpIHJldHVybiBbZnlyaXIuZ2V0KHNhbXRhbGEpXTtcbiAgfVxuICBjb25zdCBobHV0YXIgPSBkYWxrYXIuZmlsdGVyKGQgPT4gZC50b0xvd2VyQ2FzZSgpLmluY2x1ZGVzKFwidG9rZW5cIikpO1xuICBpZiAoaGx1dGFyLmxlbmd0aCkgcmV0dXJuIGhsdXRhcjtcbiAgdGhyb3cgbmV3IEVycm9yKFxuICAgIGBGYW5uIGVuZ2EgdG9rZW4tZMOhbGthIMOtIHRva2Vucy5jc3YuIETDoWxrYXIgc2tyw6FyaW5uYXIgZXJ1OiAke2RhbGthci5qb2luKFwiLCBcIil9LmBcbiAgKTtcbn1cblxuZF9uYWZuID0gZmlubmFEYWxrKGRhbGthciwgW1wibmFmblwiLCBcIm5hbWVcIiwgXCJsacOwc21hw7B1clwiLCBcImxpZHNtYWR1clwiXSwgXCJuYWZuXCIpXG5kX3N0aW1waWxsID0gZmlubmFEYWxrKFxuICBkYWxrYXIsXG4gIFtcInTDrW1hc3RpbXBpbGxcIiwgXCJ0aW1hc3RpbXBpbGxcIiwgXCJ0aW1lc3RhbXBcIiwgXCJkYWdzZXRuaW5nXCIsIFwiZGF0ZVwiLCBcInTDrW1pXCIsIFwidGltaVwiXSxcbiAgXCJ0w61tYXN0aW1waWxzXCJcbilcbmRfdG9rZW5zID0gZmlubmFUb2tlbkRhbGthKGRhbGthcilcblxuLy8g4pSA4pSAIFVtYnJleXRpbmdhciDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbi8vIFNhbWFuYnVyw7Bhcmx5a2lsbCBmeXJpciBuw7ZmbjogbMOhZ3N0YWZpciDDoW4gYnJvZGRzdGFmYS4g4oCeQmrDtnJu4oCcLCDigJ5iasO2cm7igJwgb2dcbi8vIOKAnkJqb3Ju4oCcIGVpZ2Egw7ZsbCBhw7AgbGVuZGEgw6Egc8O2bXUgbWFubmVza2p1LiBTa3LDoXIgc2VtIGZhcmEgw60gZ2VnbnVtIHZlcmtmw6ZyaVxuLy8gw6FuIFVURi04IHRhcGEgZ2phcm5hbiBicm9kZHVudW0sIG9nIMO+w6Egw6Egc8Otw7BhbiBla2tpIGHDsCB0ZWxqYSBuw7psbCDDoSBtYW5uIHNlbVxuLy8gaGVmdXIgYXVnbGrDs3NsZWdhIHNrcsOhw7Agbm90a3VuLlxubHlraWxsID0gbmFmbiA9PlxuICAobmFmbiA/PyBcIlwiKS50cmltKCkubm9ybWFsaXplKFwiTkZEXCIpLnJlcGxhY2UoL1xccHtNfS9ndSwgXCJcIikudG9Mb3dlckNhc2UoKVxuXG4vLyBMZXMgdMO2bHUgw7pyIENTVi1yZWl0IG9nIGh1bnNhciDDvsO6c3VuZGFza2lsIChiaWwsIHB1bmt0IGXDsGEga29tbXUpLlxuc2VtSGVpbHRhbGEgPSBnaWxkaSA9PiB7XG4gIGNvbnN0IGhyZWludCA9IFN0cmluZyhnaWxkaSA/PyBcIlwiKS5yZXBsYWNlKC9bXlxcZC1dL2csIFwiXCIpO1xuICBjb25zdCB0YWxhID0gcGFyc2VJbnQoaHJlaW50LCAxMCk7XG4gIHJldHVybiBOdW1iZXIuaXNGaW5pdGUodGFsYSkgPyB0YWxhIDogMDtcbn1cblxuLy8g4pSA4pSAIFZpa3VyIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFxuLy8gU2tyw6FpbiBnZXltaXIgdMOtbWFzdGltcGlsIMOhIGh2ZXJqYSBmw6Zyc2x1LCBla2tpIHZpa3Vuw7ptZXIgKHNqw6Fcbi8vIGBkYXRhL3Rva2Vucy9SRUFETUUubWRgKS4gVmlrYW4gZXIgw752w60gcmVpa251w7AgaMOpciwgc3ZvIGxlc2EgbWVnaSB2aWt1ciDigJQgb2dcbi8vIGh2YcOwYSDDtm5udXIgdMOtbWFiaWwgc2VtIGVyIOKAlCDDunQgw7pyIHPDtm11IGfDtmdudW51bSDDoW4gw75lc3MgYcOwIMO+YXUgc8OpdSBza3LDocOwXG4vLyBvZnRhciBlbiBlaW51IHNpbm5pLlxuXG4vLyBBw7BlaW5zIGRhZ3NldG5pbmdhcmhsdXRpbm4gcsOmw7B1ciB2aWt1bm5pLCBzdm8gaGFubiBlciBsZXNpbm4gYmVpbnQgw7pyXG4vLyBzdHJlbmdudW0gw60gc3Rhw7AgYG5ldyBEYXRlKHRleHRpKWAuIMOBc3TDpsOwYW4gZXIgYcOwIElTTy1zdHJlbmd1ciBtZcOwIGtsdWtrYW4gZW5cbi8vIMOhbiB0w61tYWJlbHRpcyBlciBsZXNpbm4gc2VtIHN0YcOwYXJ0w61taSwgZW4gZGFnc2V0bmluZyBlaW4gb2cgc8OpciBzZW0gVVRDLiBTYW1pXG4vLyBkYWd1ciBnw6Z0aSDDvsOhIGxlbnQgw60gc2l0dCBodm9ycmkgdmlrdW5uaSBlZnRpciDDvnbDrSBodm9ydCBrbHVra2FuIGZ5bGdkaSBtZcOwLlxubGVzYURhZ3NldG5pbmd1ID0gZ2lsZGkgPT4ge1xuICBjb25zdCBobHV0YXIgPSBTdHJpbmcoZ2lsZGkgPz8gXCJcIikudHJpbSgpLm1hdGNoKC9eKFxcZHs0fSktKFxcZHsxLDJ9KS0oXFxkezEsMn0pLyk7XG4gIGlmICghaGx1dGFyKSByZXR1cm4gbnVsbDtcbiAgY29uc3QgWywgYXIsIG1hbnVkdXIsIGRhZ3VyXSA9IGhsdXRhci5tYXAoTnVtYmVyKTtcbiAgLy8gTWnDsG7DpnR0aSDDrSBVVEM6IHJlaWtuaW5ndXJpbm4gaMOpciBhw7AgbmXDsGFuIHRlbHVyIMOtIGhlaWx1bSBzw7NsYXJocmluZ3VtIG9nIG3DoVxuICAvLyBla2tpIGxlbmRhIMOtIHN1bWFydMOtbWFza2lwdHVtLlxuICBjb25zdCBkYWdzZXRuaW5nID0gbmV3IERhdGUoRGF0ZS5VVEMoYXIsIG1hbnVkdXIgLSAxLCBkYWd1cikpO1xuICAvLyBgRGF0ZS5VVENgIHZlbHRpciDDs2dpbGR1bSBnaWxkdW0geWZpciDDrSBuw6ZzdGEgbcOhbnXDsCDDrSBzdGHDsCDDvmVzcyBhw7AgaGFmbmFcbiAgLy8gw75laW0g4oCUIDIwMjYtMTMtNDUgeXLDsGkgMjAyNy0wMi0xNC4gw57DoSBsZW50aSBmw6Zyc2xhbiDDrSByYW5ncmkgdmlrdSDDoW4gw75lc3NcbiAgLy8gYcOwIG5va2t1ciBzw6ZpIMO+YcOwLCBzdm8gaMOpciBlciBnw6Z0dCBhw7Agw752w60gYcOwIGRhZ3NldG5pbmdpbiBsZXNpc3QgZWlucyB0aWxcbiAgLy8gYmFrYS4gUGVyc8OzbnVzw63DsHVybmFyIGhhZm5hIHPDtm11IGbDpnJzbHUgbWXDsCB2aWxsdSBmcsOhIGBmcm9taXNvZm9ybWF0YC5cbiAgY29uc3QgZ2lsZCA9XG4gICAgZGFnc2V0bmluZy5nZXRVVENGdWxsWWVhcigpID09PSBhciAmJlxuICAgIGRhZ3NldG5pbmcuZ2V0VVRDTW9udGgoKSA9PT0gbWFudWR1ciAtIDEgJiZcbiAgICBkYWdzZXRuaW5nLmdldFVUQ0RhdGUoKSA9PT0gZGFndXI7XG4gIHJldHVybiBnaWxkID8gZGFnc2V0bmluZyA6IG51bGw7XG59XG5cbi8vIElTTyA4NjAxOiB2aWthbiBoZWZzdCDDoSBtw6FudWRlZ2kgb2cgdmlrYSAxIGVyIHPDuiBzZW0gaW5uaWhlbGR1ciBmeXJzdGFcbi8vIGZpbW10dWRhZyDDoXJzaW5zLiBWaWt1w6FyacOwIGVyIMO+dsOtIGVra2kgYWxsdGFmIGFsbWFuYWtzw6FyacOwIOKAlCAzMS4gZGVzZW1iZXJcbi8vIGdldHVyIHRpbGhleXJ0IHZpa3UgMSBuw6ZzdGEgw6Fycywgb2cgw75lc3MgdmVnbmEgZnlsZ2lyIMOhcmnDsCB2aWt1bWVya2ludS5cbi8vIFJpdHZlbmphbiBgw4HDgcOBw4EtV25uYCBlciBzw7ogc2FtYSBvZyBwZXJzw7NudXPDrcOwdXJuYXIgbm90YSwgc3ZvIGxlc2FuZGkgc2VtIGZlclxuLy8gw6EgbWlsbGkgc8Otw7BuYW5uYSBzasOhaSBzYW1hIHZpa3VoZWl0acOwIMOhIGLDocOwdW0gc3TDtsOwdW0uXG4vLyBSZWlrbmHDsCDDrSBow7ZuZHVudW0gYWYgw752w60gYcOwIGh2b3JraSBzdGHDsGFsYsO6bmHDsHVyIE9ic2VydmFibGUgbsOpIGQzIGt1bm5hXG4vLyBJU08tdmlrdW7Dum1lciwgb2cgbHV4b24gZXIgZWtraSDDoSBzw63DsHVubmkuXG5pc29WaWthID0gZGFnc2V0bmluZyA9PiB7XG4gIC8vIEZpbW10dWRhZ3VyIHPDtm11IHZpa3UgcsOmw7B1ciBiw6bDsGkgdmlrdcOhcmludSBvZyB2aWt1bsO6bWVyaW51LlxuICBjb25zdCBmaW1tdHVkYWd1ciA9IG5ldyBEYXRlKGRhZ3NldG5pbmcuZ2V0VGltZSgpKTtcbiAgY29uc3QgdmlrdWRhZ3VyID0gKGZpbW10dWRhZ3VyLmdldFVUQ0RheSgpICsgNikgJSA3OyAgLy8gbcOhbnVkYWd1ciA9IDBcbiAgZmltbXR1ZGFndXIuc2V0VVRDRGF0ZShmaW1tdHVkYWd1ci5nZXRVVENEYXRlKCkgLSB2aWt1ZGFndXIgKyAzKTtcblxuICBjb25zdCBhciA9IGZpbW10dWRhZ3VyLmdldFVUQ0Z1bGxZZWFyKCk7XG4gIGNvbnN0IHZpa2ExID0gbmV3IERhdGUoRGF0ZS5VVEMoYXIsIDAsIDQpKTsgIC8vIDQuIGphbsO6YXIgZXIgYWxsdGFmIMOtIHZpa3UgMVxuICBjb25zdCBza2Vra2phID0gKHZpa2ExLmdldFVUQ0RheSgpICsgNikgJSA3O1xuICB2aWthMS5zZXRVVENEYXRlKHZpa2ExLmdldFVUQ0RhdGUoKSAtIHNrZWtramEgKyAzKTtcblxuICBjb25zdCB2aWthID0gMSArIE1hdGgucm91bmQoKGZpbW10dWRhZ3VyIC0gdmlrYTEpIC8gKDcgKiAyNCAqIDYwICogNjAgKiAxMDAwKSk7XG4gIHJldHVybiB7YXIsIHZpa2EsIG1lcmtpOiBgJHthcn0tVyR7U3RyaW5nKHZpa2EpLnBhZFN0YXJ0KDIsIFwiMFwiKX1gfTtcbn1cblxuLy8gUsO2w7B1bmFybHlraWxsIHNlbSByYcOwYXIgdmlrdSA5IMOhIHVuZGFuIHZpa3UgMTAsIGzDrWthIMOhbiBuw7psbGZ5bGxpbmdhci5cbnZpa3VSb2QgPSAoYSwgYikgPT4ge1xuICBjb25zdCB0b2x1ciA9IHYgPT4gKFN0cmluZyh2KS5tYXRjaCgvXFxkKy9nKSA/PyBbXSkubWFwKE51bWJlcik7XG4gIGNvbnN0IFt0YSwgdGJdID0gW3RvbHVyKGEpLCB0b2x1cihiKV07XG4gIGZvciAobGV0IGkgPSAwOyBpIDwgTWF0aC5tYXgodGEubGVuZ3RoLCB0Yi5sZW5ndGgpOyBpKyspIHtcbiAgICBjb25zdCBtdW51ciA9ICh0YVtpXSA/PyAtMSkgLSAodGJbaV0gPz8gLTEpO1xuICAgIGlmIChtdW51cikgcmV0dXJuIG11bnVyO1xuICB9XG4gIHJldHVybiBTdHJpbmcoYSkubG9jYWxlQ29tcGFyZShTdHJpbmcoYiksIFwiaXNcIik7XG59XG5cbi8vIOKUgOKUgCBTYW1sYWduaW5nIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFxudXBwZ2pvciA9IHtcbiAgY29uc3QgcGVyTWFubiA9IG5ldyBNYXAoTElESUQubWFwKG0gPT4gW2x5a2lsbChtLm5hZm4pLCAwXSkpO1xuICBjb25zdCB2aWt1ciA9IG5ldyBTZXQoKTtcblxuICBmb3IgKGNvbnN0IHJhZCBvZiByYWRpcikge1xuICAgIGNvbnN0IG5hZm4gPSBseWtpbGwocmFkW2RfbmFmbl0pO1xuICAgIGlmICghcGVyTWFubi5oYXMobmFmbikpIGNvbnRpbnVlO1xuICAgIHBlck1hbm4uc2V0KFxuICAgICAgbmFmbixcbiAgICAgIHBlck1hbm4uZ2V0KG5hZm4pICsgZDMuc3VtKGRfdG9rZW5zLCBkID0+IHNlbUhlaWx0YWxhKHJhZFtkXSkpXG4gICAgKTtcbiAgICBjb25zdCBkYWdzZXRuaW5nID0gbGVzYURhZ3NldG5pbmd1KHJhZFtkX3N0aW1waWxsXSk7XG4gICAgaWYgKGRhZ3NldG5pbmcpIHZpa3VyLmFkZChpc29WaWthKGRhZ3NldG5pbmcpLm1lcmtpKTtcbiAgfVxuXG4gIC8vIEZpbm5pc3QgZW5naW5uIGxpw7BzbWHDsHVyIGVyIG5hZm5hZMOhbGt1cmlubiBla2tpIHPDoSBzZW0gdmnDsCBow6lsZHVtIOKAlCDDvmHDsCBlclxuICAvLyB2aWxsYSDDrSBza3LDoW5uaSBlw7BhIMOtIGxlc3RyaW51bSwgZWtraSBnaWxkIG5pw7B1cnN0YcOwYS4gVmFudGkgaGlucyB2ZWdhclxuICAvLyBlaW5uIGFmIMO+cmVtdXIgZXIgbsO6bGwgcsOpdHQgc3Zhcjogc8OhIGhlZnVyIGVra2kgc2tyw6HDsCBub3RrdW4gZW5uLlxuICBpZiAoIVsuLi5wZXJNYW5uLnZhbHVlcygpXS5zb21lKHQgPT4gdCA+IDApKSB7XG4gICAgdGhyb3cgbmV3IEVycm9yKFxuICAgICAgXCJFbmdhciBmw6Zyc2x1ciBmeXJpciBCasO2cm4sIMOTdHRhciBlw7BhIFN2ZWluIMOtIHRva2Vucy5jc3YuIEF0aHVnYcOwdSBcIiArXG4gICAgICBgcml0aMOhdHRpbm4gw6EgJHtkX25hZm59LWTDoWxrbnVtLmBcbiAgICApO1xuICB9XG5cbiAgY29uc3QgYWxscyA9IGQzLnN1bShwZXJNYW5uLnZhbHVlcygpKTtcbiAgY29uc3Qgcm9kYWRhciA9IFsuLi52aWt1cl0uc29ydCh2aWt1Um9kKTtcblxuICByZXR1cm4ge1xuICAgIGFsbHMsXG4gICAgdGVsamFyYXI6IExJRElELm1hcChtID0+ICh7XG4gICAgICAuLi5tLFxuICAgICAgdG9rZW5zOiBwZXJNYW5uLmdldChseWtpbGwobS5uYWZuKSksXG4gICAgICBobHV0ZmFsbDogYWxscyA/ICgxMDAgKiBwZXJNYW5uLmdldChseWtpbGwobS5uYWZuKSkpIC8gYWxscyA6IDBcbiAgICB9KSksXG4gICAgdGltYWJpbDoge1xuICAgICAgZnlyc3RhOiByb2RhZGFyWzBdID8/IFwiXCIsXG4gICAgICBzaWRhc3RhOiByb2RhZGFyW3JvZGFkYXIubGVuZ3RoIC0gMV0gPz8gXCJcIixcbiAgICAgIGZqb2xkaTogcm9kYWRhci5sZW5ndGhcbiAgICB9XG4gIH07XG59XG5cbnRlbGphcmFyID0gdXBwZ2pvci50ZWxqYXJhclxuYWxscyA9IHVwcGdqb3IuYWxsc1xudGltYWJpbCA9IHVwcGdqb3IudGltYWJpbFxuXG4vLyDilIDilIAgU25pw7Ag4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG4vLyDDjXNsZW5zayDDvsO6c3VuZGFza2lsIG1lw7AgZmFzdGFiaWxpIG9nIHR1Z2Frb21tYSwgZWlucyBvZyDDoSDDtsOwcnVtIHPDrcOwdW0gdmVmc2lucy5cbmlzRm10ID0gZDMuZm9ybWF0TG9jYWxlKHtkZWNpbWFsOiBcIixcIiwgdGhvdXNhbmRzOiBcIiBcIiwgZ3JvdXBpbmc6IFszXSwgY3VycmVuY3k6IFtcIlwiLCBcIlwiXX0pXG5mSW50ID0gaXNGbXQuZm9ybWF0KFwiLGRcIilcbmZQY3QgPSB4ID0+IGlzRm10LmZvcm1hdChcIiwuMWZcIikoeCkgKyBcIiAlXCJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8gVMOtbWFiaWxpw7AgZXIgc8OzdHQgw60gZ8O2Z25pbiBmcmVrYXIgZW4gc2tyaWZhw7AgaW5uLCBzdm8gdGV4dGlubiBlbGRpc3QgZWtraS5cbi8vIFZpa3VybmFyIGVydSByZWlrbmHDsGFyIMO6ciB0w61tYXN0aW1wbHVtIGbDpnJzbG5hbm5hLCBzYnIuIGBpc29WaWthYCBhw7Agb2Zhbi5cbm1kYCR7XG4gIHRpbWFiaWwuZmpvbGRpID09PSAxXG4gICAgPyBgR8O2Z25pbiBuw6EgeWZpciBlaW5hIHZpa3UgKCR7dGltYWJpbC5meXJzdGF9KWBcbiAgICA6IHRpbWFiaWwuZmpvbGRpID4gMVxuICAgICAgPyBgR8O2Z25pbiBuw6EgeWZpciAke3RpbWFiaWwuZmpvbGRpfSB2aWt1ciwgZnLDoSAke3RpbWFiaWwuZnlyc3RhfSB0aWwgJHt0aW1hYmlsLnNpZGFzdGF9YFxuICAgICAgOiBcIkVra2kgdMOza3N0IGHDsCBsZXNhIGRhZ3NldG5pbmdhciDDunIgZ8O2Z251bnVtXCJcbn0sIG9nIHRleW1pw7AgaGVmdXIgYWxscyBub3Rhw7AgKioke2ZJbnQoYWxscyl9IHRva2VuYSoqLmBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8g4pSA4pSAIExpdHVyIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFxuLy8gRWlubiBsaXR1ciDDoSBhbGxhIMO+cmrDoSB0ZWxqYXJhLiDDnmVpciBzw71uYSBzw7ZtdSBzdMOmcsOwLCBzdm8gbGl0dXIgYmVyIGjDqXIgZW5nYVxuLy8gbWVya2luZ3Ug4oCUIGhhbm4gbXluZGkgYcOwZWlucyBnZWZhIMOtIHNreW4gZmxva2t1biBzZW0gZXIgZWtraSB0aWwuIEJsw6FpXG4vLyB0w7NubmlubiBlciBzw6Egc2FtaSBvZyBteW5kaXJuYXIgw6EgYGZyaWVuZHMvcGhvZWJlLXN0YXRpc3RpY3MucW1kYCBub3RhOlxuLy8gYCRoaS1ibHVlYCDDunIgc3TDrWxza3LDoW5uaSBmw6Zyw7B1ciDDrSBiaXJ0dSBzZW0gc3RlbnN0IGJpcnR1c2tpbCDDoSBodsOtdHVtIGZsZXRpLlxuLy8gVMO2bHVybmFyIHNqw6FsZmFyIGJlcmEgdGV4dGFsaXRpbm4sIGVra2kgZ2FnbmFsaXRpbm4g4oCUIGxpdGHDsGkgZmxldHVyaW5uIGVyXG4vLyBhw7BlaW5zIHLDtm5kaW4gZWZzdCDDoSBzcGphbGRpbnUgb2cgbmFmbmnDsC5cblxuLy8gSHZlcnN1IG1hcmdhIGhlaWxhIGhyaW5naSBodmVyIHN0YWZhcsO6bGxhIHNuw71zdCDDocOwdXIgZW4gaMO6biBzdMO2w7B2YXN0LiBUdmVpclxuLy8gZHVnYSB0aWwgYcOwIGhyZXlmaW5naW4gbGVzaXN0IHNlbSByw7psbGE7IGZsZWlyaSBsZW5namEgYmFyYSBiacOwaW5hLlxuU05VTklOR0FSID0gMlxuXG5ob2VndXIgPSB3aW5kb3cubWF0Y2hNZWRpYShcIihwcmVmZXJzLXJlZHVjZWQtbW90aW9uOiByZWR1Y2UpXCIpLm1hdGNoZXNcblxuLy8g4pSA4pSAIEVpbiBzdGFmYXLDumxsYSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbmZ1bmN0aW9uIHJ1bGxhKHN0YWZ1ciwgcm9kKSB7XG4gIC8vIFLDumxsYW4gZ2V5bWlyIDDigJM5IGVuZHVydGVracOwIG9nIGVyIGbDpnLDsCB1cHAgw75hciB0aWwgcsOpdHRpIHN0YWZ1cmlubiBzdGVuZHVyXG4gIC8vIMOtIGdsdWdnYW51bS4gQWYgw752w60gYcOwICphbGxhciogcsO6bGx1ciBnZXltYSBhbGxhIHTDrXUgc3RhZmluYSBmw6Egw77DpnIgc8O2bXVcbiAgLy8gYnJlaWRkIGFmIHNqw6FsZnUgc8OpciDigJQgZW5naW4gw77DtnJmIMOhIGB0YWJ1bGFyLW51bXNgLCBzZW0gZXIgdW5kaXIgaMOmbGlublxuICAvLyBsYWd0IGh2b3J0IGxldHJpw7Agc3R5w7B1ci5cbiAgY29uc3QgZ2x1Z2dpID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcInNwYW5cIik7XG4gIGdsdWdnaS5jbGFzc05hbWUgPSBcInRrLXJlZWxcIjtcblxuICBjb25zdCBib3JkID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcInNwYW5cIik7XG4gIGJvcmQuY2xhc3NOYW1lID0gXCJ0ay1zdHJpcFwiO1xuICBmb3IgKGxldCBocmluZ3VyID0gMDsgaHJpbmd1ciA8PSBTTlVOSU5HQVI7IGhyaW5ndXIrKykge1xuICAgIGZvciAobGV0IHQgPSAwOyB0IDw9IDk7IHQrKykge1xuICAgICAgY29uc3QgcmVpdHVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcInNwYW5cIik7XG4gICAgICByZWl0dXIuY2xhc3NOYW1lID0gXCJ0ay1kaWdpdFwiO1xuICAgICAgcmVpdHVyLnRleHRDb250ZW50ID0gU3RyaW5nKHQpO1xuICAgICAgYm9yZC5hcHBlbmRDaGlsZChyZWl0dXIpO1xuICAgIH1cbiAgfVxuICBnbHVnZ2kuYXBwZW5kQ2hpbGQoYm9yZCk7XG5cbiAgY29uc3QgbG9rYXN0YWRhID0gU05VTklOR0FSICogMTAgKyBOdW1iZXIoc3RhZnVyKTtcblxuICBpZiAoaG9lZ3VyKSB7XG4gICAgLy8gTGVzYW5kaSBzZW0gaGVmdXIgYmXDsGnDsCB1bSBtaW5uaSBocmV5ZmluZ3UgZsOmciB0w7ZsdW5hIHN0cmF4IG9nIGt5cnJhLlxuICAgIGJvcmQuc3R5bGUudHJhbnNmb3JtID0gYHRyYW5zbGF0ZVkoLSR7bG9rYXN0YWRhfWVtKWA7XG4gICAgZ2x1Z2dpLnJ1bGxhID0gKCkgPT4ge307XG4gIH0gZWxzZSB7XG4gICAgLy8gVmluc3RyaSBzdGFmaXJuaXIgc3TDtsOwdmFzdCBmeXJzdCBvZyDDvmVpciBow6Zncmkgc8Otw7Bhc3QsIHN2byB0YWxhbiBsZXMgc2lnXG4gICAgLy8gZWlucyBvZyBow7puIHPDqSBhw7AgdGVsamEgc2lnIHVwcCDDrSByw6l0dCBnaWxkaS5cbiAgICBib3JkLnN0eWxlLnRyYW5zZm9ybSA9IFwidHJhbnNsYXRlWSgwKVwiO1xuICAgIGdsdWdnaS5ydWxsYSA9ICgpID0+IHtcbiAgICAgIGJvcmQuc3R5bGUudHJhbnNpdGlvbiA9XG4gICAgICAgIGB0cmFuc2Zvcm0gJHs5MDAgKyByb2QgKiAxNDB9bXMgY3ViaWMtYmV6aWVyKDAuMjIsIDEsIDAuMzYsIDEpYDtcbiAgICAgIGJvcmQuc3R5bGUudHJhbnNmb3JtID0gYHRyYW5zbGF0ZVkoLSR7bG9rYXN0YWRhfWVtKWA7XG4gICAgfTtcbiAgfVxuICByZXR1cm4gZ2x1Z2dpO1xufVxuXG4vLyDilIDilIAgRWl0dCBzcGphbGQg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5mdW5jdGlvbiBzcGphbGQoZCkge1xuICBjb25zdCBzdGFmaXIgPSBmSW50KGQudG9rZW5zKTtcblxuICBjb25zdCBrb3J0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImFcIik7XG4gIGtvcnQuY2xhc3NOYW1lID0gXCJ0ay1jYXJkXCI7XG4gIGtvcnQuaHJlZiA9IGQuc2xvZDtcblxuICBjb25zdCBuYWZuID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcInNwYW5cIik7XG4gIG5hZm4uY2xhc3NOYW1lID0gXCJ0ay1uYW1lXCI7XG4gIG5hZm4udGV4dENvbnRlbnQgPSBkLm5hZm47XG4gIGtvcnQuYXBwZW5kQ2hpbGQobmFmbik7XG5cbiAgY29uc3QgdGFsYW4gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwic3BhblwiKTtcbiAgdGFsYW4uY2xhc3NOYW1lID0gXCJ0ay12YWx1ZVwiO1xuXG4gIC8vIFLDumxsdXJuYXIgZXJ1IHNqw7NucsOmbiBmcmFtc2V0bmluZzsgaGrDoWxwYXJ0w6ZraSBsZXNhIHTDtmx1bmEgw7pyIGB0ay1zcmAsIHNlbVxuICAvLyBlciBmYWxpbiBzasOzbnLDpm50IGVuIHN0ZW5kdXIgw60gdGV4dGFudW0uIMOeYW5uaWcgdmVyw7B1ciBhw7BnZW5naWxlZ3QgaGVpdGlcbiAgLy8gaGxla2tzaW5zIOKAnkJqw7ZybiA5NDIgNDAwIHRva2VuYXIgNDEsMCAlIGFmIGhlaWxk4oCcIMOhbiDDvmVzcyBhw7Agc3RhZmFyw7psbHVybmFyXG4gIC8vIHPDqXUgbGVzbmFyIHVwcCBzdGFmIGZ5cmlyIHN0YWYuXG4gIGNvbnN0IHJ1bGx1ciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJzcGFuXCIpO1xuICBydWxsdXIuY2xhc3NOYW1lID0gXCJ0ay1vZG9cIjtcbiAgcnVsbHVyLnNldEF0dHJpYnV0ZShcImFyaWEtaGlkZGVuXCIsIFwidHJ1ZVwiKTtcbiAgbGV0IHJvZCA9IDA7XG4gIGZvciAoY29uc3Qgc3RhZnVyIG9mIHN0YWZpcikge1xuICAgIGlmIChzdGFmdXIgPj0gXCIwXCIgJiYgc3RhZnVyIDw9IFwiOVwiKSB7XG4gICAgICBydWxsdXIuYXBwZW5kQ2hpbGQocnVsbGEoc3RhZnVyLCByb2QpKTtcbiAgICAgIHJvZCArPSAxO1xuICAgIH0gZWxzZSB7XG4gICAgICBjb25zdCBza2lsID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcInNwYW5cIik7XG4gICAgICBza2lsLmNsYXNzTmFtZSA9IFwidGstc2VwXCI7XG4gICAgICBydWxsdXIuYXBwZW5kQ2hpbGQoc2tpbCk7XG4gICAgfVxuICB9XG4gIHRhbGFuLmFwcGVuZENoaWxkKHJ1bGx1cik7XG5cbiAgY29uc3QgbGVzaW4gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwic3BhblwiKTtcbiAgbGVzaW4uY2xhc3NOYW1lID0gXCJ0ay1zclwiO1xuICBsZXNpbi50ZXh0Q29udGVudCA9IHN0YWZpcjtcbiAgdGFsYW4uYXBwZW5kQ2hpbGQobGVzaW4pO1xuICBrb3J0LmFwcGVuZENoaWxkKHRhbGFuKTtcblxuICBjb25zdCBlaW5pbmcgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwic3BhblwiKTtcbiAgZWluaW5nLmNsYXNzTmFtZSA9IFwidGstdW5pdFwiO1xuICBlaW5pbmcudGV4dENvbnRlbnQgPSBcInRva2VuYXJcIjtcbiAga29ydC5hcHBlbmRDaGlsZChlaW5pbmcpO1xuXG4gIGNvbnN0IGhsdXRmYWxsID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcInNwYW5cIik7XG4gIGhsdXRmYWxsLmNsYXNzTmFtZSA9IFwidGstc2hhcmVcIjtcbiAgaGx1dGZhbGwudGV4dENvbnRlbnQgPSBgJHtmUGN0KGQuaGx1dGZhbGwpfSBhZiBoZWlsZGA7XG4gIGtvcnQuYXBwZW5kQ2hpbGQoaGx1dGZhbGwpO1xuXG4gIHJldHVybiBrb3J0O1xufVxuXG4vLyDilIDilIAgVMO2bHVybmFyIGxhZ2HDsGFyIGHDsCBicmVpZGQgc3BqYWxkYW5uYSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbi8vIEh2ZXJzdSBicmVpw7AgdGFsYW4gdmVyw7B1ciBmZXIgYsOmw7BpIGVmdGlyIGZqw7ZsZGEgdMO2bHVzdGFmYSBvZyBlZnRpciBsZXRyaW51LFxuLy8gc3ZvIGh2b3J1Z3QgZXIgaMOmZ3QgYcOwIGdpc2thIMOhIMOtIHN0w61sc2tyw6FubmkuIEjDqXIgZXIgYnJlaWRkaW4gbcOmbGQuXG4vL1xuLy8gw5ZsbCDDvnJqw7ogc3Bqw7ZsZGluIGbDoSBzw7ZtdSBsZXR1cnN0w6Zyw7Ag4oCUIMO+w6Egc2VtIMO+cmVuZ3N0YSB0YWxhbiDDvm9saXIuIEVmIGh2ZXJcbi8vIHRlbGphcmkgdsOmcmkgc3TDpmtrYcOwdXIgw60gc2l0dCBlaWdpw7AgaMOhbWFyayB5csOwaSBzw6Egc2VtIGhlZnVyIGZsZXN0YSBzdGFmaVxuLy8gbWlubnN0dXIsIG9nIHLDtsOwaW4gbMOmc2kgZWlucyBvZyB0w7ZsdXJuYXIgdsOmcnUgbWlzamFmbmxlZ2EgbWlraWx2w6ZnYXIuXG5IQU1BUksgPSAyLjQgIC8vIHJlbSDigJQgc3TDpnLDsGluIMO+ZWdhciBuw7NnIHBsw6FzcyBlclxuXG5mdW5jdGlvbiBwYXNzYShyb2QpIHtcbiAgY29uc3Qgc3Bqb2xkID0gWy4uLnJvZC5xdWVyeVNlbGVjdG9yQWxsKFwiLnRrLWNhcmRcIildO1xuICBjb25zdCBydWxsdXIgPSBzcGpvbGQubWFwKGsgPT4gay5xdWVyeVNlbGVjdG9yKFwiLnRrLW9kb1wiKSk7XG4gIGxldCBzaWRhc3RhX2JyZWlkZCA9IC0xO1xuXG4gIGNvbnN0IHN0aWxsYSA9ICgpID0+IHtcbiAgICAvLyBBw7BlaW5zIGJyZWlkZCByYcOwYXJpbm5hciBza2lwdGlyIG3DoWxpOiBow7puIHLDpsOwdXIgYsOmw7BpIGTDoWxrYWZqw7ZsZGFudW0gb2dcbiAgICAvLyBicmVpZGQgaHZlcnMgc3BqYWxkcy4gw4FuIMO+ZXNzYXJhciB2YXJuYXIgbXluZGkgaMOmw7BhcmJyZXl0aW5naW4sIHNlbVxuICAgIC8vIGxldHVyc3TDpnLDsGluIHNqw6FsZiB2ZWxkdXIsIHLDpnNhIHZha3RhcmFubiBhZnR1ci5cbiAgICBjb25zdCBicmVpZGRfcmFkYXIgPSByb2QuY2xpZW50V2lkdGg7XG4gICAgaWYgKGJyZWlkZF9yYWRhciA9PT0gc2lkYXN0YV9icmVpZGQpIHJldHVybjtcbiAgICBzaWRhc3RhX2JyZWlkZCA9IGJyZWlkZF9yYWRhcjtcblxuICAgIC8vIE3Dpmx0IHZpw7AgZnVsbGEgc3TDpnLDsCwgc3ZvIGhsdXRmw7ZsbGluIHPDqXUgw75hdSBzw7ZtdSDDrSBodmVydCBzaW5uIOKAlCBhbm5hcnNcbiAgICAvLyBteW5kaSBodmVyIGtleXJzbGEgbcOmbGEgw7p0a29tdSDDvmVpcnJhciBzw63DsHVzdHUgb2cgdGFsYW4gc2tyZXBwYSBzYW1hbi5cbiAgICBydWxsdXIuZm9yRWFjaChyID0+IChyLnN0eWxlLmZvbnRTaXplID0gYCR7SEFNQVJLfXJlbWApKTtcblxuICAgIGxldCBobHV0ZmFsbCA9IDE7XG4gICAgc3Bqb2xkLmZvckVhY2goKGtvcnQsIGkpID0+IHtcbiAgICAgIGNvbnN0IHN0aWxhciA9IGdldENvbXB1dGVkU3R5bGUoa29ydCk7XG4gICAgICBjb25zdCBsYXVzdCA9XG4gICAgICAgIGtvcnQuY2xpZW50V2lkdGggLVxuICAgICAgICBwYXJzZUZsb2F0KHN0aWxhci5wYWRkaW5nTGVmdCkgLVxuICAgICAgICBwYXJzZUZsb2F0KHN0aWxhci5wYWRkaW5nUmlnaHQpO1xuICAgICAgLy8gQnJlaWRkIHRhbG5hbm5hIGVyIGzDtmfDsCBzYW1hbiDDunIgcsO6bGx1bnVtIHNqw6FsZnVtLiBgLnRrLW9kb2AgZXJcbiAgICAgIC8vIGZsZXgtaGx1dHVyIHNlbSB0ZXlnaXN0IHlmaXIgYWxsdCBzcGphbGRpw7AsIHN2byBicmVpZGQgaGFucyBzZWdpclxuICAgICAgLy8gZWtrZXJ0IHVtIGh2YcOwIHRhbGFuIHRla3VyIG1pa2nDsCBwbMOhc3MuXG4gICAgICBjb25zdCBicmVpZGQgPSBbLi4ucnVsbHVyW2ldLmNoaWxkcmVuXS5yZWR1Y2UoKHMsIGIpID0+IHMgKyBiLm9mZnNldFdpZHRoLCAwKTtcbiAgICAgIGlmIChicmVpZGQgPiAwKSBobHV0ZmFsbCA9IE1hdGgubWluKGhsdXRmYWxsLCBsYXVzdCAvIGJyZWlkZCk7XG4gICAgfSk7XG5cbiAgICBjb25zdCBzdGFlcmQgPSBIQU1BUksgKiBNYXRoLm1pbigxLCBobHV0ZmFsbCk7XG4gICAgcnVsbHVyLmZvckVhY2gociA9PiAoci5zdHlsZS5mb250U2l6ZSA9IGAke3N0YWVyZH1yZW1gKSk7XG4gIH07XG5cbiAgaWYgKFwiUmVzaXplT2JzZXJ2ZXJcIiBpbiB3aW5kb3cpIHtcbiAgICAvLyBWYWt0YXJpbm4ga2V5cmlyIHN0cmF4IHZpw7AgYG9ic2VydmVgLCBzdm8gaGFubiBzw6lyIGLDpsOwaSB1bSBmeXJzdHVcbiAgICAvLyBzdGlsbGluZ3VuYSDigJQgcsO2w7BpbiBlciBla2tpIGtvbWluIMOtIHNramFsacOwIMO+ZWdhciBzcGrDtmxkaW4gdmVyw7BhIHRpbCDigJRcbiAgICAvLyBvZyB1bSDDvmHDsCDDvmVnYXIgZ2x1Z2dpbm4gYnJleXRpc3QuXG4gICAgbmV3IFJlc2l6ZU9ic2VydmVyKHN0aWxsYSkub2JzZXJ2ZShyb2QpO1xuICB9IGVsc2Uge1xuICAgIHJlcXVlc3RBbmltYXRpb25GcmFtZShzdGlsbGEpO1xuICB9XG59XG5cbi8vIOKUgOKUgCBSw7bDsGluIGFmIHNwasO2bGR1bSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbmtwaSA9IHtcbiAgY29uc3Qgcm9kID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcbiAgcm9kLmNsYXNzTmFtZSA9IFwidGstcm93XCI7XG4gIHRlbGphcmFyLm1hcChzcGphbGQpLmZvckVhY2goayA9PiByb2QuYXBwZW5kQ2hpbGQoaykpO1xuICBwYXNzYShyb2QpO1xuXG4gIC8vIFLDumxsdXJuYXIgZmFyYSBla2tpIGFmIHN0YcOwIGZ5cnIgZW4gc3Bqw7ZsZGluIHNqw6FzdC4gU8OpIHRlbGphcmlubiBuZcOwYW4gdmnDsFxuICAvLyBicsO6biBnbHVnZ2FucyBlciBocmV5ZmluZ2luIGFubmFycyBiw7ppbiDDocOwdXIgZW4gbGVzYW5kaW5uIGtlbXVyIGHDsCBob251bS5cbiAgY29uc3QgcmFlc2EgPSAoKSA9PiByb2QucXVlcnlTZWxlY3RvckFsbChcIi50ay1yZWVsXCIpLmZvckVhY2gociA9PiByLnJ1bGxhKCkpO1xuICBpZiAoaG9lZ3VyIHx8ICEoXCJJbnRlcnNlY3Rpb25PYnNlcnZlclwiIGluIHdpbmRvdykpIHtcbiAgICByYWVzYSgpO1xuICB9IGVsc2Uge1xuICAgIGNvbnN0IHZha3RhcmkgPSBuZXcgSW50ZXJzZWN0aW9uT2JzZXJ2ZXIoKGZhZXJzbHVyLCBzamFsZnVyKSA9PiB7XG4gICAgICBpZiAoZmFlcnNsdXIuc29tZShmID0+IGYuaXNJbnRlcnNlY3RpbmcpKSB7XG4gICAgICAgIHJhZXNhKCk7XG4gICAgICAgIHNqYWxmdXIuZGlzY29ubmVjdCgpO1xuICAgICAgfVxuICAgIH0sIHt0aHJlc2hvbGQ6IDAuNH0pO1xuICAgIHZha3Rhcmkub2JzZXJ2ZShyb2QpO1xuICB9XG4gIHJldHVybiByb2Q7XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbi8vIFPDtm11IHTDtmx1ciBvZyB0ZWxqYXJhcm5pciBzw71uYSwgw6EgZm9ybWkgc2VtIG3DoSBsZXNhIG7DoWt2w6ZtbGVnYSwgYWZyaXRhIG9nXG4vLyBiZXJhIHNhbWFuLiBSw7psbHVybmFyIGVydSBzasOzbnLDpm4gZnJhbXNldG5pbmc7IHRhZmxhbiBlciBnYWduYXNhZm5pw7AuXG5odG1sYDx0YWJsZSBjbGFzcz1cInRhYmxlIHRhYmxlLXNtIHRrLXRhZmxhXCI+XG4gIDxjYXB0aW9uPkhlaWxkYXJmasO2bGRpIHRva2VuYSDDoSBtYW5uLCBzw7ZtdSB0w7ZsdXIgb2cgdGVsamFyYXJuaXIgc8O9bmEuPC9jYXB0aW9uPlxuICA8dGhlYWQ+XG4gICAgPHRyPlxuICAgICAgPHRoIHNjb3BlPVwiY29sXCI+TGnDsHNtYcOwdXI8L3RoPlxuICAgICAgPHRoIHNjb3BlPVwiY29sXCIgY2xhc3M9XCJ0ay1udW1cIj5Ub2tlbmFyPC90aD5cbiAgICAgIDx0aCBzY29wZT1cImNvbFwiIGNsYXNzPVwidGstbnVtXCI+SGx1dGZhbGw8L3RoPlxuICAgIDwvdHI+XG4gIDwvdGhlYWQ+XG4gIDx0Ym9keT5cbiAgICAke3RlbGphcmFyLm1hcCh0ID0+IGh0bWxgPHRyPlxuICAgICAgPHRoIHNjb3BlPVwicm93XCIgY2xhc3M9XCJ0ay1yYWRoYXVzXCI+PGEgaHJlZj1cIiR7dC5zbG9kfVwiPiR7dC5uYWZufTwvYT48L3RoPlxuICAgICAgPHRkIGNsYXNzPVwidGstbnVtXCI+JHtmSW50KHQudG9rZW5zKX08L3RkPlxuICAgICAgPHRkIGNsYXNzPVwidGstbnVtXCI+JHtmUGN0KHQuaGx1dGZhbGwpfTwvdGQ+XG4gICAgPC90cj5gKX1cbiAgICA8dHIgY2xhc3M9XCJ0ay1zYW10YWxhXCI+XG4gICAgICA8dGggc2NvcGU9XCJyb3dcIiBjbGFzcz1cInRrLXJhZGhhdXNcIj5BbGxzPC90aD5cbiAgICAgIDx0ZCBjbGFzcz1cInRrLW51bVwiPiR7ZkludChhbGxzKX08L3RkPlxuICAgICAgPHRkIGNsYXNzPVwidGstbnVtXCI+JHtmUGN0KGFsbHMgPyAxMDAgOiAwKX08L3RkPlxuICAgIDwvdHI+XG4gIDwvdGJvZHk+XG48L3RhYmxlPmBcbiJ9XX0=
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../tokens";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../reflections/ottar.html" class="pagination-link" aria-label="Óttar Ögmundsson">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Óttar Ögmundsson</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../tokens/bjorn.html" class="pagination-link" aria-label="Tokennotkun — Björn">
+        <span class="nav-page-text"><span class="chapter-title">Tokennotkun — Björn</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>IÐN302G · Upplýsingaverkfræði · Haust 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Teymi Phoebe · GitHub Pages · Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -1,0 +1,6 @@
+/* Breiðar samanburðartöflur skruna innan síðu á mjóum skjám. */
+main table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}

@@ -1,0 +1,239 @@
+/* Framsetning taflna á Skjálftavaktinni; aðrar síður og regex-töflur halda þemanu. */
+.earthquake-results {
+  --eq-accent: var(--hi-blue, #10099f);
+  --eq-ink: #29243d;
+  --eq-muted: #625d72;
+  --eq-border: #dedbe9;
+  --eq-stripe: #f7f6fb;
+  --eq-hover: #efedf8;
+  --eq-peak: #ece9fa;
+}
+
+.earthquake-results table {
+  width: 100%;
+  margin: 1.15rem 0 1.6rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--eq-ink);
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--eq-ink);
+}
+
+.earthquake-results table > :not(caption) > * > * {
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid var(--eq-border);
+  box-shadow: none;
+  vertical-align: middle;
+}
+
+.earthquake-results table thead th {
+  color: #fff;
+  background: var(--eq-accent);
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.earthquake-results table thead th code {
+  color: inherit;
+  background: transparent;
+  padding: 0;
+  font-size: 0.8em;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.earthquake-results table tbody th,
+.earthquake-results table tbody td {
+  color: var(--eq-ink);
+  background: #fff;
+  font-weight: 450;
+}
+
+.earthquake-results table tbody tr:nth-child(even) > * {
+  background: var(--eq-stripe);
+}
+
+.earthquake-results table tbody tr:hover > * {
+  background: var(--eq-hover);
+}
+
+.earthquake-results table th:not(:first-child),
+.earthquake-results table td:not(:first-child) {
+  text-align: right;
+}
+
+.earthquake-results table:not(.earthquake-daily) {
+  border: 1px solid var(--eq-border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.earthquake-results table:not(.earthquake-daily) thead th:first-child {
+  width: 32%;
+}
+
+.earthquake-results table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.earthquake-results .earthquake-months {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17.5rem), 1fr));
+  align-items: start;
+  gap: 1.25rem;
+  margin: 1.5rem 0 1.75rem;
+}
+
+.earthquake-results .earthquake-month {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--eq-border);
+  border-top: 3px solid var(--eq-accent);
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 4px 16px rgb(35 24 86 / 5%);
+}
+
+.earthquake-results .earthquake-daily {
+  table-layout: fixed;
+  margin: 0;
+}
+
+.earthquake-results .earthquake-daily caption {
+  caption-side: top;
+  padding: 1rem 0.9rem 0.85rem;
+  color: var(--eq-ink);
+  background: #fff;
+  text-align: left;
+}
+
+.earthquake-results .earthquake-month-title {
+  display: block;
+  color: var(--eq-accent);
+  font-size: 1.1rem;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.earthquake-results .earthquake-month-meta {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--eq-muted);
+  font-size: 0.8rem;
+  font-weight: 450;
+  line-height: 1.4;
+}
+
+.earthquake-results .earthquake-daily thead th {
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+  color: #49415f;
+  background: #efedf7;
+  font-size: 0.77rem;
+  font-weight: 700;
+}
+
+.earthquake-results .earthquake-daily thead th:first-child {
+  width: 43%;
+}
+
+.earthquake-results .earthquake-daily tbody th {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.earthquake-results .earthquake-daily tbody th,
+.earthquake-results .earthquake-daily tbody td {
+  padding-top: 0.37rem;
+  padding-bottom: 0.37rem;
+  border-bottom-color: #eeecf4;
+  line-height: 1.4;
+}
+
+.earthquake-results .earthquake-count {
+  white-space: nowrap;
+}
+
+.earthquake-results .earthquake-count-track {
+  display: inline-block;
+  width: calc(100% - 4.5ch);
+  height: 0.38rem;
+  margin-right: 0.7ch;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #e7e3f2;
+  vertical-align: 0.15em;
+}
+
+.earthquake-results .earthquake-count-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #6557ae;
+}
+
+.earthquake-results .earthquake-count-value {
+  display: inline-block;
+  min-width: 3.4ch;
+  text-align: right;
+  font-weight: 600;
+}
+
+.earthquake-results .earthquake-daily tr.is-zero > * {
+  color: var(--eq-muted);
+}
+
+.earthquake-results .is-zero .earthquake-count-track {
+  background: #eae7ef;
+}
+
+.earthquake-results .is-zero .earthquake-count-value {
+  font-weight: 450;
+}
+
+.earthquake-results .earthquake-daily tr.is-peak > * {
+  color: var(--eq-accent);
+  background: var(--eq-peak);
+  font-weight: 750;
+}
+
+.earthquake-results .earthquake-daily tr.is-peak > th {
+  box-shadow: inset 3px 0 var(--eq-accent);
+}
+
+.earthquake-results .is-peak .earthquake-count-value {
+  font-weight: 800;
+}
+
+.earthquake-results .is-peak .earthquake-count-fill {
+  background: var(--eq-accent);
+}
+
+.earthquake-results .earthquake-daily tfoot > tr > * {
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+  border-top: 1px solid var(--eq-border);
+  border-bottom: 0;
+  color: var(--eq-accent);
+  background: #efedf7;
+  font-weight: 750;
+}
+
+@media (max-width: 480px) {
+  .earthquake-results table:not(.earthquake-daily) {
+    font-size: 0.78rem;
+  }
+
+  .earthquake-results table:not(.earthquake-daily) > :not(caption) > * > * {
+    padding: 0.45rem 0.35rem;
+  }
+}
+
+@media print {
+  .earthquake-results .earthquake-month {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+}

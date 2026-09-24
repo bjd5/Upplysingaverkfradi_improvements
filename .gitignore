@@ -9,6 +9,9 @@ config/secrets*
 data/db/
 data/raw/*
 !data/raw/.gitkeep
+# Undanþága (P0.1, issue #30): mbl-eintakið er EINA eintakið sem til er —
+# hráa svarið var aldrei í git og hverfur með vélinni sé það ekki fryst hér.
+!data/raw/mbl/
 data/processed/*
 !data/processed/.gitkeep
 *.sqlite
@@ -41,3 +44,6 @@ target/
 .playwright-mcp/
 *.png
 !web/assets/img/*.png
+# Undanþága (P0.1, issue #30): myndir byggðu gömlu síðunnar eru hluti af
+# frosna viðmiðinu og mega ekki týnast úr því.
+!docs/vidmid/vefur/**/*.png

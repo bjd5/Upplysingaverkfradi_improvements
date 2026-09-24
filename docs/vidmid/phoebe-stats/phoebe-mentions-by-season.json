@@ -1,0 +1,224 @@
+{
+  "question": "Hversu oft er Phoebe nefnd i handritunum, eftir season?",
+  "method": "Talin eru oll tilvik nafnmynda (regex \\bph(oe|ee)b\\w*\\b): Phoebe, Phoebe's, Phoebs, Pheebs, Pheeboh. Aðgreint eftir thvi hvort nafnið kemur fyrir i raeðu annarra, i hennar eigin raeðu eða i sviðsleiðbeiningum. Sviga-innskot i raeðu eru fjarlaegð aður en talið er i raeðuflokkunum.",
+  "unit": "fjoldi nafntilvika",
+  "headline": {
+    "total_mentions": 3461,
+    "total_in_dialogue": 1385,
+    "peak_season": 5,
+    "peak_per_episode": 8.75,
+    "lowest_season": 1,
+    "lowest_per_episode": 4.12,
+    "nickname_pheebs_total": 381
+  },
+  "by_season": [
+    {
+      "season": 1,
+      "episodes": 24,
+      "transcript_files": 24,
+      "mentions_in_dialogue_by_others": 94,
+      "mentions_in_own_dialogue": 5,
+      "mentions_in_dialogue_total": 99,
+      "mentions_in_stage_directions": 187,
+      "mentions_total": 286,
+      "mentions_formal_phoebe": 56,
+      "mentions_nickname_pheebs": 43,
+      "dialogue_mentions_per_episode": 4.12,
+      "change_vs_prev_season_pct": null,
+      "top_mentioner": "rachel",
+      "top_mentioner_count": 28
+    },
+    {
+      "season": 2,
+      "episodes": 24,
+      "transcript_files": 23,
+      "mentions_in_dialogue_by_others": 118,
+      "mentions_in_own_dialogue": 7,
+      "mentions_in_dialogue_total": 125,
+      "mentions_in_stage_directions": 115,
+      "mentions_total": 240,
+      "mentions_formal_phoebe": 114,
+      "mentions_nickname_pheebs": 11,
+      "dialogue_mentions_per_episode": 5.21,
+      "change_vs_prev_season_pct": 26.46,
+      "top_mentioner": "rachel",
+      "top_mentioner_count": 26
+    },
+    {
+      "season": 3,
+      "episodes": 25,
+      "transcript_files": 25,
+      "mentions_in_dialogue_by_others": 118,
+      "mentions_in_own_dialogue": 14,
+      "mentions_in_dialogue_total": 132,
+      "mentions_in_stage_directions": 214,
+      "mentions_total": 346,
+      "mentions_formal_phoebe": 81,
+      "mentions_nickname_pheebs": 51,
+      "dialogue_mentions_per_episode": 5.28,
+      "change_vs_prev_season_pct": 1.34,
+      "top_mentioner": "monica",
+      "top_mentioner_count": 28
+    },
+    {
+      "season": 4,
+      "episodes": 24,
+      "transcript_files": 23,
+      "mentions_in_dialogue_by_others": 107,
+      "mentions_in_own_dialogue": 12,
+      "mentions_in_dialogue_total": 119,
+      "mentions_in_stage_directions": 180,
+      "mentions_total": 299,
+      "mentions_formal_phoebe": 79,
+      "mentions_nickname_pheebs": 40,
+      "dialogue_mentions_per_episode": 4.96,
+      "change_vs_prev_season_pct": -6.06,
+      "top_mentioner": "monica",
+      "top_mentioner_count": 26
+    },
+    {
+      "season": 5,
+      "episodes": 24,
+      "transcript_files": 23,
+      "mentions_in_dialogue_by_others": 197,
+      "mentions_in_own_dialogue": 13,
+      "mentions_in_dialogue_total": 210,
+      "mentions_in_stage_directions": 213,
+      "mentions_total": 423,
+      "mentions_formal_phoebe": 123,
+      "mentions_nickname_pheebs": 87,
+      "dialogue_mentions_per_episode": 8.75,
+      "change_vs_prev_season_pct": 76.41,
+      "top_mentioner": "joey",
+      "top_mentioner_count": 46
+    },
+    {
+      "season": 6,
+      "episodes": 25,
+      "transcript_files": 23,
+      "mentions_in_dialogue_by_others": 157,
+      "mentions_in_own_dialogue": 7,
+      "mentions_in_dialogue_total": 164,
+      "mentions_in_stage_directions": 265,
+      "mentions_total": 429,
+      "mentions_formal_phoebe": 119,
+      "mentions_nickname_pheebs": 45,
+      "dialogue_mentions_per_episode": 6.56,
+      "change_vs_prev_season_pct": -25.03,
+      "top_mentioner": "rachel",
+      "top_mentioner_count": 66
+    },
+    {
+      "season": 7,
+      "episodes": 24,
+      "transcript_files": 23,
+      "mentions_in_dialogue_by_others": 157,
+      "mentions_in_own_dialogue": 6,
+      "mentions_in_dialogue_total": 163,
+      "mentions_in_stage_directions": 305,
+      "mentions_total": 468,
+      "mentions_formal_phoebe": 119,
+      "mentions_nickname_pheebs": 44,
+      "dialogue_mentions_per_episode": 6.79,
+      "change_vs_prev_season_pct": 3.51,
+      "top_mentioner": "rachel",
+      "top_mentioner_count": 47
+    },
+    {
+      "season": 8,
+      "episodes": 24,
+      "transcript_files": 23,
+      "mentions_in_dialogue_by_others": 106,
+      "mentions_in_own_dialogue": 17,
+      "mentions_in_dialogue_total": 123,
+      "mentions_in_stage_directions": 192,
+      "mentions_total": 315,
+      "mentions_formal_phoebe": 105,
+      "mentions_nickname_pheebs": 18,
+      "dialogue_mentions_per_episode": 5.12,
+      "change_vs_prev_season_pct": -24.59,
+      "top_mentioner": "monica",
+      "top_mentioner_count": 38
+    },
+    {
+      "season": 9,
+      "episodes": 24,
+      "transcript_files": 23,
+      "mentions_in_dialogue_by_others": 146,
+      "mentions_in_own_dialogue": 4,
+      "mentions_in_dialogue_total": 150,
+      "mentions_in_stage_directions": 198,
+      "mentions_total": 348,
+      "mentions_formal_phoebe": 126,
+      "mentions_nickname_pheebs": 24,
+      "dialogue_mentions_per_episode": 6.25,
+      "change_vs_prev_season_pct": 22.07,
+      "top_mentioner": "rachel",
+      "top_mentioner_count": 33
+    },
+    {
+      "season": 10,
+      "episodes": 18,
+      "transcript_files": 17,
+      "mentions_in_dialogue_by_others": 94,
+      "mentions_in_own_dialogue": 6,
+      "mentions_in_dialogue_total": 100,
+      "mentions_in_stage_directions": 207,
+      "mentions_total": 307,
+      "mentions_formal_phoebe": 82,
+      "mentions_nickname_pheebs": 18,
+      "dialogue_mentions_per_episode": 5.56,
+      "change_vs_prev_season_pct": -11.04,
+      "top_mentioner": "monica",
+      "top_mentioner_count": 25
+    }
+  ],
+  "who_says_her_name_overall": [
+    {
+      "character": "rachel",
+      "mentions": 335
+    },
+    {
+      "character": "monica",
+      "mentions": 281
+    },
+    {
+      "character": "joey",
+      "mentions": 205
+    },
+    {
+      "character": "ross",
+      "mentions": 192
+    },
+    {
+      "character": "chandler",
+      "mentions": 124
+    }
+  ],
+  "name_mentions_comparison": [
+    {
+      "character": "ross",
+      "spoken_mentions": 1826
+    },
+    {
+      "character": "joey",
+      "spoken_mentions": 1651
+    },
+    {
+      "character": "rachel",
+      "spoken_mentions": 1529
+    },
+    {
+      "character": "phoebe",
+      "spoken_mentions": 1385
+    },
+    {
+      "character": "monica",
+      "spoken_mentions": 1264
+    },
+    {
+      "character": "chandler",
+      "spoken_mentions": 1225
+    }
+  ]
+}

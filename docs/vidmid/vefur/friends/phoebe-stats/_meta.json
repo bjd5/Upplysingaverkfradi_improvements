@@ -1,0 +1,65 @@
+{
+  "generated_utc": "2026-09-16T14:56:00Z",
+  "generator": "src/phoebe_analysis.py",
+  "source_dataset": "data/external/delvinso-friends/season (HTML-handrit, fangj.github.io/friends afleiða)",
+  "source_note": "delvinso-utgafan er notuð thvi thar er buið að laga brotna HTML-byggingu i 0911 og 0915.",
+  "transcript_files_used": 227,
+  "transcript_files_excluded": [
+    "0423uncut.html",
+    "07outtakes.html"
+  ],
+  "aired_episodes_covered": 236,
+  "episodes_per_season": {
+    "1": 24,
+    "2": 24,
+    "3": 25,
+    "4": 24,
+    "5": 24,
+    "6": 25,
+    "7": 24,
+    "8": 24,
+    "9": 24,
+    "10": 18
+  },
+  "parse_quality": {
+    "total_text_blocks": 70553,
+    "speaker_lines": 61161,
+    "scene_headings": 4055,
+    "stage_directions": 3259,
+    "unclassified": 2078,
+    "unclassified_pct": 2.95
+  },
+  "friends_line_totals": {
+    "phoebe": 7483,
+    "rachel": 9259,
+    "ross": 9058,
+    "chandler": 8446,
+    "monica": 8395,
+    "joey": 8183
+  },
+  "friends_word_totals": {
+    "phoebe": 83788,
+    "rachel": 100730,
+    "ross": 98040,
+    "chandler": 89604,
+    "monica": 85379,
+    "joey": 89915
+  },
+  "conventions": {
+    "group_lines_excluded": true,
+    "group_lines_note": "Linur eins og 'All:' eða 'Monica and Phoebe:' eru ekki eignaðar einstaklingum.",
+    "phoebe_sr_and_ursula_excluded": true,
+    "word_definition": "Orð = regex [a-z][a-z'-]* eftir að svigainnskot voru fjarlaegð.",
+    "double_episode_files": [
+      "0212-0213.html",
+      "0423.html",
+      "0523.html",
+      "0615-0616.html",
+      "0624.html",
+      "0723.html",
+      "0823.html",
+      "0923-0924.html",
+      "1017-1018.html"
+    ]
+  }
+}
