@@ -28,7 +28,8 @@ from sqlite3 import Connection
 
 from gagnagrunnur.tenging import ROT
 
-from .hagstofan_jsonstat import FYRIRSPURNARSKRA, Gagnasafn, lesa_gagnasafn
+from .hagstofan_jsonstat import lesa_gagnasafn
+from .hagstofan_snid import FYRIRSPURNARSKRA, Gagnasafn
 
 log = logging.getLogger(__name__)
 
