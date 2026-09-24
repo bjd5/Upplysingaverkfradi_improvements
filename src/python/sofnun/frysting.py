@@ -59,7 +59,7 @@ SKRAD_ANNARS_STADAR = (
 )
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)-8s %(message)s")
-log = logging.getLogger("hragogn")
+log = logging.getLogger("frysting")
 
 
 def stutt_slod(slod: Path) -> str:

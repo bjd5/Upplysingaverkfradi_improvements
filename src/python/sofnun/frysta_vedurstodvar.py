@@ -29,12 +29,12 @@ import urllib.error
 import urllib.request
 
 try:  # keyrt beint: python3 src/python/sofnun/frysta_vedurstodvar.py
-    from hragogn import (
+    from frysting import (
         ROT, PROVENANCE_HEITI, log, lysa_skrar, notandi_audkenni, nuna_utc,
         skra_safn, timastimpill,
     )
 except ImportError:  # flutt inn sem eining innan pakkans
-    from .hragogn import (
+    from .frysting import (
         ROT, PROVENANCE_HEITI, log, lysa_skrar, notandi_audkenni, nuna_utc,
         skra_safn, timastimpill,
     )
