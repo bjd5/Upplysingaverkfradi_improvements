@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 438" width="100%" role="img" aria-labelledby="titill lysing" font-family="system-ui, sans-serif">
+<title id="titill">Fjarlægð frá VR-II að næstu veðurstöðvum</title>
+<desc id="lysing">Lárétt súlurit yfir 10 næstu veðurstöðvar við VR-II, raðaðar eftir fjarlægð og litaðar eftir því hvort reiturinn ending er tómur.</desc>
+<rect width="820" height="438" fill="#ffffff"/>
+<text x="16" y="24" font-size="15" font-weight="600">Fjarlægð frá VR-II að 10 næstu veðurstöðvum</text>
+<text x="16" y="44" font-size="11.5" fill="#555">Stöðvar í svari eftir síu — engin sía: 778 · active=true: 343 · polygon: 21 · polygon + active=true: 9</text>
+<text x="16" y="60" font-size="11.5" fill="#555">Sótt af api.vedur.is/weather/stations 2026-09-17</text>
+<rect x="16" y="70" width="11" height="11" fill="#1a7f5a"/>
+<text x="33" y="80" font-size="12">virk (ending tómt)</text>
+<rect x="170" y="70" width="11" height="11" fill="#b8b0a8"/>
+<text x="187" y="80" font-size="12">aflögð (ending með ártali)</text>
+<text x="242" y="107" font-size="12" text-anchor="end">Reykjavík Hljómskálagarður (1469)</text>
+<rect x="250" y="96" width="83.0" height="17" fill="#1a7f5a" rx="2"/>
+<text x="341.0" y="109" font-size="12" fill="#333">639 m · 2022–</text>
+<text x="242" y="137" font-size="12" text-anchor="end">Sjómannaskóli (2)</text>
+<rect x="250" y="126" width="89.5" height="17" fill="#b8b0a8" rx="2"/>
+<text x="347.5" y="139" font-size="12" fill="#333">689 m · 1961–1963</text>
+<text x="242" y="167" font-size="12" text-anchor="end">Einarsnes í Skerjafirði (31561)</text>
+<rect x="250" y="156" width="115.6" height="17" fill="#b8b0a8" rx="2"/>
+<text x="373.6" y="169" font-size="12" fill="#333">890 m · 1998–2011</text>
+<text x="242" y="197" font-size="12" text-anchor="end">Reykjavíkurflugvöllur (1477)</text>
+<rect x="250" y="186" width="175.3" height="17" fill="#1a7f5a" rx="2"/>
+<text x="433.3" y="199" font-size="12" fill="#333">1350 m · 2001–</text>
+<text x="242" y="227" font-size="12" text-anchor="end">Reykjavíkurhöfn (1574)</text>
+<rect x="250" y="216" width="216.8" height="17" fill="#b8b0a8" rx="2"/>
+<text x="474.8" y="229" font-size="12" fill="#333">1669 m · 1998–1998</text>
+<text x="242" y="257" font-size="12" text-anchor="end">Reykjavík sólgeislun (7470)</text>
+<rect x="250" y="246" width="328.9" height="17" fill="#b8b0a8" rx="2"/>
+<text x="586.9" y="259" font-size="12" fill="#333">2532 m · 2022–2025</text>
+<text x="242" y="287" font-size="12" text-anchor="end">Reykjavík tilraunastöð (7477)</text>
+<rect x="250" y="276" width="330.7" height="17" fill="#b8b0a8" rx="2"/>
+<text x="588.7" y="289" font-size="12" fill="#333">2546 m · 2018–2022</text>
+<text x="242" y="317" font-size="12" text-anchor="end">Reykjavík (1)</text>
+<rect x="250" y="306" width="330.8" height="17" fill="#1a7f5a" rx="2"/>
+<text x="588.8" y="319" font-size="12" fill="#333">2547 m · 1920–</text>
+<text x="242" y="347" font-size="12" text-anchor="end">Reykjavík (1470)</text>
+<rect x="250" y="336" width="330.9" height="17" fill="#1a7f5a" rx="2"/>
+<text x="588.9" y="349" font-size="12" fill="#333">2548 m · 2021–</text>
+<text x="242" y="377" font-size="12" text-anchor="end">Gróðrarstöðin í Reykjavík (6)</text>
+<rect x="250" y="366" width="360.0" height="17" fill="#b8b0a8" rx="2"/>
+<text x="618.0" y="379" font-size="12" fill="#333">2772 m · 1923–1928</text>
+<line x1="250" y1="392" x2="610" y2="392" stroke="#666" stroke-width="1"/>
+<text x="250" y="410" font-size="11" fill="#555">0 m</text>
+<text x="610" y="410" font-size="11" fill="#555" text-anchor="end">2772 m</text>
+</svg>

@@ -1,0 +1,6 @@
+character,adjacent_turns,replies_to_phoebe,phoebe_replies_to,two_person_scene_lines,shared_speaking_scenes,lines_mentioning_phoebe,lines_naming_phoebe_at_edge,adjacency_share_pct,expected_share_pct,interaction_lift,total_lines_in_show,rank
+monica,2718,1350,1368,522,876,272,202,25.44,19.37,1.314,8395,1
+rachel,2701,1334,1367,677,826,322,254,25.29,21.36,1.184,9259,2
+joey,1933,975,958,493,745,196,137,18.1,18.88,0.958,8183,3
+ross,1774,879,895,300,691,184,140,16.61,20.9,0.795,9058,4
+chandler,1556,767,789,131,729,120,89,14.57,19.49,0.747,8446,5

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "source_url": "https://www.mbl.is/frettir/",
+  "fetched_at_utc": "2026-09-16T12:08:51.547736Z",
+  "response_date": "Wed, 16 Sep 2026 12:08:51 GMT",
+  "status_code": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length_bytes": 367351,
+  "md5": "c2c83bddb8ed41357b7b1b8ab51a6457",
+  "user_agent": "IDN302G student project (GitHub: bjd5)"
+}
