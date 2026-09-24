@@ -650,3 +650,45 @@ Próf sem keyra hverja fyrirspurn á grunninum og staðfesta að hún skili rö�
 Lokið: staðfestu að engin SQL-strengjasamsetning sé eftir í Python-kóðanum og
 að hver fyrirspurn beri athugasemd um hvaða spurningu hún svarar.
 ```
+
+---
+
+## 15. Staða P1.2–P1.5 — hálfnuð vinna sem bíður
+
+Fjórir agentar unnu þessa pakka samtímis 2026-09-24 og **stöðvuðust allir á sömu
+mínútu** þegar mánaðarþak reikningsins náðist (HTTP 429). Vinnan var vistuð og
+ýtt upp, en **ekkert þeirra er tilbúið til sameiningar.**
+
+| Grein | Issue | Migration | Einingar | Próf | Keyrt frá enda til enda |
+|---|---|---|---|---|---|
+| `sql/skjalftar-schema` | #6 | `002` ✅ | 4 | ✅ | ❌ |
+| `sql/hagstofan-schema` | #7 | `003` ✅ | 2 | ❌ | ❌ |
+| `sql/vedurstodvar-schema` | #8 | `004` ✅ | 3 + fyrirspurn | ❌ | ❌ |
+| `sql/mbl-regex-schema` | #9 | `005` ✅ | 4 | ❌ | ❌ |
+
+Staðfest um alla fjóra: allar `.py`-skrár þýðast, migration-númer eru rétt og
+aðgreind, og engin eining rekst á nafn annarrar.
+
+### Hvað vantar, grein fyrir grein
+
+**Allar fjórar:** keyra `python3 -m unittest discover -s tests` og staðfesta að
+öll próf repo-sins séu græn — ekki bara þau nýju. Keyra hleðsluna á frosnu
+gögnunum og bera niðurstöðuna saman við `docs/vidmid/vidmid.json`.
+
+- **#6 skjálftar** — lengst komin. Prófin eru skrifuð en ókeyrð. Staðfestið
+  334 atburði og 61 dag.
+- **#7 Hagstofan** — **`hagstofan_jsonstat.py` er 347 línur og brýtur reglu 6.**
+  Kljúfið hana áður en lengra er haldið. Engin próf skrifuð. Staðfestið 36 gildi
+  = margfeldi `size` = [1, 1, 3, 1, 4, 3].
+- **#8 veðurstöðvar** — engin próf. Staðfestið 778 stöðvar og 343 með `NULL`
+  lokaár. `src/sql/queries/vedurstodvar-siur.sql` varð til hér, á undan #11 —
+  gætið þess að hún rekist ekki á það verk.
+- **#9 mbl** — engin próf. Agentinn náði að staðfesta að **öll fimm mynstrin
+  skila sömu niðurstöðu og viðmiðið** áður en hann stöðvaðist; sú staðfesting
+  er ekki í prófi og þarf að endurgera.
+
+### Að taka upp þráðinn
+
+Sækið greinina, lesið commitið (það er merkt ÓKLÁRAÐ), og haldið áfram með
+promptinu úr kafla 8 auk þess sem hér er talið. Ekki byrja upp á nýtt —
+migration og einingar eru þegar skrifaðar.
