@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Upplýsingaverkfræði — rannsóknarverkefni</title>
-  <meta name="description" content="Rannsóknarverkefni í upplýsingaverkfræði: gagnasöfnun frá vefþjónustum, úrvinnsla í SQL-grunni og birting niðurstaðna.">
+  <meta name="description" content="Rannsóknarverkefni í upplýsingaverkfræði: gögn sótt frá opnum vefþjónustum, geymd í SQL-gagnagrunni og birt með rekjanlegri slóð aftur í hrágögn.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
@@ -23,16 +23,17 @@
     <div class="umgjord haus__innihald">
       <a class="haus__merki" href="index.html">Upplýsinga<span>verkfræði</span></a>
       <nav class="valmynd" aria-label="Aðalvalmynd">
-        <button class="valmynd__hnappur" type="button"
-                aria-expanded="false" aria-controls="valmyndarlisti">
+        <button class="valmynd__hnappur" type="button" aria-controls="valmyndarlisti">
           Valmynd
         </button>
         <ul class="valmynd__listi" id="valmyndarlisti">
           <li><a class="valmynd__tengill" href="index.html" aria-current="page">Forsíða</a></li>
+          <li><a class="valmynd__tengill" href="sidur/skjalftavaktin.html">Skjálftavaktin</a></li>
+          <li><a class="valmynd__tengill" href="sidur/hagstofan.html">Hagstofan</a></li>
+          <li><a class="valmynd__tengill" href="sidur/vedurstodvar.html">Veðurstöðvar</a></li>
+          <li><a class="valmynd__tengill" href="sidur/mbl-regex.html">mbl.is</a></li>
+          <li><a class="valmynd__tengill" href="sidur/phoebe-tolfraedi.html">Phoebe</a></li>
           <li><a class="valmynd__tengill" href="sidur/adferdafraedi.html">Aðferðafræði</a></li>
-          <li><a class="valmynd__tengill" href="sidur/gogn.html">Gögn</a></li>
-          <li><a class="valmynd__tengill" href="sidur/nidurstodur.html">Niðurstöður</a></li>
-          <li><a class="valmynd__tengill" href="sidur/um.html">Um verkefnið</a></li>
         </ul>
       </nav>
     </div>
@@ -45,12 +46,14 @@
         <p class="hetja__merkimidi">Rannsóknarverkefni · 2026</p>
         <h1>Gögn úr vefþjónustum, greind og gerð skiljanleg</h1>
         <p class="hetja__inngangur">
-          Verkefnið sækir gögn frá opnum vefþjónustum, geymir þau í
-          skipulögðum SQL-gagnagrunni og birtir niðurstöðurnar hér — með
-          rekjanlegri slóð frá hverri einustu tölu aftur í upprunaleg gögn.
+          Sjö rannsóknir á opnum gögnum: jarðskjálftar, brautskráning,
+          veðurstöðvar, fréttatextar og þrjár greiningar á handritum
+          sjónvarpsþátta. Gögnin eru sótt frá vefþjónustum, geymd í
+          SQL-gagnagrunni og birt hér — hver tala með rekjanlega slóð aftur
+          í upprunaleg gögn.
         </p>
         <div class="hetja__adgerdir">
-          <a class="hnappur hnappur--adal" href="sidur/nidurstodur.html">Skoða niðurstöður</a>
+          <a class="hnappur hnappur--adal" href="#rannsoknir">Skoða rannsóknirnar</a>
           <a class="hnappur hnappur--aukinn" href="sidur/adferdafraedi.html">Lesa aðferðafræðina</a>
         </div>
       </div>
@@ -58,93 +61,125 @@
 
     <div class="umgjord">
 
-      <section class="hluti" aria-labelledby="stada">
-        <h2 id="stada" class="skjalesari">Staða gagna</h2>
-        <!-- Textinn hér er sjálfgefinn ef JavaScript er slökkt (regla 3.4) -->
-        <p class="stada-gagna" data-stada-gagna>
+      <section class="hluti" aria-labelledby="stada-titill">
+        <h2 id="stada-titill" class="skjalesari">Staða gagna</h2>
+        <!-- Textinn hér er sjálfgefinn ef JavaScript er slökkt (regla 3.4). -->
+        <p class="stada-gagna" data-stada-gagna="gogn/yfirlit.json">
           <span class="stada-gagna__punktur" aria-hidden="true"></span>
           <span><strong>Gagnasafn:</strong> uppfærsludagsetning birtist þegar
           gögn hafa verið flutt út í <code>web/gogn/</code>.</span>
         </p>
       </section>
 
-      <section class="hluti" aria-labelledby="leidir">
-        <h2 id="leidir">Hvert viltu fara?</h2>
+      <section class="hluti" id="rannsoknir" aria-labelledby="rannsoknir-titill">
+        <h2 id="rannsoknir-titill">Rannsóknirnar sjö</h2>
         <p>
-          Verkefninu er skipt í fjóra hluta. Hver hluti stendur sjálfstætt og
-          þú kemst í hvaða efni sem er með mest þremur smellum.
+          Hver rannsókn stendur sjálfstætt og er einn smellur héðan. Innan
+          Phoebe-greininganna þriggja kemstu milli síðna í öðrum smelli — því
+          er ekkert efni lengra en þrjá smelli frá þessari síðu.
         </p>
 
-        <div class="kort-raster">
-
+        <div class="kort-raster kort-raster--thrju">
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">01</p>
-            <h3>Aðferðafræði</h3>
-            <p>
-              Hvernig gögnin eru sótt, hvaða forsendur liggja að baki og
-              hvaða takmarkanir fylgja þeim.
-            </p>
-            <a class="kort__tengill" href="sidur/adferdafraedi.html">Lesa aðferðafræði</a>
+            <h3>Skjálftavaktin</h3>
+            <p>Jarðskjálftavirkni á Reykjanesskaga frá nóvember 2023 fram í janúar 2024.</p>
+            <a class="kort__tengill" href="sidur/skjalftavaktin.html">Skoða</a>
           </article>
-
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">02</p>
-            <h3>Gögn</h3>
-            <p>
-              Yfirlit yfir vefþjónusturnar sem sótt er í, uppbyggingu
-              gagnagrunnsins og hvenær hver gagnasöfnun fór fram.
-            </p>
-            <a class="kort__tengill" href="sidur/gogn.html">Skoða gögnin</a>
+            <h3>Brautskráning af háskólastigi</h3>
+            <p>Hve margir ljúka háskólanámi á Íslandi, greint eftir árum og námsstigi.</p>
+            <a class="kort__tengill" href="sidur/hagstofan.html">Skoða</a>
           </article>
-
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">03</p>
-            <h3>Niðurstöður</h3>
-            <p>
-              Greiningin sjálf — töflur og myndrit byggð á gögnunum í
-              grunninum.
-            </p>
-            <a class="kort__tengill" href="sidur/nidurstodur.html">Sjá niðurstöður</a>
+            <h3>Veðurstöðvar</h3>
+            <p>Hvar stöðvar Veðurstofunnar standa og hvernig þær dreifast um landið.</p>
+            <a class="kort__tengill" href="sidur/vedurstodvar.html">Skoða</a>
           </article>
-
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">04</p>
-            <h3>Um verkefnið</h3>
-            <p>
-              Markmið rannsóknarinnar, heimildaskrá og upplýsingar um
-              höfund.
-            </p>
-            <a class="kort__tengill" href="sidur/um.html">Um verkefnið</a>
+            <h3>Reglulegar segðir</h3>
+            <p>Fyrirsagnir og tenglar dregnir út úr vistaðri forsíðu mbl.is.</p>
+            <a class="kort__tengill" href="sidur/mbl-regex.html">Skoða</a>
           </article>
-
+          <article class="kort">
+            <p class="kort__tala" aria-hidden="true">05</p>
+            <h3>Plass, nærvera og tengsl</h3>
+            <p>Hversu mikið pláss Phoebe Buffay fær í handritum Friends.</p>
+            <a class="kort__tengill" href="sidur/phoebe-tolfraedi.html">Skoða</a>
+          </article>
+          <article class="kort">
+            <p class="kort__tala" aria-hidden="true">06</p>
+            <h3>Söngur í Central Perk</h3>
+            <p>Hvar og hvenær Phoebe syngur á kaffihúsinu, yfir tíu þáttaraðir.</p>
+            <a class="kort__tengill" href="sidur/phoebe-central-perk.html">Skoða</a>
+          </article>
+          <article class="kort">
+            <p class="kort__tala" aria-hidden="true">07</p>
+            <h3>Hlutverkið í TMDB</h3>
+            <p>Hvernig hlutverkið birtist í opna kvikmyndagagnagrunninum TMDB.</p>
+            <a class="kort__tengill" href="sidur/phoebe-tmdb.html">Skoða</a>
+          </article>
         </div>
+      </section>
+
+      <section class="hluti" aria-labelledby="adferd-titill">
+        <h2 id="adferd-titill">Hvernig gögnin verða til</h2>
+        <p>
+          Flæðið er einstefna og er aldrei rofið: vefþjónusta sendir gögn til
+          Python sem vistar svarið óbreytt, hreinsar það, setur í SQL-grunninn
+          og flytur loks út tilbúnar JSON-skrár. Vefsíðan les eingöngu þessar
+          skrár og talar aldrei sjálf við gagnagrunn eða vefþjónustu.
+        </p>
+        <p>
+          <a href="sidur/adferdafraedi.html">Lesa aðferðafræðina í heild</a>
+        </p>
       </section>
 
     </div>
   </main>
 
   <footer class="fotur">
-    <div class="umgjord fotur__raster">
-      <div>
-        <h2>Um síðuna</h2>
-        <p>
-          Rannsóknarverkefni í upplýsingaverkfræði. Öll gögn sem birtast hér
-          eru rekjanleg aftur til upprunalegrar vefþjónustu.
-        </p>
+    <div class="umgjord">
+      <div class="fotur__raster">
+        <div>
+          <h2>Um síðuna</h2>
+          <p>
+            Rannsóknarverkefni í upplýsingaverkfræði. Gögnin eru sótt frá opnum
+            vefþjónustum, geymd í SQL-gagnagrunni og birt hér sem tilbúnar
+            JSON-skrár — hver tala á sér rekjanlega leið aftur í hrágögn.
+          </p>
+        </div>
+        <nav aria-labelledby="fotur-rannsoknir">
+          <h2 id="fotur-rannsoknir">Rannsóknir</h2>
+          <ul>
+            <li><a class="fotur__tengill" href="sidur/skjalftavaktin.html">Skjálftavaktin</a></li>
+            <li><a class="fotur__tengill" href="sidur/hagstofan.html">Brautskráning</a></li>
+            <li><a class="fotur__tengill" href="sidur/vedurstodvar.html">Veðurstöðvar</a></li>
+            <li><a class="fotur__tengill" href="sidur/mbl-regex.html">Reglulegar segðir</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="fotur-phoebe">
+          <h2 id="fotur-phoebe">Phoebe Buffay</h2>
+          <ul>
+            <li><a class="fotur__tengill" href="sidur/phoebe-tolfraedi.html">Plass og tengsl</a></li>
+            <li><a class="fotur__tengill" href="sidur/phoebe-central-perk.html">Central Perk</a></li>
+            <li><a class="fotur__tengill" href="sidur/phoebe-tmdb.html">TMDB</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="fotur-leidsogn">
+          <h2 id="fotur-leidsogn">Leiðsögn</h2>
+          <ul>
+            <li><a class="fotur__tengill" href="index.html">Forsíða</a></li>
+            <li><a class="fotur__tengill" href="sidur/adferdafraedi.html">Aðferðafræði</a></li>
+            <li><a class="fotur__tengill" href="sidur/adferdafraedi.html#heimildir">Heimildir</a></li>
+          </ul>
+        </nav>
       </div>
-      <div>
-        <h2>Efni</h2>
-        <ul>
-          <li><a href="sidur/adferdafraedi.html">Aðferðafræði</a></li>
-          <li><a href="sidur/gogn.html">Gögn</a></li>
-          <li><a href="sidur/nidurstodur.html">Niðurstöður</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Heimildir</h2>
-        <ul>
-          <li><a href="sidur/um.html#heimildir">Heimildaskrá</a></li>
-        </ul>
+      <div class="fotur__botn">
+        <p>Efni á íslensku · Gögn með uppgefinni heimild og dagsetningu</p>
       </div>
     </div>
   </footer>
