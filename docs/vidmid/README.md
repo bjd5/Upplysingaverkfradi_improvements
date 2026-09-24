@@ -35,8 +35,9 @@ vefþjónustunum skila öðru svari í dag en þær gerðu í september.
 ### `vefur/` — byggða gamla síðan
 
 Eina heildarskráin yfir hverja einustu tölu sem gamla síðan birtir. Tölurnar
-eru þó aðeins til sem texti inni í HTML — vélleshæft viðmið er verk **P0.2**,
-sem les þessa möppu og skrifar `vidmid.json`.
+eru þó aðeins til sem texti inni í HTML. **P0.2** las möppuna og skrifaði
+vélleshæft viðmið: [`vidmid.json`](vidmid.json) og [`vidmid.md`](vidmid.md)
+(sjá kafla 4).
 
 `site_libs/` fylgir með óbreytt (Bootstrap, jQuery, popper). Það er ekki efni
 heldur Quarto-umbúðir, og er einmitt hluti af ástæðunni fyrir endurbyggingunni
@@ -114,18 +115,21 @@ lotu; engin er óflokkuð.
 byggingarlotunni**. Viðmiðið er þessi bygging, ekki `main` eins og hann er í
 dag.
 
-### Hvað þetta þýðir fyrir P0.2
+### Hvað þetta þýðir fyrir P0.2 — og hvað P0.2 fann
 
 Viðmiðið er gilt sem viðmið — það er nákvæmlega það sem gamla síðan birti. En
-það er **ekki innbyrðis samstæð bygging**, og P0.2 á að gera ráð fyrir því:
+það er **ekki innbyrðis samstæð bygging**, og P0.2 gerði ráð fyrir því:
 
 - Ósamræmi milli síðna er væntanlegt og er sjálfstæð niðurstaða, ekki
   lestrarvilla. Síða úr `5510cab` þarf ekki að sýna sömu tölu og síða úr
-  `fdf1261`.
+  `fdf1261`. **Fimm slík atriði eru skráð** í
+  [`vidmid.md`](vidmid.md), kafla 5 — tvö þeirra alvarleg.
 - `phoebe-stats/_meta.json` var búið til **2026-09-17 09:47:09Z**, í yngstu
-  lotunni, en `friends/phoebe-statistics.html` er frá deginum áður.
-  Tölur á þeirri síðu geta því vikið frá `_meta.json`. Beri þær ekki saman er
-  `_meta.json` réttara, því það er yngra — en hvort tveggja skal skráð.
+  lotunni, en `friends/phoebe-statistics.html` er frá deginum áður. **Þessi
+  áhætta kom ekki fram:** eintökin tvö af `_meta.json` eru eins að öðru leyti
+  en tímastimplinum, svo allar staðfestar tölur stemma við bæði.
+  `phoebe-top-talkers.json` er hins vegar **í tveimur röðum** — sömu gildi,
+  önnur röð, af því að jafntefli í röðuninni er brotið án fasts viðmiðs.
 
 ---
 
@@ -154,7 +158,40 @@ python3 src/python/vidmid/provenance.py skrifa
 
 ---
 
-## 4. Reglur um þessa möppu
+## 4. Viðmiðstölurnar — `vidmid.json` og `vidmid.md`
+
+```bash
+python3 src/python/vidmid/tolur.py skrifa      # byggir viðmiðið upp á nýtt
+python3 src/python/vidmid/tolur.py stadfesta   # ber það við síðurnar
+```
+
+| Skrá | Hvað hún er |
+|---|---|
+| [`vidmid.json`](vidmid.json) | Vélleshæft viðmið: **1.391 tala** úr 28 síðum, þar af **445 efnislegar niðurstöður**. Hver tala með síðu, byggingarlotu, kaflakeðju, töfluröð/dálki, einingu og samhengi. |
+| [`vidmid.md`](vidmid.md) | Sama efni fyrir manneskju: umfang, staðfestar tölur, ósamræmi, og vísir í hópaskrárnar. |
+| [`vidmid/`](vidmid/) | Ein skrá á hverja síðu **nýju** síðunnar (sjá [`../endurbygging.md`](../endurbygging.md), kafla 3), svo hver síðuagent fái sitt viðmið í einni skrá. |
+
+Tala sem er ekki niðurstaða — auðkenni (`0405`), issue-tilvísun (`#14`),
+ISO-dagsetning, CSS-gildi, tala inni í kóðalistun — er **skráð áfram** með
+`visst: false`. Próf sníða hana frá með einni síu; ekkert er þaggað.
+
+### Það sem HTML-lestur nær ekki
+
+Tvær síður birta **engar tölur í HTML-inu**. Þær reikna þær í JavaScript í
+vafra lesandans:
+
+| Síða | Viðmiðið er |
+|---|---|
+| `friends/phoebe-statistics.html` | Sjö skrár í `vefur/friends/phoebe-stats/` sem Observable Plot les |
+| `tokens/index.html` | CSV sem Quarto bakaði inn í `<script type="text/plain">` |
+
+Þetta er ástæða þess að sex af staðfestu tölunum — línur á persónu,
+sviðsfyrirsagnir og sviðsleiðbeiningar — finnast hvergi í HTML-textanum.
+**Fyrir kjarnasíðu rannsóknarinnar er gagnaskráin viðmiðið, ekki síðan.**
+
+---
+
+## 5. Reglur um þessa möppu
 
 1. **Ekkert hér er handbreytt.** Hvorki skrárnar né `provenance.json`
    (CLAUDE.md, regla 10).
@@ -162,3 +199,5 @@ python3 src/python/vidmid/provenance.py skrifa
 3. **Handritin sjálf koma aldrei hingað** — aðeins tölur um þau (issue #3).
 4. Bætist safn við: afritaðu óbreytt, keyrðu `skrifa`, og skráðu safnið í
    töfluna í kafla 1.
+5. `vidmid.json`, `vidmid.md` og `vidmid/` eru **afleiður** — þær eru
+   skrifaðar af `tolur.py`, aldrei handbreyttar (regla 10).
