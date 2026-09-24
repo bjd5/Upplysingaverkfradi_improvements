@@ -47,16 +47,16 @@ p { margin: 0 0 var(--bil-4); }
 
 a {
   color: var(--tengill);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
+  text-decoration-thickness: var(--rammi-breidd);
+  text-underline-offset: var(--undirstrik-bil);
   transition: color var(--hradi) var(--ferill);
 }
 a:hover { color: var(--tengill-yfir); }
 
 /* Sjáanleg fókusumgjörð — aldrei fjarlægð (regla 3.3) */
 :focus-visible {
-  outline: 3px solid var(--fokus);
-  outline-offset: 2px;
+  outline: var(--fokus-breidd) solid var(--fokus);
+  outline-offset: var(--bil-1);
   border-radius: var(--radius-sm);
 }
 
@@ -69,8 +69,9 @@ code, pre {
 
 code {
   background: var(--bak-daufur);
-  padding: 0.15em 0.4em;
+  padding: var(--bil-1) var(--bil-2);
   border-radius: var(--radius-sm);
+  overflow-wrap: anywhere;
 }
 
 pre {
@@ -91,36 +92,38 @@ table {
 th, td {
   text-align: left;
   padding: var(--bil-3);
-  border-bottom: 1px solid var(--rammi);
+  border-bottom: var(--rammi-breidd) solid var(--rammi);
 }
 th {
   font-weight: var(--thyngd-medium);
   color: var(--texti-daufur);
   text-transform: uppercase;
   font-size: var(--texti-xs);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--stafabil-vitt);
 }
 /* Töflur mega skruna lárétt — en aldrei síðan sjálf (regla 3.5) */
 .tafla-umgjord { overflow-x: auto; }
 
 hr {
   border: 0;
-  border-top: 1px solid var(--rammi);
+  border-top: var(--rammi-breidd) solid var(--rammi);
   margin: var(--bil-12) 0;
 }
 
 blockquote {
   margin: var(--bil-6) 0;
   padding-left: var(--bil-4);
-  border-left: 3px solid var(--adal-400);
+  border-left: var(--rammi-breidd-breid) solid var(--adal-400);
   color: var(--texti-daufur);
 }
 
 /* Aðeins fyrir skjálesara — sýnilegt fyrir hjálpartæki, falið sjónrænt */
 .skjalesari {
   position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
+  width: var(--rammi-breidd);
+  height: var(--rammi-breidd);
+  padding: 0;
+  margin: calc(-1 * var(--rammi-breidd));
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;

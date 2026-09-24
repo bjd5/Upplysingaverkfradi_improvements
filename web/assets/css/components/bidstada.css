@@ -1,0 +1,34 @@
+/* bidstada.css — heiðarlegur staðgengill fyrir efni sem er ekki komið.
+   Beinagrindin lofar engu sem hún hefur ekki (regla 8).                 */
+
+.bidstada {
+  padding: var(--bil-8);
+  background: var(--bak-upphaekkad);
+  border: var(--rammi-breidd) dashed var(--rammi-sterkur);
+  border-radius: var(--radius-lg);
+}
+
+.bidstada__merki {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bil-2);
+  margin: 0 0 var(--bil-3);
+  font-size: var(--texti-xs);
+  font-weight: var(--thyngd-feit);
+  text-transform: uppercase;
+  letter-spacing: var(--stafabil-vitt);
+  color: var(--advorun);
+  max-width: none;
+}
+
+/* Táknið er skraut — textinn ber merkinguna einn og sér (regla 3.3). */
+.bidstada__punktur {
+  width: var(--bil-2);
+  height: var(--bil-2);
+  border-radius: 50%;
+  background: var(--advorun);
+  flex-shrink: 0;
+}
+
+.bidstada p:last-child { margin-bottom: 0; }
+.bidstada__skyring { color: var(--texti-daufur); }

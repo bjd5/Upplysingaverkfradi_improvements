@@ -5,18 +5,19 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--bil-3);
+  max-width: none;
   padding: var(--bil-4) var(--bil-6);
   background: var(--bak-daufur);
-  border: 1px solid var(--rammi);
-  border-left: 4px solid var(--adal-400);
+  border: var(--rammi-breidd) solid var(--rammi);
+  border-left: var(--rammi-breidd-breid) solid var(--adal-400);
   border-radius: var(--radius);
   font-size: var(--texti-sm);
   color: var(--texti-daufur);
 }
 
 .stada-gagna__punktur {
-  width: 0.6rem;
-  height: 0.6rem;
+  width: var(--bil-2);
+  height: var(--bil-2);
   border-radius: 50%;
   background: var(--i-lagi);
   flex-shrink: 0;

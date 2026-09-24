@@ -1,0 +1,62 @@
+/* undirvalmynd.css — systursíður innan sama efnisflokks.
+   Notuð á Phoebe-síðunum þremur svo enginn þeirra sé blindgata.        */
+
+.undirvalmynd {
+  margin-bottom: var(--bil-8);
+  padding-bottom: var(--bil-4);
+  border-bottom: var(--rammi-breidd) solid var(--rammi);
+}
+
+.undirvalmynd__titill {
+  margin: 0 0 var(--bil-2);
+  font-family: var(--letur-texti);
+  font-size: var(--texti-xs);
+  font-weight: var(--thyngd-feit);
+  text-transform: uppercase;
+  letter-spacing: var(--stafabil-vitt);
+  color: var(--texti-daufur);
+}
+
+.undirvalmynd ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bil-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.undirvalmynd li { max-width: none; }
+
+.undirvalmynd a {
+  display: flex;
+  align-items: center;
+  min-height: var(--smellisvaedi);
+  min-width: var(--smellisvaedi);
+  justify-content: center;
+  padding: var(--bil-2) var(--bil-4);
+  background: var(--bak-upphaekkad);
+  border: var(--rammi-breidd) solid var(--rammi);
+  border-radius: var(--radius-pilla);
+  color: var(--texti-daufur);
+  font-size: var(--texti-sm);
+  font-weight: var(--thyngd-medium);
+  text-decoration: none;
+}
+.undirvalmynd a:hover {
+  border-color: var(--rammi-sterkur);
+  color: var(--texti);
+}
+
+/* Núverandi síða: fylltur flötur OG feitt letur — ekki litur einn og sér. */
+.undirvalmynd [aria-current="page"] {
+  background: var(--adal-500);
+  border-color: var(--adal-500);
+  color: var(--texti-a-lit);
+  font-weight: var(--thyngd-feit);
+}
+.undirvalmynd [aria-current="page"]:hover {
+  background: var(--adal-700);
+  border-color: var(--adal-700);
+  color: var(--texti-a-lit);
+}

@@ -2,7 +2,7 @@
 
 .hetja {
   padding-block: var(--bil-16) var(--bil-12);
-  border-bottom: 1px solid var(--rammi);
+  border-bottom: var(--rammi-breidd) solid var(--rammi);
   background:
     radial-gradient(60rem 28rem at 15% -10%, var(--adal-50), transparent 70%),
     var(--bak);
@@ -14,11 +14,12 @@
   padding: var(--bil-1) var(--bil-3);
   background: var(--ahersla-100);
   color: var(--ahersla-700);
-  border-radius: 999px;
+  border-radius: var(--radius-pilla);
   font-size: var(--texti-xs);
   font-weight: var(--thyngd-medium);
-  letter-spacing: 0.04em;
+  letter-spacing: var(--stafabil-vitt);
   text-transform: uppercase;
+  max-width: none;
 }
 
 .hetja h1 { margin-bottom: var(--bil-4); }
@@ -35,8 +36,9 @@
 .hnappur {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--bil-2);
-  min-height: 44px;
+  min-height: var(--smellisvaedi);
   padding: var(--bil-3) var(--bil-6);
   border-radius: var(--radius);
   font-size: var(--texti-sm);
@@ -49,17 +51,17 @@
 .hnappur--adal {
   background: var(--adal-500);
   color: var(--texti-a-lit);
-  border: 1px solid var(--adal-500);
+  border: var(--rammi-breidd) solid var(--adal-500);
 }
 .hnappur--adal:hover {
   background: var(--adal-700);
   color: var(--texti-a-lit);
-  transform: translateY(-1px);
+  transform: translateY(calc(-1 * var(--lyfta)));
 }
 
 .hnappur--aukinn {
   background: var(--bak-upphaekkad);
   color: var(--texti);
-  border: 1px solid var(--rammi-sterkur);
+  border: var(--rammi-breidd) solid var(--rammi-sterkur);
 }
 .hnappur--aukinn:hover { background: var(--bak-daufur); color: var(--texti); }

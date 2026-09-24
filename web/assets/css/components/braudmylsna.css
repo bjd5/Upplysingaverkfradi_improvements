@@ -23,6 +23,15 @@
   color: var(--gra-400);
 }
 
-.braudmylsna a { color: var(--texti-daufur); }
+.braudmylsna a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--smellisvaedi);
+  color: var(--texti-daufur);
+}
 .braudmylsna a:hover { color: var(--tengill); }
-.braudmylsna [aria-current="page"] { color: var(--texti); font-weight: var(--thyngd-medium); }
+
+.braudmylsna [aria-current="page"] {
+  color: var(--texti);
+  font-weight: var(--thyngd-medium);
+}

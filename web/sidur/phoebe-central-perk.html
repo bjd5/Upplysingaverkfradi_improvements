@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aðferðafræði — Upplýsingaverkfræði</title>
-  <meta name="description" content="Hvernig gögnin eru sótt, hreinsuð og geymd í rannsóknarverkefninu, og hvaða takmarkanir fylgja þeim.">
+  <title>Söngur Phoebe í Central Perk — Upplýsingaverkfræði</title>
+  <meta name="description" content="Hvar og hvenær Phoebe syngur á kaffihúsinu Central Perk í Friends.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components/braudmylsna.css">
+  <link rel="stylesheet" href="../assets/css/components/undirvalmynd.css">
   <link rel="stylesheet" href="../assets/css/components/sidu-haus.css">
   <link rel="stylesheet" href="../assets/css/components/bidstada.css">
   <link rel="stylesheet" href="../assets/css/components/naesta-skref.css">
@@ -32,8 +33,8 @@
           <li><a class="valmynd__tengill" href="hagstofan.html">Hagstofan</a></li>
           <li><a class="valmynd__tengill" href="vedurstodvar.html">Veðurstöðvar</a></li>
           <li><a class="valmynd__tengill" href="mbl-regex.html">mbl.is</a></li>
-          <li><a class="valmynd__tengill" href="phoebe-tolfraedi.html">Phoebe</a></li>
-          <li><a class="valmynd__tengill" href="adferdafraedi.html" aria-current="page">Aðferðafræði</a></li>
+          <li><a class="valmynd__tengill" href="phoebe-tolfraedi.html" aria-current="true">Phoebe</a></li>
+          <li><a class="valmynd__tengill" href="adferdafraedi.html">Aðferðafræði</a></li>
         </ul>
       </nav>
     </div>
@@ -42,126 +43,86 @@
   <nav class="braudmylsna umgjord" aria-label="Brauðmylsna">
     <ol>
       <li><a href="../index.html">Forsíða</a></li>
-      <li><span aria-current="page">Aðferðafræði</span></li>
+      <li><span aria-current="page">Söngur Phoebe í Central Perk</span></li>
     </ol>
   </nav>
 
   <main id="efni">
     <div class="umgjord">
 
+      <nav class="undirvalmynd" aria-labelledby="undirvalmynd-titill">
+        <p class="undirvalmynd__titill" id="undirvalmynd-titill">Phoebe-síðurnar þrjár</p>
+        <ul>
+          <li><a href="phoebe-tolfraedi.html">Tölfræði</a></li>
+          <li><a href="phoebe-central-perk.html" aria-current="page">Central Perk</a></li>
+          <li><a href="phoebe-tmdb.html">TMDB</a></li>
+        </ul>
+      </nav>
+
       <div class="sidu-haus">
         <div class="sidu-haus__adal">
-          <p class="sidu-haus__flokkur">Um rannsóknina</p>
-          <h1>Aðferðafræði</h1>
-          <p class="sidu-haus__inngangur">Hvaðan gögnin koma, hvernig þau eru hreinsuð og geymd, og hvaða takmarkanir fylgja hverri niðurstöðu. Þessi síða er forsenda þess að rannsóknin sé endurtekjanleg.</p>
+          <p class="sidu-haus__flokkur">Rannsókn 06 · Friends</p>
+          <h1>Söngur Phoebe í Central Perk</h1>
+          <p class="sidu-haus__inngangur">Hvar og hvenær Phoebe syngur á kaffihúsinu Central Perk, og hvernig þau atriði dreifast yfir þáttaraðirnar tíu.</p>
         </div>
         <aside class="sidu-haus__hlid" aria-labelledby="stadreyndir-titill">
           <h2 class="sidu-haus__hlid-titill" id="stadreyndir-titill">Um þessa síðu</h2>
           <dl class="stadreyndir">
             <div>
-              <dt>Gagnaflæði</dt>
-              <dd>Vefþjónusta → hrágögn → SQL-grunnur → JSON → vefsíða</dd>
+              <dt>Heimild</dt>
+              <dd>Handrit Friends — 236 þættir</dd>
             </div>
             <div>
-              <dt>Geymsla</dt>
-              <dd>Öll svör vistuð óbreytt með tímastimpli</dd>
+              <dt>Mælieining</dt>
+              <dd>Söngatriði á þáttaröð</dd>
             </div>
             <div>
-              <dt>Skjölun</dt>
-              <dd><code>docs/heimildir.md</code> og <code>docs/adferdafraedi.md</code></dd>
+              <dt>Höfundaréttur</dt>
+              <dd>Aðeins talnaniðurstöður eru birtar, ekki texti handritanna</dd>
             </div>
             <div>
               <dt>Staða síðunnar</dt>
-              <dd>Beinagrind — kaflar í vinnslu</dd>
+              <dd>Beinagrind — greining í vinnslu</dd>
             </div>
           </dl>
         </aside>
       </div>
 
-      <article class="efni" aria-labelledby="flaedi-titill">
-
-        <h2 id="flaedi-titill">Gagnaflæðið</h2>
-        <p>
-          Flæðið er einstefna og má aldrei rjúfa. Hvert skref skilar af sér
-          skrá sem næsta skref les — það er ástæðan fyrir því að hægt er að
-          endurreikna hverja einustu tölu frá upprunalegu svari
-          vefþjónustunnar.
-        </p>
-        <ol>
-          <li>
-            <strong>Söfnun.</strong> Kallað er í vefþjónustuna og svarið vistað
-            óbreytt í <code>data/raw/</code> með tímastimpli. Hrágögnum er
-            aldrei breytt eftir á.
-          </li>
-          <li>
-            <strong>Hreinsun.</strong> Gögnin eru samræmd, villur skráðar og
-            forsendur sem gefnar eru skjalfestar.
-          </li>
-          <li>
-            <strong>Geymsla.</strong> Hreinsuðu gögnin fara í SQL-grunninn, sem
-            verður eingöngu til úr númeruðum migration-skrám.
-          </li>
-          <li>
-            <strong>Útflutningur.</strong> Niðurstöður eru fluttar út sem JSON
-            í <code>web/gogn/</code>, með uppfærsludagsetningu.
-          </li>
-        </ol>
-        <p>
-          Vefsíðan sem þú ert á talar aldrei sjálf við vefþjónustu eða
-          gagnagrunn. Hún les eingöngu tilbúnu JSON-skrárnar, og það er
-          ástæðan fyrir því að hún er hröð og stendur óbreytt þótt þjónustan
-          liggi niðri.
-        </p>
-
-        <h2 id="heimildir">Heimildir</h2>
+      <article class="efni" aria-labelledby="efni-titill">
+        <h2 id="efni-titill">Greiningin</h2>
         <div class="bidstada">
           <p class="bidstada__merki">
             <span class="bidstada__punktur" aria-hidden="true"></span>
             Efni í vinnslu
           </p>
           <p class="bidstada__skyring">
-            Heimildaskráin birtist hér þegar gagnasöfnunin hefur farið fram.
-            Hver færsla fær þjónustuheiti, slóð, dagsetningu og þær breytur sem
-            notaðar voru. Skráin er haldin jafnóðum í
-            <code>docs/heimildir.md</code>.
+            Greiningin birtist hér þegar gögnin hafa verið sótt, hreinsuð og
+            flutt út úr gagnagrunninum. Beinagrindin lofar engum tölum sem hún
+            hefur ekki — þangað til má lesa um aðferðina á
+            <a href="adferdafraedi.html">aðferðafræðisíðunni</a>.
           </p>
         </div>
-
-        <h2 id="takmarkanir">Takmarkanir</h2>
-        <div class="bidstada">
-          <p class="bidstada__merki">
-            <span class="bidstada__punktur" aria-hidden="true"></span>
-            Efni í vinnslu
-          </p>
-          <p class="bidstada__skyring">
-            Þekktar takmarkanir gagnanna eru birtar hér, ekki faldar. Þær eru
-            skráðar jafnóðum og þær koma í ljós — meðal annars hvaða gagnasöfn
-            breytast milli fyrirspurna og hvaða niðurstöður eru því bundnar við
-            tiltekna dagsetningu.
-          </p>
-        </div>
-
       </article>
 
       <nav class="naesta-skref" aria-labelledby="naesta-skref-titill">
         <h2 class="naesta-skref__titill" id="naesta-skref-titill">Hvert get ég farið næst?</h2>
         <ul>
           <li>
-            <a href="../index.html">
-              <span class="naesta-skref__hlutverk">Byrja hér</span>
-              <span class="naesta-skref__heiti">Forsíða</span>
-            </a>
-          </li>
-          <li>
-            <a href="skjalftavaktin.html">
+            <a href="phoebe-tmdb.html">
               <span class="naesta-skref__hlutverk">Rannsókn</span>
-              <span class="naesta-skref__heiti">Skjálftavaktin</span>
+              <span class="naesta-skref__heiti">Hlutverkið í TMDB</span>
             </a>
           </li>
           <li>
             <a href="phoebe-tolfraedi.html">
               <span class="naesta-skref__hlutverk">Rannsókn</span>
               <span class="naesta-skref__heiti">Plass og tengsl</span>
+            </a>
+          </li>
+          <li>
+            <a href="adferdafraedi.html">
+              <span class="naesta-skref__hlutverk">Um aðferðina</span>
+              <span class="naesta-skref__heiti">Aðferðafræði</span>
             </a>
           </li>
         </ul>
