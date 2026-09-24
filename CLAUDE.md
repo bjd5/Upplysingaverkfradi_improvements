@@ -58,7 +58,8 @@ hraða og örugga.
 │   │   ├── sofnun/            # kall í vefþjónustur
 │   │   ├── vinnsla/           # hreinsun og umbreyting
 │   │   ├── gagnagrunnur/      # tenging og fyrirspurnir
-│   │   └── utflutningur/      # JSON út í web/gogn/
+│   │   ├── utflutningur/      # JSON út í web/gogn/
+│   │   └── vidmid/            # provenance og staðfesting á frosna viðmiðinu
 │   ├── sql/
 │   │   ├── schema/            # töfluskilgreiningar
 │   │   ├── migrations/        # númeraðar breytingar: 001_..., 002_...
@@ -73,6 +74,7 @@ hraða og örugga.
 │   └── db/                    # gagnagrunnsskráin sjálf (ALDREI í git)
 │
 ├── docs/                      # rannsóknarskjölun, heimildir, aðferðafræði
+│   └── vidmid/                # frosið afrit af gamla verkefninu (sjá README þar)
 ├── tests/                     # prófanir, speglar src/ uppbygginguna
 ├── scripts/                   # keyrsluskipanir (sækja, byggja, birta)
 └── config/                    # stillingar (ALDREI leyndarmál)
