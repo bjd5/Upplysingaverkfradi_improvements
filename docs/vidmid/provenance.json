@@ -1,0 +1,897 @@
+{
+  "snid_utgafa": 1,
+  "afritad_utc": "2026-09-24T10:59:07Z",
+  "verk": "P0.1 — gagnabjörgun (issue #30)",
+  "lysing": "Afrit af gögnum sem voru aðeins til á einni vél og hvergi í git. Afritað óbreytt; SHA-256 hér er sönnunin fyrir því að viðmiðið sé ósnert.",
+  "vidmidsbygging": {
+    "spurning": "Úr hvaða commit er byggða síðan í docs/vidmid/vefur/?",
+    "svar": "Ekki einu — þremur. Quarto endurbyggði aðeins breyttar síður, svo viðmiðið er samsett úr þremur byggingum á tveimur dögum.",
+    "verklysing_sagdi": "2865ed6 (2026-09-20T11:51:21Z)",
+    "leidretting": "Rangt. Engin skrá í byggingunni er yngri en 2026-09-17T09:51:40Z, svo byggingin er ÞREMUR DÖGUM eldri en 2865ed6. Sömuleiðis er origin/main kominn í fb15d2a — 16 commit á undan 2865ed6 og 22 á undan yngstu byggingarlotunni.",
+    "adferd": "docs/ var gitignored í upprunarepo-inu, svo byggingin á sér ekkert git-ummerki. Lotugreiningin byggir á breytingartíma hverrar skráar (varðveittur með cp -p) borinn saman við reflog upprunarepo-sins.",
+    "upprunarepo": "Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe",
+    "origin_main_vid_afritun": "fb15d2a40457f6f97803699e4a68cd9c39aac72e",
+    "lotur": [
+      {
+        "fra_utc": "2026-09-16T14:00:00Z",
+        "til_utc": "2026-09-16T20:00:00Z",
+        "commit": "5510cab56e1c3e69a220cda6eb3cd87430cdb442",
+        "commit_utc": "2026-09-16T14:55:45Z",
+        "grein": "tmp/samrunaprof",
+        "a_sogu_main": false,
+        "athugasemd": "Bráðabirgðagrein sem rataði aldrei á main sem slík. Þrjár af kjarnasíðum rannsóknarinnar eru byggðar hér.",
+        "sidur": [
+          "friends/index.html",
+          "friends/phoebe-statistics.html",
+          "lotur/regex/mbl.html",
+          "lotur/vefthjonustur/hagstofan.html"
+        ]
+      },
+      {
+        "fra_utc": "2026-09-16T23:00:00Z",
+        "til_utc": "2026-09-16T23:26:00Z",
+        "commit": "9cf667de5bc889b1fb8b334bce54063fb2f0e481",
+        "commit_utc": "2026-09-16T23:06:12Z",
+        "grein": "feat/tokenskraning-agenta",
+        "a_sogu_main": true,
+        "athugasemd": "origin/main er 37 commit á undan þessu.",
+        "sidur": [
+          "lotur/vefthjonustur/vedurstofan.html",
+          "project-management.html"
+        ]
+      },
+      {
+        "fra_utc": "2026-09-17T09:42:10Z",
+        "til_utc": "2026-09-18T00:00:00Z",
+        "commit": "fdf1261f5b3ff215c58551898b84015e38dff457",
+        "commit_utc": "2026-09-17T08:53:44Z",
+        "grein": "feat/tokenskraning-agenta",
+        "a_sogu_main": true,
+        "athugasemd": "Sóttur með pull --ff-only kl. 09:42:10Z; HEAD hreyfðist ekki aftur fyrr en 2026-09-23. Meirihluti síðnanna er héðan. origin/main er 22 commit á undan þessu.",
+        "sidur": [
+          "capstone/earthquakes.html",
+          "friends/phoebe-tribute.html",
+          "friends/uppahalds-video.html",
+          "index.html",
+          "lotur/git-ai-reproducible/agents.html",
+          "lotur/git-ai-reproducible/git.html",
+          "lotur/git-ai-reproducible/index.html",
+          "lotur/git-ai-reproducible/reproducible-reports.html",
+          "lotur/logic-sets/index.html",
+          "lotur/regex/index.html",
+          "lotur/sql-advanced/index.html",
+          "lotur/sql-basics/index.html",
+          "lotur/storytelling/index.html",
+          "phoebe-central-perk.html",
+          "reflections/bjorn.html",
+          "reflections/ottar.html",
+          "reflections/sveinn.html",
+          "team.html",
+          "tokens/bjorn.html",
+          "tokens/index.html",
+          "tokens/ottar.html",
+          "tokens/sveinn.html"
+        ]
+      }
+    ],
+    "sidur_utan_lotu": []
+  },
+  "fjoldi_skraa": 110,
+  "staerd_baet": 4890421,
+  "sofn": [
+    {
+      "heiti": "mbl",
+      "mappa": "data/raw/mbl",
+      "uppruni": "~/Desktop/Skóla forritun/upplysingver/data/raw/mbl",
+      "upprunarepo": null,
+      "skyring": "Eina eintakið sem til er af mbl.is-forsíðunni sem regex-æfingin byggir á. Sótt af https://www.mbl.is/frettir/ (ekki forsíðunni sjálfri) 2026-09-16. Var gitignored í upprunaverkefninu.",
+      "fjoldi_skraa": 2,
+      "staerd_baet": 367732,
+      "skrar": [
+        {
+          "slod": "mbl-20260916T120851Z.html",
+          "uppruni": "~/Desktop/Skóla forritun/upplysingver/data/raw/mbl/mbl-20260916T120851Z.html",
+          "staerd_baet": 367351,
+          "sha256": "37cfc3d630ebd86b73f15613dee2b91271ed795829ddf5abceb2df428cb44db4",
+          "breytt_utc": "2026-09-16T12:08:51Z"
+        },
+        {
+          "slod": "mbl-20260916T120851Z.json",
+          "uppruni": "~/Desktop/Skóla forritun/upplysingver/data/raw/mbl/mbl-20260916T120851Z.json",
+          "staerd_baet": 381,
+          "sha256": "1e08e83c7c25bb28d3df54b81adf9aa8eda3dba1128118d994ba1c5f5e44643c",
+          "breytt_utc": "2026-09-16T12:08:51Z"
+        }
+      ]
+    },
+    {
+      "heiti": "vefur",
+      "mappa": "docs/vidmid/vefur",
+      "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs",
+      "upprunarepo": "Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe",
+      "skyring": "Byggða gamla Quarto-síðan, 28 HTML-skrár. Eina heildarskráin yfir hverja tölu sem gamla síðan birtir. Var gitignored (afleiða).",
+      "fjoldi_skraa": 71,
+      "staerd_baet": 4334961,
+      "skrar": [
+        {
+          "slod": "_generated/phoebe-central-perk.svg",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/_generated/phoebe-central-perk.svg",
+          "staerd_baet": 28728,
+          "sha256": "a22661c30f49bc1e418782bc60b3dcb435f4d39937374fc80a3bb9faa35f8eb1",
+          "breytt_utc": "2026-09-17T09:47:17Z"
+        },
+        {
+          "slod": "_generated/tokens-bjorn.svg",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/_generated/tokens-bjorn.svg",
+          "staerd_baet": 1884,
+          "sha256": "4d714c36c5ff693ef990576b67acc6c8190f5f28e6b684caa6039ae2ed76a284",
+          "breytt_utc": "2026-09-16T14:56:02Z"
+        },
+        {
+          "slod": "_generated/tokens-ottar.svg",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/_generated/tokens-ottar.svg",
+          "staerd_baet": 1885,
+          "sha256": "be15807bcc4eee7e3525c946db92e4158ebe16ba6443907e03bea193c2b24fd3",
+          "breytt_utc": "2026-09-16T14:56:02Z"
+        },
+        {
+          "slod": "_generated/tokens-sveinn.svg",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/_generated/tokens-sveinn.svg",
+          "staerd_baet": 2051,
+          "sha256": "e15e5f5e7cbd5b6ce0011d661efe7e066c3f39b702074b084c1f1b50329d257b",
+          "breytt_utc": "2026-09-16T14:56:02Z"
+        },
+        {
+          "slod": "_generated/vedurstofa-stodvar.svg",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/_generated/vedurstofa-stodvar.svg",
+          "staerd_baet": 3715,
+          "sha256": "57b8ad53d564ad8b997736b7a17204bd8e530532dca753de71441d1c03c82f74",
+          "breytt_utc": "2026-09-16T14:56:38Z"
+        },
+        {
+          "slod": "capstone/earthquakes.css",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/capstone/earthquakes.css",
+          "staerd_baet": 5161,
+          "sha256": "8c4cbc8144749cb450c20f827d4d84986f662a5041640c36672e1ea8d91f33b1",
+          "breytt_utc": "2026-09-16T12:17:47Z"
+        },
+        {
+          "slod": "capstone/earthquakes.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/capstone/earthquakes.html",
+          "staerd_baet": 88337,
+          "sha256": "a4a4fec522748c4fd6aec5a06ab65bd5856ff9e0e090f56879892adb0bb90f22",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "friends/index.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/friends/index.html",
+          "staerd_baet": 47516,
+          "sha256": "53c270c58392fb65272944b45dc6725f80cb44105b3bd94aa65bb02407510efb",
+          "breytt_utc": "2026-09-16T14:56:21Z"
+        },
+        {
+          "slod": "friends/phoebe-statistics.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/friends/phoebe-statistics.html",
+          "staerd_baet": 292191,
+          "sha256": "937b7a68b1eea97e9309567ee6813eea18b257718d780d3ae9fa23171b433adb",
+          "breytt_utc": "2026-09-16T14:56:21Z"
+        },
+        {
+          "slod": "friends/phoebe-stats/_meta.json",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/friends/phoebe-stats/_meta.json",
+          "staerd_baet": 1650,
+          "sha256": "0383a1a7a7d97d5dae117882ca8e0eb9181c8a714119c4dc18d0c6a31e5097cc",
+          "breytt_utc": "2026-09-16T14:56:00Z"
+        },
+        {
+          "slod": "friends/phoebe-stats/phoebe-distinctive-words.csv",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/friends/phoebe-stats/phoebe-distinctive-words.csv",
+          "staerd_baet": 1855,
+          "sha256": "a5d815d4f2da911b72fbf81e1b4c3046ea903bd07ba00a9044d4e4f9257a848b",
+          "breytt_utc": "2026-09-16T14:56:00Z"
+        },
+        {
+          "slod": "friends/phoebe-stats/phoebe-extra-stats.json",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/friends/phoebe-stats/phoebe-extra-stats.json",
+          "staerd_baet": 16812,
+          "sha256": "e5581dfc42b07e11c26b40e14c15a6042cd8d8b68b3b85397501904e415377e0",
+          "breytt_utc": "2026-09-16T14:56:00Z"
+        },
+        {
+          "slod": "friends/phoebe-stats/phoebe-mentions-by-season.json",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/friends/phoebe-stats/phoebe-mentions-by-season.json",
+          "staerd_baet": 6538,
+          "sha256": "ca78f578a1332028f8fbe2384ae1b2a075a5a9d60d5e1c1fdaa45683331ba644",
+          "breytt_utc": "2026-09-16T14:56:00Z"
+        },
+        {
+          "slod": "friends/phoebe-stats/phoebe-per-episode.csv",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/friends/phoebe-stats/phoebe-per-episode.csv",
+          "staerd_baet": 24110,
+          "sha256": "acc021b04db431991303dbec957427f7c665b11333a30efccfcc66ae45284b0a",
+          "breytt_utc": "2026-09-16T14:56:00Z"
+        },
+        {
+          "slod": "friends/phoebe-stats/phoebe-screentime-by-season.json",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/friends/phoebe-stats/phoebe-screentime-by-season.json",
+          "staerd_baet": 24084,
+          "sha256": "4bab557919de0129ac5be358cabbdc0238c3fea7576f54d28150f14b990d1b4e",
+          "breytt_utc": "2026-09-16T14:56:00Z"
+        },
+        {
+          "slod": "friends/phoebe-stats/phoebe-top-talkers.json",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/friends/phoebe-stats/phoebe-top-talkers.json",
+          "staerd_baet": 16557,
+          "sha256": "0125f8ca0bc9b4236a7c30a165c99c59543fb3688a6f3a9cd1493ff0bfba37e2",
+          "breytt_utc": "2026-09-16T14:56:00Z"
+        },
+        {
+          "slod": "friends/phoebe-tribute.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/friends/phoebe-tribute.html",
+          "staerd_baet": 48744,
+          "sha256": "8910d9130349ce01e6b2de643281f4de9f4b4dd264ce54bd07cb3fc45452f361",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "friends/uppahalds-video.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/friends/uppahalds-video.html",
+          "staerd_baet": 42199,
+          "sha256": "4c574e807eaf535ae38333c0f74d4ee1a8c759c3ec221956dfb8ec4bf312646d",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "img/hi/favicon.svg",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/img/hi/favicon.svg",
+          "staerd_baet": 495,
+          "sha256": "76fa8e48d8f762e0c210068dde5476346e3387ff83ec2a3ee1103543a5113181",
+          "breytt_utc": "2026-08-20T08:57:13Z"
+        },
+        {
+          "slod": "img/hi/hi_named_logo-is.svg",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/img/hi/hi_named_logo-is.svg",
+          "staerd_baet": 8696,
+          "sha256": "ebf666c82f16a57564490586a2d6b5299f99b2d31e07d51d6eba63e5ba5fd8cb",
+          "breytt_utc": "2026-08-20T08:57:13Z"
+        },
+        {
+          "slod": "index.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/index.html",
+          "staerd_baet": 43992,
+          "sha256": "a297f4fb334b98d8e601092e7e7f6ea9be0aef4d213de07eea0e1b029c46106d",
+          "breytt_utc": "2026-09-17T09:50:23Z"
+        },
+        {
+          "slod": "lotur/git-ai-reproducible/agents.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/lotur/git-ai-reproducible/agents.html",
+          "staerd_baet": 43998,
+          "sha256": "32c034ed62c72bd282217f40338af060fcfbca6bd843b17a6e1ead1cb10b2a99",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "lotur/git-ai-reproducible/git.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/lotur/git-ai-reproducible/git.html",
+          "staerd_baet": 46961,
+          "sha256": "1e7b42fdbfdb809ea1c7f3a7c6d401bd3327b6e8a9f263758ccccb65a95fa5c4",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "lotur/git-ai-reproducible/index.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/lotur/git-ai-reproducible/index.html",
+          "staerd_baet": 43594,
+          "sha256": "7c8b85799ee25900fa61af413eded613a8195a036509327dec1d20712b68a13f",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "lotur/git-ai-reproducible/reproducible-reports.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/lotur/git-ai-reproducible/reproducible-reports.html",
+          "staerd_baet": 49691,
+          "sha256": "26e54ca64ddd0c4ffbcdb3f2d1c3e24f51538360b220c8e71ec3e2fff33837fd",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "lotur/logic-sets/index.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/lotur/logic-sets/index.html",
+          "staerd_baet": 42143,
+          "sha256": "b48e58d1f0ef7690d3a0446b55cd2feca49717e34ca5edc331fbfe5fcbf136f5",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "lotur/regex/index.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/lotur/regex/index.html",
+          "staerd_baet": 47055,
+          "sha256": "877e1f1b3ee3558b56e514aa2951d1f1bead361617b890ea3112eed9f02f9a3c",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "lotur/regex/mbl.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/lotur/regex/mbl.html",
+          "staerd_baet": 61494,
+          "sha256": "22178526319d0a118d8f49f09225de893f2c954c3ee39536d353e57afaa8f358",
+          "breytt_utc": "2026-09-16T14:56:21Z"
+        },
+        {
+          "slod": "lotur/sql-advanced/index.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/lotur/sql-advanced/index.html",
+          "staerd_baet": 42068,
+          "sha256": "cad7e1417d4ef8e9513db6ac7acd114517d590c359aa614999e627c2ce652403",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "lotur/sql-basics/index.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/lotur/sql-basics/index.html",
+          "staerd_baet": 42092,
+          "sha256": "e4936e256110d862fc247ed08ad0f84fb1e3e5a3a0d6b5417ef8476ff3c66a8d",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "lotur/storytelling/index.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/lotur/storytelling/index.html",
+          "staerd_baet": 42258,
+          "sha256": "90f068436a0404cdbdaeea7d37ce01bafe8dc53359891a488c34dd372f37c1de",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "lotur/vefthjonustur/hagstofan.css",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/lotur/vefthjonustur/hagstofan.css",
+          "staerd_baet": 145,
+          "sha256": "72ce72c2407dc0c859196d13f613c97d73fe6fb208234d012ba686e15b206eef",
+          "breytt_utc": "2026-09-16T12:43:16Z"
+        },
+        {
+          "slod": "lotur/vefthjonustur/hagstofan.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/lotur/vefthjonustur/hagstofan.html",
+          "staerd_baet": 68528,
+          "sha256": "97b719435923d84c0ba9e2dc95eca710ecbd8ca7715d1c1fd01c089169de9ffe",
+          "breytt_utc": "2026-09-16T14:56:21Z"
+        },
+        {
+          "slod": "lotur/vefthjonustur/vedurstofan.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/lotur/vefthjonustur/vedurstofan.html",
+          "staerd_baet": 64800,
+          "sha256": "051a48985536b18673c397a61ed47a1155648025a116c626d5ec4f7ff7de4325",
+          "breytt_utc": "2026-09-16T23:11:22Z"
+        },
+        {
+          "slod": "phoebe-central-perk.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/phoebe-central-perk.html",
+          "staerd_baet": 62185,
+          "sha256": "1951f249266e2225a9825d2d14674197bbd47419b11b920528c9869ddd9132dc",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "project-management.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/project-management.html",
+          "staerd_baet": 58036,
+          "sha256": "f6a27145c69cdaecaaafe5ce9d323e721edfe89317edc55fe5de2a40bf62fdf7",
+          "breytt_utc": "2026-09-16T23:10:47Z"
+        },
+        {
+          "slod": "reflections/bjorn.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/reflections/bjorn.html",
+          "staerd_baet": 44214,
+          "sha256": "c1bd0e06fef3f1b66fe386cfab24f3fb66c792e2cc4539d2f91fa46699774e62",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "reflections/ottar.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/reflections/ottar.html",
+          "staerd_baet": 42507,
+          "sha256": "1535b06aeb5203da42cd8989d0aa28698b0054f8339cf3d0a01b468754890121",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "reflections/sveinn.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/reflections/sveinn.html",
+          "staerd_baet": 42734,
+          "sha256": "5d72ec18eb92bca87dfeaebcb1c617450dccfb8aaa25301605ccc7ef4a65662d",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "search.json",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/search.json",
+          "staerd_baet": 218000,
+          "sha256": "444141b50f9121902826dd304abb6d1e261ea0db800c2cef7579a56c3674ba06",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "site_libs/bootstrap/bootstrap-fea70a228e37f9567efd30b6e6291295.min.css",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/bootstrap/bootstrap-fea70a228e37f9567efd30b6e6291295.min.css",
+          "staerd_baet": 507137,
+          "sha256": "040b24827e30007d7ccae9841b00ab3c99ae6af4f57384125aeca5b465eeadd0",
+          "breytt_utc": "2026-09-17T09:51:40Z"
+        },
+        {
+          "slod": "site_libs/bootstrap/bootstrap-icons-subset.woff",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/bootstrap/bootstrap-icons-subset.woff",
+          "staerd_baet": 1688,
+          "sha256": "e3ad7504488add378f21e3bb69ca8428d3b212fe44d166ac79190011ae5c27db",
+          "breytt_utc": "2026-09-16T14:56:22Z"
+        },
+        {
+          "slod": "site_libs/bootstrap/bootstrap-icons-subset.woff2",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/bootstrap/bootstrap-icons-subset.woff2",
+          "staerd_baet": 1264,
+          "sha256": "417aa90eab7ef10fb9441549f47b7dff9d5b2dac7dc896cba15508d3741f3f15",
+          "breytt_utc": "2026-09-16T14:56:22Z"
+        },
+        {
+          "slod": "site_libs/bootstrap/bootstrap-icons.css",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/bootstrap/bootstrap-icons.css",
+          "staerd_baet": 99492,
+          "sha256": "e360dcf1b0a84bca6ffa52334e2f36797d7c5dbd8be4084a8f29b502cd98cb98",
+          "breytt_utc": "2026-09-16T14:56:22Z"
+        },
+        {
+          "slod": "site_libs/bootstrap/bootstrap-icons.woff",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/bootstrap/bootstrap-icons.woff",
+          "staerd_baet": 180288,
+          "sha256": "f55513b7b591cb84a3b87ff0e34ea24d4831d6fedc22e54b911ca64b5b544a15",
+          "breytt_utc": "2026-07-24T13:44:48Z"
+        },
+        {
+          "slod": "site_libs/bootstrap/bootstrap.min.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/bootstrap/bootstrap.min.js",
+          "staerd_baet": 80668,
+          "sha256": "d2ea6c1e0cabca20d18e924b25a1cd0187c38ba7c33f60ab06e1b0402b9bcdb5",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/clipboard/clipboard.min.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/clipboard/clipboard.min.js",
+          "staerd_baet": 9160,
+          "sha256": "e17a1d816e13c0826e0ed7febfabc3277f45571234bde0bf9120829a7169edc9",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/quarto-html/anchor.min.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-html/anchor.min.js",
+          "staerd_baet": 5888,
+          "sha256": "69098e105d990f834cff1b7886d873444228ff63c590e5ff834d568f1115ed8b",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/quarto-html/popper.min.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-html/popper.min.js",
+          "staerd_baet": 20084,
+          "sha256": "4d50586b184724d39ddfe0f6582861664eddd5e806e5a79e0dbaa832361414d0",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/quarto-html/quarto-syntax-highlighting-48b423595647f4d965ce203b23b276d8.css",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-html/quarto-syntax-highlighting-48b423595647f4d965ce203b23b276d8.css",
+          "staerd_baet": 3648,
+          "sha256": "9cf7d8679b8b51a0b0c6c51253899277129477ae890b30d03e46f7eff3c4746b",
+          "breytt_utc": "2026-08-27T08:52:37Z"
+        },
+        {
+          "slod": "site_libs/quarto-html/quarto.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-html/quarto.js",
+          "staerd_baet": 26830,
+          "sha256": "4ecb60f215d96b2af0fe9d985c71e32863b1c993a64725a416ac18b5991c59c6",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/quarto-html/tabsets/tabsets.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-html/tabsets/tabsets.js",
+          "staerd_baet": 2882,
+          "sha256": "a9c226bf70e82eaf5476f619cecfb70b4446b87ce4d1634d6404b0b2ba006d15",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/quarto-html/tippy.css",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-html/tippy.css",
+          "staerd_baet": 1409,
+          "sha256": "5969f497d9158d7682f8219c6f13fa67269cdf5bf50a3931d95327151dee5678",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/quarto-html/tippy.umd.min.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-html/tippy.umd.min.js",
+          "staerd_baet": 24033,
+          "sha256": "41181eeec6d7ba64cb9165f0e95563e34e026bde79e7c13aeec83270429b6fae",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/quarto-html/zenscroll-min.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-html/zenscroll-min.js",
+          "staerd_baet": 3368,
+          "sha256": "3f7580ba4b34ce38d43491c042c6b7aa8e5f314d7e7777e508c088f6f18af52a",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/quarto-nav/headroom.min.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-nav/headroom.min.js",
+          "staerd_baet": 4570,
+          "sha256": "5b80cc4165a661a3f2060d6bdb5ccff591f04c4f8e39a06c12d3c2544587cb17",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/quarto-nav/quarto-nav.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-nav/quarto-nav.js",
+          "staerd_baet": 9851,
+          "sha256": "a209dafb198d7c8e77cb398912b7225806e7b998211afa1fb269a4ef54ff56f6",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/quarto-ojs/quarto-ojs-runtime.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-ojs/quarto-ojs-runtime.js",
+          "staerd_baet": 892128,
+          "sha256": "99628b525981d848756bbd4e77111a0002988560ee1dae3cc31ba06ac0fb2b2f",
+          "breytt_utc": "2026-07-24T13:44:48Z"
+        },
+        {
+          "slod": "site_libs/quarto-ojs/quarto-ojs.css",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-ojs/quarto-ojs.css",
+          "staerd_baet": 3661,
+          "sha256": "471cc4e247e0460e64c0476d5f8ff5c338b48ce1a24ac134bda48ebe77d959b3",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/quarto-search/autocomplete.umd.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-search/autocomplete.umd.js",
+          "staerd_baet": 96397,
+          "sha256": "cd9db3b7d812139a4679a2566ea8f01b2a80159490a60b9e9e813e81b5e00a05",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/quarto-search/fuse.min.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-search/fuse.min.js",
+          "staerd_baet": 23539,
+          "sha256": "c57339c3fa16b1d69d9a6b46749a8139ef8d4fc9bbfe48144ff897aa7d4222ec",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "site_libs/quarto-search/quarto-search.js",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/site_libs/quarto-search/quarto-search.js",
+          "staerd_baet": 43121,
+          "sha256": "1a23221f499b3993dc66ca5c8913e4e6602dfa4652337e9fbf75139ded5ece68",
+          "breytt_utc": "2026-07-24T13:45:50Z"
+        },
+        {
+          "slod": "team.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/team.html",
+          "staerd_baet": 47228,
+          "sha256": "16fb005473d8522174559029666b1a30c06c5e17c547f49fe320692a71578465",
+          "breytt_utc": "2026-09-17T09:51:06Z"
+        },
+        {
+          "slod": "tokens/bjorn.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/tokens/bjorn.html",
+          "staerd_baet": 43552,
+          "sha256": "b30ad94ea46afb4f2f247c2cdbef0e7b5dadb65d2964c5c688728ada6c32bf1a",
+          "breytt_utc": "2026-09-17T09:51:40Z"
+        },
+        {
+          "slod": "tokens/bjorn_files/figure-html/fig-tokenar-bjorn-output-1.png",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/tokens/bjorn_files/figure-html/fig-tokenar-bjorn-output-1.png",
+          "staerd_baet": 43920,
+          "sha256": "eba7b5b1df021831861d5f1e3cacbdad42ea122077d8df07f35dd0504890cf45",
+          "breytt_utc": "2026-09-17T09:51:40Z"
+        },
+        {
+          "slod": "tokens/index.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/tokens/index.html",
+          "staerd_baet": 166244,
+          "sha256": "4fdea7e2235987033688daa8bfde8f9e83e1bceacdf9f0166e50f412df29a591",
+          "breytt_utc": "2026-09-17T09:51:17Z"
+        },
+        {
+          "slod": "tokens/index_files/figure-html/fig-tokenar-teymi-output-1.png",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/tokens/index_files/figure-html/fig-tokenar-teymi-output-1.png",
+          "staerd_baet": 48948,
+          "sha256": "17bbaa8f6d9de0fa9ce7eb883e2004f4b2fbbda8bb9c6bcdac963af63b16339c",
+          "breytt_utc": "2026-09-17T09:51:17Z"
+        },
+        {
+          "slod": "tokens/ottar.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/tokens/ottar.html",
+          "staerd_baet": 43422,
+          "sha256": "9030b922ca170203d080a912b4ae2a61ffc999219b5c91bf829d387c6b0f56de",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "tokens/ottar_files/figure-html/fig-tokenar-ottar-output-1.png",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/tokens/ottar_files/figure-html/fig-tokenar-ottar-output-1.png",
+          "staerd_baet": 42048,
+          "sha256": "6f270d26b12ba337eeceef2ac264ce16ec5485724a1fb6be7884e121eeec7cc4",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "tokens/sveinn.html",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/tokens/sveinn.html",
+          "staerd_baet": 43129,
+          "sha256": "6ea07486f6c7d2876d1afc5012da1d8f577a5e99972819554cee954337b93af7",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        },
+        {
+          "slod": "tokens/sveinn_files/figure-html/fig-tokenar-sveinn-output-1.png",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs/tokens/sveinn_files/figure-html/fig-tokenar-sveinn-output-1.png",
+          "staerd_baet": 45661,
+          "sha256": "86abf3e369cafb508d73e124464c5ede6bc381ad282d56d8fb7681ad98df9ad3",
+          "breytt_utc": "2026-09-17T09:48:47Z"
+        }
+      ]
+    },
+    {
+      "heiti": "generated",
+      "mappa": "docs/vidmid/generated",
+      "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated",
+      "upprunarepo": "Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe",
+      "skyring": "Afleidd úttök greininganna sem Quarto límdi inn í síðurnar. vedurstofa-*.md eru EINA ummerkið um veðurstöðvagögnin — hráa API-svarið var aldrei vistað.",
+      "fjoldi_skraa": 19,
+      "staerd_baet": 75378,
+      "skrar": [
+        {
+          "slod": "earthquakes-regex.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/earthquakes-regex.md",
+          "staerd_baet": 1221,
+          "sha256": "f4858aa0cf3e44f3cae36d04cc907c79a0712fc761d6f68af5e9e8971bb8faa4",
+          "breytt_utc": "2026-09-17T09:47:26Z"
+        },
+        {
+          "slod": "earthquakes-results.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/earthquakes-results.md",
+          "staerd_baet": 19682,
+          "sha256": "2d29e902735237ceffc14aed2cea6711252fce1d91a158a261e8e846575f293c",
+          "breytt_utc": "2026-09-17T09:47:26Z"
+        },
+        {
+          "slod": "earthquakes-source.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/earthquakes-source.md",
+          "staerd_baet": 1426,
+          "sha256": "b864ad88774fdedf4a23b74c5aade1ff5be63392f62a481ecd40a38ee4e62ecf",
+          "breytt_utc": "2026-09-17T09:47:26Z"
+        },
+        {
+          "slod": "hagstofan-results.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/hagstofan-results.md",
+          "staerd_baet": 6663,
+          "sha256": "02c6c6cd81b1ea924b2dbdbab2868f59ad9a238ba290d283065e2756b5beafce",
+          "breytt_utc": "2026-09-17T09:47:21Z"
+        },
+        {
+          "slod": "phoebe-central-perk-regex.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/phoebe-central-perk-regex.md",
+          "staerd_baet": 2933,
+          "sha256": "ceac916c2d77309691ef9ae8141abca4298d6dc09433f36cbc1a5dab20d8849e",
+          "breytt_utc": "2026-09-17T09:47:17Z"
+        },
+        {
+          "slod": "phoebe-central-perk-summary.json",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/phoebe-central-perk-summary.json",
+          "staerd_baet": 1032,
+          "sha256": "77f6c4887f7df613987093904c172da70b7b4df6450b9c21165dc2c590b7d718",
+          "breytt_utc": "2026-09-17T09:47:17Z"
+        },
+        {
+          "slod": "phoebe-central-perk-summary.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/phoebe-central-perk-summary.md",
+          "staerd_baet": 1130,
+          "sha256": "0b164ed74502a0270d1205b7380c6b69ee211fe8b1281ecaa7d703f2dc485ac2",
+          "breytt_utc": "2026-09-17T09:47:17Z"
+        },
+        {
+          "slod": "phoebe-central-perk.svg",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/phoebe-central-perk.svg",
+          "staerd_baet": 28728,
+          "sha256": "a22661c30f49bc1e418782bc60b3dcb435f4d39937374fc80a3bb9faa35f8eb1",
+          "breytt_utc": "2026-09-17T09:47:17Z"
+        },
+        {
+          "slod": "phoebe-tmdb-summary.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/phoebe-tmdb-summary.md",
+          "staerd_baet": 67,
+          "sha256": "b6f736875198f989da0d681a523f79724ca87bb2ce754b9815ffe0929e91e354",
+          "breytt_utc": "2026-09-16T14:56:38Z"
+        },
+        {
+          "slod": "tokens-bjorn-tafla.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/tokens-bjorn-tafla.md",
+          "staerd_baet": 286,
+          "sha256": "dddfe3e150977126e9a90127a136b595e09d183e54239961476f853767b705df",
+          "breytt_utc": "2026-09-16T14:56:37Z"
+        },
+        {
+          "slod": "tokens-bjorn.svg",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/tokens-bjorn.svg",
+          "staerd_baet": 1884,
+          "sha256": "4d714c36c5ff693ef990576b67acc6c8190f5f28e6b684caa6039ae2ed76a284",
+          "breytt_utc": "2026-09-16T14:56:37Z"
+        },
+        {
+          "slod": "tokens-ottar-tafla.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/tokens-ottar-tafla.md",
+          "staerd_baet": 286,
+          "sha256": "ca927f9705e2a40b05fa0c41c0e2c90613f3e107ea197c5a2d27d2489fa86218",
+          "breytt_utc": "2026-09-16T14:56:37Z"
+        },
+        {
+          "slod": "tokens-ottar.svg",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/tokens-ottar.svg",
+          "staerd_baet": 1885,
+          "sha256": "be15807bcc4eee7e3525c946db92e4158ebe16ba6443907e03bea193c2b24fd3",
+          "breytt_utc": "2026-09-16T14:56:37Z"
+        },
+        {
+          "slod": "tokens-sveinn-tafla.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/tokens-sveinn-tafla.md",
+          "staerd_baet": 286,
+          "sha256": "c4c8b6ef83f3224485d912f5692ec7726243d15a5ecf3428326c7b02b8de5879",
+          "breytt_utc": "2026-09-16T14:56:37Z"
+        },
+        {
+          "slod": "tokens-sveinn.svg",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/tokens-sveinn.svg",
+          "staerd_baet": 2051,
+          "sha256": "e15e5f5e7cbd5b6ce0011d661efe7e066c3f39b702074b084c1f1b50329d257b",
+          "breytt_utc": "2026-09-16T14:56:37Z"
+        },
+        {
+          "slod": "vedurstofa-nidurstada.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/vedurstofa-nidurstada.md",
+          "staerd_baet": 140,
+          "sha256": "3193c00cdf65998e26e33f04a2c8d4e92612101212a545f5c5f389da89228ae0",
+          "breytt_utc": "2026-09-17T09:47:44Z"
+        },
+        {
+          "slod": "vedurstofa-siur.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/vedurstofa-siur.md",
+          "staerd_baet": 563,
+          "sha256": "6c02d955ffff23b099423d5422fd303f1607d83eb40d846314fe32f75cef0baf",
+          "breytt_utc": "2026-09-17T09:47:44Z"
+        },
+        {
+          "slod": "vedurstofa-stodvar.svg",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/vedurstofa-stodvar.svg",
+          "staerd_baet": 3715,
+          "sha256": "ee8f05aebde51663f86814e44dab8af498e37dce2179326f68ff536f32df25c5",
+          "breytt_utc": "2026-09-17T09:47:44Z"
+        },
+        {
+          "slod": "vedurstofa-svor.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/site/_generated/vedurstofa-svor.md",
+          "staerd_baet": 1400,
+          "sha256": "d5dee0d3587ead5ce130ba82d5d7a50055277ad3144e45a00b4f005c99e6a790",
+          "breytt_utc": "2026-09-17T09:47:44Z"
+        }
+      ]
+    },
+    {
+      "heiti": "phoebe-stats",
+      "mappa": "docs/vidmid/phoebe-stats",
+      "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats",
+      "upprunarepo": "Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe",
+      "skyring": "Friends-tölfræðin fullreiknuð: línufjöldi, senur, hlutföll. Tölur um textann, ekki textinn sjálfur — handritin sjálf eru ekki afrituð (höfundaréttur óútkljáður, issue #3).",
+      "fjoldi_skraa": 18,
+      "staerd_baet": 112350,
+      "skrar": [
+        {
+          "slod": "README.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/README.md",
+          "staerd_baet": 10493,
+          "sha256": "f4f944e42c23c995e188d6d27a5c0d1e4207fc424a2206bb5feb98edf23a2556",
+          "breytt_utc": "2026-09-17T09:42:10Z"
+        },
+        {
+          "slod": "_meta.json",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/_meta.json",
+          "staerd_baet": 1650,
+          "sha256": "4b6b46dba436978b9d79854e77449b3055ca3708a0fee78daf6ccf4bff1b0ffe",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "interaction-matrix.csv",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/interaction-matrix.csv",
+          "staerd_baet": 593,
+          "sha256": "a99193c542b8f6d7cc1c209d1bb7c4e8fe525e312d2b7918b23ccb1c9ca85e8a",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "mentions-by-season.csv",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/mentions-by-season.csv",
+          "staerd_baet": 197,
+          "sha256": "06ad42df38f0ce34502ee9d76672ab1c7996a7672af6564dfd129b40c56b3ef7",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "phoebe-distinctive-words.csv",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/phoebe-distinctive-words.csv",
+          "staerd_baet": 1855,
+          "sha256": "a5d815d4f2da911b72fbf81e1b4c3046ea903bd07ba00a9044d4e4f9257a848b",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "phoebe-extra-stats.json",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/phoebe-extra-stats.json",
+          "staerd_baet": 16812,
+          "sha256": "e5581dfc42b07e11c26b40e14c15a6042cd8d8b68b3b85397501904e415377e0",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "phoebe-mentions-by-season.csv",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/phoebe-mentions-by-season.csv",
+          "staerd_baet": 841,
+          "sha256": "480228ca568b8de531d4ae694170fc216ed7ddbe9522040bd9c1583264497bb3",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "phoebe-mentions-by-season.json",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/phoebe-mentions-by-season.json",
+          "staerd_baet": 6538,
+          "sha256": "ca78f578a1332028f8fbe2384ae1b2a075a5a9d60d5e1c1fdaa45683331ba644",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "phoebe-per-episode.csv",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/phoebe-per-episode.csv",
+          "staerd_baet": 24110,
+          "sha256": "acc021b04db431991303dbec957427f7c665b11333a30efccfcc66ae45284b0a",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "phoebe-screentime-by-season.csv",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/phoebe-screentime-by-season.csv",
+          "staerd_baet": 3840,
+          "sha256": "7fa201792f566b1b0e464b3402aac355ede6da947ad2f394130927eb9201c326",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "phoebe-screentime-by-season.json",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/phoebe-screentime-by-season.json",
+          "staerd_baet": 24084,
+          "sha256": "4bab557919de0129ac5be358cabbdc0238c3fea7576f54d28150f14b990d1b4e",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "phoebe-top-talkers-by-season.csv",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/phoebe-top-talkers-by-season.csv",
+          "staerd_baet": 1438,
+          "sha256": "864bdce3093c86cffef4cfd8249ad7318dffe2ab54ebbb2f3189fa616b05b058",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "phoebe-top-talkers.csv",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/phoebe-top-talkers.csv",
+          "staerd_baet": 550,
+          "sha256": "2f90fcb10aafc724ade6d94a54ced491cc5c041cff941d65243b7e53f042fcf7",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "phoebe-top-talkers.json",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/phoebe-top-talkers.json",
+          "staerd_baet": 16557,
+          "sha256": "8d0840307fba7dca919f03e6f816e81f1431da7d81743aad55c9a95819eadee3",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "screentime-by-season.csv",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/screentime-by-season.csv",
+          "staerd_baet": 1599,
+          "sha256": "086d282309758967083ccbeb56f8f046ecdb15cf9957df3aa03839318abf1da5",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "signature-phrases.csv",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/signature-phrases.csv",
+          "staerd_baet": 250,
+          "sha256": "2a91b5e7b017ad6ae0d030b1318bab923fd9f3902da71a81910ffbf2385f0349",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "speaks-with-phoebe.csv",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/speaks-with-phoebe.csv",
+          "staerd_baet": 319,
+          "sha256": "f5c4307d4a6e6fffb71aa1e5354301eecfb5764319c0a874f26fa86d85915598",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        },
+        {
+          "slod": "summary.json",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/summary.json",
+          "staerd_baet": 624,
+          "sha256": "632aafcf43b8ed904d5fc2b53b41bbc344394a85bb3e93ef21814c34e8228641",
+          "breytt_utc": "2026-09-17T09:47:09Z"
+        }
+      ]
+    }
+  ]
+}
