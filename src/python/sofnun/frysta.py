@@ -28,10 +28,10 @@ from pathlib import Path
 try:  # keyrt beint: python3 src/python/sofnun/frysta.py
     import frysta_afrit
     import frysta_vedurstodvar
-    from hragogn import ROT, log, skra_ofryst, stadfesta
+    from frysting import ROT, log, skra_ofryst, stadfesta
 except ImportError:  # flutt inn sem eining innan pakkans
     from . import frysta_afrit, frysta_vedurstodvar
-    from .hragogn import ROT, log, skra_ofryst, stadfesta
+    from .frysting import ROT, log, skra_ofryst, stadfesta
 
 TMDB_BREYTA = "TMDB_TOKEN"
 UMHVERFISSKRA = ROT / ".env"

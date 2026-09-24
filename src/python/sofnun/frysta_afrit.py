@@ -25,11 +25,11 @@ import sys
 from pathlib import Path
 
 try:  # keyrt beint: python3 src/python/sofnun/frysta_afrit.py
-    from hragogn import (
+    from frysting import (
         HRAGOGN, ROT, lesa_frystingu, log, lysa_skrar, nuna_utc, skra_safn, vaentar_summur,
     )
 except ImportError:  # flutt inn sem eining innan pakkans
-    from .hragogn import (
+    from .frysting import (
         HRAGOGN, ROT, lesa_frystingu, log, lysa_skrar, nuna_utc, skra_safn, vaentar_summur,
     )
 

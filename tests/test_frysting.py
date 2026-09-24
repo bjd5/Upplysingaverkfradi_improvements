@@ -18,7 +18,7 @@ from unittest import mock
 ROT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROT / "src" / "python"))
 
-from sofnun import hragogn  # noqa: E402
+from sofnun import frysting  # noqa: E402
 
 
 class VaentarSummurProf(unittest.TestCase):
@@ -36,18 +36,18 @@ class VaentarSummurProf(unittest.TestCase):
 
     def test_summa_per_skra(self) -> None:
         self._provenance({"sha256": {"svar.json": "abc"}})
-        self.assertEqual(hragogn.vaentar_summur(self.mappa), {"svar.json": "abc"})
+        self.assertEqual(frysting.vaentar_summur(self.mappa), {"svar.json": "abc"})
 
     def test_ein_summa_med_nefndri_skra(self) -> None:
         (self.mappa / "svar.json").write_text("[]", encoding="utf-8")
         (self.mappa / "annad.json").write_text("[]", encoding="utf-8")
         self._provenance({"sha256": "abc", "response_file": "svar.json"})
-        self.assertEqual(hragogn.vaentar_summur(self.mappa), {"svar.json": "abc"})
+        self.assertEqual(frysting.vaentar_summur(self.mappa), {"svar.json": "abc"})
 
     def test_ein_summa_og_ein_gagnaskra(self) -> None:
         (self.mappa / "events.json").write_text("[]", encoding="utf-8")
         self._provenance({"sha256": "abc"})
-        self.assertEqual(hragogn.vaentar_summur(self.mappa), {"events.json": "abc"})
+        self.assertEqual(frysting.vaentar_summur(self.mappa), {"events.json": "abc"})
 
     def test_ein_summa_og_margar_skrar_stodvar(self) -> None:
         """Óljós summa er villa, ekki ágiskun — annars væri sannreyningin sýndarmennska."""
@@ -55,10 +55,10 @@ class VaentarSummurProf(unittest.TestCase):
         (self.mappa / "b.json").write_text("[]", encoding="utf-8")
         self._provenance({"sha256": "abc"})
         with self.assertRaises(ValueError):
-            hragogn.vaentar_summur(self.mappa)
+            frysting.vaentar_summur(self.mappa)
 
     def test_ekkert_provenance_gefur_tomt(self) -> None:
-        self.assertEqual(hragogn.vaentar_summur(self.mappa), {})
+        self.assertEqual(frysting.vaentar_summur(self.mappa), {})
 
 
 class LysaSkrarProf(unittest.TestCase):
@@ -66,23 +66,23 @@ class LysaSkrarProf(unittest.TestCase):
         self._tmp = tempfile.TemporaryDirectory()
         self.mappa = Path(self._tmp.name)
         (self.mappa / "svar.json").write_text("[1]", encoding="utf-8")
-        self.summa = hragogn.sha256_af(self.mappa / "svar.json")
+        self.summa = frysting.sha256_af(self.mappa / "svar.json")
 
     def tearDown(self) -> None:
         self._tmp.cleanup()
 
     def test_rett_summa_er_stadfest(self) -> None:
-        skrar = hragogn.lysa_skrar(self.mappa, {"svar.json": self.summa})
+        skrar = frysting.lysa_skrar(self.mappa, {"svar.json": self.summa})
         self.assertTrue(skrar[0]["stadfest_vid_provenance"])
         self.assertEqual(skrar[0]["sha256"], self.summa)
 
     def test_onefnd_skra_er_skrad_en_ekki_stadfest(self) -> None:
-        skrar = hragogn.lysa_skrar(self.mappa, {})
+        skrar = frysting.lysa_skrar(self.mappa, {})
         self.assertFalse(skrar[0]["stadfest_vid_provenance"])
 
     def test_rong_summa_stodvar_keyrslu(self) -> None:
         with self.assertRaisesRegex(ValueError, "SHA-256 stemmir ekki"):
-            hragogn.lysa_skrar(self.mappa, {"svar.json": "0" * 64})
+            frysting.lysa_skrar(self.mappa, {"svar.json": "0" * 64})
 
 
 class StadfestaProf(unittest.TestCase):
@@ -96,15 +96,15 @@ class StadfestaProf(unittest.TestCase):
         (self.safnmappa / "svar.json").write_text("[1]", encoding="utf-8")
 
         self.frysting = self.rot / "data" / "raw" / "frysting.json"
-        self._plastur = mock.patch.multiple(hragogn, ROT=self.rot, FRYSTING=self.frysting)
+        self._plastur = mock.patch.multiple(frysting, ROT=self.rot, FRYSTING=self.frysting)
         self._plastur.start()
-        hragogn.skra_safn(
+        frysting.skra_safn(
             {
                 "heiti": "prof",
                 "mappa": "data/raw/prof",
                 "fjoldi_skraa": 1,
                 "staerd_baet": (self.safnmappa / "svar.json").stat().st_size,
-                "skrar": hragogn.lysa_skrar(self.safnmappa),
+                "skrar": frysting.lysa_skrar(self.safnmappa),
             }
         )
 
@@ -113,50 +113,50 @@ class StadfestaProf(unittest.TestCase):
         self._tmp.cleanup()
 
     def test_osnert_safn_stemmir(self) -> None:
-        self.assertEqual(hragogn.stadfesta(), 0)
+        self.assertEqual(frysting.stadfesta(), 0)
 
     def test_breytt_skra_finnst(self) -> None:
         (self.safnmappa / "svar.json").write_text("[2]", encoding="utf-8")
-        self.assertEqual(hragogn.stadfesta(), 1)
+        self.assertEqual(frysting.stadfesta(), 1)
 
     def test_horfin_skra_finnst(self) -> None:
         (self.safnmappa / "svar.json").unlink()
-        self.assertEqual(hragogn.stadfesta(), 1)
+        self.assertEqual(frysting.stadfesta(), 1)
 
     def test_oskrad_skra_finnst(self) -> None:
         (self.safnmappa / "auka.json").write_text("[3]", encoding="utf-8")
-        self.assertEqual(hragogn.stadfesta(), 1)
+        self.assertEqual(frysting.stadfesta(), 1)
 
     def test_vantar_frystingu_stodvar(self) -> None:
         self.frysting.unlink()
         with self.assertRaises(FileNotFoundError):
-            hragogn.stadfesta()
+            frysting.stadfesta()
 
 
 class AudkenniProf(unittest.TestCase):
     """User-Agent verður að auðkenna verkefnið og ekki bera netfang (regla 4)."""
 
     def test_sjalfgefid_audkenni_hefur_ekkert_netfang(self) -> None:
-        with mock.patch.dict("os.environ", {hragogn.AUDKENNIS_BREYTA: ""}):
-            audkenni = hragogn.notandi_audkenni()
+        with mock.patch.dict("os.environ", {frysting.AUDKENNIS_BREYTA: ""}):
+            audkenni = frysting.notandi_audkenni()
         self.assertNotIn("@", audkenni)
         self.assertIn("Upplysingaverkfradi", audkenni)
 
     def test_netfang_ur_umhverfi_gefur_advorun(self) -> None:
-        with mock.patch.dict("os.environ", {hragogn.AUDKENNIS_BREYTA: "prof (a@b.is)"}):
-            with self.assertLogs(hragogn.log, level="WARNING"):
-                self.assertEqual(hragogn.notandi_audkenni(), "prof (a@b.is)")
+        with mock.patch.dict("os.environ", {frysting.AUDKENNIS_BREYTA: "prof (a@b.is)"}):
+            with self.assertLogs(frysting.log, level="WARNING"):
+                self.assertEqual(frysting.notandi_audkenni(), "prof (a@b.is)")
 
 
 class FrosinGognProf(unittest.TestCase):
     """Gögnin sem ERU fryst í þessu repo-i eiga alltaf að stemma við frysting.json."""
 
     def test_hragognin_eru_osnert(self) -> None:
-        self.assertEqual(hragogn.stadfesta(), 0)
+        self.assertEqual(frysting.stadfesta(), 0)
 
     def test_tmdb_er_skrad_ofryst(self) -> None:
         """Safn sem ekki tókst að frysta má ekki hverfa þegjandi (regla 6)."""
-        skjal = json.loads(hragogn.FRYSTING.read_text(encoding="utf-8"))
+        skjal = json.loads(frysting.FRYSTING.read_text(encoding="utf-8"))
         ofryst = {faersla["heiti"] for faersla in skjal["ofryst"]}
         self.assertIn("tmdb", ofryst)
 
