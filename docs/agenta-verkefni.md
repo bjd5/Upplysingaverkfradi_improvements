@@ -337,8 +337,9 @@ Viðmiðstölurnar eru í docs/vidmid/ — niðurstaðan þín verður borin sam
 við þær í #16.
 
 Smíðið:
-- src/sql/migrations/<númer>_<heiti>.sql með athugasemd um hvaðan gögnin koma
-  og hvaða leyfi gildir (regla 5).
+- src/sql/migrations/<NÚMER>_<HEITI>.sql — notaðu NÁKVÆMLEGA númerið og heitið
+  sem pakkanum þínum er úthlutað í töflunni hér að neðan. Skráin ber athugasemd
+  um hvaðan gögnin koma og hvaða leyfi gildir (regla 5).
 - Hleðslu í src/python/vinnsla/ sem SANNREYNIR hverja færslu áður en hún fer
   inn. Frávik STÖÐVA keyrsluna — færsla má aldrei hverfa hljóðlega (regla 6).
 - Próf sem staðfesta fjöldatölurnar hér að neðan.
@@ -349,15 +350,21 @@ Lokið: fjöldatölur úr grunninum bornar saman við væntu gildin í issue-inu
 og staðfesting á að engin fyrirspurn noti strengjasamsetningu.
 ```
 
-Væntu gildin sem hver pakki á að hitta:
+Úthlutuð migration-númer og væntu gildin sem hver pakki á að hitta:
 
-| Pakki | Issue | Gagnasafn | Verður að standast |
-|---|---|---|---|
-| P1.2 | #6 | Jarðskjálftar | 334 atburðir · 61 dagur · enginn `magnitude_type` `NULL` |
-| P1.3 | #7 | Hagstofan | fjöldi gilda = margfeldi víddastærða |
-| P1.4 | #8 | Veðurstöðvar | fjöldi stöðva = fjöldi í frosna svarinu |
-| P1.5 | #9 | mbl.is | öll fimm svör æfingarinnar fást úr SQL |
-| P1.6 | #10 | Friends | 227 skrár · 236 þættir · 61.161 lína · 2,95% óflokkað |
+| Pakki | Issue | Gagnasafn | Migration | Verður að standast |
+|---|---|---|---|---|
+| P1.2 | #6 | Jarðskjálftar | `002_jardskjalftar.sql` | 334 atburðir · 61 dagur · enginn `magnitude_type` `NULL` |
+| P1.3 | #7 | Hagstofan | `003_hagstofan.sql` | fjöldi gilda = margfeldi víddastærða |
+| P1.4 | #8 | Veðurstöðvar | `004_vedurstodvar.sql` | fjöldi stöðva = fjöldi í frosna svarinu |
+| P1.5 | #9 | mbl.is | `005_mbl-regex.sql` | öll fimm svör æfingarinnar fást úr SQL |
+| P1.6 | #10 | Friends | `006_friends.sql` | 227 skrár · 236 þættir · 61.161 lína · 2,95% óflokkað |
+
+Númerin eru frátekin fyrir fram því pakkarnir fimm eru unnir samtímis. Taki
+tveir agentar sama númerið stöðvar keyrarinn úr #5 keyrsluna með villunni
+„Tvær migrations bera númerið 00N — númer verða að vera einkvæm". Enginn
+endurnúmerar pakka annars, og `001_gagnasofnun.sql` stendur óhreyfð: migration
+sem hefur verið keyrð er aldrei breytt (regla 5).
 
 ---
 
