@@ -15,10 +15,13 @@ import logging
 import sys
 from pathlib import Path
 
+from gagnagrunnur.keyrari import MigrationVilla, keyra
+from gagnagrunnur.tenging import slod_grunns, tenging
+
 ROT = Path(__file__).resolve().parents[2]
 GOGN_HRA = ROT / "data" / "raw"
 GOGN_UNNIN = ROT / "data" / "processed"
-GAGNAGRUNNUR = ROT / "data" / "db" / "rannsokn.sqlite"
+GAGNAGRUNNUR = slod_grunns()
 VEFGOGN = ROT / "web" / "gogn"
 
 logging.basicConfig(
@@ -46,12 +49,24 @@ def vinna() -> None:
 
 
 def hlada() -> None:
-    """Setur hreinsuð gögn í SQL-grunninn.
+    """Byggir grunninn úr migrations og setur hreinsuð gögn í hann.
 
-    Regla 5: fyrirspurnir alltaf með breytum, aldrei strengjasamsetningu.
+    Regla 5: öll uppbygging grunnsins kemur úr src/sql/migrations/, keyrð í
+    númeraröð, og fyrirspurnir eru alltaf með breytum.
     """
-    log.info("Hleðsla: ekki útfærð enn — sjá src/python/gagnagrunnur/")
-    raise NotImplementedError("Útfæra í src/python/gagnagrunnur/")
+    with tenging(GAGNAGRUNNUR) as samband:
+        keyrdar = keyra(samband)
+
+    if keyrdar:
+        log.info(
+            "Keyrði %d migration: %s",
+            len(keyrdar),
+            ", ".join(m.skraarheiti for m in keyrdar),
+        )
+    else:
+        log.info("Grunnurinn hefur þegar allar migrations — ekkert var keyrt.")
+
+    log.info("Hleðsla gagnasafnanna sjálfra: ekki útfærð enn — sjá issue #6–#10.")
 
 
 def flytja_ut() -> None:
@@ -85,15 +100,20 @@ def main(rok: list[str] | None = None) -> int:
     for mappa in (GOGN_HRA, GOGN_UNNIN, GAGNAGRUNNUR.parent, VEFGOGN):
         mappa.mkdir(parents=True, exist_ok=True)
 
-    keyra = SKREF.values() if valkostir.skref == "allt" else [SKREF[valkostir.skref]]
+    adgerdir = SKREF.values() if valkostir.skref == "allt" else [SKREF[valkostir.skref]]
 
-    for adgerd in keyra:
+    for adgerd in adgerdir:
         try:
             adgerd()
         except NotImplementedError as villa:
             # Regla 6: villur eru aldrei þaggaðar — en hér er þetta vænt ástand
             # meðan verkefnið er í uppbyggingu.
             log.warning("%s", villa)
+        except MigrationVilla as villa:
+            # Sagan stemmir ekki við migration-skrárnar: grunnurinn er ekki
+            # endurbyggjanlegur og keyrslan heldur ekki áfram (regla 5).
+            log.error("%s", villa)
+            return 1
 
     return 0
 
