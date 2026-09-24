@@ -1,0 +1,14 @@
+{
+  "endpoint": "https://px.hagstofa.is/pxis/api/v1/is/Samfelag/skolamal/4_haskolastig/1_hsProf/SKO04208b.px",
+  "fetched_at_utc": "2026-09-10T09:02:26+00:00",
+  "methods": [
+    "GET",
+    "POST"
+  ],
+  "user_agent": "IDN302G student project (GitHub: TheSveinn)",
+  "sha256": {
+    "metadata.json": "d190f9917d448f9185670f261dd636b00888e26e38eba1f78297d8164f59278f",
+    "query.json": "84ce79544fd561818f24d3ac1fd390e07923856dbe698cd8212ac5a5118fd117",
+    "response.json": "65b2d13ae435052ff2aadb029de6b9cf21f5fa2ca9d3f359d369d8d95e787024"
+  }
+}
