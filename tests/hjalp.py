@@ -5,7 +5,7 @@ Prófin eru keyrð með staðalsafninu einu (regla 10 — engir nýir pakkar)::
     python3 -m unittest discover -s tests
 
 Innflutningur þessarar einingar setur ``src/python`` á ``sys.path`` svo prófin
-nái í ``gagnagrunnur``-pakkann án uppsetningar.
+nái í pakkana án uppsetningar.
 """
 
 from __future__ import annotations

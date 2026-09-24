@@ -1,0 +1,47 @@
+{
+  "transcript_files": 227,
+  "singing_files": 19,
+  "singing_scenes": 24,
+  "singing_episode_ids": [
+    "0101",
+    "0110",
+    "0111",
+    "0208",
+    "0212-0213",
+    "0217",
+    "0218",
+    "0314",
+    "0315",
+    "0323",
+    "0401",
+    "0402",
+    "0405",
+    "0410",
+    "0418",
+    "0603",
+    "0615-0616",
+    "0810",
+    "1017-1018"
+  ],
+  "groups": {
+    "no_central_perk": {
+      "n": 33,
+      "median_phoebe_share": 0.13057199211045364,
+      "mean_phoebe_share": 0.14632355296794258,
+      "median_friends_to_phoebe_ratio": 6.658610271903323
+    },
+    "central_perk": {
+      "n": 175,
+      "median_phoebe_share": 0.1442400774443369,
+      "mean_phoebe_share": 0.15255797971653534,
+      "median_friends_to_phoebe_ratio": 5.932885906040268
+    },
+    "phoebe_sings": {
+      "n": 19,
+      "median_phoebe_share": 0.18627450980392157,
+      "mean_phoebe_share": 0.19378886014728103,
+      "median_friends_to_phoebe_ratio": 4.368421052631579
+    }
+  },
+  "median_difference_percentage_points": 4.203443235958468
+}
