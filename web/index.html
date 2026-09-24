@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upplýsingaverkfræði — rannsóknarverkefni</title>
+  <meta name="description" content="Rannsóknarverkefni í upplýsingaverkfræði: gagnasöfnun frá vefþjónustum, úrvinnsla í SQL-grunni og birting niðurstaðna.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components/hetja.css">
+  <link rel="stylesheet" href="assets/css/components/kort.css">
+  <link rel="stylesheet" href="assets/css/components/stada-gagna.css">
+  <script src="assets/js/valmynd.js" defer></script>
+  <script src="assets/js/stada-gagna.js" defer></script>
+</head>
+<body class="sida">
+
+  <a class="stokk-tengill" href="#efni">Fara beint í efni</a>
+
+  <header class="haus">
+    <div class="umgjord haus__innihald">
+      <a class="haus__merki" href="index.html">Upplýsinga<span>verkfræði</span></a>
+      <nav class="valmynd" aria-label="Aðalvalmynd">
+        <button class="valmynd__hnappur" type="button"
+                aria-expanded="false" aria-controls="valmyndarlisti">
+          Valmynd
+        </button>
+        <ul class="valmynd__listi" id="valmyndarlisti">
+          <li><a class="valmynd__tengill" href="index.html" aria-current="page">Forsíða</a></li>
+          <li><a class="valmynd__tengill" href="sidur/adferdafraedi.html">Aðferðafræði</a></li>
+          <li><a class="valmynd__tengill" href="sidur/gogn.html">Gögn</a></li>
+          <li><a class="valmynd__tengill" href="sidur/nidurstodur.html">Niðurstöður</a></li>
+          <li><a class="valmynd__tengill" href="sidur/um.html">Um verkefnið</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="efni">
+
+    <section class="hetja">
+      <div class="umgjord">
+        <p class="hetja__merkimidi">Rannsóknarverkefni · 2026</p>
+        <h1>Gögn úr vefþjónustum, greind og gerð skiljanleg</h1>
+        <p class="hetja__inngangur">
+          Verkefnið sækir gögn frá opnum vefþjónustum, geymir þau í
+          skipulögðum SQL-gagnagrunni og birtir niðurstöðurnar hér — með
+          rekjanlegri slóð frá hverri einustu tölu aftur í upprunaleg gögn.
+        </p>
+        <div class="hetja__adgerdir">
+          <a class="hnappur hnappur--adal" href="sidur/nidurstodur.html">Skoða niðurstöður</a>
+          <a class="hnappur hnappur--aukinn" href="sidur/adferdafraedi.html">Lesa aðferðafræðina</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="umgjord">
+
+      <section class="hluti" aria-labelledby="stada">
+        <h2 id="stada" class="skjalesari">Staða gagna</h2>
+        <!-- Textinn hér er sjálfgefinn ef JavaScript er slökkt (regla 3.4) -->
+        <p class="stada-gagna" data-stada-gagna>
+          <span class="stada-gagna__punktur" aria-hidden="true"></span>
+          <span><strong>Gagnasafn:</strong> uppfærsludagsetning birtist þegar
+          gögn hafa verið flutt út í <code>web/gogn/</code>.</span>
+        </p>
+      </section>
+
+      <section class="hluti" aria-labelledby="leidir">
+        <h2 id="leidir">Hvert viltu fara?</h2>
+        <p>
+          Verkefninu er skipt í fjóra hluta. Hver hluti stendur sjálfstætt og
+          þú kemst í hvaða efni sem er með mest þremur smellum.
+        </p>
+
+        <div class="kort-raster">
+
+          <article class="kort">
+            <p class="kort__tala" aria-hidden="true">01</p>
+            <h3>Aðferðafræði</h3>
+            <p>
+              Hvernig gögnin eru sótt, hvaða forsendur liggja að baki og
+              hvaða takmarkanir fylgja þeim.
+            </p>
+            <a class="kort__tengill" href="sidur/adferdafraedi.html">Lesa aðferðafræði</a>
+          </article>
+
+          <article class="kort">
+            <p class="kort__tala" aria-hidden="true">02</p>
+            <h3>Gögn</h3>
+            <p>
+              Yfirlit yfir vefþjónusturnar sem sótt er í, uppbyggingu
+              gagnagrunnsins og hvenær hver gagnasöfnun fór fram.
+            </p>
+            <a class="kort__tengill" href="sidur/gogn.html">Skoða gögnin</a>
+          </article>
+
+          <article class="kort">
+            <p class="kort__tala" aria-hidden="true">03</p>
+            <h3>Niðurstöður</h3>
+            <p>
+              Greiningin sjálf — töflur og myndrit byggð á gögnunum í
+              grunninum.
+            </p>
+            <a class="kort__tengill" href="sidur/nidurstodur.html">Sjá niðurstöður</a>
+          </article>
+
+          <article class="kort">
+            <p class="kort__tala" aria-hidden="true">04</p>
+            <h3>Um verkefnið</h3>
+            <p>
+              Markmið rannsóknarinnar, heimildaskrá og upplýsingar um
+              höfund.
+            </p>
+            <a class="kort__tengill" href="sidur/um.html">Um verkefnið</a>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="fotur">
+    <div class="umgjord fotur__raster">
+      <div>
+        <h2>Um síðuna</h2>
+        <p>
+          Rannsóknarverkefni í upplýsingaverkfræði. Öll gögn sem birtast hér
+          eru rekjanleg aftur til upprunalegrar vefþjónustu.
+        </p>
+      </div>
+      <div>
+        <h2>Efni</h2>
+        <ul>
+          <li><a href="sidur/adferdafraedi.html">Aðferðafræði</a></li>
+          <li><a href="sidur/gogn.html">Gögn</a></li>
+          <li><a href="sidur/nidurstodur.html">Niðurstöður</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Heimildir</h2>
+        <ul>
+          <li><a href="sidur/um.html#heimildir">Heimildaskrá</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+/* kort.css — efnisspjöld í rasti */
+
+.kort-raster {
+  display: grid;
+  gap: var(--bil-6);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 40rem) {
+  .kort-raster { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 64rem) {
+  .kort-raster--thrju { grid-template-columns: repeat(3, 1fr); }
+}
+
+.kort {
+  display: flex;
+  flex-direction: column;
+  padding: var(--bil-6);
+  background: var(--bak-upphaekkad);
+  border: 1px solid var(--rammi);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--skuggi-sm);
+  transition: box-shadow var(--hradi) var(--ferill),
+              border-color var(--hradi) var(--ferill),
+              transform var(--hradi) var(--ferill);
+}
+
+.kort:hover {
+  box-shadow: var(--skuggi);
+  border-color: var(--rammi-sterkur);
+  transform: translateY(-2px);
+}
+
+.kort__tala {
+  font-family: var(--letur-fyrirsogn);
+  font-size: var(--texti-2xl);
+  color: var(--adal-500);
+  line-height: 1;
+  margin-bottom: var(--bil-2);
+}
+
+.kort h3 {
+  margin: 0 0 var(--bil-2);
+  font-size: var(--texti-lg);
+}
+
+.kort p {
+  color: var(--texti-daufur);
+  font-size: var(--texti-sm);
+  margin-bottom: var(--bil-4);
+  flex: 1;
+}
+
+/* Allt kortið verður smellanlegt út frá tenglinum — án þess að tapa fókus */
+.kort__tengill { font-weight: var(--thyngd-medium); text-decoration: none; }
+.kort__tengill::after { content: " →"; }
+.kort__tengill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+}
+.kort { position: relative; }

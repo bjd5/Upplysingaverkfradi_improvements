@@ -1,0 +1,161 @@
+/* ===========================================================================
+   layout.css — grind, haus og fótur (það sem er eins á ÖLLUM síðum)
+   =========================================================================== */
+
+/* --- Grind --------------------------------------------------------------- */
+.umgjord {
+  width: 100%;
+  max-width: var(--breidd-efnis);
+  margin-inline: auto;
+  padding-inline: var(--bil-4);
+}
+
+@media (min-width: 48rem) {
+  .umgjord { padding-inline: var(--bil-8); }
+}
+
+.sida { display: flex; flex-direction: column; min-height: 100vh; }
+main { flex: 1; padding-block: var(--bil-8) var(--bil-16); }
+
+.hluti { margin-block: var(--bil-12); }
+
+/* --- Stökkva yfir í efni (fyrsti tengill á hverri síðu, regla 3.3) ------- */
+.stokk-tengill {
+  position: absolute;
+  left: var(--bil-4);
+  top: var(--bil-2);
+  transform: translateY(-200%);
+  z-index: 100;
+  background: var(--adal-500);
+  color: var(--texti-a-lit);
+  padding: var(--bil-2) var(--bil-4);
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+.stokk-tengill:focus { transform: translateY(0); color: var(--texti-a-lit); }
+
+/* --- Haus (eins á öllum síðum — regla 3.2) ------------------------------- */
+.haus {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bak-upphaekkad);
+  border-bottom: 1px solid var(--rammi);
+}
+
+.haus__innihald {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bil-4);
+  min-height: 4rem;
+}
+
+.haus__merki {
+  font-family: var(--letur-fyrirsogn);
+  font-size: var(--texti-lg);
+  font-weight: var(--thyngd-feit);
+  color: var(--texti);
+  text-decoration: none;
+  letter-spacing: var(--stafabil-thett);
+}
+.haus__merki span { color: var(--adal-500); }
+
+/* --- Valmynd ------------------------------------------------------------- */
+.valmynd__hnappur {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bil-2);
+  min-height: 44px;              /* smellifletir ≥ 44px — regla 3.5 */
+  min-width: 44px;
+  padding: var(--bil-2) var(--bil-3);
+  background: none;
+  border: 1px solid var(--rammi-sterkur);
+  border-radius: var(--radius);
+  color: var(--texti);
+  font: inherit;
+  font-size: var(--texti-sm);
+  cursor: pointer;
+}
+
+.valmynd__listi {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--bil-1);
+}
+
+.valmynd__tengill {
+  display: block;
+  padding: var(--bil-2) var(--bil-3);
+  min-height: 44px;
+  line-height: 28px;
+  color: var(--texti-daufur);
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-size: var(--texti-sm);
+  font-weight: var(--thyngd-medium);
+}
+.valmynd__tengill:hover {
+  background: var(--bak-daufur);
+  color: var(--texti);
+}
+
+/* Núverandi síða er ALLTAF merkt (regla 3.2) */
+.valmynd__tengill[aria-current="page"] {
+  color: var(--adal-500);
+  background: var(--adal-50);
+}
+
+/* Farsímar fyrst: valmynd fellur niður, hnappur birtist */
+@media (max-width: 47.99rem) {
+  .valmynd__listi {
+    position: absolute;
+    left: 0; right: 0;
+    top: 100%;
+    flex-direction: column;
+    background: var(--bak-upphaekkad);
+    border-bottom: 1px solid var(--rammi);
+    padding: var(--bil-2) var(--bil-4) var(--bil-4);
+    box-shadow: var(--skuggi);
+  }
+  /* Án JavaScript er valmyndin einfaldlega alltaf sýnileg (regla 3.4) */
+  .valmynd[data-js="virkt"] .valmynd__listi { display: none; }
+  .valmynd[data-js="virkt"][data-opin="true"] .valmynd__listi { display: flex; }
+}
+
+@media (min-width: 48rem) {
+  .valmynd__hnappur { display: none; }
+}
+
+/* --- Fótur --------------------------------------------------------------- */
+.fotur {
+  background: var(--bak-upphaekkad);
+  border-top: 1px solid var(--rammi);
+  padding-block: var(--bil-8);
+  font-size: var(--texti-sm);
+  color: var(--texti-daufur);
+}
+
+.fotur__raster {
+  display: grid;
+  gap: var(--bil-6);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48rem) {
+  .fotur__raster { grid-template-columns: 2fr 1fr 1fr; }
+}
+
+.fotur h2 {
+  font-size: var(--texti-sm);
+  font-family: var(--letur-texti);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--texti);
+  margin: 0 0 var(--bil-3);
+}
+
+.fotur ul { list-style: none; margin: 0; padding: 0; }
+.fotur li { margin-bottom: var(--bil-2); }

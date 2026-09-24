@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Upplýsingaverkfræði">
+  <rect width="32" height="32" rx="7" fill="#12657d"/>
+  <g fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round">
+    <path d="M7 22 L13 15 L19 18.5 L25 9"/>
+  </g>
+  <circle cx="25" cy="9" r="2.6" fill="#c25d1e"/>
+</svg>

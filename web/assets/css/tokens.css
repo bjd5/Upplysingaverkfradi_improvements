@@ -1,0 +1,120 @@
+/* ===========================================================================
+   tokens.css — sjónræna kerfið (regla 3.1)
+   ÖLL gildi fyrir liti, letur, bil og skugga eru skilgreind HÉR.
+   Enginn harðkóðaður litur eða px-tala í öðrum CSS-skrám.
+   =========================================================================== */
+
+:root {
+  /* --- Hlutlaus grátónaskali (7 þrep) ------------------------------------ */
+  --gra-50:  #f7f8fa;
+  --gra-100: #eceff3;
+  --gra-200: #d8dee6;
+  --gra-300: #b4bfcc;
+  --gra-400: #7d8b9c;
+  --gra-500: #4f5d6e;
+  --gra-600: #33404f;
+  --gra-700: #1e2935;
+  --gra-800: #121a23;
+  --gra-900: #0a0f15;
+
+  /* --- Aðallitur (djúpt blágrænt) ---------------------------------------- */
+  --adal-50:  #e8f2f5;
+  --adal-200: #a9cdd9;
+  --adal-400: #2b7e97;
+  --adal-500: #12657d;   /* 6.5:1 á hvítu — stenst AA fyrir texta */
+  --adal-700: #0b4356;
+
+  /* --- Áherslulitur (brennt appelsínugult) ------------------------------- */
+  --ahersla-100: #fbeade;
+  --ahersla-500: #c25d1e;  /* aðeins fyrir fleti og stórt letur */
+  --ahersla-700: #9a4614;  /* 5.5:1 á hvítu — óhætt fyrir texta */
+
+  /* --- Merkingarlitir ----------------------------------------------------- */
+  --i-lagi:   #1d7a4d;
+  --advorun:  #9a6b00;
+  --villa:    #b3261e;
+
+  /* --- Hlutverkalitir (það sem stílar eiga að nota) ---------------------- */
+  --bak:            var(--gra-50);
+  --bak-upphaekkad: #ffffff;
+  --bak-daufur:     var(--gra-100);
+  --texti:          var(--gra-700);
+  --texti-daufur:   var(--gra-500);
+  --texti-a-lit:    #ffffff;
+  --rammi:          var(--gra-200);
+  --rammi-sterkur:  var(--gra-300);
+  --tengill:        var(--adal-500);
+  --tengill-yfir:   var(--adal-700);
+  --fokus:          var(--ahersla-500);
+
+  /* --- Letur (hámark 2 fjölskyldur — regla 3.1) -------------------------- */
+  --letur-fyrirsogn: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --letur-texti: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+  --letur-kodi: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* --- Stærðarskali (föst þrep, engar handahófstölur) -------------------- */
+  --texti-xs:   0.8125rem;
+  --texti-sm:   0.9375rem;
+  --texti-base: 1.0625rem;
+  --texti-lg:   1.25rem;
+  --texti-xl:   1.5rem;
+  --texti-2xl:  clamp(1.75rem, 1.4rem + 1.6vw, 2.25rem);
+  --texti-3xl:  clamp(2.25rem, 1.7rem + 2.6vw, 3.25rem);
+
+  --thyngd-venjuleg: 400;
+  --thyngd-medium:   500;
+  --thyngd-feit:     700;
+
+  --linuhaed-thett:  1.25;
+  --linuhaed-venjuleg: 1.65;
+  --stafabil-thett: -0.015em;
+
+  /* --- Bil: 4px grunneining, öll bil eru margfeldi af henni -------------- */
+  --bil-1:  0.25rem;
+  --bil-2:  0.5rem;
+  --bil-3:  0.75rem;
+  --bil-4:  1rem;
+  --bil-6:  1.5rem;
+  --bil-8:  2rem;
+  --bil-12: 3rem;
+  --bil-16: 4rem;
+  --bil-24: 6rem;
+
+  /* --- Form og dýpt ------------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius:    8px;
+  --radius-lg: 14px;
+
+  --skuggi-sm: 0 1px 2px rgb(10 15 21 / 6%);
+  --skuggi:    0 2px 4px rgb(10 15 21 / 6%), 0 8px 20px rgb(10 15 21 / 7%);
+  --skuggi-lg: 0 4px 8px rgb(10 15 21 / 8%), 0 16px 40px rgb(10 15 21 / 10%);
+
+  /* --- Grind og hreyfing --------------------------------------------------- */
+  --breidd-efnis: 72rem;
+  --breidd-lesmals: 38rem;   /* ~70 stafir á línu — besta læsni */
+  --hradi: 180ms;
+  --ferill: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Dökkt þema: AÐEINS endurskilgreining á tokens (regla 3.1) ----------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bak:            var(--gra-900);
+    --bak-upphaekkad: var(--gra-800);
+    --bak-daufur:     #0f1620;
+    --texti:          var(--gra-100);
+    --texti-daufur:   var(--gra-300);
+    --rammi:          #22303d;
+    --rammi-sterkur:  var(--gra-600);
+    --tengill:        #6cbcd4;
+    --tengill-yfir:   #a9cdd9;
+    --adal-50:        #10222b;
+    --ahersla-100:    #2b1a0f;
+    --ahersla-700:    #e08a4a;
+    --fokus:          #e08a4a;
+    --skuggi-sm: 0 1px 2px rgb(0 0 0 / 40%);
+    --skuggi:    0 2px 4px rgb(0 0 0 / 40%), 0 8px 20px rgb(0 0 0 / 45%);
+    --skuggi-lg: 0 4px 8px rgb(0 0 0 / 45%), 0 16px 40px rgb(0 0 0 / 50%);
+  }
+}

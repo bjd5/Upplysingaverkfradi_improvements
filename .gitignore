@@ -1,0 +1,43 @@
+# Leyndarmál — ALDREI í git (regla 4)
+.env
+.env.*
+!.env.example
+*.key
+config/secrets*
+
+# Gögn — afleidd eða of stór (reglur 5 og 7)
+data/db/
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+*.sqlite
+*.sqlite3
+*.db
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# C++
+build/
+*.o
+*.out
+
+# Java
+target/
+*.class
+*.jar
+
+# Ritlar og stýrikerfi
+.idea/
+.vscode/
+.DS_Store
+
+# Prófunarafurðir
+.playwright-mcp/
+*.png
+!web/assets/img/*.png

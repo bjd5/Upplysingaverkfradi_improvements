@@ -1,0 +1,28 @@
+/* braudmylsna.css — slóð notanda (skylda á öllum undirsíðum, regla 3.2) */
+
+.braudmylsna {
+  padding-block: var(--bil-4) 0;
+  font-size: var(--texti-sm);
+}
+
+.braudmylsna ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bil-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.braudmylsna li { max-width: none; }
+
+.braudmylsna li + li::before {
+  content: "/";
+  margin-right: var(--bil-2);
+  color: var(--gra-400);
+}
+
+.braudmylsna a { color: var(--texti-daufur); }
+.braudmylsna a:hover { color: var(--tengill); }
+.braudmylsna [aria-current="page"] { color: var(--texti); font-weight: var(--thyngd-medium); }

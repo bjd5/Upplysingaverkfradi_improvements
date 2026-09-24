@@ -1,0 +1,26 @@
+/* stada-gagna.css — sýnir hvenær gögnin voru síðast uppfærð (regla 5.4) */
+
+.stada-gagna {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bil-3);
+  padding: var(--bil-4) var(--bil-6);
+  background: var(--bak-daufur);
+  border: 1px solid var(--rammi);
+  border-left: 4px solid var(--adal-400);
+  border-radius: var(--radius);
+  font-size: var(--texti-sm);
+  color: var(--texti-daufur);
+}
+
+.stada-gagna__punktur {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--i-lagi);
+  flex-shrink: 0;
+}
+
+/* Litur er aldrei eina merkingin — textinn segir það sama (regla 3.3) */
+.stada-gagna strong { color: var(--texti); font-weight: var(--thyngd-medium); }

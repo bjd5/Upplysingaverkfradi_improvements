@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aðferðafræði — Upplýsingaverkfræði</title>
+  <meta name="description" content="Hvernig gögnin eru sótt, unnin og geymd í rannsóknarverkefninu.">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components/braudmylsna.css">
+  <link rel="stylesheet" href="../assets/css/components/kort.css">
+  <link rel="stylesheet" href="../assets/css/components/stada-gagna.css">
+  <script src="../assets/js/valmynd.js" defer></script>
+  <script src="../assets/js/stada-gagna.js" defer></script>
+</head>
+<body class="sida">
+
+  <a class="stokk-tengill" href="#efni">Fara beint í efni</a>
+
+  <header class="haus">
+    <div class="umgjord haus__innihald">
+      <a class="haus__merki" href="../index.html">Upplýsinga<span>verkfræði</span></a>
+      <nav class="valmynd" aria-label="Aðalvalmynd">
+        <button class="valmynd__hnappur" type="button"
+                aria-expanded="false" aria-controls="valmyndarlisti">
+          Valmynd
+        </button>
+        <ul class="valmynd__listi" id="valmyndarlisti">
+          <li><a class="valmynd__tengill" href="../index.html">Forsíða</a></li>
+        <li><a class="valmynd__tengill" href="adferdafraedi.html" aria-current="page">Aðferðafræði</a></li>
+        <li><a class="valmynd__tengill" href="gogn.html">Gögn</a></li>
+        <li><a class="valmynd__tengill" href="nidurstodur.html">Niðurstöður</a></li>
+        <li><a class="valmynd__tengill" href="um.html">Um verkefnið</a></li>        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="braudmylsna umgjord" aria-label="Brauðmylsna">
+    <ol>
+      <li><a href="../index.html">Forsíða</a></li>
+      <li><span aria-current="page">Aðferðafræði</span></li>
+    </ol>
+  </nav>
+
+  <main id="efni">
+    <div class="umgjord">
+      <h1>Aðferðafræði</h1>
+      <p>
+        Hér er lýst hvernig gögnin verða til: hvaðan þau koma, hvernig þau eru
+        hreinsuð og hvaða forsendur liggja að baki hverri niðurstöðu.
+      </p>
+
+      <section class="hluti" aria-labelledby="flaedi">
+        <h2 id="flaedi">Gagnaflæðið</h2>
+        <p>
+          Flæðið er einstefna. Hvert skref skilar af sér skrá sem næsta skref
+          les — það gerir alla vinnsluna endurtekjanlega.
+        </p>
+        <ol>
+          <li><strong>Söfnun:</strong> kallað í vefþjónustu, svarið vistað óbreytt.</li>
+          <li><strong>Hreinsun:</strong> gögnin samræmd og villur skráðar.</li>
+          <li><strong>Geymsla:</strong> hreinsuðu gögnin sett í SQL-grunninn.</li>
+          <li><strong>Útflutningur:</strong> niðurstöður fluttar út sem JSON fyrir vefinn.</li>
+        </ol>
+      </section>
+
+      <section class="hluti" aria-labelledby="takmarkanir">
+        <h2 id="takmarkanir">Takmarkanir</h2>
+        <p>
+          Þekktar takmarkanir gagnanna eru birtar hér, ekki faldar (regla 8).
+          Þessi hluti er fylltur út jafnóðum og þær koma í ljós.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="fotur">
+    <div class="umgjord fotur__raster">
+      <div>
+        <h2>Um síðuna</h2>
+        <p>
+          Rannsóknarverkefni í upplýsingaverkfræði. Öll gögn sem birtast hér
+          eru rekjanleg aftur til upprunalegrar vefþjónustu.
+        </p>
+      </div>
+      <div>
+        <h2>Efni</h2>
+        <ul>
+          <li><a href="adferdafraedi.html">Aðferðafræði</a></li>
+          <li><a href="gogn.html">Gögn</a></li>
+          <li><a href="nidurstodur.html">Niðurstöður</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Heimildir</h2>
+        <ul>
+          <li><a href="um.html#heimildir">Heimildaskrá</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

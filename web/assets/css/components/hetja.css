@@ -1,0 +1,65 @@
+/* hetja.css — kynningarsvæði efst á forsíðu */
+
+.hetja {
+  padding-block: var(--bil-16) var(--bil-12);
+  border-bottom: 1px solid var(--rammi);
+  background:
+    radial-gradient(60rem 28rem at 15% -10%, var(--adal-50), transparent 70%),
+    var(--bak);
+}
+
+.hetja__merkimidi {
+  display: inline-block;
+  margin-bottom: var(--bil-4);
+  padding: var(--bil-1) var(--bil-3);
+  background: var(--ahersla-100);
+  color: var(--ahersla-700);
+  border-radius: 999px;
+  font-size: var(--texti-xs);
+  font-weight: var(--thyngd-medium);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hetja h1 { margin-bottom: var(--bil-4); }
+
+.hetja__inngangur {
+  font-size: var(--texti-lg);
+  color: var(--texti-daufur);
+  max-width: var(--breidd-lesmals);
+  margin-bottom: var(--bil-8);
+}
+
+.hetja__adgerdir { display: flex; flex-wrap: wrap; gap: var(--bil-3); }
+
+.hnappur {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bil-2);
+  min-height: 44px;
+  padding: var(--bil-3) var(--bil-6);
+  border-radius: var(--radius);
+  font-size: var(--texti-sm);
+  font-weight: var(--thyngd-medium);
+  text-decoration: none;
+  transition: background var(--hradi) var(--ferill),
+              transform var(--hradi) var(--ferill);
+}
+
+.hnappur--adal {
+  background: var(--adal-500);
+  color: var(--texti-a-lit);
+  border: 1px solid var(--adal-500);
+}
+.hnappur--adal:hover {
+  background: var(--adal-700);
+  color: var(--texti-a-lit);
+  transform: translateY(-1px);
+}
+
+.hnappur--aukinn {
+  background: var(--bak-upphaekkad);
+  color: var(--texti);
+  border: 1px solid var(--rammi-sterkur);
+}
+.hnappur--aukinn:hover { background: var(--bak-daufur); color: var(--texti); }

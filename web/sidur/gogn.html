@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gögn — Upplýsingaverkfræði</title>
+  <meta name="description" content="Vefþjónusturnar sem sótt er í og uppbygging gagnagrunnsins.">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components/braudmylsna.css">
+  <link rel="stylesheet" href="../assets/css/components/kort.css">
+  <link rel="stylesheet" href="../assets/css/components/stada-gagna.css">
+  <script src="../assets/js/valmynd.js" defer></script>
+  <script src="../assets/js/stada-gagna.js" defer></script>
+</head>
+<body class="sida">
+
+  <a class="stokk-tengill" href="#efni">Fara beint í efni</a>
+
+  <header class="haus">
+    <div class="umgjord haus__innihald">
+      <a class="haus__merki" href="../index.html">Upplýsinga<span>verkfræði</span></a>
+      <nav class="valmynd" aria-label="Aðalvalmynd">
+        <button class="valmynd__hnappur" type="button"
+                aria-expanded="false" aria-controls="valmyndarlisti">
+          Valmynd
+        </button>
+        <ul class="valmynd__listi" id="valmyndarlisti">
+          <li><a class="valmynd__tengill" href="../index.html">Forsíða</a></li>
+        <li><a class="valmynd__tengill" href="adferdafraedi.html">Aðferðafræði</a></li>
+        <li><a class="valmynd__tengill" href="gogn.html" aria-current="page">Gögn</a></li>
+        <li><a class="valmynd__tengill" href="nidurstodur.html">Niðurstöður</a></li>
+        <li><a class="valmynd__tengill" href="um.html">Um verkefnið</a></li>        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="braudmylsna umgjord" aria-label="Brauðmylsna">
+    <ol>
+      <li><a href="../index.html">Forsíða</a></li>
+      <li><span aria-current="page">Gögn</span></li>
+    </ol>
+  </nav>
+
+  <main id="efni">
+    <div class="umgjord">
+      <h1>Gögn</h1>
+      <p>
+        Yfirlit yfir þær vefþjónustur sem verkefnið sækir í og hvenær hver
+        söfnun fór fram.
+      </p>
+
+      <p class="stada-gagna" data-stada-gagna="../gogn/yfirlit.json">
+        <span class="stada-gagna__punktur" aria-hidden="true"></span>
+        <span><strong>Gagnasafn:</strong> uppfærsludagsetning birtist þegar
+        gögn hafa verið flutt út.</span>
+      </p>
+
+      <section class="hluti" aria-labelledby="heimildir-gagna">
+        <h2 id="heimildir-gagna">Vefþjónustur</h2>
+        <div class="tafla-umgjord">
+          <table>
+            <caption class="skjalesari">Vefþjónustur sem sótt er í</caption>
+            <thead>
+              <tr>
+                <th scope="col">Þjónusta</th>
+                <th scope="col">Hvað er sótt</th>
+                <th scope="col">Síðast sótt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>— (fyllist út)</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="fotur">
+    <div class="umgjord fotur__raster">
+      <div>
+        <h2>Um síðuna</h2>
+        <p>
+          Rannsóknarverkefni í upplýsingaverkfræði. Öll gögn sem birtast hér
+          eru rekjanleg aftur til upprunalegrar vefþjónustu.
+        </p>
+      </div>
+      <div>
+        <h2>Efni</h2>
+        <ul>
+          <li><a href="adferdafraedi.html">Aðferðafræði</a></li>
+          <li><a href="gogn.html">Gögn</a></li>
+          <li><a href="nidurstodur.html">Niðurstöður</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Heimildir</h2>
+        <ul>
+          <li><a href="um.html#heimildir">Heimildaskrá</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
