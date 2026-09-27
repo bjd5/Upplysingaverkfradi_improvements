@@ -19,17 +19,22 @@ gervieintök úr ``mbl_gervigogn`` — frosna eintakinu er aldrei skrifað (regl
 from __future__ import annotations
 
 import sqlite3
+import tempfile
 import unittest
+from pathlib import Path
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 
+from gagnagrunnur.tenging import opna  # noqa: E402
 from mbl_gervigogn import GERVI_HTML, GERVI_SVOR, skrifa_eintak  # noqa: E402
 from mbl_grunnur import GrunnProf  # noqa: E402
 from vinnsla.mbl_eintak import lesa_eintak  # noqa: E402
 from vinnsla.mbl_hledsla import (  # noqa: E402
+    SVOR_A_EINTAK,
     HledsluVilla,
     hlada_eintak,
     hlada_ollu,
+    stadfesta_svor,
 )
 from vinnsla.mbl_mynstur import UtdrattarVilla  # noqa: E402
 
@@ -175,6 +180,43 @@ class HledsluVilluProf(GrunnProf):
         with self.assertRaises(RuntimeError) as samhengi:
             hlada_ollu(self.samband, tom)
         self.assertIn("Ekkert mbl-eintak", str(samhengi.exception))
+
+    def test_stadfesting_stodvar_vanti_eitt_svar(self) -> None:
+        """Fjögur svör af fimm eru ekki niðurstaða — SQL á að skila öllum fimm."""
+        slod = skrifa_eintak(self.hra, SEINNI_SOKN)
+        hledsla = hlada_eintak(self.samband, lesa_eintak(slod))
+        sott = hledsla.eintak.sotta_stund
+
+        self.assertEqual(len(stadfesta_svor(self.samband, sott)), SVOR_A_EINTAK)
+
+        self.samband.execute(
+            "DELETE FROM mbl_extractions WHERE question_key = ?", ("gengi-usd",)
+        )
+        with self.assertRaises(HledsluVilla) as samhengi:
+            stadfesta_svor(self.samband, sott)
+        self.assertIn("ekki allar", str(samhengi.exception))
+
+
+class VantandiToflurProf(unittest.TestCase):
+    """Hafi migration 005 ekki verið keyrð á villan að segja hvað gera skal.
+
+    Án þessa félli hleðslan á hráu ``no such table`` úr sqlite3, sem nefnir
+    hvorki migration-keyrarann né endurbyggingarskriftuna (regla 6).
+    """
+
+    def test_hledsla_an_migration_gefur_laesilega_villu(self) -> None:
+        with tempfile.TemporaryDirectory() as nafn:
+            mappa = Path(nafn)
+            samband = opna(mappa / "an-migration.sqlite")
+            self.addCleanup(samband.close)
+            slod = skrifa_eintak(mappa / "hra", SEINNI_SOKN)
+
+            with self.assertRaises(HledsluVilla) as samhengi:
+                hlada_eintak(samband, lesa_eintak(slod))
+
+            skilabod = str(samhengi.exception)
+            self.assertIn("mbl_snapshots", skilabod)
+            self.assertIn("endurbyggja-grunn.sh", skilabod)
 
 
 if __name__ == "__main__":
