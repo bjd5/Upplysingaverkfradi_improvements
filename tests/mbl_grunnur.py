@@ -38,6 +38,10 @@ for heiti in THOGGUD_LOG:
 
 # Ein fyrirspurn sem svarar öllum fimm spurningunum og sýnir um leið hvaðan
 # hvert svar kemur: mynstrið, eintakið og sóknartíminn fylgja hverri línu.
+#
+# Sama fyrirspurn svarar líka einni spurningu: sé lykillinn NULL standa allar
+# fimm, annars ein. Þannig er hér EIN SQL-skilgreining og engin fyrirspurn er
+# sett saman úr strengjum — öll gildi fara inn sem ?-breytur (regla 5).
 SVOR_SQL = """
 SELECT e.question_number AS nr,
        e.question_key    AS lykill,
@@ -60,14 +64,12 @@ SELECT e.question_number AS nr,
   FROM mbl_extractions e
   JOIN mbl_snapshots   s ON s.id = e.snapshot_id
  WHERE s.fetched_at = ?
+   AND (? IS NULL OR e.question_key = ?)
  ORDER BY e.question_number
 """
 
-# Sama fyrirspurn afmörkuð við eina spurningu — notuð þegar próf svarar einni
-# spurningu æfingarinnar í einu.
-EITT_SVAR_SQL = SVOR_SQL.replace(
-    "WHERE s.fetched_at = ?", "WHERE s.fetched_at = ? AND e.question_key = ?"
-)
+# Lesið sem „allar spurningar" í SVOR_SQL.
+ALLAR_SPURNINGAR = None
 
 
 class GrunnProf(unittest.TestCase):
@@ -83,11 +85,12 @@ class GrunnProf(unittest.TestCase):
 
     def svor(self, sott: str) -> list[sqlite3.Row]:
         """Öll fimm svörin fyrir eitt eintak — alltaf með breytu, aldrei f-streng."""
-        return self.samband.execute(SVOR_SQL, (sott,)).fetchall()
+        breytur = (sott, ALLAR_SPURNINGAR, ALLAR_SPURNINGAR)
+        return self.samband.execute(SVOR_SQL, breytur).fetchall()
 
     def eitt_svar(self, sott: str, lykill: str) -> sqlite3.Row:
         """Eitt svar úr SQL. Finnist það ekki fellur prófið með læsilegri villu."""
-        rad = self.samband.execute(EITT_SVAR_SQL, (sott, lykill)).fetchone()
+        rad = self.samband.execute(SVOR_SQL, (sott, lykill, lykill)).fetchone()
         self.assertIsNotNone(
             rad, f"Spurningin {lykill!r} er ekki svaranleg úr grunninum fyrir {sott}."
         )
