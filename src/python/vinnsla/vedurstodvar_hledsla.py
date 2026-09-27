@@ -13,9 +13,14 @@ nokkuð fer inn: víki skráin frá summunni er hún ekki lengur það sem var f
 og hleðslan stöðvast.
 
 Hleðslan er endurkeyranleg: hún hreinsar það sem hún setti inn síðast og setur
-eintakið inn á ný. Sama eintak gefur því alltaf sama grunn.
+eintakið inn á ný. Sama eintak gefur alltaf sama grunn — staðfest með
+fingrafarinu úr ``gagnagrunnur.fingrafar``, ekki aðeins með fjöldatölum.
 
-Keyrsla frá rót verkefnisins (tenging við ``main.py`` kemur í issue #11)::
+Hleðslan er EKKI enn tengd við ``hlada()`` í ``src/python/main.py``. Fjögur
+gagnasöfn (#6, #7, #8, #9) myndu öll breyta sömu línunum þar, svo tengingin
+bíður sérstaks verks og hvert safn hefur á meðan sinn eigin inngang.
+
+Keyrsla frá rót verkefnisins::
 
     PYTHONPATH=src/python python3 -m vinnsla.vedurstodvar_hledsla
 
@@ -56,9 +61,14 @@ INSERT INTO weather_stations (
 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 """
 
+# Auðkenni fyrri skráningar þessa safns, endurnýtt við endurkeyrslu — sjá
+# _skra_sofnun. MIN() skilar NULL sé engin skráning til, og þá úthlutar SQLite.
+FYRRI_SKRANING = "SELECT MIN(id) FROM fetch_log WHERE service = ?"
+
 SOFNUNARSKRANING = """
-INSERT INTO fetch_log (service, endpoint, params, fetched_at, record_count, raw_file, notes)
-VALUES (?, ?, ?, ?, ?, ?, ?)
+INSERT INTO fetch_log (
+    id, service, endpoint, params, fetched_at, record_count, raw_file, notes
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 """
 
 SKRANINGARSKYRING = (
@@ -161,11 +171,20 @@ def _skra_sofnun(samband: Connection, skjal: dict, slod: Path, fjoldi: int) -> N
 
     Fyrri skráning þessa safns er fjarlægð svo endurkeyrsla safni ekki upp
     tvítekinni sögu; önnur söfn í töflunni eru ósnert.
+
+    Auðkenni fyrri skráningar er endurnýtt. ``fetch_log.id`` er AUTOINCREMENT
+    (migration 001), svo ný skráning fengi annars hærra auðkenni í hverri
+    keyrslu og grunnurinn hætti að vera hrein afleiða af frosna eintakinu:
+    fingrafarið úr ``gagnagrunnur.fingrafar`` mældi þá hversu oft var hlaðið í
+    stað þess hvað var hlaðið. Sé engin fyrri skráning til fer ``None`` inn og
+    SQLite úthlutar auðkenninu sjálft.
     """
+    fyrra_audkenni = samband.execute(FYRRI_SKRANING, (THJONUSTA,)).fetchone()[0]
     samband.execute("DELETE FROM fetch_log WHERE service = ?", (THJONUSTA,))
     samband.execute(
         SOFNUNARSKRANING,
         (
+            fyrra_audkenni,
             THJONUSTA,
             str(skjal["endpoint"]),
             json.dumps(skjal.get("parameters", {}), ensure_ascii=False, sort_keys=True),

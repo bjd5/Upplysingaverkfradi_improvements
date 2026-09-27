@@ -23,6 +23,7 @@ from pathlib import Path
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 
+from gagnagrunnur.fingrafar import fingrafar  # noqa: E402
 from gagnagrunnur.keyrari import keyra  # noqa: E402
 from gagnagrunnur.tenging import opna  # noqa: E402
 from vinnsla import vedurstodvar_hledsla as hledsla  # noqa: E402
@@ -150,6 +151,37 @@ class EndurkeyrsluProf(unittest.TestCase):
         self.assertEqual(fyrri, seinni)
         self.assertEqual(
             self.samband.execute(TELJA_ALLAR).fetchone()[0], FJOLDI_STODVA
+        )
+
+    def test_endurkeyrsla_breytir_ekki_fingrafari_grunnsins(self) -> None:
+        """Fjöldatölur eru ekki nóg — fingrafarið mælir grunninn allan.
+
+        ``fetch_log.id`` er AUTOINCREMENT, svo DELETE + INSERT gaf áður nýtt
+        auðkenni í hverri keyrslu. Fjöldatölurnar stóðu í stað en fingrafarið
+        hreyfðist, og þá mældi það hversu oft var hlaðið í stað þess hvað var
+        hlaðið — grunnurinn var ekki lengur hrein afleiða (regla 5).
+        """
+        hledsla.hlada(self.samband)
+        fyrra_fingrafar = fingrafar(self.samband)
+
+        hledsla.hlada(self.samband)
+
+        self.assertEqual(fingrafar(self.samband), fyrra_fingrafar)
+
+    def test_endurkeyrsla_heldur_audkenni_sofnunarskraningarinnar(self) -> None:
+        """Skráningin heldur auðkenninu sínu; annars vísar ekkert stöðugt í hana."""
+        hledsla.hlada(self.samband)
+        fyrra_audkenni = self.samband.execute(
+            "SELECT id FROM fetch_log WHERE service = ?", (hledsla.THJONUSTA,)
+        ).fetchone()[0]
+
+        hledsla.hlada(self.samband)
+
+        self.assertEqual(
+            self.samband.execute(
+                "SELECT id FROM fetch_log WHERE service = ?", (hledsla.THJONUSTA,)
+            ).fetchone()[0],
+            fyrra_audkenni,
         )
 
     def test_endurkeyrsla_safnar_ekki_upp_sofnunarsogu(self) -> None:
