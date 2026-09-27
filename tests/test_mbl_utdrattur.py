@@ -16,12 +16,17 @@ skrifa í það (regla 10). Jaðartilvikin nota gervieintök úr ``mbl_gervigogn
 
 from __future__ import annotations
 
-import json
 import unittest
-from pathlib import Path
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 
+from mbl_vidmid import (  # noqa: E402
+    ELDRA_EINTAKID,
+    FROSNA_EINTAKID,
+    FROSNA_MD5,
+    FROSNA_UPPRUNASLOD,
+    vidmidstolur,
+)
 from vinnsla.mbl_eintak import finna_eintok  # noqa: E402
 from vinnsla.mbl_mynstur import SPURNINGAR, UtdrattarVilla  # noqa: E402
 from vinnsla.mbl_ord import synileg_ord, synilegur_texti  # noqa: E402
@@ -31,61 +36,6 @@ from vinnsla.mbl_utdrattur import (  # noqa: E402
     draga_ut_hitastig,
     draga_ut_synileg_ord,
 )
-
-ROT = Path(__file__).resolve().parents[1]
-VIDMIDSSKRA = ROT / "docs" / "vidmid" / "vidmid.json"
-
-# Eintakið sem bæði gamla síðan og þetta verk lesa — sama MD5, sama skrá.
-FROSNA_EINTAKID = "mbl-20260916T120851Z"
-FROSNA_MD5 = "c2c83bddb8ed41357b7b1b8ab51a6457"
-
-# Eldra eintakið úr sömu töflu. Prófað til að sýna að viðmiðstölurnar eru
-# eintaksbundnar — færu þær saman væri samanburðurinn merkingarlaus.
-ELDRA_EINTAKID = "mbl-20260907T103959Z"
-
-VIDMIDSSIDA = "lotur/regex/mbl.html"
-VIDMIDSKAFLI = "Samanburður eintaka"
-
-# Dálkur í samanburðartöflu gömlu síðunnar -> lykill spurningarinnar hér.
-SULKA_EFTIR_LYKLI = {
-    "einstakar-frettir": "Fréttir",
-    "hitastig-reykjavik": "Hiti",
-    "gengi-usd": "USD",
-    "synileg-ord": "Orð",
-    "auglysingareitir": "Auglýsingareitir",
-}
-
-
-def vidmidstolur(eintaksheiti: str) -> dict[str, float]:
-    """Les tölur gömlu síðunnar fyrir eitt eintak úr ``vidmid.json``.
-
-    Vanti einhverja þeirra er kastað villu en ekki skilað tómu korti: próf sem
-    ber saman við ekkert stenst alltaf og sannar ekkert (regla 6).
-    """
-    skjal = json.loads(VIDMIDSSKRA.read_text(encoding="utf-8"))
-    i_tofluni = {
-        rad["sulka"]: rad["gildi"]
-        for rad in skjal["gogn"]
-        if rad.get("sida") == VIDMIDSSIDA
-        and rad.get("lina") == eintaksheiti
-        and VIDMIDSKAFLI in (rad.get("kafli") or [])
-        and rad.get("visst")
-    }
-
-    tolur: dict[str, float] = {}
-    vantar: list[str] = []
-    for lykill, sulka in SULKA_EFTIR_LYKLI.items():
-        if sulka in i_tofluni:
-            tolur[lykill] = float(i_tofluni[sulka])
-        else:
-            vantar.append(sulka)
-    if vantar:
-        raise AssertionError(
-            f"Viðmiðið í {VIDMIDSSKRA.name} hefur ekki dálkana "
-            f"{', '.join(vantar)} fyrir {eintaksheiti} í kaflanum "
-            f"„{VIDMIDSKAFLI}“. Án þeirra er ekkert til að bera saman við."
-        )
-    return tolur
 
 
 class VidmidProf(unittest.TestCase):
@@ -106,7 +56,7 @@ class VidmidProf(unittest.TestCase):
     def test_eintakid_er_thad_sem_vidmidid_lysir(self) -> None:
         """Samanburður er marklaus nema skráin sé sannarlega sú sama."""
         self.assertEqual(self.eintak.md5, FROSNA_MD5)
-        self.assertEqual(self.eintak.upprunaslod, "https://www.mbl.is/frettir/")
+        self.assertEqual(self.eintak.upprunaslod, FROSNA_UPPRUNASLOD)
 
     def test_oll_fimm_mynstrin_skila_vidmidinu(self) -> None:
         """Kjarninn: fimm mynstur, fimm tölur, engin þeirra víkur."""
