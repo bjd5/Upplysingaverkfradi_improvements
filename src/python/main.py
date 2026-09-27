@@ -17,6 +17,8 @@ from pathlib import Path
 
 from gagnagrunnur.keyrari import MigrationVilla, keyra
 from gagnagrunnur.tenging import slod_grunns, tenging
+from sofnun.saekja_allt import SofnunVilla
+from sofnun.saekja_allt import safna as safna_gogn
 
 ROT = Path(__file__).resolve().parents[2]
 GOGN_HRA = ROT / "data" / "raw"
@@ -37,9 +39,15 @@ def safna() -> None:
 
     Regla 4: hrágögnum er aldrei breytt eftir á, og hver söfnun er skráð
     með þjónustu, slóð, tímastimpli og breytum.
+
+    Skrefið sendir ekkert netkall þegar gögnin liggja þegar í data/raw/ — þau
+    eru skilað úr geymslunni. Nýtt eintak er sótt vísvitandi með
+    ``scripts/saekja-gogn.sh <safn> --thvinga``, ekki héðan: síðan á að byggjast
+    eins í hvert sinn.
     """
-    log.info("Söfnun: ekki útfærð enn — sjá src/python/sofnun/")
-    raise NotImplementedError("Útfæra í src/python/sofnun/")
+    nidurstada = safna_gogn()
+    if nidurstada.netlaus:
+        log.info("Söfnun lokið án netkalls — öll gögn lágu í data/raw/.")
 
 
 def vinna() -> None:
@@ -112,6 +120,11 @@ def main(rok: list[str] | None = None) -> int:
         except MigrationVilla as villa:
             # Sagan stemmir ekki við migration-skrárnar: grunnurinn er ekki
             # endurbyggjanlegur og keyrslan heldur ekki áfram (regla 5).
+            log.error("%s", villa)
+            return 1
+        except SofnunVilla as villa:
+            # Hrágagn vantar eða er ósannreynanlegt. Næstu skref myndu byggja
+            # tölur á ófullgerðum gögnum, svo flæðið stöðvast hér (regla 4).
             log.error("%s", villa)
             return 1
 

@@ -21,11 +21,17 @@ myndar úr þeim (regla 8).
 from __future__ import annotations
 
 import json
+import logging
+from pathlib import Path
 
 from .beidni import Beidni
-from .frosid import krefjast_thvingunar
+from .frosid import frosid_svar
 from .hragogn import HRAGOGN, Svar
 from .http import saekja
+
+log = logging.getLogger(__name__)
+
+THJONUSTA = "hagstofan"
 
 ENDAPUNKTUR = (
     "https://px.hagstofa.is/pxis/api/v1/is/Samfelag/skolamal/"
@@ -52,9 +58,11 @@ FORSENDUR = {
     ("Fjöldi/Hlutfall", "1"): "Hlutfall %",
 }
 
-# Frosna eintakið úr upprunaverkefninu ber gamla skráarheitið.
-FROSID_MYNSTUR = "response.json"
-AF_HVERJU = "Taflan uppfærist og ný sókn gæfi aðrar tölur en síðan birtir."
+# Frosna eintakið úr upprunaverkefninu ber gömlu skráarheitin: lýsigögnin í
+# metadata.json og sjálft svarið í response.json. Bæði eru skráð í
+# data/raw/hagstofan/provenance.json, sem er á eldra sniði — sjá sofnun.frosid.
+FROSIN_LYSIGOGN = "metadata.json"
+FROSID_SVAR = "response.json"
 
 
 class HagstofuVilla(RuntimeError):
@@ -104,7 +112,7 @@ def fyrirspurnarstofn(fyrirspurn: dict) -> bytes:
 
 
 LYSIGAGNA_BEIDNI = Beidni(
-    thjonusta="hagstofan",
+    thjonusta=THJONUSTA,
     veitandi="Hagstofa Íslands",
     slod=ENDAPUNKTUR,
     heiti="lysigogn",
@@ -116,7 +124,7 @@ LYSIGAGNA_BEIDNI = Beidni(
 def fyrirspurnar_beidni(fyrirspurn: dict) -> Beidni:
     """Beiðnin sem sækir sjálf gögnin — sama slóð, en POST með fyrirspurn."""
     return Beidni(
-        thjonusta="hagstofan",
+        thjonusta=THJONUSTA,
         veitandi="Hagstofa Íslands",
         slod=ENDAPUNKTUR,
         heiti="svar",
@@ -130,19 +138,40 @@ def fyrirspurnar_beidni(fyrirspurn: dict) -> Beidni:
     )
 
 
+def frosin_hagstofa(rot: Path = HRAGOGN) -> tuple[Svar, Svar] | None:
+    """Skilar frosna eintakinu úr upprunaverkefninu, eða ``None`` sé það ekki til.
+
+    Bæði köllin þurfa að vera fryst til að eintakið sé heilt: lýsigögnin lýsa
+    töflunni sem fyrirspurnin var byggð á og svarið er gagnið sjálft. Liggi
+    aðeins annað í möppunni er eintakið hálft og þá er rétt að sækja upp á nýtt
+    — en það er sagt upphátt, ekki gert í kyrrþey (regla 6).
+    """
+    lysigogn = frosid_svar(THJONUSTA, FROSIN_LYSIGOGN, rot)
+    gogn = frosid_svar(THJONUSTA, FROSID_SVAR, rot)
+    if lysigogn is not None and gogn is not None:
+        return lysigogn, gogn
+    if lysigogn is not None or gogn is not None:
+        vantar = FROSID_SVAR if gogn is None else FROSIN_LYSIGOGN
+        log.warning(
+            "Frosna Hagstofueintakið er hálft — %s vantar í data/raw/%s/. "
+            "Sæki töfluna upp á nýtt.", vantar, THJONUSTA,
+        )
+    return None
+
+
 def saekja_hagstofuna(*, thvinga: bool = False, **rok) -> tuple[Svar, Svar]:
     """Sækir lýsigögn og gögn, í þeirri röð, og skilar báðum svörum.
 
-    Fellur með ``FrosidVilla`` sé frosna eintakið til, nema ``thvinga=True``.
-    Aukabreytur fara óbreyttar í ``sofnun.http.saekja``.
+    Sé frosna eintakið til er ekkert kall sent og það skilað óbreytt (regla 4).
+    ``thvinga=True`` sækir töfluna upp á nýtt — meðvituð ákvörðun, því taflan
+    uppfærist og ný sókn gæfi aðrar tölur en síðan birtir. Aukabreytur fara
+    óbreyttar í ``sofnun.http.saekja``.
     """
-    krefjast_thvingunar(
-        LYSIGAGNA_BEIDNI.thjonusta,
-        FROSID_MYNSTUR,
-        thvinga=thvinga,
-        af_hverju=AF_HVERJU,
-        rot=rok.get("rot", HRAGOGN),
-    )
+    if not thvinga:
+        frosid = frosin_hagstofa(rok.get("rot", HRAGOGN))
+        if frosid is not None:
+            return frosid
+
     lysigogn_svar = saekja(LYSIGAGNA_BEIDNI, thvinga=thvinga, **rok)
     fyrirspurn = byggja_fyrirspurn(json.loads(lysigogn_svar.baeti))
     gagna_svar = saekja(fyrirspurnar_beidni(fyrirspurn), thvinga=thvinga, **rok)

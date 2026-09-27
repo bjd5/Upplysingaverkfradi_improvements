@@ -10,10 +10,17 @@ skipanalínu. Keyrsla frá rót verkefnisins::
 Einingin er **aldrei keyrð beint** (``python3 src/python/sofnun/saekja_allt.py``).
 Þá færi ``src/python/sofnun`` fremst á ``sys.path`` og ``urllib`` fyndi
 ``sofnun/http.py`` í stað ``http`` úr staðalsafninu. Skriftan í ``scripts/``
-keyrir hana sem einingu og sneiðir hjá því.
+keyrir hana sem einingu (``python3 -m sofnun.saekja_allt``) og sneiðir hjá því.
 
-Sjálfgefið sækir ekkert safn sem þegar er til í ``data/raw/`` (regla 4).
+**Sjálfgefin keyrsla sendir ekkert netkall** (regla 4). Hvert safn sem þegar
+liggur í ``data/raw/`` er skilað úr geymslunni, hvort sem provenance þess er á
+sniði ``sofnun.beidni`` eða á eldra sniði sem ``sofnun.frosid`` þekkir.
 ``--thvinga`` er meðvituð ákvörðun um að sækja nýtt eintak þrátt fyrir það.
+
+Söfnin eru keyrð sjálfstætt: eitt sem bregst stöðvar ekki hin. Ástæðan er TMDB,
+sem krefst lykils sem ekki er til í verkefninu — það á ekki að fella söfnun
+skjálftanna með sér. Hver villa er þó sögð upphátt og ber áhrif á skilagildið
+(regla 6).
 """
 
 from __future__ import annotations
@@ -22,6 +29,7 @@ import argparse
 import logging
 import sys
 from collections.abc import Callable, Sequence
+from dataclasses import dataclass, field
 
 from . import hagstofan, mbl, skjalftar, tmdb, vedurstodvar
 from .frosid import FrosidVilla
@@ -35,23 +43,35 @@ log = logging.getLogger("sofnun")
 # Villur sem lýsa sér sjálfar og bera aldrei lykil. Allt annað fær að falla
 # óbreytt upp úr skriftunni — óvænt villa á ekki að líta út eins og vænt
 # niðurstaða (regla 6).
-VAENTAR_VILLUR = (
-    HttpVilla,
-    FrosidVilla,
-    HagstofuVilla,
-    HragagnaVilla,
-    StillingaVilla,
-)
+VAENTAR_VILLUR = (HttpVilla, FrosidVilla, HagstofuVilla, HragagnaVilla)
 
 # Heiti safns -> (aðgerð, lýsing fyrir lesanda). Röðin ræður keyrsluröð `allt`.
 SOFN: dict[str, tuple[Callable[..., object], str]] = {
     "skjalftar": (skjalftar.saekja_skjalfta, "Jarðskjálftar á Reykjanesi"),
     "hagstofan": (hagstofan.saekja_hagstofuna, "Brautskráning af háskólastigi"),
     "vedurstodvar": (vedurstodvar.saekja_stodvar, "Stöðvalisti Veðurstofunnar"),
-    "nominatim": (vedurstodvar.saekja_hnit_vr_ii, "Hnit VR-II"),
-    "mbl": (mbl.saekja_forsidu, "Forsíða mbl.is"),
+    "mbl": (mbl.saekja_forsidu, "Fréttayfirlit mbl.is"),
     "tmdb": (tmdb.saekja_tmdb, "Friends og hlutverk Phoebe hjá TMDB"),
 }
+
+
+class SofnunVilla(RuntimeError):
+    """Eitt eða fleiri söfn brugðust. Skilaboðin telja hvaða og hvers vegna."""
+
+
+@dataclass
+class Nidurstada:
+    """Samantekt á söfnunarkeyrslu — hvað var sótt, hvað lá fyrir, hvað brást."""
+
+    sott: list[str] = field(default_factory=list)      # söfn sem sendu netkall
+    ur_safni: list[str] = field(default_factory=list)  # lágu þegar í data/raw/
+    ovirk: dict[str, str] = field(default_factory=dict)      # stillingu vantar
+    brugdust: dict[str, str] = field(default_factory=dict)   # raunveruleg villa
+
+    @property
+    def netlaus(self) -> bool:
+        """``True`` þegar ekkert safn sendi netkall."""
+        return not self.sott
 
 
 def _sem_listi(nidurstada: object) -> list[Svar]:
@@ -72,20 +92,62 @@ def saekja_safn(heiti: str, *, thvinga: bool = False) -> list[Svar]:
     return svor
 
 
-def keyra(heiti: Sequence[str], *, thvinga: bool = False) -> int:
-    """Sækir söfnin í röð og skilar fjölda þeirra sem brugðust.
+def keyra(heiti: Sequence[str], *, thvinga: bool = False) -> Nidurstada:
+    """Sækir söfnin í röð og skilar samantekt.
 
-    Eitt safn sem bregst stöðvar ekki hin: TMDB án lykils á ekki að fella
-    söfnun skjálftanna. Hver villa er þó skráð og skilagildið ber hana áfram.
+    Söfn sem vantar stillingu — í reynd TMDB án lykils — eru skráð **óvirk** en
+    ekki brostin: það er skjalfest staða verkefnisins (``data/raw/frysting.json``)
+    og ekki merki um að keyrslan hafi mistekist. Villan er samt sögð upphátt.
     """
-    brugdust = 0
+    nidurstada = Nidurstada()
     for nafn in heiti:
         try:
-            saekja_safn(nafn, thvinga=thvinga)
+            svor = saekja_safn(nafn, thvinga=thvinga)
+        except StillingaVilla as villa:
+            log.warning("%s er óvirkt: %s", nafn, villa)
+            nidurstada.ovirk[nafn] = str(villa)
         except VAENTAR_VILLUR as villa:
             log.error("%s brást: %s", nafn, villa)
-            brugdust += 1
-    return brugdust
+            nidurstada.brugdust[nafn] = str(villa)
+        else:
+            skra = nidurstada.ur_safni if all(s.ur_safni for s in svor) else nidurstada.sott
+            skra.append(nafn)
+    return nidurstada
+
+
+def samantekt(nidurstada: Nidurstada) -> None:
+    """Skráir niðurstöðuna í eina línu á hvern flokk."""
+    for texti, sofn in (
+        ("úr data/raw/ (ekkert kall)", nidurstada.ur_safni),
+        ("sótt af netinu", nidurstada.sott),
+    ):
+        if sofn:
+            log.info("%d %s: %s", len(sofn), texti, ", ".join(sofn))
+    if nidurstada.ovirk:
+        log.warning(
+            "%d óvirk (stillingu vantar): %s",
+            len(nidurstada.ovirk), ", ".join(nidurstada.ovirk),
+        )
+    if nidurstada.brugdust:
+        log.error(
+            "%d brugðust: %s", len(nidurstada.brugdust), ", ".join(nidurstada.brugdust)
+        )
+
+
+def safna(heiti: Sequence[str] | None = None, *, thvinga: bool = False) -> Nidurstada:
+    """Sækir söfnin og fellur með ``SofnunVilla`` hafi eitthvert brugðist.
+
+    Þetta er inngangurinn sem ``src/python/main.py`` notar: þar á söfnunarskrefið
+    að stöðva flæðið þegar gagn vantar, en ekki þegar safn er einfaldlega óvirkt.
+    """
+    nidurstada = keyra(list(heiti) if heiti is not None else list(SOFN), thvinga=thvinga)
+    samantekt(nidurstada)
+    if nidurstada.brugdust:
+        raise SofnunVilla(
+            f"{len(nidurstada.brugdust)} af {len(SOFN)} söfnum brugðust: "
+            + "; ".join(f"{nafn} — {bod}" for nafn, bod in nidurstada.brugdust.items())
+        )
+    return nidurstada
 
 
 def main(rok: list[str] | None = None) -> int:
@@ -114,9 +176,10 @@ def main(rok: list[str] | None = None) -> int:
         return 0
 
     heiti = list(SOFN) if valkostir.safn == "allt" else [valkostir.safn]
-    brugdust = keyra(heiti, thvinga=valkostir.thvinga)
-    if brugdust:
-        log.error("%d af %d söfnum brugðust.", brugdust, len(heiti))
+    try:
+        safna(heiti, thvinga=valkostir.thvinga)
+    except SofnunVilla:
+        # Villurnar sjálfar eru þegar skráðar hver fyrir sig í keyra().
         return 1
     return 0
 
