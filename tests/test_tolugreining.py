@@ -139,5 +139,71 @@ class EkkiNidurstadaProf(unittest.TestCase):
         self.assertTrue(all(not t.visst for t in tolur))
 
 
+class BandstrikEkkiMinusProf(unittest.TestCase):
+    """Bandstrik inni í auðkenni er skiltákn, ekki mínus (issue #38).
+
+    Fyrri útgáfa klauf keðjuna á bandstrikinu og las seinni hlutann sem
+    neikvæða tölu. Það skilaði þrettán færslum í viðmiðinu sem gamla síðan
+    birtir ekki — og hefði skilað óútskýranlegum frávikum í #16. Dæmin hér eru
+    tekin óbreytt úr byggðu gömlu síðunni; þau festa hverja mynd fyrir sig svo
+    hnökrinn komi ekki aftur.
+    """
+
+    def test_wigos_audkenni_er_eitt_audkenni(self) -> None:
+        # 0-20000-0-04030 gaf áður 0, -20000, -0 og -04030 — fjórar „tölur“.
+        tala = eitt('"wigos" : "0-20000-0-04030"')
+        self.assertEqual((tala.texti, tala.tegund, tala.gildi),
+                         ("0-20000-0-04030", "aukenni", None))
+        self.assertFalse(tala.visst)
+
+    def test_hnit_i_beidnisslod_gefa_enga_neikvaeda_tolu(self) -> None:
+        # POLYGON((-23 64.1,...)) prósentukóðað: ((-23 gaf áður -23.
+        tolur = finna_tolur(
+            "&polygon=POLYGON%28%28-23+64.1%2C-23+63.7%29%29&format=json")
+        self.assertEqual([t.gildi for t in tolur if t.gildi is not None
+                          and t.gildi < 0], [])
+
+    def test_lon_i_stodvasvari_heldur_minusnum(self) -> None:
+        # Hér stendur formerkið eitt og sér: þetta ER negatíf lengdargráða.
+        tala = eitt('"lon" : -21.9081897736')
+        self.assertEqual(tala.gildi, -21.9081897736)
+
+    def test_skyrslunumer_er_eitt_audkenni(self) -> None:
+        # VÍ 2009-013 gaf áður árið 2009 og heiltöluna -013.
+        tolur = finna_tolur("Veðurstofan fjallar um Mlw í skýrslu VÍ 2009-013")
+        self.assertEqual([(t.texti, t.tegund) for t in tolur],
+                         [("2009-013", "aukenni")])
+
+    def test_thattaaudkenni_tvofalds_handrits(self) -> None:
+        # 1017-1018 gaf áður heiltölurnar 1017 og -1018, báðar visst=True.
+        tala = eitt("sérefni ( 1017-1018 )")
+        self.assertEqual((tala.texti, tala.tegund), ("1017-1018", "aukenni"))
+        self.assertFalse(tala.visst)
+
+    def test_minus_eitt_og_ser_er_afram_minus(self) -> None:
+        """Raunverulegar neikvæðar tölur úr gömlu síðunni tapast ekki."""
+        for texti, gildi in (("Lengdargráða −23 til", -23),
+                             ("til −21,5; breiddargráða", -21.5),
+                             ("Hnit VR-II (64,1386922, -21,9556406) voru",
+                              -21.9556406)):
+            with self.subTest(texti=texti):
+                tolur = finna_tolur(texti)
+                self.assertIn(gildi, [t.gildi for t in tolur])
+
+    def test_sertaekari_keðjur_halda_tegund_sinni(self) -> None:
+        """Dagsetning, þáttaauðkenni og árabil eru líka tölur með bandstriki."""
+        for texti, tegund in (("2023-11-01", "dagsetning"),
+                              ("0212-0213", "thattaraudkenni"),
+                              ("2014-2023", "arabil"),
+                              ("2026-W35", "vika")):
+            with self.subTest(texti=texti):
+                self.assertEqual(eitt(texti).tegund, tegund)
+
+    def test_keðjan_er_skrad_ekki_hent(self) -> None:
+        """Keðjan fellur ekki út þegjandi — hún er skráð sem auðkenni."""
+        tolur = finna_tolur("skrárnar 0212-0213 og 1017-1018 eru tvöfaldar")
+        self.assertEqual([t.texti for t in tolur], ["0212-0213", "1017-1018"])
+
+
 if __name__ == "__main__":
     unittest.main()
