@@ -51,8 +51,8 @@ Fastar reglur fyrir þessa lotu:
 
 `✅` = lokið · `🟢` = má hefja núna · `⏸` = blokkað · `👤` = Björn, ekki agent
 
-Staðan er lesin úr greinum repo-sins **24.9.2026**. Lokin verk bíða samruna við
-`main` — greinin sem geymir verkið fylgir í stöðudálkinum. Blokkunardálkurinn
+Staðan er lesin úr PR-um og greinum repo-sins **27.9.2026**. Sameinuð verk bera
+`main`; lokin verk sem bíða samruna bera PR-númerið sitt. Blokkunardálkurinn
 telur aðeins það sem **enn** er ólokið.
 
 ### Bylgja 0 — björgun og grunnur
@@ -63,55 +63,76 @@ telur aðeins það sem **enn** er ólokið.
 | **P0.2** Lesa viðmiðstölur úr byggðu síðunni | #30 | `--persona-analyzer` | ✅ `vidmid/lesa-tolur` | — |
 | **P0.3** Frysta hrágögn + `.gitignore` | #2 | `--persona-devops` | ✅ `gagnabjorgun/frysta-hragogn` | — |
 | **P0.4** Heimildir og aðferðafræði | #4 | `--persona-scribe=en` | ✅ `skjolun/heimildir-adferdafraedi` | — |
-| **P0.5** Höfundaréttarákvörðun | #3 | 👤 | 🟢 | — |
-| **P0.6** Myndritaákvörðun | #17 | 👤 | 🟢 | — |
+| **P0.5** Höfundaréttarákvörðun | #3 | 👤 | ✅ valkostur A, 27.9.2026 | — |
+| **P0.6** Myndritaákvörðun | #17 | 👤 | ✅ matplotlib samþykkt, 27.9.2026 | — |
 
 TMDB náðist ekki að frysta í P0.3 — `TMDB_TOKEN` er hvergi til. Það er skráð í
 `data/raw/frysting.json` og stöðvar ekkert annað verk.
 
-**P0.5 og P0.6 eru nú á gagnrýnu leiðinni:** P0.5 blokkar P1.6, P2.5 og P2.6;
-P0.6 blokkar P3.3 og þar með allar myndritasíður.
+**Báðar ákvarðanirnar voru teknar 27.9.2026** og eru skráðar í issue-in sjálf:
+
+- **P0.5 → valkostur A** (#3): handritin fara aldrei í repo-ið, aðeins afleiddu
+  tölurnar. Þær eru staðreyndir um textann, ekki textinn. Opnar P1.6, P2.5, P2.6.
+- **P0.6 → matplotlib samþykkt** (#17): Python teiknar SVG við útflutning,
+  gagnatafla er í HTML-inu sjálfu, litir koma úr `tokens.css`. Pakkinn er
+  samþykktur **eingöngu** fyrir `src/python/utflutningur/`, og
+  `python3 -m unittest discover -s tests` verður áfram að keyra á staðalsafninu
+  einu — próf sem þarfnast matplotlib sleppa sér sjálf. Opnar P3.3.
+
+Verkið sem eftir stendur í hvoru issue-i — skjölun rakanna, `.gitmodules`,
+sýnidæmi um myndrit — er agentaverk, ekki ákvörðun.
 
 ### Bylgja 1 — gagnalag
 
 | Pakki | Issue | Persóna | Staða | Blokkað af |
 |---|---|---|---|---|
 | **P1.1** Migration-keyrari og tengilag | #5 | `--persona-backend` | ✅ `gagnagrunnur/migration-keyrari` | — |
-| **P1.2** Skjálftavaktin: schema + hleðsla | #6 | `--persona-backend` | 🟢 | — |
-| **P1.3** Hagstofan: schema + hleðsla | #7 | `--persona-backend` | 🟢 | — |
-| **P1.4** Veðurstöðvar: schema + hleðsla | #8 | `--persona-backend` | 🟢 | — |
-| **P1.5** mbl.is: schema + hleðsla | #9 | `--persona-backend` | 🟢 | — |
-| **P1.6** Friends: schema + hleðsla | #10 | `--persona-backend` | ⏸ | P0.5 |
-| **P1.7** Fyrirspurnir | #11 | `--persona-backend` | ⏸ | P1.2–P1.6 |
+| **P1.2** Skjálftavaktin: schema + hleðsla | #6 | `--persona-backend` | ✅ `main` (PR #40) | — |
+| **P1.3** Hagstofan: schema + hleðsla | #7 | `--persona-backend` | ✅ `main` (PR #41) | — |
+| **P1.4** Veðurstöðvar: schema + hleðsla | #8 | `--persona-backend` | ✅ PR #42 | — |
+| **P1.5** mbl.is: schema + hleðsla | #9 | `--persona-backend` | ✅ PR #46 | — |
+| **P1.6** Friends: schema + hleðsla | #10 | `--persona-backend` | 🟢 | — |
+| **P1.7** Fyrirspurnir | #11 | `--persona-backend` | ⏸ | P1.6 |
 
-P0.3 og P1.1 eru bæði komin, svo **P1.2–P1.5 mega fara af stað núna og
-samtímis** — þau snerta sitt hvora migration og sitt hvora töflu. P1.6 bíður
-höfundaréttarákvörðunarinnar (P0.5), ekki gagnanna.
+Fjórir af fimm hleðslupökkum eru í höfn: #6 og #7 eru komin í `main`
+(migrations 001–003), #8 og #9 bíða samruna. Staðfestu fjöldatölurnar:
+334 atburðir · 61 dagur (#6) · 36 gildi = margfeldi `size` (#7) · 778 stöðvar,
+343 með NULL lokaár (#8) · öll fimm svör æfingarinnar (#9).
+
+**P1.6 er laus** eftir höfundaréttarákvörðunina og er það eina sem P1.7 bíður enn.
+
+Enginn þessara pakka tengir hleðsluna við `hlada()` í `src/python/main.py`, af
+ásettu ráði: fjórir pakkar sem breyta sömu línunum gefa fjögurra leiða
+samrunaárekstur. Tengingin er **#39** — eitt verk, unnið þegar greinarnar eru inni.
 
 ### Bylgja 2 — Python-pípan
 
 | Pakki | Issue | Persóna | Staða | Blokkað af |
 |---|---|---|---|---|
 | **P2.1** HTTP-lag | #12 | `--persona-backend` | ✅ `sofnun/http-lag` | — |
-| **P2.2** Söfnunarskriftur fluttar | #13 | `--persona-backend` | 🟢 | — |
-| **P2.3** Kljúfa `earthquakes.py` (557 l.) | #14 | `--persona-refactorer` | ⏸ | P2.2 |
-| **P2.4** Kljúfa `vedurstofa_stodvar.py` (637 l.) | #14 | `--persona-refactorer` | ⏸ | P2.2 |
-| **P2.5** Kljúfa `phoebe_analysis.py` (1.199 l.) | #14 | `--persona-refactorer` | ⏸ | P2.2, P0.5 |
-| **P2.6** Kljúfa `phoebe_central_perk.py` (877 l.) | #14 | `--persona-refactorer` | ⏸ | P2.2, P0.5 |
+| **P2.2** Söfnunarskriftur fluttar | #13 | `--persona-backend` | ✅ PR #43 | — |
+| **P2.3** Kljúfa `earthquakes.py` (557 l.) | #14 | `--persona-refactorer` | 🟢 | — |
+| **P2.4** Kljúfa `vedurstofa_stodvar.py` (637 l.) | #14 | `--persona-refactorer` | 🟢 | — |
+| **P2.5** Kljúfa `phoebe_analysis.py` (1.199 l.) | #14 | `--persona-refactorer` | 🟢 | — |
+| **P2.6** Kljúfa `phoebe_central_perk.py` (877 l.) | #14 | `--persona-refactorer` | 🟢 | — |
 | **P2.7** Útflutningur í `web/gogn/` | #15 | `--persona-backend` | ⏸ | P1.7, P2.3–P2.6 |
 | **P2.8** Próf og samanburður við viðmið | #16 | `--persona-qa` | ⏸ | P2.7 |
 
 #14 er klofið í fjóra pakka af ásettu ráði — 3.270 línur eru ekki ein lota.
-P2.3–P2.6 eru óháð innbyrðis. Viðmiðið sem P2.8 ber saman við er tilbúið
-(P0.2): 445 tölur í `docs/vidmid/vidmid.json`.
+P2.3–P2.6 eru óháð innbyrðis og **öll fjögur eru laus** eftir P2.2 og P0.5.
+
+Viðmiðið sem P2.8 ber saman við er tilbúið (P0.2): **440 efnislegar tölur** í
+`docs/vidmid/vidmid.json` þegar #38 er inni. Það voru 445 — fimm þeirra voru
+falskar, lesnar úr auðkennum og skýrslunúmerum (PR #45). Talan 1378 sem #38
+setti sem skilyrði var mistalning; rétt tala er 1383.
 
 ### Bylgja 3 — vefsíðan
 
 | Pakki | Issue | Persóna | Staða | Blokkað af |
 |---|---|---|---|---|
-| **P3.1** Beinagrind og sjónrænt kerfi | #18 | `--persona-frontend` | 🟢 | — |
+| **P3.1** Beinagrind og sjónrænt kerfi | #18 | `--persona-frontend` | ✅ `main` (PR #36) | — |
 | **P3.2** JS-gagnahleðsla | #19 | `--persona-frontend` | ⏸ | P3.1, P2.7 |
-| **P3.3** Myndritalag | #17 | `--persona-frontend` | ⏸ | P0.6, P3.1 |
+| **P3.3** Myndritalag | #17 | `--persona-frontend` | 🟢 | — |
 | **P3.4** Síða: Skjálftavaktin | #20 | `--persona-frontend` | ⏸ | P3.2, P3.3 |
 | **P3.5** Síða: Hagstofan | #21 | `--persona-frontend` | ⏸ | P3.2 |
 | **P3.6** Síða: Veðurstöðvar | #22 | `--persona-frontend` | ⏸ | P3.2 |
@@ -119,11 +140,11 @@ P2.3–P2.6 eru óháð innbyrðis. Viðmiðið sem P2.8 ber saman við er tilb�
 | **P3.8** Síða: Phoebe-tölfræði | #24 | `--persona-frontend` | ⏸ | P3.2, P3.3 |
 | **P3.9** Síða: Central Perk | #24 | `--persona-frontend` | ⏸ | P3.2, P3.3 |
 | **P3.10** Síða: TMDB | #24 | `--persona-frontend` | ⏸ | P3.2 |
-| **P3.11** Síða: aðferðafræði | #25 | `--persona-scribe=en` | ⏸ | P3.1 |
+| **P3.11** Síða: aðferðafræði | #25 | `--persona-scribe=en` | 🟢 | — |
 
-#24 er klofið í þrjár síður. P3.4–P3.11 eru óháð innbyrðis. **P3.1 er eini
-pakki bylgju 3 sem má hefja núna** og hann opnar alla hina — hann er því
-næstur á eftir P1.2–P1.5 í forgangi.
+#24 er klofið í þrjár síður. P3.4–P3.11 eru óháð innbyrðis. Beinagrindin (P3.1)
+er komin, svo **P3.3 og P3.11 eru laus núna** — P3.3 eftir myndritaákvörðunina.
+Síðuverkin sjálf bíða P3.2, sem bíður útflutningsins (P2.7).
 
 ### Bylgja 4 — gæði og útgáfa
 
@@ -137,12 +158,25 @@ næstur á eftir P1.2–P1.5 í forgangi.
 
 ### Hvað er hægt að setja í gang núna
 
-Sex pakkar eru lausir: **P1.2, P1.3, P1.4, P1.5** (hver sína migration),
-**P2.2** (söfnunarskriftur yfir á HTTP-lagið úr P2.1) og **P3.1**
-(vefbeinagrindin, engin gögn nauðsynleg). Þeir snerta engar sömu skrár og mega
-því allir fara samtímis — ein vinnumappa á hvern (kafli 10).
+Sjö pakkar eru lausir og snerta engar sömu skrár:
 
-Tvær ákvarðanir Björns (**P0.5**, **P0.6**) eru það sem heldur mestu eftir.
+| Pakki | Verk | Persóna |
+|---|---|---|
+| **P1.6** | Friends: schema + hleðsla (#10) | `--persona-backend` |
+| **P2.3** | Kljúfa `earthquakes.py` (#14) | `--persona-refactorer` |
+| **P2.4** | Kljúfa `vedurstofa_stodvar.py` (#14) | `--persona-refactorer` |
+| **P2.5** | Kljúfa `phoebe_analysis.py` (#14) | `--persona-refactorer` |
+| **P2.6** | Kljúfa `phoebe_central_perk.py` (#14) | `--persona-refactorer` |
+| **P3.3** | Myndritalag (#17) | `--persona-frontend` |
+| **P3.11** | Síða: aðferðafræði (#25) | `--persona-scribe=en` |
+
+Auk þeirra fimm verk sem urðu til við yfirferð bylgju 1, öll laus: **#3** og
+**#17** (skjölun ákvarðananna), **#39** (tengja `hlada()`, eftir samruna #42 og
+#46), **#44** (prósentukóðun í viðmiðsútdrætti) og **#47** (fingrafarið telur
+vegguklukkustimpla með).
+
+Ein vinnumappa á hvern agent (kafli 10) og commit + push eftir hvert
+áfangaskref (kafli 15).
 
 ---
 
@@ -345,7 +379,7 @@ data/db/ sé enn utan git.
 
 ## 8. Prompt: P1.2–P1.6 — schema og hleðsla (fimm pakkar)
 
-**Persóna:** `--persona-backend` · **Issues:** #6–#10 · 🟢 **P1.2–P1.5 mega hefjast** · P1.6 bíður P0.5
+**Persóna:** `--persona-backend` · **Issues:** #6–#10 · ✅ **P1.2–P1.5 lokið** (PR #40, #41, #42, #46) · 🟢 **P1.6 laust**
 
 Sama form á öllum fimm; skiptið aðeins út efnishlutanum. **Fimm agentar mega
 vinna þessa samtímis** — þeir snerta sitt hvora migration og sitt hvora töflu.
@@ -551,7 +585,7 @@ aðeins lestur úr umhverfi.
 
 ## 13. Prompt: P3.1 — beinagrind og sjónrænt kerfi
 
-**Persóna:** `--persona-frontend` · **Issue:** #18 · 🟢 **Má hefja núna**
+**Persóna:** `--persona-frontend` · **Issue:** #18 · ✅ **Lokið** — `main` (PR #36)
 
 ```text
 [HAUSINN úr kafla 2 hér]
@@ -615,7 +649,7 @@ villulaus á öllum níu síðunum.
 
 ## 14. Prompt: P1.7 — endurnýtanlegar fyrirspurnir
 
-**Persóna:** `--persona-backend` · **Issue:** #11 · ⏸ **Blokkað af P1.2–P1.6**
+**Persóna:** `--persona-backend` · **Issue:** #11 · ⏸ **Blokkað af P1.6**
 
 ```text
 [HAUSINN úr kafla 2 hér]
@@ -650,3 +684,62 @@ Próf sem keyra hverja fyrirspurn á grunninum og staðfesta að hún skili rö�
 Lokið: staðfestu að engin SQL-strengjasamsetning sé eftir í Python-kóðanum og
 að hver fyrirspurn beri athugasemd um hvaða spurningu hún svarar.
 ```
+
+---
+
+## 15. Reikningsþakið — og reglan sem það setti
+
+Þetta er ekki hliðarsaga heldur verklagsregla, því sama vandamálið hefur fellt
+sjö agentalotur í þessu repo.
+
+**24.9.2026:** fjórir agentar unnu P1.2–P1.5 samtímis og stöðvuðust **allir á
+sömu mínútu** þegar mánaðarþak reikningsins náðist (HTTP 429). Migrations,
+hleðslueiningar og próf voru skrifuð — og lágu **ókommituð í vinnumöppum**.
+Tveir pakkanna voru meira að segja fullgerðir án þess að nokkur vissi það.
+
+**27.9.2026:** vinnunni var bjargað — þrjú björgunarcommit, fjórar greinar
+færðar fram, fimm greinar upp í origin. Þrír nýir agentar voru settir á það sem
+eftir var og **stöðvuðust allir á sama vegg** um klukkustund síðar. Í því
+tilviki tapaðist ekkert: þeir höfðu fyrirmæli um að committa jafnóðum, og þeim
+var haldið áfram með skilaboðum þegar þakið endurstilltist.
+
+### Reglan
+
+> **Committaðu og ýttu upp eftir hvert áfangaskref, ekki í lokin.**
+
+Þetta er sama krafa og verkefnið gerir til gagnanna í fasa 0: það sem er aðeins
+á einni vél er ekki til. Hún fer í hvert agent-prompt **með skýringunni** —
+agent sem veit af hverju fylgir henni.
+
+Þegar lota fellur:
+
+1. Athugaðu `git status` og `git log` í vinnumöppu **hvers** agents áður en nýr
+   agent er settur á sama verk. `git worktree list` sýnir þær allar.
+2. Committaðu strandaða vinnu með nafngreindum skrám (aldrei `git add -A`) og
+   merktu commitið sem björgun.
+3. Haltu agentinum áfram með skilaboðum í stað þess að byrja nýja lotu — hann
+   hefur sitt samhengi og það er ódýrara.
+
+### Það sem yfirferðin skilaði
+
+Agentarnir sem tóku upp strandaða vinnu **löguðu allir eitthvað efnislegt í
+henni**. Verkin voru ekki bara ókláruð, þau voru ranglega klár:
+
+| Fannst við yfirferð | Hvar |
+|---|---|
+| `fetch_log.id` var `AUTOINCREMENT`, svo fingrafarið mældi *hversu oft* var hlaðið | #8 — lagað í PR #42 |
+| `frosid.py` kastaði villu þar sem regla 4 segir að sleppa kalli | #13 — lagað í PR #43 |
+| Nominatim-uppfletting var eina netkallið í sjálfgefinni keyrslu — og óþörf | #13 — lagað í PR #43 |
+| mbl-slóðin vísaði á forsíðuna; frosna eintakið er af `/frettir/` | #13 — lagað í PR #43 |
+| Viðmiðunartalan í #38 var mistalning: 1383, ekki 1378 | #38 — rakið í PR #45 |
+| Prósentukóðun dregur inn tölur sem eru ekki mælingar | skráð sem #44 |
+| Fingrafarið telur vegguklukkustimpla með og sannar því ekki reglu 5 | skráð sem #47 |
+
+Sú síðasta er lærdómurinn í hnotskurn: **prófið var grænt af tilviljun.** Tvær
+hraðar keyrslur lenda innan sömu sekúndu og stemma; yfir sekúndumörk gefa þær
+sitt hvort fingrafar. Tólið sem á að sanna að grunnurinn sé afleiða mældi
+hvenær hann var byggður.
+
+Regla sem af þessu má draga fyrir næstu pakka: **staðfesting sem getur stemmt af
+tilviljun er ekki staðfesting.** Prófaðu skilyrðið þar sem það á að bresta, ekki
+þar sem það er líklegt til að halda.
