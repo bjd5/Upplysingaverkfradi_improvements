@@ -29,6 +29,7 @@ from mbl_grunnur import GrunnProf  # noqa: E402
 from mbl_vidmid import (  # noqa: E402
     FROSNA_EINTAKID,
     FROSNA_UPPRUNASLOD,
+    vidmidstala,
     vidmidstolur,
 )
 from vinnsla.mbl_hledsla import hlada_eintak  # noqa: E402
@@ -76,6 +77,97 @@ class SqlSvorProf(HladidFrosidEintak):
         ).fetchone()
         self.assertEqual(rad["value_number"], 121.33)
         self.assertEqual(rad["value_text"], "121,33 ISK fyrir 1 USD")
+
+
+class EittSvarIEinuProf(HladidFrosidEintak):
+    """Eitt próf á hvert svar æfingarinnar — fimm spurningar, fimm próf.
+
+    ``test_svorin_eru_vidmidid`` að ofan ber öll fimm saman í einu lagi og er
+    það sem fellur ef eitthvað skeikar. Prófin hér svara annarri spurningu:
+    **hvert** svaranna skeikaði. Villuskilaboðin nefna þá eina spurningu í
+    stað þess að bera fram fimm talna kort til samanburðar.
+
+    Væntu tölurnar eru lesnar úr ``docs/vidmid/vidmid.json``; textinn, einingin
+    og mynsturheitið eru það sem þessi útfærsla lofar og er staðfest hér.
+    """
+
+    def _svar(self, lykill: str, mynsturheiti: str, vaentur_texti: str):
+        """Les eitt svar úr SQL og staðfestir tölu, texta, einingu og mynstur.
+
+        Talan er borin við viðmiðið; hitt er borið við það sem
+        ``mbl_utdrattur`` lofar. Svarið verður að benda á sitt eigið eintak,
+        annars er talan órekjanleg (regla 8).
+        """
+        rad = self.eitt_svar(self.sott, lykill)
+        self.assertEqual(rad["gildi"], vidmidstala(FROSNA_EINTAKID, lykill))
+        self.assertEqual(rad["svar"], vaentur_texti)
+        self.assertEqual(rad["mynsturheiti"], mynsturheiti)
+        self.assertEqual(rad["eintak"], self.eintak.skraarheiti)
+        self.assertTrue(rad["mynstur"].strip())
+        self.assertTrue(rad["synishorn"].strip())
+        return rad
+
+    def test_svar_1_einstakar_frettir(self) -> None:
+        """1. „Hversu margar einstakar fréttir eru á síðunni?“ — 43 fréttir.
+
+        Mynstrið fann 99 fréttahlekkjatilvik; sama grein tengist bæði úr mynd
+        og fyrirsögn, svo afritahreinsun skilur 43 einstakar slóðir eftir.
+        Báðar tölur liggja í grunninum svo hlutfallið sé rekjanlegt.
+        """
+        rad = self._svar(
+            "einstakar-frettir", "MYNSTUR_FRETTASLOD", "43 einstakar fréttir"
+        )
+        self.assertEqual(rad["eining"], "fréttir")
+        self.assertEqual(rad["tilvik"], 99)
+        self.assertEqual(rad["einstok"], 43)
+
+    def test_svar_2_hitastig_reykjavik(self) -> None:
+        """2. „Hvert er hitastigið í Reykjavík?“ — 11 °C.
+
+        Lesið úr veðurkassa síðunnar innan afmarkaðs glugga eftir valinni
+        Reykjavík. Aðeins eitt hitastig má finnast: tvö væru tvíræðni og
+        stöðvuðu útdráttinn.
+        """
+        rad = self._svar("hitastig-reykjavik", "MYNSTUR_HITI_REYKJAVIK", "11 °C")
+        self.assertEqual(rad["eining"], "°C")
+        self.assertEqual(rad["einstok"], 1)
+
+    def test_svar_3_gengi_usd(self) -> None:
+        """3. „Hvert er gengi Bandaríkjadals?“ — 121,33 ISK fyrir 1 USD.
+
+        Sýnilegi innsláttarreiturinn er tómur í HTML-svarinu; gildið liggur
+        neðar í JavaScript. Leitin er því afmörkuð við script-blokkir og sú
+        afmörkun er hluti aðferðarinnar — hún fylgir svarinu í grunninn.
+        """
+        rad = self._svar("gengi-usd", "MYNSTUR_USD_GENGI", "121,33 ISK fyrir 1 USD")
+        self.assertEqual(rad["eining"], "ISK á USD")
+        self.assertEqual(rad["afmorkun"], "MYNSTUR_SCRIPT_BLOKK")
+
+    def test_svar_4_synileg_ord(self) -> None:
+        """4. „Hversu mörg sýnileg orð eru á síðunni?“ — 2.188 orð.
+
+        Ósýnilegar blokkir (head, script, style, template, noscript og
+        athugasemdir) eru fjarlægðar áður en talið er. Sú afmörkun ræður
+        tölunni og fylgir henni því í grunninn.
+        """
+        rad = self._svar("synileg-ord", "MYNSTUR_ORD", "2.188 sýnileg orð")
+        self.assertEqual(rad["eining"], "orð")
+        self.assertEqual(rad["afmorkun"], "MYNSTUR_OSYNILEGT")
+        # Einstök orð eru færri en tilvikin — annars væri ekkert orð endurtekið.
+        self.assertLess(rad["einstok"], rad["tilvik"])
+
+    def test_svar_5_auglysingareitir(self) -> None:
+        """5. „Hversu margir auglýsingareitir eru skilgreindir?“ — 47 reitir.
+
+        Talan er fjöldi einstakra ``Ads.renderSlot``-auðkenna, þ.e. skilgreindra
+        reita, ekki staðfestur fjöldi birtra auglýsinga. Sú takmörkun er skráð
+        með svarinu (regla 8) og er staðfest hér.
+        """
+        rad = self._svar(
+            "auglysingareitir", "MYNSTUR_AUGLYSINGAREITUR", "47 auglýsingareitir"
+        )
+        self.assertEqual(rad["eining"], "reitir")
+        self.assertIn("ekki staðfestur fjöldi", rad["takmarkanir"])
 
 
 class RekjanleikiProf(HladidFrosidEintak):
