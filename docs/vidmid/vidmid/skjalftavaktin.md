@@ -1,12 +1,12 @@
 # Viðmið — Skjálftavaktin — jarðskjálftar á Reykjanesi
 
-Afleidd skrá. Uppfært 2026-09-24T11:39:24Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
+Afleidd skrá. Uppfært 2026-09-27T15:54:28Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
 
-90 efnislegar tölur úr 1 síðum gamla verkefnisins.
+89 efnislegar tölur úr 1 síðum gamla verkefnisins.
 
 ## `capstone/earthquakes.html`
 
-Byggingarlota `fdf1261`. 90 efnislegar tölur.
+Byggingarlota `fdf1261`. 89 efnislegar tölur.
 
 | Tala | Eining | Tegund | Hvar | Samhengi |
 |---|---|---|---|---|
@@ -99,4 +99,3 @@ Byggingarlota `fdf1261`. 90 efnislegar tölur.
 | `0` | — | heiltala | Desember 2023 31 dagar · Samtals 4 · 30.12. · Fjöldi | 0 |
 | `0` | — | heiltala | Desember 2023 31 dagar · Samtals 4 · 31.12. · Fjöldi | 0 |
 | `4` | — | heiltala | Desember 2023 31 dagar · Samtals 4 · Samtals · Fjöldi | 4 |
-| `-013` | — | heiltala | Daglegur fjöldi eftir mánuðum | Talningin nær aðeins til færslna sem uppfylla öll síuskilyrði fyrirspurnarinnar. Núll í daglegri töflu merkir… |

@@ -2,7 +2,7 @@
 
 Hver tala sem byggða gamla síðan birtir, vélleshæf í [`vidmid.json`](vidmid.json) og læsileg hér. Þetta er svarið við spurningunni sem viðmiðið er til fyrir: **sýnir nýja síðan sömu tölur?** (sjá [`README.md`](README.md) og [`../endurbygging.md`](../endurbygging.md), kafla 2).
 
-Afleidd skrá. Uppfært 2026-09-24T11:39:24Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
+Afleidd skrá. Uppfært 2026-09-27T15:54:28Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
 
 ## 1. Umfang
 
@@ -10,15 +10,15 @@ Afleidd skrá. Uppfært 2026-09-24T11:39:24Z af `src/python/vidmid/tolur.py`; **
 |---|---:|
 | Síður lesnar | 28 |
 | Síður með tölu í HTML | 26 |
-| Tölur alls | 1391 |
-| **Efnislegar niðurstöður** | **445** |
-| Tölur sem eru ekki niðurstöður | 946 |
+| Tölur alls | 1383 |
+| **Efnislegar niðurstöður** | **440** |
+| Tölur sem eru ekki niðurstöður | 943 |
 
 Efnisleg niðurstaða = tala í fyrirsögn, málsgrein, lista, töflu eða úttaki. Tölur inni í kóðalistun, auðkenni (`0405`), issue-tilvísanir (`#14`), ISO-dagsetningar og CSS-gildi eru skráðar áfram í `vidmid.json` en hafa `visst: false` — betra að hafa of mikið en að missa tölu.
 
-**Eftir flokki:** tafla 246, malsgrein 168, listi 19, fyrirsogn 12
+**Eftir flokki:** tafla 246, malsgrein 163, listi 19, fyrirsogn 12
 
-**Eftir tegund:** heiltala 316, desimal 62, hlutfall 30, thusund 25, bil 9, hlutfallstala 3
+**Eftir tegund:** heiltala 311, desimal 62, hlutfall 30, thusund 25, bil 9, hlutfallstala 3
 
 ## 2. Síður án efnislegrar tölu
 
@@ -185,7 +185,6 @@ Verklýsingin krefst þess að báðir staðir séu skráðir. Hér eru aðeins 
 | 9 | — | `lotur/git-ai-reproducible/reproducible-reports.html`, `lotur/vefthjonustur/hagstofan.html`, `lotur/vefthjonustur/vedurstofan.html` |
 | 0.0 | — | `capstone/earthquakes.html`, `lotur/git-ai-reproducible/reproducible-reports.html`, `lotur/vefthjonustur/hagstofan.html` |
 | 70553 | textablokkir | `friends/phoebe-statistics.html`, `lotur/regex/index.html` |
-| 1017 | — | `friends/index.html`, `phoebe-central-perk.html` |
 | 229 | skrár | `friends/index.html`, `phoebe-central-perk.html` |
 | 64.1 | — | `capstone/earthquakes.html`, `team.html` |
 | 63.7 | — | `capstone/earthquakes.html`, `team.html` |
@@ -197,8 +196,9 @@ Verklýsingin krefst þess að báðir staðir séu skráðir. Hér eru aðeins 
 | 18 | — | `friends/index.html`, `lotur/git-ai-reproducible/reproducible-reports.html` |
 | 17 | — | `lotur/regex/mbl.html`, `lotur/vefthjonustur/hagstofan.html` |
 | 10 | — | `lotur/git-ai-reproducible/reproducible-reports.html`, `lotur/vefthjonustur/hagstofan.html` |
+| 8 | — | `lotur/git-ai-reproducible/reproducible-reports.html`, `lotur/vefthjonustur/hagstofan.html` |
 
-*4 fleiri í `vidmid.json`.*
+*2 fleiri í `vidmid.json`.*
 
 ## 7. Viðmið eftir síðum nýju síðunnar
 
@@ -206,10 +206,10 @@ Ein skrá á hverja síðu sem á að byggja (sjá [`../endurbygging.md`](../end
 
 | Síða nýju síðunnar | Viðmið | Tölur | Úr gömlu síðunum |
 |---|---|---:|---|
-| Skjálftavaktin — jarðskjálftar á Reykjanesi | [`vidmid/skjalftavaktin.md`](vidmid/skjalftavaktin.md) | 90 | `capstone/earthquakes.html` |
+| Skjálftavaktin — jarðskjálftar á Reykjanesi | [`vidmid/skjalftavaktin.md`](vidmid/skjalftavaktin.md) | 89 | `capstone/earthquakes.html` |
 | Hagstofan — brautskráning af háskólastigi | [`vidmid/hagstofan.md`](vidmid/hagstofan.md) | 84 | `lotur/vefthjonustur/hagstofan.html` |
 | Veðurstöðvar Veðurstofunnar | [`vidmid/vedurstodvar.md`](vidmid/vedurstodvar.md) | 41 | `lotur/vefthjonustur/vedurstofan.html` |
 | mbl.is — reglulegar segðir á fréttaforsíðu | [`vidmid/mbl-regex.md`](vidmid/mbl-regex.md) | 60 | `lotur/regex/index.html`, `lotur/regex/mbl.html` |
-| Phoebe — plass, nærvera og tengsl | [`vidmid/phoebe-tolfraedi.md`](vidmid/phoebe-tolfraedi.md) | 46 | `friends/index.html`, `friends/phoebe-statistics.html`, `friends/phoebe-tribute.html` |
-| Phoebe — söngurinn í Central Perk | [`vidmid/phoebe-central-perk.md`](vidmid/phoebe-central-perk.md) | 30 | `phoebe-central-perk.html` |
+| Phoebe — plass, nærvera og tengsl | [`vidmid/phoebe-tolfraedi.md`](vidmid/phoebe-tolfraedi.md) | 44 | `friends/index.html`, `friends/phoebe-statistics.html`, `friends/phoebe-tribute.html` |
+| Phoebe — söngurinn í Central Perk | [`vidmid/phoebe-central-perk.md`](vidmid/phoebe-central-perk.md) | 28 | `phoebe-central-perk.html` |
 | Síður utan umfangs nýju síðunnar | [`vidmid/utan-umfangs.md`](vidmid/utan-umfangs.md) | 94 | `index.html`, `lotur/git-ai-reproducible/agents.html`, `lotur/git-ai-reproducible/index.html`, `lotur/git-ai-reproducible/reproducible-reports.html`, `lotur/logic-sets/index.html`, `lotur/sql-advanced/index.html`, `lotur/sql-basics/index.html`, `lotur/storytelling/index.html`, `project-management.html`, `reflections/bjorn.html`, `team.html`, `tokens/bjorn.html`, `tokens/ottar.html`, `tokens/sveinn.html` |

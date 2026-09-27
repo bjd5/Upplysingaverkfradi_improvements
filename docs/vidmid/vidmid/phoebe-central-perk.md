@@ -1,12 +1,12 @@
 # Viðmið — Phoebe — söngurinn í Central Perk
 
-Afleidd skrá. Uppfært 2026-09-24T11:39:24Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
+Afleidd skrá. Uppfært 2026-09-27T15:54:28Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
 
-30 efnislegar tölur úr 1 síðum gamla verkefnisins.
+28 efnislegar tölur úr 1 síðum gamla verkefnisins.
 
 ## `phoebe-central-perk.html`
 
-Byggingarlota `fdf1261`. 30 efnislegar tölur.
+Byggingarlota `fdf1261`. 28 efnislegar tölur.
 
 | Tala | Eining | Tegund | Hvar | Samhengi |
 |---|---|---|---|---|
@@ -28,8 +28,6 @@ Byggingarlota `fdf1261`. 30 efnislegar tölur.
 | `19` | — | heiltala | Í dæmigerðu sönghandriti segja hinir fi… · Phoebe syngur í Central Pe… | 19 |
 | `18,6%` | % | hlutfall | Í dæmigerðu sönghandriti segja hinir fi… · Phoebe syngur í Central Pe… | 18,6% |
 | `4,4:1` | — | hlutfallstala | Í dæmigerðu sönghandriti segja hinir fi… · Phoebe syngur í Central Pe… | 4,4:1 |
-| `1017` | — | heiltala | Spurningin | Handritin með skýrt Phoebe-söngtilvik í Central Perk eru: 0101 , 0110 , 0111 , 0208 , 0212-0213 , 0217 , 0218… |
-| `-1018` | — | heiltala | Spurningin | Handritin með skýrt Phoebe-söngtilvik í Central Perk eru: 0101 , 0110 , 0111 , 0208 , 0212-0213 , 0217 , 0218… |
 | `227` | — | heiltala | Hvernig mælingin er byggð | Kóðinn les 227 HTML-handrit úr data/external/delvinso-friends/season/ í núverandi delvinso/friends-tv-show-an… |
 | `229` | skrár | heiltala | Hvernig mælingin er byggð | Kóðinn les 227 HTML-handrit úr data/external/delvinso-friends/season/ í núverandi delvinso/friends-tv-show-an… |
 | `100` | stafir | heiltala | SPEAKER_RE | Sleppur: Tilsvör þar sem umritari sleppti tvípunktinum, og sviðslýsingar sem innihalda tvípunkt innan fyrstu … |

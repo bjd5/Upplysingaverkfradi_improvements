@@ -1,6 +1,6 @@
 # Viðmið — mbl.is — reglulegar segðir á fréttaforsíðu
 
-Afleidd skrá. Uppfært 2026-09-24T11:39:24Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
+Afleidd skrá. Uppfært 2026-09-27T15:54:28Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
 
 60 efnislegar tölur úr 2 síðum gamla verkefnisins.
 

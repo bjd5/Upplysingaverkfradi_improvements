@@ -10,6 +10,11 @@ Aðferðin er ein raðbundin segð: fyrsta mynstrið sem passar á tiltekinn sta
 vinnur. Þess vegna er röðin í MYNSTUR merkingarbær — sértækustu mynstrin fyrst,
 almenna heiltalan síðust. Ekkert er hent: tala sem er ekki niðurstaða fær
 tegund og `visst=False` í staðinn, svo hún verði áfram rekjanleg (regla 8).
+
+Bandstrik er skiltákn jafnoft og það er mínus (issue #38). Þess vegna gildir
+ein regla um formerki: ASCII-bandstrik er mínus aðeins þegar það stendur eitt
+og sér á undan tölunni (sjá FORMERKI), og keðja af tölum sem bandstrik bindur
+saman er skráð sem eitt auðkenni, ekki sem tvær eða fjórar tölur.
 """
 
 from __future__ import annotations
@@ -59,6 +64,13 @@ EININGAR = {
     "fyrirsagnir": "fyrirsagnir", "fyrirsagna": "fyrirsagnir",
 }
 
+# Bandstrik er mínus AÐEINS þegar það stendur eitt og sér á undan tölunni.
+# Inni í auðkenni (0-20000-0-04030), skýrslunúmeri (VÍ 2009-013), þáttabili
+# (1017-1018) eða slóð bindur það tvennt saman og er skiltákn, ekki formerki —
+# og þá stendur stafur, tölustafur eða annað skilmerki fast á undan því.
+# U+2212 (−) er hins vegar aldrei annað en mínus og þarf enga vörn.
+FORMERKI = r"(?:−|(?<![\w.,/%+])-)?"
+
 # Röðin ræður. Fyrsta mynstrið sem passar vinnur — sértækt fyrst, almennt síðast.
 MYNSTUR: tuple[tuple[str, str], ...] = (
     # Tímastimplar og dagsetningar. Þarf að koma fyrir öllu tölulegu, annars
@@ -83,14 +95,21 @@ MYNSTUR: tuple[tuple[str, str], ...] = (
     ("aukenni", r"\b\d+[A-Za-zÁÐÉÍÓÚÝÞÆÖáðéíóúýþæö][\w+.-]*\b"),
     # Tölur sem eru niðurstöður.
     ("arabil", r"\b(?:1[89]\d{2}|20\d{2})\s*[–—-]\s*(?:1[89]\d{2}|20\d{2})\b"),
-    ("hlutfallstala", r"[−-]?\d+(?:[.,]\d+)?\s*:\s*\d+(?:[.,]\d+)?"),
-    ("hlutfall", r"[−-]?\d{1,3}(?:[.  ]\d{3})*(?:,\d+)?\s*%"),
-    ("bil", r"[−-]?\d+(?:,\d+)?\s*[–—]\s*[−-]?\d+(?:,\d+)?"),
-    ("thusund", r"[−-]?\d{1,3}(?:[.   ]\d{3})+(?:,\d+)?(?![\d.,])"),
-    ("desimal", r"[−-]?\d+,\d+"),
-    ("desimal_punktur", r"[−-]?\d+\.\d+(?!\d)"),
+    # Tölur bundnar saman með bandstriki eru eitt auðkenni, ekki tvær tölur:
+    # 0-20000-0-04030 (WIGOS), 2009-013 (skýrslunúmer), 1017-1018 (þáttabil).
+    # Verður að koma EFTIR dagsetningum, þáttaauðkenni og arabili — þau eru
+    # sértækari myndir af sömu keðju (2023-11-01, 0212-0213, 2014-2023).
+    ("aukenni", r"\b\d+(?:-\d+)+\b"),
+    ("hlutfallstala", FORMERKI + r"\d+(?:[.,]\d+)?\s*:\s*\d+(?:[.,]\d+)?"),
+    ("hlutfall", FORMERKI + r"\d{1,3}(?:[.  ]\d{3})*(?:,\d+)?\s*%"),
+    # Formerkið á eftir bilstrikinu þarf enga vörn: það stendur alltaf á eftir
+    # – eða — og getur því ekki verið bandstrik inni í auðkenni.
+    ("bil", FORMERKI + r"\d+(?:,\d+)?\s*[–—]\s*[−-]?\d+(?:,\d+)?"),
+    ("thusund", FORMERKI + r"\d{1,3}(?:[.   ]\d{3})+(?:,\d+)?(?![\d.,])"),
+    ("desimal", FORMERKI + r"\d+,\d+"),
+    ("desimal_punktur", FORMERKI + r"\d+\.\d+(?!\d)"),
     ("ar", r"\b(?:1[89]\d{2}|20\d{2})\b"),
-    ("heiltala", r"[−-]?\d+"),
+    ("heiltala", FORMERKI + r"\d+"),
 )
 
 # Tegundir sem geta verið efnisleg niðurstaða. Hinar fá visst=False og eru

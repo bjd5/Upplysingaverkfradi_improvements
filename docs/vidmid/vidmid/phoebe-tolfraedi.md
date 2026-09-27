@@ -1,8 +1,8 @@
 # Viðmið — Phoebe — plass, nærvera og tengsl
 
-Afleidd skrá. Uppfært 2026-09-24T11:39:24Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
+Afleidd skrá. Uppfært 2026-09-27T15:54:28Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
 
-46 efnislegar tölur úr 3 síðum gamla verkefnisins.
+44 efnislegar tölur úr 3 síðum gamla verkefnisins.
 
 ## `friends/phoebe-statistics.html`
 
@@ -48,7 +48,7 @@ Byggingarlota `5510cab`. 23 efnislegar tölur.
 
 ## `friends/index.html`
 
-Byggingarlota `5510cab`. 18 efnislegar tölur.
+Byggingarlota `5510cab`. 16 efnislegar tölur.
 
 | Tala | Eining | Tegund | Hvar | Samhengi |
 |---|---|---|---|---|
@@ -64,8 +64,6 @@ Byggingarlota `5510cab`. 18 efnislegar tölur.
 | `69.500` | línur | thusund | Gögnin | delvinso gefur upp 236 þætti og um 69.500 línur eftir þáttun. Skrárnar eru hins vegar 229, þar af 223 með stö… |
 | `229` | — | heiltala | Gögnin | delvinso gefur upp 236 þætti og um 69.500 línur eftir þáttun. Skrárnar eru hins vegar 229, þar af 223 með stö… |
 | `223` | — | heiltala | Gögnin | delvinso gefur upp 236 þætti og um 69.500 línur eftir þáttun. Skrárnar eru hins vegar 229, þar af 223 með stö… |
-| `1017` | — | heiltala | Gögnin | delvinso gefur upp 236 þætti og um 69.500 línur eftir þáttun. Skrárnar eru hins vegar 229, þar af 223 með stö… |
-| `-1018` | — | heiltala | Gögnin | delvinso gefur upp 236 þætti og um 69.500 línur eftir þáttun. Skrárnar eru hins vegar 229, þar af 223 með stö… |
 | `69.500` | — | thusund | Gögnin | Þáttafjöldinn ræðst því af því hvernig við meðhöndlum þessar sex skrár, og „línurnar“ 69.500 innihalda líka s… |
 | `01` | — | heiltala | Gögnin | Athugið líka að friends_lines.csv , þáttaða taflan sem 01_friends_parse_html.R býr til, fylgir ekki með í sub… |
 | `24` | — | heiltala | Hvernig lotur námskeiðsins tengjast | Phoebe statistics mælir heildarhlutdeild hennar, þróun eftir þáttaröðum, ræðuskipti og orðaforða. Central Per… |
