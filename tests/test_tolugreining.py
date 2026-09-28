@@ -205,5 +205,58 @@ class BandstrikEkkiMinusProf(unittest.TestCase):
         self.assertEqual([t.texti for t in tolur], ["0212-0213", "1017-1018"])
 
 
+class ProsentukodunEkkiHlutfallProf(unittest.TestCase):
+    """% á eftir tveimur sextándastöfum er prósentukóðun, ekki hlutfall (#44).
+
+    Fyrri útgáfa las tölustafina á UNDAN % sem hlutfall, en í prósentukóðaðri
+    slóð tilheyrir % næsta kóðatákninu, ekki tölunni á undan: ``%3A`` er
+    tvípunktur, ekki „3A prósent“. Dæmin eru tekin óbreytt úr
+    beiðnislóð Skjálftavaktarinnar sem stendur í ``capstone/earthquakes.html``.
+    """
+
+    def test_prosentukodadur_tvipunktur(self) -> None:
+        # %3A er tvípunktur. Fyrri útgáfa las "00%" sem 0%.
+        tolur = finna_tolur("start_time=2023-11-01T00%3A00")
+        self.assertIn(("00", "heiltala"),
+                      [(t.texti, t.tegund) for t in tolur])
+        self.assertNotIn("hlutfall", [t.tegund for t in tolur])
+
+    def test_prosentukodud_svigi(self) -> None:
+        # %28 er opnunarsvigi. Fyrri útgáfa las "28%" sem 28%.
+        tolur = finna_tolur("polygon=POLYGON%28%28-23")
+        self.assertIn(("28", "heiltala"),
+                      [(t.texti, t.tegund) for t in tolur])
+        self.assertNotIn("hlutfall", [t.tegund for t in tolur])
+
+    def test_prosentukodud_lokunarsvigi(self) -> None:
+        # %29 er lokunarsvigi. Fyrri útgáfa las "29%" sem 29%.
+        tolur = finna_tolur("64.1%2C-21.5+63.7%29&type=earthquake")
+        self.assertIn(("29", "heiltala"),
+                      [(t.texti, t.tegund) for t in tolur])
+        self.assertNotIn("hlutfall", [t.tegund for t in tolur])
+
+    def test_oll_beidnisslodin_gefur_enga_falska_hlutfallstolu(self) -> None:
+        # Nákvæma slóðin úr docs/vidmid/generated/earthquakes-source.md.
+        slod = (
+            "https://api.vedur.is/quakes/events?start_time="
+            "2023-11-01T00%3A00%3A00%2B00%3A00&end_time="
+            "2024-01-01T00%3A00%3A00%2B00%3A00&depth_min=0&depth_max=50"
+            "&size_min=3&size_max=7&polygon=POLYGON%28%28-23+64.1%2C-23"
+            "+63.7%2C-21.5+63.7%2C-21.5+64.1%2C-23+64.1%29%29"
+            "&type=earthquake&evaluation_mode=manual&format=json&system=sil"
+        )
+        tolur = finna_tolur(slod)
+        self.assertEqual([t for t in tolur if t.tegund == "hlutfall"], [])
+
+    def test_ekta_hlutfall_a_eftir_venjulegu_orði_helst_oskert(self) -> None:
+        """Vörnin gildir aðeins þegar tveir sextándastafir fylgja beint á eftir."""
+        for texti in ("2 078 (2,95 %) standa óflokkuð",
+                      "343 af 778, eða um 44 %.",
+                      "hlutfallið er 28%"):
+            with self.subTest(texti=texti):
+                self.assertIn("hlutfall",
+                              [t.tegund for t in finna_tolur(texti)])
+
+
 if __name__ == "__main__":
     unittest.main()
