@@ -85,7 +85,7 @@ class FrosinGognProf(unittest.TestCase):
         skjal = json.loads(provenance.PROVENANCE.read_text(encoding="utf-8"))
         for safn in skjal["geymt_i_tagi"]:
             self.assertEqual(safn["git_tag"], "vidmid-frosid")
-            self.assertTrue(safn["git_commit"].startswith("8f48a31"))
+            self.assertTrue(safn["git_commit"].startswith("f23035c"))
             for skra in safn["skrar"]:
                 with self.subTest(safn=safn["heiti"], skra=skra["slod"]):
                     self.assertFalse((hjalp.ROT / safn["mappa"] / skra["slod"]).exists())
@@ -100,7 +100,7 @@ class VidmidSkraProf(unittest.TestCase):
 
     def test_snid_og_tolulausar_sidur(self) -> None:
         s = self.vidmid["samantekt"]
-        self.assertEqual(s["sidur"], 28)
+        self.assertEqual(s["sidur"], 24)
         self.assertEqual(sorted(s["sidur_tolulausar"]),
                          ["friends/uppahalds-video.html",
                           "reflections/sveinn.html"])

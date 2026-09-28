@@ -2,7 +2,7 @@
 
 Keyrt frá enda til enda á gervihandritunum í ``central_perk_hjalp``
 (netlaust, án raunhandrita — issue #3). Væntu tölurnar eru handtaldar þar.
-Skilyrðin eru líka prófuð þar sem þau eiga að BRESTA (kafli 15): mappa sem
+Skilyrðin eru líka prófuð þar sem þau eiga að BRESTA (kafli 6): mappa sem
 vantar, hópur án handrita, skrif í ``web/gogn/``.
 
     python3 -m unittest discover -s tests

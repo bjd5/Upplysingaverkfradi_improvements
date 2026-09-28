@@ -10,7 +10,7 @@ Tvennt er prófað:
    ``FRIENDS_HANDRIT_MAPPA`` stillt á ``season/`` í delvinso-safninu
    (commit a4641fe). Annars er því **sleppt með skýringu**, aldrei þagað.
 
-Samanburðartólið sjálft er prófað þar sem það á að BRESTA (kafli 15): ein
+Samanburðartólið sjálft er prófað þar sem það á að BRESTA (kafli 6): ein
 breytt tala, tímastimpill sem laumast aftur inn, skrá sem vantar.
 
     python3 -m unittest discover -s tests

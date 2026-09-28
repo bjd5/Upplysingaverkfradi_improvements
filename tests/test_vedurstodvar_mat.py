@@ -7,7 +7,7 @@ rúnnunar á undan eða eftir frádrætti.
 
 Hvert skilyrði er prófað þar sem það á að BRESTA, ekki aðeins þar sem það
 heldur: staðfesting sem getur stemmt af tilviljun er ekki staðfesting
-(``docs/agenta-verkefni.md``, kafli 15).
+(``docs/agenta-verkefni.md``, kafli 6).
 
     python3 -m unittest discover -s tests
 """

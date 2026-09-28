@@ -93,11 +93,13 @@ issue #12), þar sem lyklameðferð og hraðatakmörkun eru leyst á einum stað
 
 ## 4. Að frysta og staðfesta
 
-Frystingin (P0.3) var gerð einu sinni, 24.9.2026, og `frysting.json` er
-skráin yfir hana. Skripturnar sem gerðu hana eru í git-sögunni (commit
-`8f48a31`); nýtt eintak er sótt með `scripts/saekja-gogn.sh <safn> --thvinga`.
+`frysting.json` er skráin yfir hvað var fryst, hvenær og hvaðan. Safn sem er
+þegar vistað í gamla verkefninu er afritað óbreytt með `frysta_afrit.py` (bætt
+í `SOFN` þar, sjá `docs/uppruni.md`); nýtt eintak frá vefþjónustu er sótt með
+`scripts/saekja-gogn.sh <safn> --thvinga`.
 
 ```bash
+python3 src/python/sofnun/frysta_afrit.py            # afritar söfnin í SOFN
 python3 src/python/vidmid/provenance.py stadfesta    # reiknar SHA-256 upp á nýtt
 ```
 

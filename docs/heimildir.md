@@ -1,14 +1,11 @@
 # Heimildaskrá
 
-Sérhver tala sem birtist á vefsíðunni á sér rekjanlega leið aftur í hrágögn
-(regla 8). Þessi skrá er fyrri helmingur þeirrar leiðar: **hvaðan kom gagnið?**
-Seinni helmingurinn — *hvernig var það afmarkað og unnið?* — er í
+**Hvaðan kom hvert gagn?** Hvernig það var afmarkað og unnið er í
 [`adferdafraedi.md`](adferdafraedi.md).
 
-Ekkert hér er skrifað eftir minni. Hver færsla á sér stoð í `provenance.json`
-safnsins í [`../data/raw/`](../data/raw/) eða í frosna viðmiðinu í
-[`vidmid/`](vidmid/), og tilvísunin fylgir færslunni. Það sem ekki er hægt að
-styðja er merkt **óstaðfest** í kafla 5 — ekki giskað á.
+Hver færsla á sér stoð í `provenance.json` safnsins í [`../data/raw/`](../data/raw/)
+eða í [`vidmid/`](vidmid/). Það sem ekki er hægt að styðja er merkt
+**óstaðfest** (kafli 5).
 
 Staðfesta má að gögnin séu ósnert hvenær sem er:
 
@@ -186,6 +183,10 @@ kafla 6.
 Viðmiðið er heimild um **hvað gamla síðan birti**, ekki um hvað er rétt. Það er
 ekki innbyrðis samstæð bygging: fjórar kjarnasíður eru byggðar úr commiti sem
 rataði aldrei á `main`. Ósamræmi milli síðna er því vænt og skráð sérstaklega.
+
+Gamla verkefnið er enn í vinnslu. Nýtt efni þaðan er yfirfarið daglega og
+flutt hingað eftir [`uppruni.md`](uppruni.md); hver yfirferð fær skýrslu í
+[`uppruni/`](uppruni/).
 
 ---
 

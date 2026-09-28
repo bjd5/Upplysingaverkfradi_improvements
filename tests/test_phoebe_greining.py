@@ -5,7 +5,7 @@ eru **handtaldar** úr gervihandritunum — ekki lesnar úr úttaki kóðans, sv
 prófið geti ekki lagað sig að villu. Samanburður við raunhandritin er í
 ``test_phoebe_uttak``.
 
-Skilyrðin eru líka prófuð þar sem þau eiga að BRESTA (kafli 15): engin
+Skilyrðin eru líka prófuð þar sem þau eiga að BRESTA (kafli 6): engin
 ræðuskipti, ósamræmd mynsturflögg, óþekkt talningarsvið, tóm talnaröð.
 
     python3 -m unittest discover -s tests

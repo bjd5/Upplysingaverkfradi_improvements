@@ -58,7 +58,9 @@ hraða og örugga.
 │   │   ├── vinnsla/           # hreinsun og umbreyting
 │   │   ├── gagnagrunnur/      # tenging og fyrirspurnir
 │   │   ├── utflutningur/      # JSON út í web/gogn/
-│   │   └── vidmid/            # staðfesting á frosnum gögnum (hrágögn + viðmið)
+│   │   ├── keyrsla/           # keyrsluröð skrefanna sem main.py kallar í
+│   │   ├── vidmid/            # staðfesting á frosnum gögnum (hrágögn + viðmið)
+│   │   └── uppruni/           # yfirferð á nýju efni úr gamla verkefninu
 │   └── sql/
 │       ├── migrations/        # númeraðar breytingar: 001_..., 002_...
 │       └── queries/           # endurnýtanlegar fyrirspurnir
@@ -69,7 +71,8 @@ hraða og örugga.
 │   └── db/                    # gagnagrunnsskráin sjálf (ALDREI í git)
 │
 ├── docs/                      # rannsóknarskjölun, heimildir, aðferðafræði
-│   └── vidmid/                # frosið afrit af gamla verkefninu (sjá README þar)
+│   ├── vidmid/                # frosið afrit af gamla verkefninu (sjá README þar)
+│   └── uppruni/               # skýrslur um nýtt efni úr gamla verkefninu (docs/uppruni.md)
 ├── tests/                     # test_<eining>.py + <safn>_hjalp.py (gervigögn, viðmið)
 ├── scripts/                   # keyrsluskipanir (sækja, byggja, birta)
 └── config/                    # stillingar (ALDREI leyndarmál)
@@ -160,6 +163,14 @@ hraða og örugga.
 - Mobile-first: grunnstíll fyrir síma, `min-width` media queries upp á við.
 - Virkar frá 320px upp úr. Ekkert lárétt skrun.
 - Smellifletir minnst 44×44px.
+
+### 3.6 Texti — stuttur og auðlesinn
+- Skrifað fyrir lesandann: ein hugmynd í málsgrein, það sem má sleppa er sleppt.
+- Inngangur síðu **hámark 25 orð**, málsgrein **hámark 45 orð**.
+- Engar skráaslóðir, verkpakkanúmer eða innri hugtök í meginmáli (nema á
+  aðferðafræðisíðunni, sem lýsir verkefninu sjálfu).
+- Prófað í `tests/test_vefur_texti.py`. Sama hugsun gildir um `docs/`: skjal
+  segir hvernig hlutirnir eru, sagan sjálf er í git.
 
 ---
 

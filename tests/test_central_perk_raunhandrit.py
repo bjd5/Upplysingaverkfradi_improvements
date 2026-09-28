@@ -5,7 +5,7 @@ Tveir hlutar:
 1. **Viðmiðið og samanburðartólið** — keyrir alltaf. Viðmiðsskrárnar verða
    að vera innbyrðis samkvæmar (punktar SVG-myndarinnar = hóparnir í
    ``summary.json``), og samanburðurinn verður að finna frávik þar sem þau
-   eru (kafli 15) — annars sannar hann ekkert.
+   eru (kafli 6) — annars sannar hann ekkert.
 2. **Raunhandritin** — handritin eru aldrei í repo-inu (issue #3), svo þessi
    hluti keyrir aðeins sé ``FRIENDS_HANDRIT_MAPPA`` stillt á ``season/`` í
    ``delvinso/friends-tv-show-analysis`` @ ``a4641fe``. Annars er honum

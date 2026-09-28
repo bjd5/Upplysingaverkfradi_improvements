@@ -2,7 +2,7 @@
 
 Netlaus og án handrita (issue #3): allur texti er saminn hér eða í
 ``central_perk_hjalp``. Hvert skilyrði er líka prófað þar sem það á að
-BRESTA (kafli 15) — t.d. söngmerking utan Central Perk, tilsvar annarrar
+BRESTA (kafli 6) — t.d. söngmerking utan Central Perk, tilsvar annarrar
 persónu sem nefnir söng, og þröskuldurinn 19/20 málsgreinar.
 
     python3 -m unittest discover -s tests
