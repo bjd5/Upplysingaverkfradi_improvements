@@ -1,0 +1,25 @@
+{
+  "placeholder": false,
+  "note": "Raunniðurstoður ur src/phoebe_analysis.py. Sja README.md fyrir aðferðafraeði.",
+  "generated_at": "2026-09-17",
+  "source": "fangj/delvinso Friends-handrit, 227 handritsskrar (236 thaettir)",
+  "character": "Phoebe Buffay",
+  "characters": [
+    "Phoebe",
+    "Rachel",
+    "Monica",
+    "Chandler",
+    "Joey",
+    "Ross"
+  ],
+  "seasons": 10,
+  "episodes": 236,
+  "episodes_present": 236,
+  "lines_total": 7483,
+  "words_total": 83788,
+  "line_share": 0.1472,
+  "line_share_baseline": 0.1667,
+  "words_per_line": 11.2,
+  "words_per_line_others": 10.7,
+  "top_partner": "Monica"
+}

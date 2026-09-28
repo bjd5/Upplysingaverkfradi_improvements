@@ -22,6 +22,20 @@ data/raw/*
 !data/raw/frysting.json
 data/processed/*
 !data/processed/.gitkeep
+!data/processed/README.md
+# Undanþága (issue #3, valkostur A): Friends-tölfræðin. Þetta eru tölur UM
+# handritin — línufjöldi, senur, hlutföll, tíðnitöflur — ekki handritstextinn.
+# Handritin sjálf eru hvergi í þessu repo-i og koma aldrei hingað. Skrárnar eru
+# bætaeins afrit af frosna viðmiðinu og eru eina eftirlifandi eintakið af
+# greiningunni, svo þær eru FRUMGAGN fyrir þetta repo (regla 5).
+# Sjá data/processed/README.md og docs/adferdafraedi.md, kafla 1.5.
+!data/processed/phoebe-stats/
+
+# Friends-handritin (issue #3, valkostur A): handritasöfnin fara ALDREI í git.
+# Séu þau klónuð hingað til að endurkeyra greininguna má hvorki committa þau né
+# skrá þau sem submodule — sjá docs/heimildir.md, kafla 2.1.
+data/external/
+data/fangj-friends/
 *.sqlite
 *.sqlite3
 *.db
