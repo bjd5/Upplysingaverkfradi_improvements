@@ -156,7 +156,9 @@
     const fileName = section.dataset.gogn;
     const status = element("p", "gogn-stada", "Sæki gögn …");
     status.setAttribute("role", "status");
-    section.insertBefore(status, section.firstChild);
+    // Staðan fer þar sem efnið á að birtast — á eftir fyrirsögn hlutans.
+    const content = section.querySelector("[data-gogn-efni]");
+    section.insertBefore(status, content && content.parentNode === section ? content : null);
     section.dataset.gognStada = "hledst";
     section.setAttribute("aria-busy", "true");
 

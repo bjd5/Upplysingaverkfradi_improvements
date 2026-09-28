@@ -10,6 +10,15 @@
 
 .gagnahluti > * { margin-block: 0; }
 
+/* :not([hidden]) — display: grid má aldrei yfirskrifa hidden-eigindina sem
+   heldur efninu földu án JS og í villuástandi. */
+.gagnahluti [data-gogn-efni]:not([hidden]) {
+  display: grid;
+  gap: var(--bil-6);
+}
+
+.gagnahluti [data-gogn-efni] table { margin-bottom: 0; }
+
 /* Hleðsla og varaleið án JS: hlutlaus texti, ekki villa. */
 .gogn-stada {
   padding: var(--bil-4) var(--bil-6);

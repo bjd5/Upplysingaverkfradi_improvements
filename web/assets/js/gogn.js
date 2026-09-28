@@ -17,6 +17,7 @@
   const DATA_ROOT = new URL("../../gogn/", document.currentScript.src);
 
   const REQUIRED_FIELDS = ["uppfaert", "heimild", "gogn"];
+  const HTTP_NOT_FOUND = 404;
 
   // Ísland er á UTC allt árið; fast tímabelti svo dagsetningin sé sú sama
   // hvar sem lesandinn er staddur.
@@ -83,7 +84,8 @@
         })
         .then(function (response) {
           if (!response.ok) {
-            throw new DataError("Gagnaskráin „" + fileName + "“ fannst ekki (villa " +
+            const reason = response.status === HTTP_NOT_FOUND ? "fannst ekki" : "fékkst ekki";
+            throw new DataError("Gagnaskráin „" + fileName + "“ " + reason + " (villa " +
                                 response.status + ").", fileName);
           }
           return response.json().catch(function () {
@@ -146,12 +148,23 @@
            date.getUTCFullYear();
   }
 
+  /** Mánuður "2023-11" → "nóvember 2023". Rangt snið fellur með villu. */
+  function formatMonth(isoMonth) {
+    const match = /^(\d{4})-(\d{2})$/.exec(isoMonth);
+    const month = match ? Number(match[2]) : 0;
+    if (month < 1 || month > MONTHS.length) {
+      throw new DataError("Ógildur mánuður: „" + isoMonth + "“.");
+    }
+    return MONTHS[month - 1] + " " + match[1];
+  }
+
   window.SiteData = Object.freeze({
     DataError: DataError,
     load: load,
     fileUrl: fileUrl,
     valueAt: valueAt,
     formatNumber: formatNumber,
-    formatDate: formatDate
+    formatDate: formatDate,
+    formatMonth: formatMonth
   });
 })();
