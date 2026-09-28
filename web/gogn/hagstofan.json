@@ -1,0 +1,539 @@
+{
+ "uppfaert": "2026-09-10T09:02:26+00:00",
+ "heimild": "Hagstofa Íslands — px.hagstofa.is/pxis/api/v1/is/Samfelag/skolamal/4_haskolastig/1_hsProf/SKO04208b.px (leyfi óstaðfest)",
+ "gogn": {
+  "uppruni": {
+   "thjonusta": "Hagstofa Íslands",
+   "slod": "https://px.hagstofa.is/pxis/api/v1/is/Samfelag/skolamal/4_haskolastig/1_hsProf/SKO04208b.px",
+   "leyfi": "leyfi óstaðfest",
+   "sott": "2026-09-10T09:02:26+00:00",
+   "hragogn": "data/raw/hagstofan/response.json",
+   "tafla": "SKO04208b",
+   "titill": "Brautskráningarhlutfall og árgangsbrotthvarf í þriggja ára bakkalárnámi eftir námssviði 2014-2023 by Innritunarár, Tími, Nemendur, Fjöldi/Hlutfall, Námssvið og Kyn",
+   "frumheimild": "Nemendaskrá og prófaskrá Hagstofu Íslands.",
+   "snid": "json-stat 2.0",
+   "fjoldi_gilda": 36,
+   "beidni": {
+    "query": [
+     {
+      "code": "Innritunarár",
+      "selection": {
+       "filter": "item",
+       "values": [
+        "2017"
+       ]
+      }
+     },
+     {
+      "code": "Tími",
+      "selection": {
+       "filter": "item",
+       "values": [
+        "n+3"
+       ]
+      }
+     },
+     {
+      "code": "Nemendur",
+      "selection": {
+       "filter": "item",
+       "values": [
+        "5",
+        "6",
+        "7"
+       ]
+      }
+     },
+     {
+      "code": "Fjöldi/Hlutfall",
+      "selection": {
+       "filter": "item",
+       "values": [
+        "1"
+       ]
+      }
+     },
+     {
+      "code": "Námssvið",
+      "selection": {
+       "filter": "item",
+       "values": [
+        "Alls",
+        "05",
+        "06",
+        "07"
+       ]
+      }
+     },
+     {
+      "code": "Kyn",
+      "selection": {
+       "filter": "item",
+       "values": [
+        "Alls",
+        "1",
+        "2"
+       ]
+      }
+     }
+    ],
+    "response": {
+     "format": "json-stat2"
+    }
+   }
+  },
+  "hlutfoll": [
+   {
+    "svid_kodi": "05",
+    "svid": "Raunvísindi, stærðfræði og tölfræði",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "stada_kodi": "5",
+    "stada": "Brautskráðir alls",
+    "hlutfall": 68.9
+   },
+   {
+    "svid_kodi": "05",
+    "svid": "Raunvísindi, stærðfræði og tölfræði",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "stada_kodi": "6",
+    "stada": "Brottfallnir",
+    "hlutfall": 23.0
+   },
+   {
+    "svid_kodi": "05",
+    "svid": "Raunvísindi, stærðfræði og tölfræði",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "stada_kodi": "7",
+    "stada": "Enn í námi",
+    "hlutfall": 8.2
+   },
+   {
+    "svid_kodi": "05",
+    "svid": "Raunvísindi, stærðfræði og tölfræði",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "stada_kodi": "5",
+    "stada": "Brautskráðir alls",
+    "hlutfall": 72.7
+   },
+   {
+    "svid_kodi": "05",
+    "svid": "Raunvísindi, stærðfræði og tölfræði",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "stada_kodi": "6",
+    "stada": "Brottfallnir",
+    "hlutfall": 22.1
+   },
+   {
+    "svid_kodi": "05",
+    "svid": "Raunvísindi, stærðfræði og tölfræði",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "stada_kodi": "7",
+    "stada": "Enn í námi",
+    "hlutfall": 5.2
+   },
+   {
+    "svid_kodi": "05",
+    "svid": "Raunvísindi, stærðfræði og tölfræði",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "stada_kodi": "5",
+    "stada": "Brautskráðir alls",
+    "hlutfall": 71.0
+   },
+   {
+    "svid_kodi": "05",
+    "svid": "Raunvísindi, stærðfræði og tölfræði",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "stada_kodi": "6",
+    "stada": "Brottfallnir",
+    "hlutfall": 22.5
+   },
+   {
+    "svid_kodi": "05",
+    "svid": "Raunvísindi, stærðfræði og tölfræði",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "stada_kodi": "7",
+    "stada": "Enn í námi",
+    "hlutfall": 6.5
+   },
+   {
+    "svid_kodi": "06",
+    "svid": "Upplýsinga- og samskiptatækni",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "stada_kodi": "5",
+    "stada": "Brautskráðir alls",
+    "hlutfall": 67.6
+   },
+   {
+    "svid_kodi": "06",
+    "svid": "Upplýsinga- og samskiptatækni",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "stada_kodi": "6",
+    "stada": "Brottfallnir",
+    "hlutfall": 25.4
+   },
+   {
+    "svid_kodi": "06",
+    "svid": "Upplýsinga- og samskiptatækni",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "stada_kodi": "7",
+    "stada": "Enn í námi",
+    "hlutfall": 7.0
+   },
+   {
+    "svid_kodi": "06",
+    "svid": "Upplýsinga- og samskiptatækni",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "stada_kodi": "5",
+    "stada": "Brautskráðir alls",
+    "hlutfall": 71.7
+   },
+   {
+    "svid_kodi": "06",
+    "svid": "Upplýsinga- og samskiptatækni",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "stada_kodi": "6",
+    "stada": "Brottfallnir",
+    "hlutfall": 17.4
+   },
+   {
+    "svid_kodi": "06",
+    "svid": "Upplýsinga- og samskiptatækni",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "stada_kodi": "7",
+    "stada": "Enn í námi",
+    "hlutfall": 10.9
+   },
+   {
+    "svid_kodi": "06",
+    "svid": "Upplýsinga- og samskiptatækni",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "stada_kodi": "5",
+    "stada": "Brautskráðir alls",
+    "hlutfall": 68.6
+   },
+   {
+    "svid_kodi": "06",
+    "svid": "Upplýsinga- og samskiptatækni",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "stada_kodi": "6",
+    "stada": "Brottfallnir",
+    "hlutfall": 23.4
+   },
+   {
+    "svid_kodi": "06",
+    "svid": "Upplýsinga- og samskiptatækni",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "stada_kodi": "7",
+    "stada": "Enn í námi",
+    "hlutfall": 8.0
+   },
+   {
+    "svid_kodi": "07",
+    "svid": "Verkfræði, framleiðsla og mannvirkjagerð",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "stada_kodi": "5",
+    "stada": "Brautskráðir alls",
+    "hlutfall": 84.2
+   },
+   {
+    "svid_kodi": "07",
+    "svid": "Verkfræði, framleiðsla og mannvirkjagerð",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "stada_kodi": "6",
+    "stada": "Brottfallnir",
+    "hlutfall": 12.6
+   },
+   {
+    "svid_kodi": "07",
+    "svid": "Verkfræði, framleiðsla og mannvirkjagerð",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "stada_kodi": "7",
+    "stada": "Enn í námi",
+    "hlutfall": 3.3
+   },
+   {
+    "svid_kodi": "07",
+    "svid": "Verkfræði, framleiðsla og mannvirkjagerð",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "stada_kodi": "5",
+    "stada": "Brautskráðir alls",
+    "hlutfall": 84.5
+   },
+   {
+    "svid_kodi": "07",
+    "svid": "Verkfræði, framleiðsla og mannvirkjagerð",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "stada_kodi": "6",
+    "stada": "Brottfallnir",
+    "hlutfall": 10.9
+   },
+   {
+    "svid_kodi": "07",
+    "svid": "Verkfræði, framleiðsla og mannvirkjagerð",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "stada_kodi": "7",
+    "stada": "Enn í námi",
+    "hlutfall": 4.7
+   },
+   {
+    "svid_kodi": "07",
+    "svid": "Verkfræði, framleiðsla og mannvirkjagerð",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "stada_kodi": "5",
+    "stada": "Brautskráðir alls",
+    "hlutfall": 84.3
+   },
+   {
+    "svid_kodi": "07",
+    "svid": "Verkfræði, framleiðsla og mannvirkjagerð",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "stada_kodi": "6",
+    "stada": "Brottfallnir",
+    "hlutfall": 11.9
+   },
+   {
+    "svid_kodi": "07",
+    "svid": "Verkfræði, framleiðsla og mannvirkjagerð",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "stada_kodi": "7",
+    "stada": "Enn í námi",
+    "hlutfall": 3.8
+   },
+   {
+    "svid_kodi": "Alls",
+    "svid": "Alls",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "stada_kodi": "5",
+    "stada": "Brautskráðir alls",
+    "hlutfall": 70.3
+   },
+   {
+    "svid_kodi": "Alls",
+    "svid": "Alls",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "stada_kodi": "6",
+    "stada": "Brottfallnir",
+    "hlutfall": 23.0
+   },
+   {
+    "svid_kodi": "Alls",
+    "svid": "Alls",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "stada_kodi": "7",
+    "stada": "Enn í námi",
+    "hlutfall": 6.6
+   },
+   {
+    "svid_kodi": "Alls",
+    "svid": "Alls",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "stada_kodi": "5",
+    "stada": "Brautskráðir alls",
+    "hlutfall": 75.9
+   },
+   {
+    "svid_kodi": "Alls",
+    "svid": "Alls",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "stada_kodi": "6",
+    "stada": "Brottfallnir",
+    "hlutfall": 17.0
+   },
+   {
+    "svid_kodi": "Alls",
+    "svid": "Alls",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "stada_kodi": "7",
+    "stada": "Enn í námi",
+    "hlutfall": 7.1
+   },
+   {
+    "svid_kodi": "Alls",
+    "svid": "Alls",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "stada_kodi": "5",
+    "stada": "Brautskráðir alls",
+    "hlutfall": 73.5
+   },
+   {
+    "svid_kodi": "Alls",
+    "svid": "Alls",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "stada_kodi": "6",
+    "stada": "Brottfallnir",
+    "hlutfall": 19.6
+   },
+   {
+    "svid_kodi": "Alls",
+    "svid": "Alls",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "stada_kodi": "7",
+    "stada": "Enn í námi",
+    "hlutfall": 6.9
+   }
+  ],
+  "summur": [
+   {
+    "svid_kodi": "05",
+    "svid": "Raunvísindi, stærðfræði og tölfræði",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "summa": 100.1
+   },
+   {
+    "svid_kodi": "05",
+    "svid": "Raunvísindi, stærðfræði og tölfræði",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "summa": 100.0
+   },
+   {
+    "svid_kodi": "05",
+    "svid": "Raunvísindi, stærðfræði og tölfræði",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "summa": 100.0
+   },
+   {
+    "svid_kodi": "06",
+    "svid": "Upplýsinga- og samskiptatækni",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "summa": 100.0
+   },
+   {
+    "svid_kodi": "06",
+    "svid": "Upplýsinga- og samskiptatækni",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "summa": 100.0
+   },
+   {
+    "svid_kodi": "06",
+    "svid": "Upplýsinga- og samskiptatækni",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "summa": 100.0
+   },
+   {
+    "svid_kodi": "07",
+    "svid": "Verkfræði, framleiðsla og mannvirkjagerð",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "summa": 100.1
+   },
+   {
+    "svid_kodi": "07",
+    "svid": "Verkfræði, framleiðsla og mannvirkjagerð",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "summa": 100.1
+   },
+   {
+    "svid_kodi": "07",
+    "svid": "Verkfræði, framleiðsla og mannvirkjagerð",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "summa": 100.0
+   },
+   {
+    "svid_kodi": "Alls",
+    "svid": "Alls",
+    "kyn_kodi": "1",
+    "kyn": "Karlar",
+    "summa": 99.9
+   },
+   {
+    "svid_kodi": "Alls",
+    "svid": "Alls",
+    "kyn_kodi": "2",
+    "kyn": "Konur",
+    "summa": 100.0
+   },
+   {
+    "svid_kodi": "Alls",
+    "svid": "Alls",
+    "kyn_kodi": "Alls",
+    "kyn": "Alls",
+    "summa": 100.0
+   }
+  ],
+  "mismunir": [
+   {
+    "lysing": "Brautskráðir: verkfræði á móti öllum sviðum",
+    "stada_kodi": "5",
+    "hopur_a": {
+     "svid_kodi": "07",
+     "kyn_kodi": "Alls"
+    },
+    "hopur_b": {
+     "svid_kodi": "Alls",
+     "kyn_kodi": "Alls"
+    },
+    "prosentustig": 10.8
+   },
+   {
+    "lysing": "Brautskráðir í verkfræði: konur á móti körlum",
+    "stada_kodi": "5",
+    "hopur_a": {
+     "svid_kodi": "07",
+     "kyn_kodi": "2"
+    },
+    "hopur_b": {
+     "svid_kodi": "07",
+     "kyn_kodi": "1"
+    },
+    "prosentustig": 0.3
+   },
+   {
+    "lysing": "Brautskráðir á öllum sviðum: konur á móti körlum",
+    "stada_kodi": "5",
+    "hopur_a": {
+     "svid_kodi": "Alls",
+     "kyn_kodi": "2"
+    },
+    "hopur_b": {
+     "svid_kodi": "Alls",
+     "kyn_kodi": "1"
+    },
+    "prosentustig": 5.6
+   }
+  ]
+ }
+}
