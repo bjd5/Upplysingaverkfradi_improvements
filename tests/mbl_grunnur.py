@@ -5,7 +5,7 @@ Grunnurinn í prófunum er byggður **úr sömu migrations og alvörugrunnurinn*
 ``CREATE TABLE`` í prófi. Annars prófuðu prófin annað skema en það sem er
 keyrt (regla 5).
 
-Fyrirspurnin ``SVOR_SQL`` er hér því tvær prófskrár nota hana: hún er
+Fyrirspurnin ``SVOR_SQL`` er lesin úr ``src/sql/queries/mbl-svor.sql``: hún er
 staðfestingin á kröfunni í issue #9 um að öll fimm svörin fáist úr SQL.
 Breytur fara alltaf inn sem ``?`` — aldrei strengjasamsetning (regla 5).
 
@@ -23,6 +23,7 @@ from pathlib import Path
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 
+from gagnagrunnur import fyrirspurnir  # noqa: E402
 from gagnagrunnur.keyrari import MIGRATIONS_MAPPA, keyra  # noqa: E402
 from gagnagrunnur.tenging import opna  # noqa: E402
 from mbl_vidmid import FROSNA_EINTAKID  # noqa: E402
@@ -36,37 +37,10 @@ THOGGUD_LOG = ("gagnagrunnur.keyrari", "vinnsla.mbl_hledsla")
 for heiti in THOGGUD_LOG:
     logging.getLogger(heiti).setLevel(logging.ERROR)
 
-# Ein fyrirspurn sem svarar öllum fimm spurningunum og sýnir um leið hvaðan
-# hvert svar kemur: mynstrið, eintakið og sóknartíminn fylgja hverri línu.
-#
-# Sama fyrirspurn svarar líka einni spurningu: sé lykillinn NULL standa allar
-# fimm, annars ein. Þannig er hér EIN SQL-skilgreining og engin fyrirspurn er
-# sett saman úr strengjum — öll gildi fara inn sem ?-breytur (regla 5).
-SVOR_SQL = """
-SELECT e.question_number AS nr,
-       e.question_key    AS lykill,
-       e.question_is     AS spurning,
-       e.value_number    AS gildi,
-       e.value_text      AS svar,
-       e.unit            AS eining,
-       e.pattern_name    AS mynsturheiti,
-       e.pattern         AS mynstur,
-       e.pattern_flags   AS mynsturflogg,
-       e.scope_name      AS afmorkun,
-       e.scope_pattern   AS afmorkunarmynstur,
-       e.match_count     AS tilvik,
-       e.distinct_count  AS einstok,
-       e.sample_match    AS synishorn,
-       e.notes           AS takmarkanir,
-       s.raw_file        AS eintak,
-       s.fetched_at      AS sott,
-       s.source_url      AS upprunaslod
-  FROM mbl_extractions e
-  JOIN mbl_snapshots   s ON s.id = e.snapshot_id
- WHERE s.fetched_at = ?
-   AND (? IS NULL OR e.question_key = ?)
- ORDER BY e.question_number
-"""
+# Ein fyrirspurn sem svarar öllum fimm spurningunum eða einni, og sýnir um
+# leið hvaðan hvert svar kemur. Hún er í src/sql/queries/mbl-svor.sql (#11) og
+# er lesin þaðan — sama skrá og hleðslan (mbl_hledsla.stadfesta_svor) notar.
+SVOR_SQL = fyrirspurnir.lesa("mbl-svor").sql
 
 # Lesið sem „allar spurningar" í SVOR_SQL.
 ALLAR_SPURNINGAR = None
