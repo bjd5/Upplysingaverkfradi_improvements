@@ -69,6 +69,12 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "vedurstodvar-naesta-aflagda-stod",
     "vedurstodvar-naesta-virka-langtimastod",
     "vedurstodvar-kassi-eftir-fjarlaegd",
+    # Friends / Phoebe
+    "friends-thattunargaedi",
+    "friends-plass-alls",
+    "friends-plass-eftir-thattarod",
+    "friends-interaction-lift",
+    "friends-nafntilvik-eftir-thattarod",
 })
 
 # Skráarheiti hvers leyfðs heitis, reiknað úr listanum sjálfum (aldrei úr inntaki).

@@ -12,13 +12,13 @@ SHA-staðfestingunni er afritið „endurundirritað“ í provenance-afritinu.
 
 from __future__ import annotations
 
-import ast
 import sqlite3
 import tempfile
 import unittest
 from pathlib import Path
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
+import sql_samsetning
 from friends_grunnur import Afrit, opna_med_toflum, vidmid_gildi
 from hjalp import PYTHON_ROT
 
@@ -30,8 +30,6 @@ PER_EPISODE = "phoebe-per-episode.csv"
 TELJA_SKRAR = "SELECT COUNT(*) FROM friends_transcript_files"
 HLEDSLUEININGAR = ("friends_skrar", "friends_faerslur", "friends_phoebe_faerslur",
                    "friends_samraemi", "friends_hledsla")
-SQL_ORD = ("SELECT ", "INSERT ", "DELETE ", "UPDATE ", " FROM ", " WHERE ")
-KEYRSLUFOLL = {"execute", "executemany", "executescript"}
 
 
 class GallarProf(unittest.TestCase):
@@ -211,30 +209,8 @@ class SkemaProf(unittest.TestCase):
 class StrengjasamsetningProf(unittest.TestCase):
     """Regla 5: engin SQL-fyrirspurn hleðslunnar er sett saman úr strengjum."""
 
-    @staticmethod
-    def brot(kodi: str) -> tuple[list[str], int]:
-        """Staðir í ``kodi`` þar sem SQL er sett saman, og fjöldi keyrslukalla."""
-        fundid, kollin = [], 0
-
-        def er_sql(hnutur: ast.AST) -> bool:
-            texti = " ".join(h.value for h in ast.walk(hnutur)
-                             if isinstance(h, ast.Constant) and isinstance(h.value, str))
-            return any(ord_ in f" {texti.upper()} " for ord_ in SQL_ORD)
-
-        for hnutur in ast.walk(ast.parse(kodi)):
-            if isinstance(hnutur, ast.JoinedStr) and er_sql(hnutur):
-                fundid.append(f"f-strengur í línu {hnutur.lineno}")
-            elif (isinstance(hnutur, ast.BinOp) and isinstance(hnutur.op, (ast.Add, ast.Mod))
-                  and er_sql(hnutur)):
-                fundid.append(f"+/% í línu {hnutur.lineno}")
-            elif isinstance(hnutur, ast.Call) and isinstance(hnutur.func, ast.Attribute):
-                if hnutur.func.attr == "format" and er_sql(hnutur.func.value):
-                    fundid.append(f".format í línu {hnutur.lineno}")
-                if hnutur.func.attr in KEYRSLUFOLL:
-                    kollin += 1
-                    if hnutur.args and not isinstance(hnutur.args[0], (ast.Name, ast.Constant)):
-                        fundid.append(f"reiknuð fyrirspurn í línu {hnutur.lineno}")
-        return fundid, kollin
+    # Leitin sjálf er í sql_samsetning.py (#11) og nær þar yfir allt src/python.
+    brot = staticmethod(sql_samsetning.brot)
 
     def test_hledslueiningarnar_setja_ekkert_saman(self) -> None:
         kollin = 0

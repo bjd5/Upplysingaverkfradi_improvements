@@ -37,6 +37,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from sqlite3 import Connection
 
+from gagnagrunnur import fyrirspurnir
 from gagnagrunnur.keyrari import keyra
 from gagnagrunnur.tenging import tenging
 
@@ -148,12 +149,13 @@ TALNING = (
     "SELECT 'phoebe_distinctive_words', COUNT(*) FROM phoebe_distinctive_words"
 )
 
-GAEDAMAT = (
-    "SELECT total_blocks, speaker_lines, scene_headings, stage_directions, "
-    "unclassified, unclassified_pct FROM friends_parse_quality"
-)
-VINALINUR = "SELECT character_name, lines, words FROM friends_character_totals"
-LIFT = "SELECT character_name, interaction_lift FROM phoebe_interaction_lift"
+# Staðfestingin spyr sömu fyrirspurna og síðan birtir (src/sql/queries/, #11),
+# svo hleðslan staðfestir nákvæmlega þær tölur sem fara á síðuna.
+GAEDAMAT = "friends-thattunargaedi"
+VINALINUR = "friends-plass-alls"
+LIFT = "friends-interaction-lift"
+GAEDADALKAR = ("total_blocks", "speaker_lines", "scene_headings", "stage_directions",
+               "unclassified", "unclassified_pct")
 
 
 def _nuna() -> str:
@@ -211,17 +213,20 @@ def _stadfesta_ur_sql(samband: Connection, gogn: Gogn) -> None:
     gaedi = gogn.meta["parse_quality"]
     vaent = (gaedi["total_text_blocks"], gaedi["speaker_lines"], gaedi["scene_headings"],
              gaedi["stage_directions"], gaedi["unclassified"], gaedi["unclassified_pct"])
-    fengid = tuple(samband.execute(GAEDAMAT).fetchone())
+    gaedarod = fyrirspurnir.keyra(samband, GAEDAMAT)[0]
+    fengid = tuple(gaedarod[dalkur] for dalkur in GAEDADALKAR)
     if fengid != vaent:
         raise HledsluVilla(f"friends_parse_quality gaf {fengid}, _meta.json segir {vaent}.")
 
-    for nafn, linur, ord_ in samband.execute(VINALINUR).fetchall():
+    for vinur in fyrirspurnir.keyra(samband, VINALINUR):
+        nafn, linur, ord_ = vinur["character_name"], vinur["lines"], vinur["words"]
         vaent_vinur = (gogn.meta["friends_line_totals"][nafn.lower()],
                        gogn.meta["friends_word_totals"][nafn.lower()])
         if (linur, ord_) != vaent_vinur:
             raise HledsluVilla(f"{nafn}: SQL gaf {(linur, ord_)}, _meta.json {vaent_vinur}.")
 
-    lift = dict(samband.execute(LIFT).fetchall())
+    lift = {rad["character_name"]: rad["interaction_lift"]
+            for rad in fyrirspurnir.keyra(samband, LIFT)}
     if set(lift) != set(gogn.lift_ur_skra):
         raise HledsluVilla(f"phoebe_interaction_lift nær yfir {sorted(lift)}.")
     for nafn, gildi in gogn.lift_ur_skra.items():
@@ -255,7 +260,7 @@ def main(rok: list[str] | None = None) -> int:
     with tenging() as samband:
         keyra(samband)
         fjoldi = hlada(samband)
-        gaedi = samband.execute(GAEDAMAT).fetchone()
+        gaedi = fyrirspurnir.keyra(samband, GAEDAMAT)[0]
 
     log.info(
         "Hlóð Friends-tölunum: %d handritsskrár, %d línuraðir, %d tilsvör af %d "
