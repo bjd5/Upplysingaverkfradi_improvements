@@ -50,6 +50,13 @@ ENDING = ".sql"
 # Tæmandi listi. Ný fyrirspurn = ný skrá + ný lína hér; prófið krefst þess að
 # listinn og mappan segi sömu sögu, svo hvorugt verði eftir.
 FYRIRSPURNIR: frozenset[str] = frozenset({
+    # Skjálftavaktin
+    "skjalftar-dagleg-talning",
+    "skjalftar-dagleg-samantekt",
+    "skjalftar-hlaupandi-medaltal",
+    "skjalftar-manadartalning",
+    "skjalftar-staerd-eftir-kvarda",
+    "skjalftar-dypt",
     # Veðurstöðvar
     "vedurstodvar-allar-stodvar",
     "vedurstodvar-fjoldi-stodva",
