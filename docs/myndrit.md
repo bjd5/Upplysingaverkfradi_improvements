@@ -269,9 +269,17 @@ kemur úr `web/gogn/`. Hvernig taflan og `alt`-textinn verða til úr gögnunum
 SVG-skrárnar í `web/assets/img/` voru teiknaðar með þessari útgáfu, og hún
 stendur í `<dc:title>` hverrar skrár.
 
-**Opin spurning (bíður Björns, regla 10):** hvar útgáfan á að vera skráð svo
-hægt sé að setja hana upp — `requirements.txt`, `pyproject.toml` eða annað. Engin
-slík skrá er búin til fyrr en það er ákveðið; þangað til er þessi tafla heimildin.
+**Uppsetning:** útgáfan er fest í
+[`config/requirements-myndrit.txt`](../config/requirements-myndrit.txt)
+(ákveðið 28.9.2026, #17). Skráin er í `config/` en ekki í rót því hún er
+*valkvæð*: hún varðar aðeins það að teikna myndritin upp á nýtt, og allt annað í
+verkefninu — prófin meðtalin — keyrir á staðalsafninu einu. Nafnið segir það.
+
+```sh
+python3.12 -m venv .venv
+.venv/bin/pip install -r config/requirements-myndrit.txt
+PYTHONPATH=src/python .venv/bin/python -m utflutningur.myndrit_skjalftar
+```
 
 ---
 
