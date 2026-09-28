@@ -1,0 +1,55 @@
+/* myndrit.css — myndrit úr Python (SVG) með gagnatöflu sem varaleið (issue #17)
+
+   Myndin er teiknuð við útflutning með bakgrunni --myndrit-bak, sem er
+   --bak-upphaekkad. Umgjörðin notar sama token svo myndin renni saman við hana
+   í báðum þemum. Taflan er í <details>: opnanleg án JavaScript (regla 3.4) og
+   lesin af skjálesurum óháð myndinni (regla 3.3). Sjá docs/myndrit.md. */
+
+.myndrit {
+  margin: 0 0 var(--bil-8);
+  padding: var(--bil-4);
+  background: var(--bak-upphaekkad);
+  border: var(--rammi-breidd) solid var(--rammi);
+  border-radius: var(--radius);
+}
+
+.myndrit__mynd {
+  width: 100%;
+  height: auto;
+}
+
+.myndrit__skyring {
+  margin-top: var(--bil-3);
+  font-size: var(--texti-sm);
+  color: var(--texti-daufur);
+}
+
+.myndrit__gogn {
+  margin-top: var(--bil-4);
+  border-top: var(--rammi-breidd) solid var(--rammi);
+}
+
+.myndrit__gogn > summary {
+  display: flex;
+  align-items: center;
+  min-height: var(--smellisvaedi);
+  cursor: pointer;
+  font-size: var(--texti-sm);
+  font-weight: var(--thyngd-medium);
+  color: var(--tengill);
+}
+
+/* Fókusumgjörðin kemur úr :focus-visible í base.css og er ekki endurskilgreind */
+.myndrit__gogn > summary:hover { color: var(--tengill-yfir); }
+
+.myndrit__gogn table { margin-bottom: 0; }
+
+/* Tölur í töflunni eru hægrijafnaðar svo tugir og hundruð standist á */
+.myndrit__gogn td:last-child,
+.myndrit__gogn th:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Núll-dagar eru merktir með orðum í töflunni, ekki aðeins með lit (regla 3.3) */
+.myndrit__null { color: var(--texti-daufur); }
