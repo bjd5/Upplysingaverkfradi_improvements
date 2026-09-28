@@ -30,7 +30,7 @@ import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma f
 
 import vinnsla.hagstofan  # noqa: E402,F401  — hlaðið svo _nuna finnist
 import vinnsla.mbl_hledsla  # noqa: E402,F401
-from gagnagrunnur.fingrafar import fingrafar  # noqa: E402
+from gagnagrunnur.fingrafar import _oruggt_nafn, fingrafar  # noqa: E402
 from gagnagrunnur.keyrari import keyra  # noqa: E402
 from gagnagrunnur.tenging import opna, tenging  # noqa: E402
 from vinnsla.hagstofan import hlada as hlada_hagstofu  # noqa: E402
@@ -128,7 +128,8 @@ class SekundumorkProf(unittest.TestCase):
             ("mbl_extractions", "extracted_at"),
         ):
             with self.subTest(tafla=tafla, dalkur=dalkur):
-                sql = f'SELECT DISTINCT "{dalkur}" FROM "{tafla}"'  # föst nöfn úr prófinu
+                # Auðkenni fara í gegnum hvítlistann eins og í fingrafar.py (regla 5).
+                sql = f"SELECT DISTINCT {_oruggt_nafn(dalkur)} FROM {_oruggt_nafn(tafla)}"
                 self.assertEqual([r[0] for r in a.execute(sql)], [STIMPILL_A])
                 self.assertEqual([r[0] for r in b.execute(sql)], [STIMPILL_B])
 
