@@ -2,7 +2,7 @@
 
 Hver tala sem byggða gamla síðan birtir, vélleshæf í [`vidmid.json`](vidmid.json) og læsileg hér. Þetta er svarið við spurningunni sem viðmiðið er til fyrir: **sýnir nýja síðan sömu tölur?** (sjá [`README.md`](README.md) og [`../endurbygging.md`](../endurbygging.md), kafla 2).
 
-Afleidd skrá. Uppfært 2026-09-28T12:32:50Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
+Afleidd skrá. Uppfært 2026-09-28T12:38:01Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
 
 ## 1. Umfang
 

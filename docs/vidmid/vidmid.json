@@ -1,6 +1,6 @@
 {
   "snid_utgafa": 1,
-  "uppfaert": "2026-09-28T12:32:50Z",
+  "uppfaert": "2026-09-28T12:38:01Z",
   "verk": "P0.2 — vélleshæft viðmið úr byggðu síðunni (issue #30)",
   "lysing": "Hver tala sem gamla Quarto-síðan birtir, með síðu, kafla og samhengi. Afleiða af docs/vidmid/vefur/ — aldrei handbreytt.",
   "adferd": "html.parser úr staðalsafninu. Aðeins efnið innan <main id=quarto-document-content> er lesið, svo valmynd, brauðmylsna og fótur komast ekki með. Tala inni í kóðalistun er skráð en fær visst=false.",

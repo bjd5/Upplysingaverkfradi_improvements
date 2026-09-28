@@ -1,208 +1,94 @@
 # Viðmiðið — frosið afrit af gamla verkefninu
 
-Þessi mappa er **sönnunargagn, ekki vinnugögn.** Hér liggur afrit af því sem
-gamla Quarto-verkefnið skilaði af sér, fryst eins og það var, svo hægt sé að
-svara einni spurningu þegar nýja síðan er tilbúin:
+Þessi mappa er **sönnunargagn, ekki vinnugögn.** Hún svarar einni spurningu:
 
 > **Sýnir nýja síðan sömu tölur og sú gamla?**
 
-Krafan er að svarið sé já (sjá [`../endurbygging.md`](../endurbygging.md),
-kafla 2). Breytist tala er það villa þar til annað er sannað. Án frosins
-viðmiðs er ekki hægt að sanna neitt — þá er bara hægt að vona.
+Breytist tala er það villa þar til annað er sannað ([`../endurbygging.md`](../endurbygging.md),
+kafli 2). Ekkert hér er handbreytt: skrárnar eru afritaðar óbreyttar (`cp -p`)
+og hver þeirra tryggð með SHA-256 í [`provenance.json`](provenance.json).
 
-Ekkert hér er handbreytt og ekkert hér verður handbreytt. Innihaldið er
-afritað óbreytt (`cp -p`, breytingartímar varðveittir) og hver einasta skrá er
-tryggð með SHA-256 í [`provenance.json`](provenance.json).
+## 1. Hvað er hér
 
----
+Söfnin voru aðeins til á einni vél — `gitignore`-uð í upprunaverkefninu — og
+tvær vefþjónustanna skila öðru í dag en í september.
 
-## 1. Af hverju þurfti að bjarga þessu
-
-Gögnin fjögur hér að neðan áttu það sameiginlegt að vera **aðeins til á einni
-vél**. Þau voru `gitignore`-uð í upprunaverkefninu að yfirlögðu ráði — sum af
-því að þau eru afleidd, sum af því að þau voru of stór — og hefðu því horfið
-með vélinni. Hvorki GitHub né CI hefði getað endurskapað þau: tvær af
-vefþjónustunum skila öðru svari í dag en þær gerðu í september.
-
-| Mappa | Skrár | Stærð | Hvað þetta er |
+| Mappa | Skrár | Stærð | Hvað |
 |---|---:|---:|---|
 | [`vefur/`](vefur/) | 60 | 3,79 MB | Byggða gamla Quarto-síðan, 24 HTML-síður |
-| [`generated/`](generated/) | 13 | 0,07 MB | Afleidd úttök greininganna sem Quarto límdi inn |
+| [`generated/`](generated/) | 13 | 0,07 MB | Afleidd úttök sem Quarto límdi inn |
 | [`phoebe-stats/`](phoebe-stats/) | 18 | 0,11 MB | Friends-tölfræðin fullreiknuð |
 | `../../data/raw/mbl/` | 2 | 0,37 MB | mbl.is-eintakið — eina eintakið sem til er |
 | **Samtals** | **93** | **4,34 MB** | |
 
-### `vefur/` — byggða gamla síðan
+- **`vefur/`** er eina heildarskráin yfir tölur gömlu síðunnar. `site_libs/`
+  (Bootstrap, jQuery) fylgir óbreytt.
+- **`generated/vedurstofa-*.md`** eru **eina ummerkið** um veðurstöðvagögnin;
+  hráa svarið var aldrei vistað. Munur við nýja söfnun er vænt niðurstaða.
+- **`phoebe-stats/_meta.json`** geymir tölurnar sem nýja greiningin verður að
+  hitta: 227 handritsskrár, 236 þættir, 61.161 tilsvar, 2,95% óflokkað.
+  Handritin sjálf eru **ekki** hér — aðeins tölur um þau (höfundaréttur, issue #3).
+- **mbl-eintakið** liggur í `data/raw/` því það er hrágagn. Sótt af
+  `https://www.mbl.is/frettir/` 2026-09-16.
 
-Eina heildarskráin yfir hverja einustu tölu sem gamla síðan birtir. Tölurnar
-eru þó aðeins til sem texti inni í HTML. **P0.2** las möppuna og skrifaði
-vélleshæft viðmið: [`vidmid.json`](vidmid.json) og [`vidmid.md`](vidmid.md)
-(sjá kafla 4).
+## 2. Byggingin er úr þremur commitum, ekki einu
 
-`site_libs/` fylgir með óbreytt (Bootstrap, jQuery, popper). Það er ekki efni
-heldur Quarto-umbúðir, og er einmitt hluti af ástæðunni fyrir endurbyggingunni
-— nýja síðan er hreint HTML/CSS/JS án framework (CLAUDE.md, regla 3.4).
+Verklýsing P0.1 sagði `2865ed6`. **Það stenst ekki:** engin skrá er yngri en
+2026-09-17 09:51Z, en `2865ed6` er frá 2026-09-20. Quarto endurbyggir aðeins
+breyttar síður, svo `vefur/` er samsett úr þremur byggingum:
 
-### `generated/` — afleidd úttök
-
-Markdown- og JSON-bútar sem Quarto límdi inn í síðurnar. **`vedurstofa-*.md`
-eru EINA ummerkið um veðurstöðvagögnin** — hráa API-svarið var aldrei vistað,
-heldur sótt upp á nýtt í hverri byggingu. Gamla veðurstöðvasíðan sýndi því
-aðrar tölur í dag en í gær. P0.3 sækir nýtt eintak og ber það saman við þessar
-skrár; munurinn er vænt niðurstaða, ekki villa.
-
-### `phoebe-stats/` — Friends-tölfræðin
-
-Fullreiknaðar tölur: línufjöldi á persónu, senur, hlutföll, orðtíðni.
-[`_meta.json`](phoebe-stats/_meta.json) geymir viðmiðstölurnar sem P1.6 og
-P2.8 verða að hitta: 227 handritsskrár, 236 þættir, 61.161 tilsvar, 2,95%
-óflokkað.
-
-**Höfundaréttur:** handritin sjálf eru **ekki** hér og fara ekki í þetta repo.
-`fangj/friends` hefur ekkert leyfi og þetta repo er opið. Það sem er hér eru
-tölur *um* textann — tíðnitöflur og talningar, ekki textinn sjálfur. Lengstu
-strengirnir eru stuttir frasar í tíðnitöflu (`signature-phrases.csv`).
-Endanleg ákvörðun er í issue #3.
-
-### `../../data/raw/mbl/` — mbl.is-eintakið
-
-Liggur í `data/raw/` en ekki hér, því þetta eru **hrágögn**, ekki afleiða —
-gagnaflæðið byrjar þar (CLAUDE.md, kafli 0). Provenance-færslan er þó hér með
-hinum, enda sama björgunarverk. Sótt af `https://www.mbl.is/frettir/`
-(**ekki** forsíðunni sjálfri) 2026-09-16.
-
----
-
-## 2. Úr hvaða commit er byggða síðan? — leiðrétting
-
-Verklýsing P0.1 sagði að byggða síðan væri frá commit `2865ed6`.
-**Það stenst ekki.** Hið rétta er flóknara og skiptir máli fyrir P0.2.
-
-`2865ed6` er frá **2026-09-20 11:51Z**, en engin skrá í byggingunni er yngri
-en **2026-09-17 09:51:40Z**. Byggingin er þremur dögum eldri en commitið sem
-hún átti að koma úr.
-
-Það sem verra er: **þetta er ekki ein bygging heldur þrjár.** Quarto
-endurbyggir aðeins þær síður sem hafa breyst, svo `vefur/` er samsett úr
-þremur byggingum á tveimur dögum:
-
-| Commit | Tími | Á sögu `main`? | Síður |
+| Commit | Tími | Á `main`? | Síður |
 |---|---|---|---:|
-| `5510cab` | 2026-09-16 14:55Z | ❌ **Nei** | 4 |
+| `5510cab` | 2026-09-16 14:55Z | ❌ Nei | 4 |
 | `9cf667d` | 2026-09-16 23:06Z | ✅ Já | 2 |
 | `fdf1261` | 2026-09-17 08:53Z | ✅ Já | 22 |
 
-Fjórar síðurnar úr `5510cab` eru byggðar á grein (`tmp/samrunaprof`) sem
-**rataði aldrei á `main`**. Og það eru ekki jaðarsíður:
+Fjórar síður eru úr grein sem **rataði aldrei á `main`**:
+`friends/phoebe-statistics.html`, `lotur/regex/mbl.html`,
+`lotur/vefthjonustur/hagstofan.html` og `friends/index.html`.
 
-- `friends/phoebe-statistics.html`
-- `lotur/regex/mbl.html`
-- `lotur/vefthjonustur/hagstofan.html`
-- `friends/index.html`
+Þetta var staðfest með breytingartíma hverrar skráar borinn saman við `reflog`
+upprunarepo-sins; allar 24 síðurnar falla innan lotu. Sundurliðunin er í
+`vidmidsbygging` í [`provenance.json`](provenance.json). `origin/main` var þá í
+`fb15d2a` — það er upphafsstaða [uppruna-yfirferðarinnar](../uppruni.md).
 
-Þrjár af kjarnasíðum rannsóknarinnar. Full sundurliðun — hver síða á sinni
-lotu — er í `vidmidsbygging` í [`provenance.json`](provenance.json).
+**Afleiðingar:** ósamræmi milli síðna úr ólíkum lotum er væntanlegt. **Fimm
+slík atriði** eru skráð í [`vidmid.md`](vidmid.md), kafla 5 — tvö alvarleg.
+`phoebe-top-talkers.json` er í tveimur röðum (sömu gildi) af því að jafntefli
+er brotið án fasts viðmiðs.
 
-**Hvernig þetta var staðfest:** `docs/` var `gitignore`-uð í upprunarepo-inu
-(lína 29), svo byggingin á sér ekkert beint git-ummerki. Sönnunin er
-breytingartími hverrar skráar — varðveittur í afrituninni með `cp -p` — borinn
-saman við `reflog` upprunarepo-sins, sem segir hvaða `HEAD` var virkur á þeim
-tíma. Þær tvær heimildir stemma nákvæmlega og allar 24 síðurnar falla innan
-lotu; engin er óflokkuð.
-
-**Til samanburðar:** `origin/main` í upprunarepo-inu var kominn í `fb15d2a`
-þegar afritað var — 16 commit á undan `2865ed6` og **22 á undan yngstu
-byggingarlotunni**. Viðmiðið er þessi bygging, ekki `main` eins og hann er í
-dag.
-
-### Hvað þetta þýðir fyrir P0.2 — og hvað P0.2 fann
-
-Viðmiðið er gilt sem viðmið — það er nákvæmlega það sem gamla síðan birti. En
-það er **ekki innbyrðis samstæð bygging**, og P0.2 gerði ráð fyrir því:
-
-- Ósamræmi milli síðna er væntanlegt og er sjálfstæð niðurstaða, ekki
-  lestrarvilla. Síða úr `5510cab` þarf ekki að sýna sömu tölu og síða úr
-  `fdf1261`. **Fimm slík atriði eru skráð** í
-  [`vidmid.md`](vidmid.md), kafla 5 — tvö þeirra alvarleg.
-- `phoebe-stats/_meta.json` var búið til **2026-09-17 09:47:09Z**, í yngstu
-  lotunni, en `friends/phoebe-statistics.html` er frá deginum áður. **Þessi
-  áhætta kom ekki fram:** eintökin tvö af `_meta.json` eru eins að öðru leyti
-  en tímastimplinum, svo allar staðfestar tölur stemma við bæði.
-  `phoebe-top-talkers.json` er hins vegar **í tveimur röðum** — sömu gildi,
-  önnur röð, af því að jafntefli í röðuninni er brotið án fasts viðmiðs.
-
----
-
-## 3. Að staðfesta að viðmiðið sé ósnert
+## 3. Að staðfesta og lesa viðmiðið
 
 ```bash
-python3 src/python/vidmid/provenance.py stadfesta
+python3 src/python/vidmid/provenance.py stadfesta   # SHA-256 hverrar skráar
+python3 src/python/vidmid/tolur.py stadfesta        # tölurnar við síðurnar
+python3 src/python/vidmid/tolur.py skrifa           # byggir vidmid.* upp á nýtt
 ```
 
-Skipunin reiknar SHA-256 af hverri skrá upp á nýtt og ber saman við
-`provenance.json`. Hún gerir athugasemd við breytta skrá, horfna skrá **og**
-skrá sem hefur bæst við án þess að vera skráð. Skili hún öðru en núlli er
-viðmiðið ekki lengur ósnert og niðurstöður sem á því byggja eru ómarktækar.
+`stadfesta` kvartar undan breyttri, horfinni **og** óskráðri skrá. Skili hún
+öðru en núlli eru niðurstöður sem byggja á viðmiðinu ómarktækar.
 
-Eingöngu Python-staðalsafnið; engin uppsetning.
-
-`provenance.json` geymir fyrir hverja skrá: slóðina sem hún kom af, stærð í
-bætum, SHA-256 og breytingartíma. Slóðir eru skráðar með `~` fyrir heimamöppu
-— repo-ið er opið og full slóð bætir engu við.
-
-Sé þörf á að endurskrifa skrána (t.d. eftir að P0.3 bætir við safni):
-
-```bash
-python3 src/python/vidmid/provenance.py skrifa
-```
-
----
-
-## 4. Viðmiðstölurnar — `vidmid.json` og `vidmid.md`
-
-```bash
-python3 src/python/vidmid/tolur.py skrifa      # byggir viðmiðið upp á nýtt
-python3 src/python/vidmid/tolur.py stadfesta   # ber það við síðurnar
-```
-
-| Skrá | Hvað hún er |
+| Skrá | Hvað |
 |---|---|
-| [`vidmid.json`](vidmid.json) | Vélleshæft viðmið: **1.255 tölur** úr 24 síðum, þar af **417 efnislegar niðurstöður**. Hver tala með síðu, byggingarlotu, kaflakeðju, töfluröð/dálki, einingu og samhengi. |
-| [`vidmid.md`](vidmid.md) | Sama efni fyrir manneskju: umfang, staðfestar tölur, ósamræmi, og vísir í hópaskrárnar. |
-| [`vidmid/`](vidmid/) | Ein skrá á hverja síðu **nýju** síðunnar (sjá [`../endurbygging.md`](../endurbygging.md), kafla 3), svo hver síðuagent fái sitt viðmið í einni skrá. |
+| [`vidmid.json`](vidmid.json) | **1.255 tölur** úr 24 síðum, þar af **417 efnislegar**, hver með síðu, lotu, kafla, einingu og samhengi |
+| [`vidmid.md`](vidmid.md) | Sama fyrir manneskju: staðfestar tölur og ósamræmi |
+| [`vidmid/`](vidmid/) | Ein skrá á hverja síðu nýju síðunnar |
 
-Tala sem er ekki niðurstaða — auðkenni (`0405`), issue-tilvísun (`#14`),
-ISO-dagsetning, CSS-gildi, tala inni í kóðalistun — er **skráð áfram** með
-`visst: false`. Próf sníða hana frá með einni síu; ekkert er þaggað.
+Tala sem er ekki niðurstaða (auðkenni, dagsetning, CSS-gildi) er skráð með
+`visst: false` og síuð frá í prófum.
 
-### Það sem HTML-lestur nær ekki
+**Ein síða reiknar tölurnar í vafranum**, svo HTML-ið geymir þær ekki. Þar er
+gagnaskráin viðmiðið: `friends/phoebe-statistics.html` (skrárnar í
+`vefur/friends/phoebe-stats/`).
 
-Ein síða birtir **engar tölur í HTML-inu**. Hún reiknar þær í JavaScript í
-vafra lesandans:
+## 4. Reglur
 
-| Síða | Viðmiðið er |
-|---|---|
-| `friends/phoebe-statistics.html` | Sjö skrár í `vefur/friends/phoebe-stats/` sem Observable Plot les |
-
-Þetta er ástæða þess að sex af staðfestu tölunum — línur á persónu,
-sviðsfyrirsagnir og sviðsleiðbeiningar — finnast hvergi í HTML-textanum.
-**Fyrir kjarnasíðu rannsóknarinnar er gagnaskráin viðmiðið, ekki síðan.**
-
----
-
-## 5. Reglur um þessa möppu
-
-1. **Ekkert hér er handbreytt.** Hvorki skrárnar né `provenance.json`
-   (CLAUDE.md, regla 10).
-   **Eina undantekningin:** tokenmælaborð gamla verkefnisins
-   (`tokens/*.html`, `tokens-*.svg`, `tokens-*-tafla.md`) var fjarlægt
-   2026-09-28 að ósk Björns, ásamt tenglum og setningum um það í hinum
-   síðunum og leitarskránni. Það var utan umfangs nýju síðunnar og geymdi
-   engar rannsóknartölur. `provenance.json` og viðmiðið voru endurskrifuð
-   með `skrifa`; afritunartíminn og breytingartímar skránna eru óbreyttir.
-2. **Ekkert hér er endurbyggt.** Viðmið sem er endurbyggt er ekki viðmið.
-3. **Handritin sjálf koma aldrei hingað** — aðeins tölur um þau (issue #3).
-4. Bætist safn við: afritaðu óbreytt, keyrðu `skrifa`, og skráðu safnið í
+1. **Ekkert hér er handbreytt eða endurbyggt** (regla 10). Viðmið sem er
+   endurbyggt er ekki viðmið. **Eina undantekningin:** tokenmælaborð gamla
+   verkefnisins var fjarlægt 2026-09-28 að ósk Björns, ásamt tenglum á það.
+   Það var utan umfangs og geymdi engar rannsóknartölur. `provenance.json` og
+   viðmiðið voru endurskrifuð með `skrifa`; breytingartímar eru óbreyttir.
+2. **Handritin koma aldrei hingað** — aðeins tölur um þau (issue #3).
+3. Nýtt safn: afritaðu óbreytt, keyrðu `provenance.py skrifa` og skráðu það í
    töfluna í kafla 1.
-5. `vidmid.json`, `vidmid.md` og `vidmid/` eru **afleiður** — þær eru
-   skrifaðar af `tolur.py`, aldrei handbreyttar (regla 10).
+4. `vidmid.json`, `vidmid.md` og `vidmid/` eru afleiður `tolur.py`.
