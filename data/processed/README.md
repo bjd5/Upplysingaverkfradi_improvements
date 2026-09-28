@@ -73,9 +73,9 @@ python3 -m unittest tests.test_handritsleit
 ```
 
 Prófið leitar að strengjagildum sem líta út eins og setningar og fellur ef það
-finnur eitt. Það les **aðeins talnaskrárnar** (JSON og CSV) — ekki byggðu
-HTML-síðurnar í `docs/vidmid/vefur/`, sem vitað er að geyma orðréttar
-handritslínur (opið í issue #3). Þröskuldarnir, röksemdin fyrir þeim og
+finnur eitt. Það les talnaskrárnar (JSON og CSV) **og** allar HTML- og
+JSON-skrár byggðu síðunnar í `docs/vidmid/vefur/`, þar sem aðeins frystu
+0101-línurnar úr ákvörðun (b) í issue #3 mega standa. Þröskuldarnir, röksemdin fyrir þeim og
 afmörkunin eru í [`docs/adferdafraedi.md`](../../docs/adferdafraedi.md),
 kafla 1.5.2.
 
@@ -94,10 +94,10 @@ Tölurnar birtast síðar á `web/sidur/phoebe-tolfraedi.html` og
 1. **Ekkert hér er handbreytt** (regla 10). Skrárnar eru afrit; breyting á
    þeim er villa, ekki uppfærsla.
 2. **Ekkert hér er endurreiknað.** Aðfangið vantar og á að vanta.
-3. **Handritin koma aldrei hingað** — hvorki afrituð né vendoruð
-   (`.gitignore` útilokar `data/external/` og `data/fangj-friends/`). Hvort
-   söfnin verða skráð sem submodule (slóð + commit-SHA, enginn texti) er
-   **óákveðið** — spurning (a) í issue #3.
+3. **Handritin koma aldrei hingað** — hvorki afrituð né vendoruð. delvinso-safnið
+   er skráð sem submodule á `data/raw/friends-handrit` (slóð + commit-SHA,
+   enginn texti) — ákvörðun (a) í issue #3, 28.9.2026. Venjulegt `git clone`
+   sækir það ekki.
 4. Staðfestingin er `python3 src/python/vidmid/provenance.py stadfesta` fyrir
    viðmiðið og prófin hér að ofan fyrir afritið.
 
