@@ -1,8 +1,9 @@
 """Prófar beinagrind vefsíðunnar gegn reglum 2, 3.2, 3.3 og 3.4 í CLAUDE.md.
 
-Beinagrindin er afrituð í níu HTML-skrár af því að verkefnið hefur engan
+Beinagrindin er afrituð í þrettán HTML-skrár af því að verkefnið hefur engan
 byggingarferil. Þessi próf eru trygging fyrir því að afritin haldist í takt
-þegar síðuverkin (P3.4-P3.11) fylla efnishlutana.
+þegar síðuverkin fylla efnishlutana. Síðunum er skipt í þrjá flokka —
+Þema, Friends og Viðauka — sjá docs/vefur-beinagrind.md.
 
 Keyrt með staðalsafninu einu:  python3 -m unittest discover -s tests
 """
@@ -15,17 +16,25 @@ from html.parser import HTMLParser
 
 VEFUR = pathlib.Path(__file__).resolve().parent.parent / "web"
 
-SIDUR = [
-    "index.html",
-    "sidur/adferdafraedi.html",
-    "sidur/hagstofan.html",
-    "sidur/mbl-regex.html",
+THEMA = [
+    "sidur/skjalftavaktin.html",
+]
+FRIENDS = [
+    "sidur/friends-gagnasagan.html",
+    "sidur/phoebe-tolfraedi.html",
     "sidur/phoebe-central-perk.html",
     "sidur/phoebe-tmdb.html",
-    "sidur/phoebe-tolfraedi.html",
-    "sidur/skjalftavaktin.html",
-    "sidur/vedurstodvar.html",
+    "sidur/uppahalds-video.html",
+    "sidur/phoebe-tribute.html",
 ]
+VIDAUKI = [
+    "sidur/hagstofan.html",
+    "sidur/vedurstodvar.html",
+    "sidur/mbl-regex.html",
+    "sidur/adferdafraedi.html",
+    "sidur/tokennotkun.html",
+]
+SIDUR = ["index.html"] + THEMA + FRIENDS + VIDAUKI
 
 HAMARK_SMELLIR = 3
 
@@ -183,6 +192,33 @@ class SamraemiTest(unittest.TestCase):
                               "núverandi síða ekki merkt í valmynd")
 
 
+class FlokkunTest(unittest.TestCase):
+    """Hver undirsíða tilheyrir nákvæmlega einum flokki og segir frá því."""
+
+    FLOKKAR = {"thema": ("Þema", THEMA), "friends": ("Friends", FRIENDS),
+               "vidauki": ("Viðauki", VIDAUKI)}
+
+    def test_braudmylsna_nefnir_flokkinn(self) -> None:
+        for kenni, (heiti, sidur) in self.FLOKKAR.items():
+            for sida in sidur:
+                with self.subTest(sida=sida):
+                    self.assertIn('<a href="../index.html#%s">%s</a>' % (kenni, heiti),
+                                  lesa(sida))
+
+    def test_flokkurinn_merktur_i_valmynd(self) -> None:
+        for heiti, sidur in self.FLOKKAR.values():
+            for sida in sidur:
+                with self.subTest(sida=sida):
+                    haus = re.search(r"<header.*?</header>", lesa(sida), re.DOTALL).group(0)
+                    self.assertRegex(haus, r'aria-current="[^"]+">%s</a>' % heiti)
+
+    def test_forsidan_hefur_kafla_fyrir_hvern_flokk(self) -> None:
+        forsida = lesa("index.html")
+        for kenni in self.FLOKKAR:
+            with self.subTest(flokkur=kenni):
+                self.assertIn('id="%s"' % kenni, forsida)
+
+
 class TenglarTest(unittest.TestCase):
     """Engin brotin slóð, ekkert efni lengra en þrjá smelli frá forsíðu."""
 
@@ -207,7 +243,7 @@ class TenglarTest(unittest.TestCase):
 
     def test_engar_munadarlausar_sidur(self) -> None:
         skrar = {str(p.relative_to(VEFUR)) for p in VEFUR.rglob("*.html")}
-        self.assertEqual(set(SIDUR), skrar, "HTML-skrár í web/ passa ekki við níu síður")
+        self.assertEqual(set(SIDUR), skrar, "HTML-skrár í web/ passa ekki við síðulistann")
 
     def test_hamark_thrir_smellir_fra_forsidu(self) -> None:
         dypt = {"index.html": 0}

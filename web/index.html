@@ -28,12 +28,9 @@
         </button>
         <ul class="valmynd__listi" id="valmyndarlisti">
           <li><a class="valmynd__tengill" href="index.html" aria-current="page">Forsíða</a></li>
-          <li><a class="valmynd__tengill" href="sidur/skjalftavaktin.html">Skjálftavaktin</a></li>
-          <li><a class="valmynd__tengill" href="sidur/hagstofan.html">Hagstofan</a></li>
-          <li><a class="valmynd__tengill" href="sidur/vedurstodvar.html">Veðurstöðvar</a></li>
-          <li><a class="valmynd__tengill" href="sidur/mbl-regex.html">mbl.is</a></li>
-          <li><a class="valmynd__tengill" href="sidur/phoebe-tolfraedi.html">Phoebe</a></li>
-          <li><a class="valmynd__tengill" href="sidur/adferdafraedi.html">Aðferðafræði</a></li>
+          <li><a class="valmynd__tengill" href="sidur/skjalftavaktin.html">Þema</a></li>
+          <li><a class="valmynd__tengill" href="sidur/friends-gagnasagan.html">Friends</a></li>
+          <li><a class="valmynd__tengill" href="sidur/hagstofan.html">Viðauki</a></li>
         </ul>
       </nav>
     </div>
@@ -46,14 +43,15 @@
         <p class="hetja__merkimidi">Rannsóknarverkefni · 2026</p>
         <h1>Gögn úr vefþjónustum, greind og gerð skiljanleg</h1>
         <p class="hetja__inngangur">
-          Sjö rannsóknir á opnum gögnum: jarðskjálftar, brautskráning,
-          veðurstöðvar, fréttatextar og þrjár greiningar á handritum
-          sjónvarpsþátta. Gögnin eru sótt frá vefþjónustum, geymd í
-          SQL-gagnagrunni og birt hér — hver tala með rekjanlega slóð aftur
-          í upprunaleg gögn.
+          Efnið skiptist í þrennt: <strong>þemaverkefnið</strong> um
+          jarðskjálfta á Reykjanesi, <strong>Friends</strong>-greiningar á
+          handritum sjónvarpsþáttanna og <strong>viðauka</strong> með æfingum,
+          aðferðafræði og tokennotkun. Gögnin eru sótt frá vefþjónustum,
+          geymd í SQL-gagnagrunni og birt hér — hver tala með rekjanlega slóð
+          aftur í upprunaleg gögn.
         </p>
         <div class="hetja__adgerdir">
-          <a class="hnappur hnappur--adal" href="#rannsoknir">Skoða rannsóknirnar</a>
+          <a class="hnappur hnappur--adal" href="#thema">Skoða efnið</a>
           <a class="hnappur hnappur--aukinn" href="sidur/adferdafraedi.html">Lesa aðferðafræðina</a>
         </div>
       </div>
@@ -71,14 +69,12 @@
         </p>
       </section>
 
-      <section class="hluti" id="rannsoknir" aria-labelledby="rannsoknir-titill">
-        <h2 id="rannsoknir-titill">Rannsóknirnar sjö</h2>
+      <section class="hluti" id="thema" aria-labelledby="thema-titill">
+        <h2 id="thema-titill">Þema</h2>
         <p>
-          Hver rannsókn stendur sjálfstætt og er einn smellur héðan. Innan
-          Phoebe-greininganna þriggja kemstu milli síðna í öðrum smelli — því
-          er ekkert efni lengra en þrjá smelli frá þessari síðu.
+          Þemaverkefnið: jarðskjálftavirknin á Reykjanesskaga, frá atburðaskrá
+          Veðurstofunnar til greiningar.
         </p>
-
         <div class="kort-raster kort-raster--thrju">
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">01</p>
@@ -86,41 +82,91 @@
             <p>Jarðskjálftavirkni á Reykjanesskaga frá nóvember 2023 fram í janúar 2024.</p>
             <a class="kort__tengill" href="sidur/skjalftavaktin.html">Skoða</a>
           </article>
+        </div>
+      </section>
+
+      <section class="hluti" id="friends" aria-labelledby="friends-titill">
+        <h2 id="friends-titill">Friends</h2>
+        <p>
+          Sex síður um sjónvarpsþættina Friends og persónuna Phoebe Buffay —
+          gagnasagan, þrjár greiningar og tvær persónulegri síður.
+        </p>
+        <div class="kort-raster kort-raster--thrju">
+          <article class="kort">
+            <p class="kort__tala" aria-hidden="true">01</p>
+            <h3>Friends-gagnasagan</h3>
+            <p>Hvaðan handritin koma og hvernig þau urðu að gögnum.</p>
+            <a class="kort__tengill" href="sidur/friends-gagnasagan.html">Skoða</a>
+          </article>
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">02</p>
+            <h3>Plass, nærvera og tengsl Phoebe</h3>
+            <p>Hversu mikið pláss Phoebe Buffay fær í handritum Friends.</p>
+            <a class="kort__tengill" href="sidur/phoebe-tolfraedi.html">Skoða</a>
+          </article>
+          <article class="kort">
+            <p class="kort__tala" aria-hidden="true">03</p>
+            <h3>Söngur Phoebe í Central Perk</h3>
+            <p>Hvar og hvenær Phoebe syngur á kaffihúsinu, yfir tíu þáttaraðir.</p>
+            <a class="kort__tengill" href="sidur/phoebe-central-perk.html">Skoða</a>
+          </article>
+          <article class="kort">
+            <p class="kort__tala" aria-hidden="true">04</p>
+            <h3>Hlutverkið í gagnagrunni TMDB</h3>
+            <p>Hvernig hlutverkið birtist í opna kvikmyndagagnagrunninum TMDB.</p>
+            <a class="kort__tengill" href="sidur/phoebe-tmdb.html">Skoða</a>
+          </article>
+          <article class="kort">
+            <p class="kort__tala" aria-hidden="true">05</p>
+            <h3>Okkar uppáhalds myndbönd</h3>
+            <p>Atriðin sem teymið heldur mest upp á, og af hverju.</p>
+            <a class="kort__tengill" href="sidur/uppahalds-video.html">Skoða</a>
+          </article>
+          <article class="kort">
+            <p class="kort__tala" aria-hidden="true">06</p>
+            <h3>Til heiðurs Phoebe</h3>
+            <p>Persónan sjálf, handan við tölurnar.</p>
+            <a class="kort__tengill" href="sidur/phoebe-tribute.html">Skoða</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="hluti" id="vidauki" aria-labelledby="vidauki-titill">
+        <h2 id="vidauki-titill">Viðauki</h2>
+        <p>
+          Æfingar úr lotum námskeiðsins — vefþjónustur og reglulegar segðir —
+          ásamt aðferðafræði verkefnisins og skráningu á gervigreindarnotkun.
+        </p>
+        <div class="kort-raster kort-raster--thrju">
+          <article class="kort">
+            <p class="kort__tala" aria-hidden="true">A</p>
             <h3>Brautskráning af háskólastigi</h3>
             <p>Hve margir ljúka háskólanámi á Íslandi, greint eftir árum og námsstigi.</p>
             <a class="kort__tengill" href="sidur/hagstofan.html">Skoða</a>
           </article>
           <article class="kort">
-            <p class="kort__tala" aria-hidden="true">03</p>
-            <h3>Veðurstöðvar</h3>
+            <p class="kort__tala" aria-hidden="true">B</p>
+            <h3>Veðurstöðvar Veðurstofunnar</h3>
             <p>Hvar stöðvar Veðurstofunnar standa og hvernig þær dreifast um landið.</p>
             <a class="kort__tengill" href="sidur/vedurstodvar.html">Skoða</a>
           </article>
           <article class="kort">
-            <p class="kort__tala" aria-hidden="true">04</p>
-            <h3>Reglulegar segðir</h3>
+            <p class="kort__tala" aria-hidden="true">C</p>
+            <h3>Reglulegar segðir á fréttaforsíðu</h3>
             <p>Fyrirsagnir og tenglar dregnir út úr vistaðri forsíðu mbl.is.</p>
             <a class="kort__tengill" href="sidur/mbl-regex.html">Skoða</a>
           </article>
           <article class="kort">
-            <p class="kort__tala" aria-hidden="true">05</p>
-            <h3>Plass, nærvera og tengsl</h3>
-            <p>Hversu mikið pláss Phoebe Buffay fær í handritum Friends.</p>
-            <a class="kort__tengill" href="sidur/phoebe-tolfraedi.html">Skoða</a>
+            <p class="kort__tala" aria-hidden="true">D</p>
+            <h3>Aðferðafræði</h3>
+            <p>Hvaðan gögnin koma, hvernig þau eru geymd og hvaða takmarkanir fylgja.</p>
+            <a class="kort__tengill" href="sidur/adferdafraedi.html">Skoða</a>
           </article>
           <article class="kort">
-            <p class="kort__tala" aria-hidden="true">06</p>
-            <h3>Söngur í Central Perk</h3>
-            <p>Hvar og hvenær Phoebe syngur á kaffihúsinu, yfir tíu þáttaraðir.</p>
-            <a class="kort__tengill" href="sidur/phoebe-central-perk.html">Skoða</a>
-          </article>
-          <article class="kort">
-            <p class="kort__tala" aria-hidden="true">07</p>
-            <h3>Hlutverkið í TMDB</h3>
-            <p>Hvernig hlutverkið birtist í opna kvikmyndagagnagrunninum TMDB.</p>
-            <a class="kort__tengill" href="sidur/phoebe-tmdb.html">Skoða</a>
+            <p class="kort__tala" aria-hidden="true">E</p>
+            <h3>Tokennotkun</h3>
+            <p>Hve mikla gervigreindaraðstoð verkefnið notaði, mælt í tokenum.</p>
+            <a class="kort__tengill" href="sidur/tokennotkun.html">Skoða</a>
           </article>
         </div>
       </section>
@@ -152,28 +198,31 @@
             JSON-skrár — hver tala á sér rekjanlega leið aftur í hrágögn.
           </p>
         </div>
-        <nav aria-labelledby="fotur-rannsoknir">
-          <h2 id="fotur-rannsoknir">Rannsóknir</h2>
+        <nav aria-labelledby="fotur-thema">
+          <h2 id="fotur-thema">Þema</h2>
           <ul>
             <li><a class="fotur__tengill" href="sidur/skjalftavaktin.html">Skjálftavaktin</a></li>
-            <li><a class="fotur__tengill" href="sidur/hagstofan.html">Brautskráning</a></li>
-            <li><a class="fotur__tengill" href="sidur/vedurstodvar.html">Veðurstöðvar</a></li>
-            <li><a class="fotur__tengill" href="sidur/mbl-regex.html">Reglulegar segðir</a></li>
           </ul>
         </nav>
-        <nav aria-labelledby="fotur-phoebe">
-          <h2 id="fotur-phoebe">Phoebe Buffay</h2>
+        <nav aria-labelledby="fotur-friends">
+          <h2 id="fotur-friends">Friends</h2>
           <ul>
+            <li><a class="fotur__tengill" href="sidur/friends-gagnasagan.html">Gagnasagan</a></li>
             <li><a class="fotur__tengill" href="sidur/phoebe-tolfraedi.html">Plass og tengsl</a></li>
             <li><a class="fotur__tengill" href="sidur/phoebe-central-perk.html">Central Perk</a></li>
             <li><a class="fotur__tengill" href="sidur/phoebe-tmdb.html">TMDB</a></li>
+            <li><a class="fotur__tengill" href="sidur/uppahalds-video.html">Myndbönd</a></li>
+            <li><a class="fotur__tengill" href="sidur/phoebe-tribute.html">Til heiðurs Phoebe</a></li>
           </ul>
         </nav>
-        <nav aria-labelledby="fotur-leidsogn">
-          <h2 id="fotur-leidsogn">Leiðsögn</h2>
+        <nav aria-labelledby="fotur-vidauki">
+          <h2 id="fotur-vidauki">Viðauki</h2>
           <ul>
-            <li><a class="fotur__tengill" href="index.html">Forsíða</a></li>
+            <li><a class="fotur__tengill" href="sidur/hagstofan.html">Hagstofan</a></li>
+            <li><a class="fotur__tengill" href="sidur/vedurstodvar.html">Veðurstöðvar</a></li>
+            <li><a class="fotur__tengill" href="sidur/mbl-regex.html">Reglulegar segðir</a></li>
             <li><a class="fotur__tengill" href="sidur/adferdafraedi.html">Aðferðafræði</a></li>
+            <li><a class="fotur__tengill" href="sidur/tokennotkun.html">Tokennotkun</a></li>
             <li><a class="fotur__tengill" href="sidur/adferdafraedi.html#heimildir">Heimildir</a></li>
           </ul>
         </nav>

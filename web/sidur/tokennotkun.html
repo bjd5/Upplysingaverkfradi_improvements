@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Brautskráning af háskólastigi — Upplýsingaverkfræði</title>
-  <meta name="description" content="Brautskráning af háskólastigi á Íslandi samkvæmt talnaefni Hagstofu Íslands.">
+  <title>Tokennotkun — Upplýsingaverkfræði</title>
+  <meta name="description" content="Hve mikla gervigreindaraðstoð verkefnið notaði, mælt í tokenum á hvern teymismeðlim.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
@@ -31,7 +31,7 @@
           <li><a class="valmynd__tengill" href="../index.html">Forsíða</a></li>
           <li><a class="valmynd__tengill" href="skjalftavaktin.html">Þema</a></li>
           <li><a class="valmynd__tengill" href="friends-gagnasagan.html">Friends</a></li>
-          <li><a class="valmynd__tengill" href="hagstofan.html" aria-current="page">Viðauki</a></li>
+          <li><a class="valmynd__tengill" href="hagstofan.html" aria-current="true">Viðauki</a></li>
         </ul>
       </nav>
     </div>
@@ -41,7 +41,7 @@
     <ol>
       <li><a href="../index.html">Forsíða</a></li>
       <li><a href="../index.html#vidauki">Viðauki</a></li>
-      <li><span aria-current="page">Brautskráning af háskólastigi</span></li>
+      <li><span aria-current="page">Tokennotkun</span></li>
     </ol>
   </nav>
 
@@ -51,54 +51,44 @@
       <nav class="undirvalmynd" aria-labelledby="undirvalmynd-titill">
         <p class="undirvalmynd__titill" id="undirvalmynd-titill">Viðauki — fimm síður</p>
         <ul>
-          <li><a href="hagstofan.html" aria-current="page">Hagstofan</a></li>
+          <li><a href="hagstofan.html">Hagstofan</a></li>
           <li><a href="vedurstodvar.html">Veðurstöðvar</a></li>
           <li><a href="mbl-regex.html">Reglulegar segðir</a></li>
           <li><a href="adferdafraedi.html">Aðferðafræði</a></li>
-          <li><a href="tokennotkun.html">Tokennotkun</a></li>
+          <li><a href="tokennotkun.html" aria-current="page">Tokennotkun</a></li>
         </ul>
       </nav>
 
       <div class="sidu-haus">
         <div class="sidu-haus__adal">
-          <p class="sidu-haus__flokkur">Viðauki A · Vefþjónustur</p>
-          <h1>Brautskráning af háskólastigi</h1>
-          <p class="sidu-haus__inngangur">Hve margir brautskrást af háskólastigi á Íslandi, greint eftir árum og námsstigi. Gögnin koma úr talnaefni Hagstofu Íslands og eru sótt á vélrænu sniði, ekki lesin af vefsíðu.</p>
+          <p class="sidu-haus__flokkur">Viðauki E · Gervigreind</p>
+          <h1>Tokennotkun</h1>
+          <p class="sidu-haus__inngangur">Hve mikla gervigreindaraðstoð verkefnið notaði, mælt í tokenum. Hluti af heiðarlegri skráningu á því hvernig verkið var unnið.</p>
         </div>
         <aside class="sidu-haus__hlid" aria-labelledby="stadreyndir-titill">
           <h2 class="sidu-haus__hlid-titill" id="stadreyndir-titill">Um þessa síðu</h2>
           <dl class="stadreyndir">
             <div>
-              <dt>Vefþjónusta</dt>
-              <dd>Hagstofa Íslands — <code>px.hagstofa.is</code></dd>
-            </div>
-            <div>
-              <dt>Tafla</dt>
-              <dd>SKO04208b</dd>
-            </div>
-            <div>
-              <dt>Snið</dt>
-              <dd>json-stat2</dd>
+              <dt>Uppruni</dt>
+              <dd>Tokenmælaborð fyrri útgáfu verkefnisins</dd>
             </div>
             <div>
               <dt>Staða síðunnar</dt>
-              <dd>Beinagrind — greining í vinnslu</dd>
+              <dd>Biðstaða — efni ekki enn flutt yfir</dd>
             </div>
           </dl>
         </aside>
       </div>
 
       <article class="efni" aria-labelledby="efni-titill">
-        <h2 id="efni-titill">Greiningin</h2>
+        <h2 id="efni-titill">Efnið</h2>
         <div class="bidstada">
           <p class="bidstada__merki">
             <span class="bidstada__punktur" aria-hidden="true"></span>
             Efni í vinnslu
           </p>
           <p class="bidstada__skyring">
-            Greiningin birtist hér þegar gögnin hafa verið sótt, hreinsuð og
-            flutt út úr gagnagrunninum. Beinagrindin lofar engum tölum sem hún
-            hefur ekki — þangað til má lesa um aðferðina á
+            Mælaborðið verður flutt hingað úr fyrri útgáfu verkefnisins. Beinagrindin lofar engum tölum sem hún hefur ekki — þangað til má lesa um aðferðina á
             <a href="adferdafraedi.html">aðferðafræðisíðunni</a>.
           </p>
         </div>
@@ -108,9 +98,9 @@
         <h2 class="naesta-skref__titill" id="naesta-skref-titill">Hvert get ég farið næst?</h2>
         <ul>
           <li>
-            <a href="vedurstodvar.html">
+            <a href="hagstofan.html">
               <span class="naesta-skref__hlutverk">Næst í viðauka</span>
-              <span class="naesta-skref__heiti">Veðurstöðvar</span>
+              <span class="naesta-skref__heiti">Hagstofan</span>
             </a>
           </li>
           <li>
