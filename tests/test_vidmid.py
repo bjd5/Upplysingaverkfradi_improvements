@@ -1,8 +1,9 @@
-"""Próf fyrir frosna viðmiðið: provenance og vidmid.json.
+"""Próf fyrir frosnu gögnin: hrágögnin, viðmiðið og vidmid.json.
 
 Þetta er varðstaða um kröfu verkefnisins: nýja síðan á að sýna sömu tölur og sú
-gamla (docs/endurbygging.md, kafli 2). Falli próf hér hefur viðmiðið breyst, og
-það má ekki gerast — docs/vidmid/ er fryst.
+gamla (docs/endurbygging.md, kafli 2), og grunnurinn á að byggjast úr sömu
+hrágögnum í hvert sinn (regla 5). Falli próf hér hefur frosið gagn breyst, og
+það má ekki gerast.
 
 Byggða gamla síðan og verkfærin sem lásu tölurnar úr henni eru í git-taginu
 ``vidmid-frosid``. vidmid.json er afurð þeirra og er hér fryst eins og hún var.
@@ -11,7 +12,9 @@ Byggða gamla síðan og verkfærin sem lásu tölurnar úr henni eru í git-tag
 from __future__ import annotations
 
 import json
+import tempfile
 import unittest
+from pathlib import Path
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 
@@ -20,11 +23,62 @@ from vidmid import provenance  # noqa: E402
 VIDMID_JSON = hjalp.ROT / "docs" / "vidmid" / "vidmid.json"
 
 
-class ProvenanceProf(unittest.TestCase):
-    """Hver skrá sem provenance.json telur upp er ósnert."""
+class StadfestaProf(unittest.TestCase):
+    """`stadfesta` á að finna breytta, horfna OG óskráða skrá."""
+
+    def setUp(self) -> None:
+        self._tmp = tempfile.TemporaryDirectory()
+        self.rot = Path(self._tmp.name)
+        self.safnmappa = self.rot / "data" / "raw" / "prof"
+        self.safnmappa.mkdir(parents=True)
+        svar = self.safnmappa / "svar.json"
+        svar.write_text("[1]", encoding="utf-8")
+        self.skra = self.rot / "frysting.json"
+        self.skra.write_text(json.dumps({"sofn": {"prof": {
+            "heiti": "prof",
+            "mappa": "data/raw/prof",
+            "skrar": [{"slod": "svar.json", "staerd_baet": svar.stat().st_size,
+                       "sha256": provenance.sha256_af(svar)}],
+        }}}), encoding="utf-8")
+
+    def tearDown(self) -> None:
+        self._tmp.cleanup()
+
+    def _stadfesta(self) -> int:
+        return provenance.stadfesta((self.skra,), self.rot)
+
+    def test_osnert_safn_stemmir(self) -> None:
+        self.assertEqual(self._stadfesta(), 0)
+
+    def test_breytt_skra_finnst(self) -> None:
+        (self.safnmappa / "svar.json").write_text("[2]", encoding="utf-8")
+        self.assertEqual(self._stadfesta(), 1)
+
+    def test_horfin_skra_finnst(self) -> None:
+        (self.safnmappa / "svar.json").unlink()
+        self.assertEqual(self._stadfesta(), 1)
+
+    def test_oskrad_skra_finnst(self) -> None:
+        (self.safnmappa / "auka.json").write_text("[3]", encoding="utf-8")
+        self.assertEqual(self._stadfesta(), 1)
+
+    def test_horfin_mappa_finnst(self) -> None:
+        for skra in self.safnmappa.iterdir():
+            skra.unlink()
+        self.safnmappa.rmdir()
+        self.assertEqual(self._stadfesta(), 1)
+
+
+class FrosinGognProf(unittest.TestCase):
+    """Gögnin sem ERU fryst í þessu repo-i eiga alltaf að stemma."""
 
     def test_stadfesta_skilar_nulli(self) -> None:
         self.assertEqual(provenance.stadfesta(), 0)
+
+    def test_tmdb_er_skrad_ofryst(self) -> None:
+        """Safn sem ekki tókst að frysta má ekki hverfa þegjandi (regla 6)."""
+        skjal = json.loads(provenance.FRYSTING.read_text(encoding="utf-8"))
+        self.assertIn("tmdb", {faersla["heiti"] for faersla in skjal["ofryst"]})
 
     def test_safn_i_tagi_er_ekki_i_trenu(self) -> None:
         """Safn sem var tekið úr trénu má ekki laumast aftur inn óskráð."""

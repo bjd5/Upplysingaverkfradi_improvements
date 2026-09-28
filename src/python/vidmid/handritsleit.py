@@ -253,8 +253,7 @@ def stadfesta() -> int:
         return 1
 
     log.info(
-        "%d talnaskrár, %d strengjagildi, %d undanþágur — engin samfelld setning "
-        "(HTML-síður viðmiðsins eru utan leitarinnar)",
+        "%d talnaskrár, %d strengjagildi, %d undanþágur — engin samfelld setning",
         talning["skrar"],
         talning["strengir"],
         talning["undantekningar"],

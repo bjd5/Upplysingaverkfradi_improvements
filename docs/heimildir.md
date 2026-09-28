@@ -13,8 +13,7 @@ styðja er merkt **óstaðfest** í kafla 5 — ekki giskað á.
 Staðfesta má að gögnin séu ósnert hvenær sem er:
 
 ```bash
-python3 src/python/sofnun/frysta.py stadfesta     # hrágögnin
-python3 src/python/vidmid/provenance.py stadfesta  # viðmiðið
+python3 src/python/vidmid/provenance.py stadfesta  # hrágögnin og viðmiðið
 ```
 
 ---

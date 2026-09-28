@@ -2,7 +2,7 @@
 
 Fjórða skrefið í upprunaskriftunni ``src/earthquakes.py`` — *telja*. Hin þrjú
 fyrri (sækja, sannreyna, hreinsa með regex) eru þegar flutt: sóknin í
-``sofnun/skjalftar.py``, sannreyningin og regex-lyklarnir í
+``sofnun/sofn.py``, sannreyningin og regex-lyklarnir í
 ``vinnsla/jardskjalftar.py``. Þessi eining **endurtekur ekki** þá vinnu heldur
 kallar í hana.
 

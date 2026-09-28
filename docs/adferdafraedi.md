@@ -367,7 +367,7 @@ Frá tölu að hrágagni og til baka. Síðurnar eru þær sem
 | TMDB | **vantar** | — | — | `web/sidur/phoebe-tmdb.html` |
 
 Skriftur sem lesa hrágögnin **í dag** eru tvær:
-`src/python/sofnun/frysta.py` staðfestir að öll söfnin séu ósnert, og
+`src/python/vidmid/provenance.py` staðfestir að öll söfnin séu ósnert, og
 `src/python/vinnsla/vedurstodvar_samanburdur.py` les stöðvalistann og ber hann
 við viðmiðið. Hleðsluskriftur hvers safns verða til í bylgju 1; hvaða skrifta á
 að lesa hvaða safn er skráð í [`../data/raw/README.md`](../data/raw/README.md).
