@@ -7,6 +7,8 @@ Söfnin komast hingað þrjár ólíkar leiðir og skriftan sameinar þær:
                  óbreytt og sannreynd gegn provenance sem fylgdi þeim.
 ``vedurstodvar`` Eina safnið sem átti sér ekkert eintak. Eitt eintak er sótt.
 ``tmdb``         Krefst lykils. Er hann ekki til er safnið skráð ófryst.
+``tilvisanir``   Skrifar tilvísanir í söfn sem eru tryggð annars staðar
+                 (mbl, Friends-submodule-ið) án þess að frysta neitt.
 ``stadfesta``    Reiknar SHA-256 upp á nýtt og ber við ``frysting.json``.
 ===============  =========================================================
 
@@ -28,10 +30,10 @@ from pathlib import Path
 try:  # keyrt beint: python3 src/python/sofnun/frysta.py
     import frysta_afrit
     import frysta_vedurstodvar
-    from frysting import ROT, log, skra_ofryst, stadfesta
+    from frysting import ROT, lesa_frystingu, log, skra_ofryst, skrifa_frystingu, stadfesta
 except ImportError:  # flutt inn sem eining innan pakkans
     from . import frysta_afrit, frysta_vedurstodvar
-    from .frysting import ROT, log, skra_ofryst, stadfesta
+    from .frysting import ROT, lesa_frystingu, log, skra_ofryst, skrifa_frystingu, stadfesta
 
 TMDB_BREYTA = "TMDB_TOKEN"
 UMHVERFISSKRA = ROT / ".env"
@@ -93,6 +95,17 @@ def tmdb() -> int:
     return 0
 
 
+def tilvisanir() -> int:
+    """Skrifar ``skrad_annars_stadar`` í ``frysting.json`` upp á nýtt.
+
+    Snertir hvorki söfnin né summur þeirra — aðeins tilvísanirnar og
+    ``uppfaert_utc``. Svo ``frysting.json`` sé aldrei handbreytt (regla 10).
+    """
+    skrifa_frystingu(lesa_frystingu())
+    log.info("Tilvísanir í söfn sem eru tryggð annars staðar skrifaðar")
+    return 0
+
+
 def allt() -> int:
     """Keyrir allar frystingar í röð og staðfestir niðurstöðuna."""
     for adgerd in (frysta_afrit.frysta, frysta_vedurstodvar.frysta, tmdb):
@@ -106,6 +119,7 @@ AÐGERÐIR = {
     "afrit": frysta_afrit.frysta,
     "vedurstodvar": frysta_vedurstodvar.frysta,
     "tmdb": tmdb,
+    "tilvisanir": tilvisanir,
     "stadfesta": stadfesta,
     "allt": allt,
 }

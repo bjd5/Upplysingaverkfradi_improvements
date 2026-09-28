@@ -37,6 +37,28 @@ að vera hægt að endurbyggja hann héðan án nets — það er prófið á re
 | `vedurstodvar/` | `src/python/vinnsla/` — P1.4, issue #8 | `web/sidur/vedurstodvar.html` |
 | `mbl/` | `src/python/vinnsla/` — P1.5, issue #9 | `web/sidur/mbl-regex.html` |
 
+### Friends-handritin — submodule, ekki efni í git
+
+| Safn | Hvað er í git | Uppruni | Commit |
+|---|---|---|---|
+| `friends-handrit/` | **aðeins gitlink** (slóð + SHA), enginn texti | `github.com/delvinso/friends-tv-show-analysis` | `a4641fed3d95bb9d9c7ba23681604c692f9b392a` (2019-02-21) |
+
+Handritin eru höfundarréttarvarin og þetta repo er opið, svo þau eru **hvorki
+fryst né afrituð hingað** (issue #3, ákvörðun a, 28.9.2026). Þau eru skráð sem
+git submodule: git geymir aðeins slóðina og commit-SHA-ið, og það SHA er
+frystingin. Venjulegt `git clone` sækir þau **ekki**; endurkeyrsla
+handritavinnslunnar er valkvæð:
+
+```bash
+git submodule update --init data/raw/friends-handrit
+```
+
+Þá les `src/python/vinnsla/friends_handrit.py` sjálfgefið úr
+`data/raw/friends-handrit/season/`. Safnið er skráð sem tilvísun í
+`skrad_annars_stadar` í [`frysting.json`](frysting.json) og staðfest með
+`git submodule status data/raw/friends-handrit`. Heimildafærslan er í
+[`docs/heimildir.md`](../../docs/heimildir.md), kafla 2.1.
+
 Safnið `vedurstodvar/` er auk þess lesið af
 [`src/python/vinnsla/vedurstodvar_samanburdur.py`](../../src/python/vinnsla/vedurstodvar_samanburdur.py),
 sem ber það við frosna viðmiðið.
@@ -105,7 +127,9 @@ bæst við án þess að vera skráð, og skilar öðru en núlli ef nokkuð ste
 
 [`frysting.json`](frysting.json) geymir fyrir hverja skrá: stærð, SHA-256, hvort
 hún var sannreynd gegn provenance upprunaverkefnisins, og hvenær safnið var
-fryst. Hún er **afleidd** og ekki handbreytt.
+fryst. Hún er **afleidd** og ekki handbreytt. Tilvísanir í söfn sem eru tryggð
+annars staðar (mbl, Friends-submodule-ið) eru skrifaðar með
+`python3 -m sofnun.frysta tilvisanir` (keyrt úr `src/python/`).
 
 | Skrá | Svarar spurningunni |
 |---|---|
@@ -122,6 +146,7 @@ fryst. Hún er **afleidd** og ekki handbreytt.
 | `vedurstodvar/` | CC BY 4.0 — skráð í `info.license` í `api.vedur.is/weather/openapi.json` |
 | `hagstofan/` | sjá skilmála Hagstofu Íslands; óskráð í provenance upprunaverkefnisins |
 | `mbl/` | ekkert leyfi gefið — eintakið er notað til máltæknilegrar æfingar |
+| `friends-handrit/` | MIT á kóðanum í safninu; handritatextinn er höfundarréttarvarinn — ekki í git |
 
 Fullar heimildafærslur fara í `docs/heimildir.md` (P0.4, issue #4). Vísa verður
 til Veðurstofunnar hvar sem þessi gögn birtast; CC BY 4.0 krefst þess.
