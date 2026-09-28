@@ -19,6 +19,7 @@ from gagnagrunnur.keyrari import MigrationVilla, keyra
 from gagnagrunnur.tenging import slod_grunns, tenging
 from keyrsla.hledsla import hlada_ollum, krefjast_adfanga
 from keyrsla.urvinnsla import handritamappa, vinna_allt
+from keyrsla.utflutningur import flytja_allt
 from keyrsla.villa import SkrefVilla
 from sofnun.saekja_allt import SofnunVilla
 from sofnun.saekja_allt import safna as safna_gogn
@@ -94,10 +95,11 @@ def flytja_ut() -> None:
     """Flytur niðurstöður úr grunninum út sem JSON í web/gogn/.
 
     Regla 5.4: hver skrá er á forminu
-    {"uppfaert": "<ISO>", "heimild": "...", "gogn": [...]}
+    {"uppfaert": "<ISO>", "heimild": "...", "gogn": ...}, þar sem uppfaert er
+    sóknar- eða reiknitími gagnanna, ekki klukkan við útflutning. Allar skrár
+    eru skrifaðar eða engin (sjá ``keyrsla.utflutningur``).
     """
-    log.info("Útflutningur: ekki útfærður enn — sjá src/python/utflutningur/")
-    raise NotImplementedError("Útfæra í src/python/utflutningur/")
+    flytja_allt(GAGNAGRUNNUR, VEFGOGN)
 
 
 SKREF = {
