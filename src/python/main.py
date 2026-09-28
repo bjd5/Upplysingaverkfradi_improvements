@@ -17,6 +17,8 @@ from pathlib import Path
 
 from gagnagrunnur.keyrari import MigrationVilla, keyra
 from gagnagrunnur.tenging import slod_grunns, tenging
+from keyrsla.hledsla import hlada_ollum, krefjast_adfanga
+from keyrsla.villa import SkrefVilla
 from sofnun.saekja_allt import SofnunVilla
 from sofnun.saekja_allt import safna as safna_gogn
 
@@ -57,11 +59,14 @@ def vinna() -> None:
 
 
 def hlada() -> None:
-    """Byggir grunninn úr migrations og setur hreinsuð gögn í hann.
+    """Byggir grunninn úr migrations og hleður öllum gagnasöfnunum í hann.
 
     Regla 5: öll uppbygging grunnsins kemur úr src/sql/migrations/, keyrð í
-    númeraröð, og fyrirspurnir eru alltaf með breytum.
+    númeraröð, og fyrirspurnir eru alltaf með breytum. Vanti frosið aðfang
+    einhvers safns er stöðvað áður en grunnurinn er snertur; söfnin eru hlaðin
+    í einni færslu (sjá ``keyrsla.hledsla`` um röðina).
     """
+    krefjast_adfanga()
     with tenging(GAGNAGRUNNUR) as samband:
         keyrdar = keyra(samband)
 
@@ -74,7 +79,9 @@ def hlada() -> None:
     else:
         log.info("Grunnurinn hefur þegar allar migrations — ekkert var keyrt.")
 
-    log.info("Hleðsla gagnasafnanna sjálfra: ekki útfærð enn — sjá issue #6–#10.")
+    with tenging(GAGNAGRUNNUR) as samband:
+        hladin = hlada_ollum(samband)
+    log.info("Hlóð %d gagnasöfnum í %s.", len(hladin), GAGNAGRUNNUR)
 
 
 def flytja_ut() -> None:
@@ -122,9 +129,10 @@ def main(rok: list[str] | None = None) -> int:
             # endurbyggjanlegur og keyrslan heldur ekki áfram (regla 5).
             log.error("%s", villa)
             return 1
-        except SofnunVilla as villa:
-            # Hrágagn vantar eða er ósannreynanlegt. Næstu skref myndu byggja
-            # tölur á ófullgerðum gögnum, svo flæðið stöðvast hér (regla 4).
+        except (SofnunVilla, SkrefVilla) as villa:
+            # Hrágagn vantar eða er ósannreynanlegt, eða safn/vinnsla brást.
+            # Næstu skref myndu byggja tölur á ófullgerðum gögnum, svo flæðið
+            # stöðvast hér (reglur 4 og 6).
             log.error("%s", villa)
             return 1
 
