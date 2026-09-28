@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 #
 # Endurbyggir SQL-grunninn frá grunni: eyðir honum og býr hann til aftur úr
-# src/sql/migrations/ og data/raw/.
+# src/sql/migrations/ og frystu gögnunum — data/raw/ og Friends-tölunum í
+# data/processed/phoebe-stats/ (issue #3). Öll fimm söfnin eru hlaðin (#39).
 #
 # Þetta er PRÓFIÐ á reglu 5 — grunnurinn er afleiða, ekki frumgagn. Gangi
 # þetta ekki upp er eitthvað í grunninum sem hvergi á sér heimild, og þá er
@@ -43,7 +44,7 @@ echo "==> Eyði grunni: $GRUNNUR" >&2
 rm -f -- "$GRUNNUR" "$GRUNNUR-wal" "$GRUNNUR-shm" "$GRUNNUR-journal"
 mkdir -p -- "$(dirname -- "$GRUNNUR")"
 
-echo "==> Keyri migrations úr src/sql/migrations/" >&2
+echo "==> Keyri migrations og hleð öllum gagnasöfnum (main.py --skref hlada)" >&2
 RANNSOKN_GRUNNUR="$GRUNNUR" "$PYTHON" "$ROT/src/python/main.py" --skref hlada
 
 echo "==> Fingrafar grunnsins (án tímastimpla):" >&2
