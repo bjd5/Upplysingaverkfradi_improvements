@@ -29,8 +29,7 @@ from hjalp import ROT  # noqa: E402
 
 from vinnsla.jardskjalftar import lesa_skjalfta  # noqa: E402
 from vinnsla.jardskjalftar_afmorkun import lesa_afmorkun  # noqa: E402
-from vinnsla.jardskjalftar_samantekt import draga_saman  # noqa: E402
-from vinnsla.jardskjalftar_talning import dagleg_talning, manadartalning  # noqa: E402
+from vinnsla.jardskjalftar_talning import dagleg_talning, draga_saman, manadartalning  # noqa: E402
 
 VIDMID_JSON = ROT / "docs" / "vidmid" / "vidmid.json"
 SIDA = "capstone/earthquakes.html"

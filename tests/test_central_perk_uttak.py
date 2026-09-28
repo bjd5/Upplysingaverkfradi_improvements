@@ -23,7 +23,7 @@ from hjalp import ROT  # noqa: E402
 
 from vinnsla.central_perk_greining import EpisodeResult, analyse  # noqa: E402
 from vinnsla.central_perk_mynstur import DOCUMENTED_PATTERNS, MAIN_CAST  # noqa: E402
-from vinnsla.central_perk_samantekt import pattern_rows, summarise  # noqa: E402
+from vinnsla.central_perk_uttak import pattern_rows, summarise  # noqa: E402
 from vinnsla.central_perk_uttak import (  # noqa: E402
     EPISODES_FILE, META_FILE, OUTPUT_FILES, PATTERNS_FILE, SUMMARY_FILE, main, run,
     write_outputs,

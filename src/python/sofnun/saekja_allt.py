@@ -117,12 +117,12 @@ def keyra(heiti: Sequence[str], *, thvinga: bool = False) -> Nidurstada:
 
 def samantekt(nidurstada: Nidurstada) -> None:
     """Skráir niðurstöðuna í eina línu á hvern flokk."""
-    for texti, sofn in (
+    for texti, heiti in (
         ("úr data/raw/ (ekkert kall)", nidurstada.ur_safni),
         ("sótt af netinu", nidurstada.sott),
     ):
-        if sofn:
-            log.info("%d %s: %s", len(sofn), texti, ", ".join(sofn))
+        if heiti:
+            log.info("%d %s: %s", len(heiti), texti, ", ".join(heiti))
     if nidurstada.ovirk:
         log.warning(
             "%d óvirk (stillingu vantar): %s",

@@ -17,16 +17,14 @@ import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma f
 
 from vinnsla.jardskjalftar import Skjalfti, lesa_skjalfta  # noqa: E402
 from vinnsla.jardskjalftar_afmorkun import SkjalftaVilla, lesa_afmorkun  # noqa: E402
-from vinnsla.jardskjalftar_samantekt import (  # noqa: E402
-    draga_saman,
-    dreifing,
-    staerdir_eftir_kvarda,
-)
 from vinnsla.jardskjalftar_talning import (  # noqa: E402
     DagsTalning,
     dagar_an_atburda,
     dagleg_talning,
+    draga_saman,
+    dreifing,
     manadartalning,
+    staerdir_eftir_kvarda,
 )
 
 VAENTIR_ATBURDIR = 334

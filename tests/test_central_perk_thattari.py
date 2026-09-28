@@ -21,7 +21,7 @@ from vinnsla.central_perk_lestur import (  # noqa: E402
     Block, blocks_from_html, clean_text, read_blocks,
 )
 from vinnsla.central_perk_mynstur import MIN_PARAGRAPHS_FOR_P_FORMAT  # noqa: E402
-from vinnsla.central_perk_songur import (  # noqa: E402
+from vinnsla.central_perk_greining import (  # noqa: E402
     audit_candidates, marks_phoebe_singing, phoebe_singing_scenes,
 )
 from vinnsla.central_perk_thattari import (  # noqa: E402

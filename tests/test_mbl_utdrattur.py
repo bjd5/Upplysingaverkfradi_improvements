@@ -29,7 +29,7 @@ from mbl_vidmid import (  # noqa: E402
 )
 from vinnsla.mbl_eintak import finna_eintok  # noqa: E402
 from vinnsla.mbl_mynstur import SPURNINGAR, UtdrattarVilla  # noqa: E402
-from vinnsla.mbl_ord import synileg_ord, synilegur_texti  # noqa: E402
+from vinnsla.mbl_mynstur import synileg_ord, synilegur_texti  # noqa: E402
 from vinnsla.mbl_utdrattur import (  # noqa: E402
     draga_ut_allt,
     draga_ut_gengi_usd,

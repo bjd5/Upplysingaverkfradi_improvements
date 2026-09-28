@@ -102,7 +102,7 @@ STAGE_DIRECTION_RE = re.compile(r"\([^)]*\)|\[[^]]*\]|\{[^}]*\}")
 
 # Skýr söngmerking í svigum eða hornklofum: `(singing)`, `(sings)`, `(sung)`,
 # `(starts to sing)`, `(starts to play and sing)`. Passar ekki við `song` eða
-# `guitar` ein og sér — það er viljandi (sjá `central_perk_songur`).
+# `guitar` ein og sér — það er viljandi (sjá söngmerkinguna í `central_perk_greining`).
 SINGING_CUE_RE = re.compile(
     r"[\[(][^)\]]*\b(?:singing|sings|sung|starts? to (?:play and )?sing)\b[^)\]]*[\])]",
     re.IGNORECASE,

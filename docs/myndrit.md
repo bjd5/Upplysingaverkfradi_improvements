@@ -78,7 +78,7 @@ Litir, letur, ákvarðað úttak og letursnið fylgja þá sjálfkrafa.
 ## 3. Litir og mæld andstæða
 
 Litahlutverkin eru skilgreind í `tokens.css` undir `--myndrit-*` og mæld gegn
-`--myndrit-bak` í báðum þemum. Mælt með `utflutningur.andstaeda` (WCAG 2.1):
+`--myndrit-bak` í báðum þemum. Mælt með `utflutningur.myndrit_litir` (WCAG 2.1):
 
 | Hlutverk | Token | Ljóst | Dökkt | Krafa |
 |---|---|---|---|---|

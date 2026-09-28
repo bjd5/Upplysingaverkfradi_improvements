@@ -16,7 +16,6 @@ import shutil  # noqa: E402
 import tempfile  # noqa: E402
 from pathlib import Path  # noqa: E402
 
-from utflutningur import andstaeda as mod_andstaeda  # noqa: E402
 from utflutningur import myndrit_litir  # noqa: E402
 from utflutningur.tokens import (  # noqa: E402
     DOKKT,
@@ -101,25 +100,25 @@ class AndstaedaTest(unittest.TestCase):
 
     def test_svart_a_hvitu_er_hamarkid(self) -> None:
         self.assertAlmostEqual(
-            SVART_A_HVITU, mod_andstaeda.andstaeda("#000000", "#ffffff"), places=2
+            SVART_A_HVITU, myndrit_litir.andstaeda("#000000", "#ffffff"), places=2
         )
 
     def test_sami_litur_gefur_eitt(self) -> None:
-        self.assertAlmostEqual(1.0, mod_andstaeda.andstaeda("#12657d", "#12657d"))
+        self.assertAlmostEqual(1.0, myndrit_litir.andstaeda("#12657d", "#12657d"))
 
     def test_rodin_skiptir_ekki_mali(self) -> None:
         self.assertAlmostEqual(
-            mod_andstaeda.andstaeda("#12657d", "#ffffff"),
-            mod_andstaeda.andstaeda("#ffffff", "#12657d"),
+            myndrit_litir.andstaeda("#12657d", "#ffffff"),
+            myndrit_litir.andstaeda("#ffffff", "#12657d"),
         )
 
     def test_thekktur_jafnvaegispunktur_stenst_textakrofuna(self) -> None:
-        maeling = mod_andstaeda.maela("mörk", MORK_GRATONN, "#ffffff")
+        maeling = myndrit_litir.maela("mörk", MORK_GRATONN, "#ffffff")
         self.assertTrue(maeling.stenst, maeling.lina())
         self.assertLess(maeling.hlutfall, 4.6, "jafnvægispunkturinn á að liggja rétt yfir 4,5")
 
     def test_maeling_sem_fellur_er_merkt_sem_fallin(self) -> None:
-        maeling = mod_andstaeda.maela("of ljóst", "#d8dee6", "#ffffff")
+        maeling = myndrit_litir.maela("of ljóst", "#d8dee6", "#ffffff")
         self.assertFalse(maeling.stenst)
         self.assertIn("FELLUR", maeling.lina())
 
@@ -152,7 +151,7 @@ class MyndritaKrofurTest(unittest.TestCase):
             myndrit_litir.TEXTI_DAUFT,
         ):
             with self.subTest(token=token):
-                self.assertEqual(mod_andstaeda.KRAFA_TEXTI, krofur[token])
+                self.assertEqual(myndrit_litir.KRAFA_TEXTI, krofur[token])
 
     def _falsad(self, texti: str) -> dict:
         with tempfile.TemporaryDirectory() as mappa:
