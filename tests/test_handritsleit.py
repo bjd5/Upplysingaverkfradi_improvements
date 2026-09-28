@@ -1,8 +1,9 @@
 """Próf fyrir handritsleitina — skilyrðið sem gerir valkost A í issue #3 lögmætan.
 
 Friends-tölurnar eru í git en handritin eru það ekki. Það stendur og fellur með
-einni fullyrðingu: **engin skrá geymir samfellda setningu úr þáttunum.** Hér er
-hún prófuð, í báðar áttir.
+einni fullyrðingu: **engin talnaskrá geymir samfellda setningu úr þáttunum.**
+Hér er hún prófuð, í báðar áttir. Hún nær til skránna sem leitin skannar, ekki
+til alls repo-sins — afmörkunin er í docs/adferdafraedi.md, kafla 1.5.2.
 
 Lærdómur úr docs/agenta-verkefni.md, kafla 15: *staðfesting sem getur stemmt af
 tilviljun er ekki staðfesting.* Þess vegna er ekki nóg að leitin skili engu á
@@ -226,9 +227,16 @@ class GervimoppaProf(unittest.TestCase):
 
 
 class RaunskrarProf(unittest.TestCase):
-    """Fullyrðingin sjálf: engin Friends-afleiða í git geymir samfellda setningu."""
+    """Fullyrðingin á skönnuðu skránum: engin geymir samfellda setningu.
 
-    def test_engin_samfelld_setning_i_repo_inu(self) -> None:
+    Afmörkunin er vísvitandi: leitin les JSON- og CSV-talnaskrárnar sem
+    `handritsreitir.MOPPUR` og `STAKAR_SKRAR` telja upp — ekki allt repo-ið.
+    Byggðu HTML-síðurnar í `docs/vidmid/vefur/` og `search.json` eru utan
+    hennar (docs/adferdafraedi.md, kafli 1.5.2). Grænt próf segir því ekkert um
+    þær, og nafnið segir það ekki heldur.
+    """
+
+    def test_skannadar_talnaskrar_geyma_enga_samfellda_setningu(self) -> None:
         fravik, talning = handritsleit.leita()
         self.assertEqual([str(f) for f in fravik], [])
         self.assertEqual(talning["skrar"], SKANNADAR_SKRAR)

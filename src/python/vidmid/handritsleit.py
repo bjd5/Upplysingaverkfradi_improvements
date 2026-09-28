@@ -1,4 +1,4 @@
-"""Leit að samfelldum handritstexta í Friends-afleiðunum sem eru í git.
+"""Leit að samfelldum handritstexta í Friends-talnaskránum sem eru í git.
 
 Þetta repo er opið og Friends-handritin eru höfundarréttarvarin. Valkostur A í
 issue #3 leyfir afleiddu **tölurnar** í git — línufjölda, senur, hlutföll,
@@ -20,6 +20,11 @@ gerir það löglegt er að engin skrá geymi samfellda setningu úr þáttunum.
 Tólið **prentar ekki innihald** brotlegs strengs, aðeins staðsetningu og
 mælingar. Væri hann handritstexti myndi prentunin afrita hann í logga og
 CI-úttök — nákvæmlega það sem á að koma í veg fyrir.
+
+**Afmörkun:** leitin les aðeins JSON- og CSV-talnaskrárnar sem
+`handritsreitir.py` telur upp. Byggðu HTML-síðurnar í `docs/vidmid/vefur/` og
+`search.json` eru utan hennar, og hrein keyrsla segir ekkert um þær — sjá
+docs/adferdafraedi.md, kafla 1.5.2.
 
 Keyrsla:
     python3 src/python/vidmid/handritsleit.py stadfesta
@@ -237,7 +242,7 @@ def leita(rot: Path = ROT) -> tuple[list[Frava], dict[str, int]]:
 
 
 def stadfesta() -> int:
-    """Skilar 0 sé enginn samfelldur handritstexti í afleiðunum, annars 1."""
+    """Skilar 0 sé enginn samfelldur handritstexti í talnaskránum, annars 1."""
     fravik, talning = leita()
     if fravik:
         # Regla 6: villur eru aldrei þaggaðar.
@@ -250,7 +255,8 @@ def stadfesta() -> int:
         return 1
 
     log.info(
-        "%d skrár, %d strengjagildi, %d undanþágur — engin samfelld setning",
+        "%d talnaskrár, %d strengjagildi, %d undanþágur — engin samfelld setning "
+        "(HTML-síður viðmiðsins eru utan leitarinnar)",
         talning["skrar"],
         talning["strengir"],
         talning["undantekningar"],

@@ -4,17 +4,23 @@ Aðskilið frá `handritsleit.py` af sömu ástæðu og `sofn.py` er aðskilið 
 `provenance.py`: leitarreglan er kóði sem má lesa í einu, en undanþágurnar eru
 **skjalfest ákvörðun** sem verður að vera hægt að lesa og vefengja eina og sér.
 
-Sjá docs/adferdafraedi.md, kafla 1.5, fyrir röksemdina að baki þröskuldunum.
+Sjá docs/adferdafraedi.md, kafla 1.5.2, fyrir röksemdina að baki þröskuldunum
+og afmörkun leitarinnar.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 
-# Allar Friends-afleiður sem eru í git. Þrjú afrit af tölfræðinni eru í
+# Allar Friends-TALNASKRÁR sem eru í git. Þrjú afrit af tölfræðinni eru í
 # repo-inu: vinnugagnið, frosna viðmiðið, og eintakið inni í byggðu gömlu
-# síðunni sem Observable Plot las. Fullyrðingin um að enginn handritstexti sé í
-# git nær til allra þriggja, svo leitin verður líka að gera það.
+# síðunni sem Observable Plot las. Leitin nær til allra þriggja.
+#
+# Hún nær EKKI til byggðu HTML-síðnanna í docs/vidmid/vefur/ né search.json.
+# Þær geyma orðréttar handritslínur, og hvort þær mega standa er óútkljáð
+# ákvörðun í issue #3 — ekki eitthvað sem þessi listi á að leysa hljóðlega með
+# því að bæta möppunni við eða undanskilja hana. Sjá docs/adferdafraedi.md,
+# kafla 1.5.2.
 MOPPUR = (
     "data/processed/phoebe-stats",
     "docs/vidmid/phoebe-stats",
