@@ -76,19 +76,31 @@ fara inn. Sjá ákvörðunarissue í fasa 0.
 ígrundanir teymisins og tokenmælaborðið flytjast ekki yfir — þau eru áfram í
 námskeiðsrepo-inu.
 
-Síður nýju vefsíðunnar:
+**Breytt 2026-09-28:** efninu er skipt í þrjá flokka — **Þema**, **Friends**
+og **Viðauka** — og umfangið víkkað um fjórar síður: Friends-gagnasöguna, tvær
+persónulegri Friends-síður og tokennotkun. Þær eru biðstöðusíður þar til efnið
+er flutt yfir. Lotusíður sem hafa engin gögn (Git, erindrekar, endurtækar
+skýrslur, rökfræði og mengi, SQL, myndræn framsetning) og ígrundanir teymisins
+flytjast áfram ekki yfir.
 
-| Slóð | Efni | Gagnasafn |
-|---|---|---|
-| `web/index.html` | Forsíða: hvað verkefnið er, helstu niðurstöður | — |
-| `web/sidur/skjalftavaktin.html` | Þemaverkefnið: jarðskjálftavirkni á Reykjanesi | 1 |
-| `web/sidur/hagstofan.html` | Brautskráning af háskólastigi | 2 |
-| `web/sidur/vedurstodvar.html` | Veðurstöðvar Veðurstofunnar | 3 |
-| `web/sidur/mbl-regex.html` | Reglulegar segðir á fréttaforsíðu | 4 |
-| `web/sidur/phoebe-tolfraedi.html` | Plass, nærvera og tengsl Phoebe | 6 |
-| `web/sidur/phoebe-central-perk.html` | Söngur Phoebe í Central Perk | 6 |
-| `web/sidur/phoebe-tmdb.html` | Hlutverkið í gagnagrunni TMDB | 5 |
-| `web/sidur/adferdafraedi.html` | Aðferð, heimildir og takmarkanir | — |
+| Flokkur | Slóð | Efni | Gagnasafn |
+|---|---|---|---|
+| — | `web/index.html` | Forsíða: hvað verkefnið er, einn kafli per flokk | — |
+| Þema | `web/sidur/skjalftavaktin.html` | Þemaverkefnið: jarðskjálftavirkni á Reykjanesi | 1 |
+| Friends | `web/sidur/friends-gagnasagan.html` | Hvaðan handritin koma *(biðstaða)* | 6 |
+| Friends | `web/sidur/phoebe-tolfraedi.html` | Plass, nærvera og tengsl Phoebe | 6 |
+| Friends | `web/sidur/phoebe-central-perk.html` | Söngur Phoebe í Central Perk | 6 |
+| Friends | `web/sidur/phoebe-tmdb.html` | Hlutverkið í gagnagrunni TMDB | 5 |
+| Friends | `web/sidur/uppahalds-video.html` | Okkar uppáhalds myndbönd *(biðstaða)* | — |
+| Friends | `web/sidur/phoebe-tribute.html` | Til heiðurs Phoebe *(biðstaða)* | — |
+| Viðauki A | `web/sidur/hagstofan.html` | Brautskráning af háskólastigi (lota: vefþjónustur) | 2 |
+| Viðauki B | `web/sidur/vedurstodvar.html` | Veðurstöðvar Veðurstofunnar (lota: vefþjónustur) | 3 |
+| Viðauki C | `web/sidur/mbl-regex.html` | Reglulegar segðir á fréttaforsíðu (lota: regex) | 4 |
+| Viðauki D | `web/sidur/adferdafraedi.html` | Aðferð, heimildir og takmarkanir | — |
+| Viðauki E | `web/sidur/tokennotkun.html` | Tokennotkun teymisins *(biðstaða)* | — |
+
+Myndbanda- og tribute-síðurnar mega aldrei hýsa myndbrot, myndir eða textabúta
+úr þáttunum — repo-ið er opið (sjá höfundarrétt í kafla 2).
 
 ---
 
