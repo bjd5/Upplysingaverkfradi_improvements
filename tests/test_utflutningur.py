@@ -154,6 +154,7 @@ class AkvordunProf(unittest.TestCase):
 
     def test_endurbyggdur_grunnur_med_adra_hledsluklukku_gefur_somu_baeti(self) -> None:
         """Bresta: loaded_at er ólíkt í grunnunum tveimur, en má ekki ná í úttakið."""
+        ug.uttak()  # fyrri grunnurinn og úttak hans verða til á undan sekúndumörkunum
         _bida_eftir_nyrri_sekundu()
         annar = ug.byggja_grunn(ug.TMP / "annar.sqlite")
         klukkur = [
