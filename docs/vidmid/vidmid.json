@@ -1,6 +1,6 @@
 {
   "snid_utgafa": 1,
-  "uppfaert": "2026-09-24T11:39:24Z",
+  "uppfaert": "2026-09-27T15:54:28Z",
   "verk": "P0.2 — vélleshæft viðmið úr byggðu síðunni (issue #30)",
   "lysing": "Hver tala sem gamla Quarto-síðan birtir, með síðu, kafla og samhengi. Afleiða af docs/vidmid/vefur/ — aldrei handbreytt.",
   "adferd": "html.parser úr staðalsafninu. Aðeins efnið innan <main id=quarto-document-content> er lesið, svo valmynd, brauðmylsna og fótur komast ekki með. Tala inni í kóðalistun er skráð en fær visst=false.",
@@ -16,16 +16,16 @@
       "reflections/ottar.html",
       "tokens/index.html"
     ],
-    "tolur_alls": 1391,
-    "efnislegar": 445,
+    "tolur_alls": 1383,
+    "efnislegar": 440,
     "eftir_flokki": {
       "tafla": 246,
-      "malsgrein": 168,
+      "malsgrein": 163,
       "listi": 19,
       "fyrirsogn": 12
     },
     "eftir_tegund": {
-      "heiltala": 316,
+      "heiltala": 311,
       "desimal": 62,
       "hlutfall": 30,
       "thusund": 25,
@@ -33,14 +33,14 @@
       "hlutfallstala": 3
     },
     "adrar_eftir_tegund": {
-      "heiltala": 359,
-      "aukenni": 197,
+      "heiltala": 351,
+      "aukenni": 203,
       "dagsetning": 104,
       "tilvisun": 85,
       "thattaraudkenni": 50,
       "desimal_punktur": 35,
       "litur": 28,
-      "ar": 26,
+      "ar": 25,
       "hlutfall": 12,
       "kodatala": 10,
       "myndnumer": 10,
@@ -59,15 +59,15 @@
       "sida": "capstone/earthquakes.html",
       "titill": "Skjálftavaktin · jarðskjálftagögn",
       "lota": "fdf1261",
-      "tolur": 255,
-      "efnislegar": 90
+      "tolur": 253,
+      "efnislegar": 89
     },
     {
       "sida": "friends/index.html",
       "titill": "Friends-gagnasagan",
       "lota": "5510cab",
-      "tolur": 26,
-      "efnislegar": 18
+      "tolur": 25,
+      "efnislegar": 16
     },
     {
       "sida": "friends/phoebe-statistics.html",
@@ -178,15 +178,15 @@
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "titill": "Veðurstofan (æfing 1B)",
       "lota": "9cf667d",
-      "tolur": 74,
+      "tolur": 71,
       "efnislegar": 41
     },
     {
       "sida": "phoebe-central-perk.html",
       "titill": "Phoebe syngur í Central Perk",
       "lota": "fdf1261",
-      "tolur": 70,
-      "efnislegar": 30
+      "tolur": 69,
+      "efnislegar": 28
     },
     {
       "sida": "project-management.html",
@@ -220,7 +220,7 @@
       "sida": "team.html",
       "titill": "Teymið",
       "lota": "fdf1261",
-      "tolur": 58,
+      "tolur": 57,
       "efnislegar": 16
     },
     {
@@ -260,8 +260,8 @@
       "sida": "capstone/earthquakes.html",
       "i_html": true,
       "stadir_i_html": [
-        "capstone/earthquakes.html#0103",
-        "capstone/earthquakes.html#0113"
+        "capstone/earthquakes.html#0102",
+        "capstone/earthquakes.html#0112"
       ],
       "ur_gagnaskra": null,
       "gagnaskra": null,
@@ -275,7 +275,7 @@
       "i_html": true,
       "stadir_i_html": [
         "capstone/earthquakes.html#0012",
-        "capstone/earthquakes.html#0104"
+        "capstone/earthquakes.html#0103"
       ],
       "ur_gagnaskra": null,
       "gagnaskra": null,
@@ -590,7 +590,7 @@
       ],
       "stadir": [
         {
-          "id": "capstone/earthquakes.html#0091",
+          "id": "capstone/earthquakes.html#0090",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -600,7 +600,7 @@
           "flokkur": "fyrirsogn"
         },
         {
-          "id": "capstone/earthquakes.html#0130",
+          "id": "capstone/earthquakes.html#0129",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -610,7 +610,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0132",
+          "id": "capstone/earthquakes.html#0131",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -620,7 +620,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0144",
+          "id": "capstone/earthquakes.html#0143",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -713,7 +713,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0018",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0015",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -722,7 +722,7 @@
           "flokkur": "listi"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0039",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0036",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -731,7 +731,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0056",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0053",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -740,7 +740,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "phoebe-central-perk.html#0053",
+          "id": "phoebe-central-perk.html#0052",
           "sida": "phoebe-central-perk.html",
           "kafli": [
             "Phoebe syngur í Central Perk",
@@ -751,7 +751,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "phoebe-central-perk.html#0067",
+          "id": "phoebe-central-perk.html#0066",
           "sida": "phoebe-central-perk.html",
           "kafli": [
             "Phoebe syngur í Central Perk",
@@ -862,7 +862,7 @@
       ],
       "stadir": [
         {
-          "id": "capstone/earthquakes.html#0066",
+          "id": "capstone/earthquakes.html#0065",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -872,7 +872,7 @@
           "flokkur": "fyrirsogn"
         },
         {
-          "id": "capstone/earthquakes.html#0118",
+          "id": "capstone/earthquakes.html#0117",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -882,7 +882,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0128",
+          "id": "capstone/earthquakes.html#0127",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -892,7 +892,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0142",
+          "id": "capstone/earthquakes.html#0141",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -902,7 +902,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0154",
+          "id": "capstone/earthquakes.html#0153",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -912,7 +912,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0166",
+          "id": "capstone/earthquakes.html#0165",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -922,7 +922,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0170",
+          "id": "capstone/earthquakes.html#0169",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -932,7 +932,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0215",
+          "id": "capstone/earthquakes.html#0214",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -942,7 +942,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "friends/index.html#0023",
+          "id": "friends/index.html#0022",
           "sida": "friends/index.html",
           "kafli": [
             "Phoebe í tölum: gagnasaga um skrítnustu vinkonuna í Central Perk",
@@ -1109,7 +1109,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0017",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0014",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -1118,7 +1118,7 @@
           "flokkur": "listi"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0027",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0024",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -1127,7 +1127,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0032",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0029",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -1136,7 +1136,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0067",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0064",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -1224,7 +1224,7 @@
       ],
       "stadir": [
         {
-          "id": "capstone/earthquakes.html#0114",
+          "id": "capstone/earthquakes.html#0113",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -1233,7 +1233,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0120",
+          "id": "capstone/earthquakes.html#0119",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -1243,7 +1243,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0140",
+          "id": "capstone/earthquakes.html#0139",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -1253,7 +1253,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0213",
+          "id": "capstone/earthquakes.html#0212",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -1327,7 +1327,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0030",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0027",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -1336,7 +1336,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0047",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0044",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -1519,7 +1519,7 @@
       ],
       "stadir": [
         {
-          "id": "capstone/earthquakes.html#0240",
+          "id": "capstone/earthquakes.html#0239",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -1575,7 +1575,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0048",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0045",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -2071,7 +2071,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0028",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0025",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -2080,7 +2080,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0029",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0026",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -2089,7 +2089,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "phoebe-central-perk.html#0064",
+          "id": "phoebe-central-perk.html#0063",
           "sida": "phoebe-central-perk.html",
           "kafli": [
             "Phoebe syngur í Central Perk",
@@ -2119,7 +2119,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "capstone/earthquakes.html#0104",
+          "id": "capstone/earthquakes.html#0103",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2158,7 +2158,7 @@
       ],
       "stadir": [
         {
-          "id": "capstone/earthquakes.html#0122",
+          "id": "capstone/earthquakes.html#0121",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2168,7 +2168,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0134",
+          "id": "capstone/earthquakes.html#0133",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2178,7 +2178,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "friends/index.html#0024",
+          "id": "friends/index.html#0023",
           "sida": "friends/index.html",
           "kafli": [
             "Phoebe í tölum: gagnasaga um skrítnustu vinkonuna í Central Perk",
@@ -2263,7 +2263,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0025",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0022",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -2283,6 +2283,15 @@
       ],
       "stadir": [
         {
+          "id": "capstone/earthquakes.html#0106",
+          "sida": "capstone/earthquakes.html",
+          "kafli": [
+            "Skjálftavaktin · jarðskjálftagögn",
+            "Fyrsta yfirlit úr hreinsuðum gögnum"
+          ],
+          "flokkur": "malsgrein"
+        },
+        {
           "id": "capstone/earthquakes.html#0107",
           "sida": "capstone/earthquakes.html",
           "kafli": [
@@ -2292,16 +2301,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "capstone/earthquakes.html#0108",
-          "sida": "capstone/earthquakes.html",
-          "kafli": [
-            "Skjálftavaktin · jarðskjálftagögn",
-            "Fyrsta yfirlit úr hreinsuðum gögnum"
-          ],
-          "flokkur": "malsgrein"
-        },
-        {
-          "id": "capstone/earthquakes.html#0124",
+          "id": "capstone/earthquakes.html#0123",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2311,7 +2311,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0146",
+          "id": "capstone/earthquakes.html#0145",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2321,7 +2321,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0148",
+          "id": "capstone/earthquakes.html#0147",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2331,7 +2331,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0150",
+          "id": "capstone/earthquakes.html#0149",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2341,7 +2341,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0152",
+          "id": "capstone/earthquakes.html#0151",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2351,7 +2351,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0156",
+          "id": "capstone/earthquakes.html#0155",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2361,7 +2361,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0158",
+          "id": "capstone/earthquakes.html#0157",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2371,7 +2371,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0160",
+          "id": "capstone/earthquakes.html#0159",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2381,7 +2381,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0162",
+          "id": "capstone/earthquakes.html#0161",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2391,7 +2391,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0164",
+          "id": "capstone/earthquakes.html#0163",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2401,7 +2401,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0168",
+          "id": "capstone/earthquakes.html#0167",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2411,7 +2411,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0172",
+          "id": "capstone/earthquakes.html#0171",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2421,7 +2421,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0174",
+          "id": "capstone/earthquakes.html#0173",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2431,7 +2431,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0176",
+          "id": "capstone/earthquakes.html#0175",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2441,7 +2441,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0179",
+          "id": "capstone/earthquakes.html#0178",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2451,7 +2451,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0181",
+          "id": "capstone/earthquakes.html#0180",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2461,7 +2461,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0183",
+          "id": "capstone/earthquakes.html#0182",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2471,7 +2471,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0185",
+          "id": "capstone/earthquakes.html#0184",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2481,7 +2481,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0187",
+          "id": "capstone/earthquakes.html#0186",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2491,7 +2491,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0189",
+          "id": "capstone/earthquakes.html#0188",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2501,7 +2501,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0191",
+          "id": "capstone/earthquakes.html#0190",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2511,7 +2511,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0193",
+          "id": "capstone/earthquakes.html#0192",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2521,7 +2521,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0195",
+          "id": "capstone/earthquakes.html#0194",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2531,7 +2531,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0197",
+          "id": "capstone/earthquakes.html#0196",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2541,7 +2541,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0199",
+          "id": "capstone/earthquakes.html#0198",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2551,7 +2551,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0201",
+          "id": "capstone/earthquakes.html#0200",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2561,7 +2561,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0203",
+          "id": "capstone/earthquakes.html#0202",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2571,7 +2571,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0205",
+          "id": "capstone/earthquakes.html#0204",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2581,7 +2581,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0207",
+          "id": "capstone/earthquakes.html#0206",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2591,7 +2591,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0209",
+          "id": "capstone/earthquakes.html#0208",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2601,7 +2601,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0211",
+          "id": "capstone/earthquakes.html#0210",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2611,7 +2611,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0217",
+          "id": "capstone/earthquakes.html#0216",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2621,7 +2621,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0219",
+          "id": "capstone/earthquakes.html#0218",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2631,7 +2631,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0221",
+          "id": "capstone/earthquakes.html#0220",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2641,7 +2641,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0223",
+          "id": "capstone/earthquakes.html#0222",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2651,7 +2651,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0225",
+          "id": "capstone/earthquakes.html#0224",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2661,7 +2661,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0227",
+          "id": "capstone/earthquakes.html#0226",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2671,7 +2671,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0229",
+          "id": "capstone/earthquakes.html#0228",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2681,7 +2681,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0231",
+          "id": "capstone/earthquakes.html#0230",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2691,7 +2691,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0233",
+          "id": "capstone/earthquakes.html#0232",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2701,7 +2701,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0235",
+          "id": "capstone/earthquakes.html#0234",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2711,7 +2711,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0237",
+          "id": "capstone/earthquakes.html#0236",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2721,7 +2721,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "capstone/earthquakes.html#0239",
+          "id": "capstone/earthquakes.html#0238",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2789,34 +2789,6 @@
       ]
     },
     {
-      "gildi": 1017,
-      "eining": null,
-      "sidur": [
-        "friends/index.html",
-        "phoebe-central-perk.html"
-      ],
-      "stadir": [
-        {
-          "id": "friends/index.html#0018",
-          "sida": "friends/index.html",
-          "kafli": [
-            "Phoebe í tölum: gagnasaga um skrítnustu vinkonuna í Central Perk",
-            "Gögnin"
-          ],
-          "flokkur": "malsgrein"
-        },
-        {
-          "id": "phoebe-central-perk.html#0036",
-          "sida": "phoebe-central-perk.html",
-          "kafli": [
-            "Phoebe syngur í Central Perk",
-            "Spurningin"
-          ],
-          "flokkur": "malsgrein"
-        }
-      ]
-    },
-    {
       "gildi": 229,
       "eining": "skrár",
       "sidur": [
@@ -2834,7 +2806,7 @@
           "flokkur": "listi"
         },
         {
-          "id": "phoebe-central-perk.html#0040",
+          "id": "phoebe-central-perk.html#0039",
           "sida": "phoebe-central-perk.html",
           "kafli": [
             "Phoebe syngur í Central Perk",
@@ -2853,7 +2825,7 @@
       ],
       "stadir": [
         {
-          "id": "capstone/earthquakes.html#0056",
+          "id": "capstone/earthquakes.html#0055",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2862,7 +2834,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "team.html#0051",
+          "id": "team.html#0050",
           "sida": "team.html",
           "kafli": [
             "Teymið",
@@ -2882,7 +2854,7 @@
       ],
       "stadir": [
         {
-          "id": "capstone/earthquakes.html#0055",
+          "id": "capstone/earthquakes.html#0054",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -2891,7 +2863,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "team.html#0050",
+          "id": "team.html#0049",
           "sida": "team.html",
           "kafli": [
             "Teymið",
@@ -2977,7 +2949,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0063",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0060",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -2996,7 +2968,7 @@
       ],
       "stadir": [
         {
-          "id": "capstone/earthquakes.html#0110",
+          "id": "capstone/earthquakes.html#0109",
           "sida": "capstone/earthquakes.html",
           "kafli": [
             "Skjálftavaktin · jarðskjálftagögn",
@@ -3072,7 +3044,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "lotur/vefthjonustur/vedurstofan.html#0024",
+          "id": "lotur/vefthjonustur/vedurstofan.html#0021",
           "sida": "lotur/vefthjonustur/vedurstofan.html",
           "kafli": [
             "Veðurstofan (æfing 1B)",
@@ -3214,35 +3186,6 @@
       ],
       "stadir": [
         {
-          "id": "capstone/earthquakes.html#0054",
-          "sida": "capstone/earthquakes.html",
-          "kafli": [
-            "Skjálftavaktin · jarðskjálftagögn",
-            "Gagnaveita, aðgangur og sókn"
-          ],
-          "flokkur": "malsgrein"
-        },
-        {
-          "id": "team.html#0049",
-          "sida": "team.html",
-          "kafli": [
-            "Teymið",
-            "Hvernig við vinnum",
-            "Gagnaveita þemaverkefnisins · hluti 2A"
-          ],
-          "flokkur": "malsgrein"
-        }
-      ]
-    },
-    {
-      "gildi": -23,
-      "eining": null,
-      "sidur": [
-        "capstone/earthquakes.html",
-        "team.html"
-      ],
-      "stadir": [
-        {
           "id": "capstone/earthquakes.html#0053",
           "sida": "capstone/earthquakes.html",
           "kafli": [
@@ -3264,28 +3207,29 @@
       ]
     },
     {
-      "gildi": -1018,
+      "gildi": -23,
       "eining": null,
       "sidur": [
-        "friends/index.html",
-        "phoebe-central-perk.html"
+        "capstone/earthquakes.html",
+        "team.html"
       ],
       "stadir": [
         {
-          "id": "friends/index.html#0019",
-          "sida": "friends/index.html",
+          "id": "capstone/earthquakes.html#0052",
+          "sida": "capstone/earthquakes.html",
           "kafli": [
-            "Phoebe í tölum: gagnasaga um skrítnustu vinkonuna í Central Perk",
-            "Gögnin"
+            "Skjálftavaktin · jarðskjálftagögn",
+            "Gagnaveita, aðgangur og sókn"
           ],
           "flokkur": "malsgrein"
         },
         {
-          "id": "phoebe-central-perk.html#0037",
-          "sida": "phoebe-central-perk.html",
+          "id": "team.html#0047",
+          "sida": "team.html",
           "kafli": [
-            "Phoebe syngur í Central Perk",
-            "Spurningin"
+            "Teymið",
+            "Hvernig við vinnum",
+            "Gagnaveita þemaverkefnisins · hluti 2A"
           ],
           "flokkur": "malsgrein"
         }
@@ -4104,36 +4048,16 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "28",
-      "gildi": 28,
+      "texti": "28-23",
+      "gildi": null,
       "bil": null,
       "eining": null,
-      "tegund": "heiltala",
+      "tegund": "aukenni",
       "visst": false,
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
       "id": "capstone/earthquakes.html#0040",
-      "sida": "capstone/earthquakes.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Skjálftavaktin · jarðskjálftagögn",
-        "Gagnaveita, aðgangur og sókn"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "-23",
-      "gildi": -23,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
-    },
-    {
-      "id": "capstone/earthquakes.html#0041",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4153,7 +4077,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "capstone/earthquakes.html#0042",
+      "id": "capstone/earthquakes.html#0041",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4173,7 +4097,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "capstone/earthquakes.html#0043",
+      "id": "capstone/earthquakes.html#0042",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4193,7 +4117,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "capstone/earthquakes.html#0044",
+      "id": "capstone/earthquakes.html#0043",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4213,7 +4137,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "capstone/earthquakes.html#0045",
+      "id": "capstone/earthquakes.html#0044",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4233,7 +4157,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "capstone/earthquakes.html#0046",
+      "id": "capstone/earthquakes.html#0045",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4253,7 +4177,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "capstone/earthquakes.html#0047",
+      "id": "capstone/earthquakes.html#0046",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4273,7 +4197,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "capstone/earthquakes.html#0048",
+      "id": "capstone/earthquakes.html#0047",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4293,7 +4217,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl."
     },
     {
-      "id": "capstone/earthquakes.html#0049",
+      "id": "capstone/earthquakes.html#0048",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4313,7 +4237,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl."
     },
     {
-      "id": "capstone/earthquakes.html#0050",
+      "id": "capstone/earthquakes.html#0049",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4333,7 +4257,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl."
     },
     {
-      "id": "capstone/earthquakes.html#0051",
+      "id": "capstone/earthquakes.html#0050",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4353,7 +4277,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl."
     },
     {
-      "id": "capstone/earthquakes.html#0052",
+      "id": "capstone/earthquakes.html#0051",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4373,7 +4297,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl."
     },
     {
-      "id": "capstone/earthquakes.html#0053",
+      "id": "capstone/earthquakes.html#0052",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4393,7 +4317,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl. 00:00 UTC; upphaf meðtalið, endir undanskilinn. Lengdargráða −23 til −21,5; breiddargráða 63,7 til 64,1. Stærð 3–7, dýpt 0–50 km; aðeins earthquake , manual , sil ."
     },
     {
-      "id": "capstone/earthquakes.html#0054",
+      "id": "capstone/earthquakes.html#0053",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4413,7 +4337,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl. 00:00 UTC; upphaf meðtalið, endir undanskilinn. Lengdargráða −23 til −21,5; breiddargráða 63,7 til 64,1. Stærð 3–7, dýpt 0–50 km; aðeins earthquake , manual , sil ."
     },
     {
-      "id": "capstone/earthquakes.html#0055",
+      "id": "capstone/earthquakes.html#0054",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4433,7 +4357,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl. 00:00 UTC; upphaf meðtalið, endir undanskilinn. Lengdargráða −23 til −21,5; breiddargráða 63,7 til 64,1. Stærð 3–7, dýpt 0–50 km; aðeins earthquake , manual , sil ."
     },
     {
-      "id": "capstone/earthquakes.html#0056",
+      "id": "capstone/earthquakes.html#0055",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4453,7 +4377,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl. 00:00 UTC; upphaf meðtalið, endir undanskilinn. Lengdargráða −23 til −21,5; breiddargráða 63,7 til 64,1. Stærð 3–7, dýpt 0–50 km; aðeins earthquake , manual , sil ."
     },
     {
-      "id": "capstone/earthquakes.html#0057",
+      "id": "capstone/earthquakes.html#0056",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4476,7 +4400,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl. 00:00 UTC; upphaf meðtalið, endir undanskilinn. Lengdargráða −23 til −21,5; breiddargráða 63,7 til 64,1. Stærð 3–7, dýpt 0–50 km; aðeins earthquake , manual , sil ."
     },
     {
-      "id": "capstone/earthquakes.html#0058",
+      "id": "capstone/earthquakes.html#0057",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4499,7 +4423,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl. 00:00 UTC; upphaf meðtalið, endir undanskilinn. Lengdargráða −23 til −21,5; breiddargráða 63,7 til 64,1. Stærð 3–7, dýpt 0–50 km; aðeins earthquake , manual , sil ."
     },
     {
-      "id": "capstone/earthquakes.html#0059",
+      "id": "capstone/earthquakes.html#0058",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4519,7 +4443,7 @@
       "samhengi": "SHA-256: a535359ea84346426d5ce7fccf4ce8e5158b712e4fc66378dae4b291f771fa9a ."
     },
     {
-      "id": "capstone/earthquakes.html#0060",
+      "id": "capstone/earthquakes.html#0059",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4539,7 +4463,7 @@
       "samhengi": "SHA-256: a535359ea84346426d5ce7fccf4ce8e5158b712e4fc66378dae4b291f771fa9a ."
     },
     {
-      "id": "capstone/earthquakes.html#0061",
+      "id": "capstone/earthquakes.html#0060",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4560,7 +4484,7 @@
       "samhengi": "Sækja. Sjálfgefið les skriftan vistaða svarið úr data/raw/vedur-quakes/ og staðfestir SHA-256 þess — engin netþörf. Með "
     },
     {
-      "id": "capstone/earthquakes.html#0062",
+      "id": "capstone/earthquakes.html#0061",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4579,6 +4503,27 @@
       "tegund": "aukenni",
       "visst": false,
       "samhengi": "Óbreytt svar og upprunaskrá með UTC-sóknartíma og SHA-256 fylgja repo-inu undir data/raw/vedur-quakes/ svo endurkeyrsla "
+    },
+    {
+      "id": "capstone/earthquakes.html#0062",
+      "sida": "capstone/earthquakes.html",
+      "lota": "fdf1261",
+      "kafli": [
+        "Skjálftavaktin · jarðskjálftagögn",
+        "Gagnaveita, aðgangur og sókn",
+        "Aðferðin í fimm skrefum"
+      ],
+      "flokkur": "kodi",
+      "tafla": null,
+      "lina": null,
+      "sulka": null,
+      "texti": "utf8",
+      "gildi": null,
+      "bil": null,
+      "eining": null,
+      "tegund": "aukenni",
+      "visst": false,
+      "samhengi": "# Endurvinnur vistaða svarið án netsambands: python -X utf8 src/earthquakes.py # Sækir nýja útgáfu sama afmarkaða gagnas"
     },
     {
       "id": "capstone/earthquakes.html#0063",
@@ -4607,27 +4552,6 @@
       "lota": "fdf1261",
       "kafli": [
         "Skjálftavaktin · jarðskjálftagögn",
-        "Gagnaveita, aðgangur og sókn",
-        "Aðferðin í fimm skrefum"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "utf8",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "# Endurvinnur vistaða svarið án netsambands: python -X utf8 src/earthquakes.py # Sækir nýja útgáfu sama afmarkaða gagnas"
-    },
-    {
-      "id": "capstone/earthquakes.html#0065",
-      "sida": "capstone/earthquakes.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Skjálftavaktin · jarðskjálftagögn",
         "Regex sem býr til rekjanlega lykla"
       ],
       "flokkur": "malsgrein",
@@ -4643,7 +4567,7 @@
       "samhengi": "Hluti 2C í regex-lotunni. Sjá líka inngang regex-lotunnar ."
     },
     {
-      "id": "capstone/earthquakes.html#0066",
+      "id": "capstone/earthquakes.html#0065",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4664,7 +4588,7 @@
       "samhengi": "Regex 1: UTC-tímastimpill verður daglykill"
     },
     {
-      "id": "capstone/earthquakes.html#0067",
+      "id": "capstone/earthquakes.html#0066",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4685,7 +4609,7 @@
       "samhengi": "(?P < utc_day > [ 0 - 9 ]{ 4 } - [ 0 - 9 ]{ 2 } - [ 0 - 9 ]{ 2 })T[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }(?:\\.[ 0 -"
     },
     {
-      "id": "capstone/earthquakes.html#0068",
+      "id": "capstone/earthquakes.html#0067",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4706,7 +4630,7 @@
       "samhengi": "(?P < utc_day > [ 0 - 9 ]{ 4 } - [ 0 - 9 ]{ 2 } - [ 0 - 9 ]{ 2 })T[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }(?:\\.[ 0 -"
     },
     {
-      "id": "capstone/earthquakes.html#0069",
+      "id": "capstone/earthquakes.html#0068",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4727,7 +4651,7 @@
       "samhengi": "(?P < utc_day > [ 0 - 9 ]{ 4 } - [ 0 - 9 ]{ 2 } - [ 0 - 9 ]{ 2 })T[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }(?:\\.[ 0 -"
     },
     {
-      "id": "capstone/earthquakes.html#0070",
+      "id": "capstone/earthquakes.html#0069",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -4741,6 +4665,27 @@
       "sulka": null,
       "texti": "0",
       "gildi": 0,
+      "bil": null,
+      "eining": null,
+      "tegund": "heiltala",
+      "visst": false,
+      "samhengi": "(?P < utc_day > [ 0 - 9 ]{ 4 } - [ 0 - 9 ]{ 2 } - [ 0 - 9 ]{ 2 })T[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }(?:\\.[ 0 -"
+    },
+    {
+      "id": "capstone/earthquakes.html#0070",
+      "sida": "capstone/earthquakes.html",
+      "lota": "fdf1261",
+      "kafli": [
+        "Skjálftavaktin · jarðskjálftagögn",
+        "Regex sem býr til rekjanlega lykla",
+        "Regex 1: UTC-tímastimpill verður daglykill"
+      ],
+      "flokkur": "kodi",
+      "tafla": null,
+      "lina": null,
+      "sulka": null,
+      "texti": "9",
+      "gildi": 9,
       "bil": null,
       "eining": null,
       "tegund": "heiltala",
@@ -4760,8 +4705,8 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "9",
-      "gildi": 9,
+      "texti": "2",
+      "gildi": 2,
       "bil": null,
       "eining": null,
       "tegund": "heiltala",
@@ -4781,8 +4726,8 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "2",
-      "gildi": 2,
+      "texti": "0",
+      "gildi": 0,
       "bil": null,
       "eining": null,
       "tegund": "heiltala",
@@ -4802,8 +4747,8 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "0",
-      "gildi": 0,
+      "texti": "9",
+      "gildi": 9,
       "bil": null,
       "eining": null,
       "tegund": "heiltala",
@@ -4823,8 +4768,8 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "9",
-      "gildi": 9,
+      "texti": "2",
+      "gildi": 2,
       "bil": null,
       "eining": null,
       "tegund": "heiltala",
@@ -4844,8 +4789,8 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "2",
-      "gildi": 2,
+      "texti": "0",
+      "gildi": 0,
       "bil": null,
       "eining": null,
       "tegund": "heiltala",
@@ -4865,8 +4810,8 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "0",
-      "gildi": 0,
+      "texti": "9",
+      "gildi": 9,
       "bil": null,
       "eining": null,
       "tegund": "heiltala",
@@ -4886,8 +4831,8 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "9",
-      "gildi": 9,
+      "texti": "2",
+      "gildi": 2,
       "bil": null,
       "eining": null,
       "tegund": "heiltala",
@@ -4907,8 +4852,8 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "2",
-      "gildi": 2,
+      "texti": "0",
+      "gildi": 0,
       "bil": null,
       "eining": null,
       "tegund": "heiltala",
@@ -4928,8 +4873,8 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "0",
-      "gildi": 0,
+      "texti": "9",
+      "gildi": 9,
       "bil": null,
       "eining": null,
       "tegund": "heiltala",
@@ -4949,8 +4894,8 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "9",
-      "gildi": 9,
+      "texti": "2",
+      "gildi": 2,
       "bil": null,
       "eining": null,
       "tegund": "heiltala",
@@ -4970,8 +4915,8 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "2",
-      "gildi": 2,
+      "texti": "0",
+      "gildi": 0,
       "bil": null,
       "eining": null,
       "tegund": "heiltala",
@@ -4991,27 +4936,6 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "(?P < utc_day > [ 0 - 9 ]{ 4 } - [ 0 - 9 ]{ 2 } - [ 0 - 9 ]{ 2 })T[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }(?:\\.[ 0 -"
-    },
-    {
-      "id": "capstone/earthquakes.html#0083",
-      "sida": "capstone/earthquakes.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Skjálftavaktin · jarðskjálftagögn",
-        "Regex sem býr til rekjanlega lykla",
-        "Regex 1: UTC-tímastimpill verður daglykill"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
       "texti": "9",
       "gildi": 9,
       "bil": null,
@@ -5021,7 +4945,7 @@
       "samhengi": "(?P < utc_day > [ 0 - 9 ]{ 4 } - [ 0 - 9 ]{ 2 } - [ 0 - 9 ]{ 2 })T[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }(?:\\.[ 0 -"
     },
     {
-      "id": "capstone/earthquakes.html#0084",
+      "id": "capstone/earthquakes.html#0083",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5042,7 +4966,7 @@
       "samhengi": "(?P < utc_day > [ 0 - 9 ]{ 4 } - [ 0 - 9 ]{ 2 } - [ 0 - 9 ]{ 2 })T[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }(?:\\.[ 0 -"
     },
     {
-      "id": "capstone/earthquakes.html#0085",
+      "id": "capstone/earthquakes.html#0084",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5063,7 +4987,7 @@
       "samhengi": "(?P < utc_day > [ 0 - 9 ]{ 4 } - [ 0 - 9 ]{ 2 } - [ 0 - 9 ]{ 2 })T[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }(?:\\.[ 0 -"
     },
     {
-      "id": "capstone/earthquakes.html#0086",
+      "id": "capstone/earthquakes.html#0085",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5084,7 +5008,7 @@
       "samhengi": "(?P < utc_day > [ 0 - 9 ]{ 4 } - [ 0 - 9 ]{ 2 } - [ 0 - 9 ]{ 2 })T[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }:[ 0 - 9 ]{ 2 }(?:\\.[ 0 -"
     },
     {
-      "id": "capstone/earthquakes.html#0087",
+      "id": "capstone/earthquakes.html#0086",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5105,7 +5029,7 @@
       "samhengi": "2023-11-01T00:56:41.645Z"
     },
     {
-      "id": "capstone/earthquakes.html#0088",
+      "id": "capstone/earthquakes.html#0087",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5126,7 +5050,7 @@
       "samhengi": "2023-11-01"
     },
     {
-      "id": "capstone/earthquakes.html#0089",
+      "id": "capstone/earthquakes.html#0088",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5147,7 +5071,7 @@
       "samhengi": "2023-11-02T20:35:42.458Z"
     },
     {
-      "id": "capstone/earthquakes.html#0090",
+      "id": "capstone/earthquakes.html#0089",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5168,7 +5092,7 @@
       "samhengi": "2023-11-02"
     },
     {
-      "id": "capstone/earthquakes.html#0091",
+      "id": "capstone/earthquakes.html#0090",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5189,7 +5113,7 @@
       "samhengi": "Regex 2: SIL-auðkenni verður samsettur atburðalykill"
     },
     {
-      "id": "capstone/earthquakes.html#0092",
+      "id": "capstone/earthquakes.html#0091",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5210,7 +5134,7 @@
       "samhengi": "(?P < source_system > SIL)(?P < event_number > [ 1 - 9 ][ 0 - 9 ] * )"
     },
     {
-      "id": "capstone/earthquakes.html#0093",
+      "id": "capstone/earthquakes.html#0092",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5231,7 +5155,7 @@
       "samhengi": "(?P < source_system > SIL)(?P < event_number > [ 1 - 9 ][ 0 - 9 ] * )"
     },
     {
-      "id": "capstone/earthquakes.html#0094",
+      "id": "capstone/earthquakes.html#0093",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5252,7 +5176,7 @@
       "samhengi": "(?P < source_system > SIL)(?P < event_number > [ 1 - 9 ][ 0 - 9 ] * )"
     },
     {
-      "id": "capstone/earthquakes.html#0095",
+      "id": "capstone/earthquakes.html#0094",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5273,7 +5197,7 @@
       "samhengi": "(?P < source_system > SIL)(?P < event_number > [ 1 - 9 ][ 0 - 9 ] * )"
     },
     {
-      "id": "capstone/earthquakes.html#0096",
+      "id": "capstone/earthquakes.html#0095",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5294,7 +5218,7 @@
       "samhengi": "SIL1235710"
     },
     {
-      "id": "capstone/earthquakes.html#0097",
+      "id": "capstone/earthquakes.html#0096",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5315,7 +5239,7 @@
       "samhengi": "1235710"
     },
     {
-      "id": "capstone/earthquakes.html#0098",
+      "id": "capstone/earthquakes.html#0097",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5336,7 +5260,7 @@
       "samhengi": "SIL:1235710"
     },
     {
-      "id": "capstone/earthquakes.html#0099",
+      "id": "capstone/earthquakes.html#0098",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5357,7 +5281,7 @@
       "samhengi": "SIL1237655"
     },
     {
-      "id": "capstone/earthquakes.html#0100",
+      "id": "capstone/earthquakes.html#0099",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5378,7 +5302,7 @@
       "samhengi": "1237655"
     },
     {
-      "id": "capstone/earthquakes.html#0101",
+      "id": "capstone/earthquakes.html#0100",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5399,7 +5323,7 @@
       "samhengi": "SIL:1237655"
     },
     {
-      "id": "capstone/earthquakes.html#0102",
+      "id": "capstone/earthquakes.html#0101",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5419,7 +5343,7 @@
       "samhengi": "Hluti 2D."
     },
     {
-      "id": "capstone/earthquakes.html#0103",
+      "id": "capstone/earthquakes.html#0102",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5439,7 +5363,7 @@
       "samhengi": "Úrtakið inniheldur 334 yfirfarna SIL-jarðskjálfta á 61 UTC-dögum frá 2023-11-01 til 2023-12-31, innan reitsins og stærðar-/dýptarmarkanna að ofan."
     },
     {
-      "id": "capstone/earthquakes.html#0104",
+      "id": "capstone/earthquakes.html#0103",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5459,7 +5383,7 @@
       "samhengi": "Úrtakið inniheldur 334 yfirfarna SIL-jarðskjálfta á 61 UTC-dögum frá 2023-11-01 til 2023-12-31, innan reitsins og stærðar-/dýptarmarkanna að ofan."
     },
     {
-      "id": "capstone/earthquakes.html#0105",
+      "id": "capstone/earthquakes.html#0104",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5479,7 +5403,7 @@
       "samhengi": "Úrtakið inniheldur 334 yfirfarna SIL-jarðskjálfta á 61 UTC-dögum frá 2023-11-01 til 2023-12-31, innan reitsins og stærða"
     },
     {
-      "id": "capstone/earthquakes.html#0106",
+      "id": "capstone/earthquakes.html#0105",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5499,7 +5423,7 @@
       "samhengi": "Úrtakið inniheldur 334 yfirfarna SIL-jarðskjálfta á 61 UTC-dögum frá 2023-11-01 til 2023-12-31, innan reitsins og stærða"
     },
     {
-      "id": "capstone/earthquakes.html#0107",
+      "id": "capstone/earthquakes.html#0106",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5519,7 +5443,7 @@
       "samhengi": "Daglegur fjöldi: miðgildi 0,00; lágmark 0, hámark 187. Dagar án atburðar sem stenst þessar síur: 43 ."
     },
     {
-      "id": "capstone/earthquakes.html#0108",
+      "id": "capstone/earthquakes.html#0107",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5539,7 +5463,7 @@
       "samhengi": "Daglegur fjöldi: miðgildi 0,00; lágmark 0, hámark 187. Dagar án atburðar sem stenst þessar síur: 43 ."
     },
     {
-      "id": "capstone/earthquakes.html#0109",
+      "id": "capstone/earthquakes.html#0108",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5559,7 +5483,7 @@
       "samhengi": "Daglegur fjöldi: miðgildi 0,00; lágmark 0, hámark 187. Dagar án atburðar sem stenst þessar síur: 43 ."
     },
     {
-      "id": "capstone/earthquakes.html#0110",
+      "id": "capstone/earthquakes.html#0109",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5579,7 +5503,7 @@
       "samhengi": "Daglegur fjöldi: miðgildi 0,00; lágmark 0, hámark 187. Dagar án atburðar sem stenst þessar síur: 43 ."
     },
     {
-      "id": "capstone/earthquakes.html#0111",
+      "id": "capstone/earthquakes.html#0110",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5602,7 +5526,7 @@
       "samhengi": "Dýpt: 0,07–11,26 km; miðgildi 4,67 km."
     },
     {
-      "id": "capstone/earthquakes.html#0112",
+      "id": "capstone/earthquakes.html#0111",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5622,7 +5546,7 @@
       "samhengi": "Dýpt: 0,07–11,26 km; miðgildi 4,67 km."
     },
     {
-      "id": "capstone/earthquakes.html#0113",
+      "id": "capstone/earthquakes.html#0112",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5642,7 +5566,7 @@
       "samhengi": "334"
     },
     {
-      "id": "capstone/earthquakes.html#0114",
+      "id": "capstone/earthquakes.html#0113",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5662,7 +5586,7 @@
       "samhengi": "3,00"
     },
     {
-      "id": "capstone/earthquakes.html#0115",
+      "id": "capstone/earthquakes.html#0114",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5682,7 +5606,7 @@
       "samhengi": "4,98"
     },
     {
-      "id": "capstone/earthquakes.html#0116",
+      "id": "capstone/earthquakes.html#0115",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5702,7 +5626,7 @@
       "samhengi": "3,47"
     },
     {
-      "id": "capstone/earthquakes.html#0117",
+      "id": "capstone/earthquakes.html#0116",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5723,7 +5647,7 @@
       "samhengi": "01.11."
     },
     {
-      "id": "capstone/earthquakes.html#0118",
+      "id": "capstone/earthquakes.html#0117",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5744,7 +5668,7 @@
       "samhengi": "1"
     },
     {
-      "id": "capstone/earthquakes.html#0119",
+      "id": "capstone/earthquakes.html#0118",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5765,7 +5689,7 @@
       "samhengi": "02.11."
     },
     {
-      "id": "capstone/earthquakes.html#0120",
+      "id": "capstone/earthquakes.html#0119",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5786,7 +5710,7 @@
       "samhengi": "3"
     },
     {
-      "id": "capstone/earthquakes.html#0121",
+      "id": "capstone/earthquakes.html#0120",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5807,7 +5731,7 @@
       "samhengi": "03.11."
     },
     {
-      "id": "capstone/earthquakes.html#0122",
+      "id": "capstone/earthquakes.html#0121",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5828,7 +5752,7 @@
       "samhengi": "24"
     },
     {
-      "id": "capstone/earthquakes.html#0123",
+      "id": "capstone/earthquakes.html#0122",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5849,7 +5773,7 @@
       "samhengi": "04.11."
     },
     {
-      "id": "capstone/earthquakes.html#0124",
+      "id": "capstone/earthquakes.html#0123",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5870,7 +5794,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0125",
+      "id": "capstone/earthquakes.html#0124",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5891,7 +5815,7 @@
       "samhengi": "05.11."
     },
     {
-      "id": "capstone/earthquakes.html#0126",
+      "id": "capstone/earthquakes.html#0125",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5912,7 +5836,7 @@
       "samhengi": "26"
     },
     {
-      "id": "capstone/earthquakes.html#0127",
+      "id": "capstone/earthquakes.html#0126",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5933,7 +5857,7 @@
       "samhengi": "06.11."
     },
     {
-      "id": "capstone/earthquakes.html#0128",
+      "id": "capstone/earthquakes.html#0127",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5954,7 +5878,7 @@
       "samhengi": "1"
     },
     {
-      "id": "capstone/earthquakes.html#0129",
+      "id": "capstone/earthquakes.html#0128",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5975,7 +5899,7 @@
       "samhengi": "07.11."
     },
     {
-      "id": "capstone/earthquakes.html#0130",
+      "id": "capstone/earthquakes.html#0129",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -5996,7 +5920,7 @@
       "samhengi": "2"
     },
     {
-      "id": "capstone/earthquakes.html#0131",
+      "id": "capstone/earthquakes.html#0130",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6017,7 +5941,7 @@
       "samhengi": "08.11."
     },
     {
-      "id": "capstone/earthquakes.html#0132",
+      "id": "capstone/earthquakes.html#0131",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6038,7 +5962,7 @@
       "samhengi": "2"
     },
     {
-      "id": "capstone/earthquakes.html#0133",
+      "id": "capstone/earthquakes.html#0132",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6059,7 +5983,7 @@
       "samhengi": "09.11."
     },
     {
-      "id": "capstone/earthquakes.html#0134",
+      "id": "capstone/earthquakes.html#0133",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6080,7 +6004,7 @@
       "samhengi": "24"
     },
     {
-      "id": "capstone/earthquakes.html#0135",
+      "id": "capstone/earthquakes.html#0134",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6101,7 +6025,7 @@
       "samhengi": "10.11."
     },
     {
-      "id": "capstone/earthquakes.html#0136",
+      "id": "capstone/earthquakes.html#0135",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6122,7 +6046,7 @@
       "samhengi": "187"
     },
     {
-      "id": "capstone/earthquakes.html#0137",
+      "id": "capstone/earthquakes.html#0136",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6143,7 +6067,7 @@
       "samhengi": "11.11."
     },
     {
-      "id": "capstone/earthquakes.html#0138",
+      "id": "capstone/earthquakes.html#0137",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6164,7 +6088,7 @@
       "samhengi": "51"
     },
     {
-      "id": "capstone/earthquakes.html#0139",
+      "id": "capstone/earthquakes.html#0138",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6185,7 +6109,7 @@
       "samhengi": "12.11."
     },
     {
-      "id": "capstone/earthquakes.html#0140",
+      "id": "capstone/earthquakes.html#0139",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6206,7 +6130,7 @@
       "samhengi": "3"
     },
     {
-      "id": "capstone/earthquakes.html#0141",
+      "id": "capstone/earthquakes.html#0140",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6227,7 +6151,7 @@
       "samhengi": "13.11."
     },
     {
-      "id": "capstone/earthquakes.html#0142",
+      "id": "capstone/earthquakes.html#0141",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6248,7 +6172,7 @@
       "samhengi": "1"
     },
     {
-      "id": "capstone/earthquakes.html#0143",
+      "id": "capstone/earthquakes.html#0142",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6269,7 +6193,7 @@
       "samhengi": "14.11."
     },
     {
-      "id": "capstone/earthquakes.html#0144",
+      "id": "capstone/earthquakes.html#0143",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6290,7 +6214,7 @@
       "samhengi": "2"
     },
     {
-      "id": "capstone/earthquakes.html#0145",
+      "id": "capstone/earthquakes.html#0144",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6311,7 +6235,7 @@
       "samhengi": "15.11."
     },
     {
-      "id": "capstone/earthquakes.html#0146",
+      "id": "capstone/earthquakes.html#0145",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6332,7 +6256,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0147",
+      "id": "capstone/earthquakes.html#0146",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6353,7 +6277,7 @@
       "samhengi": "16.11."
     },
     {
-      "id": "capstone/earthquakes.html#0148",
+      "id": "capstone/earthquakes.html#0147",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6374,7 +6298,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0149",
+      "id": "capstone/earthquakes.html#0148",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6395,7 +6319,7 @@
       "samhengi": "17.11."
     },
     {
-      "id": "capstone/earthquakes.html#0150",
+      "id": "capstone/earthquakes.html#0149",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6416,7 +6340,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0151",
+      "id": "capstone/earthquakes.html#0150",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6437,7 +6361,7 @@
       "samhengi": "18.11."
     },
     {
-      "id": "capstone/earthquakes.html#0152",
+      "id": "capstone/earthquakes.html#0151",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6458,7 +6382,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0153",
+      "id": "capstone/earthquakes.html#0152",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6479,7 +6403,7 @@
       "samhengi": "19.11."
     },
     {
-      "id": "capstone/earthquakes.html#0154",
+      "id": "capstone/earthquakes.html#0153",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6500,7 +6424,7 @@
       "samhengi": "1"
     },
     {
-      "id": "capstone/earthquakes.html#0155",
+      "id": "capstone/earthquakes.html#0154",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6521,7 +6445,7 @@
       "samhengi": "20.11."
     },
     {
-      "id": "capstone/earthquakes.html#0156",
+      "id": "capstone/earthquakes.html#0155",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6542,7 +6466,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0157",
+      "id": "capstone/earthquakes.html#0156",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6563,7 +6487,7 @@
       "samhengi": "21.11."
     },
     {
-      "id": "capstone/earthquakes.html#0158",
+      "id": "capstone/earthquakes.html#0157",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6584,7 +6508,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0159",
+      "id": "capstone/earthquakes.html#0158",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6605,7 +6529,7 @@
       "samhengi": "22.11."
     },
     {
-      "id": "capstone/earthquakes.html#0160",
+      "id": "capstone/earthquakes.html#0159",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6626,7 +6550,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0161",
+      "id": "capstone/earthquakes.html#0160",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6647,7 +6571,7 @@
       "samhengi": "23.11."
     },
     {
-      "id": "capstone/earthquakes.html#0162",
+      "id": "capstone/earthquakes.html#0161",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6668,7 +6592,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0163",
+      "id": "capstone/earthquakes.html#0162",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6689,7 +6613,7 @@
       "samhengi": "24.11."
     },
     {
-      "id": "capstone/earthquakes.html#0164",
+      "id": "capstone/earthquakes.html#0163",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6710,7 +6634,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0165",
+      "id": "capstone/earthquakes.html#0164",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6731,7 +6655,7 @@
       "samhengi": "25.11."
     },
     {
-      "id": "capstone/earthquakes.html#0166",
+      "id": "capstone/earthquakes.html#0165",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6752,7 +6676,7 @@
       "samhengi": "1"
     },
     {
-      "id": "capstone/earthquakes.html#0167",
+      "id": "capstone/earthquakes.html#0166",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6773,7 +6697,7 @@
       "samhengi": "26.11."
     },
     {
-      "id": "capstone/earthquakes.html#0168",
+      "id": "capstone/earthquakes.html#0167",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6794,7 +6718,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0169",
+      "id": "capstone/earthquakes.html#0168",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6815,7 +6739,7 @@
       "samhengi": "27.11."
     },
     {
-      "id": "capstone/earthquakes.html#0170",
+      "id": "capstone/earthquakes.html#0169",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6836,7 +6760,7 @@
       "samhengi": "1"
     },
     {
-      "id": "capstone/earthquakes.html#0171",
+      "id": "capstone/earthquakes.html#0170",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6857,7 +6781,7 @@
       "samhengi": "28.11."
     },
     {
-      "id": "capstone/earthquakes.html#0172",
+      "id": "capstone/earthquakes.html#0171",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6878,7 +6802,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0173",
+      "id": "capstone/earthquakes.html#0172",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6899,7 +6823,7 @@
       "samhengi": "29.11."
     },
     {
-      "id": "capstone/earthquakes.html#0174",
+      "id": "capstone/earthquakes.html#0173",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6920,7 +6844,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0175",
+      "id": "capstone/earthquakes.html#0174",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6941,7 +6865,7 @@
       "samhengi": "30.11."
     },
     {
-      "id": "capstone/earthquakes.html#0176",
+      "id": "capstone/earthquakes.html#0175",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6962,7 +6886,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0177",
+      "id": "capstone/earthquakes.html#0176",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -6983,7 +6907,7 @@
       "samhengi": "330"
     },
     {
-      "id": "capstone/earthquakes.html#0178",
+      "id": "capstone/earthquakes.html#0177",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7004,7 +6928,7 @@
       "samhengi": "01.12."
     },
     {
-      "id": "capstone/earthquakes.html#0179",
+      "id": "capstone/earthquakes.html#0178",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7025,7 +6949,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0180",
+      "id": "capstone/earthquakes.html#0179",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7046,7 +6970,7 @@
       "samhengi": "02.12."
     },
     {
-      "id": "capstone/earthquakes.html#0181",
+      "id": "capstone/earthquakes.html#0180",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7067,7 +6991,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0182",
+      "id": "capstone/earthquakes.html#0181",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7088,7 +7012,7 @@
       "samhengi": "03.12."
     },
     {
-      "id": "capstone/earthquakes.html#0183",
+      "id": "capstone/earthquakes.html#0182",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7109,7 +7033,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0184",
+      "id": "capstone/earthquakes.html#0183",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7130,7 +7054,7 @@
       "samhengi": "04.12."
     },
     {
-      "id": "capstone/earthquakes.html#0185",
+      "id": "capstone/earthquakes.html#0184",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7151,7 +7075,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0186",
+      "id": "capstone/earthquakes.html#0185",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7172,7 +7096,7 @@
       "samhengi": "05.12."
     },
     {
-      "id": "capstone/earthquakes.html#0187",
+      "id": "capstone/earthquakes.html#0186",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7193,7 +7117,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0188",
+      "id": "capstone/earthquakes.html#0187",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7214,7 +7138,7 @@
       "samhengi": "06.12."
     },
     {
-      "id": "capstone/earthquakes.html#0189",
+      "id": "capstone/earthquakes.html#0188",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7235,7 +7159,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0190",
+      "id": "capstone/earthquakes.html#0189",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7256,7 +7180,7 @@
       "samhengi": "07.12."
     },
     {
-      "id": "capstone/earthquakes.html#0191",
+      "id": "capstone/earthquakes.html#0190",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7277,7 +7201,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0192",
+      "id": "capstone/earthquakes.html#0191",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7298,7 +7222,7 @@
       "samhengi": "08.12."
     },
     {
-      "id": "capstone/earthquakes.html#0193",
+      "id": "capstone/earthquakes.html#0192",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7319,7 +7243,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0194",
+      "id": "capstone/earthquakes.html#0193",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7340,7 +7264,7 @@
       "samhengi": "09.12."
     },
     {
-      "id": "capstone/earthquakes.html#0195",
+      "id": "capstone/earthquakes.html#0194",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7361,7 +7285,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0196",
+      "id": "capstone/earthquakes.html#0195",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7382,7 +7306,7 @@
       "samhengi": "10.12."
     },
     {
-      "id": "capstone/earthquakes.html#0197",
+      "id": "capstone/earthquakes.html#0196",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7403,7 +7327,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0198",
+      "id": "capstone/earthquakes.html#0197",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7424,7 +7348,7 @@
       "samhengi": "11.12."
     },
     {
-      "id": "capstone/earthquakes.html#0199",
+      "id": "capstone/earthquakes.html#0198",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7445,7 +7369,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0200",
+      "id": "capstone/earthquakes.html#0199",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7466,7 +7390,7 @@
       "samhengi": "12.12."
     },
     {
-      "id": "capstone/earthquakes.html#0201",
+      "id": "capstone/earthquakes.html#0200",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7487,7 +7411,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0202",
+      "id": "capstone/earthquakes.html#0201",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7508,7 +7432,7 @@
       "samhengi": "13.12."
     },
     {
-      "id": "capstone/earthquakes.html#0203",
+      "id": "capstone/earthquakes.html#0202",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7529,7 +7453,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0204",
+      "id": "capstone/earthquakes.html#0203",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7550,7 +7474,7 @@
       "samhengi": "14.12."
     },
     {
-      "id": "capstone/earthquakes.html#0205",
+      "id": "capstone/earthquakes.html#0204",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7571,7 +7495,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0206",
+      "id": "capstone/earthquakes.html#0205",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7592,7 +7516,7 @@
       "samhengi": "15.12."
     },
     {
-      "id": "capstone/earthquakes.html#0207",
+      "id": "capstone/earthquakes.html#0206",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7613,7 +7537,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0208",
+      "id": "capstone/earthquakes.html#0207",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7634,7 +7558,7 @@
       "samhengi": "16.12."
     },
     {
-      "id": "capstone/earthquakes.html#0209",
+      "id": "capstone/earthquakes.html#0208",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7655,7 +7579,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0210",
+      "id": "capstone/earthquakes.html#0209",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7676,7 +7600,7 @@
       "samhengi": "17.12."
     },
     {
-      "id": "capstone/earthquakes.html#0211",
+      "id": "capstone/earthquakes.html#0210",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7697,7 +7621,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0212",
+      "id": "capstone/earthquakes.html#0211",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7718,7 +7642,7 @@
       "samhengi": "18.12."
     },
     {
-      "id": "capstone/earthquakes.html#0213",
+      "id": "capstone/earthquakes.html#0212",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7739,7 +7663,7 @@
       "samhengi": "3"
     },
     {
-      "id": "capstone/earthquakes.html#0214",
+      "id": "capstone/earthquakes.html#0213",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7760,7 +7684,7 @@
       "samhengi": "19.12."
     },
     {
-      "id": "capstone/earthquakes.html#0215",
+      "id": "capstone/earthquakes.html#0214",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7781,7 +7705,7 @@
       "samhengi": "1"
     },
     {
-      "id": "capstone/earthquakes.html#0216",
+      "id": "capstone/earthquakes.html#0215",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7802,7 +7726,7 @@
       "samhengi": "20.12."
     },
     {
-      "id": "capstone/earthquakes.html#0217",
+      "id": "capstone/earthquakes.html#0216",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7823,7 +7747,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0218",
+      "id": "capstone/earthquakes.html#0217",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7844,7 +7768,7 @@
       "samhengi": "21.12."
     },
     {
-      "id": "capstone/earthquakes.html#0219",
+      "id": "capstone/earthquakes.html#0218",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7865,7 +7789,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0220",
+      "id": "capstone/earthquakes.html#0219",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7886,7 +7810,7 @@
       "samhengi": "22.12."
     },
     {
-      "id": "capstone/earthquakes.html#0221",
+      "id": "capstone/earthquakes.html#0220",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7907,7 +7831,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0222",
+      "id": "capstone/earthquakes.html#0221",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7928,7 +7852,7 @@
       "samhengi": "23.12."
     },
     {
-      "id": "capstone/earthquakes.html#0223",
+      "id": "capstone/earthquakes.html#0222",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7949,7 +7873,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0224",
+      "id": "capstone/earthquakes.html#0223",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7970,7 +7894,7 @@
       "samhengi": "24.12."
     },
     {
-      "id": "capstone/earthquakes.html#0225",
+      "id": "capstone/earthquakes.html#0224",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -7991,7 +7915,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0226",
+      "id": "capstone/earthquakes.html#0225",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8012,7 +7936,7 @@
       "samhengi": "25.12."
     },
     {
-      "id": "capstone/earthquakes.html#0227",
+      "id": "capstone/earthquakes.html#0226",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8033,7 +7957,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0228",
+      "id": "capstone/earthquakes.html#0227",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8054,7 +7978,7 @@
       "samhengi": "26.12."
     },
     {
-      "id": "capstone/earthquakes.html#0229",
+      "id": "capstone/earthquakes.html#0228",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8075,7 +7999,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0230",
+      "id": "capstone/earthquakes.html#0229",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8096,7 +8020,7 @@
       "samhengi": "27.12."
     },
     {
-      "id": "capstone/earthquakes.html#0231",
+      "id": "capstone/earthquakes.html#0230",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8117,7 +8041,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0232",
+      "id": "capstone/earthquakes.html#0231",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8138,7 +8062,7 @@
       "samhengi": "28.12."
     },
     {
-      "id": "capstone/earthquakes.html#0233",
+      "id": "capstone/earthquakes.html#0232",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8159,7 +8083,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0234",
+      "id": "capstone/earthquakes.html#0233",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8180,7 +8104,7 @@
       "samhengi": "29.12."
     },
     {
-      "id": "capstone/earthquakes.html#0235",
+      "id": "capstone/earthquakes.html#0234",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8201,7 +8125,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0236",
+      "id": "capstone/earthquakes.html#0235",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8222,7 +8146,7 @@
       "samhengi": "30.12."
     },
     {
-      "id": "capstone/earthquakes.html#0237",
+      "id": "capstone/earthquakes.html#0236",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8243,7 +8167,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0238",
+      "id": "capstone/earthquakes.html#0237",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8264,7 +8188,7 @@
       "samhengi": "31.12."
     },
     {
-      "id": "capstone/earthquakes.html#0239",
+      "id": "capstone/earthquakes.html#0238",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8285,7 +8209,7 @@
       "samhengi": "0"
     },
     {
-      "id": "capstone/earthquakes.html#0240",
+      "id": "capstone/earthquakes.html#0239",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8306,7 +8230,7 @@
       "samhengi": "4"
     },
     {
-      "id": "capstone/earthquakes.html#0241",
+      "id": "capstone/earthquakes.html#0240",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8318,37 +8242,16 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "2009",
-      "gildi": 2009,
+      "texti": "2009-013",
+      "gildi": null,
       "bil": null,
       "eining": null,
-      "tegund": "ar",
+      "tegund": "aukenni",
       "visst": false,
       "samhengi": "Talningin nær aðeins til færslna sem uppfylla öll síuskilyrði fyrirspurnarinnar. Núll í daglegri töflu merkir því enga s"
     },
     {
-      "id": "capstone/earthquakes.html#0242",
-      "sida": "capstone/earthquakes.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Skjálftavaktin · jarðskjálftagögn",
-        "Fyrsta yfirlit úr hreinsuðum gögnum",
-        "Daglegur fjöldi eftir mánuðum"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "-013",
-      "gildi": -13,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": true,
-      "samhengi": "Talningin nær aðeins til færslna sem uppfylla öll síuskilyrði fyrirspurnarinnar. Núll í daglegri töflu merkir því enga samsvarandi færslu í þessu gagnasafni, ekki að enginn jarðskjálfti hafi orðið þann dag. Stærðarflokkun og yfirferð gagna skipta máli; ekki má blanda stærðarkvörðum fyrirvaralaust eða túlka þessa talningu sem heildarfjölda allra smáskjálfta á Reykjanesi. Í þessu eintaki er stærðark"
-    },
-    {
-      "id": "capstone/earthquakes.html#0243",
+      "id": "capstone/earthquakes.html#0241",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8369,7 +8272,7 @@
       "samhengi": "Talningin nær aðeins til færslna sem uppfylla öll síuskilyrði fyrirspurnarinnar. Núll í daglegri töflu merkir því enga s"
     },
     {
-      "id": "capstone/earthquakes.html#0244",
+      "id": "capstone/earthquakes.html#0242",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8389,7 +8292,7 @@
       "samhengi": "python -X utf8 src/earthquakes.py python -X utf8 -m unittest discover -s tests"
     },
     {
-      "id": "capstone/earthquakes.html#0245",
+      "id": "capstone/earthquakes.html#0243",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8407,6 +8310,46 @@
       "tegund": "aukenni",
       "visst": false,
       "samhengi": "python -X utf8 src/earthquakes.py python -X utf8 -m unittest discover -s tests"
+    },
+    {
+      "id": "capstone/earthquakes.html#0244",
+      "sida": "capstone/earthquakes.html",
+      "lota": "fdf1261",
+      "kafli": [
+        "Skjálftavaktin · jarðskjálftagögn",
+        "Endurkeyrsla og yfirferð"
+      ],
+      "flokkur": "kodi",
+      "tafla": null,
+      "lina": null,
+      "sulka": null,
+      "texti": "utf8",
+      "gildi": null,
+      "bil": null,
+      "eining": null,
+      "tegund": "aukenni",
+      "visst": false,
+      "samhengi": "git submodule update --init --recursive python -m pip install -r requirements.txt python -X utf8 src/phoebe_analysis.py "
+    },
+    {
+      "id": "capstone/earthquakes.html#0245",
+      "sida": "capstone/earthquakes.html",
+      "lota": "fdf1261",
+      "kafli": [
+        "Skjálftavaktin · jarðskjálftagögn",
+        "Endurkeyrsla og yfirferð"
+      ],
+      "flokkur": "kodi",
+      "tafla": null,
+      "lina": null,
+      "sulka": null,
+      "texti": "utf8",
+      "gildi": null,
+      "bil": null,
+      "eining": null,
+      "tegund": "aukenni",
+      "visst": false,
+      "samhengi": "git submodule update --init --recursive python -m pip install -r requirements.txt python -X utf8 src/phoebe_analysis.py "
     },
     {
       "id": "capstone/earthquakes.html#0246",
@@ -8434,46 +8377,6 @@
       "lota": "fdf1261",
       "kafli": [
         "Skjálftavaktin · jarðskjálftagögn",
-        "Endurkeyrsla og yfirferð"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "utf8",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "git submodule update --init --recursive python -m pip install -r requirements.txt python -X utf8 src/phoebe_analysis.py "
-    },
-    {
-      "id": "capstone/earthquakes.html#0248",
-      "sida": "capstone/earthquakes.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Skjálftavaktin · jarðskjálftagögn",
-        "Endurkeyrsla og yfirferð"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "utf8",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "git submodule update --init --recursive python -m pip install -r requirements.txt python -X utf8 src/phoebe_analysis.py "
-    },
-    {
-      "id": "capstone/earthquakes.html#0249",
-      "sida": "capstone/earthquakes.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Skjálftavaktin · jarðskjálftagögn",
         "Heimildir og breytingar"
       ],
       "flokkur": "malsgrein",
@@ -8489,7 +8392,7 @@
       "samhengi": "Jarðskjálftagögn: Veðurstofa Íslands , Quakes API, SIL-kerfi. API-skjölunin tilgreinir CC BY 4.0 . Hér eru gögnin síuð, "
     },
     {
-      "id": "capstone/earthquakes.html#0250",
+      "id": "capstone/earthquakes.html#0248",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8509,7 +8412,7 @@
       "samhengi": "Verkþættir: #30 · gagnaveita , #31 · gagnasókn , #32 · regex , #33 · Pages ."
     },
     {
-      "id": "capstone/earthquakes.html#0251",
+      "id": "capstone/earthquakes.html#0249",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8529,7 +8432,7 @@
       "samhengi": "Verkþættir: #30 · gagnaveita , #31 · gagnasókn , #32 · regex , #33 · Pages ."
     },
     {
-      "id": "capstone/earthquakes.html#0252",
+      "id": "capstone/earthquakes.html#0250",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8549,7 +8452,7 @@
       "samhengi": "Verkþættir: #30 · gagnaveita , #31 · gagnasókn , #32 · regex , #33 · Pages ."
     },
     {
-      "id": "capstone/earthquakes.html#0253",
+      "id": "capstone/earthquakes.html#0251",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8569,7 +8472,7 @@
       "samhengi": "Verkþættir: #30 · gagnaveita , #31 · gagnasókn , #32 · regex , #33 · Pages ."
     },
     {
-      "id": "capstone/earthquakes.html#0254",
+      "id": "capstone/earthquakes.html#0252",
       "sida": "capstone/earthquakes.html",
       "lota": "fdf1261",
       "kafli": [
@@ -8960,36 +8863,16 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "1017",
-      "gildi": 1017,
+      "texti": "1017-1018",
+      "gildi": null,
       "bil": null,
       "eining": null,
-      "tegund": "heiltala",
-      "visst": true,
-      "samhengi": "delvinso gefur upp 236 þætti og um 69.500 línur eftir þáttun. Skrárnar eru hins vegar 229, þar af 223 með stöku þáttanúmeri og sex sem ná yfir tvöfalda þætti eða sérefni ( 0212-0213 , 0615-0616 , 0923-0924 , 1017-1018 , 0423uncut , 07outtakes )."
+      "tegund": "aukenni",
+      "visst": false,
+      "samhengi": "delvinso gefur upp 236 þætti og um 69.500 línur eftir þáttun. Skrárnar eru hins vegar 229, þar af 223 með stöku þáttanúm"
     },
     {
       "id": "friends/index.html#0019",
-      "sida": "friends/index.html",
-      "lota": "5510cab",
-      "kafli": [
-        "Phoebe í tölum: gagnasaga um skrítnustu vinkonuna í Central Perk",
-        "Gögnin"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "-1018",
-      "gildi": -1018,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": true,
-      "samhengi": "delvinso gefur upp 236 þætti og um 69.500 línur eftir þáttun. Skrárnar eru hins vegar 229, þar af 223 með stöku þáttanúmeri og sex sem ná yfir tvöfalda þætti eða sérefni ( 0212-0213 , 0615-0616 , 0923-0924 , 1017-1018 , 0423uncut , 07outtakes )."
-    },
-    {
-      "id": "friends/index.html#0020",
       "sida": "friends/index.html",
       "lota": "5510cab",
       "kafli": [
@@ -9009,7 +8892,7 @@
       "samhengi": "delvinso gefur upp 236 þætti og um 69.500 línur eftir þáttun. Skrárnar eru hins vegar 229, þar af 223 með stöku þáttanúm"
     },
     {
-      "id": "friends/index.html#0021",
+      "id": "friends/index.html#0020",
       "sida": "friends/index.html",
       "lota": "5510cab",
       "kafli": [
@@ -9029,7 +8912,7 @@
       "samhengi": "delvinso gefur upp 236 þætti og um 69.500 línur eftir þáttun. Skrárnar eru hins vegar 229, þar af 223 með stöku þáttanúm"
     },
     {
-      "id": "friends/index.html#0022",
+      "id": "friends/index.html#0021",
       "sida": "friends/index.html",
       "lota": "5510cab",
       "kafli": [
@@ -9049,7 +8932,7 @@
       "samhengi": "Þáttafjöldinn ræðst því af því hvernig við meðhöndlum þessar sex skrár, og „línurnar“ 69.500 innihalda líka sviðslýsingar, leikaraskrá og höfundatexta — ekki bara tilsvör. Hvort tveggja er ákvörðun sem við tökum í regex-lotunni, ekki tala sem við getum vitnað í hráa."
     },
     {
-      "id": "friends/index.html#0023",
+      "id": "friends/index.html#0022",
       "sida": "friends/index.html",
       "lota": "5510cab",
       "kafli": [
@@ -9069,7 +8952,7 @@
       "samhengi": "Athugið líka að friends_lines.csv , þáttaða taflan sem 01_friends_parse_html.R býr til, fylgir ekki með í submodule-inu — aðeins kóðinn sem býr hana til. Það er ekki galli heldur einmitt viðfangsefni endurtæku skýrslunnar: gagnasafnið er endurskapað úr kóða, ekki geymt."
     },
     {
-      "id": "friends/index.html#0024",
+      "id": "friends/index.html#0023",
       "sida": "friends/index.html",
       "lota": "5510cab",
       "kafli": [
@@ -9089,7 +8972,7 @@
       "samhengi": "Phoebe statistics mælir heildarhlutdeild hennar, þróun eftir þáttaröðum, ræðuskipti og orðaforða. Central Perk-greiningin þrengir síðan sjónarhornið: hún finnur 24 skýrt merkt söngatriði í 19 handritum og ber orðahlutfall Phoebe í þeim saman við önnur handrit. Saman sýna þær að Phoebe fær færri línur en hinir vinirnir í heild en á stærri hlut í handritunum þar sem hún syngur í Central Perk. Sjá sa"
     },
     {
-      "id": "friends/index.html#0025",
+      "id": "friends/index.html#0024",
       "sida": "friends/index.html",
       "lota": "5510cab",
       "kafli": [
@@ -22691,76 +22574,16 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "0",
-      "gildi": 0,
+      "texti": "0-20000-0-04030",
+      "gildi": null,
       "bil": null,
       "eining": null,
-      "tegund": "heiltala",
+      "tegund": "aukenni",
       "visst": false,
       "samhengi": "{ \"station\" : 1 , \"name\" : \"Reykjavík\" , \"abbr\" : \"rvk\" , \"type\" : \"sk\" , \"lat\" : 64.1288833618 , \"lon\" : -21.9081897736"
     },
     {
       "id": "lotur/vefthjonustur/vedurstofan.html#0009",
-      "sida": "lotur/vefthjonustur/vedurstofan.html",
-      "lota": "9cf667d",
-      "kafli": [
-        "Veðurstofan (æfing 1B)",
-        "Gögnin: hvaðan þau koma og hvað þau lýsa"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "-20000",
-      "gildi": -20000,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "{ \"station\" : 1 , \"name\" : \"Reykjavík\" , \"abbr\" : \"rvk\" , \"type\" : \"sk\" , \"lat\" : 64.1288833618 , \"lon\" : -21.9081897736"
-    },
-    {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0010",
-      "sida": "lotur/vefthjonustur/vedurstofan.html",
-      "lota": "9cf667d",
-      "kafli": [
-        "Veðurstofan (æfing 1B)",
-        "Gögnin: hvaðan þau koma og hvað þau lýsa"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "-0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "{ \"station\" : 1 , \"name\" : \"Reykjavík\" , \"abbr\" : \"rvk\" , \"type\" : \"sk\" , \"lat\" : 64.1288833618 , \"lon\" : -21.9081897736"
-    },
-    {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0011",
-      "sida": "lotur/vefthjonustur/vedurstofan.html",
-      "lota": "9cf667d",
-      "kafli": [
-        "Veðurstofan (æfing 1B)",
-        "Gögnin: hvaðan þau koma og hvað þau lýsa"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "-04030",
-      "gildi": -4030,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "{ \"station\" : 1 , \"name\" : \"Reykjavík\" , \"abbr\" : \"rvk\" , \"type\" : \"sk\" , \"lat\" : 64.1288833618 , \"lon\" : -21.9081897736"
-    },
-    {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0012",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -22780,7 +22603,7 @@
       "samhengi": "{ \"station\" : 1 , \"name\" : \"Reykjavík\" , \"abbr\" : \"rvk\" , \"type\" : \"sk\" , \"lat\" : 64.1288833618 , \"lon\" : -21.9081897736"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0013",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0010",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -22800,7 +22623,7 @@
       "samhengi": "Hnit VR-II (64,1386922, -21,9556406) voru flett upp í Nominatim hjá OpenStreetMap og eru fest sem fastar í skriftunni. python src/vedurstofa_stodvar.py --nominatim staðfestir að uppflettingin skili enn því sama."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0014",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0011",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -22820,7 +22643,7 @@
       "samhengi": "Hnit VR-II (64,1386922, -21,9556406) voru flett upp í Nominatim hjá OpenStreetMap og eru fest sem fastar í skriftunni. python src/vedurstofa_stodvar.py --nominatim staðfestir að uppflettingin skili enn því sama."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0015",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0012",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -22840,7 +22663,7 @@
       "samhengi": "fyrirspurn = urllib.parse.urlencode(faeribreytur, doseq = True ) full_slod = f\" { slod } ? { fyrirspurn } \" if fyrirspur"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0016",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0013",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -22860,7 +22683,7 @@
       "samhengi": "station_id=<auðkenni> — ein tiltekin stöð. Þetta er beiðnin sem forritið sjálft sendir þegar búið er að velja stöðina, o"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0017",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0014",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -22880,7 +22703,7 @@
       "samhengi": "station_id=<auðkenni> — ein tiltekin stöð. Þetta er beiðnin sem forritið sjálft sendir þegar búið er að velja stöðina, og hún verður að skila nákvæmlega einni stöð; skriftan fellur ella með villu. Auðkennið sem var sent sést í neðstu línu Tafla 10.1 . doseq=True gerir kleift að senda mörg auðkenni í einni beiðni ( station_id=1&station_id=2 )."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0018",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0015",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -22900,7 +22723,7 @@
       "samhengi": "station_id=<auðkenni> — ein tiltekin stöð. Þetta er beiðnin sem forritið sjálft sendir þegar búið er að velja stöðina, og hún verður að skila nákvæmlega einni stöð; skriftan fellur ella með villu. Auðkennið sem var sent sést í neðstu línu Tafla 10.1 . doseq=True gerir kleift að senda mörg auðkenni í einni beiðni ( station_id=1&station_id=2 )."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0019",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0016",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -22920,7 +22743,7 @@
       "samhengi": "Tafla 10.1: Beiðnirnar sem voru sendar og fjöldi stöðva í svari við hverri. Sótt af https://api.vedur.is/weather/station"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0020",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0017",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -22940,7 +22763,7 @@
       "samhengi": "Tafla 10.1: Beiðnirnar sem voru sendar og fjöldi stöðva í svari við hverri. Sótt af https://api.vedur.is/weather/station"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0021",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0018",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -22960,7 +22783,7 @@
       "samhengi": "778"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0022",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0019",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -22980,7 +22803,7 @@
       "samhengi": "343"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0023",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0020",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23000,7 +22823,7 @@
       "samhengi": "aðeins stöðvar innan 5 km kassans um VR-II"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0024",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0021",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23020,7 +22843,7 @@
       "samhengi": "21"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0025",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0022",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23040,7 +22863,7 @@
       "samhengi": "9"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0026",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0023",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23060,7 +22883,7 @@
       "samhengi": "station_id=1469"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0027",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0024",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23080,7 +22903,7 @@
       "samhengi": "1"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0028",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0025",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23100,7 +22923,7 @@
       "samhengi": "Mikilvægt HTTP 200 þýðir ekki að sían hafi virkað"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0029",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0026",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23120,7 +22943,7 @@
       "samhengi": "Þjónustan hunsar færibreytur sem hún þekkir ekki og svarar samt með stöðukóða 200. Til dæmis skilar ?limit=3 öllum stöðvunum. Þess vegna er fjöldinn í hverju svari talinn og borinn saman í Tafla 10.1 í stað þess að treysta stöðukóðanum."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0030",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0027",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23140,7 +22963,7 @@
       "samhengi": "Þjónustan hunsar færibreytur sem hún þekkir ekki og svarar samt með stöðukóða 200. Til dæmis skilar ?limit=3 öllum stöðvunum. Þess vegna er fjöldinn í hverju svari talinn og borinn saman í Tafla 10.1 í stað þess að treysta stöðukóðanum."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0031",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0028",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23160,7 +22983,7 @@
       "samhengi": "Þjónustan hunsar færibreytur sem hún þekkir ekki og svarar samt með stöðukóða 200. Til dæmis skilar ?limit=3 öllum stöðv"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0032",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0029",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23180,7 +23003,7 @@
       "samhengi": "1. Afmarka svæðið. Kassi með 5 km radíus utan um VR-II er skrifaður á WKT-sniði og sendur sem polygon :"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0033",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0030",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23200,7 +23023,7 @@
       "samhengi": "1. Afmarka svæðið. Kassi með 5 km radíus utan um VR-II er skrifaður á WKT-sniði og sendur sem polygon :"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0034",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0031",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23220,7 +23043,7 @@
       "samhengi": "d_breidd = radius_km / 111.0 d_lengd = radius_km / ( 111.0 * math.cos(math.radians(breidd)))"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0035",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0032",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23240,7 +23063,7 @@
       "samhengi": "d_breidd = radius_km / 111.0 d_lengd = radius_km / ( 111.0 * math.cos(math.radians(breidd)))"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0036",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0033",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23260,7 +23083,7 @@
       "samhengi": "Breiddargráða er um 111 km alls staðar, en lengdargráða styttist í \\(111\\cos\\varphi\\) — um 48 km á breiddargráðu Reykjavíkur. Kassinn spannar því fleiri lengdargráður en breiddargráður. Tvennt til viðbótar er auðvelt að klúðra: hnitaröðin í WKT er lengd breidd (öfug við lat,lon ), og ferillinn þarf að lokast, svo hornin eru fimm en ekki fjögur."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0037",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0034",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23280,7 +23103,7 @@
       "samhengi": "Breiddargráða er um 111 km alls staðar, en lengdargráða styttist í \\(111\\cos\\varphi\\) — um 48 km á breiddargráðu Reykjavíkur. Kassinn spannar því fleiri lengdargráður en breiddargráður. Tvennt til viðbótar er auðvelt að klúðra: hnitaröðin í WKT er lengd breidd (öfug við lat,lon ), og ferillinn þarf að lokast, svo hornin eru fimm en ekki fjögur."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0038",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0035",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23300,7 +23123,7 @@
       "samhengi": "Breiddargráða er um 111 km alls staðar, en lengdargráða styttist í \\(111\\cos\\varphi\\) — um 48 km á breiddargráðu Reykjavíkur. Kassinn spannar því fleiri lengdargráður en breiddargráður. Tvennt til viðbótar er auðvelt að klúðra: hnitaröðin í WKT er lengd breidd (öfug við lat,lon ), og ferillinn þarf að lokast, svo hornin eru fimm en ekki fjögur."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0039",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0036",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23320,7 +23143,7 @@
       "samhengi": "2. Reikna fjarlægð. Haversine-formúlan gefur stórbaugsfjarlægð milli tveggja hnita:"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0040",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0037",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23336,6 +23159,66 @@
       "bil": null,
       "eining": null,
       "tegund": "heiltala",
+      "visst": false,
+      "samhengi": "a = math.sin(d_f / 2 ) ** 2 + math.cos(f1) * math.cos(f2) * math.sin(d_l / 2 ) ** 2 return 2 * JORD_RADIUS_KM * math.asi"
+    },
+    {
+      "id": "lotur/vefthjonustur/vedurstofan.html#0038",
+      "sida": "lotur/vefthjonustur/vedurstofan.html",
+      "lota": "9cf667d",
+      "kafli": [
+        "Veðurstofan (æfing 1B)",
+        "Hvernig kóðinn vinnur gögnin"
+      ],
+      "flokkur": "kodi",
+      "tafla": null,
+      "lina": null,
+      "sulka": null,
+      "texti": "2",
+      "gildi": 2,
+      "bil": null,
+      "eining": null,
+      "tegund": "heiltala",
+      "visst": false,
+      "samhengi": "a = math.sin(d_f / 2 ) ** 2 + math.cos(f1) * math.cos(f2) * math.sin(d_l / 2 ) ** 2 return 2 * JORD_RADIUS_KM * math.asi"
+    },
+    {
+      "id": "lotur/vefthjonustur/vedurstofan.html#0039",
+      "sida": "lotur/vefthjonustur/vedurstofan.html",
+      "lota": "9cf667d",
+      "kafli": [
+        "Veðurstofan (æfing 1B)",
+        "Hvernig kóðinn vinnur gögnin"
+      ],
+      "flokkur": "kodi",
+      "tafla": null,
+      "lina": null,
+      "sulka": null,
+      "texti": "f1",
+      "gildi": null,
+      "bil": null,
+      "eining": null,
+      "tegund": "aukenni",
+      "visst": false,
+      "samhengi": "a = math.sin(d_f / 2 ) ** 2 + math.cos(f1) * math.cos(f2) * math.sin(d_l / 2 ) ** 2 return 2 * JORD_RADIUS_KM * math.asi"
+    },
+    {
+      "id": "lotur/vefthjonustur/vedurstofan.html#0040",
+      "sida": "lotur/vefthjonustur/vedurstofan.html",
+      "lota": "9cf667d",
+      "kafli": [
+        "Veðurstofan (æfing 1B)",
+        "Hvernig kóðinn vinnur gögnin"
+      ],
+      "flokkur": "kodi",
+      "tafla": null,
+      "lina": null,
+      "sulka": null,
+      "texti": "f2",
+      "gildi": null,
+      "bil": null,
+      "eining": null,
+      "tegund": "aukenni",
       "visst": false,
       "samhengi": "a = math.sin(d_f / 2 ) ** 2 + math.cos(f1) * math.cos(f2) * math.sin(d_l / 2 ) ** 2 return 2 * JORD_RADIUS_KM * math.asi"
     },
@@ -23371,11 +23254,11 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "f1",
-      "gildi": null,
+      "texti": "2",
+      "gildi": 2,
       "bil": null,
       "eining": null,
-      "tegund": "aukenni",
+      "tegund": "heiltala",
       "visst": false,
       "samhengi": "a = math.sin(d_f / 2 ) ** 2 + math.cos(f1) * math.cos(f2) * math.sin(d_l / 2 ) ** 2 return 2 * JORD_RADIUS_KM * math.asi"
     },
@@ -23391,76 +23274,16 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "f2",
-      "gildi": null,
+      "texti": "2",
+      "gildi": 2,
       "bil": null,
       "eining": null,
-      "tegund": "aukenni",
+      "tegund": "heiltala",
       "visst": false,
       "samhengi": "a = math.sin(d_f / 2 ) ** 2 + math.cos(f1) * math.cos(f2) * math.sin(d_l / 2 ) ** 2 return 2 * JORD_RADIUS_KM * math.asi"
     },
     {
       "id": "lotur/vefthjonustur/vedurstofan.html#0044",
-      "sida": "lotur/vefthjonustur/vedurstofan.html",
-      "lota": "9cf667d",
-      "kafli": [
-        "Veðurstofan (æfing 1B)",
-        "Hvernig kóðinn vinnur gögnin"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "2",
-      "gildi": 2,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "a = math.sin(d_f / 2 ) ** 2 + math.cos(f1) * math.cos(f2) * math.sin(d_l / 2 ) ** 2 return 2 * JORD_RADIUS_KM * math.asi"
-    },
-    {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0045",
-      "sida": "lotur/vefthjonustur/vedurstofan.html",
-      "lota": "9cf667d",
-      "kafli": [
-        "Veðurstofan (æfing 1B)",
-        "Hvernig kóðinn vinnur gögnin"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "2",
-      "gildi": 2,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "a = math.sin(d_f / 2 ) ** 2 + math.cos(f1) * math.cos(f2) * math.sin(d_l / 2 ) ** 2 return 2 * JORD_RADIUS_KM * math.asi"
-    },
-    {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0046",
-      "sida": "lotur/vefthjonustur/vedurstofan.html",
-      "lota": "9cf667d",
-      "kafli": [
-        "Veðurstofan (æfing 1B)",
-        "Hvernig kóðinn vinnur gögnin"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "2",
-      "gildi": 2,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "a = math.sin(d_f / 2 ) ** 2 + math.cos(f1) * math.cos(f2) * math.sin(d_l / 2 ) ** 2 return 2 * JORD_RADIUS_KM * math.asi"
-    },
-    {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0047",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23480,7 +23303,7 @@
       "samhengi": "3. Raða og meta. Stöðvarnar úr polygon -beiðninni fá fjarlægð, er raðað eftir henni og eru síðan metnar út frá ending (næsti kafli)."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0048",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0045",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23500,7 +23323,7 @@
       "samhengi": "4. Skrifa niðurstöðuna. Skriftan skrifar töfluna, myndina og svörin hér á síðunni sem tilbúnar skrár. Engin tala á síðunni er slegin inn með höndunum; þær verða allar til í keyrslunni."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0049",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0046",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23520,7 +23343,7 @@
       "samhengi": "Mynd 10.1: Næstu veðurstöðvar við VR-II, allt að tíu. Grænar súlur eru stöðvar með tómt ending , gráar hafa hætt mælingu"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0050",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0047",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23540,7 +23363,7 @@
       "samhengi": "Forritið á að lesa Reykjavík Hljómskálagarður (1469) , 639 m frá VR-II: hún er næsta stöð við húsið og ending er tómt."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0051",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0048",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23558,6 +23381,66 @@
       "tegund": "heiltala",
       "visst": true,
       "samhengi": "Forritið á að lesa Reykjavík Hljómskálagarður (1469) , 639 m frá VR-II: hún er næsta stöð við húsið og ending er tómt."
+    },
+    {
+      "id": "lotur/vefthjonustur/vedurstofan.html#0049",
+      "sida": "lotur/vefthjonustur/vedurstofan.html",
+      "lota": "9cf667d",
+      "kafli": [
+        "Veðurstofan (æfing 1B)",
+        "Svör við spurningum æfingarinnar"
+      ],
+      "flokkur": "malsgrein",
+      "tafla": null,
+      "lina": null,
+      "sulka": null,
+      "texti": "1469",
+      "gildi": 1469,
+      "bil": null,
+      "eining": null,
+      "tegund": "heiltala",
+      "visst": true,
+      "samhengi": "Hver er næsta veðurstöð við VR-II og er hún enn í notkun? Reykjavík Hljómskálagarður (1469), 639 m frá húsinu. ending er tómt, svo hún mælir enn og forritið má lesa hana."
+    },
+    {
+      "id": "lotur/vefthjonustur/vedurstofan.html#0050",
+      "sida": "lotur/vefthjonustur/vedurstofan.html",
+      "lota": "9cf667d",
+      "kafli": [
+        "Veðurstofan (æfing 1B)",
+        "Svör við spurningum æfingarinnar"
+      ],
+      "flokkur": "malsgrein",
+      "tafla": null,
+      "lina": null,
+      "sulka": null,
+      "texti": "639",
+      "gildi": 639,
+      "bil": null,
+      "eining": "m",
+      "tegund": "heiltala",
+      "visst": true,
+      "samhengi": "Hver er næsta veðurstöð við VR-II og er hún enn í notkun? Reykjavík Hljómskálagarður (1469), 639 m frá húsinu. ending er tómt, svo hún mælir enn og forritið má lesa hana."
+    },
+    {
+      "id": "lotur/vefthjonustur/vedurstofan.html#0051",
+      "sida": "lotur/vefthjonustur/vedurstofan.html",
+      "lota": "9cf667d",
+      "kafli": [
+        "Veðurstofan (æfing 1B)",
+        "Svör við spurningum æfingarinnar"
+      ],
+      "flokkur": "malsgrein",
+      "tafla": null,
+      "lina": null,
+      "sulka": null,
+      "texti": "1469",
+      "gildi": 1469,
+      "bil": null,
+      "eining": null,
+      "tegund": "heiltala",
+      "visst": true,
+      "samhengi": "Hver er næsta virka stöðin og hversu miklu munar? Reykjavík Hljómskálagarður (1469), 639 m frá VR-II. Næsta aflagða stöð er Sjómannaskóli (2) í 689 m, sem hætti mælingum 1963 — aðeins 50 m skilja stöðvarnar að. Röðun eftir fjarlægð einni saman getur því hæglega skilað ónothæfri stöð."
     },
     {
       "id": "lotur/vefthjonustur/vedurstofan.html#0052",
@@ -23571,76 +23454,16 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "1469",
-      "gildi": 1469,
+      "texti": "639",
+      "gildi": 639,
       "bil": null,
-      "eining": null,
+      "eining": "m",
       "tegund": "heiltala",
       "visst": true,
-      "samhengi": "Hver er næsta veðurstöð við VR-II og er hún enn í notkun? Reykjavík Hljómskálagarður (1469), 639 m frá húsinu. ending er tómt, svo hún mælir enn og forritið má lesa hana."
+      "samhengi": "Hver er næsta virka stöðin og hversu miklu munar? Reykjavík Hljómskálagarður (1469), 639 m frá VR-II. Næsta aflagða stöð er Sjómannaskóli (2) í 689 m, sem hætti mælingum 1963 — aðeins 50 m skilja stöðvarnar að. Röðun eftir fjarlægð einni saman getur því hæglega skilað ónothæfri stöð."
     },
     {
       "id": "lotur/vefthjonustur/vedurstofan.html#0053",
-      "sida": "lotur/vefthjonustur/vedurstofan.html",
-      "lota": "9cf667d",
-      "kafli": [
-        "Veðurstofan (æfing 1B)",
-        "Svör við spurningum æfingarinnar"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "639",
-      "gildi": 639,
-      "bil": null,
-      "eining": "m",
-      "tegund": "heiltala",
-      "visst": true,
-      "samhengi": "Hver er næsta veðurstöð við VR-II og er hún enn í notkun? Reykjavík Hljómskálagarður (1469), 639 m frá húsinu. ending er tómt, svo hún mælir enn og forritið má lesa hana."
-    },
-    {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0054",
-      "sida": "lotur/vefthjonustur/vedurstofan.html",
-      "lota": "9cf667d",
-      "kafli": [
-        "Veðurstofan (æfing 1B)",
-        "Svör við spurningum æfingarinnar"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1469",
-      "gildi": 1469,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": true,
-      "samhengi": "Hver er næsta virka stöðin og hversu miklu munar? Reykjavík Hljómskálagarður (1469), 639 m frá VR-II. Næsta aflagða stöð er Sjómannaskóli (2) í 689 m, sem hætti mælingum 1963 — aðeins 50 m skilja stöðvarnar að. Röðun eftir fjarlægð einni saman getur því hæglega skilað ónothæfri stöð."
-    },
-    {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0055",
-      "sida": "lotur/vefthjonustur/vedurstofan.html",
-      "lota": "9cf667d",
-      "kafli": [
-        "Veðurstofan (æfing 1B)",
-        "Svör við spurningum æfingarinnar"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "639",
-      "gildi": 639,
-      "bil": null,
-      "eining": "m",
-      "tegund": "heiltala",
-      "visst": true,
-      "samhengi": "Hver er næsta virka stöðin og hversu miklu munar? Reykjavík Hljómskálagarður (1469), 639 m frá VR-II. Næsta aflagða stöð er Sjómannaskóli (2) í 689 m, sem hætti mælingum 1963 — aðeins 50 m skilja stöðvarnar að. Röðun eftir fjarlægð einni saman getur því hæglega skilað ónothæfri stöð."
-    },
-    {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0056",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23660,7 +23483,7 @@
       "samhengi": "Hver er næsta virka stöðin og hversu miklu munar? Reykjavík Hljómskálagarður (1469), 639 m frá VR-II. Næsta aflagða stöð er Sjómannaskóli (2) í 689 m, sem hætti mælingum 1963 — aðeins 50 m skilja stöðvarnar að. Röðun eftir fjarlægð einni saman getur því hæglega skilað ónothæfri stöð."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0057",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0054",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23680,7 +23503,7 @@
       "samhengi": "Hver er næsta virka stöðin og hversu miklu munar? Reykjavík Hljómskálagarður (1469), 639 m frá VR-II. Næsta aflagða stöð er Sjómannaskóli (2) í 689 m, sem hætti mælingum 1963 — aðeins 50 m skilja stöðvarnar að. Röðun eftir fjarlægð einni saman getur því hæglega skilað ónothæfri stöð."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0058",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0055",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23700,7 +23523,7 @@
       "samhengi": "Hver er næsta virka stöðin og hversu miklu munar? Reykjavík Hljómskálagarður (1469), 639 m frá VR-II. Næsta aflagða stöð"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0059",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0056",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23720,7 +23543,7 @@
       "samhengi": "Hver er næsta virka stöðin og hversu miklu munar? Reykjavík Hljómskálagarður (1469), 639 m frá VR-II. Næsta aflagða stöð er Sjómannaskóli (2) í 689 m, sem hætti mælingum 1963 — aðeins 50 m skilja stöðvarnar að. Röðun eftir fjarlægð einni saman getur því hæglega skilað ónothæfri stöð."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0060",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0057",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23740,7 +23563,7 @@
       "samhengi": "Hversu margar af stöðvunum eru virkar? 343 af 778, eða um 44 %. Listinn er því ekki listi yfir stöðvar í rekstri heldur allar stöðvar sem Veðurstofan þekkir, virkar og aflagðar."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0061",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0058",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23760,7 +23583,7 @@
       "samhengi": "Hversu margar af stöðvunum eru virkar? 343 af 778, eða um 44 %. Listinn er því ekki listi yfir stöðvar í rekstri heldur allar stöðvar sem Veðurstofan þekkir, virkar og aflagðar."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0062",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0059",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23780,7 +23603,7 @@
       "samhengi": "Hversu margar af stöðvunum eru virkar? 343 af 778, eða um 44 %. Listinn er því ekki listi yfir stöðvar í rekstri heldur allar stöðvar sem Veðurstofan þekkir, virkar og aflagðar."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0063",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0060",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23800,7 +23623,7 @@
       "samhengi": "Dygði sama stöð til að bera saman við veður fyrir 50 árum? Nei. Reykjavík Hljómskálagarður (1469) hóf mælingar 2022 og á því ekkert frá 1976. Þá þarf að skoða start líka: næsta virka stöð sem nær svo langt aftur er Reykjavík (1) í 2547 m, sem mælir frá 1920. Nálægð og samfelld tímaröð eru tvö ólík skilyrði og sama stöðin uppfyllir sjaldnast bæði."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0064",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0061",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23820,7 +23643,7 @@
       "samhengi": "Dygði sama stöð til að bera saman við veður fyrir 50 árum? Nei. Reykjavík Hljómskálagarður (1469) hóf mælingar 2022 og á því ekkert frá 1976. Þá þarf að skoða start líka: næsta virka stöð sem nær svo langt aftur er Reykjavík (1) í 2547 m, sem mælir frá 1920. Nálægð og samfelld tímaröð eru tvö ólík skilyrði og sama stöðin uppfyllir sjaldnast bæði."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0065",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0062",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23840,7 +23663,7 @@
       "samhengi": "Dygði sama stöð til að bera saman við veður fyrir 50 árum? Nei. Reykjavík Hljómskálagarður (1469) hóf mælingar 2022 og á"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0066",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0063",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23860,7 +23683,7 @@
       "samhengi": "Dygði sama stöð til að bera saman við veður fyrir 50 árum? Nei. Reykjavík Hljómskálagarður (1469) hóf mælingar 2022 og á"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0067",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0064",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23880,7 +23703,7 @@
       "samhengi": "Dygði sama stöð til að bera saman við veður fyrir 50 árum? Nei. Reykjavík Hljómskálagarður (1469) hóf mælingar 2022 og á því ekkert frá 1976. Þá þarf að skoða start líka: næsta virka stöð sem nær svo langt aftur er Reykjavík (1) í 2547 m, sem mælir frá 1920. Nálægð og samfelld tímaröð eru tvö ólík skilyrði og sama stöðin uppfyllir sjaldnast bæði."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0068",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0065",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23900,7 +23723,7 @@
       "samhengi": "Dygði sama stöð til að bera saman við veður fyrir 50 árum? Nei. Reykjavík Hljómskálagarður (1469) hóf mælingar 2022 og á því ekkert frá 1976. Þá þarf að skoða start líka: næsta virka stöð sem nær svo langt aftur er Reykjavík (1) í 2547 m, sem mælir frá 1920. Nálægð og samfelld tímaröð eru tvö ólík skilyrði og sama stöðin uppfyllir sjaldnast bæði."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0069",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0066",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23920,7 +23743,7 @@
       "samhengi": "Dygði sama stöð til að bera saman við veður fyrir 50 árum? Nei. Reykjavík Hljómskálagarður (1469) hóf mælingar 2022 og á"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0070",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0067",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23940,7 +23763,7 @@
       "samhengi": "Kassi, ekki hringur. polygon afmarkar ferning, svo horn hans ná ríflega 5 km frá VR-II. Það breytir fjöldanum lítillega en ekki röðuninni."
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0071",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0068",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23960,7 +23783,7 @@
       "samhengi": "python -X utf8 src/vedurstofa_stodvar.py # sækir gögnin og skrifar úttakið python -X utf8 src/vedurstofa_stodvar.py --vi"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0072",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0069",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -23980,7 +23803,7 @@
       "samhengi": "python -X utf8 src/vedurstofa_stodvar.py # sækir gögnin og skrifar úttakið python -X utf8 src/vedurstofa_stodvar.py --vi"
     },
     {
-      "id": "lotur/vefthjonustur/vedurstofan.html#0073",
+      "id": "lotur/vefthjonustur/vedurstofan.html#0070",
       "sida": "lotur/vefthjonustur/vedurstofan.html",
       "lota": "9cf667d",
       "kafli": [
@@ -24731,36 +24554,16 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "1017",
-      "gildi": 1017,
+      "texti": "1017-1018",
+      "gildi": null,
       "bil": null,
       "eining": null,
-      "tegund": "heiltala",
-      "visst": true,
-      "samhengi": "Handritin með skýrt Phoebe-söngtilvik í Central Perk eru: 0101 , 0110 , 0111 , 0208 , 0212-0213 , 0217 , 0218 , 0314 , 0315 , 0323 , 0401 , 0402 , 0405 , 0410 , 0418 , 0603 , 0615-0616 , 0810 , 1017-1018 ."
+      "tegund": "aukenni",
+      "visst": false,
+      "samhengi": "Handritin með skýrt Phoebe-söngtilvik í Central Perk eru: 0101 , 0110 , 0111 , 0208 , 0212-0213 , 0217 , 0218 , 0314 , 0"
     },
     {
       "id": "phoebe-central-perk.html#0037",
-      "sida": "phoebe-central-perk.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Phoebe syngur í Central Perk",
-        "Spurningin"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "-1018",
-      "gildi": -1018,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": true,
-      "samhengi": "Handritin með skýrt Phoebe-söngtilvik í Central Perk eru: 0101 , 0110 , 0111 , 0208 , 0212-0213 , 0217 , 0218 , 0314 , 0315 , 0323 , 0401 , 0402 , 0405 , 0410 , 0418 , 0603 , 0615-0616 , 0810 , 1017-1018 ."
-    },
-    {
-      "id": "phoebe-central-perk.html#0038",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -24780,7 +24583,7 @@
       "samhengi": "Mynd 20.1: Hver punktur er ein handritaskrá. Litaða strikið sýnir miðgildi hvers hóps og brotalínan sýnir jafna skipting"
     },
     {
-      "id": "phoebe-central-perk.html#0039",
+      "id": "phoebe-central-perk.html#0038",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -24800,7 +24603,7 @@
       "samhengi": "Kóðinn les 227 HTML-handrit úr data/external/delvinso-friends/season/ í núverandi delvinso/friends-tv-show-analysis -submodule. Tvær af 229 skrám eru undanskildar: 0423uncut er önnur útgáfa af sama þætti og 07outtakes er upptökuafgangur, ekki þáttur. Fjórar skrár sameina tvöfalda þætti og eru því ein samanburðareining hvor."
     },
     {
-      "id": "phoebe-central-perk.html#0040",
+      "id": "phoebe-central-perk.html#0039",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -24820,7 +24623,7 @@
       "samhengi": "Kóðinn les 227 HTML-handrit úr data/external/delvinso-friends/season/ í núverandi delvinso/friends-tv-show-analysis -submodule. Tvær af 229 skrám eru undanskildar: 0423uncut er önnur útgáfa af sama þætti og 07outtakes er upptökuafgangur, ekki þáttur. Fjórar skrár sameina tvöfalda þætti og eru því ein samanburðareining hvor."
     },
     {
-      "id": "phoebe-central-perk.html#0041",
+      "id": "phoebe-central-perk.html#0040",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -24840,7 +24643,7 @@
       "samhengi": "Kóðinn les 227 HTML-handrit úr data/external/delvinso-friends/season/ í núverandi delvinso/friends-tv-show-analysis -sub"
     },
     {
-      "id": "phoebe-central-perk.html#0042",
+      "id": "phoebe-central-perk.html#0041",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -24860,7 +24663,7 @@
       "samhengi": "Kóðinn les 227 HTML-handrit úr data/external/delvinso-friends/season/ í núverandi delvinso/friends-tv-show-analysis -sub"
     },
     {
-      "id": "phoebe-central-perk.html#0043",
+      "id": "phoebe-central-perk.html#0042",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -24880,7 +24683,7 @@
       "samhengi": "Auðkenni handritaskrár, t.d. 0405 ."
     },
     {
-      "id": "phoebe-central-perk.html#0044",
+      "id": "phoebe-central-perk.html#0043",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -24900,7 +24703,7 @@
       "samhengi": "Sena telst söngsena aðeins þegar handritið merkir skýrt að Phoebe sé að syngja eða koma fram, til dæmis með (singing) , "
     },
     {
-      "id": "phoebe-central-perk.html#0045",
+      "id": "phoebe-central-perk.html#0044",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -24922,7 +24725,7 @@
       "samhengi": "^ \\s * ([ ^ :\\n]{ 1 , 100 }):\\s * (. * )$"
     },
     {
-      "id": "phoebe-central-perk.html#0046",
+      "id": "phoebe-central-perk.html#0045",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -24944,7 +24747,7 @@
       "samhengi": "^ \\s * ([ ^ :\\n]{ 1 , 100 }):\\s * (. * )$"
     },
     {
-      "id": "phoebe-central-perk.html#0047",
+      "id": "phoebe-central-perk.html#0046",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -24966,7 +24769,7 @@
       "samhengi": "Sleppur: Tilsvör þar sem umritari sleppti tvípunktinum, og sviðslýsingar sem innihalda tvípunkt innan fyrstu 100 stafa lenda sem „ræðumaður“ sem engin aðalpersóna á og eru þá ekki taldar."
     },
     {
-      "id": "phoebe-central-perk.html#0048",
+      "id": "phoebe-central-perk.html#0047",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -24988,7 +24791,7 @@
       "samhengi": "Sleppur: Söngur sem umritari merkti ekki, eða merkti með orðum sem segðin leitar ekki að ( (humming) , (plays guitar) )."
     },
     {
-      "id": "phoebe-central-perk.html#0049",
+      "id": "phoebe-central-perk.html#0048",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25010,7 +24813,7 @@
       "samhengi": "(?:\\bphoebe(?: 's|’s)? \\b .{0,80} \\b (?:is singing|performing|finishing up a song) \\b | \\b both \\b .{0,40} \\b phoebe \\b "
     },
     {
-      "id": "phoebe-central-perk.html#0050",
+      "id": "phoebe-central-perk.html#0049",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25032,7 +24835,7 @@
       "samhengi": "(?:\\bphoebe(?: 's|’s)? \\b .{0,80} \\b (?:is singing|performing|finishing up a song) \\b | \\b both \\b .{0,40} \\b phoebe \\b "
     },
     {
-      "id": "phoebe-central-perk.html#0051",
+      "id": "phoebe-central-perk.html#0050",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25054,7 +24857,7 @@
       "samhengi": "(?:\\bphoebe(?: 's|’s)? \\b .{0,80} \\b (?:is singing|performing|finishing up a song) \\b | \\b both \\b .{0,40} \\b phoebe \\b "
     },
     {
-      "id": "phoebe-central-perk.html#0052",
+      "id": "phoebe-central-perk.html#0051",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25076,7 +24879,7 @@
       "samhengi": "Sleppur: Lýsingar með annarri orðanotkun ( Phoebe plays , Phoebe strums ) og tilvik þar sem nafnið og sögnin standa lengra en 80 stöfum hvort frá öðru."
     },
     {
-      "id": "phoebe-central-perk.html#0053",
+      "id": "phoebe-central-perk.html#0052",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25098,7 +24901,7 @@
       "samhengi": "Sleppur: Tölur ( 2 ) og bandstrikuð orð telja sem tvö ( well-known → well , known ). Það hefur sömu áhrif á allar persónur og skekkir ekki hlutföll."
     },
     {
-      "id": "phoebe-central-perk.html#0054",
+      "id": "phoebe-central-perk.html#0053",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25120,7 +24923,7 @@
       "samhengi": "python -X utf8 src/phoebe_central_perk.py --audit"
     },
     {
-      "id": "phoebe-central-perk.html#0055",
+      "id": "phoebe-central-perk.html#0054",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25142,7 +24945,7 @@
       "samhengi": "Niðurstaða þeirrar yfirferðar er fest í tests/test_phoebe_central_perk.py : 24 senur í 19 skrám, 0405 með fjórar senur í sama handriti, og fjögur jaðartilvik ( 0107 , 0307 , 0715 , 0913 ) sem tala um söng og mega ekki teljast. Breyti einhver segðunum síðar falla prófin, svo breytingin verður meðvituð ákvörðun en ekki þögul hliðarverkun."
     },
     {
-      "id": "phoebe-central-perk.html#0056",
+      "id": "phoebe-central-perk.html#0055",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25164,7 +24967,7 @@
       "samhengi": "Niðurstaða þeirrar yfirferðar er fest í tests/test_phoebe_central_perk.py : 24 senur í 19 skrám, 0405 með fjórar senur í sama handriti, og fjögur jaðartilvik ( 0107 , 0307 , 0715 , 0913 ) sem tala um söng og mega ekki teljast. Breyti einhver segðunum síðar falla prófin, svo breytingin verður meðvituð ákvörðun en ekki þögul hliðarverkun."
     },
     {
-      "id": "phoebe-central-perk.html#0057",
+      "id": "phoebe-central-perk.html#0056",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25186,7 +24989,7 @@
       "samhengi": "Niðurstaða þeirrar yfirferðar er fest í tests/test_phoebe_central_perk.py : 24 senur í 19 skrám, 0405 með fjórar senur í"
     },
     {
-      "id": "phoebe-central-perk.html#0058",
+      "id": "phoebe-central-perk.html#0057",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25208,7 +25011,7 @@
       "samhengi": "Niðurstaða þeirrar yfirferðar er fest í tests/test_phoebe_central_perk.py : 24 senur í 19 skrám, 0405 með fjórar senur í"
     },
     {
-      "id": "phoebe-central-perk.html#0059",
+      "id": "phoebe-central-perk.html#0058",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25230,7 +25033,7 @@
       "samhengi": "Niðurstaða þeirrar yfirferðar er fest í tests/test_phoebe_central_perk.py : 24 senur í 19 skrám, 0405 með fjórar senur í"
     },
     {
-      "id": "phoebe-central-perk.html#0060",
+      "id": "phoebe-central-perk.html#0059",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25252,7 +25055,7 @@
       "samhengi": "Niðurstaða þeirrar yfirferðar er fest í tests/test_phoebe_central_perk.py : 24 senur í 19 skrám, 0405 með fjórar senur í"
     },
     {
-      "id": "phoebe-central-perk.html#0061",
+      "id": "phoebe-central-perk.html#0060",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25274,7 +25077,7 @@
       "samhengi": "Niðurstaða þeirrar yfirferðar er fest í tests/test_phoebe_central_perk.py : 24 senur í 19 skrám, 0405 með fjórar senur í"
     },
     {
-      "id": "phoebe-central-perk.html#0062",
+      "id": "phoebe-central-perk.html#0061",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25294,7 +25097,7 @@
       "samhengi": "Hér er upprunahandrit þáttar 0110 , þar sem eitt af fyrstu heilu Central Perk-söngatriðunum í greiningunni birtist. Innf"
     },
     {
-      "id": "phoebe-central-perk.html#0063",
+      "id": "phoebe-central-perk.html#0062",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25314,7 +25117,7 @@
       "samhengi": "Hér er upprunahandrit þáttar 0110 , þar sem eitt af fyrstu heilu Central Perk-söngatriðunum í greiningunni birtist. Innf"
     },
     {
-      "id": "phoebe-central-perk.html#0064",
+      "id": "phoebe-central-perk.html#0063",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25334,7 +25137,7 @@
       "samhengi": "Hér er upprunahandrit þáttar 0110 , þar sem eitt af fyrstu heilu Central Perk-söngatriðunum í greiningunni birtist. Innfellingin var prófuð 27. ágúst 2026: síðan svaraði með HTTP 200 og sendi hvorki X-Frame-Options né Content-Security-Policy sem bannar iframe ."
     },
     {
-      "id": "phoebe-central-perk.html#0065",
+      "id": "phoebe-central-perk.html#0064",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25354,7 +25157,7 @@
       "samhengi": "Greiningin notar aðeins staðlaða safnið í Python 3.12; enginn þriðja aðila Python- eða R-pakki kemur við sögu. Kóðinn er"
     },
     {
-      "id": "phoebe-central-perk.html#0066",
+      "id": "phoebe-central-perk.html#0065",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25374,7 +25177,7 @@
       "samhengi": "Lesa — hvert HTML-handrit er klofið í textablokkir. Skrár með færri en 20 málsgreinar eru skrifaðar með <br> í stað <p> (þáttaröð 2) og fá sérmeðferð."
     },
     {
-      "id": "phoebe-central-perk.html#0067",
+      "id": "phoebe-central-perk.html#0066",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25394,7 +25197,7 @@
       "samhengi": "Lesa — hvert HTML-handrit er klofið í textablokkir. Skrár með færri en 20 málsgreinar eru skrifaðar með <br> í stað <p> (þáttaröð 2) og fá sérmeðferð."
     },
     {
-      "id": "phoebe-central-perk.html#0068",
+      "id": "phoebe-central-perk.html#0067",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -25414,7 +25217,7 @@
       "samhengi": "python -X utf8 src/phoebe_central_perk.py python -X utf8 -m unittest tests.test_phoebe_central_perk"
     },
     {
-      "id": "phoebe-central-perk.html#0069",
+      "id": "phoebe-central-perk.html#0068",
       "sida": "phoebe-central-perk.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28535,37 +28338,16 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "28",
-      "gildi": 28,
+      "texti": "28-23",
+      "gildi": null,
       "bil": null,
       "eining": null,
-      "tegund": "heiltala",
+      "tegund": "aukenni",
       "visst": false,
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
       "id": "team.html#0035",
-      "sida": "team.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Teymið",
-        "Hvernig við vinnum",
-        "Gagnaveita þemaverkefnisins · hluti 2A"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "-23",
-      "gildi": -23,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
-    },
-    {
-      "id": "team.html#0036",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28586,7 +28368,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "team.html#0037",
+      "id": "team.html#0036",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28607,7 +28389,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "team.html#0038",
+      "id": "team.html#0037",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28628,7 +28410,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "team.html#0039",
+      "id": "team.html#0038",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28649,7 +28431,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "team.html#0040",
+      "id": "team.html#0039",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28670,7 +28452,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "team.html#0041",
+      "id": "team.html#0040",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28691,7 +28473,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "team.html#0042",
+      "id": "team.html#0041",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28712,7 +28494,7 @@
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
     {
-      "id": "team.html#0043",
+      "id": "team.html#0042",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28733,7 +28515,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl."
     },
     {
-      "id": "team.html#0044",
+      "id": "team.html#0043",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28754,7 +28536,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl."
     },
     {
-      "id": "team.html#0045",
+      "id": "team.html#0044",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28775,7 +28557,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl."
     },
     {
-      "id": "team.html#0046",
+      "id": "team.html#0045",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28796,7 +28578,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl."
     },
     {
-      "id": "team.html#0047",
+      "id": "team.html#0046",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28817,7 +28599,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl."
     },
     {
-      "id": "team.html#0048",
+      "id": "team.html#0047",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28838,7 +28620,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl. 00:00 UTC; upphaf meðtalið, endir undanskilinn. Lengdargráða −23 til −21,5; breiddargráða 63,7 til 64,1. Stærð 3–7, dýpt 0–50 km; aðeins earthquake , manual , sil ."
     },
     {
-      "id": "team.html#0049",
+      "id": "team.html#0048",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28859,7 +28641,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl. 00:00 UTC; upphaf meðtalið, endir undanskilinn. Lengdargráða −23 til −21,5; breiddargráða 63,7 til 64,1. Stærð 3–7, dýpt 0–50 km; aðeins earthquake , manual , sil ."
     },
     {
-      "id": "team.html#0050",
+      "id": "team.html#0049",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28880,7 +28662,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl. 00:00 UTC; upphaf meðtalið, endir undanskilinn. Lengdargráða −23 til −21,5; breiddargráða 63,7 til 64,1. Stærð 3–7, dýpt 0–50 km; aðeins earthquake , manual , sil ."
     },
     {
-      "id": "team.html#0051",
+      "id": "team.html#0050",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28901,7 +28683,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl. 00:00 UTC; upphaf meðtalið, endir undanskilinn. Lengdargráða −23 til −21,5; breiddargráða 63,7 til 64,1. Stærð 3–7, dýpt 0–50 km; aðeins earthquake , manual , sil ."
     },
     {
-      "id": "team.html#0052",
+      "id": "team.html#0051",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28925,7 +28707,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl. 00:00 UTC; upphaf meðtalið, endir undanskilinn. Lengdargráða −23 til −21,5; breiddargráða 63,7 til 64,1. Stærð 3–7, dýpt 0–50 km; aðeins earthquake , manual , sil ."
     },
     {
-      "id": "team.html#0053",
+      "id": "team.html#0052",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28949,7 +28731,7 @@
       "samhengi": "Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 2024-01-01 kl. 00:00 UTC; upphaf meðtalið, endir undanskilinn. Lengdargráða −23 til −21,5; breiddargráða 63,7 til 64,1. Stærð 3–7, dýpt 0–50 km; aðeins earthquake , manual , sil ."
     },
     {
-      "id": "team.html#0054",
+      "id": "team.html#0053",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28970,7 +28752,7 @@
       "samhengi": "SHA-256: a535359ea84346426d5ce7fccf4ce8e5158b712e4fc66378dae4b291f771fa9a ."
     },
     {
-      "id": "team.html#0055",
+      "id": "team.html#0054",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -28991,7 +28773,7 @@
       "samhengi": "SHA-256: a535359ea84346426d5ce7fccf4ce8e5158b712e4fc66378dae4b291f771fa9a ."
     },
     {
-      "id": "team.html#0056",
+      "id": "team.html#0055",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
@@ -29012,7 +28794,7 @@
       "samhengi": "Engin skráning eða API-lykill er nauðsynlegur. Hausinn x-vi-api-version velur opinbera útgáfu API-sins. Skjölun og OpenA"
     },
     {
-      "id": "team.html#0057",
+      "id": "team.html#0056",
       "sida": "team.html",
       "lota": "fdf1261",
       "kafli": [
