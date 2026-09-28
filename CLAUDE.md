@@ -166,6 +166,14 @@ hraða og örugga.
 - Virkar frá 320px upp úr. Ekkert lárétt skrun.
 - Smellifletir minnst 44×44px.
 
+### 3.6 Texti — stuttur og auðlesinn
+- Skrifað fyrir lesandann: ein hugmynd í málsgrein, það sem má sleppa er sleppt.
+- Inngangur síðu **hámark 25 orð**, málsgrein **hámark 45 orð**.
+- Engar skráaslóðir, verkpakkanúmer eða innri hugtök í meginmáli (nema á
+  aðferðafræðisíðunni, sem lýsir verkefninu sjálfu).
+- Prófað í `tests/test_vefur_texti.py`. Sama hugsun gildir um `docs/`: skjal
+  segir hvernig hlutirnir eru, sagan sjálf er í git.
+
 ---
 
 ## 4. Gagnasöfnun frá vefþjónustum
