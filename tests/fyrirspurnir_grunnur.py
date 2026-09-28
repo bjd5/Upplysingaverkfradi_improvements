@@ -52,6 +52,10 @@ DAEMISBREYTUR: dict[str, tuple] = {
     "hagstofan-hlutfoll": (HAGSTOFAN_TAFLA,),
     "hagstofan-summur": (HAGSTOFAN_TAFLA,),
     "hagstofan-munur": (HAGSTOFAN_TAFLA, "5", "07", "Alls", "Alls", "Alls"),
+    "hagstofan-gagnasafn": (HAGSTOFAN_TAFLA,),
+    "hagstofan-fyrirspurn": (HAGSTOFAN_TAFLA,),
+    "hagstofan-viddir": (HAGSTOFAN_TAFLA,),
+    "hagstofan-kodabok": (HAGSTOFAN_TAFLA,),
     "mbl-svor": (MBL_EINTAK, None, None),
     "vedurstodvar-stod-eftir-audkenni": (vedur.VALIN_STOD,),
     "vedurstodvar-stodvar-i-marghyrningi": _KASSI,
@@ -60,6 +64,7 @@ DAEMISBREYTUR: dict[str, tuple] = {
     "vedurstodvar-naesta-aflagda-stod": _HNIT,
     "vedurstodvar-naesta-virka-langtimastod": (*_HNIT, vedur.VIDMIDSAR - vedur.AR_AFTUR_I_TIMANN),
     "vedurstodvar-kassi-eftir-fjarlaegd": (*_HNIT, *_KASSI),
+    "vedurstodvar-sokn": (vedurstodvar_hledsla.THJONUSTA,),
 }
 
 _GRUNNUR: sqlite3.Connection | None = None

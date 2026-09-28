@@ -37,6 +37,7 @@ import json
 import os
 import tempfile
 from datetime import UTC, datetime
+from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
@@ -180,3 +181,17 @@ def skrifa_umslag(mappa: Path, skraarheiti: str, umslag: dict[str, Any]) -> Path
     slod = Path(mappa) / skraarheiti
     skrifa_atomiskt(slod, sem_baeti(umslag))
     return slod
+
+
+def ein_rod(radir: Sequence[Any], lysing: str) -> Any:
+    """Krefst nákvæmlega einnar raðar úr fyrirspurn og skilar henni.
+
+    Engin röð þýðir að safnið hefur ekki verið hlaðið í grunninn; fleiri en ein
+    að eitthvað sé tvískráð. Hvorugt má enda sem tala á vefsíðunni (regla 6).
+    """
+    if len(radir) != 1:
+        raise UtflutningsVilla(
+            f"{lysing}: fyrirspurnin skilaði {len(radir)} röðum en átti að skila "
+            "einni. Er búið að hlaða gagnasafnið í grunninn (--skref hlada)?"
+        )
+    return radir[0]
