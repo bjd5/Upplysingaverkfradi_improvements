@@ -31,6 +31,10 @@ except ImportError:  # keyrt beint úr möppunni
         PER_TEN_THOUSAND, PERCENT_DECIMALS, PHOEBE, PRIOR_SIZE, STOPWORDS,
     )
 
+# Dálkar sérkennilegu orðanna, fastir svo tóm tafla (lítið úrtak þar sem
+# ekkert orð nær MIN_WORD_TOTAL) verði tóm skrá með haus en ekki villa.
+DISTINCTIVE_FIELDS = ["word", "z_score", "phoebe_count", "others_count",
+                      "phoebe_per_10k", "others_per_10k"]
 QUESTION_MARK = "?"
 EXCLAMATION_MARK = "!"
 

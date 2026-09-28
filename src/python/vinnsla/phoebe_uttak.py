@@ -34,6 +34,7 @@ from pathlib import Path
 try:  # keyrt sem eining innan pakkans
     from .friends_handrit import ROT, TranscriptError
     from .phoebe_greining import Analysis, analyse
+    from .phoebe_ordafordi import DISTINCTIVE_FIELDS
     from .phoebe_samningur import (
         MATRIX_FIELDS, MENTIONS_FIELDS, PHRASE_FIELDS, SCREENTIME_FIELDS, SPEAKS_WITH_FIELDS,
         matrix_rows, mentions_rows, metadata, screentime_rows, speaks_with_rows, summary,
@@ -44,6 +45,7 @@ try:  # keyrt sem eining innan pakkans
 except ImportError:  # keyrt beint úr möppunni
     from friends_handrit import ROT, TranscriptError
     from phoebe_greining import Analysis, analyse
+    from phoebe_ordafordi import DISTINCTIVE_FIELDS
     from phoebe_samningur import (
         MATRIX_FIELDS, MENTIONS_FIELDS, PHRASE_FIELDS, SCREENTIME_FIELDS, SPEAKS_WITH_FIELDS,
         matrix_rows, mentions_rows, metadata, screentime_rows, speaks_with_rows, summary,
@@ -99,7 +101,7 @@ def output_files(a: Analysis) -> list[JsonFile | CsvFile]:
         CsvFile("phoebe-screentime-by-season.csv", _fields_of(st.season_rows), st.season_rows),
         CsvFile("phoebe-per-episode.csv", _fields_of(st.episode_rows), st.episode_rows),
         JsonFile("phoebe-extra-stats.json", extra_stats_report(a)),
-        CsvFile("phoebe-distinctive-words.csv", _fields_of(a.distinctive), a.distinctive),
+        CsvFile("phoebe-distinctive-words.csv", DISTINCTIVE_FIELDS, a.distinctive),
         JsonFile("summary.json", summary(a)),
         CsvFile("screentime-by-season.csv", SCREENTIME_FIELDS, screentime_rows(a)),
         CsvFile("mentions-by-season.csv", MENTIONS_FIELDS, mentions_rows(a)),
