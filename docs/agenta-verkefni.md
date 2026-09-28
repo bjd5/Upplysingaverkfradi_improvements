@@ -43,6 +43,9 @@ Fastar reglur fyrir þessa lotu:
   - Villur eru aldrei þaggaðar (regla 6).
   - Ljúktu á að telja upp hvaða liði úr gátlista reglu 9 þú staðfestir og hverja
     ekki — og af hverju ekki.
+  - PR-lýsingin skal innihalda `Closes #<N>`. Lokunarorð GitHub eru ENSK —
+    „Lokar #N" lokar engu. Sex issue stóðu opin eftir samruna 27.9.2026 af
+    þessari ástæðu og þurfti að loka í hendi.
 ```
 
 ---
@@ -51,9 +54,11 @@ Fastar reglur fyrir þessa lotu:
 
 `✅` = lokið · `🟢` = má hefja núna · `⏸` = blokkað · `👤` = Björn, ekki agent
 
-Staðan er lesin úr PR-um og greinum repo-sins **27.9.2026**. Sameinuð verk bera
-`main`; lokin verk sem bíða samruna bera PR-númerið sitt. Blokkunardálkurinn
-telur aðeins það sem **enn** er ólokið.
+`🔄` = agent að störfum
+
+Staðan er lesin úr PR-um og greinum repo-sins **28.9.2026**. Sameinuð verk bera
+`main` og PR-númerið sitt. Blokkunardálkurinn telur aðeins það sem **enn** er
+ólokið.
 
 ### Bylgja 0 — björgun og grunnur
 
@@ -63,7 +68,7 @@ telur aðeins það sem **enn** er ólokið.
 | **P0.2** Lesa viðmiðstölur úr byggðu síðunni | #30 | `--persona-analyzer` | ✅ `vidmid/lesa-tolur` | — |
 | **P0.3** Frysta hrágögn + `.gitignore` | #2 | `--persona-devops` | ✅ `gagnabjorgun/frysta-hragogn` | — |
 | **P0.4** Heimildir og aðferðafræði | #4 | `--persona-scribe=en` | ✅ `skjolun/heimildir-adferdafraedi` | — |
-| **P0.5** Höfundaréttarákvörðun | #3 | 👤 | ✅ valkostur A, 27.9.2026 | — |
+| **P0.5** Höfundaréttarákvörðun | #3 | 👤 + `--persona-devops` | ✅ valkostur A · 🔄 framkvæmd | — |
 | **P0.6** Myndritaákvörðun | #17 | 👤 | ✅ matplotlib samþykkt, 27.9.2026 | — |
 
 TMDB náðist ekki að frysta í P0.3 — `TMDB_TOKEN` er hvergi til. Það er skráð í
@@ -89,15 +94,15 @@ sýnidæmi um myndrit — er agentaverk, ekki ákvörðun.
 | **P1.1** Migration-keyrari og tengilag | #5 | `--persona-backend` | ✅ `gagnagrunnur/migration-keyrari` | — |
 | **P1.2** Skjálftavaktin: schema + hleðsla | #6 | `--persona-backend` | ✅ `main` (PR #40) | — |
 | **P1.3** Hagstofan: schema + hleðsla | #7 | `--persona-backend` | ✅ `main` (PR #41) | — |
-| **P1.4** Veðurstöðvar: schema + hleðsla | #8 | `--persona-backend` | ✅ PR #42 | — |
-| **P1.5** mbl.is: schema + hleðsla | #9 | `--persona-backend` | ✅ PR #46 | — |
+| **P1.4** Veðurstöðvar: schema + hleðsla | #8 | `--persona-backend` | ✅ `main` (PR #42) | — |
+| **P1.5** mbl.is: schema + hleðsla | #9 | `--persona-backend` | ✅ `main` (PR #46) | — |
 | **P1.6** Friends: schema + hleðsla | #10 | `--persona-backend` | 🟢 | — |
 | **P1.7** Fyrirspurnir | #11 | `--persona-backend` | ⏸ | P1.6 |
 
-Fjórir af fimm hleðslupökkum eru í höfn: #6 og #7 eru komin í `main`
-(migrations 001–003), #8 og #9 bíða samruna. Staðfestu fjöldatölurnar:
-334 atburðir · 61 dagur (#6) · 36 gildi = margfeldi `size` (#7) · 778 stöðvar,
-343 með NULL lokaár (#8) · öll fimm svör æfingarinnar (#9).
+**Fjórir af fimm hleðslupökkum eru komnir í `main`** — migrations 001–005,
+442 próf græn. Fjöldatölurnar sem stóðust: 334 atburðir · 61 dagur (#6) ·
+36 gildi = margfeldi `size` (#7) · 778 stöðvar, 343 með NULL lokaár (#8) ·
+öll fimm svör æfingarinnar (#9).
 
 **P1.6 er laus** eftir höfundaréttarákvörðunina og er það eina sem P1.7 bíður enn.
 
@@ -110,8 +115,8 @@ samrunaárekstur. Tengingin er **#39** — eitt verk, unnið þegar greinarnar e
 | Pakki | Issue | Persóna | Staða | Blokkað af |
 |---|---|---|---|---|
 | **P2.1** HTTP-lag | #12 | `--persona-backend` | ✅ `sofnun/http-lag` | — |
-| **P2.2** Söfnunarskriftur fluttar | #13 | `--persona-backend` | ✅ PR #43 | — |
-| **P2.3** Kljúfa `earthquakes.py` (557 l.) | #14 | `--persona-refactorer` | 🟢 | — |
+| **P2.2** Söfnunarskriftur fluttar | #13 | `--persona-backend` | ✅ `main` (PR #43) | — |
+| **P2.3** Kljúfa `earthquakes.py` (557 l.) | #14 | `--persona-refactorer` | 🔄 | — |
 | **P2.4** Kljúfa `vedurstofa_stodvar.py` (637 l.) | #14 | `--persona-refactorer` | 🟢 | — |
 | **P2.5** Kljúfa `phoebe_analysis.py` (1.199 l.) | #14 | `--persona-refactorer` | 🟢 | — |
 | **P2.6** Kljúfa `phoebe_central_perk.py` (877 l.) | #14 | `--persona-refactorer` | 🟢 | — |
@@ -122,9 +127,15 @@ samrunaárekstur. Tengingin er **#39** — eitt verk, unnið þegar greinarnar e
 P2.3–P2.6 eru óháð innbyrðis og **öll fjögur eru laus** eftir P2.2 og P0.5.
 
 Viðmiðið sem P2.8 ber saman við er tilbúið (P0.2): **440 efnislegar tölur** í
-`docs/vidmid/vidmid.json` þegar #38 er inni. Það voru 445 — fimm þeirra voru
-falskar, lesnar úr auðkennum og skýrslunúmerum (PR #45). Talan 1378 sem #38
-setti sem skilyrði var mistalning; rétt tala er 1383.
+`docs/vidmid/vidmid.json` (PR #45, í `main`). Það voru 445 — fimm þeirra voru
+falskar, lesnar úr auðkennum og skýrslunúmerum. Talan 1378 sem #38 setti sem
+skilyrði var mistalning; rétt tala er 1383.
+
+**Athugið fyrir P2.3–P2.6:** pakkar #6 og #8 fluttu þegar *hleðsluleiðina* úr
+`earthquakes.py` og `vedurstofa_stodvar.py` yfir í `src/python/vinnsla/`.
+Klofningspakkarnir eru því minni en línutölurnar segja — byrjið á að bera gömlu
+skriftuna við það sem þegar er í trénu og tvítakið ekki. Greiningarhlutinn
+(dagatalning, regex-lyklar, mat á nothæfi) er það sem eftir stendur.
 
 ### Bylgja 3 — vefsíðan
 
@@ -132,7 +143,7 @@ setti sem skilyrði var mistalning; rétt tala er 1383.
 |---|---|---|---|---|
 | **P3.1** Beinagrind og sjónrænt kerfi | #18 | `--persona-frontend` | ✅ `main` (PR #36) | — |
 | **P3.2** JS-gagnahleðsla | #19 | `--persona-frontend` | ⏸ | P3.1, P2.7 |
-| **P3.3** Myndritalag | #17 | `--persona-frontend` | 🟢 | — |
+| **P3.3** Myndritalag | #17 | `--persona-frontend` | 🔄 | — |
 | **P3.4** Síða: Skjálftavaktin | #20 | `--persona-frontend` | ⏸ | P3.2, P3.3 |
 | **P3.5** Síða: Hagstofan | #21 | `--persona-frontend` | ⏸ | P3.2 |
 | **P3.6** Síða: Veðurstöðvar | #22 | `--persona-frontend` | ⏸ | P3.2 |
@@ -158,22 +169,31 @@ Síðuverkin sjálf bíða P3.2, sem bíður útflutningsins (P2.7).
 
 ### Hvað er hægt að setja í gang núna
 
-Sjö pakkar eru lausir og snerta engar sömu skrár:
+**Fjórir agentar eru að störfum frá 28.9.2026** og snerta engar sömu skrár:
 
-| Pakki | Verk | Persóna |
+| Verk | Persóna | Skrár sem það á |
 |---|---|---|
-| **P1.6** | Friends: schema + hleðsla (#10) | `--persona-backend` |
-| **P2.3** | Kljúfa `earthquakes.py` (#14) | `--persona-refactorer` |
-| **P2.4** | Kljúfa `vedurstofa_stodvar.py` (#14) | `--persona-refactorer` |
-| **P2.5** | Kljúfa `phoebe_analysis.py` (#14) | `--persona-refactorer` |
-| **P2.6** | Kljúfa `phoebe_central_perk.py` (#14) | `--persona-refactorer` |
-| **P3.3** | Myndritalag (#17) | `--persona-frontend` |
-| **P3.11** | Síða: aðferðafræði (#25) | `--persona-scribe=en` |
+| **#47** fingrafarið telur vegguklukkustimpla með | `--persona-backend` | `gagnagrunnur/fingrafar.py` |
+| **#3** framkvæma höfundaréttarákvörðunina | `--persona-devops` | `docs/adferdafraedi.md`, `docs/heimildir.md`, `.gitignore`, `data/processed/` |
+| **#17** P3.3 myndritalagið | `--persona-frontend` | `utflutningur/`, `web/assets/`, `docs/myndrit.md` |
+| **#14** P2.3 kljúfa `earthquakes.py` | `--persona-refactorer` | `vinnsla/jardskjalftar*` |
 
-Auk þeirra fimm verk sem urðu til við yfirferð bylgju 1, öll laus: **#3** og
-**#17** (skjölun ákvarðananna), **#39** (tengja `hlada()`, eftir samruna #42 og
-#46), **#44** (prósentukóðun í viðmiðsútdrætti) og **#47** (fingrafarið telur
-vegguklukkustimpla með).
+Eignarhald á skrám er úthlutað **fyrir fram** þegar agentar vinna samtímis — það
+er hvernig #3 og P3.3 komast bæði að skjölun án áreksturs (P3.3 skrifar í
+`docs/myndrit.md`, ekki `adferdafraedi.md`). Sama gildir um `src/python/main.py`:
+enginn agent snertir hann, tengingarnar eru #39.
+
+**Laust á eftir þeim:**
+
+| Pakki | Verk | Persóna | Bíður |
+|---|---|---|---|
+| **P1.6** | Friends: schema + hleðsla (#10) | `--persona-backend` | #3 |
+| **P2.4** | Kljúfa `vedurstofa_stodvar.py` (#14) | `--persona-refactorer` | — |
+| **P2.5** | Kljúfa `phoebe_analysis.py` (#14) | `--persona-refactorer` | — |
+| **P2.6** | Kljúfa `phoebe_central_perk.py` (#14) | `--persona-refactorer` | P2.5 (sameiginlegur þáttari) |
+| **P3.11** | Síða: aðferðafræði (#25) | `--persona-scribe=en` | #3 |
+| — | **#39** tengja `hlada()` og `vinna()` | `--persona-backend` | #47, P2.3–P2.6 |
+| — | **#44** prósentukóðun í viðmiðsútdrætti | `--persona-analyzer` | — |
 
 Ein vinnumappa á hvern agent (kafli 10) og commit + push eftir hvert
 áfangaskref (kafli 15).
