@@ -18,6 +18,7 @@ from pathlib import Path
 from gagnagrunnur.keyrari import MigrationVilla, keyra
 from gagnagrunnur.tenging import slod_grunns, tenging
 from keyrsla.hledsla import hlada_ollum, krefjast_adfanga
+from keyrsla.urvinnsla import handritamappa, vinna_allt
 from keyrsla.villa import SkrefVilla
 from sofnun.saekja_allt import SofnunVilla
 from sofnun.saekja_allt import safna as safna_gogn
@@ -53,9 +54,14 @@ def safna() -> None:
 
 
 def vinna() -> None:
-    """Hreinsar og samræmir hrágögn yfir í data/processed/."""
-    log.info("Vinnsla: ekki útfærð enn — sjá src/python/vinnsla/")
-    raise NotImplementedError("Útfæra í src/python/vinnsla/")
+    """Keyrir vinnslurnar sem skrifa afleiddar töflur í data/processed/.
+
+    Netlausu vinnslurnar (skjálftar, veðurstöðvar) keyra alltaf. Phoebe og
+    Central Perk þurfa Friends-handritin, sem eru utan repo-sins (#3), og keyra
+    aðeins sé ``FRIENDS_HANDRIT_MAPPA`` stillt — annars er það sagt í viðvörun.
+    Sjá ``keyrsla.urvinnsla``.
+    """
+    vinna_allt(GOGN_UNNIN, handritamappa())
 
 
 def hlada() -> None:
