@@ -59,6 +59,7 @@ hraða og örugga.
 │   │   ├── vinnsla/           # hreinsun og umbreyting
 │   │   ├── gagnagrunnur/      # tenging og fyrirspurnir
 │   │   ├── utflutningur/      # JSON út í web/gogn/
+│   │   ├── keyrsla/           # keyrsluröð skrefanna sem main.py kallar í
 │   │   └── vidmid/            # provenance og staðfesting á frosna viðmiðinu
 │   ├── sql/
 │   │   ├── schema/            # töfluskilgreiningar
