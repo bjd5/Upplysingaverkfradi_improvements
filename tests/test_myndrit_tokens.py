@@ -1,20 +1,20 @@
-"""Prófar að myndritin taki liti sína úr tokens.css og mæli andstæðuna (reglur 3.1, 3.3).
+"""Prófar sjónræna kerfi myndritanna: litir, andstæða og íslenskt snið (reglur 3.1, 3.3).
 
-Þessi próf þurfa **ekki** matplotlib: þau fjalla um lestur sjónræna kerfisins
-og mælingu á litaandstæðu, hvort tveggja á staðalsafninu einu. Prófin á
-teikningunni sjálfri eru í ``test_myndrit_svg.py`` og sleppa sér þegar
-matplotlib er ekki til.
+Þessi próf þurfa **ekki** matplotlib: þau fjalla um lestur ``tokens.css``,
+mælingu á litaandstæðu og íslenskt talna- og dagsetningarsnið (issue #17),
+allt á staðalsafninu einu. Prófin á teikningunni sjálfri eru í
+``test_myndrit_svg.py`` og sleppa sér þegar matplotlib er ekki til.
 
-Keyrt með staðalsafninu einu:  python3 -m unittest discover -s tests
+    python3 -m unittest discover -s tests
 """
 
-import unittest
-
-import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 
 import shutil  # noqa: E402
 import tempfile  # noqa: E402
+import unittest
 from pathlib import Path  # noqa: E402
+
+import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 
 from utflutningur import myndrit_litir  # noqa: E402
 from utflutningur.tokens import (  # noqa: E402
@@ -25,6 +25,14 @@ from utflutningur.tokens import (  # noqa: E402
     lesa_tokens,
     thatta_lit,
 )
+from utflutningur.islenskt_snid import (  # noqa: E402
+    islensk_dagsetning,
+    islensk_prosenta,
+    islensk_tala,
+)
+
+
+# --- Litir og andstæða ---------------------------------------------------------
 
 # Andstæður sem WCAG 2.1 gefur upp beint — viðmið sem má ekki reka.
 SVART_A_HVITU = 21.0
@@ -177,6 +185,46 @@ class MyndritaKrofurTest(unittest.TestCase):
         )
         fallnar = myndrit_litir.fallnar(themu)
         self.assertEqual([f"{DOKKT}: núll-merki"], [m.heiti for m in fallnar])
+
+
+
+# --- Íslenskt snið -------------------------------------------------------------
+
+class TolurTest(unittest.TestCase):
+    def test_tugabrotskomma_og_thusundapunktur(self) -> None:
+        self.assertEqual("5,5", islensk_tala(5.475, 1))
+        self.assertEqual("1.234,50", islensk_tala(1234.5, 2))
+        self.assertEqual("1.000.000", islensk_tala(1_000_000))
+        self.assertEqual("187", islensk_tala(187))
+
+    def test_ekkert_enskt_snid_laekur_i_gegn(self) -> None:
+        for gildi in (0.5, 12345.678, 70.49):
+            with self.subTest(gildi=gildi):
+                texti = islensk_tala(gildi, 2)
+                self.assertIn(",", texti)
+                self.assertNotRegex(texti, r"\.\d{2}$")
+
+    def test_neikvaedir_aukastafir_falla(self) -> None:
+        with self.assertRaises(ValueError):
+            islensk_tala(1.0, -1)
+
+    def test_prosenta(self) -> None:
+        self.assertEqual("70,5%", islensk_prosenta(43, 61))
+        with self.assertRaises(ValueError):
+            islensk_prosenta(1, 0)
+
+
+class DagsetningarTest(unittest.TestCase):
+    def test_stytt_og_fullt(self) -> None:
+        self.assertEqual("1. nóv.", islensk_dagsetning("2023-11-01"))
+        self.assertEqual("31. desember 2023", islensk_dagsetning("2023-12-31", stytt=False, med_ari=True))
+        self.assertEqual("15. maí", islensk_dagsetning("2024-05-15"))
+
+    def test_rangt_snid_fellur(self) -> None:
+        for gildi in ("2023-13-01", "1.11.2023", ""):
+            with self.subTest(gildi=gildi):
+                with self.assertRaises(ValueError):
+                    islensk_dagsetning(gildi)
 
 
 if __name__ == "__main__":

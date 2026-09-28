@@ -25,8 +25,8 @@ import unittest
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 
-from mbl_grunnur import GrunnProf  # noqa: E402
-from mbl_vidmid import (  # noqa: E402
+from mbl_hjalp import GrunnProf  # noqa: E402
+from mbl_hjalp import (  # noqa: E402
     FROSNA_EINTAKID,
     FROSNA_UPPRUNASLOD,
     vidmidstala,
