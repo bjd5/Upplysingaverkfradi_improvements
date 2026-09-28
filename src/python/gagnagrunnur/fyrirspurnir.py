@@ -57,6 +57,10 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "skjalftar-manadartalning",
     "skjalftar-staerd-eftir-kvarda",
     "skjalftar-dypt",
+    # Hagstofan
+    "hagstofan-hlutfoll",
+    "hagstofan-munur",
+    "hagstofan-summur",
     # Veðurstöðvar
     "vedurstodvar-allar-stodvar",
     "vedurstodvar-fjoldi-stodva",
@@ -69,6 +73,8 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "vedurstodvar-naesta-aflagda-stod",
     "vedurstodvar-naesta-virka-langtimastod",
     "vedurstodvar-kassi-eftir-fjarlaegd",
+    # mbl.is
+    "mbl-svor",
     # Friends / Phoebe
     "friends-thattunargaedi",
     "friends-plass-alls",

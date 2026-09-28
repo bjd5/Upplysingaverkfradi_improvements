@@ -32,14 +32,18 @@ from gagnagrunnur.tenging import opna  # noqa: E402
 from vinnsla import friends_hledsla, hagstofan, jardskjalftar_hledsla  # noqa: E402
 from vinnsla import mbl_hledsla, vedurstodvar_hledsla  # noqa: E402
 from vinnsla import vedurstodvar_samanburdur as vedur  # noqa: E402
+from vinnsla.mbl_eintak import finna_eintok  # noqa: E402
 from vinnsla.vedurstodvar_fyrirspurnir import skra_fjarlaegdarfall  # noqa: E402
+from mbl_vidmid import FROSNA_EINTAKID  # noqa: E402
 
 # Keyrarinn og hleðslurnar skrá hvert skref; það er ekki það sem prófin mæla.
 for _heiti in ("gagnagrunnur.keyrari", "vinnsla"):
     logging.getLogger(_heiti).setLevel(logging.ERROR)
 
 HAGSTOFAN_TAFLA = "SKO04208b"
-MBL_EINTAK = "2026-09-16T12:08:51Z"
+# Sóknartími frosna mbl-eintaksins, lesinn úr lýsigögnum þess — ekki sleginn inn.
+MBL_EINTAK = next(e.sotta_stund for e in finna_eintok()
+                  if e.skraarheiti.startswith(FROSNA_EINTAKID))
 _MORK = vedur.kassi(vedur.VR_II_BREIDD, vedur.VR_II_LENGD, vedur.RADIUS_KM)
 _KASSI = (_MORK[1], _MORK[3], _MORK[0], _MORK[2])  # breidd á undan lengd
 _HNIT = (vedur.VR_II_BREIDD, vedur.VR_II_LENGD)
