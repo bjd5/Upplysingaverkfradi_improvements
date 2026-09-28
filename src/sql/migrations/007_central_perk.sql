@@ -10,7 +10,8 @@
 --                 Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe @ 2865ed6.
 --                 Klofin í vinnsla/central_perk_*.py (P2.6, PR #58), sem
 --                 endurskapar summary.json bæti fyrir bæti.
---   Aðfang hér:   docs/vidmid/generated/ — þrjár frosnar skrár:
+--   Aðfang hér:   data/processed/central-perk-frosid/ — bætaeins afrit
+--                 þriggja frosinna skráa úr viðmiðinu docs/vidmid/generated/:
 --                   phoebe-central-perk-summary.json  hópar, miðgildi, söngur
 --                   phoebe-central-perk.svg           einn punktur á handrit
 --                   phoebe-central-perk-regex.md      segðirnar sem keyrðu
@@ -57,7 +58,7 @@ CREATE TABLE IF NOT EXISTS central_perk_sources (
     analysis_repository   TEXT    NOT NULL,  -- upprunaverkefnið
     analysis_commit       TEXT    NOT NULL,  -- commit greiningarskriftunnar
     analysis_script       TEXT    NOT NULL,  -- src/phoebe_central_perk.py
-    input_directory       TEXT    NOT NULL,  -- docs/vidmid/generated
+    input_directory       TEXT    NOT NULL,  -- data/processed/central-perk-frosid
     provenance_file       TEXT    NOT NULL,  -- skráin sem geymir SHA-256 summurnar
     licence               TEXT    NOT NULL,  -- leyfisstaðan í stuttu máli
     loaded_at             TEXT    NOT NULL,  -- ISO 8601, UTC — klukkan við hleðslu

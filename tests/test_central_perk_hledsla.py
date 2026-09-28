@@ -1,6 +1,6 @@
 """Próf fyrir hleðslu Central Perk-niðurstaðnanna í grunninn (issue #10).
 
-Netlaus: frosnu skrárnar í ``docs/vidmid/generated/`` eru hlaðnar í
+Netlaus: frosnu skrárnar í ``data/processed/central-perk-frosid/`` eru hlaðnar í
 tímabundinn grunn og **grunnurinn spurður** með fyrirspurnum síðunnar. Væntu
 tölurnar eru lesnar úr ``docs/vidmid/vidmid.json`` (tölurnar sem gamla síðan
 birti), aldrei handskrifaðar; SQL skilar óafrúnnuðu og prófið námundar eins og
@@ -23,7 +23,7 @@ import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma f
 from central_perk_grunnur import (  # noqa: E402
     OTENGD_FORSKEYTI, SAFNSHEITI, inngangstala, songhandrit, vidmidstala,
 )
-from central_perk_vidmid import svg_points  # noqa: E402
+from central_perk_vidmid import VIDMIDSMAPPA, svg_points  # noqa: E402
 from friends_grunnur import opna_med_toflum  # noqa: E402
 
 from gagnagrunnur import fyrirspurnir  # noqa: E402
@@ -139,10 +139,18 @@ class HladidProf(unittest.TestCase):
         self.assertEqual(rad["transcript_repository"], "delvinso/friends-tv-show-analysis")
         self.assertEqual(rad["transcript_commit"], SOURCE_COMMIT)
         self.assertEqual(rad["analysis_commit"], "2865ed6")
-        self.assertEqual(rad["input_directory"], "docs/vidmid/generated")
+        self.assertEqual(rad["input_directory"], "data/processed/central-perk-frosid")
         skrar = [r[0] for r in self.samband.execute(
             "SELECT file_name FROM central_perk_source_files ORDER BY file_name")]
         self.assertEqual(skrar, sorted(SKRAR))
+
+    def test_afritid_er_baetaeins_vidmidinu(self) -> None:
+        """Vinnugagnið og sönnunargagnið eru eins (data/processed/README.md, kafli 2)."""
+        self.assertEqual(sorted(p.name for p in ADFANGSMAPPA.iterdir()), sorted(SKRAR))
+        for heiti in SKRAR:
+            with self.subTest(skra=heiti):
+                self.assertEqual((ADFANGSMAPPA / heiti).read_bytes(),
+                                 (VIDMIDSMAPPA / heiti).read_bytes())
 
     def test_ekkert_textagildi_er_nytt(self) -> None:
         """Enginn handritstexti: hvert textagildi gagnataflnanna stendur orðrétt í aðfanginu."""

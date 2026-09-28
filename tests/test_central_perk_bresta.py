@@ -63,6 +63,10 @@ class GallarProf(unittest.TestCase):
         self.afrit.skipta(SVG, "17.4%", "17.5%", undirrita=False)
         self.bresta(f"{SVG} stemmir ekki við provenance")
 
+    def test_skra_umfram_stodvar(self) -> None:
+        (self.afrit.mappa / "episodes.csv").write_text("episode_id\n", encoding="utf-8")
+        self.bresta("umfram")
+
     def test_skra_sem_vantar_stodvar(self) -> None:
         (self.afrit.mappa / REGEX).unlink()
         self.bresta("er ekki til")

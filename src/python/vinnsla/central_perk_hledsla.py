@@ -1,12 +1,14 @@
 """Hleðsla Central Perk-niðurstaðnanna í grunninn (issue #10, fyrir #24).
 
 Aðfangið er frosið (``vinnsla.central_perk_adfang``): samantektin, myndin og
-segðirnar sem gamla greiningin skrifaði. Handritin eru hvorki lesin né geymd
+segðirnar sem gamla greiningin skrifaði, afritaðar bætaeins í
+``data/processed/central-perk-frosid/``. Handritin eru hvorki lesin né geymd
 (issue #3, valkostur A).
 
 Skref hleðslunnar, og hvert þeirra stöðvar keyrsluna við frávik (regla 6):
 
-1. SHA-256 skránna þriggja borin við ``docs/vidmid/provenance.json``.
+1. SHA-256 skránna þriggja borin við ``docs/vidmid/provenance.json``;
+   mappan geymir engar skrár umfram þær.
 2. Hver reitur sannreyndur — gerð, mörk, einkvæmni.
 3. Samræmi milli skráa: punktar á hóp = ``n``, sönghandritin þau sömu,
    miðgildi punktanna innan námundunar frá miðgildi samantektarinnar,

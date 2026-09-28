@@ -1,10 +1,14 @@
 """Frosnu Central Perk-skrárnar: SHA-staðfesting og lestur (issue #10, #24).
 
-Aðfangið er **þrjár frosnar skrár** í ``docs/vidmid/generated/`` sem gamla
-greiningin (``src/phoebe_central_perk.py`` @ ``2865ed6``) skrifaði. Handritin
-sjálf eru aldrei lesin (issue #3, valkostur A). Áður en skrá er lesin er
-SHA-256 hennar borin við ``docs/vidmid/provenance.json`` (safnið
-``generated``); ósannreynd skrá fer ekki lengra.
+Aðfangið er **þrjár frosnar skrár** í ``data/processed/central-perk-frosid/``
+— bætaeins afrit af skránum sem gamla greiningin
+(``src/phoebe_central_perk.py`` @ ``2865ed6``) skrifaði og liggja í viðmiðinu
+``docs/vidmid/generated/``. Viðmiðið er sönnunargagnið og er aldrei lesið
+hér (``data/processed/README.md``, kafli 2). Handritin sjálf eru aldrei lesin
+(issue #3, valkostur A). Áður en skrá er lesin er SHA-256 hennar borin við
+summu viðmiðsins í ``docs/vidmid/provenance.json`` (safnið ``generated``), og
+mappan verður að geyma nákvæmlega skrárnar þrjár; ósannreynd skrá fer ekki
+lengra.
 
 Hvert gildi er lesið sem sú gerð sem það á að vera og innan marka sinna.
 Frávik eru aldrei leiðrétt: þau stöðva keyrsluna með skýringu (regla 6).
@@ -33,7 +37,7 @@ from gagnagrunnur.tenging import ROT
 
 from .central_perk_mynstur import GROUP_ORDER
 
-ADFANGSMAPPA = ROT / "docs" / "vidmid" / "generated"
+ADFANGSMAPPA = ROT / "data" / "processed" / "central-perk-frosid"
 PROVENANCE = ROT / "docs" / "vidmid" / "provenance.json"
 SAFN = "generated"
 
@@ -104,7 +108,7 @@ def stutt_slod(slod: Path) -> str:
 
 
 def stadfesta_skrar(mappa: Path = ADFANGSMAPPA, provenance: Path = PROVENANCE) -> list[Skra]:
-    """SHA-256 skránna þriggja borin við provenance; fyrsta frávik stöðvar."""
+    """SHA-256 skránna þriggja borin við provenance; skrá umfram eða fyrsta frávik stöðvar."""
     if not provenance.is_file():
         raise CentralPerkVilla(f"Vantar {stutt_slod(provenance)} — ekki hægt að staðfesta aðfangið.")
     sofn = [s for s in json.loads(provenance.read_text(encoding="utf-8")).get("sofn", [])
@@ -114,6 +118,13 @@ def stadfesta_skrar(mappa: Path = ADFANGSMAPPA, provenance: Path = PROVENANCE) -
     skradar: dict[str, list[str]] = {}
     for skra in sofn[0].get("skrar", []):
         skradar.setdefault(Path(str(skra["slod"])).name, []).append(str(skra["sha256"]))
+
+    if not mappa.is_dir():
+        raise CentralPerkVilla(f"Aðfangsmappan {stutt_slod(mappa)} er ekki til.")
+    a_diski = {p.name for p in mappa.iterdir()}
+    if a_diski - set(SKRAR):
+        raise CentralPerkVilla(
+            f"{stutt_slod(mappa)} geymir skrár umfram þær þrjár: {sorted(a_diski - set(SKRAR))}.")
 
     stadfestar = []
     for heiti in SKRAR:
