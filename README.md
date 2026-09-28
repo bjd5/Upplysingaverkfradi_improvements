@@ -49,10 +49,18 @@ sem hvergi á sér heimild.
 Ný migration fær næsta lausa númer (`002_heiti.sql`) og er **aldrei breytt
 eftir að hún hefur verið keyrð**: keyrarinn stöðvast ef SHA-256 hennar breytist.
 
-**Prófin** keyra á staðalsafninu einu:
+**Prófin** keyra á staðalsafninu einu (Python 3.12+; teikniprófin sleppa sér
+nema matplotlib sé uppsett):
 
 ```bash
 python3 -m unittest discover -s tests
+```
+
+**Frosnu gögnin** — hrágögnin í `data/raw/` og viðmiðið í `docs/vidmid/` —
+eru tryggð með SHA-256:
+
+```bash
+python3 src/python/vidmid/provenance.py stadfesta
 ```
 
 ## Gagnaflæði

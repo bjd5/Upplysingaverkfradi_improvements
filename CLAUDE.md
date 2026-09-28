@@ -58,7 +58,7 @@ hraða og örugga.
 │   │   ├── vinnsla/           # hreinsun og umbreyting
 │   │   ├── gagnagrunnur/      # tenging og fyrirspurnir
 │   │   ├── utflutningur/      # JSON út í web/gogn/
-│   │   └── vidmid/            # provenance og staðfesting á frosna viðmiðinu
+│   │   └── vidmid/            # staðfesting á frosnum gögnum (hrágögn + viðmið)
 │   └── sql/
 │       ├── migrations/        # númeraðar breytingar: 001_..., 002_...
 │       └── queries/           # endurnýtanlegar fyrirspurnir
@@ -70,7 +70,7 @@ hraða og örugga.
 │
 ├── docs/                      # rannsóknarskjölun, heimildir, aðferðafræði
 │   └── vidmid/                # frosið afrit af gamla verkefninu (sjá README þar)
-├── tests/                     # prófanir, speglar src/ uppbygginguna
+├── tests/                     # test_<eining>.py + <safn>_hjalp.py (gervigögn, viðmið)
 ├── scripts/                   # keyrsluskipanir (sækja, byggja, birta)
 └── config/                    # stillingar (ALDREI leyndarmál)
 ```
@@ -201,6 +201,12 @@ hraða og örugga.
 
 - Ein skrá = eitt hlutverk. Fer skrá yfir ~300 línur → hún er líklega að gera
   of margt.
+- **Og öfugt: ekki búa til skrá fyrir 50 línur.** Eining sem aðeins ein önnur
+  eining notar fer inn í hana sem kafli (`# --- Heiti ---`), svo lengi sem
+  samanlagt helst undir ~300 línum. Sama um prófskrár: ein á hverja einingu,
+  og hjálpargögn hvers gagnasafns í einni `<safn>_hjalp.py`.
+- Einnota skriftur (t.d. frysting eða afritun sem var gerð einu sinni) eru
+  fjarlægðar þegar verkinu er lokið. Git-sagan geymir þær.
 - Föll gera eitt og heita eftir því sem þau gera.
 - Engir töfratölur eða töfrastrengir — nefndir fastar efst í skrá eða í `config/`.
 - Villur eru meðhöndlaðar eða látnar falla með skýringu. **Aldrei þaggaðar.**
