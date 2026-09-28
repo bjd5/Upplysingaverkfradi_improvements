@@ -49,6 +49,7 @@ _KASSI = (_MORK[1], _MORK[3], _MORK[0], _MORK[2])  # breidd á undan lengd
 _HNIT = (vedur.VR_II_BREIDD, vedur.VR_II_LENGD)
 
 DAEMISBREYTUR: dict[str, tuple] = {
+    "gagnasofnun-skraning": (vedurstodvar_hledsla.THJONUSTA,),
     "hagstofan-hlutfoll": (HAGSTOFAN_TAFLA,),
     "hagstofan-summur": (HAGSTOFAN_TAFLA,),
     "hagstofan-munur": (HAGSTOFAN_TAFLA, "5", "07", "Alls", "Alls", "Alls"),

@@ -50,6 +50,8 @@ ENDING = ".sql"
 # Tæmandi listi. Ný fyrirspurn = ný skrá + ný lína hér; prófið krefst þess að
 # listinn og mappan segi sömu sögu, svo hvorugt verði eftir.
 FYRIRSPURNIR: frozenset[str] = frozenset({
+    # Uppruni safna sem skrá sig í fetch_log (Hagstofan, veðurstöðvar)
+    "gagnasofnun-skraning",
     # Skjálftavaktin
     "skjalftar-dagleg-talning",
     "skjalftar-dagleg-samantekt",
@@ -58,6 +60,7 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "skjalftar-staerd-eftir-kvarda",
     "skjalftar-dypt",
     # Hagstofan
+    "hagstofan-gagnasafn",
     "hagstofan-hlutfoll",
     "hagstofan-munur",
     "hagstofan-summur",
@@ -74,8 +77,11 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "vedurstodvar-naesta-virka-langtimastod",
     "vedurstodvar-kassi-eftir-fjarlaegd",
     # mbl.is
+    "mbl-eintok",
     "mbl-svor",
     # Friends / Phoebe
+    "friends-uppruni",
+    "friends-umfang",
     "friends-thattunargaedi",
     "friends-plass-alls",
     "friends-plass-eftir-thattarod",
