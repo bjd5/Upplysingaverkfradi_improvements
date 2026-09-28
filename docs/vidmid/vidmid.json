@@ -1,57 +1,53 @@
 {
   "snid_utgafa": 1,
-  "uppfaert": "2026-09-27T15:54:28Z",
+  "uppfaert": "2026-09-28T12:38:01Z",
   "verk": "P0.2 — vélleshæft viðmið úr byggðu síðunni (issue #30)",
   "lysing": "Hver tala sem gamla Quarto-síðan birtir, með síðu, kafla og samhengi. Afleiða af docs/vidmid/vefur/ — aldrei handbreytt.",
   "adferd": "html.parser úr staðalsafninu. Aðeins efnið innan <main id=quarto-document-content> er lesið, svo valmynd, brauðmylsna og fótur komast ekki með. Tala inni í kóðalistun er skráð en fær visst=false.",
   "samantekt": {
-    "sidur": 28,
-    "sidur_med_tolum": 26,
+    "sidur": 24,
+    "sidur_med_tolum": 22,
     "sidur_tolulausar": [
       "friends/uppahalds-video.html",
       "reflections/sveinn.html"
     ],
     "sidur_an_efnislegra": [
       "lotur/git-ai-reproducible/git.html",
-      "reflections/ottar.html",
-      "tokens/index.html"
+      "reflections/ottar.html"
     ],
-    "tolur_alls": 1383,
-    "efnislegar": 440,
+    "tolur_alls": 1255,
+    "efnislegar": 417,
     "eftir_flokki": {
-      "tafla": 246,
-      "malsgrein": 163,
+      "tafla": 226,
+      "malsgrein": 160,
       "listi": 19,
       "fyrirsogn": 12
     },
     "eftir_tegund": {
-      "heiltala": 311,
+      "heiltala": 308,
       "desimal": 62,
-      "hlutfall": 30,
-      "thusund": 25,
+      "hlutfall": 20,
+      "thusund": 15,
       "bil": 9,
       "hlutfallstala": 3
     },
     "adrar_eftir_tegund": {
-      "heiltala": 351,
-      "aukenni": 203,
-      "dagsetning": 104,
-      "tilvisun": 85,
+      "heiltala": 301,
+      "aukenni": 189,
+      "dagsetning": 100,
+      "tilvisun": 81,
       "thattaraudkenni": 50,
-      "desimal_punktur": 35,
+      "desimal_punktur": 31,
       "litur": 28,
       "ar": 25,
-      "hlutfall": 12,
-      "kodatala": 10,
-      "myndnumer": 10,
       "timastimpill": 9,
       "klukka": 8,
-      "vika": 7,
-      "thusund": 2,
+      "kodatala": 7,
+      "hlutfall": 3,
+      "myndnumer": 3,
       "css": 1,
-      "arabil": 1,
-      "bil": 1,
-      "hlutfallstala": 1
+      "thusund": 1,
+      "arabil": 1
     }
   },
   "sidur": [
@@ -192,14 +188,14 @@
       "sida": "project-management.html",
       "titill": "Verkefnastjórn",
       "lota": "9cf667d",
-      "tolur": 106,
+      "tolur": 105,
       "efnislegar": 23
     },
     {
       "sida": "reflections/bjorn.html",
       "titill": "Björn Davíðsson",
       "lota": "fdf1261",
-      "tolur": 10,
+      "tolur": 8,
       "efnislegar": 1
     },
     {
@@ -222,34 +218,6 @@
       "lota": "fdf1261",
       "tolur": 57,
       "efnislegar": 16
-    },
-    {
-      "sida": "tokens/bjorn.html",
-      "titill": "Tokennotkun — Björn",
-      "lota": "fdf1261",
-      "tolur": 14,
-      "efnislegar": 9
-    },
-    {
-      "sida": "tokens/index.html",
-      "titill": "Tokennotkun",
-      "lota": "fdf1261",
-      "tolur": 89,
-      "efnislegar": 0
-    },
-    {
-      "sida": "tokens/ottar.html",
-      "titill": "Tokennotkun — Óttar",
-      "lota": "fdf1261",
-      "tolur": 11,
-      "efnislegar": 7
-    },
-    {
-      "sida": "tokens/sveinn.html",
-      "titill": "Tokennotkun — Sveinn",
-      "lota": "fdf1261",
-      "tolur": 11,
-      "efnislegar": 7
     }
   ],
   "stadfestar": [
@@ -463,14 +431,6 @@
         "friends/phoebe-stats/phoebe-distinctive-words.csv"
       ],
       "skyring": "Myndrit og töflur eru byggð með Observable Plot í vafranum úr þessum sjö skrám. Tölurnar sem lesandinn sér standa hvergi í HTML-inu; þar er aðeins OJS-kóðinn sem reiknar þær."
-    },
-    {
-      "sida": "tokens/index.html",
-      "hattur": "innbakað-csv",
-      "gagnaskrar": [
-        "<script type=\"text/plain\" id=\"tk-gogn\"> (innbakað CSV)"
-      ],
-      "skyring": "Teljararnir eru summaðir í JavaScript úr CSV sem Quarto bakaði inn í skjalið á byggingartíma. Engin tala á síðunni stendur í HTML-textanum."
     }
   ],
   "osamraemi": [
@@ -787,7 +747,7 @@
           "flokkur": "fyrirsogn"
         },
         {
-          "id": "project-management.html#0050",
+          "id": "project-management.html#0049",
           "sida": "project-management.html",
           "kafli": [
             "Verkefnastjórn",
@@ -796,7 +756,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "project-management.html#0063",
+          "id": "project-management.html#0062",
           "sida": "project-management.html",
           "kafli": [
             "Verkefnastjórn",
@@ -806,7 +766,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "project-management.html#0072",
+          "id": "project-management.html#0071",
           "sida": "project-management.html",
           "kafli": [
             "Verkefnastjórn",
@@ -816,7 +776,7 @@
           "flokkur": "fyrirsogn"
         },
         {
-          "id": "project-management.html#0073",
+          "id": "project-management.html#0072",
           "sida": "project-management.html",
           "kafli": [
             "Verkefnastjórn",
@@ -826,7 +786,7 @@
           "flokkur": "malsgrein"
         },
         {
-          "id": "project-management.html#0086",
+          "id": "project-management.html#0085",
           "sida": "project-management.html",
           "kafli": [
             "Verkefnastjórn",
@@ -1861,52 +1821,6 @@
       ]
     },
     {
-      "gildi": 100,
-      "eining": "%",
-      "sidur": [
-        "lotur/vefthjonustur/hagstofan.html",
-        "tokens/bjorn.html",
-        "tokens/ottar.html",
-        "tokens/sveinn.html"
-      ],
-      "stadir": [
-        {
-          "id": "lotur/vefthjonustur/hagstofan.html#0084",
-          "sida": "lotur/vefthjonustur/hagstofan.html",
-          "kafli": [
-            "1A — Hagstofan: hverjir ljúka BS-námi?",
-            "Svör við æfingaspurningunum",
-            "Hvers vegna leggja dálkarnir saman í 100?"
-          ],
-          "flokkur": "malsgrein"
-        },
-        {
-          "id": "tokens/bjorn.html#0012",
-          "sida": "tokens/bjorn.html",
-          "kafli": [
-            "Tokennotkun — Björn"
-          ],
-          "flokkur": "tafla"
-        },
-        {
-          "id": "tokens/ottar.html#0009",
-          "sida": "tokens/ottar.html",
-          "kafli": [
-            "Tokennotkun — Óttar"
-          ],
-          "flokkur": "tafla"
-        },
-        {
-          "id": "tokens/sveinn.html#0009",
-          "sida": "tokens/sveinn.html",
-          "kafli": [
-            "Tokennotkun — Sveinn"
-          ],
-          "flokkur": "tafla"
-        }
-      ]
-    },
-    {
       "gildi": 7,
       "eining": null,
       "sidur": [
@@ -2005,41 +1919,6 @@
             "Teymið"
           ],
           "flokkur": "tafla"
-        }
-      ]
-    },
-    {
-      "gildi": 8601,
-      "eining": null,
-      "sidur": [
-        "tokens/bjorn.html",
-        "tokens/ottar.html",
-        "tokens/sveinn.html"
-      ],
-      "stadir": [
-        {
-          "id": "tokens/bjorn.html#0013",
-          "sida": "tokens/bjorn.html",
-          "kafli": [
-            "Tokennotkun — Björn"
-          ],
-          "flokkur": "malsgrein"
-        },
-        {
-          "id": "tokens/ottar.html#0010",
-          "sida": "tokens/ottar.html",
-          "kafli": [
-            "Tokennotkun — Óttar"
-          ],
-          "flokkur": "malsgrein"
-        },
-        {
-          "id": "tokens/sveinn.html#0010",
-          "sida": "tokens/sveinn.html",
-          "kafli": [
-            "Tokennotkun — Sveinn"
-          ],
-          "flokkur": "malsgrein"
         }
       ]
     },
@@ -3014,7 +2893,7 @@
           "flokkur": "tafla"
         },
         {
-          "id": "project-management.html#0093",
+          "id": "project-management.html#0092",
           "sida": "project-management.html",
           "kafli": [
             "Verkefnastjórn",
@@ -3728,11 +3607,11 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "00%",
+      "texti": "00",
       "gildi": 0,
       "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
+      "eining": null,
+      "tegund": "heiltala",
       "visst": false,
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
@@ -3848,11 +3727,11 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "00%",
+      "texti": "00",
       "gildi": 0,
       "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
+      "eining": null,
+      "tegund": "heiltala",
       "visst": false,
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
@@ -4028,11 +3907,11 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "28%",
+      "texti": "28",
       "gildi": 28,
       "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
+      "eining": null,
+      "tegund": "heiltala",
       "visst": false,
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
@@ -4168,11 +4047,11 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "29%",
+      "texti": "29",
       "gildi": 29,
       "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
+      "eining": null,
+      "tegund": "heiltala",
       "visst": false,
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
@@ -26048,26 +25927,6 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "#47",
-      "gildi": 47,
-      "bil": null,
-      "eining": null,
-      "tegund": "tilvisun",
-      "visst": false,
-      "samhengi": "Björn: útfærði Veðurstofuæfingu 1B með síum í API-beiðnum og mati á því hvaða veðurstöð henti við VR-II. Vinnan sýnir hv"
-    },
-    {
-      "id": "project-management.html#0041",
-      "sida": "project-management.html",
-      "lota": "9cf667d",
-      "kafli": [
-        "Verkefnastjórn",
-        "Vinnudagbók lotu 2"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
       "texti": "#41",
       "gildi": 41,
       "bil": null,
@@ -26077,7 +25936,7 @@
       "samhengi": "Björn: útfærði Veðurstofuæfingu 1B með síum í API-beiðnum og mati á því hvaða veðurstöð henti við VR-II. Vinnan sýnir hv"
     },
     {
-      "id": "project-management.html#0042",
+      "id": "project-management.html#0041",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26097,7 +25956,7 @@
       "samhengi": "Sveinn: vann Hagstofuæfingu 1A með afmarkaðri gagnasókn, sannprófun og skýrslu í PR #58 og #59 . Hann vann einnig rekjan"
     },
     {
-      "id": "project-management.html#0043",
+      "id": "project-management.html#0042",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26117,7 +25976,7 @@
       "samhengi": "Sveinn: vann Hagstofuæfingu 1A með afmarkaðri gagnasókn, sannprófun og skýrslu í PR #58 og #59 . Hann vann einnig rekjan"
     },
     {
-      "id": "project-management.html#0044",
+      "id": "project-management.html#0043",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26137,7 +25996,7 @@
       "samhengi": "Sveinn: vann Hagstofuæfingu 1A með afmarkaðri gagnasókn, sannprófun og skýrslu í PR #58 og #59 . Hann vann einnig rekjan"
     },
     {
-      "id": "project-management.html#0045",
+      "id": "project-management.html#0044",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26157,7 +26016,7 @@
       "samhengi": "Sveinn: vann Hagstofuæfingu 1A með afmarkaðri gagnasókn, sannprófun og skýrslu í PR #58 og #59 . Hann vann einnig rekjan"
     },
     {
-      "id": "project-management.html#0046",
+      "id": "project-management.html#0045",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26177,7 +26036,7 @@
       "samhengi": "Sveinn: vann Hagstofuæfingu 1A með afmarkaðri gagnasókn, sannprófun og skýrslu í PR #58 og #59 . Hann vann einnig rekjan"
     },
     {
-      "id": "project-management.html#0047",
+      "id": "project-management.html#0046",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26197,7 +26056,7 @@
       "samhengi": "Sveinn: vann Hagstofuæfingu 1A með afmarkaðri gagnasókn, sannprófun og skýrslu í PR #58 og #59 . Hann vann einnig rekjan"
     },
     {
-      "id": "project-management.html#0048",
+      "id": "project-management.html#0047",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26217,7 +26076,7 @@
       "samhengi": "Sveinn: vann Hagstofuæfingu 1A með afmarkaðri gagnasókn, sannprófun og skýrslu í PR #58 og #59 . Hann vann einnig rekjan"
     },
     {
-      "id": "project-management.html#0049",
+      "id": "project-management.html#0048",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26237,7 +26096,7 @@
       "samhengi": "Fundarpunktar 10. september 2026"
     },
     {
-      "id": "project-management.html#0050",
+      "id": "project-management.html#0049",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26257,7 +26116,7 @@
       "samhengi": "Til Helgu (kennara), Sveins og Óttars — staða lotu 2 skrifuð af Birni. Sömu punktar eru í issue #34 ."
     },
     {
-      "id": "project-management.html#0051",
+      "id": "project-management.html#0050",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26277,7 +26136,7 @@
       "samhengi": "Til Helgu (kennara), Sveins og Óttars — staða lotu 2 skrifuð af Birni. Sömu punktar eru í issue #34 ."
     },
     {
-      "id": "project-management.html#0052",
+      "id": "project-management.html#0051",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26298,7 +26157,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0053",
+      "id": "project-management.html#0052",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26319,7 +26178,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0054",
+      "id": "project-management.html#0053",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26333,6 +26192,27 @@
       "sulka": null,
       "texti": "#47",
       "gildi": 47,
+      "bil": null,
+      "eining": null,
+      "tegund": "tilvisun",
+      "visst": false,
+      "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
+    },
+    {
+      "id": "project-management.html#0054",
+      "sida": "project-management.html",
+      "lota": "9cf667d",
+      "kafli": [
+        "Verkefnastjórn",
+        "Fundarpunktar 10. september 2026",
+        "Vandamál síðustu tíu daga"
+      ],
+      "flokkur": "malsgrein",
+      "tafla": null,
+      "lina": null,
+      "sulka": null,
+      "texti": "#60",
+      "gildi": 60,
       "bil": null,
       "eining": null,
       "tegund": "tilvisun",
@@ -26373,27 +26253,6 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "#60",
-      "gildi": 60,
-      "bil": null,
-      "eining": null,
-      "tegund": "tilvisun",
-      "visst": false,
-      "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
-    },
-    {
-      "id": "project-management.html#0057",
-      "sida": "project-management.html",
-      "lota": "9cf667d",
-      "kafli": [
-        "Verkefnastjórn",
-        "Fundarpunktar 10. september 2026",
-        "Vandamál síðustu tíu daga"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
       "texti": "#56",
       "gildi": 56,
       "bil": null,
@@ -26403,7 +26262,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0058",
+      "id": "project-management.html#0057",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26424,7 +26283,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0059",
+      "id": "project-management.html#0058",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26445,7 +26304,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0060",
+      "id": "project-management.html#0059",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26466,7 +26325,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0061",
+      "id": "project-management.html#0060",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26487,7 +26346,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0062",
+      "id": "project-management.html#0061",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26508,7 +26367,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0063",
+      "id": "project-management.html#0062",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26529,7 +26388,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fyrst vantaði tokens/index.qmd af því að PR #48 (valmynd) var sameinað á undan #47 (síðan sjálf); síðan kom ógilt YAML í pages.yml með PR #60 , sem stöðvaði Actions áður en nokkurt skref keyrði. Þess vegna sýndi #60 „no checks reported“ og var sameinað án prófunar. Að auki er TMDB_"
     },
     {
-      "id": "project-management.html#0064",
+      "id": "project-management.html#0063",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26550,7 +26409,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0065",
+      "id": "project-management.html#0064",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26571,7 +26430,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0066",
+      "id": "project-management.html#0065",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26592,7 +26451,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0067",
+      "id": "project-management.html#0066",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26613,7 +26472,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0068",
+      "id": "project-management.html#0067",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26634,7 +26493,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0069",
+      "id": "project-management.html#0068",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26655,7 +26514,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0070",
+      "id": "project-management.html#0069",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26676,7 +26535,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0071",
+      "id": "project-management.html#0070",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26697,7 +26556,7 @@
       "samhengi": "Síðustu tíu daga fór óvenju mikill tími í samræmingu í stað efnis. Byggingin á main var rauð nær allan 10. september: fy"
     },
     {
-      "id": "project-management.html#0072",
+      "id": "project-management.html#0071",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26718,7 +26577,7 @@
       "samhengi": "Hvað þarf að gera til að ljúka lotu 2"
     },
     {
-      "id": "project-management.html#0073",
+      "id": "project-management.html#0072",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26739,7 +26598,7 @@
       "samhengi": "Til að ljúka lotu 2 ( tAPP-v2 ) þarf allt efnið að komast á main með grænni byggingu:"
     },
     {
-      "id": "project-management.html#0074",
+      "id": "project-management.html#0073",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26760,7 +26619,7 @@
       "samhengi": "Til að ljúka lotu 2 ( tAPP-v2 ) þarf allt efnið að komast á main með grænni byggingu:"
     },
     {
-      "id": "project-management.html#0075",
+      "id": "project-management.html#0074",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26781,7 +26640,7 @@
       "samhengi": "Sameina YAML-lagfæringuna ( #68 eða #69 , sama lagfæring) og loka hinu."
     },
     {
-      "id": "project-management.html#0076",
+      "id": "project-management.html#0075",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26802,7 +26661,7 @@
       "samhengi": "Sameina YAML-lagfæringuna ( #68 eða #69 , sama lagfæring) og loka hinu."
     },
     {
-      "id": "project-management.html#0077",
+      "id": "project-management.html#0076",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26823,7 +26682,7 @@
       "samhengi": "Koma #58 (Hagstofan 1A, með #59 ), #57 (mbl-regex 1D, með #56 ) og #63 (agent-logg ásamt Skjálftavaktinni 2A–2D) inn á m"
     },
     {
-      "id": "project-management.html#0078",
+      "id": "project-management.html#0077",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26844,7 +26703,7 @@
       "samhengi": "Koma #58 (Hagstofan 1A, með #59 ), #57 (mbl-regex 1D, með #56 ) og #63 (agent-logg ásamt Skjálftavaktinni 2A–2D) inn á m"
     },
     {
-      "id": "project-management.html#0079",
+      "id": "project-management.html#0078",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26865,7 +26724,7 @@
       "samhengi": "Koma #58 (Hagstofan 1A, með #59 ), #57 (mbl-regex 1D, með #56 ) og #63 (agent-logg ásamt Skjálftavaktinni 2A–2D) inn á m"
     },
     {
-      "id": "project-management.html#0080",
+      "id": "project-management.html#0079",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26886,7 +26745,7 @@
       "samhengi": "Koma #58 (Hagstofan 1A, með #59 ), #57 (mbl-regex 1D, með #56 ) og #63 (agent-logg ásamt Skjálftavaktinni 2A–2D) inn á m"
     },
     {
-      "id": "project-management.html#0081",
+      "id": "project-management.html#0080",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26907,7 +26766,7 @@
       "samhengi": "Koma #58 (Hagstofan 1A, með #59 ), #57 (mbl-regex 1D, með #56 ) og #63 (agent-logg ásamt Skjálftavaktinni 2A–2D) inn á m"
     },
     {
-      "id": "project-management.html#0082",
+      "id": "project-management.html#0081",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26928,7 +26787,7 @@
       "samhengi": "Koma #58 (Hagstofan 1A, með #59 ), #57 (mbl-regex 1D, með #56 ) og #63 (agent-logg ásamt Skjálftavaktinni 2A–2D) inn á m"
     },
     {
-      "id": "project-management.html#0083",
+      "id": "project-management.html#0082",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26949,7 +26808,7 @@
       "samhengi": "Koma #58 (Hagstofan 1A, með #59 ), #57 (mbl-regex 1D, með #56 ) og #63 (agent-logg ásamt Skjálftavaktinni 2A–2D) inn á m"
     },
     {
-      "id": "project-management.html#0084",
+      "id": "project-management.html#0083",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -26962,6 +26821,27 @@
       "lina": null,
       "sulka": null,
       "texti": "2A",
+      "gildi": null,
+      "bil": null,
+      "eining": null,
+      "tegund": "aukenni",
+      "visst": false,
+      "samhengi": "Koma #58 (Hagstofan 1A, með #59 ), #57 (mbl-regex 1D, með #56 ) og #63 (agent-logg ásamt Skjálftavaktinni 2A–2D) inn á m"
+    },
+    {
+      "id": "project-management.html#0084",
+      "sida": "project-management.html",
+      "lota": "9cf667d",
+      "kafli": [
+        "Verkefnastjórn",
+        "Fundarpunktar 10. september 2026",
+        "Hvað þarf að gera til að ljúka lotu 2"
+      ],
+      "flokkur": "listi",
+      "tafla": null,
+      "lina": null,
+      "sulka": null,
+      "texti": "2D",
       "gildi": null,
       "bil": null,
       "eining": null,
@@ -26982,27 +26862,6 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "2D",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "Koma #58 (Hagstofan 1A, með #59 ), #57 (mbl-regex 1D, með #56 ) og #63 (agent-logg ásamt Skjálftavaktinni 2A–2D) inn á m"
-    },
-    {
-      "id": "project-management.html#0086",
-      "sida": "project-management.html",
-      "lota": "9cf667d",
-      "kafli": [
-        "Verkefnastjórn",
-        "Fundarpunktar 10. september 2026",
-        "Hvað þarf að gera til að ljúka lotu 2"
-      ],
-      "flokkur": "listi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
       "texti": "2",
       "gildi": 2,
       "bil": null,
@@ -27012,7 +26871,7 @@
       "samhengi": "Uppfæra verkefnastjórnarsíðuna: stöðu lotu 2, tengla sem enn segja „opið PR“ um #47 og #60 , og loka issue #26 , #28 , #29 og #30 –33."
     },
     {
-      "id": "project-management.html#0087",
+      "id": "project-management.html#0086",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27033,7 +26892,7 @@
       "samhengi": "Uppfæra verkefnastjórnarsíðuna: stöðu lotu 2, tengla sem enn segja „opið PR“ um #47 og #60 , og loka issue #26 , #28 , #"
     },
     {
-      "id": "project-management.html#0088",
+      "id": "project-management.html#0087",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27054,7 +26913,7 @@
       "samhengi": "Uppfæra verkefnastjórnarsíðuna: stöðu lotu 2, tengla sem enn segja „opið PR“ um #47 og #60 , og loka issue #26 , #28 , #"
     },
     {
-      "id": "project-management.html#0089",
+      "id": "project-management.html#0088",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27075,7 +26934,7 @@
       "samhengi": "Uppfæra verkefnastjórnarsíðuna: stöðu lotu 2, tengla sem enn segja „opið PR“ um #47 og #60 , og loka issue #26 , #28 , #"
     },
     {
-      "id": "project-management.html#0090",
+      "id": "project-management.html#0089",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27096,7 +26955,7 @@
       "samhengi": "Uppfæra verkefnastjórnarsíðuna: stöðu lotu 2, tengla sem enn segja „opið PR“ um #47 og #60 , og loka issue #26 , #28 , #"
     },
     {
-      "id": "project-management.html#0091",
+      "id": "project-management.html#0090",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27117,7 +26976,7 @@
       "samhengi": "Uppfæra verkefnastjórnarsíðuna: stöðu lotu 2, tengla sem enn segja „opið PR“ um #47 og #60 , og loka issue #26 , #28 , #"
     },
     {
-      "id": "project-management.html#0092",
+      "id": "project-management.html#0091",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27138,7 +26997,7 @@
       "samhengi": "Uppfæra verkefnastjórnarsíðuna: stöðu lotu 2, tengla sem enn segja „opið PR“ um #47 og #60 , og loka issue #26 , #28 , #"
     },
     {
-      "id": "project-management.html#0093",
+      "id": "project-management.html#0092",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27159,7 +27018,7 @@
       "samhengi": "Uppfæra verkefnastjórnarsíðuna: stöðu lotu 2, tengla sem enn segja „opið PR“ um #47 og #60 , og loka issue #26 , #28 , #29 og #30 –33."
     },
     {
-      "id": "project-management.html#0094",
+      "id": "project-management.html#0093",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27180,7 +27039,7 @@
       "samhengi": "Ljúka #35 : README og skýrsla afmarki 1A–1D, 1C og 2A–2D skýrt."
     },
     {
-      "id": "project-management.html#0095",
+      "id": "project-management.html#0094",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27201,7 +27060,7 @@
       "samhengi": "Ljúka #35 : README og skýrsla afmarki 1A–1D, 1C og 2A–2D skýrt."
     },
     {
-      "id": "project-management.html#0096",
+      "id": "project-management.html#0095",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27222,7 +27081,7 @@
       "samhengi": "Ljúka #35 : README og skýrsla afmarki 1A–1D, 1C og 2A–2D skýrt."
     },
     {
-      "id": "project-management.html#0097",
+      "id": "project-management.html#0096",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27243,7 +27102,7 @@
       "samhengi": "Ljúka #35 : README og skýrsla afmarki 1A–1D, 1C og 2A–2D skýrt."
     },
     {
-      "id": "project-management.html#0098",
+      "id": "project-management.html#0097",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27264,7 +27123,7 @@
       "samhengi": "Ljúka #35 : README og skýrsla afmarki 1A–1D, 1C og 2A–2D skýrt."
     },
     {
-      "id": "project-management.html#0099",
+      "id": "project-management.html#0098",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27285,7 +27144,7 @@
       "samhengi": "Ljúka #35 : README og skýrsla afmarki 1A–1D, 1C og 2A–2D skýrt."
     },
     {
-      "id": "project-management.html#0100",
+      "id": "project-management.html#0099",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27306,7 +27165,7 @@
       "samhengi": "#34 : taga tAPP-v2 af main og búa til Release."
     },
     {
-      "id": "project-management.html#0101",
+      "id": "project-management.html#0100",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27327,7 +27186,7 @@
       "samhengi": "#34 : taga tAPP-v2 af main og búa til Release."
     },
     {
-      "id": "project-management.html#0102",
+      "id": "project-management.html#0101",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27348,7 +27207,7 @@
       "samhengi": "Við vinnum þetta í röð, ekki samhliða, því allt hangir á grænni main . Tillaga: Björn sameinar YAML-lagfæringuna strax o"
     },
     {
-      "id": "project-management.html#0103",
+      "id": "project-management.html#0102",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27369,7 +27228,7 @@
       "samhengi": "Við vinnum þetta í röð, ekki samhliða, því allt hangir á grænni main . Tillaga: Björn sameinar YAML-lagfæringuna strax o"
     },
     {
-      "id": "project-management.html#0104",
+      "id": "project-management.html#0103",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27390,7 +27249,7 @@
       "samhengi": "Við vinnum þetta í röð, ekki samhliða, því allt hangir á grænni main . Tillaga: Björn sameinar YAML-lagfæringuna strax o"
     },
     {
-      "id": "project-management.html#0105",
+      "id": "project-management.html#0104",
       "sida": "project-management.html",
       "lota": "9cf667d",
       "kafli": [
@@ -27528,7 +27387,7 @@
       "eining": null,
       "tegund": "aukenni",
       "visst": false,
-      "samhengi": "Ég vann Veðurstofuæfinguna (1B) með síum beint í API-beiðninni og mati á því hvaða stöð hentar við VR-II ( #55 ), byggði"
+      "samhengi": "Ég vann Veðurstofuæfinguna (1B) með síum beint í API-beiðninni og mati á því hvaða stöð hentar við VR-II ( #55 ), og brá"
     },
     {
       "id": "reflections/bjorn.html#0006",
@@ -27548,50 +27407,10 @@
       "eining": null,
       "tegund": "tilvisun",
       "visst": false,
-      "samhengi": "Ég vann Veðurstofuæfinguna (1B) með síum beint í API-beiðninni og mati á því hvaða stöð hentar við VR-II ( #55 ), byggði"
+      "samhengi": "Ég vann Veðurstofuæfinguna (1B) með síum beint í API-beiðninni og mati á því hvaða stöð hentar við VR-II ( #55 ), og brá"
     },
     {
       "id": "reflections/bjorn.html#0007",
-      "sida": "reflections/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Björn Davíðsson",
-        "Reglulegar segðir"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "#44",
-      "gildi": 44,
-      "bil": null,
-      "eining": null,
-      "tegund": "tilvisun",
-      "visst": false,
-      "samhengi": "Ég vann Veðurstofuæfinguna (1B) með síum beint í API-beiðninni og mati á því hvaða stöð hentar við VR-II ( #55 ), byggði"
-    },
-    {
-      "id": "reflections/bjorn.html#0008",
-      "sida": "reflections/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Björn Davíðsson",
-        "Reglulegar segðir"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "#49",
-      "gildi": 49,
-      "bil": null,
-      "eining": null,
-      "tegund": "tilvisun",
-      "visst": false,
-      "samhengi": "Ég vann Veðurstofuæfinguna (1B) með síum beint í API-beiðninni og mati á því hvaða stöð hentar við VR-II ( #55 ), byggði"
-    },
-    {
-      "id": "reflections/bjorn.html#0009",
       "sida": "reflections/bjorn.html",
       "lota": "fdf1261",
       "kafli": [
@@ -27608,7 +27427,7 @@
       "eining": null,
       "tegund": "tilvisun",
       "visst": false,
-      "samhengi": "Ég vann Veðurstofuæfinguna (1B) með síum beint í API-beiðninni og mati á því hvaða stöð hentar við VR-II ( #55 ), byggði"
+      "samhengi": "Ég vann Veðurstofuæfinguna (1B) með síum beint í API-beiðninni og mati á því hvaða stöð hentar við VR-II ( #55 ), og brá"
     },
     {
       "id": "reflections/ottar.html#0000",
@@ -28002,11 +27821,11 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "00%",
+      "texti": "00",
       "gildi": 0,
       "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
+      "eining": null,
+      "tegund": "heiltala",
       "visst": false,
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
@@ -28128,11 +27947,11 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "00%",
+      "texti": "00",
       "gildi": 0,
       "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
+      "eining": null,
+      "tegund": "heiltala",
       "visst": false,
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
@@ -28317,11 +28136,11 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "28%",
+      "texti": "28",
       "gildi": 28,
       "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
+      "eining": null,
+      "tegund": "heiltala",
       "visst": false,
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
@@ -28464,11 +28283,11 @@
       "tafla": null,
       "lina": null,
       "sulka": null,
-      "texti": "29%",
+      "texti": "29",
       "gildi": 29,
       "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
+      "eining": null,
+      "tegund": "heiltala",
       "visst": false,
       "samhengi": "https://api.vedur.is/quakes/events?start_time=2023-11-01T00%3A00%3A00%2B00%3A00&end_time=2024-01-01T00%3A00%3A00%2B00%3A"
     },
@@ -28816,2413 +28635,6 @@
       "tegund": "bil",
       "visst": true,
       "samhengi": "Teymið hittist á fimmtudögum kl. 13–14 og heldur sambandi í Messenger þess á milli. Breyting telst ekki tilbúin fyrr en hún er á sér grein, komin í Pull Request, rýnd af öðrum í teyminu og sameinuð inn á main ."
-    },
-    {
-      "id": "tokens/bjorn.html#0000",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "mynd",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "26.1",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "myndnumer",
-      "visst": false,
-      "samhengi": "Mynd 26.1: Vikuleg tokennotkun Björns. Hæsta vikan er merkt með tölugildi; hinar má lesa af tölutöflunni fyrir neðan."
-    },
-    {
-      "id": "tokens/bjorn.html#0001",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "mynd",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "26.1",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "myndnumer",
-      "visst": false,
-      "samhengi": "Tafla 26.1: Vikuleg tokennotkun Björns, sömu tölur og súluritið að ofan."
-    },
-    {
-      "id": "tokens/bjorn.html#0002",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Björns dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Björn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": null,
-      "sulka": "Vika",
-      "texti": "2026-W35",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "vika",
-      "visst": false,
-      "samhengi": "2026-W35"
-    },
-    {
-      "id": "tokens/bjorn.html#0003",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Björns dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Björn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W35",
-      "sulka": "Tokenar",
-      "texti": "10 000",
-      "gildi": 10000,
-      "bil": null,
-      "eining": null,
-      "tegund": "thusund",
-      "visst": true,
-      "samhengi": "10 000"
-    },
-    {
-      "id": "tokens/bjorn.html#0004",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Björns dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Björn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W35",
-      "sulka": "Hlutfall",
-      "texti": "1,7 %",
-      "gildi": 1.7,
-      "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
-      "visst": true,
-      "samhengi": "1,7 %"
-    },
-    {
-      "id": "tokens/bjorn.html#0005",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Björns dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Björn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": null,
-      "sulka": "Vika",
-      "texti": "2026-W36",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "vika",
-      "visst": false,
-      "samhengi": "2026-W36"
-    },
-    {
-      "id": "tokens/bjorn.html#0006",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Björns dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Björn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W36",
-      "sulka": "Tokenar",
-      "texti": "35 000",
-      "gildi": 35000,
-      "bil": null,
-      "eining": null,
-      "tegund": "thusund",
-      "visst": true,
-      "samhengi": "35 000"
-    },
-    {
-      "id": "tokens/bjorn.html#0007",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Björns dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Björn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W36",
-      "sulka": "Hlutfall",
-      "texti": "6,1 %",
-      "gildi": 6.1,
-      "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
-      "visst": true,
-      "samhengi": "6,1 %"
-    },
-    {
-      "id": "tokens/bjorn.html#0008",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Björns dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Björn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": null,
-      "sulka": "Vika",
-      "texti": "2026-W38",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "vika",
-      "visst": false,
-      "samhengi": "2026-W38"
-    },
-    {
-      "id": "tokens/bjorn.html#0009",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Björns dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Björn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W38",
-      "sulka": "Tokenar",
-      "texti": "526 600",
-      "gildi": 526600,
-      "bil": null,
-      "eining": null,
-      "tegund": "thusund",
-      "visst": true,
-      "samhengi": "526 600"
-    },
-    {
-      "id": "tokens/bjorn.html#0010",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Björns dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Björn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W38",
-      "sulka": "Hlutfall",
-      "texti": "92,1 %",
-      "gildi": 92.1,
-      "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
-      "visst": true,
-      "samhengi": "92,1 %"
-    },
-    {
-      "id": "tokens/bjorn.html#0011",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Björns dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Björn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "Alls",
-      "sulka": "Tokenar",
-      "texti": "571 600",
-      "gildi": 571600,
-      "bil": null,
-      "eining": null,
-      "tegund": "thusund",
-      "visst": true,
-      "samhengi": "571 600"
-    },
-    {
-      "id": "tokens/bjorn.html#0012",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Björns dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Björn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "Alls",
-      "sulka": "Hlutfall",
-      "texti": "100,0 %",
-      "gildi": 100.0,
-      "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
-      "visst": true,
-      "samhengi": "100,0 %"
-    },
-    {
-      "id": "tokens/bjorn.html#0013",
-      "sida": "tokens/bjorn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Björn"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "8601",
-      "gildi": 8601,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": true,
-      "samhengi": "data/tokens/tokens.csv er sameiginleg skrá fyrir teymið — hún er ekki skrifuð af þessari síðu. Talan fyrir hverja viku er summa allra færslna Björns þá viku. Hver lína í skránni er ein vinnulota með ISO 8601 tímastimpli og skráin geymir engan viku-dálk, svo síðan reiknar ISO-vikuna úr tímastimpill og leggur saman færslur hverrar viku. Sé skráin með sundurliðun í inntaks- og úttakstokena eru báðir "
-    },
-    {
-      "id": "tokens/index.html#0000",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "UTF-8",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0001",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "d3",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0002",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "d3",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0003",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "UTF-8",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0004",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "10",
-      "gildi": 10,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0005",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0006",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "{4}",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "kodatala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0007",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "{1,2}",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "kodatala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0008",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "{1,2}",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "kodatala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0009",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0010",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "2026-13-45",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "dagsetning",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0011",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "2027-02-14",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "dagsetning",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0012",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0013",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "8601",
-      "gildi": 8601,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0014",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0015",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "31. desember",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "dagsetning",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0016",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0017",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "d3",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0018",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "6",
-      "gildi": 6,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0019",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "7",
-      "gildi": 7,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0020",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0021",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "3",
-      "gildi": 3,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0022",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "vika1",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0023",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0024",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "4",
-      "gildi": 4,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0025",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "4. janúar",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "dagsetning",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0026",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0027",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "vika1",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0028",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "6",
-      "gildi": 6,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0029",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "7",
-      "gildi": 7,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0030",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "vika1",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0031",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "vika1",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0032",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "3",
-      "gildi": 3,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0033",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0034",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "vika1",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0035",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "7",
-      "gildi": 7,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0036",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "24",
-      "gildi": 24,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0037",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "60",
-      "gildi": 60,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0038",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "60",
-      "gildi": 60,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0039",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1000",
-      "gildi": 1000,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0040",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "2",
-      "gildi": 2,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0041",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0042",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "9",
-      "gildi": 9,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0043",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "10",
-      "gildi": 10,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0044",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0045",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0046",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0047",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0048",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "d3",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0049",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0050",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "d3",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0051",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "100",
-      "gildi": 100,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0052",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0053",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0054",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0055",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "d3",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0056",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "3",
-      "gildi": 3,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0057",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1f",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "aukenni",
-      "visst": false,
-      "samhengi": "LIDID = [ { nafn : \"Björn\" , slod : \"bjorn.html\" } , { nafn : \"Óttar\" , slod : \"ottar.html\" } , { nafn : \"Sveinn\" , slod"
-    },
-    {
-      "id": "tokens/index.html#0058",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "// Tímabilið er sótt í gögnin frekar en skrifað inn, svo textinn eldist ekki. // Vikurnar eru reiknaðar úr tímastimplum "
-    },
-    {
-      "id": "tokens/index.html#0059",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "// Tímabilið er sótt í gögnin frekar en skrifað inn, svo textinn eldist ekki. // Vikurnar eru reiknaðar úr tímastimplum "
-    },
-    {
-      "id": "tokens/index.html#0060",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "2",
-      "gildi": 2,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0061",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0–9",
-      "gildi": null,
-      "bil": [
-        0.0,
-        9.0
-      ],
-      "eining": null,
-      "tegund": "bil",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0062",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0063",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0064",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "9",
-      "gildi": 9,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0065",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "10",
-      "gildi": 10,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0066",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0067",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "900",
-      "gildi": 900,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0068",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "140",
-      "gildi": 140,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0069",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0.22",
-      "gildi": 0.22,
-      "bil": null,
-      "eining": null,
-      "tegund": "desimal_punktur",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0070",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0071",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0.36",
-      "gildi": 0.36,
-      "bil": null,
-      "eining": null,
-      "tegund": "desimal_punktur",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0072",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0073",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "942 400",
-      "gildi": 942400,
-      "bil": null,
-      "eining": "tokenar",
-      "tegund": "thusund",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0074",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "41,0 %",
-      "gildi": 41.0,
-      "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0075",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0076",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0077",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "9",
-      "gildi": 9,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0078",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0079",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "2.4",
-      "gildi": 2.4,
-      "bil": null,
-      "eining": null,
-      "tegund": "desimal_punktur",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0080",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0081",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0082",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0083",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0",
-      "gildi": 0,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0084",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "1",
-      "gildi": 1,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0085",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Teljarar"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "0.4",
-      "gildi": 0.4,
-      "bil": null,
-      "eining": null,
-      "tegund": "desimal_punktur",
-      "visst": false,
-      "samhengi": "SNUNINGAR = 2 hoegur = window . matchMedia ( \"(prefers-reduced-motion: reduce)\" ) . matches // ── Ein stafarúlla ───────"
-    },
-    {
-      "id": "tokens/index.html#0086",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Samanburður eftir vikum"
-      ],
-      "flokkur": "mynd",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "25.1",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "myndnumer",
-      "visst": false,
-      "samhengi": "Mynd 25.1: Vikuleg tokennotkun allra þriggja, hlið við hlið. Einn litur á mann, sami litur og á persónusíðunni hans."
-    },
-    {
-      "id": "tokens/index.html#0087",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Tölurnar á bak við teljarana"
-      ],
-      "flokkur": "kodi",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "100 : 0",
-      "gildi": 100,
-      "bil": null,
-      "eining": null,
-      "tegund": "hlutfallstala",
-      "visst": false,
-      "samhengi": "// Sömu tölur og teljararnir sýna, á formi sem má lesa nákvæmlega, afrita og // bera saman. Rúllurnar eru sjónræn framse"
-    },
-    {
-      "id": "tokens/index.html#0088",
-      "sida": "tokens/index.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun",
-        "Tölurnar á bak við teljarana"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "#42",
-      "gildi": 42,
-      "bil": null,
-      "eining": null,
-      "tegund": "tilvisun",
-      "visst": false,
-      "samhengi": "data/tokens/tokens.csv er sameiginleg skrá fyrir teymið og verður til í /tokens-data skrefinu (sjá issue #42) — hún er e"
-    },
-    {
-      "id": "tokens/ottar.html#0000",
-      "sida": "tokens/ottar.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Óttar"
-      ],
-      "flokkur": "mynd",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "27.1",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "myndnumer",
-      "visst": false,
-      "samhengi": "Mynd 27.1: Vikuleg tokennotkun Óttars. Hæsta vikan er merkt með tölugildi; hinar má lesa af tölutöflunni fyrir neðan."
-    },
-    {
-      "id": "tokens/ottar.html#0001",
-      "sida": "tokens/ottar.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Óttar"
-      ],
-      "flokkur": "mynd",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "27.1",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "myndnumer",
-      "visst": false,
-      "samhengi": "Tafla 27.1: Vikuleg tokennotkun Óttars, sömu tölur og súluritið að ofan."
-    },
-    {
-      "id": "tokens/ottar.html#0002",
-      "sida": "tokens/ottar.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Óttar"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Óttars dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Óttar\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": null,
-      "sulka": "Vika",
-      "texti": "2026-W35",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "vika",
-      "visst": false,
-      "samhengi": "2026-W35"
-    },
-    {
-      "id": "tokens/ottar.html#0003",
-      "sida": "tokens/ottar.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Óttar"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Óttars dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Óttar\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W35",
-      "sulka": "Tokenar",
-      "texti": "25 000",
-      "gildi": 25000,
-      "bil": null,
-      "eining": null,
-      "tegund": "thusund",
-      "visst": true,
-      "samhengi": "25 000"
-    },
-    {
-      "id": "tokens/ottar.html#0004",
-      "sida": "tokens/ottar.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Óttar"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Óttars dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Óttar\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W35",
-      "sulka": "Hlutfall",
-      "texti": "45,5 %",
-      "gildi": 45.5,
-      "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
-      "visst": true,
-      "samhengi": "45,5 %"
-    },
-    {
-      "id": "tokens/ottar.html#0005",
-      "sida": "tokens/ottar.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Óttar"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Óttars dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Óttar\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": null,
-      "sulka": "Vika",
-      "texti": "2026-W36",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "vika",
-      "visst": false,
-      "samhengi": "2026-W36"
-    },
-    {
-      "id": "tokens/ottar.html#0006",
-      "sida": "tokens/ottar.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Óttar"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Óttars dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Óttar\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W36",
-      "sulka": "Tokenar",
-      "texti": "30 000",
-      "gildi": 30000,
-      "bil": null,
-      "eining": null,
-      "tegund": "thusund",
-      "visst": true,
-      "samhengi": "30 000"
-    },
-    {
-      "id": "tokens/ottar.html#0007",
-      "sida": "tokens/ottar.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Óttar"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Óttars dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Óttar\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W36",
-      "sulka": "Hlutfall",
-      "texti": "54,5 %",
-      "gildi": 54.5,
-      "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
-      "visst": true,
-      "samhengi": "54,5 %"
-    },
-    {
-      "id": "tokens/ottar.html#0008",
-      "sida": "tokens/ottar.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Óttar"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Óttars dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Óttar\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "Alls",
-      "sulka": "Tokenar",
-      "texti": "55 000",
-      "gildi": 55000,
-      "bil": null,
-      "eining": null,
-      "tegund": "thusund",
-      "visst": true,
-      "samhengi": "55 000"
-    },
-    {
-      "id": "tokens/ottar.html#0009",
-      "sida": "tokens/ottar.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Óttar"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Óttars dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Óttar\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "Alls",
-      "sulka": "Hlutfall",
-      "texti": "100,0 %",
-      "gildi": 100.0,
-      "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
-      "visst": true,
-      "samhengi": "100,0 %"
-    },
-    {
-      "id": "tokens/ottar.html#0010",
-      "sida": "tokens/ottar.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Óttar"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "8601",
-      "gildi": 8601,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": true,
-      "samhengi": "data/tokens/tokens.csv er sameiginleg skrá fyrir teymið — hún er ekki skrifuð af þessari síðu. Talan fyrir hverja viku er summa allra færslna Óttars þá viku. Hver lína í skránni er ein vinnulota með ISO 8601 tímastimpli og skráin geymir engan viku-dálk, svo síðan reiknar ISO-vikuna úr tímastimpill og leggur saman færslur hverrar viku. Sé skráin með sundurliðun í inntaks- og úttakstokena eru báðir "
-    },
-    {
-      "id": "tokens/sveinn.html#0000",
-      "sida": "tokens/sveinn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Sveinn"
-      ],
-      "flokkur": "mynd",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "28.1",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "myndnumer",
-      "visst": false,
-      "samhengi": "Mynd 28.1: Vikuleg tokennotkun Sveins. Hæsta vikan er merkt með tölugildi; hinar má lesa af tölutöflunni fyrir neðan."
-    },
-    {
-      "id": "tokens/sveinn.html#0001",
-      "sida": "tokens/sveinn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Sveinn"
-      ],
-      "flokkur": "mynd",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "28.1",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "myndnumer",
-      "visst": false,
-      "samhengi": "Tafla 28.1: Vikuleg tokennotkun Sveins, sömu tölur og súluritið að ofan."
-    },
-    {
-      "id": "tokens/sveinn.html#0002",
-      "sida": "tokens/sveinn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Sveinn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Sveins dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Sveinn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": null,
-      "sulka": "Vika",
-      "texti": "2026-W35",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "vika",
-      "visst": false,
-      "samhengi": "2026-W35"
-    },
-    {
-      "id": "tokens/sveinn.html#0003",
-      "sida": "tokens/sveinn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Sveinn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Sveins dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Sveinn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W35",
-      "sulka": "Tokenar",
-      "texti": "40 000",
-      "gildi": 40000,
-      "bil": null,
-      "eining": null,
-      "tegund": "thusund",
-      "visst": true,
-      "samhengi": "40 000"
-    },
-    {
-      "id": "tokens/sveinn.html#0004",
-      "sida": "tokens/sveinn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Sveinn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Sveins dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Sveinn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W35",
-      "sulka": "Hlutfall",
-      "texti": "66,7 %",
-      "gildi": 66.7,
-      "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
-      "visst": true,
-      "samhengi": "66,7 %"
-    },
-    {
-      "id": "tokens/sveinn.html#0005",
-      "sida": "tokens/sveinn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Sveinn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Sveins dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Sveinn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": null,
-      "sulka": "Vika",
-      "texti": "2026-W36",
-      "gildi": null,
-      "bil": null,
-      "eining": null,
-      "tegund": "vika",
-      "visst": false,
-      "samhengi": "2026-W36"
-    },
-    {
-      "id": "tokens/sveinn.html#0006",
-      "sida": "tokens/sveinn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Sveinn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Sveins dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Sveinn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W36",
-      "sulka": "Tokenar",
-      "texti": "20 000",
-      "gildi": 20000,
-      "bil": null,
-      "eining": null,
-      "tegund": "thusund",
-      "visst": true,
-      "samhengi": "20 000"
-    },
-    {
-      "id": "tokens/sveinn.html#0007",
-      "sida": "tokens/sveinn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Sveinn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Sveins dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Sveinn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "2026-W36",
-      "sulka": "Hlutfall",
-      "texti": "33,3 %",
-      "gildi": 33.3,
-      "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
-      "visst": true,
-      "samhengi": "33,3 %"
-    },
-    {
-      "id": "tokens/sveinn.html#0008",
-      "sida": "tokens/sveinn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Sveinn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Sveins dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Sveinn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "Alls",
-      "sulka": "Tokenar",
-      "texti": "60 000",
-      "gildi": 60000,
-      "bil": null,
-      "eining": null,
-      "tegund": "thusund",
-      "visst": true,
-      "samhengi": "60 000"
-    },
-    {
-      "id": "tokens/sveinn.html#0009",
-      "sida": "tokens/sveinn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Sveinn"
-      ],
-      "flokkur": "tafla",
-      "tafla": "Þessi síða sýnir hvernig tokennotkun Sveins dreifist á vikur verkefnisins. Gögnin koma úr data/tokens/tokens.csv , sem heldur utan um alla þrjá liðsmenn; hér er síað á nafn == \"Sveinn\" og lagt saman eftir ISO-viku, sem reiknast úr tímastimpill -dálkinum. Yfirlit yfir teymið í heild — og samanburð milli okkar þriggja — er á tokenforsíðunni .",
-      "lina": "Alls",
-      "sulka": "Hlutfall",
-      "texti": "100,0 %",
-      "gildi": 100.0,
-      "bil": null,
-      "eining": "%",
-      "tegund": "hlutfall",
-      "visst": true,
-      "samhengi": "100,0 %"
-    },
-    {
-      "id": "tokens/sveinn.html#0010",
-      "sida": "tokens/sveinn.html",
-      "lota": "fdf1261",
-      "kafli": [
-        "Tokennotkun — Sveinn"
-      ],
-      "flokkur": "malsgrein",
-      "tafla": null,
-      "lina": null,
-      "sulka": null,
-      "texti": "8601",
-      "gildi": 8601,
-      "bil": null,
-      "eining": null,
-      "tegund": "heiltala",
-      "visst": true,
-      "samhengi": "data/tokens/tokens.csv er sameiginleg skrá fyrir teymið — hún er ekki skrifuð af þessari síðu. Talan fyrir hverja viku er summa allra færslna Sveins þá viku. Hver lína í skránni er ein vinnulota með ISO 8601 tímastimpli og skráin geymir engan viku-dálk, svo síðan reiknar ISO-vikuna úr tímastimpill og leggur saman færslur hverrar viku. Sé skráin með sundurliðun í inntaks- og úttakstokena eru báðir "
     }
   ]
 }

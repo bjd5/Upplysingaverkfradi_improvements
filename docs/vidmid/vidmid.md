@@ -2,23 +2,23 @@
 
 Hver tala sem byggða gamla síðan birtir, vélleshæf í [`vidmid.json`](vidmid.json) og læsileg hér. Þetta er svarið við spurningunni sem viðmiðið er til fyrir: **sýnir nýja síðan sömu tölur?** (sjá [`README.md`](README.md) og [`../endurbygging.md`](../endurbygging.md), kafla 2).
 
-Afleidd skrá. Uppfært 2026-09-27T15:54:28Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
+Afleidd skrá. Uppfært 2026-09-28T12:38:01Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
 
 ## 1. Umfang
 
 | Mæling | Fjöldi |
 |---|---:|
-| Síður lesnar | 28 |
-| Síður með tölu í HTML | 26 |
-| Tölur alls | 1383 |
-| **Efnislegar niðurstöður** | **440** |
-| Tölur sem eru ekki niðurstöður | 943 |
+| Síður lesnar | 24 |
+| Síður með tölu í HTML | 22 |
+| Tölur alls | 1255 |
+| **Efnislegar niðurstöður** | **417** |
+| Tölur sem eru ekki niðurstöður | 838 |
 
 Efnisleg niðurstaða = tala í fyrirsögn, málsgrein, lista, töflu eða úttaki. Tölur inni í kóðalistun, auðkenni (`0405`), issue-tilvísanir (`#14`), ISO-dagsetningar og CSS-gildi eru skráðar áfram í `vidmid.json` en hafa `visst: false` — betra að hafa of mikið en að missa tölu.
 
-**Eftir flokki:** tafla 246, malsgrein 163, listi 19, fyrirsogn 12
+**Eftir flokki:** tafla 226, malsgrein 160, listi 19, fyrirsogn 12
 
-**Eftir tegund:** heiltala 311, desimal 62, hlutfall 30, thusund 25, bil 9, hlutfallstala 3
+**Eftir tegund:** heiltala 308, desimal 62, hlutfall 20, thusund 15, bil 9, hlutfallstala 3
 
 ## 2. Síður án efnislegrar tölu
 
@@ -28,7 +28,6 @@ Efnisleg niðurstaða = tala í fyrirsögn, málsgrein, lista, töflu eða útta
 | `lotur/git-ai-reproducible/git.html` | aðeins tölur úr kóða, auðkenni eða dagsetningar |
 | `reflections/ottar.html` | aðeins tölur úr kóða, auðkenni eða dagsetningar |
 | `reflections/sveinn.html` | engin tala í HTML-textanum |
-| `tokens/index.html` | tölurnar reiknaðar í vafra — sjá kafla 4 |
 
 ## 3. Staðfestar tölur
 
@@ -70,14 +69,6 @@ Gagnaskrár:
 - `friends/phoebe-stats/phoebe-mentions-by-season.json`
 - `friends/phoebe-stats/phoebe-per-episode.csv`
 - `friends/phoebe-stats/phoebe-distinctive-words.csv`
-
-### `tokens/index.html`
-
-Teljararnir eru summaðir í JavaScript úr CSV sem Quarto bakaði inn í skjalið á byggingartíma. Engin tala á síðunni stendur í HTML-textanum.
-
-Gagnaskrár:
-
-- `<script type="text/plain" id="tk-gogn"> (innbakað CSV)`
 
 ## 5. Ósamræmi milli síðna
 
@@ -175,9 +166,7 @@ Verklýsingin krefst þess að báðir staðir séu skráðir. Hér eru aðeins 
 | 5 | — | `friends/phoebe-statistics.html`, `lotur/git-ai-reproducible/reproducible-reports.html`, `lotur/regex/mbl.html`, `lotur/sql-advanced/index.html`, `lotur/vefthjonustur/hagstofan.html`, `project-management.html`, `team.html` |
 | 236 | — | `friends/index.html`, `friends/phoebe-statistics.html`, `lotur/git-ai-reproducible/agents.html`, `reflections/bjorn.html` |
 | 229 | — | `friends/index.html`, `friends/phoebe-statistics.html`, `lotur/git-ai-reproducible/agents.html`, `lotur/git-ai-reproducible/index.html` |
-| 100 | % | `lotur/vefthjonustur/hagstofan.html`, `tokens/bjorn.html`, `tokens/ottar.html`, `tokens/sveinn.html` |
 | 7 | — | `lotur/git-ai-reproducible/reproducible-reports.html`, `lotur/vefthjonustur/hagstofan.html`, `project-management.html`, `team.html` |
-| 8601 | — | `tokens/bjorn.html`, `tokens/ottar.html`, `tokens/sveinn.html` |
 | 200 | — | `lotur/regex/mbl.html`, `lotur/vefthjonustur/vedurstofan.html`, `phoebe-central-perk.html` |
 | 61 | dagar | `capstone/earthquakes.html`, `lotur/sql-advanced/index.html`, `team.html` |
 | 24 | — | `capstone/earthquakes.html`, `friends/index.html`, `phoebe-central-perk.html` |
@@ -197,8 +186,8 @@ Verklýsingin krefst þess að báðir staðir séu skráðir. Hér eru aðeins 
 | 17 | — | `lotur/regex/mbl.html`, `lotur/vefthjonustur/hagstofan.html` |
 | 10 | — | `lotur/git-ai-reproducible/reproducible-reports.html`, `lotur/vefthjonustur/hagstofan.html` |
 | 8 | — | `lotur/git-ai-reproducible/reproducible-reports.html`, `lotur/vefthjonustur/hagstofan.html` |
-
-*2 fleiri í `vidmid.json`.*
+| -21.5 | — | `capstone/earthquakes.html`, `team.html` |
+| -23 | — | `capstone/earthquakes.html`, `team.html` |
 
 ## 7. Viðmið eftir síðum nýju síðunnar
 
@@ -212,4 +201,4 @@ Ein skrá á hverja síðu sem á að byggja (sjá [`../endurbygging.md`](../end
 | mbl.is — reglulegar segðir á fréttaforsíðu | [`vidmid/mbl-regex.md`](vidmid/mbl-regex.md) | 60 | `lotur/regex/index.html`, `lotur/regex/mbl.html` |
 | Phoebe — plass, nærvera og tengsl | [`vidmid/phoebe-tolfraedi.md`](vidmid/phoebe-tolfraedi.md) | 44 | `friends/index.html`, `friends/phoebe-statistics.html`, `friends/phoebe-tribute.html` |
 | Phoebe — söngurinn í Central Perk | [`vidmid/phoebe-central-perk.md`](vidmid/phoebe-central-perk.md) | 28 | `phoebe-central-perk.html` |
-| Síður utan umfangs nýju síðunnar | [`vidmid/utan-umfangs.md`](vidmid/utan-umfangs.md) | 94 | `index.html`, `lotur/git-ai-reproducible/agents.html`, `lotur/git-ai-reproducible/index.html`, `lotur/git-ai-reproducible/reproducible-reports.html`, `lotur/logic-sets/index.html`, `lotur/sql-advanced/index.html`, `lotur/sql-basics/index.html`, `lotur/storytelling/index.html`, `project-management.html`, `reflections/bjorn.html`, `team.html`, `tokens/bjorn.html`, `tokens/ottar.html`, `tokens/sveinn.html` |
+| Síður utan umfangs nýju síðunnar | [`vidmid/utan-umfangs.md`](vidmid/utan-umfangs.md) | 71 | `index.html`, `lotur/git-ai-reproducible/agents.html`, `lotur/git-ai-reproducible/index.html`, `lotur/git-ai-reproducible/reproducible-reports.html`, `lotur/logic-sets/index.html`, `lotur/sql-advanced/index.html`, `lotur/sql-basics/index.html`, `lotur/storytelling/index.html`, `project-management.html`, `reflections/bjorn.html`, `team.html` |

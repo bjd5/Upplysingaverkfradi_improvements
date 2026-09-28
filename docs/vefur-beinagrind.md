@@ -27,9 +27,8 @@ sjá [`endurbygging.md`](endurbygging.md) kafla 3). Flokkarnir eru skráðir í
 | Friends 06 | `web/sidur/phoebe-tribute.html` | Til heiðurs Phoebe *(biðstaða)* | — |
 | Viðauki A | `web/sidur/hagstofan.html` | Brautskráning af háskólastigi | 2 — Hagstofan |
 | Viðauki B | `web/sidur/vedurstodvar.html` | Veðurstöðvar Veðurstofunnar | 3 — Veðurstofan, stöðvar |
-| Viðauki C | `web/sidur/mbl-regex.html` | Reglulegar segðir á fréttaforsíðu | 4 — mbl.is |
+| Viðauki C | `web/sidur/mbl-regex.html` | Reglulegar segðir á fréttasíðu | 4 — mbl.is |
 | Viðauki D | `web/sidur/adferdafraedi.html` | Aðferðafræði | — |
-| Viðauki E | `web/sidur/tokennotkun.html` | Tokennotkun *(biðstaða)* | — |
 
 Síðurnar `gogn.html`, `nidurstodur.html` og `um.html` úr fyrstu beinagrindinni
 voru **felldar niður**: þær eru ekki í umfanginu sem var ákveðið í
@@ -83,8 +82,7 @@ Forsíða                                    0 smellir
     ├── Brautskráning af háskólastigi      1
     ├── Veðurstöðvar                       1
     ├── Reglulegar segðir                  1
-    ├── Aðferðafræði                       1
-    └── Tokennotkun                        1
+    └── Aðferðafræði                       1
 
 Mesta dýpt: 1 smellur (þak reglunnar: 3)
 ```

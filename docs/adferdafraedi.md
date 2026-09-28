@@ -1,13 +1,10 @@
 # Aðferðafræði
 
-Skráð jafnóðum meðan unnið er, ekki eftir á (regla 8). Þetta skjal svarar einni
-spurningu fyrir hvert gagnasafn: **hvernig var það afmarkað og af hverju
-einmitt þannig?** Hvaðan gögnin komu er í [`heimildir.md`](heimildir.md).
+Hvernig var hvert gagnasafn afmarkað, og af hverju? Skráð jafnóðum (regla 8).
+Hvaðan gögnin komu er í [`heimildir.md`](heimildir.md).
 
-Hver fullyrðing hér á sér stoð í `provenance.json` safnsins eða í frosna
-viðmiðinu í [`vidmid/`](vidmid/), og tilvísunin fylgir. Þar sem rökstuðningur er
-**hvergi skráður** stendur það berum orðum — betra er að skrá eyðu en að fylla
-hana með ágiskun.
+Hver fullyrðing á sér stoð í `provenance.json` safnsins eða í
+[`vidmid/`](vidmid/). Þar sem rökstuðning vantar stendur það berum orðum.
 
 ---
 
@@ -15,16 +12,12 @@ hana með ágiskun.
 
 ### 1.1 Jarðskjálftar — Reykjanes, nóvember–desember 2023
 
-**Rannsóknarspurningin er í mótun:** *eru bein tengsl milli kvikusöfnunar og
-jarðskjálftavirkni?* Gamla síðan svaraði henni ekki og þessi gögn svara henni
-ekki heldur. Þau byggja fyrri helming svarsins — jarðskjálftavirknina. Seinni
-helminginn, sjálfstæða tímaröð um kvikusöfnun, vantar enn, og án hans er engin
-fylgni reiknuð og engin ályktun dregin.
+**Rannsóknarspurningin (í mótun):** *eru bein tengsl milli kvikusöfnunar og
+jarðskjálftavirkni?* Þessi gögn lýsa aðeins skjálftavirkninni. Sjálfstæða
+tímaröð um kvikusöfnun vantar, svo engin fylgni er reiknuð.
 
-**Af hverju Reykjanes.** Reiturinn sem var sendur með beiðninni — lengdargráða
-−23 til −21,5, breiddargráða 63,7 til 64,1 — afmarkar Reykjanesskagann, þar sem
-atburðarásin sem spurningin snýst um átti sér stað: landris við Svartsengi og
-kvikugangurinn við Sundhnúk og Grindavík.
+**Af hverju Reykjanes.** Reiturinn (lengd −23 til −21,5, breidd 63,7 til 64,1)
+nær yfir landrisið við Svartsengi og kvikuganginn við Sundhnúk og Grindavík.
 
 **Af hverju 1.11.2023–1.1.2024.** Glugginn er valinn utan um vel skjalfesta
 atburðarás:
@@ -35,27 +28,19 @@ atburðarás:
 | 10. nóvember 2023 | Stór kvikugangur myndast við Sundhnúk og Grindavík samhliða mikilli jarðskjálftavirkni og aflögun. **Ekki gaus þann dag** |
 | 18. desember 2023 | Fyrsta gos hrinunnar við Sundhnúkagíga hefst |
 
-Glugginn nær því yfir daga **fyrir, á meðan og eftir** báða atburði. Tveir heilir
-almanaksmánuðir gefa skýr og endurkeyranleg mörk: frá 1. nóvember 2023 kl. 00:00
-UTC til 1. janúar 2024 kl. 00:00 UTC, **upphaf meðtalið og endir undanskilinn** —
-61 UTC-dagur fyrir daglegan samanburð.
+Glugginn nær yfir daga **fyrir, á meðan og eftir** báða atburði: tveir heilir
+mánuðir, 1.11.2023 00:00 UTC til 1.1.2024 00:00 UTC, **upphaf meðtalið, endir
+ekki** — 61 UTC-dagur.
 
-**Af hverju þessar síur.** Beiðnin bað um `type=earthquake`,
-`evaluation_mode=manual` og `system=sil`: aðeins **yfirfarna** jarðskjálfta úr
-SIL-mælakerfi Veðurstofunnar. Sjálfvirkar greiningar eru því undanskildar, og
-það skiptir máli vegna þess að eldri skjálftafærslur geta verið endurskoðaðar —
-yfirfarnar færslur eru þær sem standa. Stærðarmörkin 3–7 og dýptarmörkin
-0–50 km fylgdu æfingunni; **rökstuðningur þeirra er hvergi skjalfestur** og er
-skráður sem opin spurning (kafli 7).
+**Af hverju þessar síur.** `type=earthquake`, `evaluation_mode=manual` og
+`system=sil`: aðeins **yfirfarnir** skjálftar úr SIL-kerfi Veðurstofunnar, því
+sjálfvirkar greiningar eru oft endurskoðaðar. Stærð 3–7 og dýpt 0–50 km fylgdu
+æfingunni; **rökstuðningurinn er hvergi skjalfestur** (kafli 7). Síurnar eru
+líka **sannreyndar**: færsla utan markanna stöðvar keyrsluna.
 
-Síurnar eru ekki aðeins sendar heldur líka **sannreyndar**: hver færsla er lesin
-yfir og frávik stöðva keyrsluna. Svar sem inniheldur færslu utan markanna er
-ekki það úrtak sem beðið var um.
-
-**Stærðarkvarðinn verður að fylgja með.** `Mlw` og `Mw` eru ekki sama talan og
-mega ekki lenda í sama miðgildi; vanti kvarðann er ekki hægt að álykta hann, svo
-færsla án hans stöðvar keyrsluna. Í þessu eintaki er **aðeins `Mlw`**, varðveittur
-eins og Veðurstofan skráir hann — hvorki umreiknaður né merktur Richter.
+**Stærðarkvarðinn verður að fylgja með.** `Mlw` og `Mw` mega ekki lenda í sama
+miðgildi, og færsla án kvarða stöðvar keyrsluna. Hér er **aðeins `Mlw`**, eins
+og Veðurstofan skráir hann — hvorki umreiknaður né merktur Richter.
 
 **Það sem úrtakið inniheldur** (frosna viðmiðið, `vidmid/generated/earthquakes-results.md`):
 
@@ -77,18 +62,14 @@ skjálfti hafi orðið.
 **Spurningin:** hversu stór hluti innritunarárgangsins 2017 lauk námi, og hvernig
 ber verkfræði, framleiðsla og mannvirkjagerð saman við önnur námssvið?
 
-**Af hverju innritunarár 2017.** Lýsigögn töflunnar bjóða aðeins tvö innritunarár:
-`2014` og `2017`. Fyrirspurnin velur það síðara — nýjasta árganginn sem taflan
-nær yfir. Hún velur **ekki** bæði: tveir punktar sýna mun milli tveggja árganga
-en aðgreina ekki varanlega þróun frá tilviljun, breyttri samsetningu hópa eða
-breytingum á námsumhverfi. Þessi fyrirspurn reiknar því enga breytingu milli
-árganga.
+**Af hverju innritunarár 2017.** Taflan býður aðeins `2014` og `2017`; valinn
+er sá nýrri. Tveir punktar aðgreina ekki þróun frá tilviljun, svo engin
+breyting milli árganga er reiknuð.
 
 **Af hverju tímapunkturinn `n+3`.** Kóðinn `n+3` lítur út fyrir að merkja þrjú ár,
 en `valueTexts` í lýsigögnunum segir **„Sex árum eftir innritun“**. Niðurstöðurnar
 mæla því stöðuna sex árum eftir innritun 2017 — ekki hvort nemendur luku
-þriggja ára námi á þremur árum. Þetta er auðveldasta villan að gera í þessari
-töflu og er þess vegna skjalfest hér.
+þriggja ára námi á þremur árum. Auðveldasta villan í þessari töflu.
 
 **Hvað var valið.** `Nemendur` = `5` (brautskráðir alls), `6` (brottfallnir),
 `7` (enn í námi); `Námssvið` = `Alls`, `05`, `06`, `07`; `Kyn` = `Alls`, `1`, `2`;
@@ -104,22 +85,18 @@ merkir **prósentur en ekki fjölda nemenda**; án fjöldans er hvorki hægt að
 **Spurningin:** forrit á að sýna veðrið í VR-II (Hjarðarhaga 6) og þarf að lesa
 eina veðurstöð. Hvaða stöð, og dugar hún?
 
-**Af hverju ein ósíuð beiðni.** Gamla skriftan sendi fimm beiðnir á sama
-endapunkt: eina ósíaða og fjórar með síum (`active`, `polygon`, `station_id`).
-Síurnar velja allar úr sama mengi, svo ósíaða svarið er **yfirmengi** þeirra
-allra og hinar fjórar má reikna staðbundið úr því. Ein beiðni er því frystingin
-og fjórar beiðnir til viðbótar væru álag á þjónustu sem gefur gögnin frítt
-(regla 4).
+**Af hverju ein ósíuð beiðni.** Gamla skriftan sendi fimm beiðnir; fjórar með
+síum (`active`, `polygon`, `station_id`) sem velja allar úr ósíaða svarinu. Það
+er því **yfirmengi** hinna og eitt nægir (regla 4).
 
 **Afmörkun stöðvavalsins.** Kassinn sem er sendur sem `polygon` er 5 km út frá
 VR-II. Lengdargráða styttist í cos(breidd), svo kassinn er ekki ferningur í
 gráðum. Stöð telst **virk** ef reiturinn `ending` er tómur; ártal þýðir að hún
 hætti mælingum það ár, hversu nálæg sem hún er.
 
-Af 778 stöðvum í eintakinu eru **343 virkar** — listinn er skrá yfir allar stöðvar
-sem Veðurstofan þekkir, virkar og aflagðar, en ekki yfir stöðvar í rekstri.
-Nálægð og samfelld tímaröð eru tvö ólík skilyrði: næsta virka stöð við VR-II
-hóf mælingar 2022 og á ekkert frá 1976.
+Af 778 stöðvum eru **343 virkar** — listinn nær yfir allar stöðvar sem
+Veðurstofan þekkir, líka aflagðar. Nálægð er ekki samfelld tímaröð: næsta
+virka stöð við VR-II hóf mælingar 2022.
 
 Samanburður þessa eintaks við gömlu síðuna er í
 [`vedurstodvar-samanburdur.md`](vedurstodvar-samanburdur.md).
@@ -129,10 +106,8 @@ Samanburður þessa eintaks við gömlu síðuna er í
 **Spurningin:** hvað má lesa úr kyrrstæðu HTML-svari með reglulegum segðum einum
 saman?
 
-**Af hverju `/frettir/` en ekki forsíðan.** Sótt var af `https://www.mbl.is/frettir/`
-— fréttayfirlitið, ekki forsíða mbl.is. Það er skjalfest í provenance eintaksins
-og skiptir máli fyrir talninguna: fjöldi frétta á yfirlitssíðu er annar en á
-forsíðu.
+**`/frettir/`, ekki forsíðan.** Sótt var af `https://www.mbl.is/frettir/`
+(skjalfest í provenance). Fjöldi frétta þar er annar en á forsíðunni.
 
 **Fimm spurningar æfingarinnar**, með svörunum eins og gamla síðan birti þau:
 einstakar fréttir **42**, hitastig í Reykjavík **11 °C**, gengi Bandaríkjadals
@@ -152,11 +127,9 @@ fyllir þá eftir á. Talningin telur skilgreinda reiti en ekki birtar auglýsin
 
 ### 1.5 Friends-handritin — 227 skrár, 236 þættir
 
-**Af hverju `delvinso` en ekki `fangj`.** Söfnin tvö eru nánast eins — `delvinso`
-er afleiða af `fangj.github.io/friends` — en í `delvinso` er búið að **laga brotna
-HTML-byggingu í þáttum `0911` og `0915`**. Greiningin var keyrð á báðum söfnum til
-samanburðar og gaf sömu tölur (Monica munaði einni línu), svo niðurstöðurnar eru
-**ekki háðar valinu**; það er valið vegna þáttunargæða en ekki vegna talnanna.
+**Af hverju `delvinso` en ekki `fangj`.** `delvinso` er afleiða af `fangj` þar
+sem **brotin HTML-bygging í `0911` og `0915` er löguð**. Bæði söfn gefa sömu
+tölur (Monica munar einni línu), svo niðurstöðurnar eru **ekki háðar valinu**.
 
 **Tvær skrár eru undanskildar:** `0423uncut.html` og `07outtakes.html`
 (tvítekning og aukaefni). Eftir standa **227 handritsskrár**, sem svara til **236
@@ -177,22 +150,130 @@ sýndra þátta** — níu skrár geyma tvo þætti hver.
 sviðsfyrirsagnir og 3.259 sviðsleiðbeiningar. **2.078 blokkir (2,95%) eru
 óflokkaðar** — nær eingöngu „Commercial Break“, „End“ og kreditlínur.
 
+#### 1.5.1 Höfundaréttur — valkostur A
+
+**Vandinn.** Upprunaverkefnið var í lokuðu repo-i; þetta repo er opið. Handritin
+sem greiningin las eru **afrit aðdáenda** á höfundarréttarvörðum
+sjónvarpshandritum. `fangj/friends` hefur **ekkert leyfi**, og MIT-leyfið á
+`delvinso/friends` nær yfir kóðann þar en ekki endilega yfir handritatextann sem
+hann vinnur með. Að greina slík handrit í lokuðu námsverkefni er venjubundið; að
+endurbirta þau í opnu repo-i er annað mál. Um leið eru bæði söfnin á
+einkarepo-um einstaklinga sem enginn í teyminu stýrir — hverfi þau er
+greiningin ekki endurkeyranleg.
+
+**Ákvörðunin.** Björn valdi **valkost A** 27.9.2026 (issue #3):
+
+- **Handritin fara aldrei inn í þetta repo** — hvorki afrituð né vendoruð.
+  `.gitignore` útilokar `data/external/` og `data/fangj-friends/`, þar sem
+  upprunaverkefnið geymdi þau.
+- **Afleiddu tölurnar fara í git**: `data/processed/phoebe-stats/` — línufjöldi,
+  orðafjöldi, senufjöldi, hlutföll og tíðnitöflur á persónu. Þær eru
+  staðreyndir *um* textann, ekki textinn.
+
+**Rökin.** Tölurnar eru það sem síðan birtir. Með þeim í git birtir hún réttar
+tölur án handritanna, og varðveisluáhættan er leyst fyrir niðurstöðurnar þótt
+hún sé ekki leyst fyrir aðfangið. Sá sem hefur handritasöfnin getur endurkeyrt
+greininguna; sá sem hefur þau ekki getur samt rakið hverja tölu að skránni sem
+hún kemur úr.
+
+**Af hverju ekki hinir kostirnir:**
+
+| Kostur | Hvað hann hefði gefið | Af hverju ekki |
+|---|---|---|
+| **B.** Vendora handritin inn í `data/raw/friends/` | Fulla endurkeyrslu, óháða þriðja aðila | Endurbirtir höfundarréttarvarinn texta í opnu repo-i |
+| **C.** Sleppa Friends-greiningunum | Einfaldasta leiðin, enginn höfundaréttarvandi | Þrjár af níu síðum hverfa og umtalsverð vinna glatast |
+
+**Verðið sem A kostar.** Friends-tölurnar eru **ekki endurbyggjanlegar úr þessu
+repo-i**. Það brýtur meginregluna um að unnin gögn séu afleiða (regla 5), og
+undanþágan er rökstudd í
+[`../data/processed/README.md`](../data/processed/README.md), kafla 1.2: fyrir
+þetta repo eru tölurnar frumgagn. Skilyrðið sem heldur undanþágunni lögmætri er
+að engin talnaskrá geymi samfellda setningu úr þáttunum — kafli 1.5.2.
+
+**Tvennt er enn opið — Björn ákveður** (issue #3):
+
+| | Spurning | Staða |
+|---|---|---|
+| (a) | Á að skrá handritasöfnin sem **submodule** í `.gitmodules` — svo endurkeyrsla sé ein skipun fyrir þann sem hefur aðgang — eða halda þeim alveg utan repo-sins? Submodule geymir aðeins slóð og commit-SHA, ekki textann. | **opið** — `.gitmodules` er óbreytt |
+| (b) | Byggðu síðurnar í [`vidmid/vefur/`](vidmid/vefur/) geyma **átta orðréttar handritslínur** úr þætti `0101` (`friends/phoebe-statistics.html` og `search.json`), á `main` og í git-sögunni. Á að samþykkja þær sem tilvitnun, eða endurskrifa söguna? | **opið** — línurnar eru óbreyttar |
+
+Spurning (b) ræður hvort skilyrði #3 — *ekkert höfundarréttarvarið efni í
+git-sögu þessa repo-s* — telst uppfyllt. Þangað til er það **ekki** staðfest.
+
+#### 1.5.2 Handritsleitin — þröskuldur og afmörkun
+
+Fullyrðingin *„engin talnaskrá geymir samfellda setningu“* er ekki
+traustsatriði heldur prófuð með
+[`../src/python/vidmid/handritsleit.py`](../src/python/vidmid/handritsleit.py)
+og [`../tests/test_handritsleit.py`](../tests/test_handritsleit.py):
+
+```bash
+python3 src/python/vidmid/handritsleit.py stadfesta
+```
+
+**Reglan fyrir hvert strengjagildi:**
+
+1. **Hámark fimm orð** (`ORDATHAK_GAGNAREITS = 5` í `handritsreitir.py`).
+2. **Ekkert setningamerki** — `.`, `!`, `?` eða `…` sem lokar orði eða er fylgt
+   af hástafsorði. Tugabrot (`2.95`) eru undanskilin, annars teldist hver
+   prósentutala setning.
+
+**Af hverju fimm.** Fimm orð er mælt hámark þeirra gagnareita sem ekki eru
+undanþegnir (`.units.share_pct` í `phoebe-screentime-by-season.json` og
+`.question` í `phoebe-extra-stats.json`). Lengsti strengurinn í
+`signature-phrases.csv` — reitnum sem er næst því að vera tilvitnun — er þrjú
+orð. Meðaltilsvar í handritunum er **11,2 orð** hjá Phoebe og **10,7 orð** hjá
+hinum fimm (`summary.json`), svo þakið er **undir hálfu meðaltilsvari**: brot úr
+tilsvari fellir prófið, ekki aðeins heilt tilsvar.
+
+**Undanþágur.** 18 reitir brjóta almennu regluna af lögmætri ástæðu —
+aðferðarlýsingar verkefnisins sjálfs á íslensku og þáttatitlar. Þeir eru taldir
+upp í `handritsreitir.py`, hver með ástæðu og **frystri SHA-256** af innihaldinu.
+Undanþága getur því ekki orðið felustaður: breytist undanþeginn reitur, finnist
+undanþága ekki í skránum, eða þurfi reitur hana ekki lengur, fellur prófið.
+
+**Leitin prentar ekki innihald** brotlegs strengs, aðeins staðsetningu og
+mælingar. Væri hann handritstexti myndi prentunin afrita hann í logga.
+
+**Hún er prófuð þar sem hún á að bresta** (`agenta-verkefni.md`, kafli 6):
+prófin keyra hana á heimatilbúnum gervisetningum og falla ef hún **finnur þær
+ekki**.
+
+**Afmörkun — það sem leitin nær til, og það sem hún nær ekki til.** Hún les
+aðeins `.json`- og `.csv`-skrár á þessum stöðum, samtals **42 skrár**:
+
+| Nær til | Nær **ekki** til |
+|---|---|
+| `data/processed/phoebe-stats/` | Byggðu HTML-síðurnar í `docs/vidmid/vefur/` |
+| `docs/vidmid/phoebe-stats/` | `docs/vidmid/vefur/search.json` |
+| `docs/vidmid/vefur/friends/phoebe-stats/` | Annað í repo-inu |
+| `docs/vidmid/generated/phoebe-central-perk-summary.json` | |
+
+Grænt próf þýðir því: **talnaskrárnar eru textalausar** — ekki að repo-ið sé
+það. Vitað er að það er það ekki: `friends/phoebe-statistics.html` og
+`search.json` geyma línurnar átta úr spurningu (b) hér að ofan. Prófið heitir
+`test_skannadar_talnaskrar_geyma_enga_samfellda_setningu` til að nafnið lofi
+ekki meiru en það prófar.
+
+**Af hverju leitin er ekki víkkuð yfir `docs/vidmid/vefur/`:** hún myndi falla á
+línunum átta, og það er ekki leitarinnar að ákveða hvort þær mega standa. Að
+víkka hana og undanskilja línurnar væri að svara spurningu (b) hljóðlega; að
+víkka hana án undanþágu væri að gera `main` rautt vegna ákvörðunar sem ekki
+hefur verið tekin. Afmörkunin stendur þar til Björn hefur svarað (b).
+
 ### 1.6 TMDB — ekkert eintak
 
-Safnið átti að staðfesta hver leikur Phoebe og í hversu mörgum þáttum, og var um
-leið æfing í réttri meðferð aðgangslykils. Hvorki svörin né samantektin lifðu af
-og `TMDB_TOKEN` er ekki til, svo **ekkert er hægt að skjalfesta um afmörkun þessa
-safns** annað en það sem beiðnirnar sjálfar segja (sjá `heimildir.md`, kafla 1.5).
-Engin tala úr TMDB má birtast á vefsíðunni fyrr en safnið er sótt á ný.
+Safnið átti að staðfesta hver leikur Phoebe og í hve mörgum þáttum. Hvorki
+svörin né samantektin lifðu af og `TMDB_TOKEN` vantar, svo **ekkert verður
+skjalfest** umfram beiðnirnar sjálfar (`heimildir.md`, 1.5). Engin TMDB-tala
+birtist fyrr en safnið er sótt á ný.
 
 ---
 
 ## 2. Hreinsun og sannreyning
 
-**Grundvallarregla: færsla hverfur aldrei hljóðlega.** Frávik stöðva keyrsluna
-með skýringu í stað þess að falla út úr talningu (regla 6). Þetta gildir í báðar
-áttir — svar sem stenst ekki síurnar sem beðið var um er ekki það úrtak sem
-beðið var um, og afrit sem stemmir ekki við SHA-256 er ekki afrit.
+**Færsla hverfur aldrei hljóðlega.** Frávik stöðva keyrsluna með skýringu
+(regla 6).
 
 | Þrep | Hvað er sannreynt |
 |---|---|
@@ -201,23 +282,17 @@ beðið var um, og afrit sem stemmir ekki við SHA-256 er ekki afrit.
 | Þáttun | Bygging, gildissvið, tímastimplar, einkvæm auðkenni, skráður stærðarkvarði |
 | Talning | Dagar án atburðar fá **röð með núlli**, ekki enga röð |
 
-Síðasta atriðið er ekki formsatriði: tímaröð sem sleppir núlldögunum sýnir ranga
-mynd af 43 dögum af 61 í jarðskjálftaúrtakinu. Þess vegna krefst P1.7
-`LEFT JOIN` á dagatöfluna en ekki talningar á röðum í atburðatöflunni.
+Tímaröð án núlldaga sýnir ranga mynd af 43 dögum af 61 — þess vegna
+`LEFT JOIN` á dagatöfluna (P1.7).
 
-Hrágögnum er aldrei breytt eftir á. Það sem má breytast eru **afleiðurnar**:
-gagnagrunnurinn, JSON-skrárnar í `web/gogn/` og skýrslubútar eins og
-`vedurstodvar-samanburdur.md`, sem allar verða til úr `data/raw/` og eiga að
-reiknast eins í hverri keyrslu.
+Hrágögnum er aldrei breytt. Afleiðurnar — grunnurinn, `web/gogn/` og skýrslubútar
+— verða til úr `data/raw/` og reiknast eins í hverri keyrslu.
 
 ## 3. Geymsla
 
-Gagnagrunnurinn er **afleiða en ekki frumgagn**: það á að vera hægt að eyða honum
-og byggja hann upp á nýtt úr `data/raw/` og `src/sql/migrations/` án nets. Þess
-vegna er hann utan git.
-
-Uppbyggingin verður aðeins til úr númeruðum migrations, sem er **aldrei breytt
-eftir að þær hafa verið keyrðar** — ný migration í staðinn (regla 5).
+Gagnagrunnurinn er **afleiða**: honum má eyða og byggja hann aftur úr
+`data/raw/` og `src/sql/migrations/` án nets. Þess vegna er hann utan git.
+Migration er **aldrei breytt eftir keyrslu** (regla 5).
 `001_gagnasofnun.sql` býr til `fetch_log`, sem skráir hverja söfnun: þjónustu,
 endapunkt, breytur, tímastimpil, HTTP-stöðu, fjölda færslna og slóðina á óbreytta
 svarið í `data/raw/`. Töflur hvers gagnasafns koma í P1.2–P1.6.
@@ -242,10 +317,34 @@ fylgni sem er reiknuð má lesast sem slík.
 | Hlutdeild, ræðuskipti og `interaction_lift` | Friends | Lift leiðréttir fyrir því að málglaðar persónur eiga fleiri samskipti við alla |
 | z-gildi úr log-odds með Dirichlet-prior | Friends | Monroe, Colaresi & Quinn (2008); aðeins orð sem koma ≥ 40 sinnum fyrir |
 
+### 4.1 Fyrirspurnirnar og námundun
+
+Hver tala sem síðurnar byggja á kemur úr fyrirspurn í `src/sql/queries/` —
+**ein skrá á hverja fyrirspurn**, með haus sem segir hvaða spurningu hún svarar,
+hvaða síða notar hana og hvaða `?`-breytur hún tekur (#11). Python les þær með
+einum lesara (`src/python/gagnagrunnur/fyrirspurnir.py`) eftir hvítlista; engin
+fyrirspurn er geymd í Python-streng og engin er sett saman úr strengjum. Sama
+fyrirspurn er notuð af hleðslunni til staðfestingar og af birtingunni, svo
+hleðslan staðfestir nákvæmlega þá tölu sem fer á síðuna.
+
+**Námundunarvenjan: SQL skilar óafrúnnuðu, birtingin námundar.** SQLite `ROUND`
+námundar helming frá núlli; Python (`round`, og sniðið í
+`utflutningur/islenskt_snid.py`) námundar helming að sléttri tölu. Nafntilvik
+Phoebe á þátt í fyrstu þáttaröð eru nákvæmlega 99/24 = 4,125: SQL-námundun gæfi
+4,13, en greiningin og gamla síðan sýndu 4,12. Þess vegna er námundað á einum
+stað, í birtingu, með Python — og viðmiðið heldur. Tvær sýnir í
+`006_friends.sql` námunda í SQL (`unclassified_pct`, `interaction_lift`); þeim er
+ekki breytt (regla 5), en prófað er að þær gefi sömu tölu og Python-námundun.
+
+**Hlaupandi 7 daga meðaltal** (`skjalftar-hlaupandi-medaltal.sql`) er ný afleidd
+mæling: gamla síðan reiknaði það ekki og það á sér enga viðmiðstölu. Glugginn
+endar á deginum (dagurinn og sex dagar á undan, ekki miðjaður), núll-dagar eru
+taldir með, og fyrstu sex dagar tímabilsins hafa styttri glugga — fyrirspurnin
+skilar `days_in_window` svo birtingin geti merkt þá.
+
 ## 5. Rekjanleiki — báðar áttir
 
-Frá tölu að hrágagni og til baka. Síðurnar eru þær sem
-[`endurbygging.md`](endurbygging.md) skilgreinir; þær verða til í bylgju 3.
+Frá tölu að hrágagni og til baka.
 
 | Gagnasafn | Hrágögn | Provenance | Hleðsla í grunn | Síða |
 |---|---|---|---|---|
@@ -256,27 +355,17 @@ Frá tölu að hrágagni og til baka. Síðurnar eru þær sem
 | Friends | *engin — aðeins talnaniðurstöður* | `vidmid/phoebe-stats/_meta.json` | P1.6 (#10) | `phoebe-tolfraedi.html`, `phoebe-central-perk.html` |
 | TMDB | **vantar** | — | — | `web/sidur/phoebe-tmdb.html` |
 
-Skriftur sem lesa hrágögnin **í dag** eru tvær:
-`src/python/sofnun/frysta.py` staðfestir að öll söfnin séu ósnert, og
-`src/python/vinnsla/vedurstodvar_samanburdur.py` les stöðvalistann og ber hann
-við viðmiðið. Hleðsluskriftur hvers safns verða til í bylgju 1; hvaða skrifta á
-að lesa hvaða safn er skráð í [`../data/raw/README.md`](../data/raw/README.md).
-
-Leiðin til baka: hver tala á síðu kemur úr JSON-skrá í `web/gogn/`, sem
-`src/python/utflutningur/` skrifar úr grunninum, sem er byggður úr `data/raw/`,
-þar sem `provenance.json` segir hvaða beiðni skilaði gagninu og `frysting.json`
-staðfestir að það sé óbreytt. Fjögur skref, öll í þessu repo-i.
+Leiðin til baka: tala á síðu → JSON í `web/gogn/` (`src/python/utflutningur/`)
+→ grunnurinn → `data/raw/`, þar sem `provenance.json` segir hvaða beiðni skilaði
+gagninu og `frysting.json` staðfestir að það sé óbreytt. Hvaða skrifta les hvaða
+safn er í [`../data/raw/README.md`](../data/raw/README.md).
 
 ---
 
 ## 6. Takmarkanir
 
-Takmarkanirnar eru í sérstakri skrá: **[`takmarkanir.md`](takmarkanir.md)**.
-
-Sá texti er skrifaður fyrir lesanda vefsíðunnar og fer **óbreyttur** inn á
-`web/sidur/adferdafraedi.html` í P3.11 (issue #25). Hann á því einn stað en ekki
-tvo — texti sem er afritaður milli skjala fer á skjön við sjálfan sig um leið og
-annað eintakið er lagfært.
+Í [`takmarkanir.md`](takmarkanir.md) — skrifað fyrir lesanda vefsíðunnar og
+fer óbreytt á aðferðafræðisíðuna (P3.11). Einn staður, ekki tveir.
 
 ---
 
@@ -297,5 +386,5 @@ Opnar spurningar um heimildir og leyfi eru taldar upp í
 | 2 | Rökstuðningur fyrir `evaluation_mode=manual` | **að hluta** — skjalfest hvað sían útilokar, ekki af hverju valið var tekið |
 | 3 | Fimm mbl-svörin úr frosna eintakinu | **ekki reiknuð** — P1.5 reiknar þau og skráir muninn við gömlu síðuna |
 | 4 | Afmörkun TMDB-safnsins | **ófrágengið** — ekkert eintak til |
-| 5 | Höfundaréttur Friends-handritanna | **ófrágengið** — issue #3 ræður hvort talnaniðurstöður standa óbreyttar |
+| 5 | Höfundaréttur Friends-handritanna | **ákveðið að hluta** — valkostur A (27.9.2026): tölurnar í git, handritin aldrei. Opið: (a) submodule í `.gitmodules` og (b) átta orðréttar línur í `vidmid/vefur/` — sjá kafla 1.5.1 |
 | 6 | Vinnsla og greining Central Perk-hlutans | **skjalfest í viðmiðinu**, ekki endurtekin hér — P2.6 flytur hana yfir |

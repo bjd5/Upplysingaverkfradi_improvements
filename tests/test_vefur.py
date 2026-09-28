@@ -32,7 +32,6 @@ VIDAUKI = [
     "sidur/vedurstodvar.html",
     "sidur/mbl-regex.html",
     "sidur/adferdafraedi.html",
-    "sidur/tokennotkun.html",
 ]
 SIDUR = ["index.html"] + THEMA + FRIENDS + VIDAUKI
 

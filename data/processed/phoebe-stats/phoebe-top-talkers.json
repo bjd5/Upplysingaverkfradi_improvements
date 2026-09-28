@@ -1,0 +1,639 @@
+{
+  "question": "Hver talar mest við Phoebe?",
+  "method": "Nalaeg raeðuskipti innan somu senu: ef X talar straxa eftir Phoebe (eða Phoebe straxa eftir X) telst thad ein samskipti. Til stuðnings: senur thar sem aðeins Phoebe og X tala, sameiginlegar senur, og linur X sem nefna Phoebe a nafn.",
+  "unit": "fjoldi raeðuskipta (turns)",
+  "headline": {
+    "top_talker": "monica",
+    "adjacent_turns": 2718,
+    "runner_up": "rachel",
+    "runner_up_turns": 2701,
+    "gap_pct": 0.63,
+    "is_effectively_a_tie": true,
+    "tie_note": "Monica og Rachel skilja aðeins 0.63% að a raeðuskiptum - thad er innan skekkjumarka aðferðarinnar. Notið stuðningsmaelikvarðana (two_person_scene_lines, lines_mentioning_phoebe, interaction_lift) til að greina a milli.",
+    "highest_lift": "monica",
+    "most_one_on_one": "rachel",
+    "says_her_name_most": "rachel",
+    "top_non_friend": "mike"
+  },
+  "overall": [
+    {
+      "character": "monica",
+      "adjacent_turns": 2718,
+      "replies_to_phoebe": 1350,
+      "phoebe_replies_to": 1368,
+      "two_person_scene_lines": 522,
+      "shared_speaking_scenes": 876,
+      "lines_mentioning_phoebe": 272,
+      "lines_naming_phoebe_at_edge": 202,
+      "adjacency_share_pct": 25.44,
+      "expected_share_pct": 19.37,
+      "interaction_lift": 1.314,
+      "total_lines_in_show": 8395,
+      "rank": 1
+    },
+    {
+      "character": "rachel",
+      "adjacent_turns": 2701,
+      "replies_to_phoebe": 1334,
+      "phoebe_replies_to": 1367,
+      "two_person_scene_lines": 677,
+      "shared_speaking_scenes": 826,
+      "lines_mentioning_phoebe": 322,
+      "lines_naming_phoebe_at_edge": 254,
+      "adjacency_share_pct": 25.29,
+      "expected_share_pct": 21.36,
+      "interaction_lift": 1.184,
+      "total_lines_in_show": 9259,
+      "rank": 2
+    },
+    {
+      "character": "joey",
+      "adjacent_turns": 1933,
+      "replies_to_phoebe": 975,
+      "phoebe_replies_to": 958,
+      "two_person_scene_lines": 493,
+      "shared_speaking_scenes": 745,
+      "lines_mentioning_phoebe": 196,
+      "lines_naming_phoebe_at_edge": 137,
+      "adjacency_share_pct": 18.1,
+      "expected_share_pct": 18.88,
+      "interaction_lift": 0.958,
+      "total_lines_in_show": 8183,
+      "rank": 3
+    },
+    {
+      "character": "ross",
+      "adjacent_turns": 1774,
+      "replies_to_phoebe": 879,
+      "phoebe_replies_to": 895,
+      "two_person_scene_lines": 300,
+      "shared_speaking_scenes": 691,
+      "lines_mentioning_phoebe": 184,
+      "lines_naming_phoebe_at_edge": 140,
+      "adjacency_share_pct": 16.61,
+      "expected_share_pct": 20.9,
+      "interaction_lift": 0.795,
+      "total_lines_in_show": 9058,
+      "rank": 4
+    },
+    {
+      "character": "chandler",
+      "adjacent_turns": 1556,
+      "replies_to_phoebe": 767,
+      "phoebe_replies_to": 789,
+      "two_person_scene_lines": 131,
+      "shared_speaking_scenes": 729,
+      "lines_mentioning_phoebe": 120,
+      "lines_naming_phoebe_at_edge": 89,
+      "adjacency_share_pct": 14.57,
+      "expected_share_pct": 19.49,
+      "interaction_lift": 0.747,
+      "total_lines_in_show": 8446,
+      "rank": 5
+    }
+  ],
+  "by_season": [
+    {
+      "season": 1,
+      "character": "monica",
+      "adjacent_turns": 274,
+      "replies_to_phoebe": 132,
+      "phoebe_replies_to": 142,
+      "share_of_phoebe_interactions_pct": 28.78
+    },
+    {
+      "season": 1,
+      "character": "rachel",
+      "adjacent_turns": 212,
+      "replies_to_phoebe": 110,
+      "phoebe_replies_to": 102,
+      "share_of_phoebe_interactions_pct": 22.27
+    },
+    {
+      "season": 1,
+      "character": "chandler",
+      "adjacent_turns": 200,
+      "replies_to_phoebe": 98,
+      "phoebe_replies_to": 102,
+      "share_of_phoebe_interactions_pct": 21.01
+    },
+    {
+      "season": 1,
+      "character": "ross",
+      "adjacent_turns": 146,
+      "replies_to_phoebe": 73,
+      "phoebe_replies_to": 73,
+      "share_of_phoebe_interactions_pct": 15.34
+    },
+    {
+      "season": 1,
+      "character": "joey",
+      "adjacent_turns": 120,
+      "replies_to_phoebe": 57,
+      "phoebe_replies_to": 63,
+      "share_of_phoebe_interactions_pct": 12.61
+    },
+    {
+      "season": 2,
+      "character": "rachel",
+      "adjacent_turns": 210,
+      "replies_to_phoebe": 107,
+      "phoebe_replies_to": 103,
+      "share_of_phoebe_interactions_pct": 25.0
+    },
+    {
+      "season": 2,
+      "character": "monica",
+      "adjacent_turns": 198,
+      "replies_to_phoebe": 98,
+      "phoebe_replies_to": 100,
+      "share_of_phoebe_interactions_pct": 23.57
+    },
+    {
+      "season": 2,
+      "character": "chandler",
+      "adjacent_turns": 154,
+      "replies_to_phoebe": 81,
+      "phoebe_replies_to": 73,
+      "share_of_phoebe_interactions_pct": 18.33
+    },
+    {
+      "season": 2,
+      "character": "joey",
+      "adjacent_turns": 153,
+      "replies_to_phoebe": 72,
+      "phoebe_replies_to": 81,
+      "share_of_phoebe_interactions_pct": 18.21
+    },
+    {
+      "season": 2,
+      "character": "ross",
+      "adjacent_turns": 125,
+      "replies_to_phoebe": 62,
+      "phoebe_replies_to": 63,
+      "share_of_phoebe_interactions_pct": 14.88
+    },
+    {
+      "season": 3,
+      "character": "monica",
+      "adjacent_turns": 341,
+      "replies_to_phoebe": 168,
+      "phoebe_replies_to": 173,
+      "share_of_phoebe_interactions_pct": 32.2
+    },
+    {
+      "season": 3,
+      "character": "joey",
+      "adjacent_turns": 215,
+      "replies_to_phoebe": 108,
+      "phoebe_replies_to": 107,
+      "share_of_phoebe_interactions_pct": 20.3
+    },
+    {
+      "season": 3,
+      "character": "rachel",
+      "adjacent_turns": 187,
+      "replies_to_phoebe": 87,
+      "phoebe_replies_to": 100,
+      "share_of_phoebe_interactions_pct": 17.66
+    },
+    {
+      "season": 3,
+      "character": "ross",
+      "adjacent_turns": 168,
+      "replies_to_phoebe": 86,
+      "phoebe_replies_to": 82,
+      "share_of_phoebe_interactions_pct": 15.86
+    },
+    {
+      "season": 3,
+      "character": "chandler",
+      "adjacent_turns": 148,
+      "replies_to_phoebe": 80,
+      "phoebe_replies_to": 68,
+      "share_of_phoebe_interactions_pct": 13.98
+    },
+    {
+      "season": 4,
+      "character": "monica",
+      "adjacent_turns": 320,
+      "replies_to_phoebe": 155,
+      "phoebe_replies_to": 165,
+      "share_of_phoebe_interactions_pct": 30.83
+    },
+    {
+      "season": 4,
+      "character": "rachel",
+      "adjacent_turns": 240,
+      "replies_to_phoebe": 116,
+      "phoebe_replies_to": 124,
+      "share_of_phoebe_interactions_pct": 23.12
+    },
+    {
+      "season": 4,
+      "character": "chandler",
+      "adjacent_turns": 178,
+      "replies_to_phoebe": 88,
+      "phoebe_replies_to": 90,
+      "share_of_phoebe_interactions_pct": 17.15
+    },
+    {
+      "season": 4,
+      "character": "joey",
+      "adjacent_turns": 161,
+      "replies_to_phoebe": 82,
+      "phoebe_replies_to": 79,
+      "share_of_phoebe_interactions_pct": 15.51
+    },
+    {
+      "season": 4,
+      "character": "ross",
+      "adjacent_turns": 139,
+      "replies_to_phoebe": 77,
+      "phoebe_replies_to": 62,
+      "share_of_phoebe_interactions_pct": 13.39
+    },
+    {
+      "season": 5,
+      "character": "monica",
+      "adjacent_turns": 244,
+      "replies_to_phoebe": 119,
+      "phoebe_replies_to": 125,
+      "share_of_phoebe_interactions_pct": 21.81
+    },
+    {
+      "season": 5,
+      "character": "joey",
+      "adjacent_turns": 241,
+      "replies_to_phoebe": 120,
+      "phoebe_replies_to": 121,
+      "share_of_phoebe_interactions_pct": 21.54
+    },
+    {
+      "season": 5,
+      "character": "rachel",
+      "adjacent_turns": 234,
+      "replies_to_phoebe": 115,
+      "phoebe_replies_to": 119,
+      "share_of_phoebe_interactions_pct": 20.91
+    },
+    {
+      "season": 5,
+      "character": "chandler",
+      "adjacent_turns": 208,
+      "replies_to_phoebe": 108,
+      "phoebe_replies_to": 100,
+      "share_of_phoebe_interactions_pct": 18.59
+    },
+    {
+      "season": 5,
+      "character": "ross",
+      "adjacent_turns": 192,
+      "replies_to_phoebe": 92,
+      "phoebe_replies_to": 100,
+      "share_of_phoebe_interactions_pct": 17.16
+    },
+    {
+      "season": 6,
+      "character": "rachel",
+      "adjacent_turns": 495,
+      "replies_to_phoebe": 239,
+      "phoebe_replies_to": 256,
+      "share_of_phoebe_interactions_pct": 37.84
+    },
+    {
+      "season": 6,
+      "character": "chandler",
+      "adjacent_turns": 230,
+      "replies_to_phoebe": 105,
+      "phoebe_replies_to": 125,
+      "share_of_phoebe_interactions_pct": 17.58
+    },
+    {
+      "season": 6,
+      "character": "ross",
+      "adjacent_turns": 223,
+      "replies_to_phoebe": 109,
+      "phoebe_replies_to": 114,
+      "share_of_phoebe_interactions_pct": 17.05
+    },
+    {
+      "season": 6,
+      "character": "monica",
+      "adjacent_turns": 212,
+      "replies_to_phoebe": 106,
+      "phoebe_replies_to": 106,
+      "share_of_phoebe_interactions_pct": 16.21
+    },
+    {
+      "season": 6,
+      "character": "joey",
+      "adjacent_turns": 148,
+      "replies_to_phoebe": 77,
+      "phoebe_replies_to": 71,
+      "share_of_phoebe_interactions_pct": 11.31
+    },
+    {
+      "season": 7,
+      "character": "rachel",
+      "adjacent_turns": 428,
+      "replies_to_phoebe": 215,
+      "phoebe_replies_to": 213,
+      "share_of_phoebe_interactions_pct": 34.6
+    },
+    {
+      "season": 7,
+      "character": "monica",
+      "adjacent_turns": 233,
+      "replies_to_phoebe": 111,
+      "phoebe_replies_to": 122,
+      "share_of_phoebe_interactions_pct": 18.84
+    },
+    {
+      "season": 7,
+      "character": "ross",
+      "adjacent_turns": 227,
+      "replies_to_phoebe": 110,
+      "phoebe_replies_to": 117,
+      "share_of_phoebe_interactions_pct": 18.35
+    },
+    {
+      "season": 7,
+      "character": "joey",
+      "adjacent_turns": 226,
+      "replies_to_phoebe": 114,
+      "phoebe_replies_to": 112,
+      "share_of_phoebe_interactions_pct": 18.27
+    },
+    {
+      "season": 7,
+      "character": "chandler",
+      "adjacent_turns": 123,
+      "replies_to_phoebe": 60,
+      "phoebe_replies_to": 63,
+      "share_of_phoebe_interactions_pct": 9.94
+    },
+    {
+      "season": 8,
+      "character": "monica",
+      "adjacent_turns": 368,
+      "replies_to_phoebe": 188,
+      "phoebe_replies_to": 180,
+      "share_of_phoebe_interactions_pct": 33.79
+    },
+    {
+      "season": 8,
+      "character": "rachel",
+      "adjacent_turns": 244,
+      "replies_to_phoebe": 121,
+      "phoebe_replies_to": 123,
+      "share_of_phoebe_interactions_pct": 22.41
+    },
+    {
+      "season": 8,
+      "character": "joey",
+      "adjacent_turns": 201,
+      "replies_to_phoebe": 103,
+      "phoebe_replies_to": 98,
+      "share_of_phoebe_interactions_pct": 18.46
+    },
+    {
+      "season": 8,
+      "character": "ross",
+      "adjacent_turns": 153,
+      "replies_to_phoebe": 74,
+      "phoebe_replies_to": 79,
+      "share_of_phoebe_interactions_pct": 14.05
+    },
+    {
+      "season": 8,
+      "character": "chandler",
+      "adjacent_turns": 123,
+      "replies_to_phoebe": 58,
+      "phoebe_replies_to": 65,
+      "share_of_phoebe_interactions_pct": 11.29
+    },
+    {
+      "season": 9,
+      "character": "monica",
+      "adjacent_turns": 274,
+      "replies_to_phoebe": 138,
+      "phoebe_replies_to": 136,
+      "share_of_phoebe_interactions_pct": 26.32
+    },
+    {
+      "season": 9,
+      "character": "rachel",
+      "adjacent_turns": 229,
+      "replies_to_phoebe": 116,
+      "phoebe_replies_to": 113,
+      "share_of_phoebe_interactions_pct": 22.0
+    },
+    {
+      "season": 9,
+      "character": "ross",
+      "adjacent_turns": 225,
+      "replies_to_phoebe": 112,
+      "phoebe_replies_to": 113,
+      "share_of_phoebe_interactions_pct": 21.61
+    },
+    {
+      "season": 9,
+      "character": "joey",
+      "adjacent_turns": 218,
+      "replies_to_phoebe": 112,
+      "phoebe_replies_to": 106,
+      "share_of_phoebe_interactions_pct": 20.94
+    },
+    {
+      "season": 9,
+      "character": "chandler",
+      "adjacent_turns": 95,
+      "replies_to_phoebe": 45,
+      "phoebe_replies_to": 50,
+      "share_of_phoebe_interactions_pct": 9.13
+    },
+    {
+      "season": 10,
+      "character": "monica",
+      "adjacent_turns": 254,
+      "replies_to_phoebe": 135,
+      "phoebe_replies_to": 119,
+      "share_of_phoebe_interactions_pct": 25.43
+    },
+    {
+      "season": 10,
+      "character": "joey",
+      "adjacent_turns": 250,
+      "replies_to_phoebe": 130,
+      "phoebe_replies_to": 120,
+      "share_of_phoebe_interactions_pct": 25.03
+    },
+    {
+      "season": 10,
+      "character": "rachel",
+      "adjacent_turns": 222,
+      "replies_to_phoebe": 108,
+      "phoebe_replies_to": 114,
+      "share_of_phoebe_interactions_pct": 22.22
+    },
+    {
+      "season": 10,
+      "character": "ross",
+      "adjacent_turns": 176,
+      "replies_to_phoebe": 84,
+      "phoebe_replies_to": 92,
+      "share_of_phoebe_interactions_pct": 17.62
+    },
+    {
+      "season": 10,
+      "character": "chandler",
+      "adjacent_turns": 97,
+      "replies_to_phoebe": 44,
+      "phoebe_replies_to": 53,
+      "share_of_phoebe_interactions_pct": 9.71
+    }
+  ],
+  "non_friend_characters": [
+    {
+      "character": "mike",
+      "adjacent_turns": 394,
+      "replies_to_phoebe": 190,
+      "phoebe_replies_to": 204,
+      "shared_speaking_scenes": 58
+    },
+    {
+      "character": "david",
+      "adjacent_turns": 174,
+      "replies_to_phoebe": 86,
+      "phoebe_replies_to": 88,
+      "shared_speaking_scenes": 15
+    },
+    {
+      "character": "frank",
+      "adjacent_turns": 174,
+      "replies_to_phoebe": 91,
+      "phoebe_replies_to": 83,
+      "shared_speaking_scenes": 20
+    },
+    {
+      "character": "ursula",
+      "adjacent_turns": 112,
+      "replies_to_phoebe": 58,
+      "phoebe_replies_to": 54,
+      "shared_speaking_scenes": 10
+    },
+    {
+      "character": "eric",
+      "adjacent_turns": 109,
+      "replies_to_phoebe": 53,
+      "phoebe_replies_to": 56,
+      "shared_speaking_scenes": 9
+    },
+    {
+      "character": "phoebe sr",
+      "adjacent_turns": 96,
+      "replies_to_phoebe": 46,
+      "phoebe_replies_to": 50,
+      "shared_speaking_scenes": 7
+    },
+    {
+      "character": "gary",
+      "adjacent_turns": 90,
+      "replies_to_phoebe": 43,
+      "phoebe_replies_to": 47,
+      "shared_speaking_scenes": 12
+    },
+    {
+      "character": "guy",
+      "adjacent_turns": 54,
+      "replies_to_phoebe": 27,
+      "phoebe_replies_to": 27,
+      "shared_speaking_scenes": 15
+    },
+    {
+      "character": "earl",
+      "adjacent_turns": 53,
+      "replies_to_phoebe": 26,
+      "phoebe_replies_to": 27,
+      "shared_speaking_scenes": 4
+    },
+    {
+      "character": "ryan",
+      "adjacent_turns": 48,
+      "replies_to_phoebe": 22,
+      "phoebe_replies_to": 26,
+      "shared_speaking_scenes": 6
+    },
+    {
+      "character": "frank sr",
+      "adjacent_turns": 45,
+      "replies_to_phoebe": 22,
+      "phoebe_replies_to": 23,
+      "shared_speaking_scenes": 2
+    },
+    {
+      "character": "parker",
+      "adjacent_turns": 45,
+      "replies_to_phoebe": 23,
+      "phoebe_replies_to": 22,
+      "shared_speaking_scenes": 4
+    },
+    {
+      "character": "frank jr",
+      "adjacent_turns": 41,
+      "replies_to_phoebe": 21,
+      "phoebe_replies_to": 20,
+      "shared_speaking_scenes": 3
+    },
+    {
+      "character": "duncan",
+      "adjacent_turns": 40,
+      "replies_to_phoebe": 20,
+      "phoebe_replies_to": 20,
+      "shared_speaking_scenes": 3
+    },
+    {
+      "character": "alice",
+      "adjacent_turns": 39,
+      "replies_to_phoebe": 17,
+      "phoebe_replies_to": 22,
+      "shared_speaking_scenes": 9
+    },
+    {
+      "character": "larry",
+      "adjacent_turns": 33,
+      "replies_to_phoebe": 16,
+      "phoebe_replies_to": 17,
+      "shared_speaking_scenes": 3
+    },
+    {
+      "character": "grandmother",
+      "adjacent_turns": 32,
+      "replies_to_phoebe": 15,
+      "phoebe_replies_to": 17,
+      "shared_speaking_scenes": 2
+    },
+    {
+      "character": "man",
+      "adjacent_turns": 32,
+      "replies_to_phoebe": 16,
+      "phoebe_replies_to": 16,
+      "shared_speaking_scenes": 9
+    },
+    {
+      "character": "rob",
+      "adjacent_turns": 29,
+      "replies_to_phoebe": 14,
+      "phoebe_replies_to": 15,
+      "shared_speaking_scenes": 4
+    },
+    {
+      "character": "roy",
+      "adjacent_turns": 28,
+      "replies_to_phoebe": 15,
+      "phoebe_replies_to": 13,
+      "shared_speaking_scenes": 2
+    }
+  ]
+}

@@ -43,12 +43,9 @@
         <p class="hetja__merkimidi">Rannsóknarverkefni · 2026</p>
         <h1>Gögn úr vefþjónustum, greind og gerð skiljanleg</h1>
         <p class="hetja__inngangur">
-          Efnið skiptist í þrennt: <strong>þemaverkefnið</strong> um
-          jarðskjálfta á Reykjanesi, <strong>Friends</strong>-greiningar á
-          handritum sjónvarpsþáttanna og <strong>viðauka</strong> með æfingum,
-          aðferðafræði og tokennotkun. Gögnin eru sótt frá vefþjónustum,
-          geymd í SQL-gagnagrunni og birt hér — hver tala með rekjanlega slóð
-          aftur í upprunaleg gögn.
+          Þrír flokkar: þemaverkefnið um jarðskjálfta á Reykjanesi,
+          Friends-greiningar og viðauki. Hver tala er rekjanleg aftur í
+          upprunaleg gögn.
         </p>
         <div class="hetja__adgerdir">
           <a class="hnappur hnappur--adal" href="#thema">Skoða efnið</a>
@@ -64,16 +61,16 @@
         <!-- Textinn hér er sjálfgefinn ef JavaScript er slökkt (regla 3.4). -->
         <p class="stada-gagna" data-stada-gagna="gogn/yfirlit.json">
           <span class="stada-gagna__punktur" aria-hidden="true"></span>
-          <span><strong>Gagnasafn:</strong> uppfærsludagsetning birtist þegar
-          gögn hafa verið flutt út í <code>web/gogn/</code>.</span>
+          <span><strong>Gagnasafn:</strong> dagsetning síðustu uppfærslu
+          birtist hér.</span>
         </p>
       </section>
 
       <section class="hluti" id="thema" aria-labelledby="thema-titill">
         <h2 id="thema-titill">Þema</h2>
         <p>
-          Þemaverkefnið: jarðskjálftavirknin á Reykjanesskaga, frá atburðaskrá
-          Veðurstofunnar til greiningar.
+          Jarðskjálftavirknin á Reykjanesskaga, frá atburðaskrá Veðurstofunnar
+          til greiningar.
         </p>
         <div class="kort-raster kort-raster--thrju">
           <article class="kort">
@@ -135,25 +132,25 @@
         <h2 id="vidauki-titill">Viðauki</h2>
         <p>
           Æfingar úr lotum námskeiðsins — vefþjónustur og reglulegar segðir —
-          ásamt aðferðafræði verkefnisins og skráningu á gervigreindarnotkun.
+          ásamt aðferðafræði verkefnisins.
         </p>
         <div class="kort-raster kort-raster--thrju">
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">A</p>
             <h3>Brautskráning af háskólastigi</h3>
-            <p>Hve margir ljúka háskólanámi á Íslandi, greint eftir árum og námsstigi.</p>
+            <p>Hve stór hluti háskólanema lýkur námi innan sex ára.</p>
             <a class="kort__tengill" href="sidur/hagstofan.html">Skoða</a>
           </article>
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">B</p>
-            <h3>Veðurstöðvar Veðurstofunnar</h3>
-            <p>Hvar stöðvar Veðurstofunnar standa og hvernig þær dreifast um landið.</p>
+            <h3>Veðurstöðvar</h3>
+            <p>Hvar stöðvar Veðurstofunnar standa og hvernig þær dreifast.</p>
             <a class="kort__tengill" href="sidur/vedurstodvar.html">Skoða</a>
           </article>
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">C</p>
-            <h3>Reglulegar segðir á fréttaforsíðu</h3>
-            <p>Fyrirsagnir og tenglar dregnir út úr vistaðri forsíðu mbl.is.</p>
+            <h3>Reglulegar segðir</h3>
+            <p>Fyrirsagnir og tenglar dregnir út úr vistaðri fréttasíðu mbl.is.</p>
             <a class="kort__tengill" href="sidur/mbl-regex.html">Skoða</a>
           </article>
           <article class="kort">
@@ -162,22 +159,15 @@
             <p>Hvaðan gögnin koma, hvernig þau eru geymd og hvaða takmarkanir fylgja.</p>
             <a class="kort__tengill" href="sidur/adferdafraedi.html">Skoða</a>
           </article>
-          <article class="kort">
-            <p class="kort__tala" aria-hidden="true">E</p>
-            <h3>Tokennotkun</h3>
-            <p>Hve mikla gervigreindaraðstoð verkefnið notaði, mælt í tokenum.</p>
-            <a class="kort__tengill" href="sidur/tokennotkun.html">Skoða</a>
-          </article>
         </div>
       </section>
 
       <section class="hluti" aria-labelledby="adferd-titill">
         <h2 id="adferd-titill">Hvernig gögnin verða til</h2>
         <p>
-          Flæðið er einstefna og er aldrei rofið: vefþjónusta sendir gögn til
-          Python sem vistar svarið óbreytt, hreinsar það, setur í SQL-grunninn
-          og flytur loks út tilbúnar JSON-skrár. Vefsíðan les eingöngu þessar
-          skrár og talar aldrei sjálf við gagnagrunn eða vefþjónustu.
+          Gögnin eru sótt frá vefþjónustum, vistuð óbreytt, hreinsuð og sett
+          í gagnagrunn. Síðan les aðeins tilbúnar niðurstöður og talar aldrei
+          sjálf við vefþjónustu.
         </p>
         <p>
           <a href="sidur/adferdafraedi.html">Lesa aðferðafræðina í heild</a>
@@ -193,9 +183,8 @@
         <div>
           <h2>Um síðuna</h2>
           <p>
-            Rannsóknarverkefni í upplýsingaverkfræði. Gögnin eru sótt frá opnum
-            vefþjónustum, geymd í SQL-gagnagrunni og birt hér sem tilbúnar
-            JSON-skrár — hver tala á sér rekjanlega leið aftur í hrágögn.
+            Rannsóknarverkefni í upplýsingaverkfræði. Heimildir og aðferð
+            eru skráðar á aðferðafræðisíðunni.
           </p>
         </div>
         <nav aria-labelledby="fotur-thema">
@@ -222,7 +211,6 @@
             <li><a class="fotur__tengill" href="sidur/vedurstodvar.html">Veðurstöðvar</a></li>
             <li><a class="fotur__tengill" href="sidur/mbl-regex.html">Reglulegar segðir</a></li>
             <li><a class="fotur__tengill" href="sidur/adferdafraedi.html">Aðferðafræði</a></li>
-            <li><a class="fotur__tengill" href="sidur/tokennotkun.html">Tokennotkun</a></li>
             <li><a class="fotur__tengill" href="sidur/adferdafraedi.html#heimildir">Heimildir</a></li>
           </ul>
         </nav>
