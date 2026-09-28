@@ -26,6 +26,7 @@ from pathlib import Path
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 from hjalp import ENDURBYGGINGARSKRIFTA, ROT  # noqa: E402
 
+from central_perk_grunnur import OTENGD_FORSKEYTI  # noqa: E402
 from gagnagrunnur.fingrafar import _oruggt_nafn, er_gagnastimpill, er_timastimpill  # noqa: E402
 
 BIDTIMI_SEK = 120
@@ -138,6 +139,10 @@ class EndurbyggingProf(unittest.TestCase):
         self.assertIn(("friends_sources", "loaded_at"), stimplar_a)
         self.assertIn(("mbl_extractions", "extracted_at"), stimplar_a)
         for lykill, gildi_a in stimplar_a.items():
+            # TÍMABUNDIÐ: Central Perk (007) er ekki enn tengt keyrsla/hledsla.py
+            # og taflan er tóm; sjá test_central_perk_hledsla.TengingarProf.
+            if lykill[0].startswith(OTENGD_FORSKEYTI):
+                continue
             with self.subTest(stimpill=lykill):
                 self.assertLess(max(gildi_a), min(stimplar_b[lykill]))
 

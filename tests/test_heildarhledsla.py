@@ -31,6 +31,7 @@ import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma f
 from hjalp import PYTHON_ROT, ROT  # noqa: E402
 
 import main  # noqa: E402
+from central_perk_grunnur import OTENGD_FORSKEYTI  # noqa: E402
 from friends_grunnur import vidmid_gildi  # noqa: E402
 from gagnagrunnur.fingrafar import _oruggt_nafn  # noqa: E402
 from keyrsla import hledsla  # noqa: E402
@@ -113,6 +114,11 @@ class HeildarhledslaProf(unittest.TestCase):
         ]
         self.assertGreater(len(toflur), len(ADALTOFLUR))
         for tafla in toflur:
+            # TÍMABUNDIÐ: Central Perk (007) er ekki enn tengt keyrsla/hledsla.py
+            # (bíður P2.7). test_central_perk_hledsla.TengingarProf fellur þegar
+            # það er tengt, og þá fer þessi undanþága.
+            if tafla.startswith(OTENGD_FORSKEYTI):
+                continue
             with self.subTest(tafla=tafla):
                 # SQLite tekur ekki töfluheiti sem breytu; heitið fer því gegnum
                 # hvítlistann í fingrafar.py (regla 5).
