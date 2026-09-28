@@ -6,11 +6,12 @@ Síðasta skref gagnaflæðisins (kafli 0 í CLAUDE.md)::
 
 Hver eining í ``UTFLUTNINGAR`` les eitt gagnasafn úr grunninum og skilar
 sannreyndu umslagi (``utflutningur.json_skrif``). Enn sem komið er:
-Hagstofan og veðurstöðvarnar; skjálftar, mbl og Friends bætast við síðar.
+Hagstofan og veðurstöðvarnar. Söfnin í ``AN_UTFLUTNINGS`` eru í grunninum en
+eiga enn engan útflutning; hver keyrsla segir það í viðvörun svo það gleymist
+ekki (regla 6).
 
-**Tenging við ``src/python/main.py``** (verk annars agents): skrefið
-``flytja_ut`` þar á að kalla í :func:`flytja_ut` með ``uttaksmappa=VEFGOGN`` og
-``grunnur=GAGNAGRUNNUR`` og láta :class:`UtflutningsVilla` falla upp.
+``src/python/main.py --skref flytja-ut`` (og ``allt``) kallar í
+:func:`flytja_ut` og breytir villu í útgangskóða 1.
 
 Röðin er **fyrst allt lesið, svo allt skrifað**: bregðist eitt safn er engin
 skrá skrifuð, ekki heldur þau sem tókust. Hver skrá er svo skrifuð atómískt.
@@ -26,12 +27,14 @@ from __future__ import annotations
 
 import argparse
 import logging
+import sqlite3
 import sys
 from collections.abc import Callable
 from pathlib import Path
 from sqlite3 import Connection
 from typing import Any
 
+from gagnagrunnur.fyrirspurnir import FyrirspurnaVilla
 from gagnagrunnur.tenging import ROT, opna, slod_grunns
 
 from . import hagstofan_json, vedurstodvar_json
@@ -46,6 +49,18 @@ UTFLUTNINGAR: dict[str, Callable[[Connection], dict[str, Any]]] = {
     hagstofan_json.SKRAARHEITI: hagstofan_json.byggja,
     vedurstodvar_json.SKRAARHEITI: vedurstodvar_json.byggja,
 }
+
+
+# Villur sem þýða að gögnin eða grunnurinn standast ekki — main.py gerir þær
+# að SkrefVilla. Annað (TypeError, KeyError …) er forritunarvilla og fellur óvafið.
+UTFLUTNINGSVILLUR = (UtflutningsVilla, FyrirspurnaVilla, sqlite3.Error, OSError)
+
+# Söfn sem eru hlaðin í grunninn en eiga enn engan útflutning (#15).
+AN_UTFLUTNINGS: tuple[str, ...] = (
+    "skjálftar (skjalftavaktin.html)",
+    "mbl.is (mbl-regex.html)",
+    "Friends/Phoebe (phoebe-*.html)",
+)
 
 
 def flytja_ut(uttaksmappa: Path = VEFGOGN, grunnur: Path | str | None = None) -> list[Path]:
@@ -77,6 +92,10 @@ def flytja_ut(uttaksmappa: Path = VEFGOGN, grunnur: Path | str | None = None) ->
         skrifa_atomiskt(mark, baeti)
         log.info("Skrifaði %s (%d bæti)", mark, len(baeti))
         skrifadar.append(mark)
+    log.warning(
+        "Enginn útflutningur enn fyrir: %s — síður þeirra fá ekki gögn úr web/gogn/ (#15).",
+        "; ".join(AN_UTFLUTNINGS),
+    )
     return skrifadar
 
 
