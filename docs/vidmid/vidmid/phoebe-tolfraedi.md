@@ -1,6 +1,6 @@
 # Viðmið — Phoebe — plass, nærvera og tengsl
 
-Afleidd skrá. Uppfært 2026-09-28T10:52:18Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
+Afleidd skrá. Uppfært 2026-09-28T12:32:50Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
 
 44 efnislegar tölur úr 3 síðum gamla verkefnisins.
 

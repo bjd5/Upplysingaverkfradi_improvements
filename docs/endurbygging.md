@@ -72,9 +72,9 @@ fara inn. Sjá ákvörðunarissue í fasa 0.
 
 ## 3. Umfang nýju síðunnar
 
-Ákveðið 2026-09-24: **rannsóknarefnið eingöngu.** Lotusíður námskeiðsins,
-ígrundanir teymisins og tokenmælaborðið flytjast ekki yfir — þau eru áfram í
-námskeiðsrepo-inu.
+Ákveðið 2026-09-24: **rannsóknarefnið eingöngu.** Lotusíður námskeiðsins
+og ígrundanir teymisins flytjast ekki yfir — þau eru áfram í námskeiðsrepo-inu.
+Tokenmælaborðið var fjarlægt alveg, líka úr frosna viðmiðinu (2026-09-28).
 
 Síður nýju vefsíðunnar:
 

@@ -1,8 +1,8 @@
 # Viðmið — Síður utan umfangs nýju síðunnar
 
-Afleidd skrá. Uppfært 2026-09-28T10:52:18Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
+Afleidd skrá. Uppfært 2026-09-28T12:32:50Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
 
-94 efnislegar tölur úr 14 síðum gamla verkefnisins.
+71 efnislegar tölur úr 11 síðum gamla verkefnisins.
 
 ## `index.html`
 
@@ -151,47 +151,3 @@ Byggingarlota `fdf1261`. 16 efnislegar tölur.
 | `3–7` | — | bil | Gagnaveita þemaverkefnisins · hluti 2A | Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 202… |
 | `0–50` | km | bil | Gagnaveita þemaverkefnisins · hluti 2A | Sótt (UTC): 2026-09-10T11:46:23Z. Sóknartími er annar en athugunartímabilið: 2023-11-01 kl. 00:00 UTC til 202… |
 | `13–14` | — | bil | Vinnulag teymisins | Teymið hittist á fimmtudögum kl. 13–14 og heldur sambandi í Messenger þess á milli. Breyting telst ekki tilbú… |
-
-## `tokens/bjorn.html`
-
-Byggingarlota `fdf1261`. 9 efnislegar tölur.
-
-| Tala | Eining | Tegund | Hvar | Samhengi |
-|---|---|---|---|---|
-| `10 000` | — | thusund | Þessi síða sýnir hvernig tokennotkun Bj… · 2026-W35 · Tokenar | 10 000 |
-| `1,7 %` | % | hlutfall | Þessi síða sýnir hvernig tokennotkun Bj… · 2026-W35 · Hlutfall | 1,7 % |
-| `35 000` | — | thusund | Þessi síða sýnir hvernig tokennotkun Bj… · 2026-W36 · Tokenar | 35 000 |
-| `6,1 %` | % | hlutfall | Þessi síða sýnir hvernig tokennotkun Bj… · 2026-W36 · Hlutfall | 6,1 % |
-| `526 600` | — | thusund | Þessi síða sýnir hvernig tokennotkun Bj… · 2026-W38 · Tokenar | 526 600 |
-| `92,1 %` | % | hlutfall | Þessi síða sýnir hvernig tokennotkun Bj… · 2026-W38 · Hlutfall | 92,1 % |
-| `571 600` | — | thusund | Þessi síða sýnir hvernig tokennotkun Bj… · Alls · Tokenar | 571 600 |
-| `100,0 %` | % | hlutfall | Þessi síða sýnir hvernig tokennotkun Bj… · Alls · Hlutfall | 100,0 % |
-| `8601` | — | heiltala | Tokennotkun — Björn | data/tokens/tokens.csv er sameiginleg skrá fyrir teymið — hún er ekki skrifuð af þessari síðu. Talan fyrir hv… |
-
-## `tokens/ottar.html`
-
-Byggingarlota `fdf1261`. 7 efnislegar tölur.
-
-| Tala | Eining | Tegund | Hvar | Samhengi |
-|---|---|---|---|---|
-| `25 000` | — | thusund | Þessi síða sýnir hvernig tokennotkun Ót… · 2026-W35 · Tokenar | 25 000 |
-| `45,5 %` | % | hlutfall | Þessi síða sýnir hvernig tokennotkun Ót… · 2026-W35 · Hlutfall | 45,5 % |
-| `30 000` | — | thusund | Þessi síða sýnir hvernig tokennotkun Ót… · 2026-W36 · Tokenar | 30 000 |
-| `54,5 %` | % | hlutfall | Þessi síða sýnir hvernig tokennotkun Ót… · 2026-W36 · Hlutfall | 54,5 % |
-| `55 000` | — | thusund | Þessi síða sýnir hvernig tokennotkun Ót… · Alls · Tokenar | 55 000 |
-| `100,0 %` | % | hlutfall | Þessi síða sýnir hvernig tokennotkun Ót… · Alls · Hlutfall | 100,0 % |
-| `8601` | — | heiltala | Tokennotkun — Óttar | data/tokens/tokens.csv er sameiginleg skrá fyrir teymið — hún er ekki skrifuð af þessari síðu. Talan fyrir hv… |
-
-## `tokens/sveinn.html`
-
-Byggingarlota `fdf1261`. 7 efnislegar tölur.
-
-| Tala | Eining | Tegund | Hvar | Samhengi |
-|---|---|---|---|---|
-| `40 000` | — | thusund | Þessi síða sýnir hvernig tokennotkun Sv… · 2026-W35 · Tokenar | 40 000 |
-| `66,7 %` | % | hlutfall | Þessi síða sýnir hvernig tokennotkun Sv… · 2026-W35 · Hlutfall | 66,7 % |
-| `20 000` | — | thusund | Þessi síða sýnir hvernig tokennotkun Sv… · 2026-W36 · Tokenar | 20 000 |
-| `33,3 %` | % | hlutfall | Þessi síða sýnir hvernig tokennotkun Sv… · 2026-W36 · Hlutfall | 33,3 % |
-| `60 000` | — | thusund | Þessi síða sýnir hvernig tokennotkun Sv… · Alls · Tokenar | 60 000 |
-| `100,0 %` | % | hlutfall | Þessi síða sýnir hvernig tokennotkun Sv… · Alls · Hlutfall | 100,0 % |
-| `8601` | — | heiltala | Tokennotkun — Sveinn | data/tokens/tokens.csv er sameiginleg skrá fyrir teymið — hún er ekki skrifuð af þessari síðu. Talan fyrir hv… |

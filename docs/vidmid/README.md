@@ -26,11 +26,11 @@ vefþjónustunum skila öðru svari í dag en þær gerðu í september.
 
 | Mappa | Skrár | Stærð | Hvað þetta er |
 |---|---:|---:|---|
-| [`vefur/`](vefur/) | 71 | 4,33 MB | Byggða gamla Quarto-síðan, 28 HTML-síður |
-| [`generated/`](generated/) | 19 | 0,08 MB | Afleidd úttök greininganna sem Quarto límdi inn |
+| [`vefur/`](vefur/) | 60 | 3,79 MB | Byggða gamla Quarto-síðan, 24 HTML-síður |
+| [`generated/`](generated/) | 13 | 0,07 MB | Afleidd úttök greininganna sem Quarto límdi inn |
 | [`phoebe-stats/`](phoebe-stats/) | 18 | 0,11 MB | Friends-tölfræðin fullreiknuð |
 | `../../data/raw/mbl/` | 2 | 0,37 MB | mbl.is-eintakið — eina eintakið sem til er |
-| **Samtals** | **110** | **4,89 MB** | |
+| **Samtals** | **93** | **4,34 MB** | |
 
 ### `vefur/` — byggða gamla síðan
 
@@ -107,7 +107,7 @@ lotu — er í `vidmidsbygging` í [`provenance.json`](provenance.json).
 (lína 29), svo byggingin á sér ekkert beint git-ummerki. Sönnunin er
 breytingartími hverrar skráar — varðveittur í afrituninni með `cp -p` — borinn
 saman við `reflog` upprunarepo-sins, sem segir hvaða `HEAD` var virkur á þeim
-tíma. Þær tvær heimildir stemma nákvæmlega og allar 28 síðurnar falla innan
+tíma. Þær tvær heimildir stemma nákvæmlega og allar 24 síðurnar falla innan
 lotu; engin er óflokkuð.
 
 **Til samanburðar:** `origin/main` í upprunarepo-inu var kominn í `fb15d2a`
@@ -167,7 +167,7 @@ python3 src/python/vidmid/tolur.py stadfesta   # ber það við síðurnar
 
 | Skrá | Hvað hún er |
 |---|---|
-| [`vidmid.json`](vidmid.json) | Vélleshæft viðmið: **1.391 tala** úr 28 síðum, þar af **445 efnislegar niðurstöður**. Hver tala með síðu, byggingarlotu, kaflakeðju, töfluröð/dálki, einingu og samhengi. |
+| [`vidmid.json`](vidmid.json) | Vélleshæft viðmið: **1.255 tölur** úr 24 síðum, þar af **417 efnislegar niðurstöður**. Hver tala með síðu, byggingarlotu, kaflakeðju, töfluröð/dálki, einingu og samhengi. |
 | [`vidmid.md`](vidmid.md) | Sama efni fyrir manneskju: umfang, staðfestar tölur, ósamræmi, og vísir í hópaskrárnar. |
 | [`vidmid/`](vidmid/) | Ein skrá á hverja síðu **nýju** síðunnar (sjá [`../endurbygging.md`](../endurbygging.md), kafla 3), svo hver síðuagent fái sitt viðmið í einni skrá. |
 
@@ -177,13 +177,12 @@ ISO-dagsetning, CSS-gildi, tala inni í kóðalistun — er **skráð áfram** m
 
 ### Það sem HTML-lestur nær ekki
 
-Tvær síður birta **engar tölur í HTML-inu**. Þær reikna þær í JavaScript í
+Ein síða birtir **engar tölur í HTML-inu**. Hún reiknar þær í JavaScript í
 vafra lesandans:
 
 | Síða | Viðmiðið er |
 |---|---|
 | `friends/phoebe-statistics.html` | Sjö skrár í `vefur/friends/phoebe-stats/` sem Observable Plot les |
-| `tokens/index.html` | CSV sem Quarto bakaði inn í `<script type="text/plain">` |
 
 Þetta er ástæða þess að sex af staðfestu tölunum — línur á persónu,
 sviðsfyrirsagnir og sviðsleiðbeiningar — finnast hvergi í HTML-textanum.
@@ -195,6 +194,12 @@ sviðsfyrirsagnir og sviðsleiðbeiningar — finnast hvergi í HTML-textanum.
 
 1. **Ekkert hér er handbreytt.** Hvorki skrárnar né `provenance.json`
    (CLAUDE.md, regla 10).
+   **Eina undantekningin:** tokenmælaborð gamla verkefnisins
+   (`tokens/*.html`, `tokens-*.svg`, `tokens-*-tafla.md`) var fjarlægt
+   2026-09-28 að ósk Björns, ásamt tenglum og setningum um það í hinum
+   síðunum og leitarskránni. Það var utan umfangs nýju síðunnar og geymdi
+   engar rannsóknartölur. `provenance.json` og viðmiðið voru endurskrifuð
+   með `skrifa`; afritunartíminn og breytingartímar skránna eru óbreyttir.
 2. **Ekkert hér er endurbyggt.** Viðmið sem er endurbyggt er ekki viðmið.
 3. **Handritin sjálf koma aldrei hingað** — aðeins tölur um þau (issue #3).
 4. Bætist safn við: afritaðu óbreytt, keyrðu `skrifa`, og skráðu safnið í
