@@ -353,6 +353,31 @@ fylgni sem er reiknuð má lesast sem slík.
 | Hlutdeild, ræðuskipti og `interaction_lift` | Friends | Lift leiðréttir fyrir því að málglaðar persónur eiga fleiri samskipti við alla |
 | z-gildi úr log-odds með Dirichlet-prior | Friends | Monroe, Colaresi & Quinn (2008); aðeins orð sem koma ≥ 40 sinnum fyrir |
 
+### 4.1 Fyrirspurnirnar og námundun
+
+Hver tala sem síðurnar byggja á kemur úr fyrirspurn í `src/sql/queries/` —
+**ein skrá á hverja fyrirspurn**, með haus sem segir hvaða spurningu hún svarar,
+hvaða síða notar hana og hvaða `?`-breytur hún tekur (#11). Python les þær með
+einum lesara (`src/python/gagnagrunnur/fyrirspurnir.py`) eftir hvítlista; engin
+fyrirspurn er geymd í Python-streng og engin er sett saman úr strengjum. Sama
+fyrirspurn er notuð af hleðslunni til staðfestingar og af birtingunni, svo
+hleðslan staðfestir nákvæmlega þá tölu sem fer á síðuna.
+
+**Námundunarvenjan: SQL skilar óafrúnnuðu, birtingin námundar.** SQLite `ROUND`
+námundar helming frá núlli; Python (`round`, og sniðið í
+`utflutningur/islenskt_snid.py`) námundar helming að sléttri tölu. Nafntilvik
+Phoebe á þátt í fyrstu þáttaröð eru nákvæmlega 99/24 = 4,125: SQL-námundun gæfi
+4,13, en greiningin og gamla síðan sýndu 4,12. Þess vegna er námundað á einum
+stað, í birtingu, með Python — og viðmiðið heldur. Tvær sýnir í
+`006_friends.sql` námunda í SQL (`unclassified_pct`, `interaction_lift`); þeim er
+ekki breytt (regla 5), en prófað er að þær gefi sömu tölu og Python-námundun.
+
+**Hlaupandi 7 daga meðaltal** (`skjalftar-hlaupandi-medaltal.sql`) er ný afleidd
+mæling: gamla síðan reiknaði það ekki og það á sér enga viðmiðstölu. Glugginn
+endar á deginum (dagurinn og sex dagar á undan, ekki miðjaður), núll-dagar eru
+taldir með, og fyrstu sex dagar tímabilsins hafa styttri glugga — fyrirspurnin
+skilar `days_in_window` svo birtingin geti merkt þá.
+
 ## 5. Rekjanleiki — báðar áttir
 
 Frá tölu að hrágagni og til baka. Síðurnar eru þær sem
