@@ -36,11 +36,14 @@ NAFNAVENJAN SEM BER REGLUNA
     villan aftur.
 
     ``fetched_at`` er ekki í þeim flokki þótt pípan sæki: gildið er lesið úr
-    provenance, aldrei af klukkunni.
+    provenance, aldrei af klukkunni. Slíkir **gagnastimplar** hafa sagnir sínar
+    í :data:`GAGNASAGNIR` (``fetched_at``, ``occurred_at``) og telja með.
 
     Tímastimpill sem passar hvorugt — nýtt ``saved_at`` í migration 006, segjum
-    — fellir ``tests/test_fingrafar.py`` með skýringu í stað þess að sleppa inn
-    þegjandi. Þar er ákvörðunin tekin meðvitað, einu sinni.
+    — er skilað af :func:`oflokkadir_stimplar`, og ``tests/test_fingrafar.py``
+    keyrir allar migrations og fellur á honum með skýringu í stað þess að hann
+    sleppi inn þegjandi. Þar er ákvörðunin tekin meðvitað, einu sinni: sögnin
+    fer í annan hvorn listann.
 
 Keyrsla utan frá::
 
@@ -83,6 +86,17 @@ KEYRSLUSAGNIR: frozenset[str] = frozenset(
     }
 )
 
+# Sagnir sem lýsa því sem gerðist í HEIMILDINNI — sóknin fyrir frystingu,
+# atburðurinn sjálfur. Tímastimpill sem heitir <sögn>_at er lesinn úr
+# hrágögnunum eða provenance þeirra og telur því með. Sögn má ekki vera í
+# báðum listum; prófin gæta þess.
+GAGNASAGNIR: frozenset[str] = frozenset(
+    {
+        "fetched",  # fetch_log, hagstofan_datasets, mbl_snapshots — úr provenance
+        "occurred",  # earthquakes — properties.time í svari vefþjónustunnar
+    }
+)
+
 # Nafnavenja verkefnisins: hver tímastimpilsdálkur endar á _at og sögnin er
 # síðasta orðið fyrir endinguna (`loaded_at`, `first_loaded_at`).
 TIMASTIMPILSMYNSTUR = re.compile(r"^(?:[a-z0-9_]+_)?(?P<sogn>[a-z]+)_at$")
@@ -103,8 +117,13 @@ def _oruggt_nafn(nafn: str) -> str:
 
 
 def er_timastimpill(dalkur: str) -> bool:
-    """Hvort dálksheitið sé tímastimpill samkvæmt nafnavenjunni (endar á ``_at``)."""
-    return TIMASTIMPILSMYNSTUR.match(dalkur) is not None
+    """Hvort dálksheitið sé tímastimpill samkvæmt nafnavenjunni (endar á ``_at``).
+
+    Vísvitandi víðara en :data:`TIMASTIMPILSMYNSTUR` og óháð hástöfum: dálkur
+    eins og ``Loaded_At`` er tímastimpill en fellur utan mynstursins, og á þá
+    að lenda í :func:`oflokkadir_stimplar` frekar en að telja með þegjandi.
+    """
+    return dalkur.lower().endswith("_at")
 
 
 def er_keyrslustimpill(dalkur: str) -> bool:
@@ -116,8 +135,24 @@ def er_keyrslustimpill(dalkur: str) -> bool:
         er_keyrslustimpill("loaded_at")   -> True   (klukkan við hleðslu)
         er_keyrslustimpill("fetched_at")  -> False  (lesinn úr provenance)
     """
+    return _sogn(dalkur) in KEYRSLUSAGNIR
+
+
+def er_gagnastimpill(dalkur: str) -> bool:
+    """Hvort dálkurinn beri tíma úr heimildinni — og telji því með.
+
+    ::
+
+        er_gagnastimpill("fetched_at")  -> True   (lesinn úr provenance)
+        er_gagnastimpill("loaded_at")   -> False  (klukkan við hleðslu)
+    """
+    return _sogn(dalkur) in GAGNASAGNIR
+
+
+def _sogn(dalkur: str) -> str | None:
+    """Sögnin í ``<sögn>_at``, eða ``None`` sé dálkurinn ekki tímastimpill."""
     samsvorun = TIMASTIMPILSMYNSTUR.match(dalkur)
-    return samsvorun is not None and samsvorun.group("sogn") in KEYRSLUSAGNIR
+    return samsvorun.group("sogn") if samsvorun is not None else None
 
 
 def _toflur(samband: Connection) -> list[str]:
@@ -161,6 +196,24 @@ def sleppt_dalkar(samband: Connection, tafla: str) -> list[str]:
     sannreynanleg í ``--texti``, ekki falin inni í summunni.
     """
     return [d for d in _dalkanofn(samband, tafla) if er_keyrslustimpill(d)]
+
+
+def oflokkadir_stimplar(samband: Connection) -> list[tuple[str, str]]:
+    """Tímastimplar grunnsins sem eru hvorki keyrslu- né gagnastimplar.
+
+    Skilar ``(tafla, dálkur)`` fyrir hvern ``*_at``-dálk sem reglan getur ekki
+    flokkað. Slíkur dálkur teldist með í summunni án þess að nokkur hefði
+    ákveðið það — og væri hann af klukkunni er það villan í #47 aftur. Tómur
+    listi þýðir að hver stimpill hefur verið flokkaður meðvitað.
+    """
+    return [
+        (tafla, dalkur)
+        for tafla in _toflur(samband)
+        for dalkur in _dalkanofn(samband, tafla)
+        if er_timastimpill(dalkur)
+        and not er_keyrslustimpill(dalkur)
+        and not er_gagnastimpill(dalkur)
+    ]
 
 
 def _innihald(samband: Connection, tafla: str) -> list[str]:
