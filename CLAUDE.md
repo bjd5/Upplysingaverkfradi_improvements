@@ -59,7 +59,8 @@ hraða og örugga.
 │   │   ├── vinnsla/           # hreinsun og umbreyting
 │   │   ├── gagnagrunnur/      # tenging og fyrirspurnir
 │   │   ├── utflutningur/      # JSON út í web/gogn/
-│   │   └── vidmid/            # provenance og staðfesting á frosna viðmiðinu
+│   │   ├── vidmid/            # provenance og staðfesting á frosna viðmiðinu
+│   │   └── uppruni/           # yfirferð á nýju efni úr gamla verkefninu
 │   ├── sql/
 │   │   ├── schema/            # töfluskilgreiningar
 │   │   ├── migrations/        # númeraðar breytingar: 001_..., 002_...
@@ -74,7 +75,8 @@ hraða og örugga.
 │   └── db/                    # gagnagrunnsskráin sjálf (ALDREI í git)
 │
 ├── docs/                      # rannsóknarskjölun, heimildir, aðferðafræði
-│   └── vidmid/                # frosið afrit af gamla verkefninu (sjá README þar)
+│   ├── vidmid/                # frosið afrit af gamla verkefninu (sjá README þar)
+│   └── uppruni/               # skýrslur um nýtt efni úr gamla verkefninu (docs/uppruni.md)
 ├── tests/                     # prófanir, speglar src/ uppbygginguna
 ├── scripts/                   # keyrsluskipanir (sækja, byggja, birta)
 └── config/                    # stillingar (ALDREI leyndarmál)
