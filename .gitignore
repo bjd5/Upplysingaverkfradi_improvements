@@ -20,6 +20,13 @@ data/raw/*
 !data/raw/vedurstodvar/
 !data/raw/README.md
 !data/raw/frysting.json
+# Undanþága (issue #3, ákvörðun a, 28.9.2026): Friends-handritin eru skráð
+# sem git SUBMODULE á data/raw/friends-handrit. Undanþágan opnar aðeins
+# gitlink-færsluna (mode 160000) — slóð og commit-SHA, engan texta. Git fer
+# aldrei inn í submodule-möppuna eftir skrám, svo handritin sjálf komast ekki
+# í þetta repo þótt þau séu sótt með `git submodule update --init`.
+# Ákvörðunin: docs/adferdafraedi.md, kafli 1.5.1; uppruni: docs/heimildir.md, 2.1.
+!data/raw/friends-handrit
 data/processed/*
 !data/processed/.gitkeep
 !data/processed/README.md
@@ -31,13 +38,6 @@ data/processed/*
 # Sjá data/processed/README.md og docs/adferdafraedi.md, kafla 1.5.1.
 !data/processed/phoebe-stats/
 
-# Friends-handritin (issue #3, valkostur A): handritasöfnin fara ALDREI í git.
-# Séu þau klónuð hingað til að endurkeyra greininguna má ekki committa þau.
-# Hvort þau verða skráð sem submodule er óákveðið (issue #3, spurning a).
-# Uppruni og commit-SHA: docs/heimildir.md, kafli 2.1; ákvörðunin:
-# docs/adferdafraedi.md, kafli 1.5.1.
-data/external/
-data/fangj-friends/
 *.sqlite
 *.sqlite3
 *.db
