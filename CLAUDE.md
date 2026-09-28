@@ -49,8 +49,7 @@ hraða og örugga.
 │   │   │   ├── layout.css     # grind, haus, fótur
 │   │   │   └── components/    # einn stíll per eining
 │   │   ├── js/                # ALLT JavaScript hér — ekkert annars staðar
-│   │   ├── img/
-│   │   └── fonts/
+│   │   └── img/
 │   └── gogn/                  # JSON sem Python flytur út (sjá reglu 5.4)
 │
 ├── src/                       # ← ALLUR ANNAR KÓÐI, AÐSKILINN EFTIR MÁLI
@@ -60,13 +59,9 @@ hraða og örugga.
 │   │   ├── gagnagrunnur/      # tenging og fyrirspurnir
 │   │   ├── utflutningur/      # JSON út í web/gogn/
 │   │   └── vidmid/            # provenance og staðfesting á frosna viðmiðinu
-│   ├── sql/
-│   │   ├── schema/            # töfluskilgreiningar
-│   │   ├── migrations/        # númeraðar breytingar: 001_..., 002_...
-│   │   ├── queries/           # endurnýtanlegar fyrirspurnir
-│   │   └── seeds/             # prófunargögn
-│   ├── cpp/                   # C++ (src/ + include/ + CMakeLists.txt)
-│   └── java/                  # Java (staðlað pakkatré)
+│   └── sql/
+│       ├── migrations/        # númeraðar breytingar: 001_..., 002_...
+│       └── queries/           # endurnýtanlegar fyrirspurnir
 │
 ├── data/                      # GÖGN — ekki kóði, að mestu utan git
 │   ├── raw/                   # óbreytt svör frá API (aldrei breytt handvirkt)
@@ -87,7 +82,9 @@ hraða og örugga.
 - **Ekkert** í rót nema skjölun og stillingaskrár verkefnisins í heild.
 - `web/` á að vera **sjálfstætt birtanleg**: afritaðu möppuna á vefþjón og
   síðan virkar. Engar tilvísanir út fyrir `web/`.
-- Mappa fær `.gitkeep` ef hún þarf að vera til en er tóm.
+- **Engar tómar möppur og engar `.gitkeep`.** Mappa verður til þegar fyrsta
+  skráin fer í hana (t.d. `src/cpp/`, `src/java/`, `src/sql/seeds/` eða
+  `web/assets/fonts/` ef þeirra verður þörf).
 
 ### 1.2 Skráaheiti
 

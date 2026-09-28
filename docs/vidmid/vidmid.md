@@ -2,7 +2,7 @@
 
 Hver tala sem byggða gamla síðan birtir, vélleshæf í [`vidmid.json`](vidmid.json) og læsileg hér. Þetta er svarið við spurningunni sem viðmiðið er til fyrir: **sýnir nýja síðan sömu tölur?** (sjá [`README.md`](README.md) og [`../endurbygging.md`](../endurbygging.md), kafla 2).
 
-Afleidd skrá. Uppfært 2026-09-28T10:52:18Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
+Skrifuð 2026-09-28T10:52:18Z af `src/python/vidmid/tolur.py` og fryst síðan; **ekki handbreytt** (regla 10). Tólið, byggða gamla síðan (`docs/vidmid/vefur/`) og hópaskrárnar (`docs/vidmid/vidmid/`) sem vísað er í hér að neðan eru í git-taginu `vidmid-frosid` (sjá [`README.md`](README.md)).
 
 ## 1. Umfang
 
@@ -206,10 +206,10 @@ Ein skrá á hverja síðu sem á að byggja (sjá [`../endurbygging.md`](../end
 
 | Síða nýju síðunnar | Viðmið | Tölur | Úr gömlu síðunum |
 |---|---|---:|---|
-| Skjálftavaktin — jarðskjálftar á Reykjanesi | [`vidmid/skjalftavaktin.md`](vidmid/skjalftavaktin.md) | 89 | `capstone/earthquakes.html` |
-| Hagstofan — brautskráning af háskólastigi | [`vidmid/hagstofan.md`](vidmid/hagstofan.md) | 84 | `lotur/vefthjonustur/hagstofan.html` |
-| Veðurstöðvar Veðurstofunnar | [`vidmid/vedurstodvar.md`](vidmid/vedurstodvar.md) | 41 | `lotur/vefthjonustur/vedurstofan.html` |
-| mbl.is — reglulegar segðir á fréttaforsíðu | [`vidmid/mbl-regex.md`](vidmid/mbl-regex.md) | 60 | `lotur/regex/index.html`, `lotur/regex/mbl.html` |
-| Phoebe — plass, nærvera og tengsl | [`vidmid/phoebe-tolfraedi.md`](vidmid/phoebe-tolfraedi.md) | 44 | `friends/index.html`, `friends/phoebe-statistics.html`, `friends/phoebe-tribute.html` |
-| Phoebe — söngurinn í Central Perk | [`vidmid/phoebe-central-perk.md`](vidmid/phoebe-central-perk.md) | 28 | `phoebe-central-perk.html` |
-| Síður utan umfangs nýju síðunnar | [`vidmid/utan-umfangs.md`](vidmid/utan-umfangs.md) | 94 | `index.html`, `lotur/git-ai-reproducible/agents.html`, `lotur/git-ai-reproducible/index.html`, `lotur/git-ai-reproducible/reproducible-reports.html`, `lotur/logic-sets/index.html`, `lotur/sql-advanced/index.html`, `lotur/sql-basics/index.html`, `lotur/storytelling/index.html`, `project-management.html`, `reflections/bjorn.html`, `team.html`, `tokens/bjorn.html`, `tokens/ottar.html`, `tokens/sveinn.html` |
+| Skjálftavaktin — jarðskjálftar á Reykjanesi | `vidmid-frosid:docs/vidmid/vidmid/skjalftavaktin.md` | 89 | `capstone/earthquakes.html` |
+| Hagstofan — brautskráning af háskólastigi | `vidmid-frosid:docs/vidmid/vidmid/hagstofan.md` | 84 | `lotur/vefthjonustur/hagstofan.html` |
+| Veðurstöðvar Veðurstofunnar | `vidmid-frosid:docs/vidmid/vidmid/vedurstodvar.md` | 41 | `lotur/vefthjonustur/vedurstofan.html` |
+| mbl.is — reglulegar segðir á fréttaforsíðu | `vidmid-frosid:docs/vidmid/vidmid/mbl-regex.md` | 60 | `lotur/regex/index.html`, `lotur/regex/mbl.html` |
+| Phoebe — plass, nærvera og tengsl | `vidmid-frosid:docs/vidmid/vidmid/phoebe-tolfraedi.md` | 44 | `friends/index.html`, `friends/phoebe-statistics.html`, `friends/phoebe-tribute.html` |
+| Phoebe — söngurinn í Central Perk | `vidmid-frosid:docs/vidmid/vidmid/phoebe-central-perk.md` | 28 | `phoebe-central-perk.html` |
+| Síður utan umfangs nýju síðunnar | `vidmid-frosid:docs/vidmid/vidmid/utan-umfangs.md` | 94 | `index.html`, `lotur/git-ai-reproducible/agents.html`, `lotur/git-ai-reproducible/index.html`, `lotur/git-ai-reproducible/reproducible-reports.html`, `lotur/logic-sets/index.html`, `lotur/sql-advanced/index.html`, `lotur/sql-basics/index.html`, `lotur/storytelling/index.html`, `project-management.html`, `reflections/bjorn.html`, `team.html`, `tokens/bjorn.html`, `tokens/ottar.html`, `tokens/sveinn.html` |

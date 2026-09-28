@@ -13,8 +13,7 @@ Gögn sótt frá vefþjónustum, geymd í SQL-gagnagrunni og birt á static vefs
 |---|---|
 | `web/` | Static vefsíðan — sjálfstætt birtanleg |
 | `src/python/` | Gagnasöfnun, úrvinnsla, útflutningur |
-| `src/sql/` | Schema, migrations, fyrirspurnir |
-| `src/cpp/`, `src/java/` | Annar kóði, aðskilinn eftir máli |
+| `src/sql/` | Migrations og fyrirspurnir |
 | `data/` | Gögn (að mestu utan git) |
 | `docs/` | Aðferðafræði og heimildir |
 

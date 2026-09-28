@@ -8,7 +8,6 @@ config/secrets*
 # Gögn — afleidd eða of stór (reglur 5 og 7)
 data/db/
 data/raw/*
-!data/raw/.gitkeep
 # Undanþága (P0.1, issue #30): mbl-eintakið er EINA eintakið sem til er —
 # hráa svarið var aldrei í git og hverfur með vélinni sé það ekki fryst hér.
 !data/raw/mbl/
@@ -21,7 +20,6 @@ data/raw/*
 !data/raw/README.md
 !data/raw/frysting.json
 data/processed/*
-!data/processed/.gitkeep
 !data/processed/README.md
 # Undanþága (issue #3, valkostur A): Friends-tölfræðin. Þetta eru tölur UM
 # handritin — línufjöldi, senur, hlutföll, tíðnitöflur — ekki handritstextinn.
