@@ -101,7 +101,12 @@ MYNSTUR: tuple[tuple[str, str], ...] = (
     # sértækari myndir af sömu keðju (2023-11-01, 0212-0213, 2014-2023).
     ("aukenni", r"\b\d+(?:-\d+)+\b"),
     ("hlutfallstala", FORMERKI + r"\d+(?:[.,]\d+)?\s*:\s*\d+(?:[.,]\d+)?"),
-    ("hlutfall", FORMERKI + r"\d{1,3}(?:[.  ]\d{3})*(?:,\d+)?\s*%"),
+    # % á eftir tveimur sextándastöfum (%3A, %28, %2C) er prósentukóðun í
+    # slóð, ekki prósentumerki — táknið tilheyrir NÆSTA stafnum, ekki
+    # tölunni á undan (issue #44). Vörnin er því hægra megin við %, ekki
+    # vinstra megin eins og FORMERKI er fyrir bandstrikið (issue #38).
+    ("hlutfall", FORMERKI + r"\d{1,3}(?:[.  ]\d{3})*(?:,\d+)?\s*%"
+                            r"(?![0-9A-Fa-f]{2})"),
     # Formerkið á eftir bilstrikinu þarf enga vörn: það stendur alltaf á eftir
     # – eða — og getur því ekki verið bandstrik inni í auðkenni.
     ("bil", FORMERKI + r"\d+(?:,\d+)?\s*[–—]\s*[−-]?\d+(?:,\d+)?"),

@@ -53,6 +53,23 @@
   --tengill-yfir:   var(--adal-700);
   --fokus:          var(--ahersla-500);
 
+  /* --- Myndrit ------------------------------------------------------------
+     Myndritin eru teiknuð í Python (src/python/utflutningur/) og VISTUÐ sem
+     SVG, svo þau séu til þótt JavaScript sé slökkt (regla 3.4). Skriftan LES
+     þessi token úr þessari skrá — hún þekkir engan lit sjálf. Þess vegna eru
+     litahlutverk myndritanna skilgreind hér eins og öll önnur (regla 3.1).
+
+     Hvert hlutverk vísar í token sem stenst mælda andstæðu í BÁÐUM þemum;
+     mælingarnar sjálfar eru skráðar í docs/myndrit.md.
+     --myndrit-grind er eina skrautið og er aldrei merkingarberi.          */
+  --myndrit-bak:         var(--bak-upphaekkad);
+  --myndrit-flotur:      var(--tengill);       /* súluflötur — gagnaliturinn */
+  --myndrit-null:        var(--ahersla-700);   /* dagar með núll atburði     */
+  --myndrit-texti:       var(--texti);         /* ásmerkingar og skýringar   */
+  --myndrit-texti-dauft: var(--texti-daufur);  /* heimildarlína undir mynd   */
+  --myndrit-as:          var(--texti-daufur);  /* ásarnir sjálfir            */
+  --myndrit-grind:       var(--rammi-sterkur); /* hjálparlínur (skraut)      */
+
   /* --- Letur (hámark 2 fjölskyldur — regla 3.1) -------------------------- */
   --letur-fyrirsogn: Georgia, "Iowan Old Style", "Times New Roman", serif;
   --letur-texti: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,

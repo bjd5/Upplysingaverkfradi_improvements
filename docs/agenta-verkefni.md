@@ -39,6 +39,8 @@ Fastar reglur:
   - Aldrei handbreyta data/raw/ né web/gogn/ (regla 10).
   - Engin skrá yfir ~300 línur; villur aldrei þaggaðar (regla 6).
   - Ljúktu á gátlista reglu 9: hvað er staðfest og hvað ekki, og af hverju.
+  - PR-lýsingin inniheldur `Closes #<N>`. Lokunarorð GitHub eru ENSK —
+    „Lokar #N" lokar engu.
 ```
 
 Þegar fleiri en einn agent vinnur samtímis, bætið við:
@@ -52,7 +54,7 @@ Fastar reglur:
 ## 3. Pakkarnir
 
 `✅` lokið · `🟢` laust · `⏸` blokkað · `👤` Björn, ekki agent.
-Staðan er frá **27.9.2026**.
+Staðan er frá **28.9.2026**, eftir samruna PR #50–#60.
 
 ### Bylgja 0 — björgun og grunnur
 
@@ -62,7 +64,7 @@ Staðan er frá **27.9.2026**.
 | **P0.2** Lesa viðmiðstölur úr byggðu síðunni | #30 | `--persona-analyzer` | ✅ |
 | **P0.3** Frysta hrágögn + `.gitignore` | #2 | `--persona-devops` | ✅ |
 | **P0.4** Heimildir og aðferðafræði | #4 | `--persona-scribe=en` | ✅ |
-| **P0.5** Höfundaréttarákvörðun | #3 | 👤 | ✅ valkostur A |
+| **P0.5** Höfundaréttarákvörðun | #3 | 👤 | ✅ valkostur A, framkvæmd PR #56 |
 | **P0.6** Myndritaákvörðun | #17 | 👤 | ✅ matplotlib |
 
 - **P0.5 → valkostur A:** handritin fara aldrei í repo-ið, aðeins afleiddu
@@ -82,13 +84,12 @@ Staðan er frá **27.9.2026**.
 | **P1.3** Hagstofan: schema + hleðsla | #7 | `--persona-backend` | ✅ PR #41 | — |
 | **P1.4** Veðurstöðvar: schema + hleðsla | #8 | `--persona-backend` | ✅ PR #42 | — |
 | **P1.5** mbl.is: schema + hleðsla | #9 | `--persona-backend` | ✅ PR #46 | — |
-| **P1.6** Friends: schema + hleðsla | #10 | `--persona-backend` | 🟢 | — |
-| **P1.7** Fyrirspurnir | #11 | `--persona-backend` | ⏸ | P1.6 |
+| **P1.6** Friends: schema + hleðsla | #10 | `--persona-backend` | ✅ PR #59 | — |
+| **P1.7** Fyrirspurnir | #11 | `--persona-backend` | 🟢 | — |
 
 Staðfestar tölur: 334 atburðir · 61 dagur (#6) · 36 gildi (#7) · 778 stöðvar,
-343 með NULL lokaár (#8) · öll fimm svör æfingarinnar (#9). Hleðslan er ekki
-tengd `hlada()` í `main.py` — það er **#39**, eitt verk til að forðast
-samrunaárekstra.
+343 með NULL lokaár (#8) · öll fimm svör æfingarinnar (#9). Allar hleðslur og
+vinnslur eru tengdar `hlada()` og `vinna()` í `main.py` (#39, PR #60).
 
 ### Bylgja 2 — Python-pípan
 
@@ -96,15 +97,18 @@ samrunaárekstra.
 |---|---|---|---|---|
 | **P2.1** HTTP-lag | #12 | `--persona-backend` | ✅ | — |
 | **P2.2** Söfnunarskriftur fluttar | #13 | `--persona-backend` | ✅ PR #43 | — |
-| **P2.3** Kljúfa `earthquakes.py` (557 l.) | #14 | `--persona-refactorer` | 🟢 | — |
+| **P2.3** Kljúfa `earthquakes.py` (557 l.) | #14 | `--persona-refactorer` | ✅ PR #50 | — |
+| **P2.4** Kljúfa `vedurstofa_stodvar.py` (637 l.) | #14 | `--persona-refactorer` | ✅ PR #52 | — |
+| **P2.5** Kljúfa `phoebe_analysis.py` (1.199 l.) | #14 | `--persona-refactorer` | ✅ PR #53 | — |
+| **P2.6** Kljúfa `phoebe_central_perk.py` (877 l.) | #14 | `--persona-refactorer` | ✅ PR #58 | — |
 | **P2.4** Kljúfa `vedurstofa_stodvar.py` (637 l.) | #14 | `--persona-refactorer` | 🟢 | — |
 | **P2.5** Kljúfa `phoebe_analysis.py` (1.199 l.) | #14 | `--persona-refactorer` | 🟢 | — |
 | **P2.6** Kljúfa `phoebe_central_perk.py` (877 l.) | #14 | `--persona-refactorer` | 🟢 | — |
-| **P2.7** Útflutningur í `web/gogn/` | #15 | `--persona-backend` | ⏸ | P1.7, P2.3–P2.6 |
+| **P2.7** Útflutningur í `web/gogn/` | #15 | `--persona-backend` | ⏸ | P1.7 |
 | **P2.8** Próf og samanburður við viðmið | #16 | `--persona-qa` | ⏸ | P2.7 |
 
-P2.3–P2.6 eru óháð innbyrðis. Viðmiðið fyrir P2.8 er **440 efnislegar tölur**
-í `docs/vidmid/vidmid.json` (445 áður; fimm voru auðkenni, PR #45).
+Viðmiðið fyrir P2.8 er **440 efnislegar tölur** í `docs/vidmid/vidmid.json`
+(445 áður; fimm voru auðkenni, PR #45).
 
 ### Bylgja 3 — vefsíðan
 
@@ -112,7 +116,7 @@ P2.3–P2.6 eru óháð innbyrðis. Viðmiðið fyrir P2.8 er **440 efnislegar t
 |---|---|---|---|---|
 | **P3.1** Beinagrind og sjónrænt kerfi | #18 | `--persona-frontend` | ✅ PR #36 | — |
 | **P3.2** JS-gagnahleðsla | #19 | `--persona-frontend` | ⏸ | P2.7 |
-| **P3.3** Myndritalag | #17 | `--persona-frontend` | 🟢 | — |
+| **P3.3** Myndritalag | #17 | `--persona-frontend` | ✅ PR #57 | — |
 | **P3.4** Síða: Skjálftavaktin | #20 | `--persona-frontend` | ⏸ | P3.2, P3.3 |
 | **P3.5** Síða: Hagstofan | #21 | `--persona-frontend` | ⏸ | P3.2 |
 | **P3.6** Síða: Veðurstöðvar | #22 | `--persona-frontend` | ⏸ | P3.2 |
@@ -134,10 +138,10 @@ P2.3–P2.6 eru óháð innbyrðis. Viðmiðið fyrir P2.8 er **440 efnislegar t
 
 ### Laust núna
 
-Sjö pakkar snerta engar sömu skrár og má vinna samhliða: **P1.6, P2.3, P2.4,
-P2.5, P2.6, P3.3, P3.11**. Auk þeirra eru laus: **#3** og **#17** (skjölun
-ákvarðananna), **#39** (tengja `hlada()`), **#44** (prósentukóðun í
-viðmiðsútdrætti) og **#47** (fingrafarið telur vegguklukkustimpla).
+Laus: **P1.7** (fyrirspurnir, #11) og **P3.11** (aðferðafræðisíðan, #25). Þau
+snerta engar sömu skrár og má vinna samhliða. Lokið nýlega: **#44** (PR #51) og
+**#47** (PR #55). Á #3 eru enn tvær opnar spurningar Björns (`adferdafraedi.md`,
+1.5.1).
 
 Prompt fyrir bylgjur 2–4 eru skrifuð þegar pakkinn losnar, á sama sniði og hér.
 
@@ -145,38 +149,11 @@ Prompt fyrir bylgjur 2–4 eru skrifuð þegar pakkinn losnar, á sama sniði og
 
 ## 4. Prompt: P1.6 — schema og hleðsla
 
-**Persóna:** `--persona-backend` · **Issue:** #10 · 🟢 **Laust**
-
-Sama snið og P1.2–P1.5 notuðu.
-
-```text
-[HAUSINN úr kafla 2]
-
-Verk: issue #10 — schema og hleðsla fyrir Friends-tölfræðina.
-
-Migration-keyrarinn úr #5 er til; notaðu hann. Uppruni gagnanna, töflur,
-dálkar og sannreyningar eru í issue-inu sjálfu. Viðmiðstölurnar eru í
-docs/vidmid/phoebe-stats/_meta.json.
-
-Smíðið:
-- src/sql/migrations/006_friends.sql, með athugasemd um uppruna og leyfi
-  (regla 5).
-- Hleðslu í src/python/vinnsla/ sem SANNREYNIR hverja færslu. Frávik STÖÐVA
-  keyrsluna (regla 6).
-- Próf sem staðfesta: 227 skrár · 236 þættir · 61.161 lína · 2,95% óflokkað.
-
-Handritin sjálf fara ALDREI í repo-ið, aðeins tölur um þau (P0.5).
-
-Lokið: fjöldatölurnar úr grunninum bornar við viðmiðið, og engin fyrirspurn
-notar strengjasamsetningu.
-```
-
-Migration-númer eru frátekin: 001–005 eru notuð, `006_friends.sql` er P1.6.
-Keyrarinn stöðvast ef tvær migrations bera sama númer.
+✅ **Lokið** í PR #59 (`006_friends.sql`). Promptið er í git-sögunni.
 
 ## 5. Prompt: P1.7 — endurnýtanlegar fyrirspurnir
 
-**Persóna:** `--persona-backend` · **Issue:** #11 · ⏸ **Blokkað af P1.6**
+**Persóna:** `--persona-backend` · **Issue:** #11 · 🟢 **Laust**
 
 ```text
 [HAUSINN úr kafla 2]

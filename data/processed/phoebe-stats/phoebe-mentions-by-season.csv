@@ -1,0 +1,11 @@
+season,episodes,transcript_files,mentions_in_dialogue_by_others,mentions_in_own_dialogue,mentions_in_dialogue_total,mentions_in_stage_directions,mentions_total,mentions_formal_phoebe,mentions_nickname_pheebs,dialogue_mentions_per_episode,change_vs_prev_season_pct,top_mentioner,top_mentioner_count
+1,24,24,94,5,99,187,286,56,43,4.12,,rachel,28
+2,24,23,118,7,125,115,240,114,11,5.21,26.46,rachel,26
+3,25,25,118,14,132,214,346,81,51,5.28,1.34,monica,28
+4,24,23,107,12,119,180,299,79,40,4.96,-6.06,monica,26
+5,24,23,197,13,210,213,423,123,87,8.75,76.41,joey,46
+6,25,23,157,7,164,265,429,119,45,6.56,-25.03,rachel,66
+7,24,23,157,6,163,305,468,119,44,6.79,3.51,rachel,47
+8,24,23,106,17,123,192,315,105,18,5.12,-24.59,monica,38
+9,24,23,146,4,150,198,348,126,24,6.25,22.07,rachel,33
+10,18,17,94,6,100,207,307,82,18,5.56,-11.04,monica,25
