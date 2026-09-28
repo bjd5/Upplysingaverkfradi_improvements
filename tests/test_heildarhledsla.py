@@ -7,7 +7,7 @@ gegnum hjálpareiningar þeirra — svo ein tala á sér eina heimild.
 Hleðslan er keyrð sem undirferli, eins og notandi keyrir hana, á grunn í
 tímabundinni möppu (``RANNSOKN_GRUNNUR``). ``data/`` er aðeins lesið.
 
-Bresta-prófin (kafli 15) keyra ``main()`` í sama ferli með einu safni beint á
+Bresta-prófin (kafli 6) keyra ``main()`` í sama ferli með einu safni beint á
 aðfang sem vantar eða er skemmt, og krefjast rc ≠ 0 og villu sem nefnir safnið.
 
     PYTHON=python3.12 python3.12 -m unittest discover -s tests

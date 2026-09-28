@@ -1,13 +1,10 @@
 # Aðferðafræði
 
-Skráð jafnóðum meðan unnið er, ekki eftir á (regla 8). Þetta skjal svarar einni
-spurningu fyrir hvert gagnasafn: **hvernig var það afmarkað og af hverju
-einmitt þannig?** Hvaðan gögnin komu er í [`heimildir.md`](heimildir.md).
+Hvernig var hvert gagnasafn afmarkað, og af hverju? Skráð jafnóðum (regla 8).
+Hvaðan gögnin komu er í [`heimildir.md`](heimildir.md).
 
-Hver fullyrðing hér á sér stoð í `provenance.json` safnsins eða í frosna
-viðmiðinu í [`vidmid/`](vidmid/), og tilvísunin fylgir. Þar sem rökstuðningur er
-**hvergi skráður** stendur það berum orðum — betra er að skrá eyðu en að fylla
-hana með ágiskun.
+Hver fullyrðing á sér stoð í `provenance.json` safnsins eða í
+[`vidmid/`](vidmid/). Þar sem rökstuðning vantar stendur það berum orðum.
 
 ---
 
@@ -15,16 +12,12 @@ hana með ágiskun.
 
 ### 1.1 Jarðskjálftar — Reykjanes, nóvember–desember 2023
 
-**Rannsóknarspurningin er í mótun:** *eru bein tengsl milli kvikusöfnunar og
-jarðskjálftavirkni?* Gamla síðan svaraði henni ekki og þessi gögn svara henni
-ekki heldur. Þau byggja fyrri helming svarsins — jarðskjálftavirknina. Seinni
-helminginn, sjálfstæða tímaröð um kvikusöfnun, vantar enn, og án hans er engin
-fylgni reiknuð og engin ályktun dregin.
+**Rannsóknarspurningin (í mótun):** *eru bein tengsl milli kvikusöfnunar og
+jarðskjálftavirkni?* Þessi gögn lýsa aðeins skjálftavirkninni. Sjálfstæða
+tímaröð um kvikusöfnun vantar, svo engin fylgni er reiknuð.
 
-**Af hverju Reykjanes.** Reiturinn sem var sendur með beiðninni — lengdargráða
-−23 til −21,5, breiddargráða 63,7 til 64,1 — afmarkar Reykjanesskagann, þar sem
-atburðarásin sem spurningin snýst um átti sér stað: landris við Svartsengi og
-kvikugangurinn við Sundhnúk og Grindavík.
+**Af hverju Reykjanes.** Reiturinn (lengd −23 til −21,5, breidd 63,7 til 64,1)
+nær yfir landrisið við Svartsengi og kvikuganginn við Sundhnúk og Grindavík.
 
 **Af hverju 1.11.2023–1.1.2024.** Glugginn er valinn utan um vel skjalfesta
 atburðarás:
@@ -35,27 +28,19 @@ atburðarás:
 | 10. nóvember 2023 | Stór kvikugangur myndast við Sundhnúk og Grindavík samhliða mikilli jarðskjálftavirkni og aflögun. **Ekki gaus þann dag** |
 | 18. desember 2023 | Fyrsta gos hrinunnar við Sundhnúkagíga hefst |
 
-Glugginn nær því yfir daga **fyrir, á meðan og eftir** báða atburði. Tveir heilir
-almanaksmánuðir gefa skýr og endurkeyranleg mörk: frá 1. nóvember 2023 kl. 00:00
-UTC til 1. janúar 2024 kl. 00:00 UTC, **upphaf meðtalið og endir undanskilinn** —
-61 UTC-dagur fyrir daglegan samanburð.
+Glugginn nær yfir daga **fyrir, á meðan og eftir** báða atburði: tveir heilir
+mánuðir, 1.11.2023 00:00 UTC til 1.1.2024 00:00 UTC, **upphaf meðtalið, endir
+ekki** — 61 UTC-dagur.
 
-**Af hverju þessar síur.** Beiðnin bað um `type=earthquake`,
-`evaluation_mode=manual` og `system=sil`: aðeins **yfirfarna** jarðskjálfta úr
-SIL-mælakerfi Veðurstofunnar. Sjálfvirkar greiningar eru því undanskildar, og
-það skiptir máli vegna þess að eldri skjálftafærslur geta verið endurskoðaðar —
-yfirfarnar færslur eru þær sem standa. Stærðarmörkin 3–7 og dýptarmörkin
-0–50 km fylgdu æfingunni; **rökstuðningur þeirra er hvergi skjalfestur** og er
-skráður sem opin spurning (kafli 7).
+**Af hverju þessar síur.** `type=earthquake`, `evaluation_mode=manual` og
+`system=sil`: aðeins **yfirfarnir** skjálftar úr SIL-kerfi Veðurstofunnar, því
+sjálfvirkar greiningar eru oft endurskoðaðar. Stærð 3–7 og dýpt 0–50 km fylgdu
+æfingunni; **rökstuðningurinn er hvergi skjalfestur** (kafli 7). Síurnar eru
+líka **sannreyndar**: færsla utan markanna stöðvar keyrsluna.
 
-Síurnar eru ekki aðeins sendar heldur líka **sannreyndar**: hver færsla er lesin
-yfir og frávik stöðva keyrsluna. Svar sem inniheldur færslu utan markanna er
-ekki það úrtak sem beðið var um.
-
-**Stærðarkvarðinn verður að fylgja með.** `Mlw` og `Mw` eru ekki sama talan og
-mega ekki lenda í sama miðgildi; vanti kvarðann er ekki hægt að álykta hann, svo
-færsla án hans stöðvar keyrsluna. Í þessu eintaki er **aðeins `Mlw`**, varðveittur
-eins og Veðurstofan skráir hann — hvorki umreiknaður né merktur Richter.
+**Stærðarkvarðinn verður að fylgja með.** `Mlw` og `Mw` mega ekki lenda í sama
+miðgildi, og færsla án kvarða stöðvar keyrsluna. Hér er **aðeins `Mlw`**, eins
+og Veðurstofan skráir hann — hvorki umreiknaður né merktur Richter.
 
 **Það sem úrtakið inniheldur** (frosna viðmiðið, `vidmid/generated/earthquakes-results.md`):
 
@@ -77,18 +62,14 @@ skjálfti hafi orðið.
 **Spurningin:** hversu stór hluti innritunarárgangsins 2017 lauk námi, og hvernig
 ber verkfræði, framleiðsla og mannvirkjagerð saman við önnur námssvið?
 
-**Af hverju innritunarár 2017.** Lýsigögn töflunnar bjóða aðeins tvö innritunarár:
-`2014` og `2017`. Fyrirspurnin velur það síðara — nýjasta árganginn sem taflan
-nær yfir. Hún velur **ekki** bæði: tveir punktar sýna mun milli tveggja árganga
-en aðgreina ekki varanlega þróun frá tilviljun, breyttri samsetningu hópa eða
-breytingum á námsumhverfi. Þessi fyrirspurn reiknar því enga breytingu milli
-árganga.
+**Af hverju innritunarár 2017.** Taflan býður aðeins `2014` og `2017`; valinn
+er sá nýrri. Tveir punktar aðgreina ekki þróun frá tilviljun, svo engin
+breyting milli árganga er reiknuð.
 
 **Af hverju tímapunkturinn `n+3`.** Kóðinn `n+3` lítur út fyrir að merkja þrjú ár,
 en `valueTexts` í lýsigögnunum segir **„Sex árum eftir innritun“**. Niðurstöðurnar
 mæla því stöðuna sex árum eftir innritun 2017 — ekki hvort nemendur luku
-þriggja ára námi á þremur árum. Þetta er auðveldasta villan að gera í þessari
-töflu og er þess vegna skjalfest hér.
+þriggja ára námi á þremur árum. Auðveldasta villan í þessari töflu.
 
 **Hvað var valið.** `Nemendur` = `5` (brautskráðir alls), `6` (brottfallnir),
 `7` (enn í námi); `Námssvið` = `Alls`, `05`, `06`, `07`; `Kyn` = `Alls`, `1`, `2`;
@@ -104,22 +85,18 @@ merkir **prósentur en ekki fjölda nemenda**; án fjöldans er hvorki hægt að
 **Spurningin:** forrit á að sýna veðrið í VR-II (Hjarðarhaga 6) og þarf að lesa
 eina veðurstöð. Hvaða stöð, og dugar hún?
 
-**Af hverju ein ósíuð beiðni.** Gamla skriftan sendi fimm beiðnir á sama
-endapunkt: eina ósíaða og fjórar með síum (`active`, `polygon`, `station_id`).
-Síurnar velja allar úr sama mengi, svo ósíaða svarið er **yfirmengi** þeirra
-allra og hinar fjórar má reikna staðbundið úr því. Ein beiðni er því frystingin
-og fjórar beiðnir til viðbótar væru álag á þjónustu sem gefur gögnin frítt
-(regla 4).
+**Af hverju ein ósíuð beiðni.** Gamla skriftan sendi fimm beiðnir; fjórar með
+síum (`active`, `polygon`, `station_id`) sem velja allar úr ósíaða svarinu. Það
+er því **yfirmengi** hinna og eitt nægir (regla 4).
 
 **Afmörkun stöðvavalsins.** Kassinn sem er sendur sem `polygon` er 5 km út frá
 VR-II. Lengdargráða styttist í cos(breidd), svo kassinn er ekki ferningur í
 gráðum. Stöð telst **virk** ef reiturinn `ending` er tómur; ártal þýðir að hún
 hætti mælingum það ár, hversu nálæg sem hún er.
 
-Af 778 stöðvum í eintakinu eru **343 virkar** — listinn er skrá yfir allar stöðvar
-sem Veðurstofan þekkir, virkar og aflagðar, en ekki yfir stöðvar í rekstri.
-Nálægð og samfelld tímaröð eru tvö ólík skilyrði: næsta virka stöð við VR-II
-hóf mælingar 2022 og á ekkert frá 1976.
+Af 778 stöðvum eru **343 virkar** — listinn nær yfir allar stöðvar sem
+Veðurstofan þekkir, líka aflagðar. Nálægð er ekki samfelld tímaröð: næsta
+virka stöð við VR-II hóf mælingar 2022.
 
 Samanburður þessa eintaks við gömlu síðuna er í
 [`vedurstodvar-samanburdur.md`](vedurstodvar-samanburdur.md).
@@ -129,10 +106,8 @@ Samanburður þessa eintaks við gömlu síðuna er í
 **Spurningin:** hvað má lesa úr kyrrstæðu HTML-svari með reglulegum segðum einum
 saman?
 
-**Af hverju `/frettir/` en ekki forsíðan.** Sótt var af `https://www.mbl.is/frettir/`
-— fréttayfirlitið, ekki forsíða mbl.is. Það er skjalfest í provenance eintaksins
-og skiptir máli fyrir talninguna: fjöldi frétta á yfirlitssíðu er annar en á
-forsíðu.
+**`/frettir/`, ekki forsíðan.** Sótt var af `https://www.mbl.is/frettir/`
+(skjalfest í provenance). Fjöldi frétta þar er annar en á forsíðunni.
 
 **Fimm spurningar æfingarinnar**, með svörunum eins og gamla síðan birti þau:
 einstakar fréttir **42**, hitastig í Reykjavík **11 °C**, gengi Bandaríkjadals
@@ -152,11 +127,9 @@ fyllir þá eftir á. Talningin telur skilgreinda reiti en ekki birtar auglýsin
 
 ### 1.5 Friends-handritin — 227 skrár, 236 þættir
 
-**Af hverju `delvinso` en ekki `fangj`.** Söfnin tvö eru nánast eins — `delvinso`
-er afleiða af `fangj.github.io/friends` — en í `delvinso` er búið að **laga brotna
-HTML-byggingu í þáttum `0911` og `0915`**. Greiningin var keyrð á báðum söfnum til
-samanburðar og gaf sömu tölur (Monica munaði einni línu), svo niðurstöðurnar eru
-**ekki háðar valinu**; það er valið vegna þáttunargæða en ekki vegna talnanna.
+**Af hverju `delvinso` en ekki `fangj`.** `delvinso` er afleiða af `fangj` þar
+sem **brotin HTML-bygging í `0911` og `0915` er löguð**. Bæði söfn gefa sömu
+tölur (Monica munar einni línu), svo niðurstöðurnar eru **ekki háðar valinu**.
 
 **Tvær skrár eru undanskildar:** `0423uncut.html` og `07outtakes.html`
 (tvítekning og aukaefni). Eftir standa **227 handritsskrár**, sem svara til **236
@@ -262,7 +235,7 @@ undanþága ekki í skránum, eða þurfi reitur hana ekki lengur, fellur prófi
 **Leitin prentar ekki innihald** brotlegs strengs, aðeins staðsetningu og
 mælingar. Væri hann handritstexti myndi prentunin afrita hann í logga.
 
-**Hún er prófuð þar sem hún á að bresta** (`agenta-verkefni.md`, kafli 15):
+**Hún er prófuð þar sem hún á að bresta** (`agenta-verkefni.md`, kafli 6):
 prófin keyra hana á heimatilbúnum gervisetningum og falla ef hún **finnur þær
 ekki**.
 
@@ -290,20 +263,17 @@ hefur verið tekin. Afmörkunin stendur þar til Björn hefur svarað (b).
 
 ### 1.6 TMDB — ekkert eintak
 
-Safnið átti að staðfesta hver leikur Phoebe og í hversu mörgum þáttum, og var um
-leið æfing í réttri meðferð aðgangslykils. Hvorki svörin né samantektin lifðu af
-og `TMDB_TOKEN` er ekki til, svo **ekkert er hægt að skjalfesta um afmörkun þessa
-safns** annað en það sem beiðnirnar sjálfar segja (sjá `heimildir.md`, kafla 1.5).
-Engin tala úr TMDB má birtast á vefsíðunni fyrr en safnið er sótt á ný.
+Safnið átti að staðfesta hver leikur Phoebe og í hve mörgum þáttum. Hvorki
+svörin né samantektin lifðu af og `TMDB_TOKEN` vantar, svo **ekkert verður
+skjalfest** umfram beiðnirnar sjálfar (`heimildir.md`, 1.5). Engin TMDB-tala
+birtist fyrr en safnið er sótt á ný.
 
 ---
 
 ## 2. Hreinsun og sannreyning
 
-**Grundvallarregla: færsla hverfur aldrei hljóðlega.** Frávik stöðva keyrsluna
-með skýringu í stað þess að falla út úr talningu (regla 6). Þetta gildir í báðar
-áttir — svar sem stenst ekki síurnar sem beðið var um er ekki það úrtak sem
-beðið var um, og afrit sem stemmir ekki við SHA-256 er ekki afrit.
+**Færsla hverfur aldrei hljóðlega.** Frávik stöðva keyrsluna með skýringu
+(regla 6).
 
 | Þrep | Hvað er sannreynt |
 |---|---|
@@ -312,23 +282,17 @@ beðið var um, og afrit sem stemmir ekki við SHA-256 er ekki afrit.
 | Þáttun | Bygging, gildissvið, tímastimplar, einkvæm auðkenni, skráður stærðarkvarði |
 | Talning | Dagar án atburðar fá **röð með núlli**, ekki enga röð |
 
-Síðasta atriðið er ekki formsatriði: tímaröð sem sleppir núlldögunum sýnir ranga
-mynd af 43 dögum af 61 í jarðskjálftaúrtakinu. Þess vegna krefst P1.7
-`LEFT JOIN` á dagatöfluna en ekki talningar á röðum í atburðatöflunni.
+Tímaröð án núlldaga sýnir ranga mynd af 43 dögum af 61 — þess vegna
+`LEFT JOIN` á dagatöfluna (P1.7).
 
-Hrágögnum er aldrei breytt eftir á. Það sem má breytast eru **afleiðurnar**:
-gagnagrunnurinn, JSON-skrárnar í `web/gogn/` og skýrslubútar eins og
-`vedurstodvar-samanburdur.md`, sem allar verða til úr `data/raw/` og eiga að
-reiknast eins í hverri keyrslu.
+Hrágögnum er aldrei breytt. Afleiðurnar — grunnurinn, `web/gogn/` og skýrslubútar
+— verða til úr `data/raw/` og reiknast eins í hverri keyrslu.
 
 ## 3. Geymsla
 
-Gagnagrunnurinn er **afleiða en ekki frumgagn**: það á að vera hægt að eyða honum
-og byggja hann upp á nýtt úr `data/raw/` og `src/sql/migrations/` án nets. Þess
-vegna er hann utan git.
-
-Uppbyggingin verður aðeins til úr númeruðum migrations, sem er **aldrei breytt
-eftir að þær hafa verið keyrðar** — ný migration í staðinn (regla 5).
+Gagnagrunnurinn er **afleiða**: honum má eyða og byggja hann aftur úr
+`data/raw/` og `src/sql/migrations/` án nets. Þess vegna er hann utan git.
+Migration er **aldrei breytt eftir keyrslu** (regla 5).
 `001_gagnasofnun.sql` býr til `fetch_log`, sem skráir hverja söfnun: þjónustu,
 endapunkt, breytur, tímastimpil, HTTP-stöðu, fjölda færslna og slóðina á óbreytta
 svarið í `data/raw/`. Töflur hvers gagnasafns koma í P1.2–P1.6.
@@ -355,8 +319,7 @@ fylgni sem er reiknuð má lesast sem slík.
 
 ## 5. Rekjanleiki — báðar áttir
 
-Frá tölu að hrágagni og til baka. Síðurnar eru þær sem
-[`endurbygging.md`](endurbygging.md) skilgreinir; þær verða til í bylgju 3.
+Frá tölu að hrágagni og til baka.
 
 | Gagnasafn | Hrágögn | Provenance | Hleðsla í grunn | Síða |
 |---|---|---|---|---|
@@ -367,27 +330,17 @@ Frá tölu að hrágagni og til baka. Síðurnar eru þær sem
 | Friends | *engin — aðeins talnaniðurstöður* | `vidmid/phoebe-stats/_meta.json` | P1.6 (#10) | `phoebe-tolfraedi.html`, `phoebe-central-perk.html` |
 | TMDB | **vantar** | — | — | `web/sidur/phoebe-tmdb.html` |
 
-Skriftur sem lesa hrágögnin **í dag** eru tvær:
-`src/python/sofnun/frysta.py` staðfestir að öll söfnin séu ósnert, og
-`src/python/vinnsla/vedurstodvar_samanburdur.py` les stöðvalistann og ber hann
-við viðmiðið. Hleðsluskriftur hvers safns verða til í bylgju 1; hvaða skrifta á
-að lesa hvaða safn er skráð í [`../data/raw/README.md`](../data/raw/README.md).
-
-Leiðin til baka: hver tala á síðu kemur úr JSON-skrá í `web/gogn/`, sem
-`src/python/utflutningur/` skrifar úr grunninum, sem er byggður úr `data/raw/`,
-þar sem `provenance.json` segir hvaða beiðni skilaði gagninu og `frysting.json`
-staðfestir að það sé óbreytt. Fjögur skref, öll í þessu repo-i.
+Leiðin til baka: tala á síðu → JSON í `web/gogn/` (`src/python/utflutningur/`)
+→ grunnurinn → `data/raw/`, þar sem `provenance.json` segir hvaða beiðni skilaði
+gagninu og `frysting.json` staðfestir að það sé óbreytt. Hvaða skrifta les hvaða
+safn er í [`../data/raw/README.md`](../data/raw/README.md).
 
 ---
 
 ## 6. Takmarkanir
 
-Takmarkanirnar eru í sérstakri skrá: **[`takmarkanir.md`](takmarkanir.md)**.
-
-Sá texti er skrifaður fyrir lesanda vefsíðunnar og fer **óbreyttur** inn á
-`web/sidur/adferdafraedi.html` í P3.11 (issue #25). Hann á því einn stað en ekki
-tvo — texti sem er afritaður milli skjala fer á skjön við sjálfan sig um leið og
-annað eintakið er lagfært.
+Í [`takmarkanir.md`](takmarkanir.md) — skrifað fyrir lesanda vefsíðunnar og
+fer óbreytt á aðferðafræðisíðuna (P3.11). Einn staður, ekki tveir.
 
 ---
 
