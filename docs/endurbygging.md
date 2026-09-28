@@ -50,8 +50,9 @@ fara aldrei hingað; aðeins talnaniðurstöður um þau (ákvörðun P0.5).
 
 ## 3. Umfang nýju síðunnar
 
-Ákveðið 2026-09-24: **rannsóknarefnið eingöngu.** Lotusíður námskeiðsins,
-ígrundanir og tokenmælaborðið flytjast ekki.
+Ákveðið 2026-09-24: **rannsóknarefnið eingöngu.** Lotusíður námskeiðsins og
+ígrundanir flytjast ekki. Tokenmælaborðið var fjarlægt alveg, líka úr frosna
+viðmiðinu (2026-09-28).
 
 | Slóð | Efni | Safn |
 |---|---|---|

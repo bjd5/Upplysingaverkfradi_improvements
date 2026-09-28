@@ -83,14 +83,4 @@ GAGNADRIFNAR = (
             "HTML-inu; þar er aðeins OJS-kóðinn sem reiknar þær."
         ),
     },
-    {
-        "sida": "tokens/index.html",
-        "hattur": "innbakað-csv",
-        "gagnaskrar": ('<script type="text/plain" id="tk-gogn"> (innbakað CSV)',),
-        "skyring": (
-            "Teljararnir eru summaðir í JavaScript úr CSV sem Quarto bakaði "
-            "inn í skjalið á byggingartíma. Engin tala á síðunni stendur í "
-            "HTML-textanum."
-        ),
-    },
 )

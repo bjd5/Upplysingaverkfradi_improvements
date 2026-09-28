@@ -1,6 +1,6 @@
 # Viðmið — Phoebe — söngurinn í Central Perk
 
-Afleidd skrá. Uppfært 2026-09-28T10:52:18Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
+Afleidd skrá. Uppfært 2026-09-28T12:38:01Z af `src/python/vidmid/tolur.py`; **ekki handbreytt** (regla 10).
 
 28 efnislegar tölur úr 1 síðum gamla verkefnisins.
 

@@ -15,11 +15,11 @@ tvær vefþjónustanna skila öðru í dag en í september.
 
 | Mappa | Skrár | Stærð | Hvað |
 |---|---:|---:|---|
-| [`vefur/`](vefur/) | 71 | 4,33 MB | Byggða gamla Quarto-síðan, 28 HTML-síður |
-| [`generated/`](generated/) | 19 | 0,08 MB | Afleidd úttök sem Quarto límdi inn |
+| [`vefur/`](vefur/) | 60 | 3,79 MB | Byggða gamla Quarto-síðan, 24 HTML-síður |
+| [`generated/`](generated/) | 13 | 0,07 MB | Afleidd úttök sem Quarto límdi inn |
 | [`phoebe-stats/`](phoebe-stats/) | 18 | 0,11 MB | Friends-tölfræðin fullreiknuð |
 | `../../data/raw/mbl/` | 2 | 0,37 MB | mbl.is-eintakið — eina eintakið sem til er |
-| **Samtals** | **110** | **4,89 MB** | |
+| **Samtals** | **93** | **4,34 MB** | |
 
 - **`vefur/`** er eina heildarskráin yfir tölur gömlu síðunnar. `site_libs/`
   (Bootstrap, jQuery) fylgir óbreytt.
@@ -48,7 +48,7 @@ Fjórar síður eru úr grein sem **rataði aldrei á `main`**:
 `lotur/vefthjonustur/hagstofan.html` og `friends/index.html`.
 
 Þetta var staðfest með breytingartíma hverrar skráar borinn saman við `reflog`
-upprunarepo-sins; allar 28 síðurnar falla innan lotu. Sundurliðunin er í
+upprunarepo-sins; allar 24 síðurnar falla innan lotu. Sundurliðunin er í
 `vidmidsbygging` í [`provenance.json`](provenance.json). `origin/main` var þá í
 `fb15d2a` — það er upphafsstaða [uppruna-yfirferðarinnar](../uppruni.md).
 
@@ -70,21 +70,24 @@ python3 src/python/vidmid/tolur.py skrifa           # byggir vidmid.* upp á ný
 
 | Skrá | Hvað |
 |---|---|
-| [`vidmid.json`](vidmid.json) | **1.391 tala** úr 28 síðum, þar af **445 efnislegar**, hver með síðu, lotu, kafla, einingu og samhengi |
+| [`vidmid.json`](vidmid.json) | **1.255 tölur** úr 24 síðum, þar af **417 efnislegar**, hver með síðu, lotu, kafla, einingu og samhengi |
 | [`vidmid.md`](vidmid.md) | Sama fyrir manneskju: staðfestar tölur og ósamræmi |
 | [`vidmid/`](vidmid/) | Ein skrá á hverja síðu nýju síðunnar |
 
 Tala sem er ekki niðurstaða (auðkenni, dagsetning, CSS-gildi) er skráð með
 `visst: false` og síuð frá í prófum.
 
-**Tvær síður reikna tölurnar í vafranum**, svo HTML-ið geymir þær ekki. Þar er
+**Ein síða reiknar tölurnar í vafranum**, svo HTML-ið geymir þær ekki. Þar er
 gagnaskráin viðmiðið: `friends/phoebe-statistics.html` (skrárnar í
-`vefur/friends/phoebe-stats/`) og `tokens/index.html` (CSV inni í `<script>`).
+`vefur/friends/phoebe-stats/`).
 
 ## 4. Reglur
 
 1. **Ekkert hér er handbreytt eða endurbyggt** (regla 10). Viðmið sem er
-   endurbyggt er ekki viðmið.
+   endurbyggt er ekki viðmið. **Eina undantekningin:** tokenmælaborð gamla
+   verkefnisins var fjarlægt 2026-09-28 að ósk Björns, ásamt tenglum á það.
+   Það var utan umfangs og geymdi engar rannsóknartölur. `provenance.json` og
+   viðmiðið voru endurskrifuð með `skrifa`; breytingartímar eru óbreyttir.
 2. **Handritin koma aldrei hingað** — aðeins tölur um þau (issue #3).
 3. Nýtt safn: afritaðu óbreytt, keyrðu `provenance.py skrifa` og skráðu það í
    töfluna í kafla 1.

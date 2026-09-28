@@ -107,8 +107,8 @@ vinnslur eru tengdar `hlada()` og `vinna()` í `main.py` (#39, PR #60).
 | **P2.7** Útflutningur í `web/gogn/` | #15 | `--persona-backend` | ⏸ | P1.7 |
 | **P2.8** Próf og samanburður við viðmið | #16 | `--persona-qa` | ⏸ | P2.7 |
 
-Viðmiðið fyrir P2.8 er **440 efnislegar tölur** í `docs/vidmid/vidmid.json`
-(445 áður; fimm voru auðkenni, PR #45).
+Viðmiðið fyrir P2.8 er **417 efnislegar tölur** í `docs/vidmid/vidmid.json`
+(440 áður; 23 voru á tokenmælaborðinu sem var fjarlægt 28.9.2026).
 
 ### Bylgja 3 — vefsíðan
 
