@@ -24,7 +24,18 @@ from unittest import mock
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 from hjalp import ROT  # noqa: E402
 
+import sql_samsetning  # noqa: E402
+from fyrirspurnir_grunnur import DAEMISBREYTUR, hladinn_grunnur  # noqa: E402
+from hjalp import PYTHON_ROT  # noqa: E402
+
 from gagnagrunnur import fyrirspurnir as fs  # noqa: E402
+
+# Eina þekkta samsetningin í src/python: fingrafar.py setur TÖFLUNÖFN inn í
+# ``PRAGMA table_info`` og ``SELECT … FROM`` eftir hvítlista (_oruggt_nafn),
+# því SQLite tekur ekki við auðkennum sem ?-breytum. Engin gildi. Fjöldinn er
+# festur: ný samsetning þar — eða hvar sem er annars staðar — fellir prófið.
+THEKKTAR_SAMSETNINGAR = {"gagnagrunnur/fingrafar.py": 6}
+LAGMARK_KEYRSLUKALLA = 40
 
 SIDUSLOD = re.compile(r"web/[a-z0-9/-]+\.html")
 PYTHON_SNIDMAT = ("%s", "%(", "{", "}", "f'", 'f"')
@@ -65,6 +76,65 @@ class SafnidProf(unittest.TestCase):
                 sql = fs.lesa(heiti).sql
                 for merki in PYTHON_SNIDMAT:
                     self.assertNotIn(merki, sql)
+
+
+class KeyrslaProf(unittest.TestCase):
+    """Hver fyrirspurn á hvítlistanum keyrð á grunni með öllum söfnunum hlöðnum.
+
+    Talnasamanburðurinn við viðmiðið er í test_fyrirspurnir_<safn>.py og
+    test_vedurstodvar_fyrirspurnir.py; hér er aðeins krafist að engin
+    fyrirspurn sé óprófuð, brotin eða tóm.
+    """
+
+    def test_hver_fyrirspurn_keyrir_og_skilar_rodum(self) -> None:
+        samband = hladinn_grunnur()
+        for heiti in sorted(fs.FYRIRSPURNIR):
+            with self.subTest(heiti=heiti):
+                breytur = DAEMISBREYTUR.get(heiti, ())
+                self.assertEqual(len(breytur), len(fs.lesa(heiti).breytur),
+                                 "vantar dæmisbreytur í fyrirspurnir_grunnur.DAEMISBREYTUR")
+                self.assertTrue(fs.keyra(samband, heiti, breytur))
+
+    def test_daemisbreytur_eru_adeins_fyrir_til_fyrirspurnir(self) -> None:
+        self.assertLessEqual(set(DAEMISBREYTUR), fs.FYRIRSPURNIR)
+
+
+class StrengjasamsetningProf(unittest.TestCase):
+    """Regla 5 yfir allan Python-kóðann: engin SQL sett saman úr strengjum.
+
+    Sama AST-leit og P1.6 notaði á fimm hleðslueiningar (sql_samsetning.py),
+    víkkuð yfir hverja .py-skrá í src/python/.
+    """
+
+    def test_engin_samsetning_i_src_python(self) -> None:
+        kollin = 0
+        for skra in sorted(PYTHON_ROT.rglob("*.py")):
+            afstaed = skra.relative_to(PYTHON_ROT).as_posix()
+            fundid, n = sql_samsetning.brot(skra.read_text(encoding="utf-8"))
+            kollin += n
+            with self.subTest(skra=afstaed):
+                self.assertEqual(len(fundid), THEKKTAR_SAMSETNINGAR.get(afstaed, 0), fundid)
+        self.assertGreaterEqual(kollin, LAGMARK_KEYRSLUKALLA,
+                                "Leitin fann of fá keyrslukall — sannar ekkert.")
+
+    def test_leitin_ser_hverja_samsetningarleid(self) -> None:
+        """Næmni: hvert sýnidæmi verður að finnast (kafli 15)."""
+        for kodi in ('c.execute(f"SELECT * FROM t WHERE id = {x}")',
+                     'c.execute("SELECT * FROM t WHERE id = " + x)',
+                     'c.execute("SELECT * FROM t WHERE id = %s" % x)',
+                     'c.execute("SELECT * FROM t WHERE id = {}".format(x))',
+                     'sql = "SELECT * FROM t"\nsql += " WHERE id = " + x',
+                     'c.execute(fyrirspurnir[x])',
+                     'c.execute(lesa(x).sql)'):
+            with self.subTest(kodi=kodi):
+                self.assertTrue(sql_samsetning.brot(kodi)[0])
+
+    def test_breytur_og_lesarinn_eru_ekki_samsetning(self) -> None:
+        for kodi in ('c.execute("SELECT 1 FROM t WHERE id = ?", (x,))',
+                     'fyrirspurnir.keyra(c, "skjalftar-dypt")'):
+            with self.subTest(kodi=kodi):
+                fundid, kollin = sql_samsetning.brot(kodi)
+                self.assertEqual((fundid, kollin), ([], 1))
 
 
 class LesarinnProf(unittest.TestCase):
