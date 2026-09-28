@@ -29,9 +29,10 @@ from pathlib import Path
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 
+from gagnagrunnur.fingrafar import fingrafar  # noqa: E402
 from gagnagrunnur.keyrari import keyra  # noqa: E402
 from gagnagrunnur.tenging import opna, tenging  # noqa: E402
-from vinnsla.hagstofan import HRAGOGN, hlada  # noqa: E402
+from vinnsla.hagstofan import HRAGOGN, THJONUSTA, hlada  # noqa: E402
 from vinnsla.hagstofan_sannreyning import sannreyna_gildafjolda  # noqa: E402
 from vinnsla.hagstofan_snid import (  # noqa: E402
     SVARSKRA,
@@ -188,6 +189,66 @@ class HledsluProf(unittest.TestCase):
             hlada(samband)
         fjoldi = self.samband.execute(SQL_FJOLDI, (AUDKENNI,)).fetchone()[0]
         self.assertEqual(fjoldi, VAENTAR_MAELINGAR)
+
+
+class EndurkeyrsluProf(unittest.TestCase):
+    """Sama eintak á að gefa sama grunn, hversu oft sem hlaðið er.
+
+    ``fetch_log.id`` er AUTOINCREMENT (migration 001): DELETE + INSERT gaf áður
+    nýtt auðkenni í hverri keyrslu, svo fjöldatölurnar stóðu í stað en
+    fingrafarið hreyfðist (#39, PR #60) — sama villa og PR #42 lagaði fyrir
+    veðurstöðvarnar.
+    """
+
+    def setUp(self) -> None:
+        self._tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self._tmp.cleanup)
+        self.samband = opna(Path(self._tmp.name) / "rannsokn.sqlite")
+        self.addCleanup(self.samband.close)
+        keyra(self.samband)
+
+    def _hlada(self) -> None:
+        hlada(self.samband)
+
+    def _skraningar(self, thjonusta: str) -> list[int]:
+        return [
+            rad[0]
+            for rad in self.samband.execute(
+                "SELECT id FROM fetch_log WHERE service = ?", (thjonusta,)
+            )
+        ]
+
+    def test_endurkeyrsla_breytir_ekki_fingrafari_grunnsins(self) -> None:
+        self._hlada()
+        fyrra_fingrafar = fingrafar(self.samband)
+
+        self._hlada()
+
+        self.assertEqual(fingrafar(self.samband), fyrra_fingrafar)
+
+    def test_endurkeyrsla_heldur_audkenni_sofnunarskraningarinnar(self) -> None:
+        self._hlada()
+        fyrri = self._skraningar(THJONUSTA)
+        self.assertEqual(len(fyrri), 1)
+
+        self._hlada()
+
+        self.assertEqual(self._skraningar(THJONUSTA), fyrri)
+
+    def test_audkenni_haldast_thott_annad_safn_hafi_skrad_sig_a_eftir(self) -> None:
+        """Eins og í heildarhleðslunni: veðurstöðvarnar skrá sig á eftir Hagstofunni."""
+        self._hlada()
+        fyrri = self._skraningar(THJONUSTA)
+        self.samband.execute(
+            "INSERT INTO fetch_log (service, endpoint, fetched_at, raw_file) "
+            "VALUES (?, ?, ?, ?)",
+            ("annad-safn", "https://example.is/api", "2026-09-01T00:00:00Z", "x.json"),
+        )
+
+        self._hlada()
+
+        self.assertEqual(self._skraningar(THJONUSTA), fyrri)
+        self.assertEqual(len(self._skraningar("annad-safn")), 1)
 
 
 class StodvunarProf(unittest.TestCase):
