@@ -8,7 +8,7 @@ súluritinu. Víki tala er það skráð frávik, ekki eitthvað sem prófið la
 Viðmiðið er **lesið, ekki afritað**: tölurnar koma úr ``docs/vidmid/vidmid.json``
 og ``docs/vidmid/generated/vedurstofa-stodvar.svg``. Hver uppfletting ber saman
 **alla** röð talnanna í svarinu, svo tala sem vantar, bætist við eða víkur
-fellir prófið — og uppfletting sem finnur ekkert fellur líka (kafli 15).
+fellir prófið — og uppfletting sem finnur ekkert fellur líka (kafli 6).
 
 Prófin skrifa aðeins í tímabundnar möppur; ``data/`` og ``web/gogn/`` eru
 óhreyfð (regla 10).

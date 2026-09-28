@@ -1,66 +1,50 @@
 # Upplýsingaverkfræði — rannsóknarverkefni
 
-Gögn sótt frá vefþjónustum, geymd í SQL-gagnagrunni og birt á static vefsíðu
-á íslensku.
+Gögn sótt frá vefþjónustum, geymd í SQL-gagnagrunni og birt á static vefsíðu á
+íslensku. Endurbygging á eldra Quarto-verkefni ([`docs/endurbygging.md`](docs/endurbygging.md)).
 
-> **Reglur verkefnisins eru í [CLAUDE.md](CLAUDE.md).** Lestu þær áður en þú
-> bætir við skrá. Þar er möppuskipanin, aðskilnaður HTML/CSS/JS, sjónræna
-> kerfið, gagnareglur og gátlisti fyrir verklok.
+**Reglurnar eru í [CLAUDE.md](CLAUDE.md).** Lestu þær áður en þú bætir við skrá.
 
 ## Uppbygging
 
 | Mappa | Hlutverk |
 |---|---|
 | `web/` | Static vefsíðan — sjálfstætt birtanleg |
-| `src/python/` | Gagnasöfnun, úrvinnsla, útflutningur |
+| `src/python/` | Söfnun, úrvinnsla, útflutningur, yfirferð á upprunanum |
 | `src/sql/` | Schema, migrations, fyrirspurnir |
-| `src/cpp/`, `src/java/` | Annar kóði, aðskilinn eftir máli |
 | `data/` | Gögn (að mestu utan git) |
-| `docs/` | Aðferðafræði og heimildir |
-
-## Keyrsla
-
-**Vefsíðan** — enginn byggingarferill, bara static skrár:
-
-```bash
-python3 -m http.server 8000 --directory web
-# opnaðu http://localhost:8000
-```
-
-**Gagnaflæðið:**
-
-```bash
-cp config/.env.example .env      # fylltu út API-lykla
-python3 src/python/main.py --skref allt
-```
-
-Skrefin má líka keyra hvert í sínu lagi:
-`--skref safna | vinna | hlada | flytja-ut`
-
-**Gagnagrunnurinn** er afleiða og verður eingöngu til úr `src/sql/migrations/`:
-
-```bash
-scripts/endurbyggja-grunn.sh     # eyðir grunninum og byggir hann frá grunni
-```
-
-Skriftan prentar fingrafar grunnsins á stdout. Tvær hreinar byggingar úr sömu
-heimildum eiga að gefa sömu summu — geri þær það ekki er eitthvað í grunninum
-sem hvergi á sér heimild.
-
-Ný migration fær næsta lausa númer (`002_heiti.sql`) og er **aldrei breytt
-eftir að hún hefur verið keyrð**: keyrarinn stöðvast ef SHA-256 hennar breytist.
-
-**Prófin** keyra á staðalsafninu einu:
-
-```bash
-python3 -m unittest discover -s tests
-```
-
-## Gagnaflæði
+| `docs/` | Aðferðafræði, heimildir, viðmið |
 
 ```
 Vefþjónusta → data/raw/ → hreinsun → SQL-grunnur → web/gogn/*.json → vefsíðan
 ```
 
-Vefsíðan talar aldrei beint við API eða gagnagrunn. Hún les eingöngu tilbúnar
-JSON-skrár úr `web/gogn/`.
+Vefsíðan les aðeins tilbúnar JSON-skrár; hún talar aldrei við API eða gagnagrunn.
+
+## Keyrsla
+
+```bash
+python3 -m http.server 8000 --directory web      # vefsíðan: http://localhost:8000
+
+cp config/.env.example .env                      # API-lyklar
+python3 src/python/main.py --skref allt          # eða: safna | vinna | hlada | flytja-ut
+
+scripts/endurbyggja-grunn.sh                     # byggir grunninn frá grunni
+python3 -m unittest discover -s tests            # prófin (Python 3.12+)
+```
+
+- **Grunnurinn** verður aðeins til úr `src/sql/migrations/`. Endurbyggingin
+  prentar fingrafar; tvær hreinar byggingar eiga að gefa það sama.
+- **Migration er aldrei breytt** eftir keyrslu — keyrarinn stöðvast ef SHA-256
+  hennar breytist. Ný migration fær næsta númer.
+
+## Nýtt efni úr gamla verkefninu
+
+Gamla verkefnið er enn í vinnslu. Sjálfvirk lota fer daglega yfir það sem hefur
+bæst við, flokkar það og opnar PR með því sem á heima hér:
+
+```bash
+scripts/yfirfara-uppruna.sh
+```
+
+Verklagið er í [`docs/uppruni.md`](docs/uppruni.md).

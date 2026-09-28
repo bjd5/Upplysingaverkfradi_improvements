@@ -26,7 +26,7 @@ SOFN = (
         "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/docs",
         "upprunarepo": "Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe",
         "skyring": (
-            "Byggða gamla Quarto-síðan, 28 HTML-skrár. Eina heildarskráin yfir "
+            "Byggða gamla Quarto-síðan, 24 HTML-skrár. Eina heildarskráin yfir "
             "hverja tölu sem gamla síðan birtir. Var gitignored (afleiða)."
         ),
     },

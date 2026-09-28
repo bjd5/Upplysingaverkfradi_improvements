@@ -1,0 +1,203 @@
+{
+  "_lysing": "Hvert skrá úr upprunarepo-inu á heima hér. Fyrsta regla sem passar ræður; * nær líka yfir /. Sjá docs/uppruni.md.",
+  "repo": "Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe",
+  "grein": "main",
+  "reglur": [
+    {
+      "mynstur": ["data/fangj-friends*", "data/external/*"],
+      "flokkur": "bannad",
+      "athugasemd": "Handrit — fara aldrei í þetta opna repo (P0.5, issue #3)."
+    },
+
+    {
+      "mynstur": ["data/raw/vedur-quakes/*"],
+      "flokkur": "hragogn", "rannsokn": "skjalftavaktin",
+      "markmid": "data/raw/vedur-quakes/"
+    },
+    {
+      "mynstur": ["src/earthquakes.py"],
+      "flokkur": "kodi", "rannsokn": "skjalftavaktin",
+      "markmid": "src/python/vinnsla/jardskjalftar*.py"
+    },
+    {
+      "mynstur": ["tests/test_earthquakes.py"],
+      "flokkur": "prof", "rannsokn": "skjalftavaktin",
+      "markmid": "tests/test_jardskjalftar*.py"
+    },
+    {
+      "mynstur": ["site/capstone/earthquakes.*"],
+      "flokkur": "sida", "rannsokn": "skjalftavaktin",
+      "markmid": "web/sidur/skjalftavaktin.html"
+    },
+    {
+      "mynstur": ["research/*"],
+      "flokkur": "skjolun", "rannsokn": "skjalftavaktin",
+      "markmid": "docs/heimildir.md"
+    },
+
+    {
+      "mynstur": ["data/raw/hagstofan/*"],
+      "flokkur": "hragogn", "rannsokn": "hagstofan",
+      "markmid": "data/raw/hagstofan/"
+    },
+    {
+      "mynstur": ["src/hagstofan.py"],
+      "flokkur": "kodi", "rannsokn": "hagstofan",
+      "markmid": "src/python/vinnsla/hagstofan*.py"
+    },
+    {
+      "mynstur": ["tests/test_hagstofan.py"],
+      "flokkur": "prof", "rannsokn": "hagstofan",
+      "markmid": "tests/test_hagstofan*.py"
+    },
+    {
+      "mynstur": ["site/lotur/vefthjonustur/hagstofan.*"],
+      "flokkur": "sida", "rannsokn": "hagstofan",
+      "markmid": "web/sidur/hagstofan.html"
+    },
+
+    {
+      "mynstur": ["data/raw/vedurstodvar/*"],
+      "flokkur": "hragogn", "rannsokn": "vedurstodvar",
+      "markmid": "data/raw/vedurstodvar/"
+    },
+    {
+      "mynstur": ["src/vedurstofa_stodvar.py"],
+      "flokkur": "kodi", "rannsokn": "vedurstodvar",
+      "markmid": "src/python/vinnsla/vedurstodvar*.py"
+    },
+    {
+      "mynstur": ["tests/test_vedurstofa_stodvar.py"],
+      "flokkur": "prof", "rannsokn": "vedurstodvar",
+      "markmid": "tests/test_vedurstodvar*.py"
+    },
+    {
+      "mynstur": ["site/lotur/vefthjonustur/vedurstofan.*"],
+      "flokkur": "sida", "rannsokn": "vedurstodvar",
+      "markmid": "web/sidur/vedurstodvar.html"
+    },
+
+    {
+      "mynstur": ["data/raw/mbl/*"],
+      "flokkur": "hragogn", "rannsokn": "mbl-regex",
+      "markmid": "data/raw/mbl/"
+    },
+    {
+      "mynstur": ["src/mbl_*.py"],
+      "flokkur": "kodi", "rannsokn": "mbl-regex",
+      "markmid": "src/python/vinnsla/mbl_*.py"
+    },
+    {
+      "mynstur": ["tests/test_mbl_*.py"],
+      "flokkur": "prof", "rannsokn": "mbl-regex",
+      "markmid": "tests/test_mbl_*.py"
+    },
+    {
+      "mynstur": ["site/lotur/regex/mbl.*"],
+      "flokkur": "sida", "rannsokn": "mbl-regex",
+      "markmid": "web/sidur/mbl-regex.html"
+    },
+
+    {
+      "mynstur": ["src/phoebe_analysis.py"],
+      "flokkur": "kodi", "rannsokn": "phoebe-tolfraedi",
+      "markmid": "src/python/vinnsla/"
+    },
+    {
+      "mynstur": ["tests/test_phoebe_analysis.py"],
+      "flokkur": "prof", "rannsokn": "phoebe-tolfraedi",
+      "markmid": "tests/"
+    },
+    {
+      "mynstur": ["site/friends/phoebe-statistics.*"],
+      "flokkur": "sida", "rannsokn": "phoebe-tolfraedi",
+      "markmid": "web/sidur/phoebe-tolfraedi.html"
+    },
+    {
+      "mynstur": ["data/processed/phoebe-stats/*"],
+      "flokkur": "skjolun", "rannsokn": "phoebe-tolfraedi",
+      "markmid": "docs/adferdafraedi.md"
+    },
+    {
+      "mynstur": ["src/friends_mengi.py", "tests/test_friends_mengi.py", "notes/logic-sets/friends-*"],
+      "flokkur": "akvordun", "rannsokn": "phoebe-tolfraedi",
+      "athugasemd": "Mengjagreining úr rökfræðilotunni — utan umfangs nema Björn ákveði annað."
+    },
+
+    {
+      "mynstur": ["src/phoebe_central_perk.py"],
+      "flokkur": "kodi", "rannsokn": "phoebe-central-perk",
+      "markmid": "src/python/vinnsla/"
+    },
+    {
+      "mynstur": ["tests/test_phoebe_central_perk.py"],
+      "flokkur": "prof", "rannsokn": "phoebe-central-perk",
+      "markmid": "tests/"
+    },
+    {
+      "mynstur": ["site/phoebe-central-perk.*"],
+      "flokkur": "sida", "rannsokn": "phoebe-central-perk",
+      "markmid": "web/sidur/phoebe-central-perk.html"
+    },
+
+    {
+      "mynstur": ["src/fetch_tmdb.py"],
+      "flokkur": "kodi", "rannsokn": "phoebe-tmdb",
+      "markmid": "src/python/sofnun/tmdb.py"
+    },
+    {
+      "mynstur": ["tests/test_fetch_tmdb.py"],
+      "flokkur": "prof", "rannsokn": "phoebe-tmdb",
+      "markmid": "tests/"
+    },
+    {
+      "mynstur": ["data/processed/tmdb/*"],
+      "flokkur": "skjolun", "rannsokn": "phoebe-tmdb",
+      "markmid": "docs/heimildir.md"
+    },
+
+    {
+      "mynstur": ["data/raw/README.md", "src/README.md"],
+      "flokkur": "skjolun", "rannsokn": "adferdafraedi",
+      "markmid": "docs/heimildir.md"
+    },
+    {
+      "mynstur": ["data/processed/README.md"],
+      "flokkur": "skjolun", "rannsokn": "adferdafraedi",
+      "markmid": "docs/adferdafraedi.md"
+    },
+
+    {
+      "mynstur": [
+        "site/capstone/gnss.*", "src/gnss_seng.py", "tests/test_gnss_seng.py",
+        "data/raw/gnss-seng/*", "data/reference/*"
+      ],
+      "flokkur": "akvordun", "rannsokn": "skjalftavaktin",
+      "athugasemd": "GNSS-viðbót við þemaverkefnið — ný rannsókn, ekki í umfangi endurbygging.md §3."
+    },
+    {
+      "mynstur": [
+        "site/capstone/population.*", "src/volcano_population.py",
+        "tests/test_volcano_population.py", "data/raw/volcano-population/*"
+      ],
+      "flokkur": "akvordun", "rannsokn": "skjalftavaktin",
+      "athugasemd": "Mannfjöldi og eldgos — ný rannsókn, ekki í umfangi endurbygging.md §3."
+    },
+
+    {
+      "mynstur": [
+        "site/lotur/*", "site/reflections/*", "site/tokens/*", "site/friends/*",
+        "site/index.qmd", "site/team.qmd", "site/project-management.qmd",
+        "site/_quarto.yml", "site/styles/*", "site/img/*",
+        "data/tokens/*", "src/tokens_*.py", "tests/test_tokens_*.py",
+        "src/subset_icons.py", "tests/test_subset_icons.py",
+        "notes/*", "outputs/*", ".github/*",
+        "AGENTS.md", "AGENT_LOG*.md", ".AGENT_LOG.md", "TEAM.md", "CONTRIBUTING.md",
+        "README.md", "requirements.txt", ".classroom50.yaml", ".env.example",
+        ".gitattributes", ".gitignore", ".gitmodules"
+      ],
+      "flokkur": "utan",
+      "athugasemd": "Námskeiðsefni, ígrundanir, tokenmælingar og umgjörð — flyst ekki (endurbygging.md §3)."
+    }
+  ]
+}

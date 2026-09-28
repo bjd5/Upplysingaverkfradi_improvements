@@ -6,7 +6,7 @@ prófað hér — hann verður alltaf eins úr sömu heimildum, og hann fer ekki
 
 Frá #39 hleður skriftan öllum fimm söfnunum, og þau bera keyrslustimpla
 (``loaded_at``, ``extracted_at``) á sekúndunákvæmni. Tvær hraðar byggingar
-innan sömu sekúndu stemma því af tilviljun (#47, kafli 15), svo prófið bíður
+innan sömu sekúndu stemma því af tilviljun (#47, kafli 6), svo prófið bíður
 yfir sekúndumörk á milli þeirra og **sannar** að það hafi tekist: allir
 keyrslustimplar seinni byggingarinnar eru síðar en þeir fyrri.
 """
@@ -133,7 +133,7 @@ class EndurbyggingProf(unittest.TestCase):
                     self.assertGreater(fjoldi, 0, "Safn vantar í bygginguna.")
 
         # Sönnunin fyrir því að sekúndumörkin voru raunverulega yfirstigin:
-        # án hennar gæti prófið staðist af tilviljun (kafli 15).
+        # án hennar gæti prófið staðist af tilviljun (kafli 6).
         stimplar_a, stimplar_b = keyrslustimplar(grunnur_a), keyrslustimplar(grunnur_b)
         self.assertIn(("friends_sources", "loaded_at"), stimplar_a)
         self.assertIn(("mbl_extractions", "extracted_at"), stimplar_a)

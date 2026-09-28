@@ -1,27 +1,34 @@
 # Beinagrind vefsíðunnar og sjónræna kerfið
 
 Afurð verkpakka **P3.1** (issue #18). Þetta skjal lýsir uppbyggingunni sem
-síðuverkin **P3.4–P3.11** byggja ofan á: hvaða níu síður eru til, hvernig ratað
-er um þær, hvaða einingar eru tiltækar og hvað er þegar staðfest.
+síðuverkin **P3.4–P3.11** byggja ofan á: hvaða þrettán síður eru til, hvernig
+ratað er um þær, hvaða einingar eru tiltækar og hvað er þegar staðfest.
 
 Reglurnar sjálfar eru í [`../CLAUDE.md`](../CLAUDE.md); hér er hvernig þeim er
 mætt í `web/`.
 
 ---
 
-## 1. Síðurnar níu
+## 1. Síðurnar þrettán, í þremur flokkum
 
-| Slóð | Fyrirsögn | Gagnasafn |
-|---|---|---|
-| `web/index.html` | Gögn úr vefþjónustum, greind og gerð skiljanleg | — |
-| `web/sidur/skjalftavaktin.html` | Skjálftavaktin | 1 — Veðurstofan, jarðskjálftar |
-| `web/sidur/hagstofan.html` | Brautskráning af háskólastigi | 2 — Hagstofan |
-| `web/sidur/vedurstodvar.html` | Veðurstöðvar Veðurstofunnar | 3 — Veðurstofan, stöðvar |
-| `web/sidur/mbl-regex.html` | Reglulegar segðir á fréttaforsíðu | 4 — mbl.is |
-| `web/sidur/phoebe-tolfraedi.html` | Plass, nærvera og tengsl Phoebe | 6 — handrit |
-| `web/sidur/phoebe-central-perk.html` | Söngur Phoebe í Central Perk | 6 — handrit |
-| `web/sidur/phoebe-tmdb.html` | Hlutverkið í gagnagrunni TMDB | 5 — TMDB |
-| `web/sidur/adferdafraedi.html` | Aðferðafræði | — |
+Síðunum er skipt í **Þema**, **Friends** og **Viðauka** (ákveðið 2026-09-28,
+sjá [`endurbygging.md`](endurbygging.md) kafla 3). Flokkarnir eru skráðir í
+`THEMA`, `FRIENDS` og `VIDAUKI` efst í `tests/test_vefur.py`.
+
+| Flokkur | Slóð | Fyrirsögn | Gagnasafn |
+|---|---|---|---|
+| — | `web/index.html` | Gögn úr vefþjónustum, greind og gerð skiljanleg | — |
+| Þema | `web/sidur/skjalftavaktin.html` | Skjálftavaktin | 1 — Veðurstofan, jarðskjálftar |
+| Friends 01 | `web/sidur/friends-gagnasagan.html` | Friends-gagnasagan *(biðstaða)* | 6 — handrit |
+| Friends 02 | `web/sidur/phoebe-tolfraedi.html` | Plass, nærvera og tengsl Phoebe | 6 — handrit |
+| Friends 03 | `web/sidur/phoebe-central-perk.html` | Söngur Phoebe í Central Perk | 6 — handrit |
+| Friends 04 | `web/sidur/phoebe-tmdb.html` | Hlutverkið í gagnagrunni TMDB | 5 — TMDB |
+| Friends 05 | `web/sidur/uppahalds-video.html` | Okkar uppáhalds myndbönd *(biðstaða)* | — |
+| Friends 06 | `web/sidur/phoebe-tribute.html` | Til heiðurs Phoebe *(biðstaða)* | — |
+| Viðauki A | `web/sidur/hagstofan.html` | Brautskráning af háskólastigi | 2 — Hagstofan |
+| Viðauki B | `web/sidur/vedurstodvar.html` | Veðurstöðvar Veðurstofunnar | 3 — Veðurstofan, stöðvar |
+| Viðauki C | `web/sidur/mbl-regex.html` | Reglulegar segðir á fréttasíðu | 4 — mbl.is |
+| Viðauki D | `web/sidur/adferdafraedi.html` | Aðferðafræði | — |
 
 Síðurnar `gogn.html`, `nidurstodur.html` og `um.html` úr fyrstu beinagrindinni
 voru **felldar niður**: þær eru ekki í umfanginu sem var ákveðið í
@@ -33,22 +40,27 @@ Gamli tengillinn `um.html#heimildir` varð `adferdafraedi.html#heimildir`.
 
 ## 2. Rötun
 
-### Aðalvalmyndin — sjö liðir, eins á öllum níu síðunum
+### Aðalvalmyndin — einn liður per flokk, eins á öllum síðum
 
 ```
-Forsíða · Skjálftavaktin · Hagstofan · Veðurstöðvar · mbl.is · Phoebe · Aðferðafræði
+Forsíða · Þema · Friends · Viðauki
 ```
 
-Níu liðir kæmust ekki fyrir í láréttri valmynd á 1024px, svo Phoebe-síðurnar
-þrjár deila einum lið. Liðurinn vísar á `phoebe-tolfraedi.html`, og á öllum
-þremur síðunum er **undirvalmynd** efst sem heldur hinum tveimur í einum smelli.
+Hver flokksliður vísar á fyrstu síðu flokksins (`skjalftavaktin.html`,
+`friends-gagnasagan.html`, `hagstofan.html`). Á öllum Friends- og
+Viðaukasíðum er **undirvalmynd** efst sem heldur systursíðunum í einum smelli.
+Þema hefur aðeins eina síðu og þarf því enga undirvalmynd.
+
+Brauðmylsnan er þriggja þrepa: `Forsíða / <Flokkur> / <Síða>`. Flokksþrepið
+vísar á samsvarandi kafla á forsíðunni (`index.html#thema`, `#friends`,
+`#vidauki`) — þar eru öll spjöld flokksins.
 
 Merking núverandi síðu er tvöföld — aldrei litur einn og sér (regla 3.3):
 
 | Staða | Merking |
 |---|---|
 | Nákvæmlega þessi síða | `aria-current="page"` + fylltur flötur + feitt letur |
-| Systursíða í sama flokki | `aria-current="true"` + kantur undir |
+| Önnur síða í sama flokki | `aria-current="true"` + kantur undir |
 
 ### Smellaleiðin — mælt, ekki áætlað
 
@@ -57,29 +69,35 @@ fer yfir þrjá smelli. Mæld dýpt:
 
 ```
 Forsíða                                    0 smellir
-├── Skjálftavaktin                         1
-├── Brautskráning af háskólastigi          1
-├── Veðurstöðvar                           1
-├── Reglulegar segðir                      1
-├── Plass, nærvera og tengsl Phoebe        1
-├── Söngur Phoebe í Central Perk           1
-├── Hlutverkið í gagnagrunni TMDB          1
-└── Aðferðafræði                           1
+├── Þema
+│   └── Skjálftavaktin                     1
+├── Friends
+│   ├── Friends-gagnasagan                 1
+│   ├── Plass, nærvera og tengsl Phoebe    1
+│   ├── Söngur Phoebe í Central Perk       1
+│   ├── Hlutverkið í gagnagrunni TMDB      1
+│   ├── Okkar uppáhalds myndbönd           1
+│   └── Til heiðurs Phoebe                 1
+└── Viðauki
+    ├── Brautskráning af háskólastigi      1
+    ├── Veðurstöðvar                       1
+    ├── Reglulegar segðir                  1
+    └── Aðferðafræði                       1
 
 Mesta dýpt: 1 smellur (þak reglunnar: 3)
 ```
 
-Allar níu síðurnar eru í einum smelli af því að kortarastið á forsíðunni og
-fóturinn vísa beint á þær allar. Fóturinn er eins á öllum síðum, svo engin síða
-er meira en einn smellur frá hverri annarri.
+Allar síðurnar eru í einum smelli af því að kortarastið á forsíðunni og
+fóturinn vísa beint á þær allar. Fóturinn hefur einn dálk per flokk og er eins
+á öllum síðum, svo engin síða er meira en einn smellur frá hverri annarri.
 
 ### Þrjár spurningar efst á hverri síðu (regla 3.2)
 
 | Spurning | Hvar henni er svarað |
 |---|---|
-| Hvar er ég? | Brauðmylsna, flokksmerki (`Rannsókn 01 · Jarðskjálftar`) og merkt valmynd |
+| Hvar er ég? | Brauðmylsna, flokksmerki (`Viðauki A · Vefþjónustur`) og merkt valmynd |
 | Hvað er hér? | `<h1>` og inngangsmálsgreinin, auk staðreyndadálksins „Um þessa síðu" |
-| Hvert get ég farið næst? | Undirvalmynd (Phoebe), valmyndin sjálf og „Hvert get ég farið næst?" neðst |
+| Hvert get ég farið næst? | Undirvalmynd (Friends, Viðauki), valmyndin sjálf og „Hvert get ég farið næst?" neðst — næsta síða í flokknum, fyrsta síða annars flokks og aðferðafræðin |
 
 Staðreyndadálkurinn segir líka hreint út hver **staða síðunnar** er. Meðan
 efnið vantar stendur þar „Beinagrind — greining í vinnslu", og efnishlutinn
@@ -114,10 +132,12 @@ px-tala og enginn harðkóðaður litur** sé í neinni annarri CSS-skrá.
 
 ### Birtuskil
 
-Öll níu síðurnar voru mældar í báðum þemum: hvert einasta textaelement stenst
+Upprunalegu níu síðurnar voru mældar í báðum þemum: hvert einasta textaelement stenst
 WCAG 2.1 AA (4.5:1, eða 3:1 fyrir stórt letur). Tvö gildi þurfti að laga í
 dökka þemanu og bæði voru leyst í tokens — aðvörunarliturinn var of dökkur, og
-merkt valmyndarsíða notaði bakgrunnslit sem texta.
+merkt valmyndarsíða notaði bakgrunnslit sem texta. Fjórar síður bættust við
+í flokkuninni 2026-09-28. Þær nota sömu einingar og tokens en hafa ekki
+verið mældar sérstaklega.
 
 ---
 
@@ -163,8 +183,8 @@ forsíðunni). Báðar eru með `defer`.
 Hver síðuverkpakki fyllir **einn** `<article class="efni">` og skiptir
 `bidstada`-einingunni út fyrir raunverulegt efni. Það sem á ekki að snerta:
 
-- Hausinn og fótinn — þeir eru stafrétt eins á öllum níu síðunum og prófin
-  falla ef það breytist. Þurfi valmyndin að breytast er það gert á öllum níu
+- Hausinn og fótinn — þeir eru stafrétt eins á öllum síðunum og prófin
+  falla ef það breytist. Þurfi valmyndin að breytast er það gert á öllum
   síðunum í einu.
 - `tokens.css` — nema til að bæta við þrepi í skala sem er þegar til.
 - Nýjar px-tölur eða litir í component-skrár: prófin stöðva það.
@@ -177,7 +197,7 @@ efnið er komið.
 ## 7. Staðfesting
 
 ```bash
-python3 -m unittest discover -s tests      # 16 próf
+python3 -m unittest discover -s tests      # vefprófin eru í tests/test_vefur.py
 python3 -m http.server 8000 --directory web
 ```
 
