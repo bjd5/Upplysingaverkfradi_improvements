@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components/braudmylsna.css">
+  <link rel="stylesheet" href="../assets/css/components/undirvalmynd.css">
   <link rel="stylesheet" href="../assets/css/components/sidu-haus.css">
   <link rel="stylesheet" href="../assets/css/components/bidstada.css">
   <link rel="stylesheet" href="../assets/css/components/naesta-skref.css">
@@ -28,12 +29,9 @@
         </button>
         <ul class="valmynd__listi" id="valmyndarlisti">
           <li><a class="valmynd__tengill" href="../index.html">Forsíða</a></li>
-          <li><a class="valmynd__tengill" href="skjalftavaktin.html">Skjálftavaktin</a></li>
-          <li><a class="valmynd__tengill" href="hagstofan.html">Hagstofan</a></li>
-          <li><a class="valmynd__tengill" href="vedurstodvar.html">Veðurstöðvar</a></li>
-          <li><a class="valmynd__tengill" href="mbl-regex.html">mbl.is</a></li>
-          <li><a class="valmynd__tengill" href="phoebe-tolfraedi.html">Phoebe</a></li>
-          <li><a class="valmynd__tengill" href="adferdafraedi.html" aria-current="page">Aðferðafræði</a></li>
+          <li><a class="valmynd__tengill" href="skjalftavaktin.html">Þema</a></li>
+          <li><a class="valmynd__tengill" href="friends-gagnasagan.html">Friends</a></li>
+          <li><a class="valmynd__tengill" href="hagstofan.html" aria-current="true">Viðauki</a></li>
         </ul>
       </nav>
     </div>
@@ -42,6 +40,7 @@
   <nav class="braudmylsna umgjord" aria-label="Brauðmylsna">
     <ol>
       <li><a href="../index.html">Forsíða</a></li>
+      <li><a href="../index.html#vidauki">Viðauki</a></li>
       <li><span aria-current="page">Aðferðafræði</span></li>
     </ol>
   </nav>
@@ -49,9 +48,19 @@
   <main id="efni">
     <div class="umgjord">
 
+      <nav class="undirvalmynd" aria-labelledby="undirvalmynd-titill">
+        <p class="undirvalmynd__titill" id="undirvalmynd-titill">Viðauki — fjórar síður</p>
+        <ul>
+          <li><a href="hagstofan.html">Hagstofan</a></li>
+          <li><a href="vedurstodvar.html">Veðurstöðvar</a></li>
+          <li><a href="mbl-regex.html">Reglulegar segðir</a></li>
+          <li><a href="adferdafraedi.html" aria-current="page">Aðferðafræði</a></li>
+        </ul>
+      </nav>
+
       <div class="sidu-haus">
         <div class="sidu-haus__adal">
-          <p class="sidu-haus__flokkur">Um rannsóknina</p>
+          <p class="sidu-haus__flokkur">Viðauki D · Um rannsóknina</p>
           <h1>Aðferðafræði</h1>
           <p class="sidu-haus__inngangur">Hvaðan gögnin koma, hvernig unnið er úr þeim og hvaða takmörkunum þau eru háð.</p>
         </div>
@@ -139,21 +148,15 @@
         <h2 class="naesta-skref__titill" id="naesta-skref-titill">Hvert get ég farið næst?</h2>
         <ul>
           <li>
-            <a href="../index.html">
-              <span class="naesta-skref__hlutverk">Byrja hér</span>
-              <span class="naesta-skref__heiti">Forsíða</span>
-            </a>
-          </li>
-          <li>
             <a href="skjalftavaktin.html">
-              <span class="naesta-skref__hlutverk">Rannsókn</span>
+              <span class="naesta-skref__hlutverk">Þema</span>
               <span class="naesta-skref__heiti">Skjálftavaktin</span>
             </a>
           </li>
           <li>
-            <a href="phoebe-tolfraedi.html">
-              <span class="naesta-skref__hlutverk">Rannsókn</span>
-              <span class="naesta-skref__heiti">Plass og tengsl</span>
+            <a href="../index.html">
+              <span class="naesta-skref__hlutverk">Byrja hér</span>
+              <span class="naesta-skref__heiti">Forsíða</span>
             </a>
           </li>
         </ul>
@@ -172,27 +175,29 @@
             eru skráðar á aðferðafræðisíðunni.
           </p>
         </div>
-        <nav aria-labelledby="fotur-rannsoknir">
-          <h2 id="fotur-rannsoknir">Rannsóknir</h2>
+        <nav aria-labelledby="fotur-thema">
+          <h2 id="fotur-thema">Þema</h2>
           <ul>
             <li><a class="fotur__tengill" href="skjalftavaktin.html">Skjálftavaktin</a></li>
-            <li><a class="fotur__tengill" href="hagstofan.html">Brautskráning</a></li>
-            <li><a class="fotur__tengill" href="vedurstodvar.html">Veðurstöðvar</a></li>
-            <li><a class="fotur__tengill" href="mbl-regex.html">Reglulegar segðir</a></li>
           </ul>
         </nav>
-        <nav aria-labelledby="fotur-phoebe">
-          <h2 id="fotur-phoebe">Phoebe Buffay</h2>
+        <nav aria-labelledby="fotur-friends">
+          <h2 id="fotur-friends">Friends</h2>
           <ul>
+            <li><a class="fotur__tengill" href="friends-gagnasagan.html">Gagnasagan</a></li>
             <li><a class="fotur__tengill" href="phoebe-tolfraedi.html">Plass og tengsl</a></li>
             <li><a class="fotur__tengill" href="phoebe-central-perk.html">Central Perk</a></li>
             <li><a class="fotur__tengill" href="phoebe-tmdb.html">TMDB</a></li>
+            <li><a class="fotur__tengill" href="uppahalds-video.html">Myndbönd</a></li>
+            <li><a class="fotur__tengill" href="phoebe-tribute.html">Til heiðurs Phoebe</a></li>
           </ul>
         </nav>
-        <nav aria-labelledby="fotur-leidsogn">
-          <h2 id="fotur-leidsogn">Leiðsögn</h2>
+        <nav aria-labelledby="fotur-vidauki">
+          <h2 id="fotur-vidauki">Viðauki</h2>
           <ul>
-            <li><a class="fotur__tengill" href="../index.html">Forsíða</a></li>
+            <li><a class="fotur__tengill" href="hagstofan.html">Hagstofan</a></li>
+            <li><a class="fotur__tengill" href="vedurstodvar.html">Veðurstöðvar</a></li>
+            <li><a class="fotur__tengill" href="mbl-regex.html">Reglulegar segðir</a></li>
             <li><a class="fotur__tengill" href="adferdafraedi.html">Aðferðafræði</a></li>
             <li><a class="fotur__tengill" href="adferdafraedi.html#heimildir">Heimildir</a></li>
           </ul>

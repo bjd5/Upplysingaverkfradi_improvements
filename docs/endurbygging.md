@@ -54,17 +54,26 @@ fara aldrei hingað; aðeins talnaniðurstöður um þau (ákvörðun P0.5).
 ígrundanir flytjast ekki. Tokenmælaborðið var fjarlægt alveg, líka úr frosna
 viðmiðinu (2026-09-28).
 
-| Slóð | Efni | Safn |
-|---|---|---|
-| `web/index.html` | Forsíða | — |
-| `web/sidur/skjalftavaktin.html` | Jarðskjálftavirkni á Reykjanesi | 1 |
-| `web/sidur/hagstofan.html` | Brautskráning af háskólastigi | 2 |
-| `web/sidur/vedurstodvar.html` | Veðurstöðvar Veðurstofunnar | 3 |
-| `web/sidur/mbl-regex.html` | Reglulegar segðir á fréttasíðu | 4 |
-| `web/sidur/phoebe-tolfraedi.html` | Plass, nærvera og tengsl Phoebe | 6 |
-| `web/sidur/phoebe-central-perk.html` | Söngur Phoebe í Central Perk | 6 |
-| `web/sidur/phoebe-tmdb.html` | Hlutverkið í TMDB | 5 |
-| `web/sidur/adferdafraedi.html` | Aðferð, heimildir, takmarkanir | — |
+**Breytt 2026-09-28:** efninu er skipt í **Þema**, **Friends** og **Viðauka**,
+og þrjár Friends-biðsíður bætast við. Lotusíður án gagna flytjast áfram ekki.
+
+| Flokkur | Slóð | Efni | Safn |
+|---|---|---|---|
+| — | `web/index.html` | Forsíða | — |
+| Þema | `web/sidur/skjalftavaktin.html` | Jarðskjálftavirkni á Reykjanesi | 1 |
+| Friends | `web/sidur/friends-gagnasagan.html` | Hvaðan handritin koma *(biðstaða)* | 6 |
+| Friends | `web/sidur/phoebe-tolfraedi.html` | Plass, nærvera og tengsl Phoebe | 6 |
+| Friends | `web/sidur/phoebe-central-perk.html` | Söngur Phoebe í Central Perk | 6 |
+| Friends | `web/sidur/phoebe-tmdb.html` | Hlutverkið í TMDB | 5 |
+| Friends | `web/sidur/uppahalds-video.html` | Uppáhaldsmyndbönd *(biðstaða)* | — |
+| Friends | `web/sidur/phoebe-tribute.html` | Til heiðurs Phoebe *(biðstaða)* | — |
+| Viðauki A | `web/sidur/hagstofan.html` | Brautskráning af háskólastigi | 2 |
+| Viðauki B | `web/sidur/vedurstodvar.html` | Veðurstöðvar Veðurstofunnar | 3 |
+| Viðauki C | `web/sidur/mbl-regex.html` | Reglulegar segðir á fréttasíðu | 4 |
+| Viðauki D | `web/sidur/adferdafraedi.html` | Aðferð, heimildir, takmarkanir | — |
+
+Myndbanda- og tribute-síðurnar mega aldrei hýsa myndbrot, myndir eða textabúta
+úr þáttunum — repo-ið er opið (kafli 2).
 
 Nýtt efni sem bætist við gamla verkefnið er flokkað daglega eftir þessu
 umfangi ([`uppruni.md`](uppruni.md)).

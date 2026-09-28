@@ -81,10 +81,16 @@ INSERT INTO hagstofan_observations (
 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 """
 
+# Auðkenni fyrri skráningar þessa eintaks, endurnýtt við endurkeyrslu — sjá
+# _skrifa_sofnun. MIN() skilar NULL sé engin skráning til, og þá úthlutar SQLite.
+SQL_FYRRI_SOFNUN = "SELECT MIN(id) FROM fetch_log WHERE service = ? AND raw_file = ?"
+
+SQL_EYDA_SOFNUN = "DELETE FROM fetch_log WHERE service = ? AND raw_file = ?"
+
 SQL_SOFNUN = """
 INSERT INTO fetch_log (
-    service, endpoint, params, fetched_at, status_code, record_count, raw_file, notes
-) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    id, service, endpoint, params, fetched_at, status_code, record_count, raw_file, notes
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
 """
 
 HREINSUN = (
@@ -205,15 +211,24 @@ def _skrifa_maelingar(samband: Connection, gagnasafn: Gagnasafn) -> None:
 
 
 def _skrifa_sofnun(samband: Connection, gagnasafn: Gagnasafn, mappa: Path) -> None:
-    """Skráir söfnunina í ``fetch_log`` (migration 001, regla 4)."""
+    """Skráir söfnunina í ``fetch_log`` (migration 001, regla 4).
+
+    Fyrri skráning sama eintaks er fjarlægð svo endurkeyrsla safni ekki upp
+    tvítekinni sögu, en **auðkenni hennar er endurnýtt**. ``fetch_log.id`` er
+    AUTOINCREMENT, svo ný skráning fengi annars hærra auðkenni í hverri
+    keyrslu — ofan á heildarhleðslu fór það úr 1 í 3 — og fingrafarið úr
+    ``gagnagrunnur.fingrafar`` mældi hversu oft var hlaðið í stað þess hvað var
+    hlaðið (regla 5). Sama lausn og veðurstöðvarnar fengu í PR #42. Sé engin
+    fyrri skráning til fer ``None`` inn og SQLite úthlutar auðkenninu sjálft.
+    """
     hraskra = _innan_verkefnis(Path(gagnasafn.hraskra))
-    samband.execute(
-        "DELETE FROM fetch_log WHERE service = ? AND raw_file = ?",
-        (THJONUSTA, hraskra),
-    )
+    lykill = (THJONUSTA, hraskra)
+    fyrra_audkenni = samband.execute(SQL_FYRRI_SOFNUN, lykill).fetchone()[0]
+    samband.execute(SQL_EYDA_SOFNUN, lykill)
     samband.execute(
         SQL_SOFNUN,
         (
+            fyrra_audkenni,
             THJONUSTA,
             gagnasafn.endapunktur,
             (mappa / FYRIRSPURNARSKRA).read_text(encoding="utf-8"),
