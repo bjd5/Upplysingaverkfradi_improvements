@@ -12,10 +12,16 @@ import unittest
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 
+import shutil  # noqa: E402
+import tempfile  # noqa: E402
+from pathlib import Path  # noqa: E402
+
 from utflutningur import andstaeda as mod_andstaeda  # noqa: E402
+from utflutningur import myndrit_litir  # noqa: E402
 from utflutningur.tokens import (  # noqa: E402
     DOKKT,
     LJOST,
+    SJALFGEFIN_SLOD,
     TokenVilla,
     lesa_tokens,
     thatta_lit,
@@ -116,6 +122,62 @@ class AndstaedaTest(unittest.TestCase):
         maeling = mod_andstaeda.maela("of ljóst", "#d8dee6", "#ffffff")
         self.assertFalse(maeling.stenst)
         self.assertIn("FELLUR", maeling.lina())
+
+
+class MyndritaKrofurTest(unittest.TestCase):
+    """Hvert merkingarberandi --myndrit-* hlutverk stenst kröfu sína í BÁÐUM þemum.
+
+    Prófið er líka keyrt á falsaðri tokens.css þar sem það á að bresta, svo það
+    sé ekki grænt af tilviljun (lærdómurinn af #47).
+    """
+
+    # Grátónn undir 4,5:1 á hvítu (3,45:1) en yfir henni á --gra-800 (5,08:1),
+    # svo aðeins ljósa þemað á að falla.
+    OF_DAUFT = "#8a8a8a"
+
+    def test_raunverulegu_tokens_standast(self) -> None:
+        maelingar = myndrit_litir.maela_myndritaliti(lesa_tokens())
+        self.assertEqual(2 * len(myndrit_litir.KROFUR), len(maelingar))
+        for maeling in maelingar:
+            with self.subTest(maeling=maeling.heiti):
+                self.assertTrue(maeling.stenst, maeling.lina())
+
+    def test_merkingarberar_eru_maeldir_gegn_4_5(self) -> None:
+        """Súla, núll-merki og texti bera merkingu og fá textakröfuna (#17)."""
+        krofur = {fram: krafa for _, fram, _, krafa in myndrit_litir.KROFUR}
+        for token in (
+            myndrit_litir.FLOTUR,
+            myndrit_litir.NULL,
+            myndrit_litir.TEXTI,
+            myndrit_litir.TEXTI_DAUFT,
+        ):
+            with self.subTest(token=token):
+                self.assertEqual(mod_andstaeda.KRAFA_TEXTI, krofur[token])
+
+    def _falsad(self, texti: str) -> dict:
+        with tempfile.TemporaryDirectory() as mappa:
+            slod = Path(mappa) / "tokens.css"
+            shutil.copyfile(SJALFGEFIN_SLOD, slod)
+            upprunalegt = slod.read_text(encoding="utf-8")
+            slod.write_text(upprunalegt.replace(*texti), encoding="utf-8")
+            return lesa_tokens(slod)
+
+    def test_fellur_ef_ljosa_themad_fer_undir(self) -> None:
+        themu = self._falsad(
+            ("--myndrit-null:        var(--ahersla-700);",
+             f"--myndrit-null:        {self.OF_DAUFT};")
+        )
+        fallnar = myndrit_litir.fallnar(themu)
+        self.assertTrue(fallnar)
+        self.assertTrue(all(m.heiti.startswith(LJOST) for m in fallnar), fallnar)
+
+    def test_fellur_ef_dokka_themad_fer_undir(self) -> None:
+        # Aðeins dökka þemað breytist: --ahersla-700 er endurskilgreint þar.
+        themu = self._falsad(
+            ("--ahersla-700:    #e08a4a;", "--ahersla-700:    #6b4a33;")
+        )
+        fallnar = myndrit_litir.fallnar(themu)
+        self.assertEqual([f"{DOKKT}: núll-merki"], [m.heiti for m in fallnar])
 
 
 if __name__ == "__main__":
