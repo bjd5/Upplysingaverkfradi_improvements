@@ -4,7 +4,7 @@ Regla 5: grunnurinn er afleiða, ekki frumgagn. Það þýðir tvennt sem er
 prófað hér — hann verður alltaf eins úr sömu heimildum, og hann fer ekki
 í git.
 
-Frá #39 hleður skriftan öllum fimm söfnunum, og þau bera keyrslustimpla
+Frá #39 hleður skriftan öllum söfnunum (sex frá #10/007), og þau bera keyrslustimpla
 (``loaded_at``, ``extracted_at``) á sekúndunákvæmni. Tvær hraðar byggingar
 innan sömu sekúndu stemma því af tilviljun (#47, kafli 6), svo prófið bíður
 yfir sekúndumörk á milli þeirra og **sannar** að það hafi tekist: allir
@@ -26,7 +26,6 @@ from pathlib import Path
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 from hjalp import ENDURBYGGINGARSKRIFTA, ROT  # noqa: E402
 
-from central_perk_grunnur import OTENGD_FORSKEYTI  # noqa: E402
 from gagnagrunnur.fingrafar import _oruggt_nafn, er_gagnastimpill, er_timastimpill  # noqa: E402
 
 BIDTIMI_SEK = 120
@@ -38,6 +37,7 @@ ADALTOFLUR = (
     "weather_stations",
     "mbl_extractions",
     "friends_transcript_files",
+    "central_perk_transcript_files",
 )
 
 
@@ -139,10 +139,6 @@ class EndurbyggingProf(unittest.TestCase):
         self.assertIn(("friends_sources", "loaded_at"), stimplar_a)
         self.assertIn(("mbl_extractions", "extracted_at"), stimplar_a)
         for lykill, gildi_a in stimplar_a.items():
-            # TÍMABUNDIÐ: Central Perk (007) er ekki enn tengt keyrsla/hledsla.py
-            # og taflan er tóm; sjá test_central_perk_hledsla.TengingarProf.
-            if lykill[0].startswith(OTENGD_FORSKEYTI):
-                continue
             with self.subTest(stimpill=lykill):
                 self.assertLess(max(gildi_a), min(stimplar_b[lykill]))
 

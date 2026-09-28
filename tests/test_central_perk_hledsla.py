@@ -21,7 +21,7 @@ from unittest import mock
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 from central_perk_grunnur import (  # noqa: E402
-    OTENGD_FORSKEYTI, SAFNSHEITI, inngangstala, songhandrit, vidmidstala,
+    inngangstala, songhandrit, vidmidstala,
 )
 from central_perk_vidmid import VIDMIDSMAPPA, svg_points  # noqa: E402
 from friends_grunnur import opna_med_toflum  # noqa: E402
@@ -31,7 +31,6 @@ from gagnagrunnur.fingrafar import (  # noqa: E402
     _oruggt_nafn, fingrafar, lysing, oflokkadir_stimplar, sleppt_dalkar,
 )
 from gagnagrunnur.tenging import UMHVERFISBREYTA, tenging  # noqa: E402
-from keyrsla import hledsla as heildarhledsla  # noqa: E402
 from vinnsla import central_perk_hledsla as hledsla  # noqa: E402
 from vinnsla import friends_hledsla  # noqa: E402
 from vinnsla.central_perk_adfang import ADFANGSMAPPA, SKRAR  # noqa: E402
@@ -232,17 +231,6 @@ class InngangsProf(unittest.TestCase):
     def test_main_hafnar_roksemdum(self) -> None:
         with self.assertRaises(SystemExit):
             hledsla.main(["--eitthvad"])
-
-
-class TengingarProf(unittest.TestCase):
-    """Undanþágan í heildarprófunum er tímabundin og má ekki gleymast."""
-
-    def test_undanthagan_fellur_thegar_tengt(self) -> None:
-        self.assertNotIn(
-            SAFNSHEITI, [s.heiti for s in heildarhledsla.SOFN],
-            "Central Perk er tengt keyrsla/hledsla.py — fjarlægðu OTENGD_FORSKEYTI úr "
-            "tests/central_perk_grunnur.py og undanþágurnar í test_heildarhledsla.py "
-            f"og test_endurbygging.py (töflur {OTENGD_FORSKEYTI}*).")
 
 
 if __name__ == "__main__":

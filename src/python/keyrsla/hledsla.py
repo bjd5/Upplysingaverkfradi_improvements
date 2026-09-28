@@ -1,13 +1,13 @@
 """Hleðsla allra gagnasafnanna í grunninn — ``--skref hlada`` (issue #39).
 
-Hvert safn á sína hleðslueiningu í ``vinnsla/`` (#6–#10). Hér er aðeins
+Hvert safn á sína hleðslueiningu í ``vinnsla/`` (#6–#10; Central Perk er #10 líka). Hér er aðeins
 ákveðið **hvaða** söfn eru hlaðin, **í hvaða röð** og **hvað gerist ef eitt
 vantar**; innviðum eininganna er ekki breytt, kallað er í opinberu föllin.
 
-Röðin er röð migration-skránna (002–006):
+Röðin er röð migration-skránna (002–007):
 
 * Engin tafla vísar í töflu annars safns — allir framandi lyklar eru innan
-  safns og hver hleðsla skrifar foreldri á undan barni. Migrations 001–006
+  safns og hver hleðsla skrifar foreldri á undan barni. Migrations 001–007
   eru keyrðar á undan, svo allar töflur eru til.
 * Hagstofan og veðurstöðvarnar skrifa báðar í sameiginlegu töfluna
   ``fetch_log`` (001), þar sem ``id`` fær næsta lausa gildi. Föst röð gefur
@@ -32,7 +32,7 @@ from sqlite3 import Connection
 
 from gagnagrunnur.tenging import ROT
 from vinnsla import friends_hledsla, hagstofan, jardskjalftar_hledsla, mbl_hledsla
-from vinnsla import vedurstodvar_hledsla
+from vinnsla import central_perk_hledsla, vedurstodvar_hledsla
 from vinnsla.friends_skrar import STATS_MAPPA
 from vinnsla.jardskjalftar import ATBURDIR
 from vinnsla.mbl_eintak import MBL_MAPPA
@@ -91,6 +91,14 @@ def _hlada_friends(samband: Connection, mappa: Path) -> str:
     )
 
 
+def _hlada_central_perk(samband: Connection, mappa: Path) -> str:
+    fjoldi = central_perk_hledsla.hlada(samband, mappa)
+    return (
+        f"{fjoldi['central_perk_transcript_files']} handritsskrár, "
+        f"{fjoldi['central_perk_patterns']} segðir"
+    )
+
+
 # Röð migration-skránna — sjá haus skrárinnar um af hverju.
 SOFN: tuple[Safn, ...] = (
     Safn("Jarðskjálftar", 6, ATBURDIR, _hlada_skjalftum),
@@ -98,6 +106,7 @@ SOFN: tuple[Safn, ...] = (
     Safn("Veðurstöðvar", 8, vedurstodvar_hledsla.FROSID, _hlada_stodvum),
     Safn("mbl.is", 9, MBL_MAPPA, _hlada_mbl),
     Safn("Friends", 10, STATS_MAPPA, _hlada_friends),
+    Safn("Central Perk", 10, central_perk_hledsla.adfang.ADFANGSMAPPA, _hlada_central_perk),
 )
 
 

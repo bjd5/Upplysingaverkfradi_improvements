@@ -1,4 +1,4 @@
-"""``main.py --skref hlada`` frá tómum grunni: öll fimm söfnin, talin úr SQL (#39).
+"""``main.py --skref hlada`` frá tómum grunni: öll sex söfnin, talin úr SQL (#39).
 
 Væntu tölurnar eru **ekki handskrifaðar hér**. Þær eru lesnar úr prófum
 pakkanna sem byggðu hverja hleðslu (#6–#10) eða úr ``docs/vidmid/vidmid.json``
@@ -31,7 +31,7 @@ import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma f
 from hjalp import PYTHON_ROT, ROT  # noqa: E402
 
 import main  # noqa: E402
-from central_perk_grunnur import OTENGD_FORSKEYTI  # noqa: E402
+from central_perk_grunnur import inngangstala  # noqa: E402
 from friends_grunnur import vidmid_gildi  # noqa: E402
 from gagnagrunnur.fingrafar import _oruggt_nafn  # noqa: E402
 from keyrsla import hledsla  # noqa: E402
@@ -58,6 +58,7 @@ ADALTOFLUR = {
     "Veðurstöðvar": "weather_stations",
     "mbl.is": "mbl_extractions",
     "Friends": "friends_transcript_files",
+    "Central Perk": "central_perk_transcript_files",
 }
 
 
@@ -94,7 +95,7 @@ class HeildarhledslaProf(unittest.TestCase):
 
     def test_keyrslan_tekst(self) -> None:
         self.assertEqual(self.keyrsla.returncode, 0, self.keyrsla.stderr)
-        self.assertIn("Hlóð 5 gagnasöfnum", self.keyrsla.stderr)
+        self.assertIn("Hlóð 6 gagnasöfnum", self.keyrsla.stderr)
 
     def test_oll_sofnin_eru_skrad_i_hledslunni(self) -> None:
         """Safn sem dettur úr ``SOFN`` fellur hér, ekki aðeins í fjöldaprófunum."""
@@ -114,11 +115,6 @@ class HeildarhledslaProf(unittest.TestCase):
         ]
         self.assertGreater(len(toflur), len(ADALTOFLUR))
         for tafla in toflur:
-            # TÍMABUNDIÐ: Central Perk (007) er ekki enn tengt keyrsla/hledsla.py
-            # (bíður P2.7). test_central_perk_hledsla.TengingarProf fellur þegar
-            # það er tengt, og þá fer þessi undanþága.
-            if tafla.startswith(OTENGD_FORSKEYTI):
-                continue
             with self.subTest(tafla=tafla):
                 # SQLite tekur ekki töfluheiti sem breytu; heitið fer því gegnum
                 # hvítlistann í fingrafar.py (regla 5).
@@ -160,6 +156,13 @@ class HeildarhledslaProf(unittest.TestCase):
                     self.assertAlmostEqual(self.eitt(fyrirspurn), vaent, delta=0.01)
                 else:
                     self.assertEqual(self.eitt(fyrirspurn), vaent)
+
+    def test_central_perk(self) -> None:
+        """227 handritsskrár, 19 sönghandrit, 24 söngsenur — úr vidmid.json."""
+        rad = self.samband.execute(
+            "SELECT transcript_files, singing_files, singing_scenes FROM central_perk_findings"
+        ).fetchone()
+        self.assertEqual(tuple(rad), (inngangstala("227"), inngangstala("19"), inngangstala("24")))
 
 
 class BrestaProf(unittest.TestCase):

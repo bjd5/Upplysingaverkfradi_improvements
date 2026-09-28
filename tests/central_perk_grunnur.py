@@ -6,10 +6,6 @@
   einnar** samsvörunar; tölurnar eru lesnar þaðan, aldrei handskrifaðar.
 * ``Afrit`` er tímabundið afrit af frosnu skránum þremur og provenance, til að
   skemma í bresta-prófunum — aldrei frumritin (regla 10).
-* ``OTENGD_FORSKEYTI``: tímabundin undanþága í heildarprófunum þar til
-  hleðslan er tengd ``keyrsla/hledsla.py`` (bíður P2.7, #15). Prófið
-  ``test_undanthagan_fellur_thegar_tengt`` fellur um leið og safnið bætist í
-  ``SOFN`` — þá á að fjarlægja undanþáguna.
 
 Hjálpareining, ekki prófskrá.
 """
@@ -31,8 +27,6 @@ VIDMID = ROT / "docs" / "vidmid" / "vidmid.json"
 SIDA = "phoebe-central-perk.html"
 INNGANGUR = "Phoebe syngur samkvæmt skýrum sviðslýsingum"
 SONGLISTI = "Handritin með skýrt Phoebe-söngtilvik"
-OTENGD_FORSKEYTI = "central_perk_"
-SAFNSHEITI = "Central Perk"
 
 
 def _gogn() -> list[dict]:
