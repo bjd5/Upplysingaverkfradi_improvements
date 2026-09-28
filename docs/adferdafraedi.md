@@ -177,6 +177,117 @@ sýndra þátta** — níu skrár geyma tvo þætti hver.
 sviðsfyrirsagnir og 3.259 sviðsleiðbeiningar. **2.078 blokkir (2,95%) eru
 óflokkaðar** — nær eingöngu „Commercial Break“, „End“ og kreditlínur.
 
+#### 1.5.1 Höfundaréttur — valkostur A
+
+**Vandinn.** Upprunaverkefnið var í lokuðu repo-i; þetta repo er opið. Handritin
+sem greiningin las eru **afrit aðdáenda** á höfundarréttarvörðum
+sjónvarpshandritum. `fangj/friends` hefur **ekkert leyfi**, og MIT-leyfið á
+`delvinso/friends` nær yfir kóðann þar en ekki endilega yfir handritatextann sem
+hann vinnur með. Að greina slík handrit í lokuðu námsverkefni er venjubundið; að
+endurbirta þau í opnu repo-i er annað mál. Um leið eru bæði söfnin á
+einkarepo-um einstaklinga sem enginn í teyminu stýrir — hverfi þau er
+greiningin ekki endurkeyranleg.
+
+**Ákvörðunin.** Björn valdi **valkost A** 27.9.2026 (issue #3):
+
+- **Handritin fara aldrei inn í þetta repo** — hvorki afrituð né vendoruð.
+  `.gitignore` útilokar `data/external/` og `data/fangj-friends/`, þar sem
+  upprunaverkefnið geymdi þau.
+- **Afleiddu tölurnar fara í git**: `data/processed/phoebe-stats/` — línufjöldi,
+  orðafjöldi, senufjöldi, hlutföll og tíðnitöflur á persónu. Þær eru
+  staðreyndir *um* textann, ekki textinn.
+
+**Rökin.** Tölurnar eru það sem síðan birtir. Með þeim í git birtir hún réttar
+tölur án handritanna, og varðveisluáhættan er leyst fyrir niðurstöðurnar þótt
+hún sé ekki leyst fyrir aðfangið. Sá sem hefur handritasöfnin getur endurkeyrt
+greininguna; sá sem hefur þau ekki getur samt rakið hverja tölu að skránni sem
+hún kemur úr.
+
+**Af hverju ekki hinir kostirnir:**
+
+| Kostur | Hvað hann hefði gefið | Af hverju ekki |
+|---|---|---|
+| **B.** Vendora handritin inn í `data/raw/friends/` | Fulla endurkeyrslu, óháða þriðja aðila | Endurbirtir höfundarréttarvarinn texta í opnu repo-i |
+| **C.** Sleppa Friends-greiningunum | Einfaldasta leiðin, enginn höfundaréttarvandi | Þrjár af níu síðum hverfa og umtalsverð vinna glatast |
+
+**Verðið sem A kostar.** Friends-tölurnar eru **ekki endurbyggjanlegar úr þessu
+repo-i**. Það brýtur meginregluna um að unnin gögn séu afleiða (regla 5), og
+undanþágan er rökstudd í
+[`../data/processed/README.md`](../data/processed/README.md), kafla 1.2: fyrir
+þetta repo eru tölurnar frumgagn. Skilyrðið sem heldur undanþágunni lögmætri er
+að engin talnaskrá geymi samfellda setningu úr þáttunum — kafli 1.5.2.
+
+**Tvennt er enn opið — Björn ákveður** (issue #3):
+
+| | Spurning | Staða |
+|---|---|---|
+| (a) | Á að skrá handritasöfnin sem **submodule** í `.gitmodules` — svo endurkeyrsla sé ein skipun fyrir þann sem hefur aðgang — eða halda þeim alveg utan repo-sins? Submodule geymir aðeins slóð og commit-SHA, ekki textann. | **opið** — `.gitmodules` er óbreytt |
+| (b) | Byggðu síðurnar í [`vidmid/vefur/`](vidmid/vefur/) geyma **átta orðréttar handritslínur** úr þætti `0101` (`friends/phoebe-statistics.html` og `search.json`), á `main` og í git-sögunni. Á að samþykkja þær sem tilvitnun, eða endurskrifa söguna? | **opið** — línurnar eru óbreyttar |
+
+Spurning (b) ræður hvort skilyrði #3 — *ekkert höfundarréttarvarið efni í
+git-sögu þessa repo-s* — telst uppfyllt. Þangað til er það **ekki** staðfest.
+
+#### 1.5.2 Handritsleitin — þröskuldur og afmörkun
+
+Fullyrðingin *„engin talnaskrá geymir samfellda setningu“* er ekki
+traustsatriði heldur prófuð með
+[`../src/python/vidmid/handritsleit.py`](../src/python/vidmid/handritsleit.py)
+og [`../tests/test_handritsleit.py`](../tests/test_handritsleit.py):
+
+```bash
+python3 src/python/vidmid/handritsleit.py stadfesta
+```
+
+**Reglan fyrir hvert strengjagildi:**
+
+1. **Hámark fimm orð** (`ORDATHAK_GAGNAREITS = 5` í `handritsreitir.py`).
+2. **Ekkert setningamerki** — `.`, `!`, `?` eða `…` sem lokar orði eða er fylgt
+   af hástafsorði. Tugabrot (`2.95`) eru undanskilin, annars teldist hver
+   prósentutala setning.
+
+**Af hverju fimm.** Fimm orð er mælt hámark þeirra gagnareita sem ekki eru
+undanþegnir (`.units.share_pct` í `phoebe-screentime-by-season.json` og
+`.question` í `phoebe-extra-stats.json`). Lengsti strengurinn í
+`signature-phrases.csv` — reitnum sem er næst því að vera tilvitnun — er þrjú
+orð. Meðaltilsvar í handritunum er **11,2 orð** hjá Phoebe og **10,7 orð** hjá
+hinum fimm (`summary.json`), svo þakið er **undir hálfu meðaltilsvari**: brot úr
+tilsvari fellir prófið, ekki aðeins heilt tilsvar.
+
+**Undanþágur.** 18 reitir brjóta almennu regluna af lögmætri ástæðu —
+aðferðarlýsingar verkefnisins sjálfs á íslensku og þáttatitlar. Þeir eru taldir
+upp í `handritsreitir.py`, hver með ástæðu og **frystri SHA-256** af innihaldinu.
+Undanþága getur því ekki orðið felustaður: breytist undanþeginn reitur, finnist
+undanþága ekki í skránum, eða þurfi reitur hana ekki lengur, fellur prófið.
+
+**Leitin prentar ekki innihald** brotlegs strengs, aðeins staðsetningu og
+mælingar. Væri hann handritstexti myndi prentunin afrita hann í logga.
+
+**Hún er prófuð þar sem hún á að bresta** (`agenta-verkefni.md`, kafli 15):
+prófin keyra hana á heimatilbúnum gervisetningum og falla ef hún **finnur þær
+ekki**.
+
+**Afmörkun — það sem leitin nær til, og það sem hún nær ekki til.** Hún les
+aðeins `.json`- og `.csv`-skrár á þessum stöðum, samtals **42 skrár**:
+
+| Nær til | Nær **ekki** til |
+|---|---|
+| `data/processed/phoebe-stats/` | Byggðu HTML-síðurnar í `docs/vidmid/vefur/` |
+| `docs/vidmid/phoebe-stats/` | `docs/vidmid/vefur/search.json` |
+| `docs/vidmid/vefur/friends/phoebe-stats/` | Annað í repo-inu |
+| `docs/vidmid/generated/phoebe-central-perk-summary.json` | |
+
+Grænt próf þýðir því: **talnaskrárnar eru textalausar** — ekki að repo-ið sé
+það. Vitað er að það er það ekki: `friends/phoebe-statistics.html` og
+`search.json` geyma línurnar átta úr spurningu (b) hér að ofan. Prófið heitir
+`test_skannadar_talnaskrar_geyma_enga_samfellda_setningu` til að nafnið lofi
+ekki meiru en það prófar.
+
+**Af hverju leitin er ekki víkkuð yfir `docs/vidmid/vefur/`:** hún myndi falla á
+línunum átta, og það er ekki leitarinnar að ákveða hvort þær mega standa. Að
+víkka hana og undanskilja línurnar væri að svara spurningu (b) hljóðlega; að
+víkka hana án undanþágu væri að gera `main` rautt vegna ákvörðunar sem ekki
+hefur verið tekin. Afmörkunin stendur þar til Björn hefur svarað (b).
+
 ### 1.6 TMDB — ekkert eintak
 
 Safnið átti að staðfesta hver leikur Phoebe og í hversu mörgum þáttum, og var um
@@ -297,5 +408,5 @@ Opnar spurningar um heimildir og leyfi eru taldar upp í
 | 2 | Rökstuðningur fyrir `evaluation_mode=manual` | **að hluta** — skjalfest hvað sían útilokar, ekki af hverju valið var tekið |
 | 3 | Fimm mbl-svörin úr frosna eintakinu | **ekki reiknuð** — P1.5 reiknar þau og skráir muninn við gömlu síðuna |
 | 4 | Afmörkun TMDB-safnsins | **ófrágengið** — ekkert eintak til |
-| 5 | Höfundaréttur Friends-handritanna | **ófrágengið** — issue #3 ræður hvort talnaniðurstöður standa óbreyttar |
+| 5 | Höfundaréttur Friends-handritanna | **ákveðið að hluta** — valkostur A (27.9.2026): tölurnar í git, handritin aldrei. Opið: (a) submodule í `.gitmodules` og (b) átta orðréttar línur í `vidmid/vefur/` — sjá kafla 1.5.1 |
 | 6 | Vinnsla og greining Central Perk-hlutans | **skjalfest í viðmiðinu**, ekki endurtekin hér — P2.6 flytur hana yfir |

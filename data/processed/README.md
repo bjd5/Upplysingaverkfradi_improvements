@@ -20,7 +20,8 @@ nýtt úr `data/raw/`. Sú regla hefur eina undanþágu, og hún er skjalfest h�
 | Gagnagrunnur greiningarinnar | 227 HTML-handritsskrár = 236 sýndir þættir |
 | Í git? | **Já** — undanþága, sjá kafla 1.2 |
 | Heimild | [`docs/heimildir.md`](../../docs/heimildir.md), kafli 2.1 |
-| Afmörkun og aðferð | [`docs/adferdafraedi.md`](../../docs/adferdafraedi.md), kafli 1.5 |
+| Ákvörðun (valkostur A) | [`docs/adferdafraedi.md`](../../docs/adferdafraedi.md), kafli 1.5.1 |
+| Afmörkun og aðferð | [`docs/adferdafraedi.md`](../../docs/adferdafraedi.md), kafli 1.5 (þáttun) og 1.5.2 (handritsleit) |
 
 ### 1.1 Hvaðan skrárnar koma
 
@@ -51,7 +52,9 @@ teyminu stýrir. Fyrir þetta repo eru tölurnar því frumgagn, ekki afleiða, 
 sama röksemd gildir um þær og um frystu hrágögnin í `data/raw/`: það sem er
 aðeins til á einni vél er ekki til.
 
-Þetta er valkostur A í issue #3, sem Björn valdi 27.9.2026.
+Þetta er valkostur A í issue #3, sem Björn valdi 27.9.2026. Rökin og
+kostirnir sem var hafnað eru í
+[`docs/adferdafraedi.md`](../../docs/adferdafraedi.md), kafla 1.5.1.
 
 ### 1.3 Það sem er hér — og það sem er ekki
 
@@ -70,8 +73,11 @@ python3 -m unittest tests.test_handritsleit
 ```
 
 Prófið leitar að strengjagildum sem líta út eins og setningar og fellur ef það
-finnur eitt. Þröskuldarnir og röksemdin fyrir þeim eru í
-[`docs/adferdafraedi.md`](../../docs/adferdafraedi.md), kafla 1.5.
+finnur eitt. Það les **aðeins talnaskrárnar** (JSON og CSV) — ekki byggðu
+HTML-síðurnar í `docs/vidmid/vefur/`, sem vitað er að geyma orðréttar
+handritslínur (opið í issue #3). Þröskuldarnir, röksemdin fyrir þeim og
+afmörkunin eru í [`docs/adferdafraedi.md`](../../docs/adferdafraedi.md),
+kafla 1.5.2.
 
 ### 1.4 Hvaða skrifta les þær
 
@@ -88,8 +94,10 @@ Tölurnar birtast síðar á `web/sidur/phoebe-tolfraedi.html` og
 1. **Ekkert hér er handbreytt** (regla 10). Skrárnar eru afrit; breyting á
    þeim er villa, ekki uppfærsla.
 2. **Ekkert hér er endurreiknað.** Aðfangið vantar og á að vanta.
-3. **Handritin koma aldrei hingað** — hvorki afrituð né sem submodule
-   (`.gitignore` útilokar `data/external/` og `data/fangj-friends/`).
+3. **Handritin koma aldrei hingað** — hvorki afrituð né vendoruð
+   (`.gitignore` útilokar `data/external/` og `data/fangj-friends/`). Hvort
+   söfnin verða skráð sem submodule (slóð + commit-SHA, enginn texti) er
+   **óákveðið** — spurning (a) í issue #3.
 4. Staðfestingin er `python3 src/python/vidmid/provenance.py stadfesta` fyrir
    viðmiðið og prófin hér að ofan fyrir afritið.
 

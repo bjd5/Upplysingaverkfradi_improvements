@@ -32,7 +32,8 @@ VIDAUKAR = (".json", ".csv")
 
 # Þröskuldurinn fyrir gagnareiti: strengur með fleiri en fimm orðum er ekki
 # talning heldur texti. Fimm er mælt hámark þeirra gagnareita sem eru í
-# skránum (hæst `units.share_pct` og `.question` í phoebe-extra-stats.json),
+# skránum (hæst `.units.share_pct` í phoebe-screentime-by-season.json og
+# `.question` í phoebe-extra-stats.json),
 # og lengsti strengurinn í `signature-phrases.csv` — reitnum sem er næst því
 # að vera tilvitnun — er þrjú orð. Til samanburðar er meðaltilsvar í
 # handritunum 11,2 orð (Phoebe) og 10,7 orð (hinir fimm), skv. `summary.json`.
