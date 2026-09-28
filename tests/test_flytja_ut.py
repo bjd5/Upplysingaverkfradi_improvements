@@ -82,6 +82,17 @@ class FlytjaUtProf(unittest.TestCase):
                 self.assertEqual((self.mappa / heiti).read_bytes(), ELDRA)
         self.assertEqual(sorted(p.name for p in self.mappa.iterdir()), sorted(UTFLUTNINGAR))
 
+    def test_vistudu_skrarnar_i_web_gogn_eru_i_takt_vid_grunninn(self) -> None:
+        """Skrárnar í git eru afleiddar: ný útflutningskeyrsla á að gefa sömu bæti.
+
+        Prófið les ``web/gogn/`` en skrifar aldrei þangað. Falli það hefur
+        grunnurinn eða útflutningurinn breyst án þess að skrárnar væru fluttar út
+        á ný — eða einhver hefur handbreytt þeim (regla 5.4).
+        """
+        for slod in flytja_ut(self.mappa, GRUNNUR):
+            with self.subTest(skra=slod.name):
+                self.assertEqual((eining.VEFGOGN / slod.name).read_bytes(), slod.read_bytes())
+
     def test_grunnur_sem_er_ekki_til_er_villa_og_ekki_buinn_til(self) -> None:
         vantar = self.mappa / "ekki-til.sqlite"
         with self.assertRaises(UtflutningsVilla):
