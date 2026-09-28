@@ -49,7 +49,7 @@ alls staðar þar sem þessi gögn birtast — líka á vefsíðunni sjálfri, e
 
 Þjónustan er opin og krefst hvorki innskráningar né API-lykils. Hausinn
 `x-vi-api-version` velur útgáfu þjónustunnar; hann er opinbert útgáfunúmer en
-ekki leyndarmál (frosna viðmiðið, `vidmid/vefur/capstone/earthquakes.html`).
+ekki leyndarmál (frosna viðmiðið, `vidmid-frosid:docs/vidmid/vefur/capstone/earthquakes.html`).
 
 ### 1.2 Hagstofan — brautskráning af háskólastigi
 
@@ -121,7 +121,7 @@ endurbirtingar á efni mbl.is. Engin frétt, fyrirsögn né mynd af síðunni fe
 | Endapunktar | `GET /3/tv/1668?language=en-US` og `GET /3/tv/1668/aggregate_credits?language=en-US` (`1668` = Friends) |
 | Auðkenning | `Authorization: Bearer <token>` á hverri beiðni — ókeypis reikningur |
 | Staða | **ekkert eintak til.** `TMDB_TOKEN` er hvorki í umhverfi né `.env` |
-| Heimild þessarar færslu | [`../data/raw/frysting.json`](../data/raw/frysting.json) (`ofryst`) og `vidmid/vefur/friends/phoebe-tribute.html` |
+| Heimild þessarar færslu | [`../data/raw/frysting.json`](../data/raw/frysting.json) (`ofryst`) og `vidmid-frosid:docs/vidmid/vefur/friends/phoebe-tribute.html` |
 
 Safnið átti að staðfesta hver leikur Phoebe og í hversu mörgum þáttum. Hvorki
 svörin né samantektin lifðu af: `vidmid/generated/phoebe-tmdb-summary.md`
@@ -199,7 +199,7 @@ verið sótt og lesin í þessu verkefni, svo fullar ritfangaupplýsingar vantar
 
 | Tilvísun eins og viðmiðið nefnir hana | Ár | Notuð fyrir | Hvar hún er nefnd |
 |---|---|---|---|
-| Veðurstofa Íslands, skýrsla **VÍ 2009-013**, kafli 4.3 | 2009 | Umfjöllun um stærðarkvarðann `Mlw` — af hverju hann er hvorki umreiknaður né merktur Richter | `vidmid/vefur/capstone/earthquakes.html` |
+| Veðurstofa Íslands, skýrsla **VÍ 2009-013**, kafli 4.3 | 2009 | Umfjöllun um stærðarkvarðann `Mlw` — af hverju hann er hvorki umreiknaður né merktur Richter | `vidmid-frosid:docs/vidmid/vefur/capstone/earthquakes.html` |
 | **Monroe, Colaresi & Quinn** | 2008 | Aðferðin að baki z-gildum úr log-odds hlutfalli með Dirichlet-prior (einkennandi orð Phoebe) | `vidmid/phoebe-stats/README.md` |
 
 Titlar, tímarit og slóðir eru **ekki** skráð hér vegna þess að viðmiðið gefur þau

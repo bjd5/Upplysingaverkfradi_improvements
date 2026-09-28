@@ -1,8 +1,8 @@
 """Viðmiðstölur gömlu síðunnar fyrir mbl-eintökin (issue #9).
 
 Væntingarnar í mbl-prófunum eru **ekki handskrifaðar**: þær eru lesnar hér úr
-``docs/vidmid/vidmid.json``, sem `src/python/vidmid/tolur.py` las út úr byggðu
-útgáfu gamla verkefnisins. Breytist viðmiðið fellur prófið — það er tilgangurinn
+``docs/vidmid/vidmid.json``, sem var lesið út úr byggðu útgáfu gamla
+verkefnisins (tagið ``vidmid-frosid``). Breytist viðmiðið fellur prófið — það er tilgangurinn
 (regla 5 í docs/endurbygging.md: breytist tala er það villa þar til annað er
 sannað).
 

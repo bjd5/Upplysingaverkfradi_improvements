@@ -22,9 +22,7 @@ mælingar. Væri hann handritstexti myndi prentunin afrita hann í logga og
 CI-úttök — nákvæmlega það sem á að koma í veg fyrir.
 
 **Afmörkun:** leitin les aðeins JSON- og CSV-talnaskrárnar sem
-`handritsreitir.py` telur upp. Byggðu HTML-síðurnar í `docs/vidmid/vefur/` og
-`search.json` eru utan hennar, og hrein keyrsla segir ekkert um þær — sjá
-docs/adferdafraedi.md, kafla 1.5.2.
+`handritsreitir.py` telur upp — sjá docs/adferdafraedi.md, kafla 1.5.2.
 
 Keyrsla:
     python3 src/python/vidmid/handritsleit.py stadfesta

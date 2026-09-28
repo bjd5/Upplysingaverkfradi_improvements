@@ -2,7 +2,7 @@
 
 Krafa verkefnisins er að nýja síðan sýni sömu tölur og sú gamla
 (``docs/endurbygging.md``, kafli 2). Viðmiðið er ``docs/vidmid/vidmid.json``,
-lesið úr byggðu gömlu síðunni af ``src/python/vidmid/tolur.py``.
+fryst úr byggðu gömlu síðunni (tagið ``vidmid-frosid``).
 
 Tvennt skiptir máli um aðferðina:
 

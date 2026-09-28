@@ -222,7 +222,7 @@ að engin talnaskrá geymi samfellda setningu úr þáttunum — kafli 1.5.2.
 | | Spurning | Staða |
 |---|---|---|
 | (a) | Á að skrá handritasöfnin sem **submodule** í `.gitmodules` — svo endurkeyrsla sé ein skipun fyrir þann sem hefur aðgang — eða halda þeim alveg utan repo-sins? Submodule geymir aðeins slóð og commit-SHA, ekki textann. | **opið** — `.gitmodules` er óbreytt |
-| (b) | Byggðu síðurnar í [`vidmid/vefur/`](vidmid/vefur/) geyma **átta orðréttar handritslínur** úr þætti `0101` (`friends/phoebe-statistics.html` og `search.json`), á `main` og í git-sögunni. Á að samþykkja þær sem tilvitnun, eða endurskrifa söguna? | **opið** — línurnar eru óbreyttar |
+| (b) | Byggðu síðurnar í `vidmid/vefur/` geyma **átta orðréttar handritslínur** úr þætti `0101` (`friends/phoebe-statistics.html` og `search.json`). Mappan var tekin úr trénu 28.9.2026, svo línurnar eru ekki lengur á `main`, en þær eru enn í git-sögunni og í taginu `vidmid-frosid`. Á að samþykkja þær sem tilvitnun, eða endurskrifa söguna? | **opið** — línurnar eru utan trésins en í sögunni |
 
 Spurning (b) ræður hvort skilyrði #3 — *ekkert höfundarréttarvarið efni í
 git-sögu þessa repo-s* — telst uppfyllt. Þangað til er það **ekki** staðfest.
@@ -267,26 +267,25 @@ prófin keyra hana á heimatilbúnum gervisetningum og falla ef hún **finnur þ
 ekki**.
 
 **Afmörkun — það sem leitin nær til, og það sem hún nær ekki til.** Hún les
-aðeins `.json`- og `.csv`-skrár á þessum stöðum, samtals **42 skrár**:
+aðeins `.json`- og `.csv`-skrár á þessum stöðum, samtals **35 skrár**:
 
 | Nær til | Nær **ekki** til |
 |---|---|
-| `data/processed/phoebe-stats/` | Byggðu HTML-síðurnar í `docs/vidmid/vefur/` |
-| `docs/vidmid/phoebe-stats/` | `docs/vidmid/vefur/search.json` |
-| `docs/vidmid/vefur/friends/phoebe-stats/` | Annað í repo-inu |
+| `data/processed/phoebe-stats/` | Annað í repo-inu |
+| `docs/vidmid/phoebe-stats/` | Git-söguna og tagið `vidmid-frosid` |
 | `docs/vidmid/generated/phoebe-central-perk-summary.json` | |
 
-Grænt próf þýðir því: **talnaskrárnar eru textalausar** — ekki að repo-ið sé
-það. Vitað er að það er það ekki: `friends/phoebe-statistics.html` og
-`search.json` geyma línurnar átta úr spurningu (b) hér að ofan. Prófið heitir
+Grænt próf þýðir því: **talnaskrárnar eru textalausar** — ekki að git-sagan
+sé það. Vitað er að hún er það ekki: `friends/phoebe-statistics.html` og
+`search.json` í taginu `vidmid-frosid` geyma línurnar átta úr spurningu (b) hér
+að ofan. Prófið heitir
 `test_skannadar_talnaskrar_geyma_enga_samfellda_setningu` til að nafnið lofi
 ekki meiru en það prófar.
 
-**Af hverju leitin er ekki víkkuð yfir `docs/vidmid/vefur/`:** hún myndi falla á
-línunum átta, og það er ekki leitarinnar að ákveða hvort þær mega standa. Að
-víkka hana og undanskilja línurnar væri að svara spurningu (b) hljóðlega; að
-víkka hana án undanþágu væri að gera `main` rautt vegna ákvörðunar sem ekki
-hefur verið tekin. Afmörkunin stendur þar til Björn hefur svarað (b).
+**Byggða gamla síðan er ekki lengur í trénu.** Hún var tekin út 28.9.2026 til
+að grisja repo-ið (sjá `vidmid/README.md`), og leitin þarf því ekki að taka
+afstöðu til hennar. Spurning (b) — hvort línurnar mega standa í sögunni — er
+enn Björns að svara.
 
 ### 1.6 TMDB — ekkert eintak
 
@@ -408,5 +407,5 @@ Opnar spurningar um heimildir og leyfi eru taldar upp í
 | 2 | Rökstuðningur fyrir `evaluation_mode=manual` | **að hluta** — skjalfest hvað sían útilokar, ekki af hverju valið var tekið |
 | 3 | Fimm mbl-svörin úr frosna eintakinu | **ekki reiknuð** — P1.5 reiknar þau og skráir muninn við gömlu síðuna |
 | 4 | Afmörkun TMDB-safnsins | **ófrágengið** — ekkert eintak til |
-| 5 | Höfundaréttur Friends-handritanna | **ákveðið að hluta** — valkostur A (27.9.2026): tölurnar í git, handritin aldrei. Opið: (a) submodule í `.gitmodules` og (b) átta orðréttar línur í `vidmid/vefur/` — sjá kafla 1.5.1 |
+| 5 | Höfundaréttur Friends-handritanna | **ákveðið að hluta** — valkostur A (27.9.2026): tölurnar í git, handritin aldrei. Opið: (a) submodule í `.gitmodules` og (b) átta orðréttar línur í git-sögunni (tagið `vidmid-frosid`) — sjá kafla 1.5.1 |
 | 6 | Vinnsla og greining Central Perk-hlutans | **skjalfest í viðmiðinu**, ekki endurtekin hér — P2.6 flytur hana yfir |

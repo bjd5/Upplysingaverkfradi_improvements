@@ -32,10 +32,10 @@ AFRIT = ROT / "data" / "processed" / "phoebe-stats"
 VIDMID = ROT / "docs" / "vidmid" / "phoebe-stats"
 PROVENANCE = ROT / "docs" / "vidmid" / "provenance.json"
 
-# Staðan 28.9.2026: 17 skrár í vinnugagninu, 17 í viðmiðinu, 7 í byggðu gömlu
-# síðunni og ein stök samantekt. Talan er hér svo leit sem hættir að finna
-# skrárnar falli í stað þess að verða græn á tómu mengi.
-SKANNADAR_SKRAR = 42
+# Staðan 28.9.2026: 17 skrár í vinnugagninu, 17 í viðmiðinu og ein stök
+# samantekt. Talan er hér svo leit sem hættir að finna skrárnar falli í stað
+# þess að verða græn á tómu mengi.
+SKANNADAR_SKRAR = 35
 UNDANTEKNINGAR_FJOLDI = 18
 
 # Bætaeins afritið: 17 skrár. docs/vidmid/phoebe-stats/README.md er vísvitandi
@@ -230,10 +230,8 @@ class RaunskrarProf(unittest.TestCase):
     """Fullyrðingin á skönnuðu skránum: engin geymir samfellda setningu.
 
     Afmörkunin er vísvitandi: leitin les JSON- og CSV-talnaskrárnar sem
-    `handritsreitir.MOPPUR` og `STAKAR_SKRAR` telja upp — ekki allt repo-ið.
-    Byggðu HTML-síðurnar í `docs/vidmid/vefur/` og `search.json` eru utan
-    hennar (docs/adferdafraedi.md, kafli 1.5.2). Grænt próf segir því ekkert um
-    þær, og nafnið segir það ekki heldur.
+    `handritsreitir.MOPPUR` og `STAKAR_SKRAR` telja upp — ekki allt repo-ið
+    (docs/adferdafraedi.md, kafli 1.5.2).
     """
 
     def test_skannadar_talnaskrar_geyma_enga_samfellda_setningu(self) -> None:

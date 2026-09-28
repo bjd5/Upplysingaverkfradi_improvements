@@ -1,7 +1,7 @@
 """Skilgreiningar fyrir handritsleitina: hvað er skannað og hvað er undanþegið.
 
-Aðskilið frá `handritsleit.py` af sömu ástæðu og `sofn.py` er aðskilið frá
-`provenance.py`: leitarreglan er kóði sem má lesa í einu, en undanþágurnar eru
+Aðskilið frá `handritsleit.py` af því að leitarreglan er kóði sem má lesa í
+einu, en undanþágurnar eru
 **skjalfest ákvörðun** sem verður að vera hægt að lesa og vefengja eina og sér.
 
 Sjá docs/adferdafraedi.md, kafla 1.5.2, fyrir röksemdina að baki þröskuldunum
@@ -12,19 +12,15 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-# Allar Friends-TALNASKRÁR sem eru í git. Þrjú afrit af tölfræðinni eru í
-# repo-inu: vinnugagnið, frosna viðmiðið, og eintakið inni í byggðu gömlu
-# síðunni sem Observable Plot las. Leitin nær til allra þriggja.
+# Allar Friends-TALNASKRÁR sem eru í git. Tvö afrit af tölfræðinni eru í
+# repo-inu: vinnugagnið og frosna viðmiðið. Leitin nær til beggja.
 #
-# Hún nær EKKI til byggðu HTML-síðnanna í docs/vidmid/vefur/ né search.json.
-# Þær geyma orðréttar handritslínur, og hvort þær mega standa er óútkljáð
-# ákvörðun í issue #3 — ekki eitthvað sem þessi listi á að leysa hljóðlega með
-# því að bæta möppunni við eða undanskilja hana. Sjá docs/adferdafraedi.md,
-# kafla 1.5.2.
+# Byggða gamla síðan (docs/vidmid/vefur/), sem geymdi orðréttar handritslínur,
+# var tekin úr trénu 28.9.2026 og er aðeins í git-taginu vidmid-frosid
+# (docs/adferdafraedi.md, kafli 1.5.2).
 MOPPUR = (
     "data/processed/phoebe-stats",
     "docs/vidmid/phoebe-stats",
-    "docs/vidmid/vefur/friends/phoebe-stats",
 )
 STAKAR_SKRAR = ("docs/vidmid/generated/phoebe-central-perk-summary.json",)
 

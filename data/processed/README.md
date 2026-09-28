@@ -73,9 +73,7 @@ python3 -m unittest tests.test_handritsleit
 ```
 
 Prófið leitar að strengjagildum sem líta út eins og setningar og fellur ef það
-finnur eitt. Það les **aðeins talnaskrárnar** (JSON og CSV) — ekki byggðu
-HTML-síðurnar í `docs/vidmid/vefur/`, sem vitað er að geyma orðréttar
-handritslínur (opið í issue #3). Þröskuldarnir, röksemdin fyrir þeim og
+finnur eitt. Það les **aðeins talnaskrárnar** (JSON og CSV). Þröskuldarnir, röksemdin fyrir þeim og
 afmörkunin eru í [`docs/adferdafraedi.md`](../../docs/adferdafraedi.md),
 kafla 1.5.2.
 
