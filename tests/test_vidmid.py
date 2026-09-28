@@ -31,6 +31,7 @@ class ProvenanceProf(unittest.TestCase):
         skjal = json.loads(provenance.PROVENANCE.read_text(encoding="utf-8"))
         for safn in skjal["geymt_i_tagi"]:
             self.assertEqual(safn["git_tag"], "vidmid-frosid")
+            self.assertTrue(safn["git_commit"].startswith("8f48a31"))
             for skra in safn["skrar"]:
                 with self.subTest(safn=safn["heiti"], skra=skra["slod"]):
                     self.assertFalse((hjalp.ROT / safn["mappa"] / skra["slod"]).exists())

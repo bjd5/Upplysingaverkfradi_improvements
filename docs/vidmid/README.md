@@ -30,7 +30,11 @@ Eftir það les ekkert próf síðuna sjálfa — hún var 71 skrá og 4,3 MB af
 Bootstrap og jQuery sem enginn þurfti að rýna í. Hún var tekin úr trénu
 28.9.2026 og er geymd óbreytt í taginu:
 
+Tagið bendir á commit `8f48a31` á `main` — síðasta commitið áður en síðan var
+tekin út — svo efnið er líka í sögu `main` þótt tagið vanti í klón:
+
 ```bash
+git tag vidmid-frosid 8f48a31                # ef tagið vantar
 git worktree add /tmp/vidmid vidmid-frosid   # gamla síðan og verkfærin
 git show vidmid-frosid:docs/vidmid/vefur/capstone/earthquakes.html
 ```
