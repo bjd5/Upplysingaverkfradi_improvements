@@ -2,7 +2,7 @@
 
 Krafa verkefnisins er að nýja síðan sýni sömu tölur og sú gamla
 (docs/endurbygging.md, kafli 2). Í dag eru þær tölur aðeins til sem texti inni í
-28 HTML-skrám í docs/vidmid/vefur/; próf geta ekki borið sig saman við HTML.
+24 HTML-skrám í docs/vidmid/vefur/; próf geta ekki borið sig saman við HTML.
 Þessi eining les síðurnar, flokkar hverja tölu og skrifar:
 
     docs/vidmid/vidmid.json   vélleshæft viðmið
