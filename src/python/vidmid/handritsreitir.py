@@ -16,11 +16,9 @@ from dataclasses import dataclass
 # repo-inu: vinnugagnið, frosna viðmiðið, og eintakið inni í byggðu gömlu
 # síðunni sem Observable Plot las. Leitin nær til allra þriggja.
 #
-# Hún nær EKKI til byggðu HTML-síðnanna í docs/vidmid/vefur/ né search.json.
-# Þær geyma orðréttar handritslínur, og hvort þær mega standa er óútkljáð
-# ákvörðun í issue #3 — ekki eitthvað sem þessi listi á að leysa hljóðlega með
-# því að bæta möppunni við eða undanskilja hana. Sjá docs/adferdafraedi.md,
-# kafla 1.5.2.
+# Byggðu síðurnar í docs/vidmid/vefur/ (HTML og search.json) eru skannaðar
+# sérstaklega eftir tilsvörum í handritasniði — sjá `VEFMAPPA` neðst og
+# `vefleit.py`.
 MOPPUR = (
     "data/processed/phoebe-stats",
     "docs/vidmid/phoebe-stats",
@@ -145,4 +143,51 @@ UNDANTEKNINGAR: dict[tuple[str, str], Undantekning] = {
         SKJOLUN, "Stutt lýsing á gagnagrunni greiningarinnar.",
         "933816da3f87e83059478ecffa0491ede9394a60745e391e0363a9a3f502e57a",
     ),
+}
+
+
+# --- Byggða gamla síðan (vefleit.py) --------------------------------------
+#
+# Ákvörðun (b) í issue #3, 28.9.2026: orðréttu línurnar úr þætti 0101 sem gamla
+# síðan birtir sem dæmi um þáttarann standa sem stutt tilvitnun, og git-sagan er
+# ekki endurskrifuð. Frosna viðmiðið er SHA-staðfest (docs/vidmid/provenance.json)
+# og má ekki breyta. Sjá docs/adferdafraedi.md, kafla 1.5.1–1.5.2.
+#
+# Undanþágan er FRYST lína fyrir línu: (skrá, SHA-256 línunnar) -> (fjöldi
+# tilvika, lýsing án texta). Línan er eins og `vefleit.tilsvor` skilar henni.
+# Textinn sjálfur er vísvitandi ekki hér — þá væri hann kominn í enn eina skrá.
+# Breytist lína um eitt orð breytist summan og leitin fellur.
+#
+# Níu línur í hvorri skrá: átta úr `<pre>`-dæminu (sviðslýsingin og sjö tilsvör;
+# sviðsleiðbeiningin er án `Nafn:` og greinist ekki) og hóplínan `All:` sem er
+# dæmi um undanskildar hóplínur. Í search.json nær hóplínan yfir fyrsta orð
+# íslenska textans sem fylgir henni, því Quarto skeytti <code> inn í málsgreinina.
+VEFMAPPA = "docs/vidmid/vefur"
+_STAT = "docs/vidmid/vefur/friends/phoebe-statistics.html"
+_LEIT = "docs/vidmid/vefur/search.json"
+_0101 = (
+    ("d1ab70e82a447018913479895d27559b1049b1c5067fba11387293b3b6b982b6",
+     "0101 <pre> lína 1: sviðslýsing, 9 orð"),
+    ("8002cc8651888cfcb632e665016618d3362746b8683bbdccf64e9e1f15e325ad",
+     "0101 <pre> lína 2: Monica, 11 orð"),
+    ("109e2788e3cf2566077c0369a979e7947dd2e41391ded7da453a54a76876fe07",
+     "0101 <pre> lína 3: Joey, 14 orð"),
+    ("9a229bd59706e582c8f979befde2cb0e53bc0498406ac6cdb6887c31e9ac516c",
+     "0101 <pre> lína 4: Chandler, 16 orð"),
+    ("960b26642ed9f0b125b3246eb3be3ba9424583830c0833c47c2bdd8c78c6ef2b",
+     "0101 <pre> lína 5: Phoebe, 5 orð"),
+    ("6a7fc97f6c7a9356cfc7517fba7efaad78b8759890cfddef6cde52a71866b93a",
+     "0101 <pre> lína 7: Phoebe, 16 orð"),
+    ("792cb4d5c08dbbc01830a1644a0d5f85f0bad6d32a685c1f64415f93a0f3f5dc",
+     "0101 <pre> lína 8: Monica, 21 orð"),
+    ("d98b01b0388a584c3e441914888711ab0b247faf5b2fdd9966d7b7b5f45d8ec6",
+     "0101 <pre> lína 9: Chandler, 6 orð"),
+)
+VEFUNDANTEKNINGAR: dict[tuple[str, str], tuple[int, str]] = {
+    **{(_STAT, sha): (1, lysing) for sha, lysing in _0101},
+    **{(_LEIT, sha): (1, lysing) for sha, lysing in _0101},
+    (_STAT, "ccd9083216e36d38ee36a7a3991897bb7a58d5b9485129ba99e6481bfc7421fc"): (
+        1, "0101 hóplína (All), 5 orð — dæmi um undanskildar hóplínur"),
+    (_LEIT, "f06b713529b99c315104efbd9bb0511ce4cd9185901b269f08313ced1c411d73"): (
+        1, "0101 hóplína (All), 5 orð + íslenskt „og“ — sama dæmi"),
 }
