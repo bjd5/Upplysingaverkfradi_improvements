@@ -7,7 +7,7 @@ tölurnar í svörum æfingarinnar. Annað úr skriftunni er þegar komið í tr
 * sókn og vistun hrás svars — ``sofnun/vedurstodvar.py`` (#13),
 * þáttun og sannreyning svarsins — ``vedurstodvar_faersla.py`` (#8),
 * síurnar ``active``, ``polygon`` og ``station_id`` — SQL í
-  ``src/sql/queries/vedurstodvar-siur.sql`` og ``vedurstodvar_samanburdur.py`` (#8),
+  ``src/sql/queries/vedurstodvar-*.sql`` og ``vedurstodvar_samanburdur.py`` (#8, #11),
 * fjarlægð, kassinn og föstu hnitin — ``vedurstodvar_samanburdur.py`` (#8).
 
 Þeir hlutar eru endurnýttir hér en ekki tvíteknir.

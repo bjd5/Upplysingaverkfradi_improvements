@@ -33,6 +33,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 from sqlite3 import Connection
 
+from gagnagrunnur import fyrirspurnir
+
 from .mbl_eintak import Eintak, finna_eintok
 from .mbl_utdrattur import Utdrattur, draga_ut_allt
 
@@ -56,20 +58,12 @@ INSERT INTO mbl_extractions (
 
 LEITA_SQL = "SELECT id, sha256 FROM mbl_snapshots WHERE fetched_at = ?"
 
-# Svörin lesin aftur út úr grunninum: það sem fór inn á að koma út, og hvert
+# Svörin lesin aftur út úr grunninum með sömu fyrirspurn og síðan birtir
+# (src/sql/queries/mbl-svor.sql, #11): það sem fór inn á að koma út, og hvert
 # svar á að benda á sitt eintak. Þetta er staðfestingin á kröfu issue #9 um að
 # öll fimm svörin fáist úr SQL.
-STADFESTA_SQL = """
-SELECT e.question_number AS nr,
-       e.question_is     AS spurning,
-       e.value_text      AS svar,
-       e.pattern_name    AS mynsturheiti,
-       s.raw_file        AS eintak
-  FROM mbl_extractions e
-  JOIN mbl_snapshots   s ON s.id = e.snapshot_id
- WHERE s.fetched_at = ?
- ORDER BY e.question_number
-"""
+SVOR = "mbl-svor"
+ALLAR_SPURNINGAR = None
 
 SQL_TAFLA_ER_TIL = "SELECT name FROM sqlite_master WHERE type = 'table' AND name = ?"
 
@@ -234,7 +228,8 @@ def stadfesta_svor(samband: Connection, sotta_stund: str) -> list[dict]:
     Hleðsla sem skrifar fjögur svör af fimm er ekki niðurstaða, svo frávik
     stöðvar keyrsluna í stað þess að skila hálfu korti (regla 6).
     """
-    radir = [dict(rad) for rad in samband.execute(STADFESTA_SQL, (sotta_stund,))]
+    breytur = (sotta_stund, ALLAR_SPURNINGAR, ALLAR_SPURNINGAR)
+    radir = [dict(rad) for rad in fyrirspurnir.keyra(samband, SVOR, breytur)]
     if len(radir) != SVOR_A_EINTAK:
         raise HledsluVilla(
             f"Eintakið {sotta_stund} á að hafa {SVOR_A_EINTAK} svör í grunninum "

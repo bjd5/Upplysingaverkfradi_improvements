@@ -46,11 +46,8 @@
         <p class="hetja__merkimidi">Rannsóknarverkefni · 2026</p>
         <h1>Gögn úr vefþjónustum, greind og gerð skiljanleg</h1>
         <p class="hetja__inngangur">
-          Sjö rannsóknir á opnum gögnum: jarðskjálftar, brautskráning,
-          veðurstöðvar, fréttatextar og þrjár greiningar á handritum
-          sjónvarpsþátta. Gögnin eru sótt frá vefþjónustum, geymd í
-          SQL-gagnagrunni og birt hér — hver tala með rekjanlega slóð aftur
-          í upprunaleg gögn.
+          Sjö rannsóknir á opnum gögnum, frá jarðskjálftum til Friends. Hver
+          tala er rekjanleg aftur í upprunaleg gögn.
         </p>
         <div class="hetja__adgerdir">
           <a class="hnappur hnappur--adal" href="#rannsoknir">Skoða rannsóknirnar</a>
@@ -66,19 +63,13 @@
         <!-- Textinn hér er sjálfgefinn ef JavaScript er slökkt (regla 3.4). -->
         <p class="stada-gagna" data-stada-gagna="gogn/yfirlit.json">
           <span class="stada-gagna__punktur" aria-hidden="true"></span>
-          <span><strong>Gagnasafn:</strong> uppfærsludagsetning birtist þegar
-          gögn hafa verið flutt út í <code>web/gogn/</code>.</span>
+          <span><strong>Gagnasafn:</strong> dagsetning síðustu uppfærslu
+          birtist hér.</span>
         </p>
       </section>
 
       <section class="hluti" id="rannsoknir" aria-labelledby="rannsoknir-titill">
         <h2 id="rannsoknir-titill">Rannsóknirnar sjö</h2>
-        <p>
-          Hver rannsókn stendur sjálfstætt og er einn smellur héðan. Innan
-          Phoebe-greininganna þriggja kemstu milli síðna í öðrum smelli — því
-          er ekkert efni lengra en þrjá smelli frá þessari síðu.
-        </p>
-
         <div class="kort-raster kort-raster--thrju">
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">01</p>
@@ -89,19 +80,19 @@
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">02</p>
             <h3>Brautskráning af háskólastigi</h3>
-            <p>Hve margir ljúka háskólanámi á Íslandi, greint eftir árum og námsstigi.</p>
+            <p>Hve stór hluti háskólanema lýkur námi innan sex ára.</p>
             <a class="kort__tengill" href="sidur/hagstofan.html">Skoða</a>
           </article>
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">03</p>
             <h3>Veðurstöðvar</h3>
-            <p>Hvar stöðvar Veðurstofunnar standa og hvernig þær dreifast um landið.</p>
+            <p>Hvar stöðvar Veðurstofunnar standa og hvernig þær dreifast.</p>
             <a class="kort__tengill" href="sidur/vedurstodvar.html">Skoða</a>
           </article>
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">04</p>
             <h3>Reglulegar segðir</h3>
-            <p>Fyrirsagnir og tenglar dregnir út úr vistaðri forsíðu mbl.is.</p>
+            <p>Fyrirsagnir og tenglar dregnir út úr vistaðri fréttasíðu mbl.is.</p>
             <a class="kort__tengill" href="sidur/mbl-regex.html">Skoða</a>
           </article>
           <article class="kort">
@@ -113,13 +104,13 @@
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">06</p>
             <h3>Söngur í Central Perk</h3>
-            <p>Hvar og hvenær Phoebe syngur á kaffihúsinu, yfir tíu þáttaraðir.</p>
+            <p>Hvenær Phoebe syngur á kaffihúsinu, yfir tíu þáttaraðir.</p>
             <a class="kort__tengill" href="sidur/phoebe-central-perk.html">Skoða</a>
           </article>
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">07</p>
             <h3>Hlutverkið í TMDB</h3>
-            <p>Hvernig hlutverkið birtist í opna kvikmyndagagnagrunninum TMDB.</p>
+            <p>Hvernig hlutverkið er skráð í kvikmyndagagnagrunninum TMDB.</p>
             <a class="kort__tengill" href="sidur/phoebe-tmdb.html">Skoða</a>
           </article>
         </div>
@@ -128,10 +119,9 @@
       <section class="hluti" aria-labelledby="adferd-titill">
         <h2 id="adferd-titill">Hvernig gögnin verða til</h2>
         <p>
-          Flæðið er einstefna og er aldrei rofið: vefþjónusta sendir gögn til
-          Python sem vistar svarið óbreytt, hreinsar það, setur í SQL-grunninn
-          og flytur loks út tilbúnar JSON-skrár. Vefsíðan les eingöngu þessar
-          skrár og talar aldrei sjálf við gagnagrunn eða vefþjónustu.
+          Gögnin eru sótt frá vefþjónustum, vistuð óbreytt, hreinsuð og sett
+          í gagnagrunn. Síðan les aðeins tilbúnar niðurstöður og talar aldrei
+          sjálf við vefþjónustu.
         </p>
         <p>
           <a href="sidur/adferdafraedi.html">Lesa aðferðafræðina í heild</a>
@@ -147,9 +137,8 @@
         <div>
           <h2>Um síðuna</h2>
           <p>
-            Rannsóknarverkefni í upplýsingaverkfræði. Gögnin eru sótt frá opnum
-            vefþjónustum, geymd í SQL-gagnagrunni og birt hér sem tilbúnar
-            JSON-skrár — hver tala á sér rekjanlega leið aftur í hrágögn.
+            Rannsóknarverkefni í upplýsingaverkfræði. Heimildir og aðferð
+            eru skráðar á aðferðafræðisíðunni.
           </p>
         </div>
         <nav aria-labelledby="fotur-rannsoknir">

@@ -179,7 +179,7 @@ class VidmidSkraProf(unittest.TestCase):
 
     def test_snid_og_tolulausar_sidur(self) -> None:
         s = self.vidmid["samantekt"]
-        self.assertEqual(s["sidur"], 28)
+        self.assertEqual(s["sidur"], 24)
         self.assertEqual(sorted(s["sidur_tolulausar"]),
                          ["friends/uppahalds-video.html",
                           "reflections/sveinn.html"])

@@ -31,6 +31,11 @@ from vinnsla import vedurstodvar_fyrirspurnir as spurn  # noqa: E402
 from vinnsla import vedurstodvar_samanburdur as sam  # noqa: E402
 from vinnsla import vedurstodvar_hledsla as hledsla  # noqa: E402
 from vinnsla.vedurstodvar_fyrirspurnir import FyrirspurnaVilla  # noqa: E402
+from vinnsla.vedurstodvar_mat import meta  # noqa: E402
+
+# Einingin er flutt inn sem eining, ekki klasar úr henni, svo unittest keyri
+# prófin hennar ekki tvisvar. Hún á SVG-þáttun súluritsins (viðmiðið).
+import test_vedurstodvar_mat_vidmid as mat_vidmid  # noqa: E402
 
 # Heiti síutalnanna eins og viðmiðstaflan skrifar þau.
 VIDMID_ENGIN_SIA = "engin sía"
@@ -39,89 +44,36 @@ VIDMID_KASSI = "`polygon`"
 VIDMID_KASSI_VIRKAR = "`polygon` + `active=true`"
 VIDMID_AUDKENNI = f"`station_id={sam.VALIN_STOD}`"
 
-# Fyrirspurnirnar sem þessi pakki tekur að sér. #11 (P1.7) safnar
-# fyrirspurnum hinna gagnasafnanna og á ekki að endurgera þessar.
+# Fyrirspurnirnar sem #8 tók að sér, nú ein skrá hver (#11), auk súluritsins.
 VAENTAR_FYRIRSPURNIR = frozenset(
     {
-        "allar_stodvar",
-        "fjoldi_stodva",
-        "stod_eftir_audkenni",
-        "virkar_stodvar",
-        "fjoldi_virkra",
-        "stodvar_i_marghyrningi",
-        "virkar_stodvar_i_marghyrningi",
-        "naesta_virka_stod",
-        "naesta_aflagda_stod",
-        "naesta_virka_langtimastod",
+        "vedurstodvar-allar-stodvar",
+        "vedurstodvar-fjoldi-stodva",
+        "vedurstodvar-stod-eftir-audkenni",
+        "vedurstodvar-virkar-stodvar",
+        "vedurstodvar-fjoldi-virkra",
+        "vedurstodvar-stodvar-i-marghyrningi",
+        "vedurstodvar-virkar-stodvar-i-marghyrningi",
+        "vedurstodvar-naesta-virka-stod",
+        "vedurstodvar-naesta-aflagda-stod",
+        "vedurstodvar-naesta-virka-langtimastod",
+        "vedurstodvar-kassi-eftir-fjarlaegd",
     }
 )
 
 
 class FyrirspurnasafnProf(unittest.TestCase):
-    """Skráin sjálf: heitin, breyturnar og að ekkert gildi sé límt í SQL."""
+    """Skrárnar sjálfar. Almennu kröfurnar (haus, breytur, engin samsetning) eru
+    prófaðar fyrir allar fyrirspurnir í ``test_fyrirspurnir.py``."""
 
-    @classmethod
-    def setUpClass(cls) -> None:
-        cls.safn = spurn.lesa_fyrirspurnir()
-
-    def test_allar_vaentar_fyrirspurnir_eru_i_skranni(self) -> None:
-        self.assertEqual(set(self.safn), set(VAENTAR_FYRIRSPURNIR))
-
-    def test_hver_fyrirspurn_er_otom(self) -> None:
-        for heiti, sql in self.safn.items():
-            with self.subTest(fyrirspurn=heiti):
-                self.assertTrue(sql.strip(), f"{heiti} er tóm")
-
-    def test_engin_fyrirspurn_notar_strengjasamsetningu(self) -> None:
-        """Regla 5: gildi fara inn sem ``?``, aldrei sem innsett texti.
-
-        Staðgenglar Python-sniðmáta (``%s``, ``{}``, f-strengur) í .sql-skrá
-        eru merki um að einhver hafi ætlað að setja gildi inn í fyrirspurnina
-        áður en hún er keyrð.
-        """
-        for heiti, sql in self.safn.items():
-            with self.subTest(fyrirspurn=heiti):
-                self.assertNotIn("%s", sql)
-                self.assertNotIn("{", sql)
-                self.assertNotIn("f'", sql)
-                self.assertNotIn('f"', sql)
-
-    def test_hver_fyrirspurn_ber_athugasemd_um_hvad_hun_svarar(self) -> None:
-        for heiti, sql in self.safn.items():
-            with self.subTest(fyrirspurn=heiti):
-                self.assertTrue(
-                    any(lina.strip().startswith("--") for lina in sql.splitlines()),
-                    f"{heiti} hefur enga athugasemd um hvað hún svarar",
-                )
-
-    def test_tvitekid_heiti_stodvar_lestur(self) -> None:
-        """Tvær fyrirspurnir með sama heiti — önnur myndi annars horfa þegjandi."""
-        with tempfile.TemporaryDirectory() as mappa:
-            slod = Path(mappa) / "tvitekid.sql"
-            slod.write_text(
-                "-- @fyrirspurn: sama\nSELECT 1;\n\n-- @fyrirspurn: sama\nSELECT 2;\n",
-                encoding="utf-8",
-            )
-            with self.assertRaises(FyrirspurnaVilla) as samhengi:
-                spurn.lesa_fyrirspurnir(slod)
-        self.assertIn("sama", str(samhengi.exception))
-
-    def test_skra_an_merkja_stodvar_lestur(self) -> None:
-        with tempfile.TemporaryDirectory() as mappa:
-            slod = Path(mappa) / "merkjalaus.sql"
-            slod.write_text("SELECT 1;\n", encoding="utf-8")
-            with self.assertRaises(FyrirspurnaVilla):
-                spurn.lesa_fyrirspurnir(slod)
-
-    def test_vantandi_skra_stodvar_lestur(self) -> None:
-        with tempfile.TemporaryDirectory() as mappa:
-            with self.assertRaises(FyrirspurnaVilla):
-                spurn.lesa_fyrirspurnir(Path(mappa) / "ekki-til.sql")
+    def test_allar_vaentar_fyrirspurnir_eru_a_hvitlistanum(self) -> None:
+        vedur = {h for h in spurn.fyrirspurnir.FYRIRSPURNIR if h.startswith(spurn.FORSKEYTI)}
+        self.assertEqual(vedur, set(VAENTAR_FYRIRSPURNIR))
 
     def test_okunn_fyrirspurn_gefur_skyra_villu(self) -> None:
         with self.assertRaises(FyrirspurnaVilla) as samhengi:
-            spurn.fyrirspurn("engin_slik_fyrirspurn")
-        self.assertIn("engin_slik_fyrirspurn", str(samhengi.exception))
+            spurn._saekja(None, "engin_slik_fyrirspurn")
+        self.assertIn("vedurstodvar-engin-slik-fyrirspurn", str(samhengi.exception))
 
 
 class HladinnGrunnurProf(unittest.TestCase):
@@ -277,6 +229,51 @@ class StodvavalUrSqlProf(HladinnGrunnurProf):
                     spurn.naesta_virka_stod(samband, sam.VR_II_BREIDD, sam.VR_II_LENGD)
             finally:
                 samband.close()
+
+
+class SulnaritUrSqlProf(HladinnGrunnurProf):
+    """Súluritið — stöðvarnar í kassanum eftir fjarlægð — úr SQL (#11, P2.4 liður 2)."""
+
+    def setUp(self) -> None:
+        self.radir = spurn.kassi_eftir_fjarlaegd(
+            self.samband, sam.VR_II_BREIDD, sam.VR_II_LENGD, self.mork
+        )
+
+    def test_sulurnar_eru_thaer_somu_og_a_gomlu_myndinni(self) -> None:
+        """Viðmiðið: nafn, auðkenni, metrar og ár hverrar súlu í sömu röð."""
+        texti = mat_vidmid.VIDMID_SVG.read_text(encoding="utf-8")
+        nofn = [(m["nafn"], int(m["audkenni"])) for m in mat_vidmid.SVG_NAFN.finditer(texti)]
+        gildi = [
+            (int(m["metrar"]), int(m["start"]), int(m["lok"]) if m["lok"] else None)
+            for m in mat_vidmid.SVG_GILDI.finditer(texti)
+        ]
+        self.assertEqual(len(nofn), mat_vidmid.LINUR_A_MYND)
+        self.assertEqual(
+            list(zip(nofn, gildi)),
+            [
+                ((r["name"], r["station_id"]), (r["metrar"], r["start_year"], r["end_year"]))
+                for r in self.radir[: mat_vidmid.LINUR_A_MYND]
+            ],
+        )
+
+    def test_fjoldinn_er_polygon_sian(self) -> None:
+        self.assertEqual(len(self.radir), self.vidmid[VIDMID_KASSI])
+        self.assertEqual(sum(r["is_active"] for r in self.radir), self.vidmid[VIDMID_KASSI_VIRKAR])
+
+    def test_sama_rod_og_matid_i_python(self) -> None:
+        """Tveir útreikningar sömu raðar mega ekki fara á skjön (athugasemd P2.4 á #14)."""
+        mat = meta(hledsla.lesa_eintak()[2])
+        self.assertEqual(
+            [(r["station_id"], r["metrar"]) for r in self.radir],
+            [(s.station_id, s.metrar) for s in mat.naestu],
+        )
+        self.assertEqual([r["distance_rank"] for r in self.radir],
+                         list(range(1, len(self.radir) + 1)))
+
+    def test_fjarlaegdin_er_oafrunnud_og_vaxandi(self) -> None:
+        fjarlaegdir = [r["distance_m"] for r in self.radir]
+        self.assertEqual(fjarlaegdir, sorted(fjarlaegdir))
+        self.assertTrue(any(f != round(f) for f in fjarlaegdir))
 
 
 if __name__ == "__main__":
