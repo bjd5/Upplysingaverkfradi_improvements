@@ -158,7 +158,7 @@ HANDRIT = os.environ.get(TRANSCRIPT_DIR_ENV, "")
                      f"{TRANSCRIPT_DIR_ENV} er ekki stillt — raunhandritin eru utan repo-sins "
                      "(issue #3); samanburðinum við viðmiðið er sleppt.")
 class RaunhandritVidVidmid(unittest.TestCase):
-    """Bæti fyrir bæti við docs/vidmid/phoebe-stats/ á raunhandritunum."""
+    """Bæti fyrir bæti við frosna eintakið í data/processed/phoebe-stats/."""
 
     @classmethod
     def setUpClass(cls) -> None:

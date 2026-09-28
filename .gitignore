@@ -26,8 +26,8 @@ data/processed/*
 # Undanþága (issue #3, valkostur A): Friends-tölfræðin. Þetta eru tölur UM
 # handritin — línufjöldi, senur, hlutföll, tíðnitöflur — ekki handritstextinn.
 # Handritin sjálf eru hvergi í þessu repo-i og koma aldrei hingað. Skrárnar eru
-# bætaeins afrit af frosna viðmiðinu og eru eina eftirlifandi eintakið af
-# greiningunni, svo þær eru FRUMGAGN fyrir þetta repo (regla 5).
+# frosna viðmiðið (SHA-256 í docs/vidmid/provenance.json) og eina eftirlifandi
+# eintakið af greiningunni, svo þær eru FRUMGAGN fyrir þetta repo (regla 5).
 # Sjá data/processed/README.md og docs/adferdafraedi.md, kafla 1.5.1.
 !data/processed/phoebe-stats/
 

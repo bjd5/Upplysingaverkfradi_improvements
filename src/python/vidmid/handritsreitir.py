@@ -12,15 +12,13 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-# Allar Friends-TALNASKRÁR sem eru í git. Tvö afrit af tölfræðinni eru í
-# repo-inu: vinnugagnið og frosna viðmiðið. Leitin nær til beggja.
+# Allar Friends-TALNASKRÁR sem eru í git.
 #
 # Byggða gamla síðan (docs/vidmid/vefur/), sem geymdi orðréttar handritslínur,
 # var tekin úr trénu 28.9.2026 og er aðeins í git-taginu vidmid-frosid
 # (docs/adferdafraedi.md, kafli 1.5.2).
 MOPPUR = (
     "data/processed/phoebe-stats",
-    "docs/vidmid/phoebe-stats",
 )
 STAKAR_SKRAR = ("docs/vidmid/generated/phoebe-central-perk-summary.json",)
 

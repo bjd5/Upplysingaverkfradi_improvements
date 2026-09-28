@@ -162,7 +162,7 @@ samanburðar og gaf sömu tölur (Monica munaði einni línu), svo niðurstöðu
 (tvítekning og aukaefni). Eftir standa **227 handritsskrár**, sem svara til **236
 sýndra þátta** — níu skrár geyma tvo þætti hver.
 
-**Skilgreiningar sem gilda alls staðar** (`vidmid/phoebe-stats/README.md`):
+**Skilgreiningar sem gilda alls staðar** (`vidmid-frosid:docs/vidmid/phoebe-stats/README.md`):
 
 - **Lína** = ein `Nafn: texti` blokk.
 - **Orð** = `[a-z][a-z'-]*` eftir að svigainnskot voru fjarlægð — `(hlær)` og
@@ -267,12 +267,12 @@ prófin keyra hana á heimatilbúnum gervisetningum og falla ef hún **finnur þ
 ekki**.
 
 **Afmörkun — það sem leitin nær til, og það sem hún nær ekki til.** Hún les
-aðeins `.json`- og `.csv`-skrár á þessum stöðum, samtals **35 skrár**:
+aðeins `.json`- og `.csv`-skrár á þessum stöðum, samtals **18 skrár**:
 
 | Nær til | Nær **ekki** til |
 |---|---|
 | `data/processed/phoebe-stats/` | Annað í repo-inu |
-| `docs/vidmid/phoebe-stats/` | Git-söguna og tagið `vidmid-frosid` |
+| | Git-söguna og tagið `vidmid-frosid` |
 | `docs/vidmid/generated/phoebe-central-perk-summary.json` | |
 
 Grænt próf þýðir því: **talnaskrárnar eru textalausar** — ekki að git-sagan
@@ -363,7 +363,7 @@ Frá tölu að hrágagni og til baka. Síðurnar eru þær sem
 | Hagstofan | `data/raw/hagstofan/` | safnsins eigin | P1.3 (#7) | `web/sidur/hagstofan.html` |
 | Veðurstöðvar | `data/raw/vedurstodvar/` | safnsins eigin | P1.4 (#8) | `web/sidur/vedurstodvar.html` |
 | mbl.is | `data/raw/mbl/` | `vidmid/provenance.json` | P1.5 (#9) | `web/sidur/mbl-regex.html` |
-| Friends | *engin — aðeins talnaniðurstöður* | `vidmid/phoebe-stats/_meta.json` | P1.6 (#10) | `phoebe-tolfraedi.html`, `phoebe-central-perk.html` |
+| Friends | *engin — aðeins talnaniðurstöður* | `../data/processed/phoebe-stats/_meta.json` | P1.6 (#10) | `phoebe-tolfraedi.html`, `phoebe-central-perk.html` |
 | TMDB | **vantar** | — | — | `web/sidur/phoebe-tmdb.html` |
 
 Skriftur sem lesa hrágögnin **í dag** eru tvær:

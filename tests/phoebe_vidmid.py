@@ -1,7 +1,7 @@
 """Samanburður Phoebe-úttaksins við frosna viðmiðið (issue #14, pakki P2.5).
 
-Viðmiðið er ``docs/vidmid/phoebe-stats/`` — 17 skrár sem gamla skriftan
-skrifaði og síðan birti. Það er **lesið**, aldrei afritað inn í prófin, svo
+Viðmiðið er ``data/processed/phoebe-stats/`` — 17 skrár sem gamla skriftan
+skrifaði og síðan birti, tryggðar með SHA-256 í ``docs/vidmid/provenance.json``. Það er **lesið**, aldrei afritað inn í prófin, svo
 ekki sé hægt að laga próf að greiningu í stað þess að laga greiningu að
 viðmiði.
 
@@ -26,9 +26,8 @@ from hjalp import ROT
 from vinnsla.friends_handrit import SOURCE_COMMIT  # noqa: E402
 from vinnsla.phoebe_samningur import GENERATOR, SUMMARY_NOTE  # noqa: E402
 
-VIDMIDSMAPPA = ROT / "docs" / "vidmid" / "phoebe-stats"
+VIDMIDSMAPPA = ROT / "data" / "processed" / "phoebe-stats"
 VIDMIDSMETA = VIDMIDSMAPPA / "_meta.json"
-EKKI_UTTAK = {"README.md"}
 
 # skrá -> (stimpill sem er felldur brott, {lykill: nýtt gildi}, {aftast bætt við})
 LEYFD_FRAVIK = {
@@ -40,7 +39,7 @@ LEYFD_FRAVIK = {
 
 def vidmidsskrar() -> list[str]:
     """Heiti skránna sem viðmiðið geymir og úttakið verður að skrifa."""
-    heiti = sorted(p.name for p in VIDMIDSMAPPA.iterdir() if p.name not in EKKI_UTTAK)
+    heiti = sorted(p.name for p in VIDMIDSMAPPA.iterdir())
     if not heiti:
         raise AssertionError(f"Viðmiðið í {VIDMIDSMAPPA} er tómt — samanburður sannar ekkert.")
     return heiti

@@ -148,7 +148,7 @@ fyrr en það er sótt á ný.
 | Undanskildar skrár | `0423uncut.html`, `07outtakes.html` |
 | Greint | 2026-09-17T09:47:09Z af `src/phoebe_analysis.py` í upprunaverkefninu |
 | Leyfi | `fangj/friends`: **ekkert** — safn afritaðra handrita án leyfis. `delvinso/friends`: MIT, sem nær yfir kóðann þar en ekki endilega yfir handritatextann |
-| Heimild þessarar færslu | [`vidmid/phoebe-stats/_meta.json`](vidmid/phoebe-stats/_meta.json), [`vidmid/phoebe-stats/README.md`](vidmid/phoebe-stats/README.md), issue #3 og issue #14 (athugasemd frá P2.4/P2.5, liður 6); dagsetningar pinnunar úr git-sögu upprunarepo-sins, dagsetning fangj-commits úr `git fetch --depth=1` 28.9.2026 |
+| Heimild þessarar færslu | [`../data/processed/phoebe-stats/_meta.json`](../data/processed/phoebe-stats/_meta.json), `vidmid-frosid:docs/vidmid/phoebe-stats/README.md`, issue #3 og issue #14 (athugasemd frá P2.4/P2.5, liður 6); dagsetningar pinnunar úr git-sögu upprunarepo-sins, dagsetning fangj-commits úr `git fetch --depth=1` 28.9.2026 |
 
 **Það var `delvinso` sem var greint, ekki `fangj`.** `summary.json` nefnir
 „fangj/delvinso“ sem heimild; sá texti er látinn standa því skráin er bætaeins
@@ -200,7 +200,7 @@ verið sótt og lesin í þessu verkefni, svo fullar ritfangaupplýsingar vantar
 | Tilvísun eins og viðmiðið nefnir hana | Ár | Notuð fyrir | Hvar hún er nefnd |
 |---|---|---|---|
 | Veðurstofa Íslands, skýrsla **VÍ 2009-013**, kafli 4.3 | 2009 | Umfjöllun um stærðarkvarðann `Mlw` — af hverju hann er hvorki umreiknaður né merktur Richter | `vidmid-frosid:docs/vidmid/vefur/capstone/earthquakes.html` |
-| **Monroe, Colaresi & Quinn** | 2008 | Aðferðin að baki z-gildum úr log-odds hlutfalli með Dirichlet-prior (einkennandi orð Phoebe) | `vidmid/phoebe-stats/README.md` |
+| **Monroe, Colaresi & Quinn** | 2008 | Aðferðin að baki z-gildum úr log-odds hlutfalli með Dirichlet-prior (einkennandi orð Phoebe) | `vidmid-frosid:docs/vidmid/phoebe-stats/README.md` |
 
 Titlar, tímarit og slóðir eru **ekki** skráð hér vegna þess að viðmiðið gefur þau
 ekki. Þau verða að koma úr heimildunum sjálfum þegar þær eru sóttar.

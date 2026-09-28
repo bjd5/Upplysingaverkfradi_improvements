@@ -19,9 +19,9 @@ Ekkert hér er handbreytt. Hver skrá er tryggð með SHA-256 í
 | [`vidmid.json`](vidmid.json) | 1 | **Viðmiðið sjálft:** 1.391 tala úr 28 síðum gömlu síðunnar, þar af 445 efnislegar niðurstöður. Prófin bera sig saman við þetta. |
 | [`vidmid.md`](vidmid.md) | 1 | Sama efni fyrir manneskju: umfang, staðfestar tölur og ósamræmi milli síðna. |
 | [`generated/`](generated/) | 13 | Afleidd úttök sem Quarto límdi inn í síðurnar. **`vedurstofa-*.md` eru eina ummerkið um veðurstöðvagögnin.** |
-| [`phoebe-stats/`](phoebe-stats/) | 18 | Friends-tölfræðin fullreiknuð. `_meta.json` geymir viðmiðstölurnar: 227 handritsskrár, 236 þættir, 61.161 tilsvar, 2,95% óflokkað. |
+| `../../data/processed/phoebe-stats/` | 17 | Friends-tölfræðin fullreiknuð. `_meta.json` geymir viðmiðstölurnar: 227 handritsskrár, 236 þættir, 61.161 tilsvar, 2,95% óflokkað. Vinnugagnið og viðmiðið eru sama eintakið. |
 | `../../data/raw/mbl/` | 2 | mbl.is-eintakið. Liggur í `data/raw/` því það er hrágagn, en er tryggt hér. |
-| **Git-tagið `vidmid-frosid`** | 77 | Byggða gamla Quarto-síðan (`vefur/`, 71 skrá) og tokenatöflur teymisins (6 skrár), ásamt verkfærunum sem lásu tölurnar úr síðunni. |
+| **Git-tagið `vidmid-frosid`** | 78 | Byggða gamla Quarto-síðan (`vefur/`, 71 skrá), tokenatöflur teymisins (6), README Friends-greiningarinnar, og verkfærin sem lásu tölurnar úr síðunni. |
 
 ### Af hverju gamla síðan er í taginu en ekki í trénu
 

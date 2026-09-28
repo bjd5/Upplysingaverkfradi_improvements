@@ -76,8 +76,8 @@
     ],
     "sidur_utan_lotu": []
   },
-  "fjoldi_skraa": 33,
-  "staerd_baet": 548782,
+  "fjoldi_skraa": 32,
+  "staerd_baet": 538289,
   "sofn": [
     {
       "heiti": "mbl",
@@ -208,20 +208,13 @@
     },
     {
       "heiti": "phoebe-stats",
-      "mappa": "docs/vidmid/phoebe-stats",
+      "mappa": "data/processed/phoebe-stats",
       "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats",
       "upprunarepo": "Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe",
-      "skyring": "Friends-tölfræðin fullreiknuð: línufjöldi, senur, hlutföll. Tölur um textann, ekki textinn sjálfur — handritin sjálf eru ekki afrituð (höfundaréttur óútkljáður, issue #3).",
-      "fjoldi_skraa": 18,
-      "staerd_baet": 112350,
+      "skyring": "Friends-tölfræðin fullreiknuð: línufjöldi, senur, hlutföll. Tölur um textann, ekki textinn sjálfur — handritin sjálf eru ekki afrituð (höfundaréttur óútkljáður, issue #3). Frosna eintakið í docs/vidmid/phoebe-stats var bætaeins afrit af data/processed/phoebe-stats; því var eytt 28.9.2026 og þetta safn staðfestir nú eintakið í data/processed beint.",
+      "fjoldi_skraa": 17,
+      "staerd_baet": 101857,
       "skrar": [
-        {
-          "slod": "README.md",
-          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/README.md",
-          "staerd_baet": 10493,
-          "sha256": "f4f944e42c23c995e188d6d27a5c0d1e4207fc424a2206bb5feb98edf23a2556",
-          "breytt_utc": "2026-09-17T09:42:10Z"
-        },
         {
           "slod": "_meta.json",
           "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/_meta.json",
@@ -905,6 +898,25 @@
           "staerd_baet": 2051,
           "sha256": "e15e5f5e7cbd5b6ce0011d661efe7e066c3f39b702074b084c1f1b50329d257b",
           "breytt_utc": "2026-09-16T14:56:37Z"
+        }
+      ]
+    },
+    {
+      "heiti": "phoebe-stats-readme",
+      "mappa": "docs/vidmid/phoebe-stats",
+      "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats",
+      "upprunarepo": "Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe",
+      "skyring": "README greiningarinnar í upprunaverkefninu: skilgreiningar og aðferð. Lýsir slóðum og CI upprunaverkefnisins. Geymd óbreytt í git-taginu vidmid-frosid.",
+      "git_tag": "vidmid-frosid",
+      "fjoldi_skraa": 1,
+      "staerd_baet": 10493,
+      "skrar": [
+        {
+          "slod": "README.md",
+          "uppruni": "~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/processed/phoebe-stats/README.md",
+          "staerd_baet": 10493,
+          "sha256": "f4f944e42c23c995e188d6d27a5c0d1e4207fc424a2206bb5feb98edf23a2556",
+          "breytt_utc": "2026-09-17T09:42:10Z"
         }
       ]
     }

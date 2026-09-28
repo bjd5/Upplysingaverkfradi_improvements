@@ -3,7 +3,7 @@
 Hver skýrsla geymir spurningu, aðferð, einingu, fyrirsagnartölur og
 töflurnar sjálfar. Lyklar, röð þeirra og textarnir eru **óbreyttir** úr
 ``src/phoebe_analysis.py`` (commit ``2865ed6``): frosna viðmiðið í
-``docs/vidmid/phoebe-stats/`` er borið saman við úttakið bæti fyrir bæti, og
+``data/processed/phoebe-stats/`` er borið saman við úttakið bæti fyrir bæti, og
 textarnir eru því látnir standa eins og þeir voru skrifaðir þá.
 
 Eingöngu staðalsafnið (regla 10).
