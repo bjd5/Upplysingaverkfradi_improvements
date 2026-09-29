@@ -1,0 +1,36 @@
+/* lykiltolur.css — fáar lykiltölur í spjöldum, efst í niðurstöðu.
+   Tölurnar sjálfar fyllir gagnalagið inn; hér er aðeins útlitið.
+   Almenn eining: ekkert í henni er bundið Hagstofusíðunni.               */
+
+.lykiltolur {
+  display: grid;
+  gap: var(--bil-3);
+  margin: 0 0 var(--bil-6);
+}
+
+@media (min-width: 40rem) {
+  .lykiltolur { grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
+}
+
+.lykiltolur__lidur {
+  padding: var(--bil-4);
+  background: var(--bak-upphaekkad);
+  border: var(--rammi-breidd) solid var(--rammi);
+  border-top: var(--rammi-breidd-breid) solid var(--adal-400);
+  border-radius: var(--radius);
+}
+
+.lykiltolur dt {
+  font-size: var(--texti-sm);
+  color: var(--texti-daufur);
+}
+
+.lykiltolur dd {
+  margin: var(--bil-1) 0 0;
+  font-family: var(--letur-fyrirsogn);
+  font-size: var(--texti-2xl);
+  font-weight: var(--thyngd-feit);
+  line-height: var(--linuhaed-thett);
+  color: var(--texti);
+  font-variant-numeric: tabular-nums;
+}
