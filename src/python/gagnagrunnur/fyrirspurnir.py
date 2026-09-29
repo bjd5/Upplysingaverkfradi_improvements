@@ -86,6 +86,12 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "friends-plass-eftir-thattarod",
     "friends-interaction-lift",
     "friends-nafntilvik-eftir-thattarod",
+    # Central Perk (migration 007)
+    "central-perk-samantekt",
+    "central-perk-hopar",
+    "central-perk-handrit",
+    "central-perk-songhandrit",
+    "central-perk-segdir",
 })
 
 # Skráarheiti hvers leyfðs heitis, reiknað úr listanum sjálfum (aldrei úr inntaki).

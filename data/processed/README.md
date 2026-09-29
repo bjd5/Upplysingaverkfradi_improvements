@@ -99,7 +99,38 @@ Tölurnar birtast síðar á `web/sidur/phoebe-tolfraedi.html` og
 
 ---
 
-## 2. Annað sem lendir hér
+## 2. `central-perk-frosid/` — Central Perk-niðurstöðurnar (í git)
+
+| Atriði | Gildi |
+|---|---|
+| Skrár | 3: `phoebe-central-perk-summary.json`, `phoebe-central-perk.svg`, `phoebe-central-perk-regex.md` |
+| Stærð | 32.693 bæti |
+| Upprunalegt verkfæri | `src/phoebe_central_perk.py` í upprunaverkefninu (@ `2865ed6`) |
+| Gagnagrunnur greiningarinnar | 227 HTML-handritsskrár, `delvinso` @ `a4641fe` |
+| Í git? | **Já** — sama undanþága og kafli 1.2 |
+| Summur | `docs/vidmid/provenance.json`, safnið `generated` |
+
+**Hvaðan:** bætaeins afrit (`cp -p`) af sömu skrám í
+[`docs/vidmid/generated/`](../../docs/vidmid/generated/). Eins og í kafla 1.1
+er viðmiðið **sönnunargagnið** og afritið hér **vinnugagnið**; hleðslan les
+aðeins afritið. SHA-256 hverrar skrár er borin við summu viðmiðsins í
+`provenance.json` áður en nokkuð er lesið, og mappan verður að geyma nákvæmlega
+þessar þrjár skrár.
+
+**Af hverju ekki `phoebe-central-perk/`:** sú mappa er úttak endurreiknaðrar
+greiningar (P2.6, `vinnsla/central_perk_uttak.py`). Keyrsla hennar myndi
+skrifa yfir frysta afritið — frosið aðfang og úttak eiga ekki að deila möppu.
+
+**Hvað er hér:** samantekt hópanna þriggja (óafrúnnuð miðgildi og meðaltöl),
+punktarit með einum punkti á handritsskrá (hópur og hlutdeild Phoebe með einum
+aukastaf — eina frosna heimildin á handritastigi) og segðirnar sem greiningin
+keyrði. Engin tilsvör; handritin koma aldrei hingað (kafli 1.5, regla 3).
+
+**Notandi:** `src/python/vinnsla/central_perk_hledsla.py` (migration 007).
+
+---
+
+## 3. Annað sem lendir hér
 
 Unnin gögn annarra safna (t.d. millistig hagstofuvinnslunnar) eru **ekki** í
 git og eiga ekki að vera. Bætist safn við sem þarf undanþágu verður hún að vera

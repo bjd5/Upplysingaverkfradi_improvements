@@ -28,6 +28,10 @@ data/processed/*
 # eintakið af greiningunni, svo þær eru FRUMGAGN fyrir þetta repo (regla 5).
 # Sjá data/processed/README.md og docs/adferdafraedi.md, kafla 1.5.1.
 !data/processed/phoebe-stats/
+# Undanþága (issue #10, valkostur A): frosnu Central Perk-niðurstöðurnar —
+# bætaeins afrit þriggja skráa úr docs/vidmid/generated/, sama röksemd og að
+# ofan. Sjá data/processed/README.md, kafla 2.
+!data/processed/central-perk-frosid/
 
 # Friends-handritin (issue #3, valkostur A): handritasöfnin fara ALDREI í git.
 # Séu þau klónuð hingað til að endurkeyra greininguna má ekki committa þau.

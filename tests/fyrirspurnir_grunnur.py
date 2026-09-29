@@ -31,6 +31,7 @@ from gagnagrunnur.keyrari import keyra  # noqa: E402
 from gagnagrunnur.tenging import opna  # noqa: E402
 from vinnsla import friends_hledsla, hagstofan, jardskjalftar_hledsla  # noqa: E402
 from vinnsla import mbl_hledsla, vedurstodvar_hledsla  # noqa: E402
+from vinnsla import central_perk_hledsla  # noqa: E402
 from vinnsla import vedurstodvar_samanburdur as vedur  # noqa: E402
 from vinnsla.mbl_eintak import finna_eintok  # noqa: E402
 from vinnsla.vedurstodvar_fyrirspurnir import skra_fjarlaegdarfall  # noqa: E402
@@ -71,7 +72,7 @@ _GRUNNUR: sqlite3.Connection | None = None
 
 
 def hladinn_grunnur() -> sqlite3.Connection:
-    """Grunnur með öllum migrations og öllum fimm gagnasöfnunum hlöðnum."""
+    """Grunnur með öllum migrations og öllum gagnasöfnunum hlöðnum (fimm + Central Perk)."""
     global _GRUNNUR
     if _GRUNNUR is None:
         mappa = tempfile.TemporaryDirectory()
@@ -85,6 +86,7 @@ def hladinn_grunnur() -> sqlite3.Connection:
         vedurstodvar_hledsla.hlada(samband)
         mbl_hledsla.hlada_ollu(samband)
         friends_hledsla.hlada(samband)
+        central_perk_hledsla.hlada(samband)
         samband.commit()
         skra_fjarlaegdarfall(samband)
         _GRUNNUR = samband
