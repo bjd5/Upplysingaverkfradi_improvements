@@ -19,7 +19,7 @@ import utflutningur_grunnur as ug
 import main  # noqa: E402
 from gagnagrunnur.keyrari import keyra  # noqa: E402
 from gagnagrunnur.tenging import tenging  # noqa: E402
-from utflutningur.flytja_ut import AN_UTFLUTNINGS, UTFLUTNINGAR  # noqa: E402
+from utflutningur.flytja_ut import AN_UTFLUTNINGS, SKRAR, UTFLUTNINGAR  # noqa: E402
 
 ELDRA = b'{"eldri": true}\n'
 
@@ -43,7 +43,7 @@ class MainFlytjaUtProf(unittest.TestCase):
         grunnur = ug.byggja_grunn(self.mappa / "rannsokn.sqlite")
         with self.assertLogs("utflutningur.flytja_ut", "WARNING") as skra:
             self.assertEqual(self._main(grunnur), 0)
-        self.assertEqual(sorted(p.name for p in self.vefgogn.iterdir()), sorted(UTFLUTNINGAR))
+        self.assertEqual(sorted(p.name for p in self.vefgogn.iterdir()), sorted(SKRAR))
         vidvorun = "\n".join(skra.output)
         for safn in AN_UTFLUTNINGS:
             with self.subTest(safn=safn):

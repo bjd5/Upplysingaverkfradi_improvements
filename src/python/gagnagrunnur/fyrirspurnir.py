@@ -79,8 +79,11 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "vedurstodvar-kassi-eftir-fjarlaegd",
     "vedurstodvar-sokn",
     # mbl.is
+    "mbl-eintok",
     "mbl-svor",
     # Friends / Phoebe
+    "friends-uppruni",
+    "friends-umfang",
     "friends-thattunargaedi",
     "friends-plass-alls",
     "friends-plass-eftir-thattarod",

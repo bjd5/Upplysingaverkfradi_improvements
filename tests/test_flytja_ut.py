@@ -22,7 +22,7 @@ import utflutningur_grunnur as ug
 
 from hjalp import ROT  # noqa: E402
 from utflutningur import flytja_ut as eining  # noqa: E402
-from utflutningur.flytja_ut import UTFLUTNINGAR, flytja_ut  # noqa: E402
+from utflutningur.flytja_ut import SKRAR, UTFLUTNINGAR, flytja_ut  # noqa: E402
 from utflutningur.json_skrif import HAMARKS_BAETI, UtflutningsVilla  # noqa: E402
 
 ELDRA = b'{"eldri": true}\n'
@@ -52,8 +52,8 @@ class FlytjaUtProf(unittest.TestCase):
 
     def test_skrifar_eina_skra_a_hvert_safn(self) -> None:
         skrifadar = flytja_ut(self.mappa, GRUNNUR)
-        self.assertEqual([slod.name for slod in skrifadar], list(UTFLUTNINGAR))
-        self.assertEqual(sorted(p.name for p in self.mappa.iterdir()), sorted(UTFLUTNINGAR))
+        self.assertEqual([slod.name for slod in skrifadar], list(SKRAR))
+        self.assertEqual(sorted(p.name for p in self.mappa.iterdir()), sorted(SKRAR))
 
     def test_skrarnar_eru_litlar(self) -> None:
         for slod in flytja_ut(self.mappa, GRUNNUR):
