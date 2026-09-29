@@ -41,10 +41,12 @@ git show vidmid-frosid:docs/vidmid/vefur/capstone/earthquakes.html
 Skráalistinn og SHA-256 hverrar skráar standa áfram í `provenance.json` undir
 `geymt_i_tagi`, svo tagið er jafn staðfestanlegt og tréð.
 
-**Höfundaréttur:** byggðu síðurnar geyma átta orðréttar handritslínur úr
-þætti `0101`. Þær eru ekki lengur á `main`, en eru enn í git-sögunni og
-taginu — opin spurning (b) í issue #3, sjá
-[`../adferdafraedi.md`](../adferdafraedi.md), kafla 1.5.1.
+**Höfundaréttur:** byggðu síðurnar geyma orðréttar handritslínur úr þætti
+`0101` (átta í `<pre>`-dæminu og ein hóplína). Þær eru ekki lengur á `main`, en
+eru enn í git-sögunni og taginu. Ákvörðun (b) í issue #3, 28.9.2026: þær standa
+sem stutt tilvitnun og sagan er ekki endurskrifuð. Handritsleitin ber þær við
+frysta undanþágu í commit `f23035c` — sjá
+[`../adferdafraedi.md`](../adferdafraedi.md), kafla 1.5.1–1.5.2.
 
 ## 2. Byggingin er úr þremur commitum, ekki einu
 
