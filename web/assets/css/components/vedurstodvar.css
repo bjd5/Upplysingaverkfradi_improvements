@@ -5,9 +5,9 @@
 /* --- Frosið eintak: sóknardagsetningin efst, ofan við fold ---------------- */
 .vedur-eintak {
   display: grid;
-  gap: var(--bil-2);
-  margin-top: var(--bil-6);
-  padding: var(--bil-4) var(--bil-6);
+  gap: var(--bil-1);
+  margin: 0 0 var(--bil-4);
+  padding: var(--bil-3) var(--bil-4);
   background: var(--ahersla-100);
   border-left: var(--rammi-breidd-breid) solid var(--ahersla-500);
   border-radius: var(--radius);
@@ -16,10 +16,7 @@
 .vedur-eintak > *,
 .vedur-eintak [data-gogn-efni] > * { margin: 0; }
 
-.vedur-eintak [data-gogn-efni]:not([hidden]) {
-  display: grid;
-  gap: var(--bil-2);
-}
+.vedur-eintak [data-gogn-efni]:not([hidden]) { display: grid; }
 
 .vedur-eintak__merki {
   font-size: var(--texti-xs);
@@ -33,17 +30,30 @@
 
 .vedur-eintak__dags {
   font-family: var(--letur-fyrirsogn);
-  font-size: var(--texti-xl);
+  font-size: var(--texti-lg);
   line-height: var(--linuhaed-thett);
   color: var(--texti);
 }
 
-.vedur-eintak__skyring {
+/* Fyrirvarinn er fastur texti: hann stendur líka án JavaScript. */
+.vedur-fyrirvari {
+  margin: var(--bil-4) 0 0;
+  padding-left: var(--bil-4);
+  border-left: var(--rammi-breidd-breid) solid var(--ahersla-500);
   font-size: var(--texti-sm);
   color: var(--texti);
 }
 
-.vedur-eintak .stada-gagna { padding: var(--bil-2) var(--bil-4); }
+/* Upprunalínan sem gagnahluti.js bætir við: þétt hér, svo fyrirsögnin haldist
+   ofan við fold í síma. Textinn er óbreyttur. */
+.vedur-eintak .stada-gagna {
+  gap: var(--bil-2);
+  padding: 0;
+  background: none;
+  border: 0;
+  font-size: var(--texti-xs);
+  color: var(--texti);
+}
 
 /* --- Svarið: stöðin sem forritið les ------------------------------------- */
 .vedur-svar__spjald {
@@ -149,6 +159,10 @@
   background: var(--bak-daufur);
   border: 0;
   border-radius: var(--radius-pilla);
+}
+
+@media (min-width: 48rem) {
+  .vedur-sula { min-inline-size: calc(var(--bil-24) * 2); }
 }
 
 /* Söluaðilaforskeyti hvert í sinni reglu: óþekkt forskeyti í lista ógildir

@@ -75,19 +75,20 @@
     }), "Síurnar");
   });
 
-  // Raðirnar í gogn eru þegar raðaðar eftir fjarlægð, næsta fyrst.
+  // Raðirnar í gogn eru þegar raðaðar eftir fjarlægð, næsta fyrst. Staðan er
+  // annar dálkur svo hún sjáist líka í síma án þess að skruna töflunni.
   layer.registerRenderer("vedurstodvar-stodvar", function (doc, section) {
     fillHooks(doc, section);
     const chosen = objectAt(doc, "lysigogn.svor.naesta_virka").audkenni;
     const longest = Math.max.apply(null, doc.gogn.map(function (s) { return s.metrar; }));
     const wrapper = layer.buildTable({
-      caption: "Stöðvarnar " + data.formatNumber(doc.gogn.length) +
-               " innan kassans um VR-II, næsta fyrst",
+      caption: "Stöðvar innan kassans um VR-II, næsta fyrst — alls " +
+               data.formatNumber(doc.gogn.length),
       columns: [
         { heading: "Stöð (auðkenni)", key: "stod" },
+        { heading: "Staða", key: "stada" },
         { heading: "Fjarlægð (m)", key: "metrar", numeric: true },
-        { heading: "Mælingar", key: "timabil" },
-        { heading: "Staða", key: "stada" }
+        { heading: "Mælingar", key: "timabil" }
       ],
       rows: doc.gogn.map(function (s) {
         return {
@@ -104,7 +105,7 @@
       if (s.audkenni === chosen) tr.className = "vedur-rod--valin";
       else if (!isActive(s)) tr.className = "vedur-rod--aflogd";
       // Súlan endurtekur töluna sjónrænt; skjálesari les töluna sjálfa.
-      const bar = tr.children[1].appendChild(document.createElement("meter"));
+      const bar = tr.children[2].appendChild(document.createElement("meter"));
       bar.className = "vedur-sula";
       bar.max = longest;
       bar.value = s.metrar;
