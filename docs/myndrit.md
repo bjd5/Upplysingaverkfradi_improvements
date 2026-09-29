@@ -63,8 +63,7 @@ og ný teikning eru ekki sömu bæti.
 | Skrá | Hlutverk | Þarf matplotlib |
 |---|---|---|
 | `utflutningur/tokens.py` | Les `tokens.css`, leysir `var()`, skilar báðum þemum | nei |
-| `utflutningur/andstaeda.py` | WCAG 2.1 andstæðumæling | nei |
-| `utflutningur/myndrit_litir.py` | Litahlutverk `--myndrit-*` og kröfur þeirra | nei |
+| `utflutningur/myndrit_litir.py` | Litahlutverk `--myndrit-*`, kröfur þeirra og WCAG 2.1 andstæðumæling | nei |
 | `utflutningur/islenskt_snid.py` | `5,5`, `1.234`, `70,5%`, `1. nóv.` — án `locale` | nei |
 | `utflutningur/myndrit.py` | Sameiginlega lagið: rcParams úr tokens, ákvarðað SVG | **já** |
 | `utflutningur/myndrit_skjalftar.py` | Sýnidæmið: daglegir skjálftar | **já** |
@@ -78,7 +77,7 @@ Litir, letur, ákvarðað úttak og letursnið fylgja þá sjálfkrafa.
 ## 3. Litir og mæld andstæða
 
 Litahlutverkin eru skilgreind í `tokens.css` undir `--myndrit-*` og mæld gegn
-`--myndrit-bak` í báðum þemum. Mælt með `utflutningur.andstaeda` (WCAG 2.1):
+`--myndrit-bak` í báðum þemum. Mælt með `utflutningur.myndrit_litir` (WCAG 2.1):
 
 | Hlutverk | Token | Ljóst | Dökkt | Krafa |
 |---|---|---|---|---|

@@ -25,9 +25,9 @@ import unittest
 from pathlib import Path
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
-from friends_gervihandrit import skrifa_gervihandrit  # noqa: E402
+from phoebe_hjalp import skrifa_gervihandrit  # noqa: E402
 from hjalp import ROT  # noqa: E402
-from phoebe_vidmid import (  # noqa: E402
+from phoebe_hjalp import (  # noqa: E402
     munur_vid_vidmid, skrifa_vaent, vidmidsmeta, vidmidsskrar,
 )
 
@@ -158,7 +158,7 @@ HANDRIT = os.environ.get(TRANSCRIPT_DIR_ENV, "")
                      f"{TRANSCRIPT_DIR_ENV} er ekki stillt — raunhandritin eru utan repo-sins "
                      "(issue #3); samanburðinum við viðmiðið er sleppt.")
 class RaunhandritVidVidmid(unittest.TestCase):
-    """Bæti fyrir bæti við docs/vidmid/phoebe-stats/ á raunhandritunum."""
+    """Bæti fyrir bæti við frosna eintakið í data/processed/phoebe-stats/."""
 
     @classmethod
     def setUpClass(cls) -> None:

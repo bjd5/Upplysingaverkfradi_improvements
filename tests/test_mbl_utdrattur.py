@@ -9,7 +9,7 @@ Tvennt er prófað hér:
   að koma skýr villa en ekki þögult núll eða tómur listi (regla 6).
 
 Prófin eru netlaus og lesa frosna eintakið í ``data/raw/mbl/`` án þess að
-skrifa í það (regla 10). Jaðartilvikin nota gervieintök úr ``mbl_gervigogn``.
+skrifa í það (regla 10). Jaðartilvikin nota gervieintök úr ``mbl_hjalp``.
 
     python3 -m unittest discover -s tests
 """
@@ -20,7 +20,7 @@ import unittest
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 
-from mbl_vidmid import (  # noqa: E402
+from mbl_hjalp import (  # noqa: E402
     ELDRA_EINTAKID,
     FROSNA_EINTAKID,
     FROSNA_MD5,
@@ -29,7 +29,7 @@ from mbl_vidmid import (  # noqa: E402
 )
 from vinnsla.mbl_eintak import finna_eintok  # noqa: E402
 from vinnsla.mbl_mynstur import SPURNINGAR, UtdrattarVilla  # noqa: E402
-from vinnsla.mbl_ord import synileg_ord, synilegur_texti  # noqa: E402
+from vinnsla.mbl_mynstur import synileg_ord, synilegur_texti  # noqa: E402
 from vinnsla.mbl_utdrattur import (  # noqa: E402
     draga_ut_allt,
     draga_ut_gengi_usd,

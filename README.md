@@ -31,6 +31,7 @@ python3 src/python/main.py --skref allt          # eða: safna | vinna | hlada |
 
 scripts/endurbyggja-grunn.sh                     # byggir grunninn frá grunni
 python3 -m unittest discover -s tests            # prófin (Python 3.12+)
+python3 src/python/vidmid/provenance.py stadfesta # frosnu gögnin (SHA-256)
 ```
 
 - **Grunnurinn** verður aðeins til úr `src/sql/migrations/`. Endurbyggingin

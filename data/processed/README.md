@@ -25,24 +25,23 @@ nýtt úr `data/raw/`. Sú regla hefur eina undanþágu, og hún er skjalfest h�
 
 ### 1.1 Hvaðan skrárnar koma
 
-Þær eru **bætaeins afrit** af frosna viðmiðinu í
-[`docs/vidmid/phoebe-stats/`](../../docs/vidmid/phoebe-stats/), afritaðar með
-`cp -p` (breytingartímar varðveittir). Viðmiðið er sjálft afrit af
-`data/processed/phoebe-stats/` í upprunaverkefninu — sama slóð og hér, því
-þessi mappa tekur við sama hlutverki.
+Þær eru **bætaeins afrit** af `data/processed/phoebe-stats/` í
+upprunaverkefninu — sama slóð og hér, því þessi mappa tekur við sama
+hlutverki. SHA-256 hverrar skráar er skráð í
+[`docs/vidmid/provenance.json`](../../docs/vidmid/provenance.json).
 
 **Skrárnar eru ekki endurreiknaðar hér og verða það ekki.** Greiningarskriftan
 las handritin, og handritin eru ekki í þessu repo-i (kafli 1.3). Það sem er hér
 er niðurstaðan, fryst.
 
-Viðmiðsafritið er **sönnunargagnið** og afritið hér er **vinnugagnið**. Þau eru
-eins að innihaldi en hafa ólíkt hlutverk: viðmiðinu má aldrei breyta, og
-hleðslan á aldrei að lesa það (þá væri sönnunargagnið orðið aðfang).
+**Skrárnar hér eru bæði vinnugagnið og viðmiðið.** Áður lá annað bætaeins
+eintak í `docs/vidmid/phoebe-stats/`; því var eytt 28.9.2026 því tvö eins
+eintök sönnuðu ekkert umfram SHA-256. Breytist skrá hér — líka ef
+`vinnsla.phoebe_uttak` er keyrt á raunhandritunum án `--uttak` — fellur
+`provenance.py stadfesta` og `tests/test_vidmid.py`.
 
-Ein skrá úr viðmiðinu er **vísvitandi ekki afrituð**:
-`docs/vidmid/phoebe-stats/README.md`. Hún lýsir slóðum, `.gitignore`-reglum og
-CI-keyrslum **upprunaverkefnisins** og væri ósönn hér. Hún er varðveitt þar sem
-hún á að vera — í viðmiðinu.
+README greiningarinnar úr upprunaverkefninu (skilgreiningar og aðferð) er í
+git-taginu: `git show vidmid-frosid:docs/vidmid/phoebe-stats/README.md`.
 
 ### 1.2 Af hverju þetta er í git þegar annað hér er það ekki
 
@@ -73,9 +72,7 @@ python3 -m unittest tests.test_handritsleit
 ```
 
 Prófið leitar að strengjagildum sem líta út eins og setningar og fellur ef það
-finnur eitt. Það les **aðeins talnaskrárnar** (JSON og CSV) — ekki byggðu
-HTML-síðurnar í `docs/vidmid/vefur/`, sem vitað er að geyma orðréttar
-handritslínur (opið í issue #3). Þröskuldarnir, röksemdin fyrir þeim og
+finnur eitt. Það les **aðeins talnaskrárnar** (JSON og CSV). Þröskuldarnir, röksemdin fyrir þeim og
 afmörkunin eru í [`docs/adferdafraedi.md`](../../docs/adferdafraedi.md),
 kafla 1.5.2.
 
@@ -83,8 +80,8 @@ kafla 1.5.2.
 
 | Notandi | Hvað hann gerir |
 |---|---|
-| `src/python/vinnsla/` — **P1.6, issue #10** | Hleður tölunum í grunninn. Les **aðeins** úr þessari möppu, aldrei úr `docs/vidmid/` og aldrei úr handritum |
-| `src/python/vidmid/handritsleit.py` | Staðfestir að engin skrá geymi samfellda setningu, og að afritið sé bætaeins við viðmiðið |
+| `src/python/vinnsla/` — **P1.6, issue #10** | Hleður tölunum í grunninn. Les **aðeins** úr þessari möppu og aldrei úr handritum |
+| `src/python/vidmid/handritsleit.py` | Staðfestir að engin skrá geymi samfellda setningu |
 
 Tölurnar birtast síðar á `web/sidur/phoebe-tolfraedi.html` og
 `web/sidur/phoebe-central-perk.html` (bylgja 3).
@@ -98,8 +95,7 @@ Tölurnar birtast síðar á `web/sidur/phoebe-tolfraedi.html` og
    (`.gitignore` útilokar `data/external/` og `data/fangj-friends/`). Hvort
    söfnin verða skráð sem submodule (slóð + commit-SHA, enginn texti) er
    **óákveðið** — spurning (a) í issue #3.
-4. Staðfestingin er `python3 src/python/vidmid/provenance.py stadfesta` fyrir
-   viðmiðið og prófin hér að ofan fyrir afritið.
+4. Staðfestingin er `python3 src/python/vidmid/provenance.py stadfesta`.
 
 ---
 

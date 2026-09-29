@@ -1,7 +1,7 @@
 """Úttak Central Perk-greiningarinnar í ``data/processed/`` (issue #14, P2.6).
 
-Skref 5b í ``src/phoebe_central_perk.py`` (commit ``2865ed6``) — *skrifa* — og
-inngangur skriftunnar (``main``, ``--audit``).
+Skref 5 í ``src/phoebe_central_perk.py`` (commit ``2865ed6``) — *taka saman*
+og *skrifa* — og inngangur skriftunnar (``main``, ``--audit``).
 
 Skrár í ``data/processed/phoebe-central-perk/``:
 
@@ -34,22 +34,26 @@ from __future__ import annotations
 
 import argparse
 import logging
+import math
+import statistics
 import sys
 from pathlib import Path
 from typing import Sequence
 
 try:  # keyrt sem eining innan pakkans
-    from .central_perk_greining import EpisodeResult, analyse
-    from .central_perk_samantekt import EPISODE_FIELDS, episode_rows, pattern_rows, summarise
-    from .central_perk_songur import audit_lines
+    from .central_perk_greining import EpisodeResult, analyse, audit_lines
+    from .central_perk_mynstur import (
+        CENTRAL_PERK_GROUP, DOCUMENTED_PATTERNS, GROUP_ORDER, MAIN_CAST, PHOEBE_SINGS,
+    )
     from .friends_handrit import (
         EXCLUDED_FILES, ROT, SOURCE_COMMIT, SOURCE_REPOSITORY, TranscriptError, transcript_paths,
     )
     from .phoebe_uttak import ensure_outside_web, write_csv, write_json
 except ImportError:  # keyrt beint úr möppunni
-    from central_perk_greining import EpisodeResult, analyse
-    from central_perk_samantekt import EPISODE_FIELDS, episode_rows, pattern_rows, summarise
-    from central_perk_songur import audit_lines
+    from central_perk_greining import EpisodeResult, analyse, audit_lines
+    from central_perk_mynstur import (
+        CENTRAL_PERK_GROUP, DOCUMENTED_PATTERNS, GROUP_ORDER, MAIN_CAST, PHOEBE_SINGS,
+    )
     from friends_handrit import (
         EXCLUDED_FILES, ROT, SOURCE_COMMIT, SOURCE_REPOSITORY, TranscriptError, transcript_paths,
     )
@@ -65,6 +69,96 @@ PATTERNS_FILE = "phoebe-central-perk-regex.json"
 META_FILE = "_meta.json"
 OUTPUT_FILES = (SUMMARY_FILE, EPISODES_FILE, PATTERNS_FILE, META_FILE)
 
+
+# --- Samantekt í töflur ---------------------------------------------------------
+#
+# ``summarise`` er óbreytt úr gömlu skriftunni svo ``summary.json`` stemmi bæti
+# fyrir bæti við viðmiðið. Í stað Markdown-töflunnar og SVG-punktaritsins sem
+# féllu niður (regla 2) koma ``episode_rows`` — hópur og hlutdeild Phoebe í
+# hverju handriti — og ``pattern_rows``, segðirnar sem Markdown-skráin sýndi.
+
+PERCENTAGE_POINTS = 100
+
+EPISODE_FIELDS = [
+    "episode_id", "group", "has_central_perk", "singing_scenes",
+    *(f"words_{name.lower()}" for name in MAIN_CAST),
+    "main_cast_words", "phoebe_share",
+]
+
+
+def _median(values: list[float], what: str) -> float:
+    """Miðgildi; tóm röð er villa með skýringu, ekki ``StatisticsError`` úr djúpinu."""
+    if not values:
+        raise ValueError(f"Ekkert gildi fyrir {what} — miðgildi er óskilgreint.")
+    return statistics.median(values)
+
+
+def group_summary(results: Sequence[EpisodeResult], group: str) -> dict[str, float | int]:
+    """Fjöldi, miðgildi og meðaltal hlutdeildar Phoebe og miðgildi hlutfallsins í einum hópi.
+
+    Hlutfallið „hinir fimm á móti Phoebe“ er aðeins reiknað fyrir handrit
+    þar sem hún segir eitthvað (endanlegt gildi).
+    """
+    rows = [row for row in results if row.group == group]
+    shares = [row.phoebe_share for row in rows]
+    ratios = [row.friends_to_phoebe_ratio for row in rows
+              if math.isfinite(row.friends_to_phoebe_ratio)]
+    return {
+        "n": len(rows),
+        "median_phoebe_share": _median(shares, f"hlutdeild Phoebe í hópnum {group}"),
+        "mean_phoebe_share": statistics.mean(shares),
+        "median_friends_to_phoebe_ratio": _median(ratios, f"hlutfallið í hópnum {group}"),
+    }
+
+
+def summarise(results: Sequence[EpisodeResult]) -> dict[str, object]:
+    """Miðgildi og meðaltal hlutdeildar Phoebe í hverjum hópi (``summary.json``).
+
+    Miðgildi er aðalmælikvarðinn: tvöföld og óvenju löng handrit hefðu annars
+    of mikil áhrif. Lyklar og röð eru óbreytt úr gömlu skriftunni.
+    """
+    groups = {group: group_summary(results, group) for group in GROUP_ORDER}
+    singing_rows = [row for row in results if row.group == PHOEBE_SINGS]
+    song_share = groups[PHOEBE_SINGS]["median_phoebe_share"]
+    cp_share = groups[CENTRAL_PERK_GROUP]["median_phoebe_share"]
+    return {
+        "transcript_files": len(results),
+        "singing_files": len(singing_rows),
+        "singing_scenes": sum(row.singing_scenes for row in singing_rows),
+        "singing_episode_ids": [row.episode_id for row in singing_rows],
+        "groups": groups,
+        # Munurinn á miðgildum söng- og Central Perk-hópsins, í prósentustigum.
+        "median_difference_percentage_points":
+            PERCENTAGE_POINTS * (float(song_share) - float(cp_share)),
+    }
+
+
+def episode_rows(results: Sequence[EpisodeResult]) -> list[dict[str, object]]:
+    """Ein röð á handritaskrá — tölurnar sem punktaritið gamla sýndi, og orðin að baki."""
+    rows = []
+    for result in results:
+        row: dict[str, object] = {
+            "episode_id": result.episode_id,
+            "group": result.group,
+            "has_central_perk": int(result.has_central_perk),
+            "singing_scenes": result.singing_scenes,
+        }
+        row.update({f"words_{name.lower()}": result.words[name] for name in MAIN_CAST})
+        row["main_cast_words"] = result.main_cast_words
+        row["phoebe_share"] = result.phoebe_share
+        rows.append(row)
+    return rows
+
+
+def pattern_rows() -> list[dict[str, str]]:
+    """Segðirnar orðréttar úr kóðanum, með skýringum — svo síðan sýni það sem keyrði."""
+    return [
+        {"name": name, "pattern": pattern.pattern, "catches": catches, "misses": misses}
+        for name, pattern, catches, misses in DOCUMENTED_PATTERNS
+    ]
+
+
+# --- Skrifað ----------------------------------------------------------------------
 
 def metadata(results: Sequence[EpisodeResult]) -> dict[str, object]:
     """``_meta.json``: uppruni talnanna — án vegguklukkustimpils (#47)."""

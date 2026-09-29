@@ -8,7 +8,6 @@ config/secrets*
 # Gögn — afleidd eða of stór (reglur 5 og 7)
 data/db/
 data/raw/*
-!data/raw/.gitkeep
 # Undanþága (P0.1, issue #30): mbl-eintakið er EINA eintakið sem til er —
 # hráa svarið var aldrei í git og hverfur með vélinni sé það ekki fryst hér.
 !data/raw/mbl/
@@ -21,13 +20,12 @@ data/raw/*
 !data/raw/README.md
 !data/raw/frysting.json
 data/processed/*
-!data/processed/.gitkeep
 !data/processed/README.md
 # Undanþága (issue #3, valkostur A): Friends-tölfræðin. Þetta eru tölur UM
 # handritin — línufjöldi, senur, hlutföll, tíðnitöflur — ekki handritstextinn.
 # Handritin sjálf eru hvergi í þessu repo-i og koma aldrei hingað. Skrárnar eru
-# bætaeins afrit af frosna viðmiðinu og eru eina eftirlifandi eintakið af
-# greiningunni, svo þær eru FRUMGAGN fyrir þetta repo (regla 5).
+# frosna viðmiðið (SHA-256 í docs/vidmid/provenance.json) og eina eftirlifandi
+# eintakið af greiningunni, svo þær eru FRUMGAGN fyrir þetta repo (regla 5).
 # Sjá data/processed/README.md og docs/adferdafraedi.md, kafla 1.5.1.
 !data/processed/phoebe-stats/
 

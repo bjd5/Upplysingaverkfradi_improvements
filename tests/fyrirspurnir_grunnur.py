@@ -34,7 +34,7 @@ from vinnsla import mbl_hledsla, vedurstodvar_hledsla  # noqa: E402
 from vinnsla import vedurstodvar_samanburdur as vedur  # noqa: E402
 from vinnsla.mbl_eintak import finna_eintok  # noqa: E402
 from vinnsla.vedurstodvar_fyrirspurnir import skra_fjarlaegdarfall  # noqa: E402
-from mbl_vidmid import FROSNA_EINTAKID  # noqa: E402
+from mbl_hjalp import FROSNA_EINTAKID  # noqa: E402
 
 # Keyrarinn og hleðslurnar skrá hvert skref; það er ekki það sem prófin mæla.
 for _heiti in ("gagnagrunnur.keyrari", "vinnsla"):

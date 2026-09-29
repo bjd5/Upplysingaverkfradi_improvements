@@ -25,7 +25,7 @@ import unittest
 from pathlib import Path
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
-from central_perk_vidmid import (  # noqa: E402
+from central_perk_hjalp import (  # noqa: E402
     VIDMID_SUMMARY, VIDMID_SVG, csv_points, regex_markdown, svg_points,
 )
 from hjalp import ROT  # noqa: E402

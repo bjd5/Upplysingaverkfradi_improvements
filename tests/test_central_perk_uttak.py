@@ -1,6 +1,6 @@
 """Próf fyrir greiningu, samantekt og úttak Central Perk (issue #14, pakki P2.6).
 
-Keyrt frá enda til enda á gervihandritunum í ``central_perk_gervihandrit``
+Keyrt frá enda til enda á gervihandritunum í ``central_perk_hjalp``
 (netlaust, án raunhandrita — issue #3). Væntu tölurnar eru handtaldar þar.
 Skilyrðin eru líka prófuð þar sem þau eiga að BRESTA (kafli 6): mappa sem
 vantar, hópur án handrita, skrif í ``web/gogn/``.
@@ -17,13 +17,13 @@ import unittest
 from pathlib import Path
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
-from central_perk_gervihandrit import VAENT, skrifa_gervihandrit  # noqa: E402
-from central_perk_vidmid import regex_markdown  # noqa: E402
+from central_perk_hjalp import VAENT, skrifa_gervihandrit  # noqa: E402
+from central_perk_hjalp import regex_markdown  # noqa: E402
 from hjalp import ROT  # noqa: E402
 
 from vinnsla.central_perk_greining import EpisodeResult, analyse  # noqa: E402
 from vinnsla.central_perk_mynstur import DOCUMENTED_PATTERNS, MAIN_CAST  # noqa: E402
-from vinnsla.central_perk_samantekt import pattern_rows, summarise  # noqa: E402
+from vinnsla.central_perk_uttak import pattern_rows, summarise  # noqa: E402
 from vinnsla.central_perk_uttak import (  # noqa: E402
     EPISODES_FILE, META_FILE, OUTPUT_FILES, PATTERNS_FILE, SUMMARY_FILE, main, run,
     write_outputs,

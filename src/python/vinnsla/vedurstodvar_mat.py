@@ -4,7 +4,7 @@ Síðasti hluti ``src/vedurstofa_stodvar.py`` í upprunaverkefninu sem enn var
 ófluttur: *greiningin* sem velur stöðina sem forritið á að lesa og reiknar
 tölurnar í svörum æfingarinnar. Annað úr skriftunni er þegar komið í tréð:
 
-* sókn og vistun hrás svars — ``sofnun/vedurstodvar.py`` (#13),
+* sókn og vistun hrás svars — ``sofnun/sofn.py`` (#13),
 * þáttun og sannreyning svarsins — ``vedurstodvar_faersla.py`` (#8),
 * síurnar ``active``, ``polygon`` og ``station_id`` — SQL í
   ``src/sql/queries/vedurstodvar-*.sql`` og ``vedurstodvar_samanburdur.py`` (#8, #11),

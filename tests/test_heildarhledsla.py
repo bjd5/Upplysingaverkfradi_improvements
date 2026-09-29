@@ -34,8 +34,8 @@ import main  # noqa: E402
 from friends_grunnur import vidmid_gildi  # noqa: E402
 from gagnagrunnur.fingrafar import _oruggt_nafn  # noqa: E402
 from keyrsla import hledsla  # noqa: E402
-from mbl_grunnur import SVOR_SQL  # noqa: E402
-from mbl_vidmid import FROSNA_EINTAKID, vidmidstolur  # noqa: E402
+from mbl_hjalp import SVOR_SQL  # noqa: E402
+from mbl_hjalp import FROSNA_EINTAKID, vidmidstolur  # noqa: E402
 from test_friends_hledsla import FJOLDATOLUR  # noqa: E402
 from test_hagstofan_hledsla import AUDKENNI, VAENT_STAERDIR, VAENTAR_MAELINGAR  # noqa: E402
 from test_jardskjalftar_hledsla import VAENTIR_ATBURDIR, VAENTIR_DAGAR  # noqa: E402

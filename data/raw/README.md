@@ -8,8 +8,8 @@ aftur hingað.
 
 1. **Ekkert er handbreytt** — hvorki gögnin né `provenance.json` (reglur 4 og 10).
 2. **Ekkert er sótt tvisvar að óþörfu.** Athugaðu þessa möppu áður en þú sækir
-   (regla 4). Skriftan `frysta.py` gerir það sjálf og sækir ekki yfir eintak
-   sem er þegar til.
+   (regla 4). `scripts/saekja-gogn.sh` gerir það sjálft og sækir ekki yfir
+   eintak sem er þegar til.
 3. **Hvert safn ber provenance**: þjónusta, slóð, aðferð, allar breytur,
    söfnunartími, User-Agent, SHA-256 og svarstærð.
 
@@ -93,9 +93,14 @@ issue #12), þar sem lyklameðferð og hraðatakmörkun eru leyst á einum stað
 
 ## 4. Að frysta og staðfesta
 
+`frysting.json` er skráin yfir hvað var fryst, hvenær og hvaðan. Safn sem er
+þegar vistað í gamla verkefninu er afritað óbreytt með `frysta_afrit.py` (bætt
+í `SOFN` þar, sjá `docs/uppruni.md`); nýtt eintak frá vefþjónustu er sótt með
+`scripts/saekja-gogn.sh <safn> --thvinga`.
+
 ```bash
-python3 src/python/sofnun/frysta.py allt         # afrit + veðurstöðvar + TMDB-skráning
-python3 src/python/sofnun/frysta.py stadfesta    # reiknar SHA-256 upp á nýtt
+python3 src/python/sofnun/frysta_afrit.py            # afritar söfnin í SOFN
+python3 src/python/vidmid/provenance.py stadfesta    # reiknar SHA-256 upp á nýtt
 ```
 
 `stadfesta` gerir athugasemd við breytta skrá, horfna skrá **og** skrá sem hefur
