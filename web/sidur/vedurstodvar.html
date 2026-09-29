@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Veðurstöðvar Veðurstofunnar — Upplýsingaverkfræði</title>
-  <meta name="description" content="Stöðvaskrá Veðurstofu Íslands: hvar stöðvarnar standa og hvernig þær dreifast um landið.">
+  <meta name="description" content="Hvaða veðurstöð Veðurstofu Íslands er næst VR-II og mælir hún enn? Greining á frosnu eintaki af stöðvaskránni.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
@@ -12,9 +12,14 @@
   <link rel="stylesheet" href="../assets/css/components/braudmylsna.css">
   <link rel="stylesheet" href="../assets/css/components/undirvalmynd.css">
   <link rel="stylesheet" href="../assets/css/components/sidu-haus.css">
-  <link rel="stylesheet" href="../assets/css/components/bidstada.css">
   <link rel="stylesheet" href="../assets/css/components/naesta-skref.css">
+  <link rel="stylesheet" href="../assets/css/components/stada-gagna.css">
+  <link rel="stylesheet" href="../assets/css/components/gagnahluti.css">
+  <link rel="stylesheet" href="../assets/css/components/vedurstodvar.css">
   <script src="../assets/js/valmynd.js" defer></script>
+  <script src="../assets/js/gogn.js" defer></script>
+  <script src="../assets/js/gagnahluti.js" defer></script>
+  <script src="../assets/js/vedurstodvar.js" defer></script>
 </head>
 <body class="sida">
 
@@ -62,7 +67,26 @@
         <div class="sidu-haus__adal">
           <p class="sidu-haus__flokkur">Viðauki B · Vefþjónustur</p>
           <h1>Veðurstöðvar Veðurstofunnar</h1>
-          <p class="sidu-haus__inngangur">Hvar veðurstöðvar landsins standa, í hvaða hæð og hvernig þær dreifast um landshlutana. Stöðvaskráin breytist, svo hér er greint eintak frá einum degi.</p>
+          <p class="sidu-haus__inngangur">Hvaða veðurstöð er næst VR-II og mælir hún enn? Svarið byggir á stöðvaskrá Veðurstofunnar eins og hún var á einum tilteknum degi.</p>
+
+          <div class="vedur-eintak" data-gogn="vedurstodvar.json"
+               data-gogn-teiknari="vedurstodvar">
+            <p class="vedur-eintak__merki">
+              <span class="vedur-eintak__takn" aria-hidden="true">❄</span>
+              Frosið eintak — ekki lifandi staða
+            </p>
+            <noscript>
+              <p class="gogn-stada">Stöðvaskráin var sótt einu sinni og fryst.
+              Sóknardagsetningin er sett inn með JavaScript; án þess má lesa hana
+              í <a href="../gogn/vedurstodvar.json">gagnaskránni</a>.</p>
+            </noscript>
+            <div data-gogn-efni hidden>
+              <p class="vedur-eintak__dags">Sótt <strong data-vedur-dags="uppruni.sott"></strong></p>
+              <p class="vedur-eintak__skyring">Stöðvaskráin breytist þegar stöð er sett upp
+              eða lögð niður. Allt á síðunni lýsir skránni þennan dag, ekki eins og
+              hún er núna.</p>
+            </div>
+          </div>
         </div>
         <aside class="sidu-haus__hlid" aria-labelledby="stadreyndir-titill">
           <h2 class="sidu-haus__hlid-titill" id="stadreyndir-titill">Um þessa síðu</h2>
@@ -73,28 +97,259 @@
             </div>
             <div>
               <dt>Eining</dt>
-              <dd>Ein færsla á hverja stöð</dd>
+              <dd>Ein færsla á hverja stöð, virka eða aflagða</dd>
+            </div>
+            <div>
+              <dt>Viðmiðunarpunktur</dt>
+              <dd>VR-II við Hjarðarhaga í Reykjavík</dd>
             </div>
             <div>
               <dt>Staða síðunnar</dt>
-              <dd>Beinagrind — greining í vinnslu</dd>
+              <dd>Fullbúin — byggð á frosnu eintaki</dd>
             </div>
           </dl>
         </aside>
       </div>
 
-      <article class="efni" aria-labelledby="efni-titill">
-        <h2 id="efni-titill">Greiningin</h2>
-        <div class="bidstada">
-          <p class="bidstada__merki">
-            <span class="bidstada__punktur" aria-hidden="true"></span>
-            Efni í vinnslu
-          </p>
-          <p class="bidstada__skyring">
-            Greiningin birtist hér þegar gögnin eru tilbúin. Þangað til má lesa
-            um <a href="adferdafraedi.html">aðferðina</a>.
-          </p>
-        </div>
+      <article class="efni" aria-labelledby="svarid-titill">
+
+        <section class="gagnahluti vedur-svar" data-gogn="vedurstodvar.json"
+                 data-gogn-teiknari="vedurstodvar" aria-labelledby="svarid-titill">
+          <h2 id="svarid-titill">Svarið</h2>
+          <p>Forrit á að sýna veðrið í VR-II og þarf að velja eina veðurstöð til að
+          lesa. Næsta stöð dugar ekki ein og sér: hún þarf líka að mæla enn.</p>
+          <noscript>
+            <p class="gogn-stada">Svarið er sett inn með JavaScript. Án þess má lesa
+            það beint úr <a href="../gogn/vedurstodvar.json">gagnaskránni</a>
+            (reiturinn <code>svor.naesta_virka</code>).</p>
+          </noscript>
+          <div data-gogn-efni hidden>
+            <div class="vedur-svar__spjald">
+              <p class="vedur-svar__inngangur">Forritið á að lesa</p>
+              <p class="vedur-svar__stod">
+                <span data-gogn-reitur="svor.naesta_virka.nafn"></span>
+                <span class="vedur-svar__audkenni">stöð nr. <span data-vedur-texti="svor.naesta_virka.station_id"></span></span>
+              </p>
+              <dl class="vedur-svar__tolur">
+                <div>
+                  <dt>Fjarlægð frá VR-II</dt>
+                  <dd><span data-gogn-reitur="svor.naesta_virka.metrar"></span> m</dd>
+                </div>
+                <div>
+                  <dt>Mælir frá</dt>
+                  <dd data-vedur-texti="svor.naesta_virka.fyrsta_ar"></dd>
+                </div>
+                <div>
+                  <dt>Staða</dt>
+                  <dd data-vedur-stada="svor.naesta_virka"></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        <section class="gagnahluti" data-gogn="vedurstodvar.json"
+                 data-gogn-teiknari="vedurstodvar" aria-labelledby="uppruni-titill">
+          <h2 id="uppruni-titill">Hvaðan gögnin koma</h2>
+          <p>Veðurstofa Íslands birtir skrá yfir allar veðurstöðvar sínar í opinni
+          vefþjónustu. Hún er sótt með GET, án auðkenningar og án lykils, og svarið er
+          JSON-fylki með einni færslu á hverja stöð.</p>
+          <p>Skráin lýsir stöðvunum sjálfum, ekki veðrinu. Í henni eru engar mælingar,
+          aðeins lýsigögn. Fjórir reitir bera greininguna:</p>
+          <div class="tafla-umgjord">
+            <table>
+              <caption class="skjalesari">Reitirnir sem greiningin notar</caption>
+              <thead>
+                <tr><th scope="col">Reitur</th><th scope="col">Merking</th><th scope="col">Notkun hér</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code>station</code>, <code>name</code></td><td>auðkenni og heiti</td><td>merking í töflunum</td></tr>
+                <tr><td><code>lat</code>, <code>lon</code></td><td>breidd og lengd</td><td>fjarlægð frá VR-II</td></tr>
+                <tr><td><code>start</code></td><td>ár sem mælingar hófust</td><td>hvort stöðin nái aftur í tímann</td></tr>
+                <tr><td><code>ending</code></td><td>ár sem mælingar hættu, tómt ef stöðin mælir enn</td><td>mat á nothæfi</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Reiturinn <code>ending</code> ræður matinu. Tómt gildi þýðir að stöðin mælir
+          enn; ártal þýðir að hún hætti það ár, hversu nálæg sem hún er. Hvorki hnitin né
+          nafnið segja þetta.</p>
+          <h3 id="vr-titill">Viðmiðunarpunkturinn</h3>
+          <p>Hnit VR-II voru flett upp í Nominatim hjá OpenStreetMap. Utan um þau er
+          dreginn kassi sem afmarkar leitina.</p>
+          <noscript>
+            <p class="gogn-stada">Hnitin og kassinn eru sett inn með JavaScript. Án
+            þess má lesa þau beint úr <a href="../gogn/vedurstodvar.json">gagnaskránni</a>.</p>
+          </noscript>
+          <div data-gogn-efni hidden>
+            <dl class="stadreyndir vedur-hnit">
+              <div>
+                <dt>Staður</dt>
+                <dd data-gogn-reitur="vidmidunarpunktur.heiti"></dd>
+              </div>
+              <div>
+                <dt>Breidd, lengd</dt>
+                <dd><span data-gogn-reitur="vidmidunarpunktur.breidd"></span>; <span data-gogn-reitur="vidmidunarpunktur.lengd"></span></dd>
+              </div>
+              <div>
+                <dt>Radíus kassans</dt>
+                <dd><span data-gogn-reitur="vidmidunarpunktur.radius_km"></span> km</dd>
+              </div>
+              <div>
+                <dt>Kassinn, breidd</dt>
+                <dd><span data-gogn-reitur="vidmidunarpunktur.kassi.breidd_min"></span> til <span data-gogn-reitur="vidmidunarpunktur.kassi.breidd_max"></span></dd>
+              </div>
+              <div>
+                <dt>Kassinn, lengd</dt>
+                <dd><span data-gogn-reitur="vidmidunarpunktur.kassi.lengd_min"></span> til <span data-gogn-reitur="vidmidunarpunktur.kassi.lengd_max"></span></dd>
+              </div>
+              <div>
+                <dt>Leyfi gagnanna</dt>
+                <dd data-gogn-reitur="uppruni.leyfi"></dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <section class="gagnahluti" data-gogn="vedurstodvar.json"
+                 data-gogn-teiknari="vedurstodvar-beidnir" aria-labelledby="siur-titill">
+          <h2 id="siur-titill">Síurnar</h2>
+          <p>Þjónustan tekur við færibreytum í slóðinni og síar sjálf. Æfingin notar
+          þrjár:</p>
+          <dl class="vedur-siur">
+            <div>
+              <dt><code>active=true</code></dt>
+              <dd>aðeins stöðvar sem mæla enn, sama skilyrði og tómt <code>ending</code>.</dd>
+            </div>
+            <div>
+              <dt><code>polygon=POLYGON((…))</code></dt>
+              <dd>aðeins stöðvar innan kassans um VR-II. Hnitaröðin er lengd á undan
+              breidd og ferillinn lokast, svo hornin eru fimm.</dd>
+            </div>
+            <div>
+              <dt><code>station_id=</code></dt>
+              <dd>ein tiltekin stöð. Þetta er beiðnin sem forritið sendir þegar stöðin
+              hefur verið valin, og hún á að skila nákvæmlega einni.</dd>
+            </div>
+          </dl>
+          <p class="vedur-athugasemd"><strong>HTTP 200 þýðir ekki að sían hafi
+          virkað.</strong> Þjónustan hunsar færibreytur sem hún þekkir ekki og svarar
+          samt. Þess vegna er fjöldinn í hverju svari talinn.</p>
+          <noscript>
+            <p class="gogn-stada">Taflan yfir síurnar er byggð með JavaScript. Án þess
+            má lesa fjöldann beint úr <a href="../gogn/vedurstodvar.json">gagnaskránni</a>
+            (reiturinn <code>beidnir</code>).</p>
+          </noscript>
+          <div data-gogn-efni hidden>
+            <p>Frosna eintakið er ósíaða svarið. Síurnar eru reiknaðar úr því með sömu
+            skilyrðum og gamla skriftan sendi þjónustunni.</p>
+          </div>
+        </section>
+
+        <section class="gagnahluti" data-gogn="vedurstodvar.json"
+                 data-gogn-teiknari="vedurstodvar-stodvar" aria-labelledby="stodvar-titill">
+          <h2 id="stodvar-titill">Stöðvarnar eftir fjarlægð</h2>
+          <p>Hver stöð innan kassans fær fjarlægð frá VR-II með haversine-formúlunni og
+          stöðvunum er raðað eftir henni. Súlan sýnir fjarlægðina; staðan er skrifuð út
+          í orðum og með tákni.</p>
+          <noscript>
+            <p class="gogn-stada">Taflan yfir stöðvarnar er byggð með JavaScript. Án
+            þess má lesa þær beint úr <a href="../gogn/vedurstodvar.json">gagnaskránni</a>
+            (reiturinn <code>stodvar_i_kassa</code>).</p>
+          </noscript>
+          <div data-gogn-efni hidden>
+            <p class="vedur-skyring">
+              <span><span class="vedur-merki vedur-merki--virk" aria-hidden="true">✓</span> Virk: mælir enn</span>
+              <span><span class="vedur-merki vedur-merki--aflogd" aria-hidden="true">✕</span> Aflögð: hætti mælingum</span>
+              <span><span class="vedur-merki vedur-merki--valin" aria-hidden="true">★</span> Stöðin sem forritið les</span>
+            </p>
+          </div>
+        </section>
+
+        <section class="gagnahluti vedur-svor" data-gogn="vedurstodvar.json"
+                 data-gogn-teiknari="vedurstodvar" aria-labelledby="svor-titill">
+          <h2 id="svor-titill">Svör við spurningum æfingarinnar</h2>
+          <noscript>
+            <p class="gogn-stada">Svörin eru sett inn með JavaScript. Án þess má lesa
+            þau beint úr <a href="../gogn/vedurstodvar.json">gagnaskránni</a>
+            (reiturinn <code>svor</code>).</p>
+          </noscript>
+          <div data-gogn-efni hidden>
+            <h3>Hver er næsta veðurstöð við VR-II og er hún enn í notkun?</h3>
+            <p><strong data-gogn-reitur="svor.naesta.nafn"></strong>
+            (<span data-vedur-texti="svor.naesta.station_id"></span>),
+            <span data-gogn-reitur="svor.naesta.metrar"></span> m frá húsinu.
+            Staða: <span data-vedur-stada="svor.naesta"></span>.</p>
+
+            <h3>Hver er næsta virka stöðin og hversu miklu munar?</h3>
+            <p><strong data-gogn-reitur="svor.naesta_virka.nafn"></strong>
+            (<span data-vedur-texti="svor.naesta_virka.station_id"></span>),
+            <span data-gogn-reitur="svor.naesta_virka.metrar"></span> m frá VR-II.
+            Næsta aflagða stöð er <span data-gogn-reitur="svor.naesta_aflogd.nafn"></span>
+            (<span data-vedur-texti="svor.naesta_aflogd.station_id"></span>) í
+            <span data-gogn-reitur="svor.naesta_aflogd.metrar"></span> m, sem hætti
+            mælingum <span data-vedur-texti="svor.naesta_aflogd.lokaar"></span>.</p>
+            <p>Munurinn er <span data-gogn-reitur="svor.munur_metrar"></span> m. Röðun
+            eftir fjarlægð einni saman getur því skilað stöð sem mælir ekki lengur.</p>
+
+            <h3>Hversu margar stöðvanna eru virkar?</h3>
+            <p><span data-gogn-reitur="svor.fjoldi_virkra"></span> af
+            <span data-gogn-reitur="svor.fjoldi_allra"></span>, eða um
+            <span data-gogn-reitur="svor.hlutfall_virkra_prosent"></span> %. Skráin er
+            því ekki listi yfir stöðvar í rekstri heldur allar stöðvar sem Veðurstofan
+            þekkir, virkar og aflagðar.</p>
+
+            <h3>Hvaða reitur segir hvort stöð dugi fyrir veðrið núna?</h3>
+            <p><code>ending</code>. Tómt gildi þýðir að stöðin mælir enn. Sama skilyrði
+            má senda með beiðninni sem <code>active=true</code> og láta þjóninn sía.</p>
+
+            <h3>Dygði sama stöð til að bera saman við veður fyrir
+            <span data-vedur-texti="svor.ar_aftur_i_timann"></span> árum?</h3>
+            <p><strong data-vedur-texti="svor.naesta_virka_naer_aftur"></strong>.
+            <span data-gogn-reitur="svor.naesta_virka.nafn"></span> hóf mælingar
+            <span data-vedur-texti="svor.naesta_virka.fyrsta_ar"></span>, en
+            viðmiðunarárið er <span data-vedur-texti="svor.vidmidunarar"></span>.</p>
+            <p>Næsta virka stöð sem nær svo langt aftur er
+            <span data-gogn-reitur="svor.langtimastod.nafn"></span>
+            (<span data-vedur-texti="svor.langtimastod.station_id"></span>) í
+            <span data-gogn-reitur="svor.langtimastod.metrar"></span> m, sem mælir frá
+            <span data-vedur-texti="svor.langtimastod.fyrsta_ar"></span>. Nálægð og
+            samfelld tímaröð eru tvö ólík skilyrði.</p>
+          </div>
+        </section>
+
+        <section class="gagnahluti" data-gogn="vedurstodvar.json"
+                 data-gogn-teiknari="vedurstodvar" aria-labelledby="takmarkanir-titill">
+          <h2 id="takmarkanir-titill">Takmarkanir og frávik frá gömlu síðunni</h2>
+          <ul class="vedur-takmarkanir">
+            <li><strong>Frosið, ekki lifandi.</strong> Stöð sem bætist við eða er lögð
+            niður eftir sóknardaginn kemur ekki fram hér fyrr en nýtt eintak er fryst.</li>
+            <li><strong>Ný söfnun, ekki afrit.</strong> Gamla síðan sótti skrána upp á
+            nýtt í hverri byggingu og vistaði svarið aldrei. Þetta eintak var sótt
+            sérstaklega og er ekki það sem hún sá.</li>
+            <li><strong>Samanburðurinn.</strong> Fjöldinn í hverri síu og stöðvavalið
+            reyndust þau sömu og gamla síðan birti. Það sýnir að skráin breyttist ekki
+            á milli, ekki að hún sé stöðug.</li>
+            <li><strong>Síurnar eru reiknaðar, ekki sendar.</strong> Gamla síðan sendi
+            hverja síu til þjónustunnar. Hér er ósíaða svarið fryst og síað úr því, svo
+            síun þjónustunnar sjálfrar er ekki prófuð aftur.</li>
+            <li><strong>Kassi, ekki hringur.</strong> Horn kassans ná ríflega út fyrir
+            radíusinn frá VR-II. Það breytir fjöldanum lítillega en ekki röðuninni.</li>
+            <li><strong>Kúla, ekki sporvala.</strong> Haversine reiknar á kúlu; skekkjan
+            er innan við prómill á þessum vegalengdum.</li>
+          </ul>
+          <noscript>
+            <p class="gogn-stada">Takmörkunin um stöðina sem forritið les er sett inn
+            með JavaScript. Án þess má lesa hana í
+            <a href="../gogn/vedurstodvar.json">gagnaskránni</a>.</p>
+          </noscript>
+          <div data-gogn-efni hidden>
+            <p><strong>Stuttur mælitími.</strong>
+            <span data-gogn-reitur="svor.naesta_virka.nafn"></span> hóf mælingar
+            <span data-vedur-texti="svor.naesta_virka.fyrsta_ar"></span> og á engar
+            mælingar frá því fyrir þann tíma.</p>
+          </div>
+        </section>
+
       </article>
 
       <nav class="naesta-skref" aria-labelledby="naesta-skref-titill">
