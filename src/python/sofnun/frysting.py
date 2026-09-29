@@ -48,9 +48,10 @@ SJALFGEFID_AUDKENNI = (
 
 PROVENANCE_HEITI = "provenance.json"
 
-# mbl-eintakið liggur líka í data/raw/ en var fryst í P0.1 og er tryggt í
-# docs/vidmid/provenance.json. Það er skráð hér sem TILVÍSUN en ekki afritað
-# inn: tvær summur fyrir sömu skrá geta ekki annað en farið á skjön með tímanum.
+# Söfn sem liggja líka í data/raw/ en eru tryggð annars staðar. Þau eru skráð
+# hér sem TILVÍSUN en ekki afrituð inn: tvær summur fyrir sömu skrá geta ekki
+# annað en farið á skjön með tímanum. mbl-eintakið var fryst í P0.1 og er
+# tryggt í docs/vidmid/provenance.json.
 SKRAD_ANNARS_STADAR = (
     {
         "heiti": "mbl",
@@ -58,6 +59,20 @@ SKRAD_ANNARS_STADAR = (
         "fryst_i": "P0.1 (issue #30)",
         "provenance": "docs/vidmid/provenance.json",
         "stadfest_med": "python3 src/python/vidmid/provenance.py stadfesta",
+    },
+    # Friends-handritin eru EKKI fryst hér og mega ekki vera það: þau eru
+    # höfundarréttarvarin og þetta repo er opið (issue #3). Þau eru git
+    # submodule — git geymir aðeins slóð og commit-SHA (gitlink), og venjulegt
+    # `git clone` sækir þau ekki. Commit-SHA-ið í gitlink er frystingin.
+    {
+        "heiti": "friends-handrit",
+        "mappa": "data/raw/friends-handrit",
+        "fryst_i": "issue #3, ákvörðun (a) 28.9.2026 — git submodule, ekki efni í git",
+        "upprunarepo": "https://github.com/delvinso/friends-tv-show-analysis",
+        "commit": "a4641fed3d95bb9d9c7ba23681604c692f9b392a",
+        "commit_dagsetning": "2019-02-21T14:44:22-05:00",
+        "provenance": "docs/heimildir.md, kafli 2.1",
+        "stadfest_med": "git submodule status data/raw/friends-handrit",
     },
 )
 

@@ -5,12 +5,14 @@ Sameiginlegt skráalag fyrir báðar Friends-greiningarnar (issue #14):
 — aðeins ákveðið *hvaða* skrár eru lesnar, hvaða þáttaröð og hve marga sýnda
 þætti hver þeirra geymir, og hvernig bætin verða að texta.
 
-**Höfundaréttur (issue #3, valkostur A).** Handritin fara aldrei í þetta repo.
-Sjálfgefna mappan er undir ``data/raw/`` sem ``.gitignore`` útilokar; henni má
-líka vísa annað með umhverfisbreytunni ``FRIENDS_HANDRIT_MAPPA``. Viðmiðið var
-reiknað úr ``season/`` í ``delvinso/friends-tv-show-analysis`` á commit
-``a4641fed3d95bb9d9c7ba23681604c692f9b392a`` (submodule í upprunaverkefninu á
-commit ``2865ed6``).
+**Höfundaréttur (issue #3, valkostur A).** Handritin fara aldrei í þetta repo
+sem efni. ``delvinso/friends-tv-show-analysis`` er skráð sem git submodule á
+``data/raw/friends-handrit``, fest á commit
+``a4641fed3d95bb9d9c7ba23681604c692f9b392a`` (2019-02-21) — git geymir aðeins
+slóðina og SHA-ið. Sjálfgefna mappan er ``season/`` í submodule-inu; hún er
+aðeins til eftir ``git submodule update --init data/raw/friends-handrit``, því
+venjulegt ``git clone`` sækir hana ekki. Henni má líka vísa annað með
+umhverfisbreytunni ``FRIENDS_HANDRIT_MAPPA``.
 
 Eingöngu staðalsafnið (regla 10).
 """
@@ -24,12 +26,15 @@ from pathlib import Path
 
 ROT = Path(__file__).resolve().parents[3]
 
-# Utan git (``data/raw/*`` er í .gitignore) — handritin mega aldrei rata í repo-ið.
+# Submodule (issue #3, ákvörðun a): git geymir gitlink, aldrei handritin sjálf.
 DEFAULT_TRANSCRIPT_DIR = ROT / "data" / "raw" / "friends-handrit" / "season"
 TRANSCRIPT_DIR_ENV = "FRIENDS_HANDRIT_MAPPA"
 TRANSCRIPT_SUFFIX = ".html"
 SOURCE_REPOSITORY = "https://github.com/delvinso/friends-tv-show-analysis"
 SOURCE_COMMIT = "a4641fed3d95bb9d9c7ba23681604c692f9b392a"
+# Heil skipun sem fastur strengur: sql_samsetning-prófið les „update“ inni í
+# f-streng sem SQL (regla 5), og skipunin á hvort eð er að vera orðrétt.
+SUBMODULE_COMMAND = "git submodule update --init data/raw/friends-handrit"
 
 # Skrár sem eru ekki sýndir þættir og því ekki samanburðarhæfar: 0423uncut er
 # önnur útgáfa af þætti sem er þegar í 0423, og 07outtakes er upptökuafgangur
@@ -72,8 +77,9 @@ def transcript_dir(directory: Path | str | None = None) -> Path:
     path = Path(directory)
     if not path.is_dir():
         raise TranscriptError(
-            f"Handritamappan {path} er ekki til. Sæktu {SOURCE_REPOSITORY} á "
-            f"commit {SOURCE_COMMIT} og vísaðu á undirmöppuna season/ með "
+            f"Handritamappan {path} er ekki til. Sæktu submodule-ið með "
+            f"`{SUBMODULE_COMMAND}` ({SOURCE_REPOSITORY} @ {SOURCE_COMMIT}), "
+            f"eða vísaðu á season/-möppu með "
             f"{TRANSCRIPT_DIR_ENV} (handritin fara aldrei í git, issue #3)."
         )
     return path

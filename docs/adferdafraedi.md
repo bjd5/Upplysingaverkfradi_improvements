@@ -155,7 +155,7 @@ sviðsfyrirsagnir og 3.259 sviðsleiðbeiningar. **2.078 blokkir (2,95%) eru
 **Vandinn.** Upprunaverkefnið var í lokuðu repo-i; þetta repo er opið. Handritin
 sem greiningin las eru **afrit aðdáenda** á höfundarréttarvörðum
 sjónvarpshandritum. `fangj/friends` hefur **ekkert leyfi**, og MIT-leyfið á
-`delvinso/friends` nær yfir kóðann þar en ekki endilega yfir handritatextann sem
+`delvinso/friends-tv-show-analysis` nær yfir kóðann þar en ekki endilega yfir handritatextann sem
 hann vinnur með. Að greina slík handrit í lokuðu námsverkefni er venjubundið; að
 endurbirta þau í opnu repo-i er annað mál. Um leið eru bæði söfnin á
 einkarepo-um einstaklinga sem enginn í teyminu stýrir — hverfi þau er
@@ -164,8 +164,7 @@ greiningin ekki endurkeyranleg.
 **Ákvörðunin.** Björn valdi **valkost A** 27.9.2026 (issue #3):
 
 - **Handritin fara aldrei inn í þetta repo** — hvorki afrituð né vendoruð.
-  `.gitignore` útilokar `data/external/` og `data/fangj-friends/`, þar sem
-  upprunaverkefnið geymdi þau.
+  Eina tengingin er gitlink submodule-sins (ákvörðun a hér að neðan).
 - **Afleiddu tölurnar fara í git**: `data/processed/phoebe-stats/` — línufjöldi,
   orðafjöldi, senufjöldi, hlutföll og tíðnitöflur á persónu. Þær eru
   staðreyndir *um* textann, ekki textinn.
@@ -184,21 +183,52 @@ hún kemur úr.
 | **C.** Sleppa Friends-greiningunum | Einfaldasta leiðin, enginn höfundaréttarvandi | Þrjár af níu síðum hverfa og umtalsverð vinna glatast |
 
 **Verðið sem A kostar.** Friends-tölurnar eru **ekki endurbyggjanlegar úr þessu
-repo-i**. Það brýtur meginregluna um að unnin gögn séu afleiða (regla 5), og
+repo-i einu** — aðeins með submodule-inu, sem er utan þess (ákvörðun a). Það brýtur meginregluna um að unnin gögn séu afleiða (regla 5), og
 undanþágan er rökstudd í
 [`../data/processed/README.md`](../data/processed/README.md), kafla 1.2: fyrir
 þetta repo eru tölurnar frumgagn. Skilyrðið sem heldur undanþágunni lögmætri er
 að engin talnaskrá geymi samfellda setningu úr þáttunum — kafli 1.5.2.
 
-**Tvennt er enn opið — Björn ákveður** (issue #3):
+**Tvær framhaldsákvarðanir, 28.9.2026.** Björn fól matið („gerðu það sem þú
+telur best“) og ákvarðanirnar voru teknar sama dag (issue #3):
 
-| | Spurning | Staða |
-|---|---|---|
-| (a) | Á að skrá handritasöfnin sem **submodule** í `.gitmodules` — svo endurkeyrsla sé ein skipun fyrir þann sem hefur aðgang — eða halda þeim alveg utan repo-sins? Submodule geymir aðeins slóð og commit-SHA, ekki textann. | **opið** — `.gitmodules` er óbreytt |
-| (b) | Byggðu síðurnar í `vidmid/vefur/` geyma **átta orðréttar handritslínur** úr þætti `0101` (`friends/phoebe-statistics.html` og `search.json`). Mappan var tekin úr trénu 28.9.2026, svo línurnar eru ekki lengur á `main`, en þær eru enn í git-sögunni og í taginu `vidmid-frosid`. Á að samþykkja þær sem tilvitnun, eða endurskrifa söguna? | **opið** — línurnar eru utan trésins en í sögunni |
+**(a) Já — delvinso-safnið er skráð sem git submodule.** Slóð:
+`data/raw/friends-handrit`, safn: `github.com/delvinso/friends-tv-show-analysis`,
+fest á commit `a4641fed3d95bb9d9c7ba23681604c692f9b392a` (2019-02-21; opinbert,
+staðfest 28.9.2026 með nafnlausu `git fetch`).
 
-Spurning (b) ræður hvort skilyrði #3 — *ekkert höfundarréttarvarið efni í
-git-sögu þessa repo-s* — telst uppfyllt. Þangað til er það **ekki** staðfest.
+- *Rök:* gitlink geymir aðeins slóð og SHA, engan texta. Endurkeyrsla verður
+  ein skipun — `git submodule update --init data/raw/friends-handrit` — og
+  SHA-ið er fest í git sjálfu, ekki aðeins í skjölun (regla 8).
+- `season/` undir slóðinni er nákvæmlega sjálfgefna mappan sem
+  `src/python/vinnsla/friends_handrit.py` les.
+- Submodule-ið er **ekki** sótt við venjulegt `git clone`; endurkeyrsla
+  handritavinnslunnar er áfram valkvæð og öll próf standast án þess.
+- `fangj/friends` er **ekki** skráð — engin greining notar það.
+- `.gitignore` opnar nákvæma undanþágu fyrir gitlink-slóðina; `data/external/`
+  og `data/fangj-friends/` eru fjarlægðar þaðan, því ekkert í repo-inu notar
+  þær lengur.
+
+**(b) Línurnar úr þætti `0101` standa sem stutt tilvitnun; git-sagan er ekki
+endurskrifuð.** Þær eru í `vidmid/vefur/friends/phoebe-statistics.html` og
+`vidmid/vefur/search.json`. Mappan var tekin úr trénu 28.9.2026 (grisjunin, PR
+#67), svo línurnar eru ekki lengur á `main` — aðeins í git-sögunni og taginu
+`vidmid-frosid` (commit `f23035c`).
+
+- *Rök:* átta línur af 61.161 tilsvari, birtar sem dæmi um þáttarann í
+  greiningarskyni. Frosna viðmiðið er SHA-staðfest
+  ([`vidmid/provenance.json`](vidmid/provenance.json)) og má ekki breyta.
+  Endurskrif sögunnar myndu ógilda öll afrit, PR og SHA-tilvísanir.
+- Handritsleitin nær nú yfir HTML- og JSON-skrár — í trénu án nokkurrar
+  undanþágu, og í frosnu skránum með nákvæmri, frystri undanþágu fyrir einmitt
+  þessar línur (kafli 1.5.2). Hver ný handritslína fellir prófið.
+- Víkkaða leitin fann **níundu** línuna úr sama þætti: hóplínuna `All: …`, sem
+  síðan nefnir sem dæmi um undanskildar hóplínur. Hún er í sömu skrám, frá
+  sama commit og í sama tilgangi, og fellur undir sömu ákvörðun. Eins orðs
+  línan `Ross: (mortified) …` er þriðja dæmið og greinist ekki (eitt orð).
+
+Með (a) og (b) telst skilyrði #3 — *ekkert höfundarréttarvarið efni í
+git-sögu umfram þessa stuttu tilvitnun* — uppfyllt.
 
 #### 1.5.2 Handritsleitin — þröskuldur og afmörkun
 
@@ -239,26 +269,47 @@ mælingar. Væri hann handritstexti myndi prentunin afrita hann í logga.
 prófin keyra hana á heimatilbúnum gervisetningum og falla ef hún **finnur þær
 ekki**.
 
-**Afmörkun — það sem leitin nær til, og það sem hún nær ekki til.** Hún les
-aðeins `.json`- og `.csv`-skrár á þessum stöðum, samtals **18 skrár**:
+**HTML og JSON — tilsvör í handritasniði.** Ákvörðun (b) víkkaði leitina
+([`../src/python/vidmid/vefleit.py`](../src/python/vidmid/vefleit.py), prófuð í
+[`../tests/test_vefleit.py`](../tests/test_vefleit.py)) yfir HTML- og
+JSON-skrár — texta, `<pre>`/`<code>`, `<script>` og eigindagildi — á tveimur
+stöðum:
+
+| Hvar | Skrár | Undanþágur |
+|---|---|---|
+| **Tréð:** `web/`, `docs/`, `data/processed/` | allar HTML/JSON (26 þann 29.9.2026) | **engar** — hvert tilsvar fellir prófið |
+| **Frosna viðmiðið:** byggða gamla síðan, tekin úr trénu 28.9.2026 og aðeins í commit `f23035c` (git-tagið `vidmid-frosid`, sjá `vidmid/README.md`) | `friends/phoebe-statistics.html` og `search.json`, lesnar með `git show` | 18 frystar línur úr þætti `0101` |
+
+1. **Tilsvar** er `Nafn:` (eitt til fjögur hástafsorð, t.d.
+   `Monica and Phoebe:`) og textinn á eftir, fram að næsta `Nafn:` eða enda
+   einingar. Hann er skorinn við fyrsta orð með íslenskum staf, því í
+   `search.json` rennur tilvitnunin saman við íslensku málsgreinina.
+2. Tilsvar telst **enskt** ef það geymir minnst eitt algengt enskt kerfisorð
+   (`the`, `you`, `does` …) eftir að svigainnskot og slóðir eru fjarlægð. Þannig
+   standast íslenskar merkingar á borð við `Heimild: …` og `Nafn: texti`.
+3. **Undanþágan er fryst lína fyrir línu** og gildir aðeins í frosna
+   commit-inu: skrá + SHA-256 línunnar + fjöldi tilvika, í `VEFUNDANTEKNINGAR`
+   í `handritsreitir.py`. Textinn sjálfur er ekki afritaður í kóðann. 18
+   færslur: níu í hvorri skrá — átta línur úr `<pre>`-dæminu (sviðslýsingin og
+   sjö tilsvör; sviðsleiðbeiningin er án `Nafn:`) og hóplínan `All:`.
+
+Leitin fellur ef: ný lína finnst í trénu (líka ef gamla síðan væri sett aftur í
+tréð — undanþágan fylgir ekki); undanþegin lína breytist um eitt orð (ný summa,
+og gamla undanþágan verður dauð); lína kemur fyrir oftar en skráð er; eða
+undanþága finnst ekki. Sé frosna commit-ið ekki í klóninu (grunnt klón) skrifar
+`stadfesta` **viðvörun** og ber undanþágurnar ekki saman — það er ekki merki um
+handritstexta, en það er ekki þagað um það.
+
+**Afmörkun — það sem leitin nær til, og það sem hún nær ekki til.**
 
 | Nær til | Nær **ekki** til |
 |---|---|
-| `data/processed/phoebe-stats/` | Annað í repo-inu |
-| | Git-söguna og tagið `vidmid-frosid` |
-| `docs/vidmid/generated/phoebe-central-perk-summary.json` | |
+| Talnaskrárnar (18 JSON/CSV, reitaregla) | Handritstexti **án** `Nafn:` |
+| HTML/JSON í `web/`, `docs/`, `data/processed/` (tilsvarsregla) | Tilsvar án nokkurs ensks kerfisorðs (t.d. tveggja orða upphrópun) |
+| Frosnu skrárnar tvær í `f23035c` (tilsvarsregla + undanþága) | Aðrar skrár í git-sögunni og taginu; `.md`-skrár |
 
-Grænt próf þýðir því: **talnaskrárnar eru textalausar** — ekki að git-sagan
-sé það. Vitað er að hún er það ekki: `friends/phoebe-statistics.html` og
-`search.json` í taginu `vidmid-frosid` geyma línurnar átta úr spurningu (b) hér
-að ofan. Prófið heitir
-`test_skannadar_talnaskrar_geyma_enga_samfellda_setningu` til að nafnið lofi
-ekki meiru en það prófar.
-
-**Byggða gamla síðan er ekki lengur í trénu.** Hún var tekin út 28.9.2026 til
-að grisja repo-ið (sjá `vidmid/README.md`), og leitin þarf því ekki að taka
-afstöðu til hennar. Spurning (b) — hvort línurnar mega standa í sögunni — er
-enn Björns að svara.
+Prófið heitir `test_talnaskrar_og_gamla_sidan_geyma_engan_nyjan_handritstexta`
+— það lofar því sem það prófar: engum **nýjum** handritstexta, ekki engum.
 
 ### 1.6 TMDB — ekkert eintak
 
@@ -386,5 +437,5 @@ Opnar spurningar um heimildir og leyfi eru taldar upp í
 | 2 | Rökstuðningur fyrir `evaluation_mode=manual` | **að hluta** — skjalfest hvað sían útilokar, ekki af hverju valið var tekið |
 | 3 | Fimm mbl-svörin úr frosna eintakinu | **ekki reiknuð** — P1.5 reiknar þau og skráir muninn við gömlu síðuna |
 | 4 | Afmörkun TMDB-safnsins | **ófrágengið** — ekkert eintak til |
-| 5 | Höfundaréttur Friends-handritanna | **ákveðið að hluta** — valkostur A (27.9.2026): tölurnar í git, handritin aldrei. Opið: (a) submodule í `.gitmodules` og (b) átta orðréttar línur í git-sögunni (tagið `vidmid-frosid`) — sjá kafla 1.5.1 |
+| 5 | Höfundaréttur Friends-handritanna | **ákveðið** — valkostur A (27.9.2026): tölurnar í git, handritin aldrei. 28.9.2026: (a) delvinso-safnið submodule á `data/raw/friends-handrit` @ `a4641fe`; (b) 0101-línurnar í git-sögunni (tagið `vidmid-frosid`) standa sem tilvitnun, fryst undanþága í handritsleitinni — sjá kafla 1.5.1–1.5.2 |
 | 6 | Vinnsla og greining Central Perk-hlutans | **skjalfest í viðmiðinu**, ekki endurtekin hér — P2.6 flytur hana yfir |
