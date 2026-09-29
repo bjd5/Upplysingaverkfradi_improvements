@@ -86,7 +86,7 @@
     const table = element("table", "gagnatafla");
     table.appendChild(element("caption", "", "Spurningarnar, svörin og mynstrin"));
     const head = table.appendChild(element("thead")).appendChild(element("tr"));
-    ["Nr.", "Spurning", "Svar", "Mynstur"].forEach(function (heading) {
+    ["Nr.", "Spurning", "Svar og mynstur"].forEach(function (heading) {
       head.appendChild(element("th", "", heading)).scope = "col";
     });
     const body = table.appendChild(element("tbody"));
@@ -97,8 +97,10 @@
       }
       const row = body.appendChild(element("tr"));
       row.append(element("td", "gagnatafla__tala", data.formatNumber(answer.nr)),
-                 element("td", "", answer.spurning), element("td", "mynstur-svar", answer.svar));
-      const link = row.appendChild(element("td")).appendChild(element("a", "mynstur-tengill"));
+                 element("td", "", answer.spurning));
+      const cell = row.appendChild(element("td"));
+      cell.appendChild(element("span", "mynstur-svar", answer.svar));
+      const link = cell.appendChild(element("a", "mynstur-tengill"));
       link.href = "#" + id;
       link.appendChild(element("code", "", answer.mynstur_heiti));
     });
