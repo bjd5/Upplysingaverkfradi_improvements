@@ -25,6 +25,8 @@ CSS = VEFUR / "assets" / "css"
 KJARNI = "assets/js/gogn.js"
 BIRTING = "assets/js/gagnahluti.js"
 SNID_REITIR = {"uppfaert", "heimild", "gogn"}
+LYSIGOGN = "lysigogn"
+REITARAETUR = ("gogn", LYSIGOGN)  # sama venja og FIELD_ROOTS í gogn.js
 HAMARK_LINUR = 300
 HAMARK_JS_BAETI = 30_000  # öll JS samanlagt; þak reglu 3.4 er 500 KB á síðu
 TOMIR_TAGAR = {"area", "base", "br", "col", "embed", "hr", "img", "input",
@@ -42,7 +44,7 @@ def lesa_gagnaskra(heiti: str) -> dict:
 
 
 def fletta(gogn, slod: str):
-    """Sama uppfletting og SiteData.valueAt í gogn.js."""
+    """Sama uppfletting og SiteData.valueAt í gogn.js (slóð frá rót skjalsins)."""
     for lykill in slod.split("."):
         if isinstance(gogn, list) and lykill.isdigit() and int(lykill) < len(gogn):
             gogn = gogn[int(lykill)]
@@ -176,7 +178,13 @@ class GagnaskrarTest(unittest.TestCase):
                 self.assertTrue((GOGN / heiti).is_file(), "gagnaskráin er ekki til")
                 skjal = lesa_gagnaskra(heiti)
                 self.assertLessEqual(SNID_REITIR, set(skjal))
-                self.assertIsInstance(skjal["gogn"], (dict, list))
+                self.assertLessEqual(set(skjal), SNID_REITIR | {LYSIGOGN},
+                                     "óþekktur reitur — gogn.js hafnar skránni")
+                self.assertIsInstance(skjal["gogn"], list)
+                self.assertTrue(all(isinstance(r, dict) for r in skjal["gogn"]),
+                                "gogn verður að vera listi af röðum")
+                if LYSIGOGN in skjal:
+                    self.assertIsInstance(skjal[LYSIGOGN], dict)
 
     def test_yfirlitid_visar_a_skrar_sem_eru_til(self) -> None:
         for faersla in lesa_gagnaskra("yfirlit.json")["gogn"]:
@@ -187,10 +195,12 @@ class GagnaskrarTest(unittest.TestCase):
     def test_hver_reitur_er_tala_eda_strengur_i_skranni(self) -> None:
         for sida in SIDUR:
             for hluti in greina_gogn(sida).hlutar:
-                gogn = lesa_gagnaskra(hluti["skra"])["gogn"]
+                skjal = lesa_gagnaskra(hluti["skra"])
                 for slod in hluti["reitir"]:
                     with self.subTest(sida=sida, reitur=slod):
-                        gildi = fletta(gogn, slod)
+                        self.assertIn(slod.split(".")[0], REITARAETUR,
+                                      "slóð reits byrjar á lysigogn. eða gogn.")
+                        gildi = fletta(skjal, slod)
                         self.assertIsInstance(gildi, (int, float, str))
                         self.assertNotIsInstance(gildi, bool)
 

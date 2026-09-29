@@ -4,7 +4,7 @@ Regla 5: grunnurinn er afleiða, ekki frumgagn. Það þýðir tvennt sem er
 prófað hér — hann verður alltaf eins úr sömu heimildum, og hann fer ekki
 í git.
 
-Frá #39 hleður skriftan öllum fimm söfnunum, og þau bera keyrslustimpla
+Frá #39 hleður skriftan öllum söfnunum (sex frá #10/007), og þau bera keyrslustimpla
 (``loaded_at``, ``extracted_at``) á sekúndunákvæmni. Tvær hraðar byggingar
 innan sömu sekúndu stemma því af tilviljun (#47, kafli 6), svo prófið bíður
 yfir sekúndumörk á milli þeirra og **sannar** að það hafi tekist: allir
@@ -37,6 +37,7 @@ ADALTOFLUR = (
     "weather_stations",
     "mbl_extractions",
     "friends_transcript_files",
+    "central_perk_transcript_files",
 )
 
 

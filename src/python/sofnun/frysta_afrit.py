@@ -34,7 +34,7 @@ except ImportError:  # flutt inn sem eining innan pakkans
     )
 
 # Upprunaverkefnið. Slóðin er skráð með ~ í provenance: repo-ið er opið og full
-# slóð segir ekkert umfram þetta (sama venja og í src/python/vidmid/sofn.py).
+# slóð segir ekkert umfram þetta.
 SJALFGEFINN_UPPRUNI = Path("~/PycharmProjects/idn302g-2026-team-friends-thesveinn/data/raw")
 UPPRUNAREPO = "Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe"
 

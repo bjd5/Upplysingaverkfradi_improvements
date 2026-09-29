@@ -22,9 +22,9 @@ skrána við, eða stemmi hún ekki, stöðvast keyrslan með ``FrosidVilla``. �
 skemmt hrágagn væri verra en ekkert (regla 6) — sama afstaða og í
 ``sofnun.hragogn``.
 
-Einingin er ekki sama verk og ``sofnun.frysting``: þar er **skrifað** í
-frystiskrána ``data/raw/frysting.json`` einu sinni (P0.3, issue #2), hér er
-**lesið** það sem liggur í möppu safnsins þegar söfnun er keyrð.
+Einingin er ekki sama verk og ``vidmid.provenance``: þar er öll frystiskráin
+``data/raw/frysting.json`` staðfest í einu, hér er **lesið** það sem liggur í
+möppu eins safns þegar söfnun er keyrð.
 """
 
 from __future__ import annotations

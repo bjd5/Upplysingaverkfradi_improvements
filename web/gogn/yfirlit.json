@@ -1,36 +1,36 @@
 {
- "uppfaert": "2026-09-24T11:22:18+00:00",
- "heimild": "Veðurstofa Íslands, Hagstofa Íslands, mbl.is, delvinso/friends",
- "gogn": [
-  {
-   "skra": "skjalftar.json",
-   "sida": "sidur/skjalftavaktin.html",
-   "uppfaert": "2026-09-10T11:46:23+00:00",
-   "heimild": "Veðurstofa Íslands — api.vedur.is/quakes/events (CC BY 4.0)"
-  },
-  {
-   "skra": "hagstofan.json",
-   "sida": "sidur/hagstofan.html",
-   "uppfaert": "2026-09-10T09:02:26+00:00",
-   "heimild": "Hagstofa Íslands — px.hagstofa.is/pxis/api/v1/is/Samfelag/skolamal/4_haskolastig/1_hsProf/SKO04208b.px (leyfi óstaðfest)"
-  },
-  {
-   "skra": "vedurstodvar.json",
-   "sida": "sidur/vedurstodvar.html",
-   "uppfaert": "2026-09-24T11:22:18+00:00",
-   "heimild": "Veðurstofa Íslands — api.vedur.is/weather/stations (CC BY 4.0)"
-  },
-  {
-   "skra": "mbl.json",
-   "sida": "sidur/mbl-regex.html",
-   "uppfaert": "2026-09-16T12:08:51+00:00",
-   "heimild": "mbl.is — mbl.is/frettir (höfundarréttarvarið fréttaefni — aðeins niðurstöður birtar)"
-  },
-  {
-   "skra": "phoebe-tolfraedi.json",
-   "sida": "sidur/phoebe-tolfraedi.html",
-   "uppfaert": "2026-09-17T09:47:09+00:00",
-   "heimild": "delvinso/friends — github.com/delvinso/friends (fangj/friends: ekkert leyfi (afrit aðdáenda á höfundarréttarvörðum handritum). delvinso/friends: MIT, nær yfir kóðann en ekki endilega textann. Aðeins afleiddar tölur geymdar — valkostur A, issue #3.)"
-  }
- ]
+  "uppfaert": "2026-09-24T11:22:18+00:00",
+  "heimild": "Veðurstofa Íslands, Hagstofa Íslands, mbl.is, delvinso/friends @ a4641fe",
+  "gogn": [
+    {
+      "skra": "skjalftar.json",
+      "sida": "sidur/skjalftavaktin.html",
+      "uppfaert": "2026-09-10T11:46:23+00:00",
+      "heimild": "Veðurstofa Íslands — api.vedur.is/quakes/events (CC BY 4.0)"
+    },
+    {
+      "skra": "hagstofan.json",
+      "sida": "sidur/hagstofan.html",
+      "uppfaert": "2026-09-10T09:02:26+00:00",
+      "heimild": "Hagstofa Íslands — px.hagstofa.is/pxis/api/v1/is/Samfelag/skolamal/4_haskolastig/1_hsProf/SKO04208b.px (Nemendaskrá og prófaskrá Hagstofu Íslands)"
+    },
+    {
+      "skra": "vedurstodvar.json",
+      "sida": "sidur/vedurstodvar.html",
+      "uppfaert": "2026-09-24T11:22:18+00:00",
+      "heimild": "Veðurstofa Íslands — api.vedur.is/weather/stations (CC BY 4.0)"
+    },
+    {
+      "skra": "mbl.json",
+      "sida": "sidur/mbl-regex.html",
+      "uppfaert": "2026-09-16T12:08:51+00:00",
+      "heimild": "mbl.is — www.mbl.is/frettir/ (höfundarréttarvarið fréttaefni; aðeins niðurstöður birtar)"
+    },
+    {
+      "skra": "phoebe-tolfraedi.json",
+      "sida": "sidur/phoebe-tolfraedi.html",
+      "uppfaert": "2026-09-17T09:47:09+00:00",
+      "heimild": "delvinso/friends @ a4641fe — github.com/delvinso/friends (fangj/friends: ekkert leyfi (afrit aðdáenda á höfundarréttarvörðum handritum). delvinso/friends: MIT, nær yfir kóðann en ekki endilega textann. Aðeins afleiddar tölur geymdar — valkostur A, issue #3.)"
+    }
+  ]
 }

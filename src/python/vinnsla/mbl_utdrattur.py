@@ -26,8 +26,8 @@ from .mbl_mynstur import (
     Spurning,
     UtdrattarVilla,
     flaggaheiti,
+    synileg_ord,
 )
-from .mbl_ord import synileg_ord
 
 # Sýnishornið er sönnunargagn, ekki afrit af efninu: nóg til að sjá hvað
 # mynstrið hitti á, of lítið til að endurbirta frétt (höfundaréttur).

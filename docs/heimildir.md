@@ -10,8 +10,7 @@ eða í [`vidmid/`](vidmid/). Það sem ekki er hægt að styðja er merkt
 Staðfesta má að gögnin séu ósnert hvenær sem er:
 
 ```bash
-python3 src/python/sofnun/frysta.py stadfesta     # hrágögnin
-python3 src/python/vidmid/provenance.py stadfesta  # viðmiðið
+python3 src/python/vidmid/provenance.py stadfesta  # hrágögnin og viðmiðið
 ```
 
 ---
@@ -46,7 +45,7 @@ alls staðar þar sem þessi gögn birtast — líka á vefsíðunni sjálfri, e
 
 Þjónustan er opin og krefst hvorki innskráningar né API-lykils. Hausinn
 `x-vi-api-version` velur útgáfu þjónustunnar; hann er opinbert útgáfunúmer en
-ekki leyndarmál (frosna viðmiðið, `vidmid/vefur/capstone/earthquakes.html`).
+ekki leyndarmál (frosna viðmiðið, `vidmid-frosid:docs/vidmid/vefur/capstone/earthquakes.html`).
 
 ### 1.2 Hagstofan — brautskráning af háskólastigi
 
@@ -118,7 +117,7 @@ endurbirtingar á efni mbl.is. Engin frétt, fyrirsögn né mynd af síðunni fe
 | Endapunktar | `GET /3/tv/1668?language=en-US` og `GET /3/tv/1668/aggregate_credits?language=en-US` (`1668` = Friends) |
 | Auðkenning | `Authorization: Bearer <token>` á hverri beiðni — ókeypis reikningur |
 | Staða | **ekkert eintak til.** `TMDB_TOKEN` er hvorki í umhverfi né `.env` |
-| Heimild þessarar færslu | [`../data/raw/frysting.json`](../data/raw/frysting.json) (`ofryst`) og `vidmid/vefur/friends/phoebe-tribute.html` |
+| Heimild þessarar færslu | [`../data/raw/frysting.json`](../data/raw/frysting.json) (`ofryst`) og `vidmid-frosid:docs/vidmid/vefur/friends/phoebe-tribute.html` |
 
 Safnið átti að staðfesta hver leikur Phoebe og í hversu mörgum þáttum. Hvorki
 svörin né samantektin lifðu af: `vidmid/generated/phoebe-tmdb-summary.md`
@@ -134,9 +133,10 @@ fyrr en það er sótt á ný.
 
 | Atriði | Gildi |
 |---|---|
-| Safn sem var greint | `delvinso/friends` (github.com/delvinso/friends) — í upprunaverkefninu lesið úr `data/external/delvinso-friends/season/*.html` |
+| Safn sem var greint | `delvinso/friends-tv-show-analysis` (`https://github.com/delvinso/friends-tv-show-analysis`) — í upprunaverkefninu lesið úr `data/external/delvinso-friends/season/*.html`. Fyrri útgáfa þessarar færslu nefndi það ranglega `delvinso/friends`, og þess vegna var nafnlausu `git fetch` hafnað |
 | Commit sem var greint | `a4641fed3d95bb9d9c7ba23681604c692f9b392a` |
-| Dagsetning þess commits | **óþekkt** — sjá kafla 5, lið 8 |
+| Dagsetning þess commits | **2019-02-21T14:44:22-05:00** (commit-dagsetning), staðfest 28.9.2026 með nafnlausu `git fetch` — safnið er opinbert |
+| Í þessu repo-i | git **submodule** á `data/raw/friends-handrit`, fest á sama commit. Git geymir aðeins slóð og SHA (gitlink), engan texta; venjulegt `git clone` sækir það ekki. Endurkeyrsla: `git submodule update --init data/raw/friends-handrit` (issue #3, ákvörðun a) |
 | Upphaflegur uppruni | `fangj/friends` (github.com/fangj/friends, birt á `fangj.github.io/friends`); delvinso-safnið er afleiða af því |
 | Commit samanburðarsafnsins | `0e0e7b0f08c0ccb4a80b4f3beab22fbaa1ccca91`, dagsett **2016-10-02** (19:50:51 +08:00) |
 | Hvernig SHA-in voru lesin | `git ls-tree` á gitlink-færslum submodule-anna í upprunarepo-inu @ `2865ed6` |
@@ -144,8 +144,8 @@ fyrr en það er sótt á ný.
 | Umfang | 227 handritsskrár = 236 sýndir þættir (níu skrár geyma tvo þætti) |
 | Undanskildar skrár | `0423uncut.html`, `07outtakes.html` |
 | Greint | 2026-09-17T09:47:09Z af `src/phoebe_analysis.py` í upprunaverkefninu |
-| Leyfi | `fangj/friends`: **ekkert** — safn afritaðra handrita án leyfis. `delvinso/friends`: MIT, sem nær yfir kóðann þar en ekki endilega yfir handritatextann |
-| Heimild þessarar færslu | [`vidmid/phoebe-stats/_meta.json`](vidmid/phoebe-stats/_meta.json), [`vidmid/phoebe-stats/README.md`](vidmid/phoebe-stats/README.md), issue #3 og issue #14 (athugasemd frá P2.4/P2.5, liður 6); dagsetningar pinnunar úr git-sögu upprunarepo-sins, dagsetning fangj-commits úr `git fetch --depth=1` 28.9.2026 |
+| Leyfi | `fangj/friends`: **ekkert** — safn afritaðra handrita án leyfis. `delvinso/friends-tv-show-analysis`: MIT, sem nær yfir kóðann þar en ekki endilega yfir handritatextann |
+| Heimild þessarar færslu | [`../data/processed/phoebe-stats/_meta.json`](../data/processed/phoebe-stats/_meta.json), `vidmid-frosid:docs/vidmid/phoebe-stats/README.md`, issue #3 og issue #14 (athugasemd frá P2.4/P2.5, liður 6); dagsetningar pinnunar úr git-sögu upprunarepo-sins, dagsetningar fangj- og delvinso-commitanna úr nafnlausu `git fetch` 28.9.2026 |
 
 **Það var `delvinso` sem var greint, ekki `fangj`.** `summary.json` nefnir
 „fangj/delvinso“ sem heimild; sá texti er látinn standa því skráin er bætaeins
@@ -160,13 +160,16 @@ delvinso-submodule-sins síðast breytt 2026-08-27 og stóð óbreytt fram yfir
 greininguna, svo engin vísbending er um annað — en staðbundin útskráning á vél
 greinandans er ekki skráð neins staðar.
 
+`fangj/friends` er **ekki** skráð sem submodule í þessu repo-i: engin greining
+les það. Commit-SHA þess stendur hér aðeins sem heimild um samanburðarsafnið.
+
 **Handritin sjálf eru ekki í þessu repo og fara ekki inn í það.** Þetta repo er
 opið og handritin eru höfundarréttarvarin. Það sem er varðveitt eru
 **talnaniðurstöður um textann** — línufjöldi, senufjöldi, tíðnitöflur — sem eru
 staðreyndir um textann en ekki textinn sjálfur. Þetta er **valkostur A**, sem
-Björn valdi 27.9.2026 (issue #3); rökin, kostirnir sem var hafnað og tvær
-spurningar sem eru enn opnar eru í [`adferdafraedi.md`](adferdafraedi.md),
-kafla 1.5.1.
+Björn valdi 27.9.2026 (issue #3); rökin, kostirnir sem var hafnað og
+ákvarðanirnar tvær frá 28.9.2026 (submodule og tilvitnanirnar á gömlu síðunni)
+eru í [`adferdafraedi.md`](adferdafraedi.md), kafla 1.5.1.
 
 Handritin eru **afrit aðdáenda**, ekki opinber handrit þáttanna. Það hefur
 afleiðingar fyrir túlkun og er rakið í [`adferdafraedi.md`](adferdafraedi.md),
@@ -200,8 +203,8 @@ verið sótt og lesin í þessu verkefni, svo fullar ritfangaupplýsingar vantar
 
 | Tilvísun eins og viðmiðið nefnir hana | Ár | Notuð fyrir | Hvar hún er nefnd |
 |---|---|---|---|
-| Veðurstofa Íslands, skýrsla **VÍ 2009-013**, kafli 4.3 | 2009 | Umfjöllun um stærðarkvarðann `Mlw` — af hverju hann er hvorki umreiknaður né merktur Richter | `vidmid/vefur/capstone/earthquakes.html` |
-| **Monroe, Colaresi & Quinn** | 2008 | Aðferðin að baki z-gildum úr log-odds hlutfalli með Dirichlet-prior (einkennandi orð Phoebe) | `vidmid/phoebe-stats/README.md` |
+| Veðurstofa Íslands, skýrsla **VÍ 2009-013**, kafli 4.3 | 2009 | Umfjöllun um stærðarkvarðann `Mlw` — af hverju hann er hvorki umreiknaður né merktur Richter | `vidmid-frosid:docs/vidmid/vefur/capstone/earthquakes.html` |
+| **Monroe, Colaresi & Quinn** | 2008 | Aðferðin að baki z-gildum úr log-odds hlutfalli með Dirichlet-prior (einkennandi orð Phoebe) | `vidmid-frosid:docs/vidmid/phoebe-stats/README.md` |
 
 Titlar, tímarit og slóðir eru **ekki** skráð hér vegna þess að viðmiðið gefur þau
 ekki. Þau verða að koma úr heimildunum sjálfum þegar þær eru sóttar.
@@ -232,4 +235,4 @@ staðhæfingu á vefsíðunni fyrr en hún er staðfest.
 | 5 | Skilmálar mbl.is fyrir vistun og greiningu eintaks | Engin skilmálalesning er skráð í provenance | P4.3 |
 | 6 | Frumheimildirnar í kafla 3 | Hvorug hefur verið sótt; þær eru teknar upp úr viðmiðinu | P0.4 framhald |
 | 7 | Uppfærslutími Hagstofusvarsins | Svarið gefur `updated = 9999-12-31T23:59:59Z`, sem er ekki nothæf dagsetning | P1.3 |
-| 8 | Dagsetning `delvinso/friends` @ `a4641fe` — og er safnið enn aðgengilegt? | Ekki unnt að sækja 28.9.2026: GitHub bað um auðkenningu við nafnlaust `git fetch`, á meðan `fangj/friends` svaraði. Það getur þýtt að safnið sé orðið lokað, fært eða horfið — eða aðeins aðgangsstýring þessarar lotu. **Óstaðfest.** Ef safnið er horfið er greiningin ekki endurkeyranleg frá neinni opinberri heimild | Björn (issue #3) |
+| 8 | ~~Dagsetning `delvinso` @ `a4641fe` — og er safnið enn aðgengilegt?~~ | **Leyst 28.9.2026.** Rétt heiti er `delvinso/friends-tv-show-analysis`; fetch var áður hafnað því slóðin `delvinso/friends` var röng. Safnið er opinbert og aðgengilegt nafnlaust, commit-dagsetningin er 2019-02-21, og það er nú submodule á `data/raw/friends-handrit` (kafli 2.1) | lokið (issue #3) |

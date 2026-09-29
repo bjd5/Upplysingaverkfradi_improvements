@@ -9,8 +9,11 @@ Einingin gerir þrennt:
 
 * reiknar SHA-256 og lýsir skrám safns,
 * les provenance sem fylgdi safni og skilar væntum SHA-256 per skrá,
-* heldur ``data/raw/frysting.json`` — skránni yfir hvað var fryst, hvenær,
+* skrifar ``data/raw/frysting.json`` — skrána yfir hvað var fryst, hvenær,
   hvaðan og hvað stemmdi.
+
+Staðfestingin sjálf er í ``vidmid.provenance`` (``stadfesta``), sem ber bæði
+``frysting.json`` og ``docs/vidmid/provenance.json`` við diskinn.
 
 ``frysting.json`` er **ekki** í stað provenance hvers safns. Provenance svarar
 „hvaðan komu gögnin?"; frysting.json svarar „hvenær komust þau hingað og eru
@@ -45,9 +48,10 @@ SJALFGEFID_AUDKENNI = (
 
 PROVENANCE_HEITI = "provenance.json"
 
-# mbl-eintakið liggur líka í data/raw/ en var fryst í P0.1 og er tryggt í
-# docs/vidmid/provenance.json. Það er skráð hér sem TILVÍSUN en ekki afritað
-# inn: tvær summur fyrir sömu skrá geta ekki annað en farið á skjön með tímanum.
+# Söfn sem liggja líka í data/raw/ en eru tryggð annars staðar. Þau eru skráð
+# hér sem TILVÍSUN en ekki afrituð inn: tvær summur fyrir sömu skrá geta ekki
+# annað en farið á skjön með tímanum. mbl-eintakið var fryst í P0.1 og er
+# tryggt í docs/vidmid/provenance.json.
 SKRAD_ANNARS_STADAR = (
     {
         "heiti": "mbl",
@@ -55,6 +59,20 @@ SKRAD_ANNARS_STADAR = (
         "fryst_i": "P0.1 (issue #30)",
         "provenance": "docs/vidmid/provenance.json",
         "stadfest_med": "python3 src/python/vidmid/provenance.py stadfesta",
+    },
+    # Friends-handritin eru EKKI fryst hér og mega ekki vera það: þau eru
+    # höfundarréttarvarin og þetta repo er opið (issue #3). Þau eru git
+    # submodule — git geymir aðeins slóð og commit-SHA (gitlink), og venjulegt
+    # `git clone` sækir þau ekki. Commit-SHA-ið í gitlink er frystingin.
+    {
+        "heiti": "friends-handrit",
+        "mappa": "data/raw/friends-handrit",
+        "fryst_i": "issue #3, ákvörðun (a) 28.9.2026 — git submodule, ekki efni í git",
+        "upprunarepo": "https://github.com/delvinso/friends-tv-show-analysis",
+        "commit": "a4641fed3d95bb9d9c7ba23681604c692f9b392a",
+        "commit_dagsetning": "2019-02-21T14:44:22-05:00",
+        "provenance": "docs/heimildir.md, kafli 2.1",
+        "stadfest_med": "git submodule status data/raw/friends-handrit",
     },
 )
 
@@ -224,47 +242,3 @@ def skra_ofryst(heiti: str, af_hverju: str, hvad_vantar: str) -> None:
         {"heiti": heiti, "af_hverju": af_hverju, "hvad_vantar": hvad_vantar, "skrad_utc": nuna_utc()}
     )
     skrifa_frystingu(skjal)
-
-
-def stadfesta() -> int:
-    """Ber ``frysting.json`` saman við diskinn. Skilar 1 ef nokkuð stemmir ekki."""
-    if not FRYSTING.is_file():
-        raise FileNotFoundError(f"Vantar {stutt_slod(FRYSTING)} — ekkert hefur verið fryst")
-
-    skjal = json.loads(FRYSTING.read_text(encoding="utf-8"))
-    frabrigdi: list[str] = []
-
-    for heiti, safn in sorted(skjal["sofn"].items()):
-        mappa = ROT / safn["mappa"]
-        if not mappa.is_dir():
-            frabrigdi.append(f"{heiti}: mappan er horfin — {safn['mappa']}")
-            continue
-
-        skradar = {skra["slod"] for skra in safn["skrar"]}
-        a_diski = {skra.relative_to(mappa).as_posix() for skra in skrar_i(mappa)}
-        for slod in sorted(skradar - a_diski):
-            frabrigdi.append(f"{heiti}: skrá horfin af diski — {slod}")
-        for slod in sorted(a_diski - skradar):
-            frabrigdi.append(f"{heiti}: skrá á diski sem er ekki í frysting.json — {slod}")
-
-        for skra in safn["skrar"]:
-            adgengileg = mappa / skra["slod"]
-            if not adgengileg.is_file():
-                continue  # þegar skráð hér að ofan
-            if adgengileg.stat().st_size != skra["staerd_baet"]:
-                frabrigdi.append(f"{heiti}: stærð hefur breyst — {skra['slod']}")
-            elif sha256_af(adgengileg) != skra["sha256"]:
-                frabrigdi.append(f"{heiti}: SHA-256 stemmir ekki — {skra['slod']}")
-
-    if frabrigdi:
-        for lina in frabrigdi:
-            log.error("%s", lina)
-        log.error("%d frábrigði — hrágögnin eru EKKI ósnert", len(frabrigdi))
-        return 1
-
-    log.info(
-        "Allar %d skrár í %d söfnum stemma við frysting.json",
-        skjal["fjoldi_skraa"],
-        len(skjal["sofn"]),
-    )
-    return 0

@@ -1,4 +1,6 @@
-"""Próf fyrir frystingu hrágagna — mælitækið á að gögnin séu ósnert (regla 4).
+"""Próf fyrir frystingu hrágagna: summur úr provenance, skráalýsing og auðkenni (regla 4).
+
+Staðfestingin á að frosnu gögnin séu ósnert er prófuð í ``test_vidmid.py``.
 
 Sett upp á sys.path hér í stað sameiginlegrar hjálparskráar: P0.3 og P1.1 eru
 sitt hvor grein og sameiginleg skrá myndi stangast á í samruna.
@@ -85,54 +87,6 @@ class LysaSkrarProf(unittest.TestCase):
             frysting.lysa_skrar(self.mappa, {"svar.json": "0" * 64})
 
 
-class StadfestaProf(unittest.TestCase):
-    """`stadfesta` á að finna breytta, horfna OG óskráða skrá."""
-
-    def setUp(self) -> None:
-        self._tmp = tempfile.TemporaryDirectory()
-        self.rot = Path(self._tmp.name)
-        self.safnmappa = self.rot / "data" / "raw" / "prof"
-        self.safnmappa.mkdir(parents=True)
-        (self.safnmappa / "svar.json").write_text("[1]", encoding="utf-8")
-
-        self.frysting = self.rot / "data" / "raw" / "frysting.json"
-        self._plastur = mock.patch.multiple(frysting, ROT=self.rot, FRYSTING=self.frysting)
-        self._plastur.start()
-        frysting.skra_safn(
-            {
-                "heiti": "prof",
-                "mappa": "data/raw/prof",
-                "fjoldi_skraa": 1,
-                "staerd_baet": (self.safnmappa / "svar.json").stat().st_size,
-                "skrar": frysting.lysa_skrar(self.safnmappa),
-            }
-        )
-
-    def tearDown(self) -> None:
-        self._plastur.stop()
-        self._tmp.cleanup()
-
-    def test_osnert_safn_stemmir(self) -> None:
-        self.assertEqual(frysting.stadfesta(), 0)
-
-    def test_breytt_skra_finnst(self) -> None:
-        (self.safnmappa / "svar.json").write_text("[2]", encoding="utf-8")
-        self.assertEqual(frysting.stadfesta(), 1)
-
-    def test_horfin_skra_finnst(self) -> None:
-        (self.safnmappa / "svar.json").unlink()
-        self.assertEqual(frysting.stadfesta(), 1)
-
-    def test_oskrad_skra_finnst(self) -> None:
-        (self.safnmappa / "auka.json").write_text("[3]", encoding="utf-8")
-        self.assertEqual(frysting.stadfesta(), 1)
-
-    def test_vantar_frystingu_stodvar(self) -> None:
-        self.frysting.unlink()
-        with self.assertRaises(FileNotFoundError):
-            frysting.stadfesta()
-
-
 class AudkenniProf(unittest.TestCase):
     """User-Agent verður að auðkenna verkefnið og ekki bera netfang (regla 4)."""
 
@@ -146,19 +100,6 @@ class AudkenniProf(unittest.TestCase):
         with mock.patch.dict("os.environ", {frysting.AUDKENNIS_BREYTA: "prof (a@b.is)"}):
             with self.assertLogs(frysting.log, level="WARNING"):
                 self.assertEqual(frysting.notandi_audkenni(), "prof (a@b.is)")
-
-
-class FrosinGognProf(unittest.TestCase):
-    """Gögnin sem ERU fryst í þessu repo-i eiga alltaf að stemma við frysting.json."""
-
-    def test_hragognin_eru_osnert(self) -> None:
-        self.assertEqual(frysting.stadfesta(), 0)
-
-    def test_tmdb_er_skrad_ofryst(self) -> None:
-        """Safn sem ekki tókst að frysta má ekki hverfa þegjandi (regla 6)."""
-        skjal = json.loads(frysting.FRYSTING.read_text(encoding="utf-8"))
-        ofryst = {faersla["heiti"] for faersla in skjal["ofryst"]}
-        self.assertIn("tmdb", ofryst)
 
 
 if __name__ == "__main__":
