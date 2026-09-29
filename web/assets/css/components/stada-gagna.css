@@ -25,3 +25,9 @@
 
 /* Litur er aldrei eina merkingin — textinn segir það sama (regla 3.3) */
 .stada-gagna strong { color: var(--texti); font-weight: var(--thyngd-medium); }
+
+/* Villuástand sem gagnahluti.js setur — textinn byrjar á „Villa:“ (regla 3.3) */
+.stada-gagna[data-stada="villa"] {
+  border-left-color: var(--villa);
+}
+.stada-gagna[data-stada="villa"] .stada-gagna__punktur { background: var(--villa); }

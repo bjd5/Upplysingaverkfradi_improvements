@@ -2,8 +2,9 @@
 
 Friends-tölurnar eru í git en handritin eru það ekki. Það stendur og fellur með
 einni fullyrðingu: **engin talnaskrá geymir samfellda setningu úr þáttunum.**
-Hér er hún prófuð, í báðar áttir. Hún nær til skránna sem leitin skannar, ekki
-til alls repo-sins — afmörkunin er í docs/adferdafraedi.md, kafla 1.5.2.
+Hér er hún prófuð, í báðar áttir. Leitin á byggðu gömlu síðunni
+(`vefleit.py`, ákvörðun b í issue #3) er prófuð í tests/test_vefleit.py;
+afmörkunin er í docs/adferdafraedi.md, kafla 1.5.2.
 
 Lærdómur úr docs/agenta-verkefni.md, kafla 15: *staðfesting sem getur stemmt af
 tilviljun er ekki staðfesting.* Þess vegna er ekki nóg að leitin skili engu á
@@ -35,6 +36,13 @@ AFRIT = ROT / "data" / "processed" / "phoebe-stats"
 # tómu mengi.
 SKANNADAR_SKRAR = 18
 UNDANTEKNINGAR_FJOLDI = 18
+# HTML/JSON í trénu: 26 skrár 29.9.2026. Aðrir pakkar bæta við síðum og
+# gögnum, svo hér er aðeins lágmark — nóg til að leit sem hættir að finna
+# skrárnar falli í stað þess að verða græn á tómu mengi.
+LAGMARK_VEFSKRAA = 20
+# Frosna viðmiðið: níu frystar línur úr þætti 0101 í hvorri tveggja skráa
+# (docs/adferdafraedi.md, kafli 1.5.2).
+VEFUNDANTEKNINGAR_FJOLDI = 18
 
 # Heimatilbúin setning: sex orð og punktur. Hvorugt á hún sameiginlegt með
 # þáttunum nema að vera ensk — það er nákvæmlega það sem leitin á að stöðva.
@@ -91,7 +99,7 @@ class GervimoppaProf(unittest.TestCase):
             handritsleit, "STAKAR_SKRAR", ()
         ), mock.patch.object(
             handritsleit, "UNDANTEKNINGAR", undantekningar or {}
-        ):
+        ), mock.patch.object(handritsleit, "VEFMOPPUR", None):
             return handritsleit.leita(self.rot)
 
     def _skrifa_json(self, nafn: str, gogn: object) -> None:
@@ -177,25 +185,33 @@ class GervimoppaProf(unittest.TestCase):
         """Leit sem finnur ekki gögnin sín má ekki skila grænu."""
         with mock.patch.object(handritsleit, "MOPPUR", ("ekki-til",)), mock.patch.object(
             handritsleit, "STAKAR_SKRAR", ()
-        ), mock.patch.object(handritsleit, "UNDANTEKNINGAR", {}):
+        ), mock.patch.object(handritsleit, "UNDANTEKNINGAR", {}), mock.patch.object(
+            handritsleit, "VEFMOPPUR", None
+        ):
             fravik, _ = handritsleit.leita(self.rot)
         self.assertEqual(len(fravik), 1)
         self.assertIn("ekki til", str(fravik[0]))
 
 
 class RaunskrarProf(unittest.TestCase):
-    """Fullyrðingin á skönnuðu skránum: engin geymir samfellda setningu.
+    """Fullyrðingin á raunskránum: enginn óundanþeginn handritstexti.
 
-    Afmörkunin er vísvitandi: leitin les JSON- og CSV-talnaskrárnar sem
-    `handritsreitir.MOPPUR` og `STAKAR_SKRAR` telja upp — ekki allt repo-ið
-    (docs/adferdafraedi.md, kafli 1.5.2).
+    Leitin nær til talnaskránna (`handritsreitir.MOPPUR`, `STAKAR_SKRAR`), allra
+    HTML- og JSON-skráa í `web/`, `docs/` og `data/processed/`, og byggðu gömlu
+    síðunnar í frosna commit-inu, þar sem aðeins 0101-línurnar úr ákvörðun (b)
+    í issue #3 mega standa. Afmörkunin er í docs/adferdafraedi.md, kafla 1.5.2.
     """
 
-    def test_skannadar_talnaskrar_geyma_enga_samfellda_setningu(self) -> None:
+    def test_talnaskrar_og_gamla_sidan_geyma_engan_nyjan_handritstexta(self) -> None:
         fravik, talning = handritsleit.leita()
         self.assertEqual([str(f) for f in fravik], [])
         self.assertEqual(talning["skrar"], SKANNADAR_SKRAR)
         self.assertEqual(talning["undantekningar"], UNDANTEKNINGAR_FJOLDI)
+        self.assertGreaterEqual(talning["vefskrar"], LAGMARK_VEFSKRAA)
+        self.assertEqual(talning["tilsvor_i_trenu"], 0)
+        self.assertEqual(talning["vefundantekningar"], VEFUNDANTEKNINGAR_FJOLDI)
+        if talning["frosid_tiltaekt"]:
+            self.assertEqual(talning["frosin_tilsvor"], VEFUNDANTEKNINGAR_FJOLDI)
 
     def test_stadfesta_skilar_nulli(self) -> None:
         self.assertEqual(handritsleit.stadfesta(), 0)

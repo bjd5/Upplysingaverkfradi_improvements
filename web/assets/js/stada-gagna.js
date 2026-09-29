@@ -1,60 +1,30 @@
-/* stada-gagna.js — les web/gogn/yfirlit.json og sýnir hvenær gögnin voru
-   síðast uppfærð. Vefurinn talar ALDREI beint við API eða gagnagrunn (kafli 0). */
+/* stada-gagna.js — sýnir á forsíðunni hvenær gögnin voru síðast uppfærð.
+
+   Les yfirlit.json í gegnum sameiginlega gagnalagið (gogn.js) og birtir með
+   sama íhlut og gagnahlutarnir (gagnahluti.js), svo dagsetningarsnið og
+   villuboð eru á einum stað. Án JavaScript stendur sjálfgefni textinn í
+   HTML-inu (regla 3.4).                                                      */
 
 (function () {
   "use strict";
 
-  // Sniðum dagsetningu sjálf: Intl fellur aftur á ensku í vöfrum sem
-  // vantar is-IS gögn, og síðan á að vera alíslensk (regla 1.2).
-  const MANUDIR = [
-    "janúar", "febrúar", "mars", "apríl", "maí", "júní",
-    "júlí", "ágúst", "september", "október", "nóvember", "desember"
-  ];
+  const DEFAULT_FILE = "yfirlit.json";
 
-  function islenskDagsetning(dagsetning) {
-    return dagsetning.getDate() + ". " +
-           MANUDIR[dagsetning.getMonth()] + " " +
-           dagsetning.getFullYear();
+  const target = document.querySelector("[data-stada-gagna]");
+  if (!target) return;
+
+  function summary(doc) {
+    const count = Array.isArray(doc.gogn) ? doc.gogn.length : 0;
+    if (count === 0) return "engin gögn sótt enn";
+    const noun = count === 1 ? "gagnasafn" : "gagnasöfn";
+    return count + " " + noun + " · Heimildir: " + doc.heimild;
   }
 
-  function faerslutexti(fjoldi, heimild) {
-    if (fjoldi === 0) return "engin gögn sótt enn";
-    const ord = fjoldi === 1 ? "færsla" : "færslur";
-    return fjoldi + " " + ord + (heimild ? " úr " + heimild : "");
-  }
-
-  const reitur = document.querySelector("[data-stada-gagna]");
-  if (!reitur) return;
-
-  // Slóðin er afstæð frá síðunni sem kallar — undirsíður gefa upp sína slóð.
-  const slod = reitur.dataset.stadaGagna || "gogn/yfirlit.json";
-
-  fetch(slod)
-    .then(function (svar) {
-      if (!svar.ok) throw new Error("Náði ekki í yfirlit: " + svar.status);
-      return svar.json();
+  window.SiteData.load(target.dataset.stadaGagna || DEFAULT_FILE)
+    .then(function (doc) {
+      window.DataSection.fillStatus(target, doc.uppfaert, summary(doc));
     })
-    .then(function (gogn) {
-      const dagsetning = new Date(gogn.uppfaert);
-      if (isNaN(dagsetning.getTime())) throw new Error("Ógild dagsetning í yfirliti");
-
-      const fjoldi = Array.isArray(gogn.gogn) ? gogn.gogn.length : 0;
-
-      const texti = document.createElement("span");
-      const sterkt = document.createElement("strong");
-      sterkt.textContent = "Gögn uppfærð " + islenskDagsetning(dagsetning);
-      texti.appendChild(sterkt);
-      texti.appendChild(
-        document.createTextNode(" · " + faerslutexti(fjoldi, gogn.heimild))
-      );
-
-      const punktur = reitur.querySelector(".stada-gagna__punktur");
-      reitur.textContent = "";
-      if (punktur) reitur.appendChild(punktur);
-      reitur.appendChild(texti);
-    })
-    .catch(function (villa) {
-      // Villur eru aldrei þaggaðar (regla 6) — en síðan brotnar ekki heldur.
-      console.warn("Staða gagna ekki tiltæk:", villa.message);
+    .catch(function (error) {
+      window.DataSection.fillStatusError(target, error);
     });
 })();

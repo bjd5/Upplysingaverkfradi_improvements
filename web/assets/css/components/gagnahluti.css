@@ -1,0 +1,68 @@
+/* gagnahluti.css — hluti síðu sem fær gögn úr web/gogn/ (issue #19).
+   Hegðunin er í assets/js/gagnahluti.js; hér er aðeins útlit ástandanna:
+   hleðsla, villa og varaleið án JavaScript (regla 3.4).                    */
+
+.gagnahluti {
+  display: grid;
+  gap: var(--bil-4);
+  margin-block: var(--bil-8);
+}
+
+.gagnahluti > * { margin-block: 0; }
+
+/* :not([hidden]) — display: grid má aldrei yfirskrifa hidden-eigindina sem
+   heldur efninu földu án JS og í villuástandi. */
+.gagnahluti [data-gogn-efni]:not([hidden]) {
+  display: grid;
+  gap: var(--bil-6);
+}
+
+.gagnahluti [data-gogn-efni] table { margin-bottom: 0; }
+
+/* Hleðsla og varaleið án JS: hlutlaus texti, ekki villa. */
+.gogn-stada {
+  padding: var(--bil-4) var(--bil-6);
+  background: var(--bak-daufur);
+  border: var(--rammi-breidd) dashed var(--rammi-sterkur);
+  border-radius: var(--radius);
+  font-size: var(--texti-sm);
+  color: var(--texti-daufur);
+}
+
+/* Villa: rauður kantur er viðbót — fyrirsögnin segir „Ekki tókst …“ í orðum
+   svo liturinn er aldrei eina merkingin (regla 3.3). */
+.gogn-villa {
+  display: grid;
+  gap: var(--bil-1);
+  padding: var(--bil-4) var(--bil-6);
+  background: var(--bak-upphaekkad);
+  border: var(--rammi-breidd) solid var(--rammi);
+  border-left: var(--rammi-breidd-breid) solid var(--villa);
+  border-radius: var(--radius);
+  font-size: var(--texti-sm);
+  color: var(--texti);
+}
+
+.gogn-villa__titill { color: var(--villa); }
+
+.gogn-villa__tengill {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--smellisvaedi);
+  justify-self: start;
+}
+
+/* Tölur í gagnatöflum hægrijafnaðar svo tugir og hundruð standist á. */
+.gagnatafla__tala {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.gagnatafla caption {
+  caption-side: top;
+  padding-bottom: var(--bil-2);
+  text-align: left;
+  font-size: var(--texti-sm);
+  font-weight: var(--thyngd-medium);
+  color: var(--texti);
+}
