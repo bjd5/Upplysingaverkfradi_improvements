@@ -1,0 +1,739 @@
+{
+  "uppfaert": "2026-09-17T09:47:09+00:00",
+  "heimild": "delvinso/friends @ a4641fe — github.com/delvinso/friends (fangj/friends: ekkert leyfi (afrit aðdáenda á höfundarréttarvörðum handritum). delvinso/friends: MIT, nær yfir kóðann en ekki endilega textann. Aðeins afleiddar tölur geymdar — valkostur A, issue #3.)",
+  "gogn": [
+    {
+      "thattarod": 1,
+      "persona": "Ross",
+      "linur": 952,
+      "ord": 10107,
+      "hlutdeild_prosent": 19.94,
+      "saeti": 1
+    },
+    {
+      "thattarod": 1,
+      "persona": "Monica",
+      "linur": 875,
+      "ord": 7806,
+      "hlutdeild_prosent": 18.33,
+      "saeti": 2
+    },
+    {
+      "thattarod": 1,
+      "persona": "Rachel",
+      "linur": 853,
+      "ord": 8888,
+      "hlutdeild_prosent": 17.87,
+      "saeti": 3
+    },
+    {
+      "thattarod": 1,
+      "persona": "Chandler",
+      "linur": 817,
+      "ord": 8758,
+      "hlutdeild_prosent": 17.11,
+      "saeti": 4
+    },
+    {
+      "thattarod": 1,
+      "persona": "Joey",
+      "linur": 640,
+      "ord": 6156,
+      "hlutdeild_prosent": 13.41,
+      "saeti": 5
+    },
+    {
+      "thattarod": 1,
+      "persona": "Phoebe",
+      "linur": 637,
+      "ord": 6297,
+      "hlutdeild_prosent": 13.34,
+      "saeti": 6
+    },
+    {
+      "thattarod": 2,
+      "persona": "Ross",
+      "linur": 868,
+      "ord": 9427,
+      "hlutdeild_prosent": 19.03,
+      "saeti": 1
+    },
+    {
+      "thattarod": 2,
+      "persona": "Rachel",
+      "linur": 811,
+      "ord": 8989,
+      "hlutdeild_prosent": 17.78,
+      "saeti": 2
+    },
+    {
+      "thattarod": 2,
+      "persona": "Monica",
+      "linur": 790,
+      "ord": 8146,
+      "hlutdeild_prosent": 17.32,
+      "saeti": 3
+    },
+    {
+      "thattarod": 2,
+      "persona": "Chandler",
+      "linur": 771,
+      "ord": 8878,
+      "hlutdeild_prosent": 16.9,
+      "saeti": 4
+    },
+    {
+      "thattarod": 2,
+      "persona": "Phoebe",
+      "linur": 666,
+      "ord": 8967,
+      "hlutdeild_prosent": 14.6,
+      "saeti": 5
+    },
+    {
+      "thattarod": 2,
+      "persona": "Joey",
+      "linur": 656,
+      "ord": 7566,
+      "hlutdeild_prosent": 14.38,
+      "saeti": 6
+    },
+    {
+      "thattarod": 3,
+      "persona": "Ross",
+      "linur": 1075,
+      "ord": 11101,
+      "hlutdeild_prosent": 20.52,
+      "saeti": 1
+    },
+    {
+      "thattarod": 3,
+      "persona": "Rachel",
+      "linur": 925,
+      "ord": 9190,
+      "hlutdeild_prosent": 17.65,
+      "saeti": 2
+    },
+    {
+      "thattarod": 3,
+      "persona": "Monica",
+      "linur": 847,
+      "ord": 8616,
+      "hlutdeild_prosent": 16.16,
+      "saeti": 3
+    },
+    {
+      "thattarod": 3,
+      "persona": "Chandler",
+      "linur": 825,
+      "ord": 9232,
+      "hlutdeild_prosent": 15.74,
+      "saeti": 4
+    },
+    {
+      "thattarod": 3,
+      "persona": "Phoebe",
+      "linur": 793,
+      "ord": 9507,
+      "hlutdeild_prosent": 15.13,
+      "saeti": 5
+    },
+    {
+      "thattarod": 3,
+      "persona": "Joey",
+      "linur": 775,
+      "ord": 8751,
+      "hlutdeild_prosent": 14.79,
+      "saeti": 6
+    },
+    {
+      "thattarod": 4,
+      "persona": "Chandler",
+      "linur": 912,
+      "ord": 9654,
+      "hlutdeild_prosent": 18.54,
+      "saeti": 1
+    },
+    {
+      "thattarod": 4,
+      "persona": "Rachel",
+      "linur": 908,
+      "ord": 9744,
+      "hlutdeild_prosent": 18.46,
+      "saeti": 2
+    },
+    {
+      "thattarod": 4,
+      "persona": "Joey",
+      "linur": 816,
+      "ord": 8747,
+      "hlutdeild_prosent": 16.59,
+      "saeti": 3
+    },
+    {
+      "thattarod": 4,
+      "persona": "Ross",
+      "linur": 807,
+      "ord": 8990,
+      "hlutdeild_prosent": 16.4,
+      "saeti": 4
+    },
+    {
+      "thattarod": 4,
+      "persona": "Monica",
+      "linur": 766,
+      "ord": 7675,
+      "hlutdeild_prosent": 15.57,
+      "saeti": 5
+    },
+    {
+      "thattarod": 4,
+      "persona": "Phoebe",
+      "linur": 711,
+      "ord": 8692,
+      "hlutdeild_prosent": 14.45,
+      "saeti": 6
+    },
+    {
+      "thattarod": 5,
+      "persona": "Chandler",
+      "linur": 941,
+      "ord": 8492,
+      "hlutdeild_prosent": 17.56,
+      "saeti": 1
+    },
+    {
+      "thattarod": 5,
+      "persona": "Joey",
+      "linur": 932,
+      "ord": 9537,
+      "hlutdeild_prosent": 17.39,
+      "saeti": 2
+    },
+    {
+      "thattarod": 5,
+      "persona": "Rachel",
+      "linur": 906,
+      "ord": 10050,
+      "hlutdeild_prosent": 16.9,
+      "saeti": 3
+    },
+    {
+      "thattarod": 5,
+      "persona": "Monica",
+      "linur": 898,
+      "ord": 8474,
+      "hlutdeild_prosent": 16.75,
+      "saeti": 4
+    },
+    {
+      "thattarod": 5,
+      "persona": "Ross",
+      "linur": 870,
+      "ord": 9026,
+      "hlutdeild_prosent": 16.23,
+      "saeti": 5
+    },
+    {
+      "thattarod": 5,
+      "persona": "Phoebe",
+      "linur": 813,
+      "ord": 8574,
+      "hlutdeild_prosent": 15.17,
+      "saeti": 6
+    },
+    {
+      "thattarod": 6,
+      "persona": "Chandler",
+      "linur": 1037,
+      "ord": 11267,
+      "hlutdeild_prosent": 18.72,
+      "saeti": 1
+    },
+    {
+      "thattarod": 6,
+      "persona": "Rachel",
+      "linur": 993,
+      "ord": 11589,
+      "hlutdeild_prosent": 17.92,
+      "saeti": 2
+    },
+    {
+      "thattarod": 6,
+      "persona": "Ross",
+      "linur": 913,
+      "ord": 10620,
+      "hlutdeild_prosent": 16.48,
+      "saeti": 3
+    },
+    {
+      "thattarod": 6,
+      "persona": "Joey",
+      "linur": 909,
+      "ord": 11397,
+      "hlutdeild_prosent": 16.41,
+      "saeti": 4
+    },
+    {
+      "thattarod": 6,
+      "persona": "Monica",
+      "linur": 901,
+      "ord": 9296,
+      "hlutdeild_prosent": 16.26,
+      "saeti": 5
+    },
+    {
+      "thattarod": 6,
+      "persona": "Phoebe",
+      "linur": 787,
+      "ord": 8743,
+      "hlutdeild_prosent": 14.21,
+      "saeti": 6
+    },
+    {
+      "thattarod": 7,
+      "persona": "Rachel",
+      "linur": 1092,
+      "ord": 12305,
+      "hlutdeild_prosent": 20.26,
+      "saeti": 1
+    },
+    {
+      "thattarod": 7,
+      "persona": "Joey",
+      "linur": 930,
+      "ord": 10105,
+      "hlutdeild_prosent": 17.25,
+      "saeti": 2
+    },
+    {
+      "thattarod": 7,
+      "persona": "Monica",
+      "linur": 900,
+      "ord": 9852,
+      "hlutdeild_prosent": 16.69,
+      "saeti": 3
+    },
+    {
+      "thattarod": 7,
+      "persona": "Chandler",
+      "linur": 847,
+      "ord": 9044,
+      "hlutdeild_prosent": 15.71,
+      "saeti": 4
+    },
+    {
+      "thattarod": 7,
+      "persona": "Ross",
+      "linur": 822,
+      "ord": 9256,
+      "hlutdeild_prosent": 15.25,
+      "saeti": 5
+    },
+    {
+      "thattarod": 7,
+      "persona": "Phoebe",
+      "linur": 800,
+      "ord": 8203,
+      "hlutdeild_prosent": 14.84,
+      "saeti": 6
+    },
+    {
+      "thattarod": 8,
+      "persona": "Rachel",
+      "linur": 1083,
+      "ord": 12319,
+      "hlutdeild_prosent": 20.68,
+      "saeti": 1
+    },
+    {
+      "thattarod": 8,
+      "persona": "Ross",
+      "linur": 983,
+      "ord": 10831,
+      "hlutdeild_prosent": 18.77,
+      "saeti": 2
+    },
+    {
+      "thattarod": 8,
+      "persona": "Joey",
+      "linur": 911,
+      "ord": 11268,
+      "hlutdeild_prosent": 17.4,
+      "saeti": 3
+    },
+    {
+      "thattarod": 8,
+      "persona": "Monica",
+      "linur": 812,
+      "ord": 9301,
+      "hlutdeild_prosent": 15.51,
+      "saeti": 4
+    },
+    {
+      "thattarod": 8,
+      "persona": "Phoebe",
+      "linur": 771,
+      "ord": 8172,
+      "hlutdeild_prosent": 14.72,
+      "saeti": 5
+    },
+    {
+      "thattarod": 8,
+      "persona": "Chandler",
+      "linur": 676,
+      "ord": 6636,
+      "hlutdeild_prosent": 12.91,
+      "saeti": 6
+    },
+    {
+      "thattarod": 9,
+      "persona": "Chandler",
+      "linur": 928,
+      "ord": 11036,
+      "hlutdeild_prosent": 17.38,
+      "saeti": 1
+    },
+    {
+      "thattarod": 9,
+      "persona": "Monica",
+      "linur": 915,
+      "ord": 9256,
+      "hlutdeild_prosent": 17.13,
+      "saeti": 2
+    },
+    {
+      "thattarod": 9,
+      "persona": "Rachel",
+      "linur": 913,
+      "ord": 9763,
+      "hlutdeild_prosent": 17.1,
+      "saeti": 3
+    },
+    {
+      "thattarod": 9,
+      "persona": "Ross",
+      "linur": 899,
+      "ord": 10478,
+      "hlutdeild_prosent": 16.84,
+      "saeti": 4
+    },
+    {
+      "thattarod": 9,
+      "persona": "Joey",
+      "linur": 877,
+      "ord": 9313,
+      "hlutdeild_prosent": 16.42,
+      "saeti": 5
+    },
+    {
+      "thattarod": 9,
+      "persona": "Phoebe",
+      "linur": 808,
+      "ord": 9279,
+      "hlutdeild_prosent": 15.13,
+      "saeti": 6
+    },
+    {
+      "thattarod": 10,
+      "persona": "Ross",
+      "linur": 869,
+      "ord": 8204,
+      "hlutdeild_prosent": 19.48,
+      "saeti": 1
+    },
+    {
+      "thattarod": 10,
+      "persona": "Rachel",
+      "linur": 775,
+      "ord": 7893,
+      "hlutdeild_prosent": 17.37,
+      "saeti": 2
+    },
+    {
+      "thattarod": 10,
+      "persona": "Joey",
+      "linur": 737,
+      "ord": 7075,
+      "hlutdeild_prosent": 16.52,
+      "saeti": 3
+    },
+    {
+      "thattarod": 10,
+      "persona": "Phoebe",
+      "linur": 697,
+      "ord": 7354,
+      "hlutdeild_prosent": 15.62,
+      "saeti": 4
+    },
+    {
+      "thattarod": 10,
+      "persona": "Chandler",
+      "linur": 692,
+      "ord": 6607,
+      "hlutdeild_prosent": 15.51,
+      "saeti": 5
+    },
+    {
+      "thattarod": 10,
+      "persona": "Monica",
+      "linur": 691,
+      "ord": 6957,
+      "hlutdeild_prosent": 15.49,
+      "saeti": 6
+    }
+  ],
+  "lysigogn": {
+    "uppruni": {
+      "handritasafn": "delvinso/friends",
+      "handritasafn_commit": "a4641fed3d95bb9d9c7ba23681604c692f9b392a",
+      "greining": "Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe",
+      "greining_commit": "2865ed6",
+      "greiningarskrifta": "src/phoebe_analysis.py",
+      "leyfi": "fangj/friends: ekkert leyfi (afrit aðdáenda á höfundarréttarvörðum handritum). delvinso/friends: MIT, nær yfir kóðann en ekki endilega textann. Aðeins afleiddar tölur geymdar — valkostur A, issue #3."
+    },
+    "umfang": {
+      "handritsskrar": 227,
+      "thaettir": 236,
+      "skrar_med_tvo_thaetti": 9,
+      "thattaradir": 10,
+      "undanskildar_skrar": 2,
+      "thattunargaedi": {
+        "textablokkir": 70553,
+        "tilsvor": 61161,
+        "svidsfyrirsagnir": 4055,
+        "svidsleidbeiningar": 3259,
+        "oflokkad": 2078,
+        "oflokkad_prosent": 2.95
+      }
+    },
+    "plass_alls": [
+      {
+        "persona": "Rachel",
+        "linur": 9259,
+        "ord": 100730,
+        "saeti": 1
+      },
+      {
+        "persona": "Ross",
+        "linur": 9058,
+        "ord": 98040,
+        "saeti": 2
+      },
+      {
+        "persona": "Chandler",
+        "linur": 8446,
+        "ord": 89604,
+        "saeti": 3
+      },
+      {
+        "persona": "Monica",
+        "linur": 8395,
+        "ord": 85379,
+        "saeti": 4
+      },
+      {
+        "persona": "Joey",
+        "linur": 8183,
+        "ord": 89915,
+        "saeti": 5
+      },
+      {
+        "persona": "Phoebe",
+        "linur": 7483,
+        "ord": 83788,
+        "saeti": 6
+      }
+    ],
+    "tengsl": [
+      {
+        "persona": "Monica",
+        "radskipti": 2718,
+        "linur": 8395,
+        "hlutdeild_radskipta_prosent": 25.44,
+        "vaent_hlutdeild_prosent": 19.37,
+        "lift": 1.314,
+        "saeti": 1
+      },
+      {
+        "persona": "Rachel",
+        "radskipti": 2701,
+        "linur": 9259,
+        "hlutdeild_radskipta_prosent": 25.29,
+        "vaent_hlutdeild_prosent": 21.36,
+        "lift": 1.184,
+        "saeti": 2
+      },
+      {
+        "persona": "Joey",
+        "radskipti": 1933,
+        "linur": 8183,
+        "hlutdeild_radskipta_prosent": 18.1,
+        "vaent_hlutdeild_prosent": 18.88,
+        "lift": 0.958,
+        "saeti": 3
+      },
+      {
+        "persona": "Ross",
+        "radskipti": 1774,
+        "linur": 9058,
+        "hlutdeild_radskipta_prosent": 16.61,
+        "vaent_hlutdeild_prosent": 20.9,
+        "lift": 0.795,
+        "saeti": 4
+      },
+      {
+        "persona": "Chandler",
+        "radskipti": 1556,
+        "linur": 8446,
+        "hlutdeild_radskipta_prosent": 14.57,
+        "vaent_hlutdeild_prosent": 19.49,
+        "lift": 0.747,
+        "saeti": 5
+      }
+    ],
+    "naervera": [
+      {
+        "thattarod": 1,
+        "thaettir": 24,
+        "i_tali_annarra": 94,
+        "i_eigin_tali": 5,
+        "i_tali": 99,
+        "i_svidsleidbeiningum": 187,
+        "alls": 286,
+        "phoebe": 56,
+        "gaelunafn": 43,
+        "i_tali_a_thatt": 4.12,
+        "nefnir_oftast": "Rachel",
+        "nefnir_oftast_fjoldi": 28
+      },
+      {
+        "thattarod": 2,
+        "thaettir": 24,
+        "i_tali_annarra": 118,
+        "i_eigin_tali": 7,
+        "i_tali": 125,
+        "i_svidsleidbeiningum": 115,
+        "alls": 240,
+        "phoebe": 114,
+        "gaelunafn": 11,
+        "i_tali_a_thatt": 5.21,
+        "nefnir_oftast": "Rachel",
+        "nefnir_oftast_fjoldi": 26
+      },
+      {
+        "thattarod": 3,
+        "thaettir": 25,
+        "i_tali_annarra": 118,
+        "i_eigin_tali": 14,
+        "i_tali": 132,
+        "i_svidsleidbeiningum": 214,
+        "alls": 346,
+        "phoebe": 81,
+        "gaelunafn": 51,
+        "i_tali_a_thatt": 5.28,
+        "nefnir_oftast": "Monica",
+        "nefnir_oftast_fjoldi": 28
+      },
+      {
+        "thattarod": 4,
+        "thaettir": 24,
+        "i_tali_annarra": 107,
+        "i_eigin_tali": 12,
+        "i_tali": 119,
+        "i_svidsleidbeiningum": 180,
+        "alls": 299,
+        "phoebe": 79,
+        "gaelunafn": 40,
+        "i_tali_a_thatt": 4.96,
+        "nefnir_oftast": "Monica",
+        "nefnir_oftast_fjoldi": 26
+      },
+      {
+        "thattarod": 5,
+        "thaettir": 24,
+        "i_tali_annarra": 197,
+        "i_eigin_tali": 13,
+        "i_tali": 210,
+        "i_svidsleidbeiningum": 213,
+        "alls": 423,
+        "phoebe": 123,
+        "gaelunafn": 87,
+        "i_tali_a_thatt": 8.75,
+        "nefnir_oftast": "Joey",
+        "nefnir_oftast_fjoldi": 46
+      },
+      {
+        "thattarod": 6,
+        "thaettir": 25,
+        "i_tali_annarra": 157,
+        "i_eigin_tali": 7,
+        "i_tali": 164,
+        "i_svidsleidbeiningum": 265,
+        "alls": 429,
+        "phoebe": 119,
+        "gaelunafn": 45,
+        "i_tali_a_thatt": 6.56,
+        "nefnir_oftast": "Rachel",
+        "nefnir_oftast_fjoldi": 66
+      },
+      {
+        "thattarod": 7,
+        "thaettir": 24,
+        "i_tali_annarra": 157,
+        "i_eigin_tali": 6,
+        "i_tali": 163,
+        "i_svidsleidbeiningum": 305,
+        "alls": 468,
+        "phoebe": 119,
+        "gaelunafn": 44,
+        "i_tali_a_thatt": 6.79,
+        "nefnir_oftast": "Rachel",
+        "nefnir_oftast_fjoldi": 47
+      },
+      {
+        "thattarod": 8,
+        "thaettir": 24,
+        "i_tali_annarra": 106,
+        "i_eigin_tali": 17,
+        "i_tali": 123,
+        "i_svidsleidbeiningum": 192,
+        "alls": 315,
+        "phoebe": 105,
+        "gaelunafn": 18,
+        "i_tali_a_thatt": 5.12,
+        "nefnir_oftast": "Monica",
+        "nefnir_oftast_fjoldi": 38
+      },
+      {
+        "thattarod": 9,
+        "thaettir": 24,
+        "i_tali_annarra": 146,
+        "i_eigin_tali": 4,
+        "i_tali": 150,
+        "i_svidsleidbeiningum": 198,
+        "alls": 348,
+        "phoebe": 126,
+        "gaelunafn": 24,
+        "i_tali_a_thatt": 6.25,
+        "nefnir_oftast": "Rachel",
+        "nefnir_oftast_fjoldi": 33
+      },
+      {
+        "thattarod": 10,
+        "thaettir": 18,
+        "i_tali_annarra": 94,
+        "i_eigin_tali": 6,
+        "i_tali": 100,
+        "i_svidsleidbeiningum": 207,
+        "alls": 307,
+        "phoebe": 82,
+        "gaelunafn": 18,
+        "i_tali_a_thatt": 5.56,
+        "nefnir_oftast": "Monica",
+        "nefnir_oftast_fjoldi": 25
+      }
+    ],
+    "aukastafir": 2
+  }
+}
