@@ -21,6 +21,7 @@ from keyrsla.hledsla import hlada_ollum, krefjast_adfanga
 from keyrsla.urvinnsla import handritamappa, vinna_allt
 from keyrsla.villa import SkrefVilla
 from sofnun.saekja_allt import SofnunVilla
+from utflutningur import flytja_ut as utflutningur
 from sofnun.saekja_allt import safna as safna_gogn
 
 ROT = Path(__file__).resolve().parents[2]
@@ -91,13 +92,18 @@ def hlada() -> None:
 
 
 def flytja_ut() -> None:
-    """Flytur niðurstöður úr grunninum út sem JSON í web/gogn/.
+    """Flytur niðurstöður úr grunninum út sem JSON í web/gogn/ (regla 5.4, #15).
 
-    Regla 5.4: hver skrá er á forminu
-    {"uppfaert": "<ISO>", "heimild": "...", "gogn": [...]}
+    Hver skrá er á forminu ``{"uppfaert", "heimild", "gogn"[, "lysigogn"]}``
+    og er skrifuð atómískt; bregðist eitt safn er engin skrá skrifuð. Söfn sem
+    eiga enn engan útflutning eru nefnd í viðvörun (``utflutningur.flytja_ut``).
+    Villa verður að :class:`SkrefVilla` og þar með útgangskóða 1.
     """
-    log.info("Útflutningur: ekki útfærður enn — sjá src/python/utflutningur/")
-    raise NotImplementedError("Útfæra í src/python/utflutningur/")
+    try:
+        skrifadar = utflutningur.flytja_ut(VEFGOGN, GAGNAGRUNNUR)
+    except utflutningur.UTFLUTNINGSVILLUR as villa:
+        raise SkrefVilla(f"Útflutningur í {VEFGOGN} brást: {villa}") from villa
+    log.info("Flutti út %d skrár í %s.", len(skrifadar), VEFGOGN)
 
 
 SKREF = {

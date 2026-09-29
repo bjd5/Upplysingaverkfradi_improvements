@@ -135,7 +135,7 @@ tölur (Monica munar einni línu), svo niðurstöðurnar eru **ekki háðar vali
 (tvítekning og aukaefni). Eftir standa **227 handritsskrár**, sem svara til **236
 sýndra þátta** — níu skrár geyma tvo þætti hver.
 
-**Skilgreiningar sem gilda alls staðar** (`vidmid/phoebe-stats/README.md`):
+**Skilgreiningar sem gilda alls staðar** (`vidmid-frosid:docs/vidmid/phoebe-stats/README.md`):
 
 - **Lína** = ein `Nafn: texti` blokk.
 - **Orð** = `[a-z][a-z'-]*` eftir að svigainnskot voru fjarlægð — `(hlær)` og
@@ -211,15 +211,17 @@ staðfest 28.9.2026 með nafnlausu `git fetch`).
 
 **(b) Línurnar úr þætti `0101` standa sem stutt tilvitnun; git-sagan er ekki
 endurskrifuð.** Þær eru í `vidmid/vefur/friends/phoebe-statistics.html` og
-`vidmid/vefur/search.json`.
+`vidmid/vefur/search.json`. Mappan var tekin úr trénu 28.9.2026 (grisjunin, PR
+#67), svo línurnar eru ekki lengur á `main` — aðeins í git-sögunni og taginu
+`vidmid-frosid` (commit `f23035c`).
 
 - *Rök:* átta línur af 61.161 tilsvari, birtar sem dæmi um þáttarann í
   greiningarskyni. Frosna viðmiðið er SHA-staðfest
   ([`vidmid/provenance.json`](vidmid/provenance.json)) og má ekki breyta.
   Endurskrif sögunnar myndu ógilda öll afrit, PR og SHA-tilvísanir.
-- Handritsleitin nær nú yfir allar HTML- og JSON-skrár í `vidmid/vefur/`, með
-  nákvæmri, frystri undanþágu fyrir einmitt þessar línur (kafli 1.5.2). Hver
-  ný handritslína þar fellir prófið.
+- Handritsleitin nær nú yfir HTML- og JSON-skrár — í trénu án nokkurrar
+  undanþágu, og í frosnu skránum með nákvæmri, frystri undanþágu fyrir einmitt
+  þessar línur (kafli 1.5.2). Hver ný handritslína fellir prófið.
 - Víkkaða leitin fann **níundu** línuna úr sama þætti: hóplínuna `All: …`, sem
   síðan nefnir sem dæmi um undanskildar hóplínur. Hún er í sömu skrám, frá
   sama commit og í sama tilgangi, og fellur undir sömu ákvörðun. Eins orðs
@@ -267,11 +269,16 @@ mælingar. Væri hann handritstexti myndi prentunin afrita hann í logga.
 prófin keyra hana á heimatilbúnum gervisetningum og falla ef hún **finnur þær
 ekki**.
 
-**Byggða gamla síðan — tilsvör í handritasniði.** Ákvörðun (b) víkkaði
-leitina ([`../src/python/vidmid/vefleit.py`](../src/python/vidmid/vefleit.py),
-prófuð í [`../tests/test_vefleit.py`](../tests/test_vefleit.py)) yfir **allar
-30 HTML- og JSON-skrár** í `vidmid/vefur/` — texta, `<pre>`/`<code>`,
-`<script>` og eigindagildi:
+**HTML og JSON — tilsvör í handritasniði.** Ákvörðun (b) víkkaði leitina
+([`../src/python/vidmid/vefleit.py`](../src/python/vidmid/vefleit.py), prófuð í
+[`../tests/test_vefleit.py`](../tests/test_vefleit.py)) yfir HTML- og
+JSON-skrár — texta, `<pre>`/`<code>`, `<script>` og eigindagildi — á tveimur
+stöðum:
+
+| Hvar | Skrár | Undanþágur |
+|---|---|---|
+| **Tréð:** `web/`, `docs/`, `data/processed/` | allar HTML/JSON (26 þann 29.9.2026) | **engar** — hvert tilsvar fellir prófið |
+| **Frosna viðmiðið:** byggða gamla síðan, tekin úr trénu 28.9.2026 og aðeins í commit `f23035c` (git-tagið `vidmid-frosid`, sjá `vidmid/README.md`) | `friends/phoebe-statistics.html` og `search.json`, lesnar með `git show` | 18 frystar línur úr þætti `0101` |
 
 1. **Tilsvar** er `Nafn:` (eitt til fjögur hástafsorð, t.d.
    `Monica and Phoebe:`) og textinn á eftir, fram að næsta `Nafn:` eða enda
@@ -280,23 +287,26 @@ prófuð í [`../tests/test_vefleit.py`](../tests/test_vefleit.py)) yfir **allar
 2. Tilsvar telst **enskt** ef það geymir minnst eitt algengt enskt kerfisorð
    (`the`, `you`, `does` …) eftir að svigainnskot og slóðir eru fjarlægð. Þannig
    standast íslenskar merkingar á borð við `Heimild: …` og `Nafn: texti`.
-3. **Undanþágan er fryst lína fyrir línu**: skrá + SHA-256 línunnar + fjöldi
-   tilvika, í `VEFUNDANTEKNINGAR` í `handritsreitir.py`. Textinn sjálfur er
-   ekki afritaður í kóðann. 18 færslur: níu í hvorri skrá — átta línur úr
-   `<pre>`-dæminu (sviðslýsingin og sjö tilsvör; sviðsleiðbeiningin er án
-   `Nafn:`) og hóplínan `All:`.
+3. **Undanþágan er fryst lína fyrir línu** og gildir aðeins í frosna
+   commit-inu: skrá + SHA-256 línunnar + fjöldi tilvika, í `VEFUNDANTEKNINGAR`
+   í `handritsreitir.py`. Textinn sjálfur er ekki afritaður í kóðann. 18
+   færslur: níu í hvorri skrá — átta línur úr `<pre>`-dæminu (sviðslýsingin og
+   sjö tilsvör; sviðsleiðbeiningin er án `Nafn:`) og hóplínan `All:`.
 
-Leitin fellur ef: ný lína finnst hvar sem er í möppunni; undanþegin lína
-breytist um eitt orð (ný summa, og gamla undanþágan verður dauð); lína kemur
-fyrir oftar en skráð er; eða undanþága finnst ekki.
+Leitin fellur ef: ný lína finnst í trénu (líka ef gamla síðan væri sett aftur í
+tréð — undanþágan fylgir ekki); undanþegin lína breytist um eitt orð (ný summa,
+og gamla undanþágan verður dauð); lína kemur fyrir oftar en skráð er; eða
+undanþága finnst ekki. Sé frosna commit-ið ekki í klóninu (grunnt klón) skrifar
+`stadfesta` **viðvörun** og ber undanþágurnar ekki saman — það er ekki merki um
+handritstexta, en það er ekki þagað um það.
 
 **Afmörkun — það sem leitin nær til, og það sem hún nær ekki til.**
 
 | Nær til | Nær **ekki** til |
 |---|---|
-| Talnaskrárnar (42 JSON/CSV, reitaregla) | Handritstexti **án** `Nafn:` á síðunni |
-| Allar HTML- og JSON-skrár í `docs/vidmid/vefur/` (tilsvarsregla) | Tilsvar án nokkurs ensks kerfisorðs (t.d. tveggja orða upphrópun) |
-| | Annað í repo-inu (`web/`, `docs/*.md`) |
+| Talnaskrárnar (18 JSON/CSV, reitaregla) | Handritstexti **án** `Nafn:` |
+| HTML/JSON í `web/`, `docs/`, `data/processed/` (tilsvarsregla) | Tilsvar án nokkurs ensks kerfisorðs (t.d. tveggja orða upphrópun) |
+| Frosnu skrárnar tvær í `f23035c` (tilsvarsregla + undanþága) | Aðrar skrár í git-sögunni og taginu; `.md`-skrár |
 
 Prófið heitir `test_talnaskrar_og_gamla_sidan_geyma_engan_nyjan_handritstexta`
 — það lofar því sem það prófar: engum **nýjum** handritstexta, ekki engum.
@@ -392,12 +402,13 @@ Frá tölu að hrágagni og til baka.
 | Hagstofan | `data/raw/hagstofan/` | safnsins eigin | P1.3 (#7) | `web/sidur/hagstofan.html` |
 | Veðurstöðvar | `data/raw/vedurstodvar/` | safnsins eigin | P1.4 (#8) | `web/sidur/vedurstodvar.html` |
 | mbl.is | `data/raw/mbl/` | `vidmid/provenance.json` | P1.5 (#9) | `web/sidur/mbl-regex.html` |
-| Friends | *engin — aðeins talnaniðurstöður* | `vidmid/phoebe-stats/_meta.json` | P1.6 (#10) | `phoebe-tolfraedi.html`, `phoebe-central-perk.html` |
+| Friends | *engin — aðeins talnaniðurstöður* | `../data/processed/phoebe-stats/_meta.json` | P1.6 (#10) | `phoebe-tolfraedi.html`, `phoebe-central-perk.html` |
 | TMDB | **vantar** | — | — | `web/sidur/phoebe-tmdb.html` |
 
 Leiðin til baka: tala á síðu → JSON í `web/gogn/` (`src/python/utflutningur/`)
 → grunnurinn → `data/raw/`, þar sem `provenance.json` segir hvaða beiðni skilaði
-gagninu og `frysting.json` staðfestir að það sé óbreytt. Hvaða skrifta les hvaða
+gagninu og `frysting.json` staðfestir að það sé óbreytt
+(`src/python/vidmid/provenance.py stadfesta`). Hvaða skrifta les hvaða
 safn er í [`../data/raw/README.md`](../data/raw/README.md).
 
 ---
@@ -426,5 +437,5 @@ Opnar spurningar um heimildir og leyfi eru taldar upp í
 | 2 | Rökstuðningur fyrir `evaluation_mode=manual` | **að hluta** — skjalfest hvað sían útilokar, ekki af hverju valið var tekið |
 | 3 | Fimm mbl-svörin úr frosna eintakinu | **ekki reiknuð** — P1.5 reiknar þau og skráir muninn við gömlu síðuna |
 | 4 | Afmörkun TMDB-safnsins | **ófrágengið** — ekkert eintak til |
-| 5 | Höfundaréttur Friends-handritanna | **ákveðið** — valkostur A (27.9.2026): tölurnar í git, handritin aldrei. 28.9.2026: (a) delvinso-safnið submodule á `data/raw/friends-handrit` @ `a4641fe`; (b) 0101-línurnar í `vidmid/vefur/` standa sem tilvitnun, fryst undanþága í handritsleitinni — sjá kafla 1.5.1–1.5.2 |
+| 5 | Höfundaréttur Friends-handritanna | **ákveðið** — valkostur A (27.9.2026): tölurnar í git, handritin aldrei. 28.9.2026: (a) delvinso-safnið submodule á `data/raw/friends-handrit` @ `a4641fe`; (b) 0101-línurnar í git-sögunni (tagið `vidmid-frosid`) standa sem tilvitnun, fryst undanþága í handritsleitinni — sjá kafla 1.5.1–1.5.2 |
 | 6 | Vinnsla og greining Central Perk-hlutans | **skjalfest í viðmiðinu**, ekki endurtekin hér — P2.6 flytur hana yfir |

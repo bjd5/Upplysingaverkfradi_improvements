@@ -49,8 +49,7 @@ hraða og örugga.
 │   │   │   ├── layout.css     # grind, haus, fótur
 │   │   │   └── components/    # einn stíll per eining
 │   │   ├── js/                # ALLT JavaScript hér — ekkert annars staðar
-│   │   ├── img/
-│   │   └── fonts/
+│   │   └── img/
 │   └── gogn/                  # JSON sem Python flytur út (sjá reglu 5.4)
 │
 ├── src/                       # ← ALLUR ANNAR KÓÐI, AÐSKILINN EFTIR MÁLI
@@ -60,15 +59,11 @@ hraða og örugga.
 │   │   ├── gagnagrunnur/      # tenging og fyrirspurnir
 │   │   ├── utflutningur/      # JSON út í web/gogn/
 │   │   ├── keyrsla/           # keyrsluröð skrefanna sem main.py kallar í
-│   │   ├── vidmid/            # provenance og staðfesting á frosna viðmiðinu
+│   │   ├── vidmid/            # staðfesting á frosnum gögnum (hrágögn + viðmið)
 │   │   └── uppruni/           # yfirferð á nýju efni úr gamla verkefninu
-│   ├── sql/
-│   │   ├── schema/            # töfluskilgreiningar
-│   │   ├── migrations/        # númeraðar breytingar: 001_..., 002_...
-│   │   ├── queries/           # endurnýtanlegar fyrirspurnir
-│   │   └── seeds/             # prófunargögn
-│   ├── cpp/                   # C++ (src/ + include/ + CMakeLists.txt)
-│   └── java/                  # Java (staðlað pakkatré)
+│   └── sql/
+│       ├── migrations/        # númeraðar breytingar: 001_..., 002_...
+│       └── queries/           # endurnýtanlegar fyrirspurnir
 │
 ├── data/                      # GÖGN — ekki kóði, að mestu utan git
 │   ├── raw/                   # óbreytt svör frá API (aldrei breytt handvirkt)
@@ -78,7 +73,7 @@ hraða og örugga.
 ├── docs/                      # rannsóknarskjölun, heimildir, aðferðafræði
 │   ├── vidmid/                # frosið afrit af gamla verkefninu (sjá README þar)
 │   └── uppruni/               # skýrslur um nýtt efni úr gamla verkefninu (docs/uppruni.md)
-├── tests/                     # prófanir, speglar src/ uppbygginguna
+├── tests/                     # test_<eining>.py + <safn>_hjalp.py (gervigögn, viðmið)
 ├── scripts/                   # keyrsluskipanir (sækja, byggja, birta)
 └── config/                    # stillingar (ALDREI leyndarmál)
 ```
@@ -90,7 +85,9 @@ hraða og örugga.
 - **Ekkert** í rót nema skjölun og stillingaskrár verkefnisins í heild.
 - `web/` á að vera **sjálfstætt birtanleg**: afritaðu möppuna á vefþjón og
   síðan virkar. Engar tilvísanir út fyrir `web/`.
-- Mappa fær `.gitkeep` ef hún þarf að vera til en er tóm.
+- **Engar tómar möppur og engar `.gitkeep`.** Mappa verður til þegar fyrsta
+  skráin fer í hana (t.d. `src/cpp/`, `src/java/`, `src/sql/seeds/` eða
+  `web/assets/fonts/` ef þeirra verður þörf).
 
 ### 1.2 Skráaheiti
 
@@ -215,6 +212,12 @@ hraða og örugga.
 
 - Ein skrá = eitt hlutverk. Fer skrá yfir ~300 línur → hún er líklega að gera
   of margt.
+- **Og öfugt: ekki búa til skrá fyrir 50 línur.** Eining sem aðeins ein önnur
+  eining notar fer inn í hana sem kafli (`# --- Heiti ---`), svo lengi sem
+  samanlagt helst undir ~300 línum. Sama um prófskrár: ein á hverja einingu,
+  og hjálpargögn hvers gagnasafns í einni `<safn>_hjalp.py`.
+- Einnota skriftur (t.d. frysting eða afritun sem var gerð einu sinni) eru
+  fjarlægðar þegar verkinu er lokið. Git-sagan geymir þær.
 - Föll gera eitt og heita eftir því sem þau gera.
 - Engir töfratölur eða töfrastrengir — nefndir fastar efst í skrá eða í `config/`.
 - Villur eru meðhöndlaðar eða látnar falla með skýringu. **Aldrei þaggaðar.**

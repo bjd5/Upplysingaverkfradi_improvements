@@ -61,6 +61,10 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "hagstofan-hlutfoll",
     "hagstofan-munur",
     "hagstofan-summur",
+    "hagstofan-gagnasafn",
+    "hagstofan-fyrirspurn",
+    "hagstofan-viddir",
+    "hagstofan-kodabok",
     # Veðurstöðvar
     "vedurstodvar-allar-stodvar",
     "vedurstodvar-fjoldi-stodva",
@@ -73,6 +77,7 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "vedurstodvar-naesta-aflagda-stod",
     "vedurstodvar-naesta-virka-langtimastod",
     "vedurstodvar-kassi-eftir-fjarlaegd",
+    "vedurstodvar-sokn",
     # mbl.is
     "mbl-svor",
     # Friends / Phoebe
@@ -81,6 +86,12 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "friends-plass-eftir-thattarod",
     "friends-interaction-lift",
     "friends-nafntilvik-eftir-thattarod",
+    # Central Perk (migration 007)
+    "central-perk-samantekt",
+    "central-perk-hopar",
+    "central-perk-handrit",
+    "central-perk-songhandrit",
+    "central-perk-segdir",
 })
 
 # Skráarheiti hvers leyfðs heitis, reiknað úr listanum sjálfum (aldrei úr inntaki).

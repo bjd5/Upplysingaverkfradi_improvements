@@ -1,10 +1,9 @@
 """Ber Hagstofutölur grunnsins saman við viðmiðið úr gömlu síðunni (issue #7).
 
 Krafa verkefnisins er að nýja síðan sýni sömu tölur og sú gamla
-(docs/endurbygging.md, kafli 2). Viðmiðið er ``docs/vidmid/vidmid.json``, lesið
-úr byggðu gömlu síðunni af ``src/python/vidmid/tolur.py``; mannlesanleg útgáfa
-þess er ``docs/vidmid/vidmid/hagstofan.md`` og upprunalega framsetningin
-``docs/vidmid/generated/hagstofan-results.md``.
+(docs/endurbygging.md, kafli 2). Viðmiðið er ``docs/vidmid/vidmid.json``, fryst
+úr byggðu gömlu síðunni (tagið ``vidmid-frosid``); upprunalega framsetningin
+er ``docs/vidmid/generated/hagstofan-results.md``.
 
 Tvennt skiptir máli um aðferðina:
 

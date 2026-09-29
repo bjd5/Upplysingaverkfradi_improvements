@@ -5,7 +5,7 @@ Tvær heimildir viðmiðs, báðar frosnar í ``docs/vidmid/``:
 * ``vidmid.json`` — tölurnar sem stóðu á gömlu síðunni (fjöldatölur, línur
   hvers vinar). Flett upp með ``friends_grunnur.vidmid_gildi``: nákvæmlega ein
   samsvörun á uppflettingu.
-* ``docs/vidmid/phoebe-stats/*.csv|json`` — gagnaskrárnar sem gamla síðan
+* ``data/processed/phoebe-stats/*.csv|json`` — gagnaskrárnar sem gamla síðan
   teiknaði úr í vafranum (``gagnadrifnar_sidur`` í vidmid.json). Tölurnar
   standa þar en ekki í HTML-inu, svo þær eru viðmiðið fyrir allt á þáttaröð.
 
@@ -29,7 +29,7 @@ from hjalp import ROT
 from gagnagrunnur.fyrirspurnir import keyra  # noqa: E402
 from utflutningur.islenskt_snid import islensk_tala  # noqa: E402
 
-VIDMID_MAPPA = ROT / "docs" / "vidmid" / "phoebe-stats"
+VIDMID_MAPPA = ROT / "data" / "processed" / "phoebe-stats"
 VINIR = ("Phoebe", "Rachel", "Ross", "Chandler", "Monica", "Joey")
 GAEDI = (("total_blocks", "textablokkir alls"), ("speaker_lines", "tilsvör"),
          ("scene_headings", "sviðsfyrirsagnir"), ("stage_directions", "sviðsleiðbeiningar"),

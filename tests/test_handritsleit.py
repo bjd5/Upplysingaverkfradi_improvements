@@ -30,65 +30,25 @@ from vidmid.handritsreitir import SKJOLUN, TITILL, Undantekning  # noqa: E402
 
 ROT = Path(__file__).resolve().parents[1]
 AFRIT = ROT / "data" / "processed" / "phoebe-stats"
-VIDMID = ROT / "docs" / "vidmid" / "phoebe-stats"
-PROVENANCE = ROT / "docs" / "vidmid" / "provenance.json"
 
-# Staðan 28.9.2026: 17 skrár í vinnugagninu, 17 í viðmiðinu, 7 í byggðu gömlu
-# síðunni og ein stök samantekt. Talan er hér svo leit sem hættir að finna
-# skrárnar falli í stað þess að verða græn á tómu mengi.
-SKANNADAR_SKRAR = 42
+# Staðan 28.9.2026: 17 skrár í phoebe-stats og ein stök samantekt. Talan er
+# hér svo leit sem hættir að finna skrárnar falli í stað þess að verða græn á
+# tómu mengi.
+SKANNADAR_SKRAR = 18
 UNDANTEKNINGAR_FJOLDI = 18
-# Byggða gamla síðan: 24 HTML-síður og 6 JSON-skrár. Níu frystar línur úr þætti
-# 0101 í hvorri tveggja skráa (docs/adferdafraedi.md, kafli 1.5.2).
-VEFSKRAR = 30
+# HTML/JSON í trénu: 26 skrár 29.9.2026. Aðrir pakkar bæta við síðum og
+# gögnum, svo hér er aðeins lágmark — nóg til að leit sem hættir að finna
+# skrárnar falli í stað þess að verða græn á tómu mengi.
+LAGMARK_VEFSKRAA = 20
+# Frosna viðmiðið: níu frystar línur úr þætti 0101 í hvorri tveggja skráa
+# (docs/adferdafraedi.md, kafli 1.5.2).
 VEFUNDANTEKNINGAR_FJOLDI = 18
-
-# Bætaeins afritið: 17 skrár. docs/vidmid/phoebe-stats/README.md er vísvitandi
-# ekki afrituð — hún lýsir slóðum upprunaverkefnisins og væri ósönn hér
-# (data/processed/README.md, kafli 1.1).
-AFRIT_SKRAR = 17
-EKKI_AFRITAD = {"README.md"}
 
 # Heimatilbúin setning: sex orð og punktur. Hvorugt á hún sameiginlegt með
 # þáttunum nema að vera ensk — það er nákvæmlega það sem leitin á að stöðva.
 GERVISETNING = "The blue notebook was left behind."
 GERVITALNAGILDI = ["2.95", "0212-0213", "10.16", "0.63", "1.31"]
 GERVIHEITI = ["Phoebe", "Monica", "raeduskipti", "lines", "words"]
-
-
-def sha256_af(slod: Path) -> str:
-    """SHA-256 af innihaldi skráar."""
-    return hashlib.sha256(slod.read_bytes()).hexdigest()
-
-
-class AfritProf(unittest.TestCase):
-    """Afritið í data/processed á að vera bætaeins við frosna viðmiðið."""
-
-    def test_afritid_hefur_rettar_skrar(self) -> None:
-        afrit = {p.name for p in AFRIT.iterdir()}
-        vidmid = {p.name for p in VIDMID.iterdir()}
-        self.assertEqual(len(afrit), AFRIT_SKRAR)
-        self.assertEqual(vidmid - afrit, EKKI_AFRITAD)
-        self.assertEqual(afrit - vidmid, set(), "skrá í afriti sem er ekki í viðmiðinu")
-
-    def test_afritid_er_baetaeins(self) -> None:
-        for slod in sorted(AFRIT.iterdir()):
-            with self.subTest(skra=slod.name):
-                self.assertEqual(sha256_af(slod), sha256_af(VIDMID / slod.name))
-
-    def test_afritid_stemmir_vid_provenance(self) -> None:
-        """Summurnar stemma líka við það sem skráð var við frystinguna.
-
-        Að bera afritið aðeins við viðmiðið sannar að þau tvö séu eins. Þetta
-        skref bindur þau við SHA-256 sem var skráð 24.9.2026, svo samstillt
-        breyting á báðum eintökum komist ekki framhjá.
-        """
-        skjal = json.loads(PROVENANCE.read_text(encoding="utf-8"))
-        safn = next(s for s in skjal["sofn"] if s["heiti"] == "phoebe-stats")
-        skrad = {f["slod"]: f["sha256"] for f in safn["skrar"]}
-        for slod in sorted(AFRIT.iterdir()):
-            with self.subTest(skra=slod.name):
-                self.assertEqual(sha256_af(slod), skrad[slod.name])
 
 
 class SetningamerkiProf(unittest.TestCase):
@@ -139,7 +99,7 @@ class GervimoppaProf(unittest.TestCase):
             handritsleit, "STAKAR_SKRAR", ()
         ), mock.patch.object(
             handritsleit, "UNDANTEKNINGAR", undantekningar or {}
-        ), mock.patch.object(handritsleit, "VEFMAPPA", None):
+        ), mock.patch.object(handritsleit, "VEFMOPPUR", None):
             return handritsleit.leita(self.rot)
 
     def _skrifa_json(self, nafn: str, gogn: object) -> None:
@@ -226,7 +186,7 @@ class GervimoppaProf(unittest.TestCase):
         with mock.patch.object(handritsleit, "MOPPUR", ("ekki-til",)), mock.patch.object(
             handritsleit, "STAKAR_SKRAR", ()
         ), mock.patch.object(handritsleit, "UNDANTEKNINGAR", {}), mock.patch.object(
-            handritsleit, "VEFMAPPA", None
+            handritsleit, "VEFMOPPUR", None
         ):
             fravik, _ = handritsleit.leita(self.rot)
         self.assertEqual(len(fravik), 1)
@@ -236,10 +196,10 @@ class GervimoppaProf(unittest.TestCase):
 class RaunskrarProf(unittest.TestCase):
     """Fullyrðingin á raunskránum: enginn óundanþeginn handritstexti.
 
-    Leitin nær til talnaskránna (`handritsreitir.MOPPUR`, `STAKAR_SKRAR`) **og**
-    allra HTML- og JSON-skráa byggðu gömlu síðunnar í `docs/vidmid/vefur/`, þar
-    sem aðeins frystu 0101-línurnar úr ákvörðun (b) í issue #3 mega standa.
-    Afmörkunin er í docs/adferdafraedi.md, kafla 1.5.2.
+    Leitin nær til talnaskránna (`handritsreitir.MOPPUR`, `STAKAR_SKRAR`), allra
+    HTML- og JSON-skráa í `web/`, `docs/` og `data/processed/`, og byggðu gömlu
+    síðunnar í frosna commit-inu, þar sem aðeins 0101-línurnar úr ákvörðun (b)
+    í issue #3 mega standa. Afmörkunin er í docs/adferdafraedi.md, kafla 1.5.2.
     """
 
     def test_talnaskrar_og_gamla_sidan_geyma_engan_nyjan_handritstexta(self) -> None:
@@ -247,9 +207,11 @@ class RaunskrarProf(unittest.TestCase):
         self.assertEqual([str(f) for f in fravik], [])
         self.assertEqual(talning["skrar"], SKANNADAR_SKRAR)
         self.assertEqual(talning["undantekningar"], UNDANTEKNINGAR_FJOLDI)
-        self.assertEqual(talning["vefskrar"], VEFSKRAR)
-        self.assertEqual(talning["tilsvor"], VEFUNDANTEKNINGAR_FJOLDI)
+        self.assertGreaterEqual(talning["vefskrar"], LAGMARK_VEFSKRAA)
+        self.assertEqual(talning["tilsvor_i_trenu"], 0)
         self.assertEqual(talning["vefundantekningar"], VEFUNDANTEKNINGAR_FJOLDI)
+        if talning["frosid_tiltaekt"]:
+            self.assertEqual(talning["frosin_tilsvor"], VEFUNDANTEKNINGAR_FJOLDI)
 
     def test_stadfesta_skilar_nulli(self) -> None:
         self.assertEqual(handritsleit.stadfesta(), 0)

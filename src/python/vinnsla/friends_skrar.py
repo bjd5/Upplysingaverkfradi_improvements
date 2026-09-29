@@ -1,8 +1,8 @@
 """Talnaskrár Friends-greiningarinnar: SHA-staðfesting og lestur (issue #10).
 
 Hleðslan les **aðeins** afleiddu tölurnar í ``data/processed/phoebe-stats/``
-— aldrei handritin (issue #3, valkostur A) og aldrei viðmiðið í
-``docs/vidmid/phoebe-stats/``, sem er sönnunargagnið en ekki aðfang.
+— aldrei handritin (issue #3, valkostur A). Skrárnar þar eru um leið frosna
+viðmiðið, svo ekkert í þeim má breytast.
 
 Áður en nokkur skrá er lesin er SHA-256 hverrar þeirra borin við summuna í
 ``docs/vidmid/provenance.json`` (safnið ``phoebe-stats``) — sama hugsun og í
@@ -27,11 +27,8 @@ from gagnagrunnur.tenging import ROT
 STATS_MAPPA = ROT / "data" / "processed" / "phoebe-stats"
 PROVENANCE = ROT / "docs" / "vidmid" / "provenance.json"
 
-# Heiti safnsins í provenance.json og skráin þar sem er ekki talnaskrá: README
-# viðmiðsins lýsir upprunaverkefninu og var vísvitandi ekki afrituð
-# (data/processed/README.md, kafli 1.1).
+# Heiti safnsins í provenance.json.
 SAFN = "phoebe-stats"
-EKKI_TALNASKRA = frozenset({"README.md"})
 FJOLDI_SKRAA = 17
 
 
@@ -74,8 +71,6 @@ def lesa_summur(provenance: Path = PROVENANCE) -> dict[str, str]:
     summur: dict[str, str] = {}
     for skra in sofn[0].get("skrar", []):
         heiti = Path(str(skra["slod"])).name
-        if heiti in EKKI_TALNASKRA:
-            continue
         if heiti in summur:
             raise HledsluVilla(f"Provenance nefnir {heiti} tvisvar í safninu {SAFN}.")
         summur[heiti] = str(skra["sha256"])

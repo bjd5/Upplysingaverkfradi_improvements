@@ -1,25 +1,29 @@
-"""Leit að handritslínum í byggðu gömlu síðunni (`docs/vidmid/vefur/`).
+"""Leit að handritslínum í HTML- og JSON-skrám — trénu og frosna viðmiðinu.
 
 Hluti af handritsleitinni (`handritsleit.py`). Talnaskrárnar eru skannaðar reit
-fyrir reit; hér er hins vegar leitað í **öllum** HTML- og JSON-skrám byggðu
-síðunnar — texta, `<pre>`/`<code>`, `<script>` og eigindagildum — að einu
-mynstri: **tilsvari í handritasniði**, `Nafn: texti`, sem er á ensku.
+fyrir reit; hér er hins vegar leitað í **öllum** HTML- og JSON-skrám — texta,
+`<pre>`/`<code>`, `<script>` og eigindagildum — að einu mynstri: **tilsvari í
+handritasniði**, `Nafn: texti`, sem er á ensku. Leitað er á tveimur stöðum:
 
-Ákvörðun (b) í issue #3 (28.9.2026): orðréttu línurnar úr þætti 0101 sem gamla
-síðan birtir sem dæmi um þáttarann mega standa sem stutt tilvitnun. Þær eru
-undanþegnar **ein og ein**, auðkenndar með skrá og SHA-256 af línunni sjálfri
-og með fjölda tilvika (`handritsreitir.VEFUNDANTEKNINGAR`). Textinn sjálfur er
-hvergi afritaður í kóðann. Hver ný lína — og hver undanþegin lína sem breytist
-um eitt orð — fær nýja summu og fellir leitina.
+1. **Í trénu** (`handritsreitir.VEFMOPPUR`: `web/`, `docs/`, `data/processed/`).
+   Þar er **ekkert** undanþegið: hvert tilsvar fellir leitina.
+2. **Í frosna viðmiðinu** — byggðu gömlu síðunni sem var tekin úr trénu
+   28.9.2026 og er aðeins í commit `handritsreitir.FROSID_COMMIT` (git-tagið
+   `vidmid-frosid`). Ákvörðun (b) í issue #3 (28.9.2026): orðréttu línurnar úr
+   þætti 0101 sem síðan birtir sem dæmi um þáttarann standa sem stutt
+   tilvitnun. Þær eru undanþegnar **ein og ein** með skrá, SHA-256 línunnar og
+   fjölda tilvika (`handritsreitir.VEFUNDANTEKNINGAR`); textinn sjálfur er
+   hvergi afritaður í kóðann. Hver ný lína — og hver undanþegin lína sem
+   breytist um eitt orð — fær nýja summu og fellir leitina.
 
 **Hvað telst tilsvar.** `Nafn:` (eitt til fjögur hástafsorð, t.d.
 `Monica and Phoebe:`) og á eftir textinn fram að næsta `Nafn:` eða enda
 einingar. Textinn er skorinn við fyrsta orð með íslenskum staf, svo að
 íslenskur meginmálstexti á eftir tilvitnun (algengt í `search.json`) teljist
 ekki með. Tilsvarið telst **enskt** ef það geymir minnst eitt algengt enskt
-kerfisorð (`ENSK_KERFISORD`) eftir að svigainnskot eru fjarlægð — sama regla
-og þáttarinn: `(hlær)` er sviðsleiðbeining, ekki talað orð. Íslensku
-merkingarnar á síðunni (`Heimild: …`, `Nafn: texti`) standast því.
+kerfisorð (`ENSK_KERFISORD`) eftir að svigainnskot og slóðir eru fjarlægð —
+sama regla og þáttarinn: `(hlær)` er sviðsleiðbeining, ekki talað orð.
+Íslenskar merkingar (`Heimild: …`, `Nafn: texti`) standast því.
 
 **Afmörkun.** Tilsvar án nokkurs ensks kerfisorðs (t.d. tveggja orða upphrópun)
 finnst ekki, og ekki heldur handritstexti sem er birtur án `Nafn:`. Sjá
@@ -31,6 +35,8 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import shutil
+import subprocess
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
@@ -115,17 +121,21 @@ def _strengir(hlutur: object) -> Iterator[str]:
         yield hlutur
 
 
-def einingar(slod: Path) -> list[str]:
-    """Textaeiningar skráar: línur texta, kóða og eigindagilda."""
-    texti = slod.read_text(encoding="utf-8")
-    if slod.suffix == ".html":
+def einingar_texta(texti: str, vidauki: str) -> list[str]:
+    """Textaeiningar: línur texta, kóða og eigindagilda (HTML) eða strengja (JSON)."""
+    if vidauki == ".html":
         lesari = _Einingalesari()
         lesari.feed(texti)
         lesari.close()
         return lesari.einingar
-    if slod.suffix == ".json":
+    if vidauki == ".json":
         return [lina for s in _strengir(json.loads(texti)) for lina in s.split("\n")]
-    raise ValueError(f"Óþekkt skráarsnið: {slod}")
+    raise ValueError(f"Óþekkt skráarsnið: {vidauki}")
+
+
+def einingar(slod: Path) -> list[str]:
+    """Textaeiningar skráar á diski."""
+    return einingar_texta(slod.read_text(encoding="utf-8"), slod.suffix)
 
 
 def _skera_vid_islensku(texti: str) -> str:
@@ -161,42 +171,76 @@ def sha_linu(lina: str) -> str:
     return hashlib.sha256(lina.encode("utf-8")).hexdigest()
 
 
+# (birt slóð, viðauki, texti) — sama hvort skráin er á diski eða í git-commiti.
+Heimild = tuple[str, str, str]
+Frava = tuple[str, str, str]
+
+
 def skrar(mappa: Path) -> list[Path]:
     """Allar HTML- og JSON-skrár í möppunni og undirmöppum hennar."""
     return sorted(p for p in mappa.rglob("*") if p.is_file() and p.suffix in VEF_VIDAUKAR)
 
 
+def ur_trenu(rot: Path, moppur: tuple[str, ...]) -> tuple[list[Heimild], list[str]]:
+    """HTML- og JSON-skrár í möppunum, og möppur sem vantar."""
+    heimildir: list[Heimild] = []
+    vantar: list[str] = []
+    for mappa in moppur:
+        if not (rot / mappa).is_dir():
+            vantar.append(mappa)
+            continue
+        for slod in skrar(rot / mappa):
+            heimildir.append((slod.relative_to(rot).as_posix(), slod.suffix,
+                              slod.read_text(encoding="utf-8")))
+    return heimildir, vantar
+
+
+def ur_commiti(rot: Path, commit: str, slodir: list[str]) -> list[Heimild] | None:
+    """Skrárnar eins og þær eru í git-commiti; None ef commit-ið er ekki tiltækt.
+
+    Grunnt klón (`--depth`) geymir ekki frosna commit-ið. Það er ekki merki um
+    handritstexta, svo kallandinn skráir það sem viðvörun, ekki frávik.
+    """
+    if shutil.which("git") is None:
+        return None
+    til = subprocess.run(["git", "cat-file", "-e", f"{commit}^{{commit}}"],
+                         cwd=rot, capture_output=True, check=False)
+    if til.returncode != 0:
+        return None
+    heimildir: list[Heimild] = []
+    for slod in slodir:
+        texti = subprocess.run(["git", "show", f"{commit}:{slod}"], cwd=rot,
+                               capture_output=True, check=True).stdout.decode("utf-8")
+        heimildir.append((slod, Path(slod).suffix, texti))
+    return heimildir
+
+
 def fundin_tilsvor(
-    rot: Path, mappa: str
-) -> tuple[Counter[tuple[str, str]], dict[tuple[str, str], int], int]:
-    """Tilsvör í möppunni: tilvik á (slóð, SHA-256), orðafjöldi hvers, fjöldi skráa."""
+    heimildir: list[Heimild],
+) -> tuple[Counter[tuple[str, str]], dict[tuple[str, str], int]]:
+    """Tilsvör: tilvik á (slóð, SHA-256) og orðafjöldi hvers."""
     fundin: Counter[tuple[str, str]] = Counter()
     lengd: dict[tuple[str, str], int] = {}
-    skannadar = skrar(rot / mappa)
-    for slod in skannadar:
-        birt = slod.relative_to(rot).as_posix()
-        for eining in einingar(slod):
+    for birt, vidauki, texti in heimildir:
+        for eining in einingar_texta(texti, vidauki):
             for lina in tilsvor(eining):
                 lykill = (birt, sha_linu(lina))
                 fundin[lykill] += 1
                 lengd[lykill] = len(lina.split())
-    return fundin, lengd, len(skannadar)
+    return fundin, lengd
 
 
-def leita(
-    rot: Path, mappa: str, undantekningar: dict[tuple[str, str], tuple[int, str]]
-) -> tuple[list[tuple[str, str, str]], dict[str, int]]:
-    """Skannar möppuna og ber fundin tilsvör við frystu undanþágurnar.
+def bera_saman(
+    heimildir: list[Heimild], undantekningar: dict[tuple[str, str], tuple[int, str]]
+) -> tuple[list[Frava], int]:
+    """Ber fundin tilsvör við frystar undanþágur; skilar frávikum og fjölda tilsvara.
 
-    Skilar frávikum sem (slóð, staður, skýring) — aldrei textanum sjálfum — og
-    talningu. Frávik er: tilsvar sem er ekki undanþegið, undanþegið tilsvar sem
-    kemur fyrir oftar eða sjaldnar en skráð er, eða undanþága sem finnst ekki.
+    Frávik eru (slóð, staður, skýring) — aldrei textinn sjálfur. Frávik er:
+    tilsvar sem er ekki undanþegið, undanþegið tilsvar sem kemur fyrir oftar eða
+    sjaldnar en skráð er, eða undanþága sem finnst ekki.
     """
-    if not (rot / mappa).is_dir():
-        return [("(staðsetning)", "-", f"Mappa sem á að skanna er ekki til: {mappa}")], {}
-
-    fundin, lengd, fjoldi_skraa = fundin_tilsvor(rot, mappa)
-    fravik: list[tuple[str, str, str]] = []
+    fundin, lengd = fundin_tilsvor(heimildir)
+    fravik: list[Frava] = []
     for lykill, fjoldi in sorted(fundin.items()):
         skrad = undantekningar.get(lykill)
         if skrad is None:
@@ -210,10 +254,49 @@ def leita(
     for lykill in sorted(set(undantekningar) - set(fundin)):
         fravik.append((lykill[0], f"sha256 {lykill[1][:16]}",
                        "undanþegin lína finnst ekki — dauð færsla eða breytt lína"))
+    return fravik, sum(fundin.values())
+
+
+def leita(
+    rot: Path,
+    moppur: tuple[str, ...],
+    commit: str,
+    undantekningar: dict[tuple[str, str], tuple[int, str]],
+) -> tuple[list[Frava], dict[str, int]]:
+    """Tréð án undanþágu, og frosna commit-ið með frystu undanþágunum."""
+    heimildir, vantar = ur_trenu(rot, moppur)
+    fravik: list[Frava] = [("(staðsetning)", "-", f"Mappa sem á að skanna er ekki til: {m}")
+                           for m in vantar]
+    tre_fravik, tre_tilsvor = bera_saman(heimildir, {})
+    fravik.extend(tre_fravik)
+
+    frosnar = ur_commiti(rot, commit, sorted({slod for slod, _ in undantekningar}))
+    frosin_tilsvor = 0
+    if frosnar is not None:
+        frosin_fravik, frosin_tilsvor = bera_saman(frosnar, undantekningar)
+        fravik.extend(frosin_fravik)
 
     talning = {
-        "vefskrar": fjoldi_skraa,
-        "tilsvor": sum(fundin.values()),
+        "vefskrar": len(heimildir),
+        "tilsvor_i_trenu": tre_tilsvor,
+        "frosid_tiltaekt": int(frosnar is not None),
+        "frosin_tilsvor": frosin_tilsvor,
         "vefundantekningar": len(undantekningar),
     }
     return fravik, talning
+
+
+def lysing(talning: dict[str, int], commit: str) -> list[tuple[bool, str]]:
+    """Skilaboð um niðurstöðuna: (allt tiltækt?, texti) — án fundins texta."""
+    skilabod = [(True, f"{talning.get('vefskrar', 0)} HTML/JSON-skrár í trénu — "
+                       "ekkert tilsvar í handritasniði")]
+    if talning.get("frosid_tiltaekt"):
+        skilabod.append((True, f"Frosna viðmiðið ({commit[:7]}): "
+                               f"{talning['frosin_tilsvor']} tilsvör, öll "
+                               f"{talning['vefundantekningar']} frystar undanþágur "
+                               "(issue #3, ákvörðun b), engin ný"))
+    else:
+        skilabod.append((False, f"Frosna commit-ið {commit[:7]} er ekki í klóninu — "
+                                "undanþágurnar úr ákvörðun (b) voru ekki bornar við "
+                                "það (sæktu fulla sögu: git fetch --unshallow)"))
+    return skilabod

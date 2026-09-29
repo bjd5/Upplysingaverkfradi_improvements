@@ -8,7 +8,6 @@ config/secrets*
 # Gögn — afleidd eða of stór (reglur 5 og 7)
 data/db/
 data/raw/*
-!data/raw/.gitkeep
 # Undanþága (P0.1, issue #30): mbl-eintakið er EINA eintakið sem til er —
 # hráa svarið var aldrei í git og hverfur með vélinni sé það ekki fryst hér.
 !data/raw/mbl/
@@ -28,15 +27,18 @@ data/raw/*
 # Ákvörðunin: docs/adferdafraedi.md, kafli 1.5.1; uppruni: docs/heimildir.md, 2.1.
 !data/raw/friends-handrit
 data/processed/*
-!data/processed/.gitkeep
 !data/processed/README.md
 # Undanþága (issue #3, valkostur A): Friends-tölfræðin. Þetta eru tölur UM
 # handritin — línufjöldi, senur, hlutföll, tíðnitöflur — ekki handritstextinn.
 # Handritin sjálf eru hvergi í þessu repo-i og koma aldrei hingað. Skrárnar eru
-# bætaeins afrit af frosna viðmiðinu og eru eina eftirlifandi eintakið af
-# greiningunni, svo þær eru FRUMGAGN fyrir þetta repo (regla 5).
+# frosna viðmiðið (SHA-256 í docs/vidmid/provenance.json) og eina eftirlifandi
+# eintakið af greiningunni, svo þær eru FRUMGAGN fyrir þetta repo (regla 5).
 # Sjá data/processed/README.md og docs/adferdafraedi.md, kafla 1.5.1.
 !data/processed/phoebe-stats/
+# Undanþága (issue #10, valkostur A): frosnu Central Perk-niðurstöðurnar —
+# bætaeins afrit þriggja skráa úr docs/vidmid/generated/, sama röksemd og að
+# ofan. Sjá data/processed/README.md, kafla 2.
+!data/processed/central-perk-frosid/
 
 *.sqlite
 *.sqlite3

@@ -1,7 +1,7 @@
 """Skilgreiningar fyrir handritsleitina: hvað er skannað og hvað er undanþegið.
 
-Aðskilið frá `handritsleit.py` af sömu ástæðu og `sofn.py` er aðskilið frá
-`provenance.py`: leitarreglan er kóði sem má lesa í einu, en undanþágurnar eru
+Aðskilið frá `handritsleit.py` af því að leitarreglan er kóði sem má lesa í
+einu, en undanþágurnar eru
 **skjalfest ákvörðun** sem verður að vera hægt að lesa og vefengja eina og sér.
 
 Sjá docs/adferdafraedi.md, kafla 1.5.2, fyrir röksemdina að baki þröskuldunum
@@ -12,17 +12,14 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-# Allar Friends-TALNASKRÁR sem eru í git. Þrjú afrit af tölfræðinni eru í
-# repo-inu: vinnugagnið, frosna viðmiðið, og eintakið inni í byggðu gömlu
-# síðunni sem Observable Plot las. Leitin nær til allra þriggja.
+# Allar Friends-TALNASKRÁR sem eru í git.
 #
-# Byggðu síðurnar í docs/vidmid/vefur/ (HTML og search.json) eru skannaðar
-# sérstaklega eftir tilsvörum í handritasniði — sjá `VEFMAPPA` neðst og
-# `vefleit.py`.
+# Byggða gamla síðan (docs/vidmid/vefur/), sem geymdi orðréttar handritslínur,
+# var tekin úr trénu 28.9.2026 og er aðeins í git-taginu vidmid-frosid. Hún er
+# skönnuð þar eftir tilsvörum í handritasniði — sjá `FROSID_COMMIT` neðst og
+# `vefleit.py` (docs/adferdafraedi.md, kafli 1.5.2).
 MOPPUR = (
     "data/processed/phoebe-stats",
-    "docs/vidmid/phoebe-stats",
-    "docs/vidmid/vefur/friends/phoebe-stats",
 )
 STAKAR_SKRAR = ("docs/vidmid/generated/phoebe-central-perk-summary.json",)
 
@@ -146,23 +143,32 @@ UNDANTEKNINGAR: dict[tuple[str, str], Undantekning] = {
 }
 
 
-# --- Byggða gamla síðan (vefleit.py) --------------------------------------
+# --- Tilsvör í HTML og JSON (vefleit.py) ----------------------------------
 #
+# Tréð: allar HTML- og JSON-skrár í þessum möppum, án nokkurrar undanþágu.
+VEFMOPPUR = ("web", "docs", "data/processed")
+
+# Frosna viðmiðið: byggða gamla síðan var tekin úr trénu 28.9.2026 (grisjun,
+# PR #67) og er aðeins í þessu commit-i á main — git-tagið vidmid-frosid bendir
+# á það (docs/vidmid/README.md; SHA-256 skránna í provenance.json,
+# `geymt_i_tagi`).
+FROSID_COMMIT = "f23035cf6573443e63fa3993df2db463ad5aa3eb"
+
 # Ákvörðun (b) í issue #3, 28.9.2026: orðréttu línurnar úr þætti 0101 sem gamla
 # síðan birtir sem dæmi um þáttarann standa sem stutt tilvitnun, og git-sagan er
-# ekki endurskrifuð. Frosna viðmiðið er SHA-staðfest (docs/vidmid/provenance.json)
-# og má ekki breyta. Sjá docs/adferdafraedi.md, kafla 1.5.1–1.5.2.
+# ekki endurskrifuð. Frosna viðmiðið er SHA-staðfest og má ekki breyta. Sjá
+# docs/adferdafraedi.md, kafla 1.5.1–1.5.2.
 #
-# Undanþágan er FRYST lína fyrir línu: (skrá, SHA-256 línunnar) -> (fjöldi
-# tilvika, lýsing án texta). Línan er eins og `vefleit.tilsvor` skilar henni.
-# Textinn sjálfur er vísvitandi ekki hér — þá væri hann kominn í enn eina skrá.
-# Breytist lína um eitt orð breytist summan og leitin fellur.
+# Undanþágan er FRYST lína fyrir línu: (skrá í FROSID_COMMIT, SHA-256 línunnar)
+# -> (fjöldi tilvika, lýsing án texta). Línan er eins og `vefleit.tilsvor`
+# skilar henni. Textinn sjálfur er vísvitandi ekki hér — þá væri hann kominn í
+# enn eina skrá. Breytist lína um eitt orð breytist summan og leitin fellur.
+# Undanþágan gildir AÐEINS í frosna commit-inu; í trénu er ekkert undanþegið.
 #
 # Níu línur í hvorri skrá: átta úr `<pre>`-dæminu (sviðslýsingin og sjö tilsvör;
 # sviðsleiðbeiningin er án `Nafn:` og greinist ekki) og hóplínan `All:` sem er
 # dæmi um undanskildar hóplínur. Í search.json nær hóplínan yfir fyrsta orð
 # íslenska textans sem fylgir henni, því Quarto skeytti <code> inn í málsgreinina.
-VEFMAPPA = "docs/vidmid/vefur"
 _STAT = "docs/vidmid/vefur/friends/phoebe-statistics.html"
 _LEIT = "docs/vidmid/vefur/search.json"
 _0101 = (

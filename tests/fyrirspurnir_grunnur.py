@@ -31,10 +31,11 @@ from gagnagrunnur.keyrari import keyra  # noqa: E402
 from gagnagrunnur.tenging import opna  # noqa: E402
 from vinnsla import friends_hledsla, hagstofan, jardskjalftar_hledsla  # noqa: E402
 from vinnsla import mbl_hledsla, vedurstodvar_hledsla  # noqa: E402
+from vinnsla import central_perk_hledsla  # noqa: E402
 from vinnsla import vedurstodvar_samanburdur as vedur  # noqa: E402
 from vinnsla.mbl_eintak import finna_eintok  # noqa: E402
 from vinnsla.vedurstodvar_fyrirspurnir import skra_fjarlaegdarfall  # noqa: E402
-from mbl_vidmid import FROSNA_EINTAKID  # noqa: E402
+from mbl_hjalp import FROSNA_EINTAKID  # noqa: E402
 
 # Keyrarinn og hleðslurnar skrá hvert skref; það er ekki það sem prófin mæla.
 for _heiti in ("gagnagrunnur.keyrari", "vinnsla"):
@@ -52,6 +53,10 @@ DAEMISBREYTUR: dict[str, tuple] = {
     "hagstofan-hlutfoll": (HAGSTOFAN_TAFLA,),
     "hagstofan-summur": (HAGSTOFAN_TAFLA,),
     "hagstofan-munur": (HAGSTOFAN_TAFLA, "5", "07", "Alls", "Alls", "Alls"),
+    "hagstofan-gagnasafn": (HAGSTOFAN_TAFLA,),
+    "hagstofan-fyrirspurn": (HAGSTOFAN_TAFLA,),
+    "hagstofan-viddir": (HAGSTOFAN_TAFLA,),
+    "hagstofan-kodabok": (HAGSTOFAN_TAFLA,),
     "mbl-svor": (MBL_EINTAK, None, None),
     "vedurstodvar-stod-eftir-audkenni": (vedur.VALIN_STOD,),
     "vedurstodvar-stodvar-i-marghyrningi": _KASSI,
@@ -60,13 +65,14 @@ DAEMISBREYTUR: dict[str, tuple] = {
     "vedurstodvar-naesta-aflagda-stod": _HNIT,
     "vedurstodvar-naesta-virka-langtimastod": (*_HNIT, vedur.VIDMIDSAR - vedur.AR_AFTUR_I_TIMANN),
     "vedurstodvar-kassi-eftir-fjarlaegd": (*_HNIT, *_KASSI),
+    "vedurstodvar-sokn": (vedurstodvar_hledsla.THJONUSTA,),
 }
 
 _GRUNNUR: sqlite3.Connection | None = None
 
 
 def hladinn_grunnur() -> sqlite3.Connection:
-    """Grunnur með öllum migrations og öllum fimm gagnasöfnunum hlöðnum."""
+    """Grunnur með öllum migrations og öllum gagnasöfnunum hlöðnum (fimm + Central Perk)."""
     global _GRUNNUR
     if _GRUNNUR is None:
         mappa = tempfile.TemporaryDirectory()
@@ -80,6 +86,7 @@ def hladinn_grunnur() -> sqlite3.Connection:
         vedurstodvar_hledsla.hlada(samband)
         mbl_hledsla.hlada_ollu(samband)
         friends_hledsla.hlada(samband)
+        central_perk_hledsla.hlada(samband)
         samband.commit()
         skra_fjarlaegdarfall(samband)
         _GRUNNUR = samband

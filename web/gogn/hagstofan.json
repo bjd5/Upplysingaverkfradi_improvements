@@ -1,0 +1,495 @@
+{
+  "uppfaert": "2026-09-10T09:02:26+00:00",
+  "heimild": "Hagstofa Íslands — px.hagstofa.is/pxis/api/v1/is/Samfelag/skolamal/4_haskolastig/1_hsProf/SKO04208b.px (Nemendaskrá og prófaskrá Hagstofu Íslands)",
+  "gogn": [
+    {
+      "namssvid_kodi": "Alls",
+      "namssvid": "Alls",
+      "kyn_kodi": "Alls",
+      "kyn": "Alls",
+      "brautskradir": 73.5,
+      "brottfallnir": 19.6,
+      "enn_i_nami": 6.9,
+      "samtals": 100.0
+    },
+    {
+      "namssvid_kodi": "Alls",
+      "namssvid": "Alls",
+      "kyn_kodi": "1",
+      "kyn": "Karlar",
+      "brautskradir": 70.3,
+      "brottfallnir": 23.0,
+      "enn_i_nami": 6.6,
+      "samtals": 99.9
+    },
+    {
+      "namssvid_kodi": "Alls",
+      "namssvid": "Alls",
+      "kyn_kodi": "2",
+      "kyn": "Konur",
+      "brautskradir": 75.9,
+      "brottfallnir": 17.0,
+      "enn_i_nami": 7.1,
+      "samtals": 100.0
+    },
+    {
+      "namssvid_kodi": "05",
+      "namssvid": "Raunvísindi, stærðfræði og tölfræði",
+      "kyn_kodi": "Alls",
+      "kyn": "Alls",
+      "brautskradir": 71.0,
+      "brottfallnir": 22.5,
+      "enn_i_nami": 6.5,
+      "samtals": 100.0
+    },
+    {
+      "namssvid_kodi": "05",
+      "namssvid": "Raunvísindi, stærðfræði og tölfræði",
+      "kyn_kodi": "1",
+      "kyn": "Karlar",
+      "brautskradir": 68.9,
+      "brottfallnir": 23.0,
+      "enn_i_nami": 8.2,
+      "samtals": 100.1
+    },
+    {
+      "namssvid_kodi": "05",
+      "namssvid": "Raunvísindi, stærðfræði og tölfræði",
+      "kyn_kodi": "2",
+      "kyn": "Konur",
+      "brautskradir": 72.7,
+      "brottfallnir": 22.1,
+      "enn_i_nami": 5.2,
+      "samtals": 100.0
+    },
+    {
+      "namssvid_kodi": "06",
+      "namssvid": "Upplýsinga- og samskiptatækni",
+      "kyn_kodi": "Alls",
+      "kyn": "Alls",
+      "brautskradir": 68.6,
+      "brottfallnir": 23.4,
+      "enn_i_nami": 8.0,
+      "samtals": 100.0
+    },
+    {
+      "namssvid_kodi": "06",
+      "namssvid": "Upplýsinga- og samskiptatækni",
+      "kyn_kodi": "1",
+      "kyn": "Karlar",
+      "brautskradir": 67.6,
+      "brottfallnir": 25.4,
+      "enn_i_nami": 7.0,
+      "samtals": 100.0
+    },
+    {
+      "namssvid_kodi": "06",
+      "namssvid": "Upplýsinga- og samskiptatækni",
+      "kyn_kodi": "2",
+      "kyn": "Konur",
+      "brautskradir": 71.7,
+      "brottfallnir": 17.4,
+      "enn_i_nami": 10.9,
+      "samtals": 100.0
+    },
+    {
+      "namssvid_kodi": "07",
+      "namssvid": "Verkfræði, framleiðsla og mannvirkjagerð",
+      "kyn_kodi": "Alls",
+      "kyn": "Alls",
+      "brautskradir": 84.3,
+      "brottfallnir": 11.9,
+      "enn_i_nami": 3.8,
+      "samtals": 100.0
+    },
+    {
+      "namssvid_kodi": "07",
+      "namssvid": "Verkfræði, framleiðsla og mannvirkjagerð",
+      "kyn_kodi": "1",
+      "kyn": "Karlar",
+      "brautskradir": 84.2,
+      "brottfallnir": 12.6,
+      "enn_i_nami": 3.3,
+      "samtals": 100.1
+    },
+    {
+      "namssvid_kodi": "07",
+      "namssvid": "Verkfræði, framleiðsla og mannvirkjagerð",
+      "kyn_kodi": "2",
+      "kyn": "Konur",
+      "brautskradir": 84.5,
+      "brottfallnir": 10.9,
+      "enn_i_nami": 4.7,
+      "samtals": 100.1
+    }
+  ],
+  "lysigogn": {
+    "tafla": {
+      "audkenni": "SKO04208b",
+      "heiti": "Brautskráningarhlutfall og árgangsbrotthvarf í þriggja ára bakkalárnámi eftir námssviði 2014-2023 by Innritunarár, Tími, Nemendur, Fjöldi/Hlutfall, Námssvið og Kyn",
+      "uppruni": "Nemendaskrá og prófaskrá Hagstofu Íslands.",
+      "endapunktur": "https://px.hagstofa.is/pxis/api/v1/is/Samfelag/skolamal/4_haskolastig/1_hsProf/SKO04208b.px",
+      "hraskra": "data/raw/hagstofan/response.json",
+      "jsonstat_utgafa": "2.0",
+      "fjoldi_gilda": 36,
+      "updated_i_svari": "9999-12-31T23:59:59Z",
+      "aukastafir_i_svari": 0
+    },
+    "afmorkun": [
+      {
+        "vidd": "Innritunarár",
+        "heiti": "Innritunarár",
+        "kodi": "2017",
+        "gildi": "2017"
+      },
+      {
+        "vidd": "Tími",
+        "heiti": "Tími",
+        "kodi": "n+3",
+        "gildi": "Sex árum eftir innritun"
+      },
+      {
+        "vidd": "Fjöldi/Hlutfall",
+        "heiti": "Fjöldi/Hlutfall",
+        "kodi": "1",
+        "gildi": "Hlutfall %"
+      }
+    ],
+    "stodur": [
+      {
+        "reitur": "brautskradir",
+        "kodi": "5",
+        "heiti": "Brautskráðir alls"
+      },
+      {
+        "reitur": "brottfallnir",
+        "kodi": "6",
+        "heiti": "Brottfallnir"
+      },
+      {
+        "reitur": "enn_i_nami",
+        "kodi": "7",
+        "heiti": "Enn í námi"
+      }
+    ],
+    "aukastafir": 1,
+    "fyrirspurn": {
+      "query": [
+        {
+          "code": "Innritunarár",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "2017"
+            ]
+          }
+        },
+        {
+          "code": "Tími",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "n+3"
+            ]
+          }
+        },
+        {
+          "code": "Nemendur",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "5",
+              "6",
+              "7"
+            ]
+          }
+        },
+        {
+          "code": "Fjöldi/Hlutfall",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "1"
+            ]
+          }
+        },
+        {
+          "code": "Námssvið",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "Alls",
+              "05",
+              "06",
+              "07"
+            ]
+          }
+        },
+        {
+          "code": "Kyn",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "Alls",
+              "1",
+              "2"
+            ]
+          }
+        }
+      ],
+      "response": {
+        "format": "json-stat2"
+      }
+    },
+    "viddir": [
+      {
+        "kodi": "Innritunarár",
+        "heiti": "Innritunarár",
+        "stada": 0,
+        "staerd": 1,
+        "timavidd": true,
+        "gildi": [
+          {
+            "kodi": "2017",
+            "heiti": "2017",
+            "valid": true,
+            "stada": 0
+          },
+          {
+            "kodi": "2014",
+            "heiti": "2014",
+            "valid": false,
+            "stada": null
+          }
+        ]
+      },
+      {
+        "kodi": "Tími",
+        "heiti": "Tími",
+        "stada": 1,
+        "staerd": 1,
+        "timavidd": false,
+        "gildi": [
+          {
+            "kodi": "n+3",
+            "heiti": "Sex árum eftir innritun",
+            "valid": true,
+            "stada": 0
+          }
+        ]
+      },
+      {
+        "kodi": "Nemendur",
+        "heiti": "Nemendur",
+        "stada": 2,
+        "staerd": 3,
+        "timavidd": false,
+        "gildi": [
+          {
+            "kodi": "5",
+            "heiti": "Brautskráðir alls",
+            "valid": true,
+            "stada": 0
+          },
+          {
+            "kodi": "6",
+            "heiti": "Brottfallnir",
+            "valid": true,
+            "stada": 1
+          },
+          {
+            "kodi": "7",
+            "heiti": "Enn í námi",
+            "valid": true,
+            "stada": 2
+          },
+          {
+            "kodi": "1",
+            "heiti": "Nýnemar alls",
+            "valid": false,
+            "stada": null
+          },
+          {
+            "kodi": "2",
+            "heiti": "Brautskráðir með bakkalárgráðu af sama sviði",
+            "valid": false,
+            "stada": null
+          },
+          {
+            "kodi": "3",
+            "heiti": "Brautskráðir með bakkalárgráðu af öðru sviði",
+            "valid": false,
+            "stada": null
+          },
+          {
+            "kodi": "4",
+            "heiti": "Brautskráðir úr öðru háskólanámi",
+            "valid": false,
+            "stada": null
+          }
+        ]
+      },
+      {
+        "kodi": "Fjöldi/Hlutfall",
+        "heiti": "Fjöldi/Hlutfall",
+        "stada": 3,
+        "staerd": 1,
+        "timavidd": false,
+        "gildi": [
+          {
+            "kodi": "1",
+            "heiti": "Hlutfall %",
+            "valid": true,
+            "stada": 0
+          },
+          {
+            "kodi": "0",
+            "heiti": "Fjöldi",
+            "valid": false,
+            "stada": null
+          }
+        ]
+      },
+      {
+        "kodi": "Námssvið",
+        "heiti": "Námssvið",
+        "stada": 4,
+        "staerd": 4,
+        "timavidd": false,
+        "gildi": [
+          {
+            "kodi": "Alls",
+            "heiti": "Alls",
+            "valid": true,
+            "stada": 0
+          },
+          {
+            "kodi": "05",
+            "heiti": "Raunvísindi, stærðfræði og tölfræði",
+            "valid": true,
+            "stada": 1
+          },
+          {
+            "kodi": "06",
+            "heiti": "Upplýsinga- og samskiptatækni",
+            "valid": true,
+            "stada": 2
+          },
+          {
+            "kodi": "07",
+            "heiti": "Verkfræði, framleiðsla og mannvirkjagerð",
+            "valid": true,
+            "stada": 3
+          },
+          {
+            "kodi": "01",
+            "heiti": "Menntun",
+            "valid": false,
+            "stada": null
+          },
+          {
+            "kodi": "02",
+            "heiti": "Hugvisindi og listir",
+            "valid": false,
+            "stada": null
+          },
+          {
+            "kodi": "03",
+            "heiti": "Félagsvísindi, fjölmiðlun og upplýsingafræði",
+            "valid": false,
+            "stada": null
+          },
+          {
+            "kodi": "04",
+            "heiti": "Viðskipti, stjórnun og lögfræði",
+            "valid": false,
+            "stada": null
+          },
+          {
+            "kodi": "08",
+            "heiti": "Landbúnaður, skógrækt, fiskveiðar og dýralækningar",
+            "valid": false,
+            "stada": null
+          },
+          {
+            "kodi": "09",
+            "heiti": "Heilbrigði og velferð",
+            "valid": false,
+            "stada": null
+          },
+          {
+            "kodi": "10",
+            "heiti": "Þjónusta",
+            "valid": false,
+            "stada": null
+          }
+        ]
+      },
+      {
+        "kodi": "Kyn",
+        "heiti": "Kyn",
+        "stada": 5,
+        "staerd": 3,
+        "timavidd": false,
+        "gildi": [
+          {
+            "kodi": "Alls",
+            "heiti": "Alls",
+            "valid": true,
+            "stada": 0
+          },
+          {
+            "kodi": "1",
+            "heiti": "Karlar",
+            "valid": true,
+            "stada": 1
+          },
+          {
+            "kodi": "2",
+            "heiti": "Konur",
+            "valid": true,
+            "stada": 2
+          }
+        ]
+      }
+    ],
+    "munir": [
+      {
+        "lysing": "Verkfræði miðað við öll svið, bæði kyn",
+        "a": {
+          "namssvid": "Verkfræði, framleiðsla og mannvirkjagerð",
+          "kyn": "Alls"
+        },
+        "b": {
+          "namssvid": "Alls",
+          "kyn": "Alls"
+        },
+        "prosentustig": 10.8
+      },
+      {
+        "lysing": "Konur miðað við karla í verkfræði",
+        "a": {
+          "namssvid": "Verkfræði, framleiðsla og mannvirkjagerð",
+          "kyn": "Konur"
+        },
+        "b": {
+          "namssvid": "Verkfræði, framleiðsla og mannvirkjagerð",
+          "kyn": "Karlar"
+        },
+        "prosentustig": 0.3
+      },
+      {
+        "lysing": "Konur miðað við karla á öllum sviðum",
+        "a": {
+          "namssvid": "Alls",
+          "kyn": "Konur"
+        },
+        "b": {
+          "namssvid": "Alls",
+          "kyn": "Karlar"
+        },
+        "prosentustig": 5.6
+      }
+    ]
+  }
+}

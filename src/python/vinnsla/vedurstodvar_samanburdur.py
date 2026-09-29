@@ -84,7 +84,7 @@ def lesa_frosid() -> tuple[str, str, list[dict]]:
     if not eintok:
         raise SamanburdarVilla(
             f"Ekkert frosið eintak í {stutt_slod(FROSID)} — keyrðu "
-            "src/python/sofnun/frysta_vedurstodvar.py fyrst."
+            "scripts/saekja-gogn.sh vedurstodvar fyrst."
         )
     skra = eintok[-1]
     provenance = FROSID / "provenance.json"

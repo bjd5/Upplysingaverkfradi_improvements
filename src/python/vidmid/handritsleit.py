@@ -21,13 +21,15 @@ Tólið **prentar ekki innihald** brotlegs strengs, aðeins staðsetningu og
 mælingar. Væri hann handritstexti myndi prentunin afrita hann í logga og
 CI-úttök — nákvæmlega það sem á að koma í veg fyrir.
 
-4. **Byggða gamla síðan** — allar HTML- og JSON-skrár í `docs/vidmid/vefur/`
-   — er auk þess skönnuð eftir enskum tilsvörum í handritasniði (`vefleit.py`).
-   Línurnar úr þætti 0101 sem ákvörðun (b) í issue #3 leyfir eru undanþegnar
-   ein og ein með frystri SHA-256; hver ný lína fellir prófið.
+4. **HTML og JSON** — í `web/`, `docs/` og `data/processed/`, og í byggðu
+   gömlu síðunni sem er aðeins í frosna commit-inu (git-tagið `vidmid-frosid`)
+   — eru auk þess skönnuð eftir enskum tilsvörum í handritasniði
+   (`vefleit.py`). Í trénu er ekkert undanþegið. Í frosna commit-inu eru
+   línurnar úr þætti 0101 sem ákvörðun (b) í issue #3 leyfir undanþegnar ein og
+   ein með frystri SHA-256; hver ný lína fellir prófið.
 
-**Afmörkun:** handritstexti utan þessara skráa, eða á síðunni án `Nafn:`, er
-utan leitarinnar — sjá docs/adferdafraedi.md, kafla 1.5.2.
+**Afmörkun:** handritstexti án `Nafn:` er utan leitarinnar — sjá
+docs/adferdafraedi.md, kafla 1.5.2.
 
 Keyrsla:
     python3 src/python/vidmid/handritsleit.py stadfesta
@@ -53,7 +55,8 @@ try:  # keyrt beint: python3 src/python/vidmid/handritsleit.py
         ORDATHAK_GAGNAREITS,
         STAKAR_SKRAR,
         UNDANTEKNINGAR,
-        VEFMAPPA,
+        FROSID_COMMIT,
+        VEFMOPPUR,
         VEFUNDANTEKNINGAR,
         VIDAUKAR,
     )
@@ -64,7 +67,8 @@ except ImportError:  # flutt inn sem eining innan pakkans
         ORDATHAK_GAGNAREITS,
         STAKAR_SKRAR,
         UNDANTEKNINGAR,
-        VEFMAPPA,
+        FROSID_COMMIT,
+        VEFMOPPUR,
         VEFUNDANTEKNINGAR,
         VIDAUKAR,
     )
@@ -246,8 +250,10 @@ def leita(rot: Path = ROT) -> tuple[list[Frava], dict[str, int]]:
         "strengir": fjoldi_strengja,
         "undantekningar": len(UNDANTEKNINGAR),
     }
-    if VEFMAPPA:
-        vef_fravik, vef_talning = vefleit.leita(rot, VEFMAPPA, VEFUNDANTEKNINGAR)
+    if VEFMOPPUR:
+        vef_fravik, vef_talning = vefleit.leita(
+            rot, VEFMOPPUR, FROSID_COMMIT, VEFUNDANTEKNINGAR
+        )
         fravik.extend(Frava(*eitt) for eitt in vef_fravik)
         talning.update(vef_talning)
     talning["fravik"] = len(fravik)
@@ -273,13 +279,9 @@ def stadfesta() -> int:
         talning["strengir"],
         talning["undantekningar"],
     )
-    log.info(
-        "%d skrár byggðu síðunnar, %d tilsvör í handritasniði — öll %d frystar "
-        "undanþágur (issue #3, ákvörðun b), engin ný",
-        talning.get("vefskrar", 0),
-        talning.get("tilsvor", 0),
-        talning.get("vefundantekningar", 0),
-    )
+    for tiltaekt, skilabod in vefleit.lysing(talning, FROSID_COMMIT):
+        # Regla 6: ekki þagað þótt frosna commit-ið vanti (grunnt klón).
+        (log.info if tiltaekt else log.warning)("%s", skilabod)
     return 0
 
 

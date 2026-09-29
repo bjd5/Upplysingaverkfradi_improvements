@@ -10,8 +10,7 @@ eða í [`vidmid/`](vidmid/). Það sem ekki er hægt að styðja er merkt
 Staðfesta má að gögnin séu ósnert hvenær sem er:
 
 ```bash
-python3 src/python/sofnun/frysta.py stadfesta     # hrágögnin
-python3 src/python/vidmid/provenance.py stadfesta  # viðmiðið
+python3 src/python/vidmid/provenance.py stadfesta  # hrágögnin og viðmiðið
 ```
 
 ---
@@ -46,7 +45,7 @@ alls staðar þar sem þessi gögn birtast — líka á vefsíðunni sjálfri, e
 
 Þjónustan er opin og krefst hvorki innskráningar né API-lykils. Hausinn
 `x-vi-api-version` velur útgáfu þjónustunnar; hann er opinbert útgáfunúmer en
-ekki leyndarmál (frosna viðmiðið, `vidmid/vefur/capstone/earthquakes.html`).
+ekki leyndarmál (frosna viðmiðið, `vidmid-frosid:docs/vidmid/vefur/capstone/earthquakes.html`).
 
 ### 1.2 Hagstofan — brautskráning af háskólastigi
 
@@ -118,7 +117,7 @@ endurbirtingar á efni mbl.is. Engin frétt, fyrirsögn né mynd af síðunni fe
 | Endapunktar | `GET /3/tv/1668?language=en-US` og `GET /3/tv/1668/aggregate_credits?language=en-US` (`1668` = Friends) |
 | Auðkenning | `Authorization: Bearer <token>` á hverri beiðni — ókeypis reikningur |
 | Staða | **ekkert eintak til.** `TMDB_TOKEN` er hvorki í umhverfi né `.env` |
-| Heimild þessarar færslu | [`../data/raw/frysting.json`](../data/raw/frysting.json) (`ofryst`) og `vidmid/vefur/friends/phoebe-tribute.html` |
+| Heimild þessarar færslu | [`../data/raw/frysting.json`](../data/raw/frysting.json) (`ofryst`) og `vidmid-frosid:docs/vidmid/vefur/friends/phoebe-tribute.html` |
 
 Safnið átti að staðfesta hver leikur Phoebe og í hversu mörgum þáttum. Hvorki
 svörin né samantektin lifðu af: `vidmid/generated/phoebe-tmdb-summary.md`
@@ -146,7 +145,7 @@ fyrr en það er sótt á ný.
 | Undanskildar skrár | `0423uncut.html`, `07outtakes.html` |
 | Greint | 2026-09-17T09:47:09Z af `src/phoebe_analysis.py` í upprunaverkefninu |
 | Leyfi | `fangj/friends`: **ekkert** — safn afritaðra handrita án leyfis. `delvinso/friends-tv-show-analysis`: MIT, sem nær yfir kóðann þar en ekki endilega yfir handritatextann |
-| Heimild þessarar færslu | [`vidmid/phoebe-stats/_meta.json`](vidmid/phoebe-stats/_meta.json), [`vidmid/phoebe-stats/README.md`](vidmid/phoebe-stats/README.md), issue #3 og issue #14 (athugasemd frá P2.4/P2.5, liður 6); dagsetningar pinnunar úr git-sögu upprunarepo-sins, dagsetningar fangj- og delvinso-commitanna úr nafnlausu `git fetch` 28.9.2026 |
+| Heimild þessarar færslu | [`../data/processed/phoebe-stats/_meta.json`](../data/processed/phoebe-stats/_meta.json), `vidmid-frosid:docs/vidmid/phoebe-stats/README.md`, issue #3 og issue #14 (athugasemd frá P2.4/P2.5, liður 6); dagsetningar pinnunar úr git-sögu upprunarepo-sins, dagsetningar fangj- og delvinso-commitanna úr nafnlausu `git fetch` 28.9.2026 |
 
 **Það var `delvinso` sem var greint, ekki `fangj`.** `summary.json` nefnir
 „fangj/delvinso“ sem heimild; sá texti er látinn standa því skráin er bætaeins
@@ -204,8 +203,8 @@ verið sótt og lesin í þessu verkefni, svo fullar ritfangaupplýsingar vantar
 
 | Tilvísun eins og viðmiðið nefnir hana | Ár | Notuð fyrir | Hvar hún er nefnd |
 |---|---|---|---|
-| Veðurstofa Íslands, skýrsla **VÍ 2009-013**, kafli 4.3 | 2009 | Umfjöllun um stærðarkvarðann `Mlw` — af hverju hann er hvorki umreiknaður né merktur Richter | `vidmid/vefur/capstone/earthquakes.html` |
-| **Monroe, Colaresi & Quinn** | 2008 | Aðferðin að baki z-gildum úr log-odds hlutfalli með Dirichlet-prior (einkennandi orð Phoebe) | `vidmid/phoebe-stats/README.md` |
+| Veðurstofa Íslands, skýrsla **VÍ 2009-013**, kafli 4.3 | 2009 | Umfjöllun um stærðarkvarðann `Mlw` — af hverju hann er hvorki umreiknaður né merktur Richter | `vidmid-frosid:docs/vidmid/vefur/capstone/earthquakes.html` |
+| **Monroe, Colaresi & Quinn** | 2008 | Aðferðin að baki z-gildum úr log-odds hlutfalli með Dirichlet-prior (einkennandi orð Phoebe) | `vidmid-frosid:docs/vidmid/phoebe-stats/README.md` |
 
 Titlar, tímarit og slóðir eru **ekki** skráð hér vegna þess að viðmiðið gefur þau
 ekki. Þau verða að koma úr heimildunum sjálfum þegar þær eru sóttar.
