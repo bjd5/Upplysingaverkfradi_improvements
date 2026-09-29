@@ -63,8 +63,7 @@ og ný teikning eru ekki sömu bæti.
 | Skrá | Hlutverk | Þarf matplotlib |
 |---|---|---|
 | `utflutningur/tokens.py` | Les `tokens.css`, leysir `var()`, skilar báðum þemum | nei |
-| `utflutningur/andstaeda.py` | WCAG 2.1 andstæðumæling | nei |
-| `utflutningur/myndrit_litir.py` | Litahlutverk `--myndrit-*` og kröfur þeirra | nei |
+| `utflutningur/myndrit_litir.py` | Litahlutverk `--myndrit-*`, kröfur þeirra og WCAG 2.1 andstæðumæling | nei |
 | `utflutningur/islenskt_snid.py` | `5,5`, `1.234`, `70,5%`, `1. nóv.` — án `locale` | nei |
 | `utflutningur/myndrit.py` | Sameiginlega lagið: rcParams úr tokens, ákvarðað SVG | **já** |
 | `utflutningur/myndrit_skjalftar.py` | Sýnidæmið: daglegir skjálftar | **já** |
@@ -78,7 +77,7 @@ Litir, letur, ákvarðað úttak og letursnið fylgja þá sjálfkrafa.
 ## 3. Litir og mæld andstæða
 
 Litahlutverkin eru skilgreind í `tokens.css` undir `--myndrit-*` og mæld gegn
-`--myndrit-bak` í báðum þemum. Mælt með `utflutningur.andstaeda` (WCAG 2.1):
+`--myndrit-bak` í báðum þemum. Mælt með `utflutningur.myndrit_litir` (WCAG 2.1):
 
 | Hlutverk | Token | Ljóst | Dökkt | Krafa |
 |---|---|---|---|---|
@@ -269,9 +268,17 @@ kemur úr `web/gogn/`. Hvernig taflan og `alt`-textinn verða til úr gögnunum
 SVG-skrárnar í `web/assets/img/` voru teiknaðar með þessari útgáfu, og hún
 stendur í `<dc:title>` hverrar skrár.
 
-**Opin spurning (bíður Björns, regla 10):** hvar útgáfan á að vera skráð svo
-hægt sé að setja hana upp — `requirements.txt`, `pyproject.toml` eða annað. Engin
-slík skrá er búin til fyrr en það er ákveðið; þangað til er þessi tafla heimildin.
+**Uppsetning:** útgáfan er fest í
+[`config/requirements-myndrit.txt`](../config/requirements-myndrit.txt)
+(ákveðið 28.9.2026, #17). Skráin er í `config/` en ekki í rót því hún er
+*valkvæð*: hún varðar aðeins það að teikna myndritin upp á nýtt, og allt annað í
+verkefninu — prófin meðtalin — keyrir á staðalsafninu einu. Nafnið segir það.
+
+```sh
+python3.12 -m venv .venv
+.venv/bin/pip install -r config/requirements-myndrit.txt
+PYTHONPATH=src/python .venv/bin/python -m utflutningur.myndrit_skjalftar
+```
 
 ---
 

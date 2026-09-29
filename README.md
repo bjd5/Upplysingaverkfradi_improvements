@@ -31,12 +31,16 @@ python3 src/python/main.py --skref allt          # eða: safna | vinna | hlada |
 
 scripts/endurbyggja-grunn.sh                     # byggir grunninn frá grunni
 python3 -m unittest discover -s tests            # prófin (Python 3.12+)
+python3 src/python/vidmid/provenance.py stadfesta # frosnu gögnin (SHA-256)
 ```
 
 - **Grunnurinn** verður aðeins til úr `src/sql/migrations/`. Endurbyggingin
   prentar fingrafar; tvær hreinar byggingar eiga að gefa það sama.
 - **Migration er aldrei breytt** eftir keyrslu — keyrarinn stöðvast ef SHA-256
   hennar breytist. Ný migration fær næsta númer.
+- **Enginn pakki þarf** nema til að teikna myndritin upp á nýtt:
+  `pip install -r config/requirements-myndrit.txt` (matplotlib, sjá
+  `docs/myndrit.md`). Prófin sem teikna sleppa sér án hans.
 
 ## Nýtt efni úr gamla verkefninu
 

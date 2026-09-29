@@ -29,61 +29,18 @@ from vidmid.handritsreitir import SKJOLUN, TITILL, Undantekning  # noqa: E402
 
 ROT = Path(__file__).resolve().parents[1]
 AFRIT = ROT / "data" / "processed" / "phoebe-stats"
-VIDMID = ROT / "docs" / "vidmid" / "phoebe-stats"
-PROVENANCE = ROT / "docs" / "vidmid" / "provenance.json"
 
-# Staðan 28.9.2026: 17 skrár í vinnugagninu, 17 í viðmiðinu, 7 í byggðu gömlu
-# síðunni og ein stök samantekt. Talan er hér svo leit sem hættir að finna
-# skrárnar falli í stað þess að verða græn á tómu mengi.
-SKANNADAR_SKRAR = 42
+# Staðan 28.9.2026: 17 skrár í phoebe-stats og ein stök samantekt. Talan er
+# hér svo leit sem hættir að finna skrárnar falli í stað þess að verða græn á
+# tómu mengi.
+SKANNADAR_SKRAR = 18
 UNDANTEKNINGAR_FJOLDI = 18
-
-# Bætaeins afritið: 17 skrár. docs/vidmid/phoebe-stats/README.md er vísvitandi
-# ekki afrituð — hún lýsir slóðum upprunaverkefnisins og væri ósönn hér
-# (data/processed/README.md, kafli 1.1).
-AFRIT_SKRAR = 17
-EKKI_AFRITAD = {"README.md"}
 
 # Heimatilbúin setning: sex orð og punktur. Hvorugt á hún sameiginlegt með
 # þáttunum nema að vera ensk — það er nákvæmlega það sem leitin á að stöðva.
 GERVISETNING = "The blue notebook was left behind."
 GERVITALNAGILDI = ["2.95", "0212-0213", "10.16", "0.63", "1.31"]
 GERVIHEITI = ["Phoebe", "Monica", "raeduskipti", "lines", "words"]
-
-
-def sha256_af(slod: Path) -> str:
-    """SHA-256 af innihaldi skráar."""
-    return hashlib.sha256(slod.read_bytes()).hexdigest()
-
-
-class AfritProf(unittest.TestCase):
-    """Afritið í data/processed á að vera bætaeins við frosna viðmiðið."""
-
-    def test_afritid_hefur_rettar_skrar(self) -> None:
-        afrit = {p.name for p in AFRIT.iterdir()}
-        vidmid = {p.name for p in VIDMID.iterdir()}
-        self.assertEqual(len(afrit), AFRIT_SKRAR)
-        self.assertEqual(vidmid - afrit, EKKI_AFRITAD)
-        self.assertEqual(afrit - vidmid, set(), "skrá í afriti sem er ekki í viðmiðinu")
-
-    def test_afritid_er_baetaeins(self) -> None:
-        for slod in sorted(AFRIT.iterdir()):
-            with self.subTest(skra=slod.name):
-                self.assertEqual(sha256_af(slod), sha256_af(VIDMID / slod.name))
-
-    def test_afritid_stemmir_vid_provenance(self) -> None:
-        """Summurnar stemma líka við það sem skráð var við frystinguna.
-
-        Að bera afritið aðeins við viðmiðið sannar að þau tvö séu eins. Þetta
-        skref bindur þau við SHA-256 sem var skráð 24.9.2026, svo samstillt
-        breyting á báðum eintökum komist ekki framhjá.
-        """
-        skjal = json.loads(PROVENANCE.read_text(encoding="utf-8"))
-        safn = next(s for s in skjal["sofn"] if s["heiti"] == "phoebe-stats")
-        skrad = {f["slod"]: f["sha256"] for f in safn["skrar"]}
-        for slod in sorted(AFRIT.iterdir()):
-            with self.subTest(skra=slod.name):
-                self.assertEqual(sha256_af(slod), skrad[slod.name])
 
 
 class SetningamerkiProf(unittest.TestCase):
@@ -230,10 +187,8 @@ class RaunskrarProf(unittest.TestCase):
     """Fullyrðingin á skönnuðu skránum: engin geymir samfellda setningu.
 
     Afmörkunin er vísvitandi: leitin les JSON- og CSV-talnaskrárnar sem
-    `handritsreitir.MOPPUR` og `STAKAR_SKRAR` telja upp — ekki allt repo-ið.
-    Byggðu HTML-síðurnar í `docs/vidmid/vefur/` og `search.json` eru utan
-    hennar (docs/adferdafraedi.md, kafli 1.5.2). Grænt próf segir því ekkert um
-    þær, og nafnið segir það ekki heldur.
+    `handritsreitir.MOPPUR` og `STAKAR_SKRAR` telja upp — ekki allt repo-ið
+    (docs/adferdafraedi.md, kafli 1.5.2).
     """
 
     def test_skannadar_talnaskrar_geyma_enga_samfellda_setningu(self) -> None:

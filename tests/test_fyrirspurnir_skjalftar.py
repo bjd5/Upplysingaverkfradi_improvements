@@ -30,7 +30,7 @@ import test_jardskjalftar_vidmid as vidmid  # noqa: E402
 from gagnagrunnur.fyrirspurnir import keyra  # noqa: E402
 from vinnsla.jardskjalftar import lesa_skjalfta  # noqa: E402
 from vinnsla.jardskjalftar_afmorkun import lesa_afmorkun  # noqa: E402
-from vinnsla.jardskjalftar_samantekt import draga_saman  # noqa: E402
+from vinnsla.jardskjalftar_talning import draga_saman  # noqa: E402
 from vinnsla.jardskjalftar_talning import dagleg_talning  # noqa: E402
 
 GLUGGI = 7

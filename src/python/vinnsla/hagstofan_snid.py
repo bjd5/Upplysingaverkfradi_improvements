@@ -2,7 +2,7 @@
 
 Hér er engin rökvísi: aðeins formin sem hinar einingarnar fylla, og villan sem
 þær kasta allar. Ástæðan fyrir sérstakri skrá er að þrjár einingar þurfa sömu
-formin — ``hagstofan_viddir`` býr þau til, ``hagstofan_gildi`` les þau og
+formin — ``hagstofan_viddir`` býr þau til, ``hagstofan_jsonstat`` les þau og
 ``hagstofan_sannreyning`` mælir þau — og hringtengdur innflutningur milli
 þeirra væri verri en ein hlutlaus skrá.
 

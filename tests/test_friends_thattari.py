@@ -1,6 +1,6 @@
 """Próf fyrir sameiginlega Friends-þáttarann (issue #14, pakki P2.5).
 
-Netlaus og á gervihandritum einum (``friends_gervihandrit``) — handritin sjálf
+Netlaus og á gervihandritum einum (``phoebe_hjalp``) — handritin sjálf
 fara aldrei í repo-ið (issue #3). Hvert skilyrði er líka prófað þar sem það á
 að BRESTA: mappa sem vantar, skráarheiti án þáttaraðar, undanskildar skrár,
 merki sem líta út eins og ræðumenn en eru það ekki.
@@ -17,7 +17,7 @@ from pathlib import Path
 from unittest import mock
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
-from friends_gervihandrit import skrifa_gervihandrit  # noqa: E402
+from phoebe_hjalp import skrifa_gervihandrit  # noqa: E402
 
 from vinnsla.friends_handrit import (  # noqa: E402
     TRANSCRIPT_DIR_ENV, TranscriptError, aired_episodes, decode_transcript,

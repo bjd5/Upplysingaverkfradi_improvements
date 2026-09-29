@@ -1,281 +1,253 @@
 {
- "uppfaert": "2026-09-24T11:22:18+00:00",
- "heimild": "Veðurstofa Íslands — api.vedur.is/weather/stations (CC BY 4.0)",
- "gogn": {
-  "uppruni": {
-   "thjonusta": "Veðurstofa Íslands",
-   "slod": "https://api.vedur.is/weather/stations",
-   "leyfi": "CC BY 4.0",
-   "sott": "2026-09-24T11:22:18+00:00",
-   "hragogn": "data/raw/vedurstodvar/stations-20260924T112218Z.json",
-   "frosid_eintak": true
-  },
-  "vidmidunarpunktur": {
-   "heiti": "VR-II",
-   "breidd": 64.1386922,
-   "lengd": -21.9556406,
-   "heimild": "Nominatim (OpenStreetMap), flett upp 2026-09-03 í upprunaverkefninu",
-   "radius_km": 5.0,
-   "kassi": {
-    "lengd_min": -22.0589,
-    "breidd_min": 64.0936,
-    "lengd_max": -21.8524,
-    "breidd_max": 64.1837
-   }
-  },
-  "beidnir": [
-   {
-    "sia": "engin sía",
-    "fjoldi": 778
-   },
-   {
-    "sia": "active=true",
-    "fjoldi": 343
-   },
-   {
-    "sia": "polygon",
-    "fjoldi": 21
-   },
-   {
-    "sia": "polygon + active=true",
-    "fjoldi": 9
-   },
-   {
-    "sia": "station_id=1469",
-    "fjoldi": 1
-   }
+  "uppfaert": "2026-09-24T11:22:18+00:00",
+  "heimild": "Veðurstofa Íslands — api.vedur.is/weather/stations (CC BY 4.0)",
+  "gogn": [
+    {
+      "audkenni": 1469,
+      "nafn": "Reykjavík Hljómskálagarður",
+      "upphafsar": 2022,
+      "lokaar": null,
+      "virk": true,
+      "metrar": 639
+    },
+    {
+      "audkenni": 2,
+      "nafn": "Sjómannaskóli",
+      "upphafsar": 1961,
+      "lokaar": 1963,
+      "virk": false,
+      "metrar": 689
+    },
+    {
+      "audkenni": 31561,
+      "nafn": "Einarsnes í Skerjafirði",
+      "upphafsar": 1998,
+      "lokaar": 2011,
+      "virk": false,
+      "metrar": 890
+    },
+    {
+      "audkenni": 1477,
+      "nafn": "Reykjavíkurflugvöllur",
+      "upphafsar": 2001,
+      "lokaar": null,
+      "virk": true,
+      "metrar": 1350
+    },
+    {
+      "audkenni": 1574,
+      "nafn": "Reykjavíkurhöfn",
+      "upphafsar": 1998,
+      "lokaar": 1998,
+      "virk": false,
+      "metrar": 1669
+    },
+    {
+      "audkenni": 7470,
+      "nafn": "Reykjavík sólgeislun",
+      "upphafsar": 2022,
+      "lokaar": 2025,
+      "virk": false,
+      "metrar": 2532
+    },
+    {
+      "audkenni": 7477,
+      "nafn": "Reykjavík tilraunastöð",
+      "upphafsar": 2018,
+      "lokaar": 2022,
+      "virk": false,
+      "metrar": 2546
+    },
+    {
+      "audkenni": 1,
+      "nafn": "Reykjavík",
+      "upphafsar": 1920,
+      "lokaar": null,
+      "virk": true,
+      "metrar": 2547
+    },
+    {
+      "audkenni": 1470,
+      "nafn": "Reykjavík",
+      "upphafsar": 2021,
+      "lokaar": null,
+      "virk": true,
+      "metrar": 2548
+    },
+    {
+      "audkenni": 6,
+      "nafn": "Gróðrarstöðin í Reykjavík",
+      "upphafsar": 1923,
+      "lokaar": 1928,
+      "virk": false,
+      "metrar": 2772
+    },
+    {
+      "audkenni": 7474,
+      "nafn": "Reykjavík turnþak",
+      "upphafsar": 2000,
+      "lokaar": null,
+      "virk": true,
+      "metrar": 2788
+    },
+    {
+      "audkenni": 4,
+      "nafn": "Reykjavík S",
+      "upphafsar": 2015,
+      "lokaar": 2024,
+      "virk": false,
+      "metrar": 2852
+    },
+    {
+      "audkenni": 7475,
+      "nafn": "Reykjavík búveðurstöð",
+      "upphafsar": 2000,
+      "lokaar": 2024,
+      "virk": false,
+      "metrar": 2869
+    },
+    {
+      "audkenni": 7476,
+      "nafn": "Reykjavík sólgeislun - Bústaðavegur",
+      "upphafsar": 2007,
+      "lokaar": 2025,
+      "virk": false,
+      "metrar": 2872
+    },
+    {
+      "audkenni": 1475,
+      "nafn": "Reykjavík - Bústaðavegur",
+      "upphafsar": 1993,
+      "lokaar": null,
+      "virk": true,
+      "metrar": 2882
+    },
+    {
+      "audkenni": 1575,
+      "nafn": "Eyjargrandi í Reykjavík",
+      "upphafsar": 1998,
+      "lokaar": 1998,
+      "virk": false,
+      "metrar": 3334
+    },
+    {
+      "audkenni": 5,
+      "nafn": "Sólland í Reykjavík",
+      "upphafsar": 1964,
+      "lokaar": 1972,
+      "virk": false,
+      "metrar": 3621
+    },
+    {
+      "audkenni": 1471,
+      "nafn": "Seltjarnarnes Suðurnes",
+      "upphafsar": 2019,
+      "lokaar": null,
+      "virk": true,
+      "metrar": 4122
+    },
+    {
+      "audkenni": 1576,
+      "nafn": "Sundahöfn í Reykjavík",
+      "upphafsar": 1998,
+      "lokaar": 1998,
+      "virk": false,
+      "metrar": 4479
+    },
+    {
+      "audkenni": 1472,
+      "nafn": "Kópavogur Fossvogsdalur",
+      "upphafsar": 2021,
+      "lokaar": null,
+      "virk": true,
+      "metrar": 5193
+    },
+    {
+      "audkenni": 21577,
+      "nafn": "Viðey",
+      "upphafsar": 2025,
+      "lokaar": null,
+      "virk": true,
+      "metrar": 5531
+    }
   ],
-  "svor": {
-   "naesta": {
-    "station_id": 1469,
-    "nafn": "Reykjavík Hljómskálagarður",
-    "metrar": 639,
-    "fyrsta_ar": 2022,
-    "lokaar": null,
-    "virk": true
-   },
-   "naesta_virka": {
-    "station_id": 1469,
-    "nafn": "Reykjavík Hljómskálagarður",
-    "metrar": 639,
-    "fyrsta_ar": 2022,
-    "lokaar": null,
-    "virk": true
-   },
-   "naesta_aflogd": {
-    "station_id": 2,
-    "nafn": "Sjómannaskóli",
-    "metrar": 689,
-    "fyrsta_ar": 1961,
-    "lokaar": 1963,
-    "virk": false
-   },
-   "munur_metrar": 50,
-   "fjoldi_virkra": 343,
-   "fjoldi_allra": 778,
-   "hlutfall_virkra_prosent": 44,
-   "ar_aftur_i_timann": 50,
-   "vidmidunarar": 1976,
-   "naesta_virka_naer_aftur": false,
-   "langtimastod": {
-    "station_id": 1,
-    "nafn": "Reykjavík",
-    "metrar": 2547,
-    "fyrsta_ar": 1920,
-    "lokaar": null,
-    "virk": true
-   }
-  },
-  "stodvar_i_kassa": [
-   {
-    "station_id": 1469,
-    "nafn": "Reykjavík Hljómskálagarður",
-    "metrar": 639,
-    "fyrsta_ar": 2022,
-    "lokaar": null,
-    "virk": true,
-    "rod": 1
-   },
-   {
-    "station_id": 2,
-    "nafn": "Sjómannaskóli",
-    "metrar": 689,
-    "fyrsta_ar": 1961,
-    "lokaar": 1963,
-    "virk": false,
-    "rod": 2
-   },
-   {
-    "station_id": 31561,
-    "nafn": "Einarsnes í Skerjafirði",
-    "metrar": 890,
-    "fyrsta_ar": 1998,
-    "lokaar": 2011,
-    "virk": false,
-    "rod": 3
-   },
-   {
-    "station_id": 1477,
-    "nafn": "Reykjavíkurflugvöllur",
-    "metrar": 1350,
-    "fyrsta_ar": 2001,
-    "lokaar": null,
-    "virk": true,
-    "rod": 4
-   },
-   {
-    "station_id": 1574,
-    "nafn": "Reykjavíkurhöfn",
-    "metrar": 1669,
-    "fyrsta_ar": 1998,
-    "lokaar": 1998,
-    "virk": false,
-    "rod": 5
-   },
-   {
-    "station_id": 7470,
-    "nafn": "Reykjavík sólgeislun",
-    "metrar": 2532,
-    "fyrsta_ar": 2022,
-    "lokaar": 2025,
-    "virk": false,
-    "rod": 6
-   },
-   {
-    "station_id": 7477,
-    "nafn": "Reykjavík tilraunastöð",
-    "metrar": 2546,
-    "fyrsta_ar": 2018,
-    "lokaar": 2022,
-    "virk": false,
-    "rod": 7
-   },
-   {
-    "station_id": 1,
-    "nafn": "Reykjavík",
-    "metrar": 2547,
-    "fyrsta_ar": 1920,
-    "lokaar": null,
-    "virk": true,
-    "rod": 8
-   },
-   {
-    "station_id": 1470,
-    "nafn": "Reykjavík",
-    "metrar": 2548,
-    "fyrsta_ar": 2021,
-    "lokaar": null,
-    "virk": true,
-    "rod": 9
-   },
-   {
-    "station_id": 6,
-    "nafn": "Gróðrarstöðin í Reykjavík",
-    "metrar": 2772,
-    "fyrsta_ar": 1923,
-    "lokaar": 1928,
-    "virk": false,
-    "rod": 10
-   },
-   {
-    "station_id": 7474,
-    "nafn": "Reykjavík turnþak",
-    "metrar": 2788,
-    "fyrsta_ar": 2000,
-    "lokaar": null,
-    "virk": true,
-    "rod": 11
-   },
-   {
-    "station_id": 4,
-    "nafn": "Reykjavík S",
-    "metrar": 2852,
-    "fyrsta_ar": 2015,
-    "lokaar": 2024,
-    "virk": false,
-    "rod": 12
-   },
-   {
-    "station_id": 7475,
-    "nafn": "Reykjavík búveðurstöð",
-    "metrar": 2869,
-    "fyrsta_ar": 2000,
-    "lokaar": 2024,
-    "virk": false,
-    "rod": 13
-   },
-   {
-    "station_id": 7476,
-    "nafn": "Reykjavík sólgeislun - Bústaðavegur",
-    "metrar": 2872,
-    "fyrsta_ar": 2007,
-    "lokaar": 2025,
-    "virk": false,
-    "rod": 14
-   },
-   {
-    "station_id": 1475,
-    "nafn": "Reykjavík - Bústaðavegur",
-    "metrar": 2882,
-    "fyrsta_ar": 1993,
-    "lokaar": null,
-    "virk": true,
-    "rod": 15
-   },
-   {
-    "station_id": 1575,
-    "nafn": "Eyjargrandi í Reykjavík",
-    "metrar": 3334,
-    "fyrsta_ar": 1998,
-    "lokaar": 1998,
-    "virk": false,
-    "rod": 16
-   },
-   {
-    "station_id": 5,
-    "nafn": "Sólland í Reykjavík",
-    "metrar": 3621,
-    "fyrsta_ar": 1964,
-    "lokaar": 1972,
-    "virk": false,
-    "rod": 17
-   },
-   {
-    "station_id": 1471,
-    "nafn": "Seltjarnarnes Suðurnes",
-    "metrar": 4122,
-    "fyrsta_ar": 2019,
-    "lokaar": null,
-    "virk": true,
-    "rod": 18
-   },
-   {
-    "station_id": 1576,
-    "nafn": "Sundahöfn í Reykjavík",
-    "metrar": 4479,
-    "fyrsta_ar": 1998,
-    "lokaar": 1998,
-    "virk": false,
-    "rod": 19
-   },
-   {
-    "station_id": 1472,
-    "nafn": "Kópavogur Fossvogsdalur",
-    "metrar": 5193,
-    "fyrsta_ar": 2021,
-    "lokaar": null,
-    "virk": true,
-    "rod": 20
-   },
-   {
-    "station_id": 21577,
-    "nafn": "Viðey",
-    "metrar": 5531,
-    "fyrsta_ar": 2025,
-    "lokaar": null,
-    "virk": true,
-    "rod": 21
-   }
-  ]
- }
+  "lysigogn": {
+    "sokn": {
+      "endapunktur": "https://api.vedur.is/weather/stations",
+      "faeribreytur": {},
+      "hraskra": "data/raw/vedurstodvar/stations-20260924T112218Z.json",
+      "fjoldi_stodva": 778
+    },
+    "vidmidunarpunktur": {
+      "heiti": "VR-II",
+      "breidd": 64.1386922,
+      "lengd": -21.9556406,
+      "heimild": "Nominatim (OpenStreetMap), flett upp 2026-09-03 í upprunaverkefninu",
+      "radius_km": 5.0,
+      "kassi": {
+        "min_breidd": 64.0936,
+        "max_breidd": 64.1837,
+        "min_lengd": -22.0589,
+        "max_lengd": -21.8524
+      }
+    },
+    "beidnir": [
+      {
+        "faeribreytur": "engin sía",
+        "lysing": "allar stöðvar sem þjónustan þekkir",
+        "fjoldi": 778
+      },
+      {
+        "faeribreytur": "active=true",
+        "lysing": "aðeins stöðvar sem mæla enn",
+        "fjoldi": 343
+      },
+      {
+        "faeribreytur": "polygon",
+        "lysing": "aðeins stöðvar innan 5 km kassans um VR-II",
+        "fjoldi": 21
+      },
+      {
+        "faeribreytur": "polygon + active=true",
+        "lysing": "hvort tveggja í sömu beiðni",
+        "fjoldi": 9
+      },
+      {
+        "faeribreytur": "station_id=1469",
+        "lysing": "stöðin sem forritið les, sótt beint",
+        "fjoldi": 1
+      }
+    ],
+    "svor": {
+      "fjoldi_allra": 778,
+      "fjoldi_virkra": 343,
+      "fjoldi_aflagdra": 435,
+      "hlutfall_virkra_prosent": 44,
+      "naesta_virka": {
+        "audkenni": 1469,
+        "nafn": "Reykjavík Hljómskálagarður",
+        "metrar": 639,
+        "upphafsar": 2022,
+        "lokaar": null
+      },
+      "naesta_aflagda": {
+        "audkenni": 2,
+        "nafn": "Sjómannaskóli",
+        "metrar": 689,
+        "upphafsar": 1961,
+        "lokaar": 1963
+      },
+      "munur_metrar": 50,
+      "ar_aftur_i_timann": 50,
+      "vidmidunarar": 1976,
+      "valin_naer_aftur": false,
+      "langtimastod": {
+        "audkenni": 1,
+        "nafn": "Reykjavík",
+        "metrar": 2547,
+        "upphafsar": 1920,
+        "lokaar": null
+      }
+    }
+  }
 }
