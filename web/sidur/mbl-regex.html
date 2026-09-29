@@ -107,7 +107,8 @@
         </p>
         <p>
           Fréttaefnið er höfundarréttarvarið. Hér birtist engin frétt,
-          fyrirsögn né mynd — aðeins talningar og mynstrin sem gáfu þær.
+          fyrirsögn né mynd — aðeins talningar, mynstrin sem gáfu þær og
+          stutt brot úr byggingu síðunnar.
         </p>
 
         <section class="gagnahluti" data-gogn="mbl.json"
@@ -122,7 +123,7 @@
             <dl class="stadreyndir mynstur-eintak">
               <div>
                 <dt>Slóð</dt>
-                <dd><code data-gogn-reitur="uppruni.slod"></code></dd>
+                <dd><code data-gogn-reitur="lysigogn.eintak.slod"></code></dd>
               </div>
               <div>
                 <dt>Sótt</dt>
@@ -130,23 +131,19 @@
               </div>
               <div>
                 <dt>HTTP-staða</dt>
-                <dd data-gogn-reitur="uppruni.http_stada"></dd>
+                <dd data-gogn-reitur="lysigogn.eintak.http_stada"></dd>
               </div>
               <div>
                 <dt>Stærð</dt>
-                <dd><span data-gogn-reitur="uppruni.baeti"></span> bæti</dd>
+                <dd><span data-gogn-reitur="lysigogn.eintak.baeti"></span> bæti</dd>
               </div>
               <div>
                 <dt>MD5-gátsumma</dt>
-                <dd><code data-gogn-reitur="uppruni.md5"></code></dd>
+                <dd><code data-gogn-reitur="lysigogn.eintak.md5"></code></dd>
               </div>
               <div>
                 <dt>Fjöldi eintaka</dt>
                 <dd data-mbl-eintok></dd>
-              </div>
-              <div>
-                <dt>Leyfi</dt>
-                <dd data-gogn-reitur="uppruni.leyfi"></dd>
               </div>
             </dl>
           </div>
@@ -193,12 +190,15 @@
               <dt>Hvað það les ekki</dt>
               <dd>Fyrirsagnir, myndir eða texta fréttanna. Leiðsögu- og
               flokkahlekkir án dagsetningar teljast ekki með.</dd>
+              <dt>Sýnishorn</dt>
+              <dd>Ekki birt. Fréttaslóð ber fyrirsögn fréttarinnar, sem er
+              höfundarréttarvarið efni.</dd>
             </dl>
             <div class="mynstur__gogn" data-gogn-efni hidden></div>
           </article>
 
           <article class="mynstur" id="svar-hitastig-reykjavik"
-                   data-mbl-svar="hitastig-reykjavik" aria-labelledby="mynstur-hiti">
+                   data-mbl-svar="hitastig-reykjavik" data-mbl-synishorn aria-labelledby="mynstur-hiti">
             <h3 id="mynstur-hiti">Hitastig í Reykjavík</h3>
             <dl class="mynstur__lysing">
               <dt>Hvað mynstrið les</dt>
@@ -214,7 +214,7 @@
           </article>
 
           <article class="mynstur" id="svar-gengi-usd"
-                   data-mbl-svar="gengi-usd" aria-labelledby="mynstur-gengi">
+                   data-mbl-svar="gengi-usd" data-mbl-synishorn aria-labelledby="mynstur-gengi">
             <h3 id="mynstur-gengi">Gengi Bandaríkjadals</h3>
             <dl class="mynstur__lysing">
               <dt>Hvað mynstrið les</dt>
@@ -229,7 +229,7 @@
           </article>
 
           <article class="mynstur" id="svar-synileg-ord"
-                   data-mbl-svar="synileg-ord" aria-labelledby="mynstur-ord">
+                   data-mbl-svar="synileg-ord" data-mbl-synishorn aria-labelledby="mynstur-ord">
             <h3 id="mynstur-ord">Sýnileg orð</h3>
             <dl class="mynstur__lysing">
               <dt>Hvað mynstrið les</dt>
@@ -248,7 +248,7 @@
           </article>
 
           <article class="mynstur" id="svar-auglysingareitir"
-                   data-mbl-svar="auglysingareitir" aria-labelledby="mynstur-augl">
+                   data-mbl-svar="auglysingareitir" data-mbl-synishorn aria-labelledby="mynstur-augl">
             <h3 id="mynstur-augl">Auglýsingareitir</h3>
             <dl class="mynstur__lysing">
               <dt>Hvað mynstrið les</dt>
@@ -287,7 +287,7 @@
             <li><strong>Eitt eintak, eitt augnablik.</strong> Fréttasíða
             breytist oft á dag. Svörin lýsa þessu eina eintaki, ekki mbl.is
             almennt og ekki síðunni eins og hún er í dag.</li>
-            <li><strong>Önnur tala en á gömlu síðunni.</strong> Gamla verkefnið
+            <li><strong>Svörin víkja frá gömlu síðunni.</strong> Gamla verkefnið
             greindi eldra eintak sem er glatað. Mynstrin eru óbreytt, en efnið
             er annað, svo svörin víkja frá gömlu síðunni. Það er ekki villa.</li>
             <li><strong>Fréttasíðan, ekki forsíðan.</strong> Eintakið er af
@@ -297,8 +297,9 @@
             verið annað.</li>
             <li><strong>Bundið við sniðið.</strong> Mynstrin eru smíðuð fyrir
             sniðmát síðunnar á þessum tíma. Breytist það þarf ný mynstur.</li>
-            <li><strong>Engin sýnishorn.</strong> Textinn sem mynstrin fundu er
-            ekki birtur, því hann er úr höfundarréttarvörðu efni.</li>
+            <li><strong>Sýnishorn aðeins úr byggingu síðunnar.</strong> Stutt
+            HTML- og forritsbrot og valmyndarorð eru birt. Fréttaslóðir eru það
+            ekki, því þær bera fyrirsagnir úr höfundarréttarvörðu efni.</li>
             <li><strong>Skilmálar óskráðir.</strong> Ekki hefur verið skráð að
             skilmálar mbl.is um vistun og greiningu hafi verið lesnir.</li>
           </ul>

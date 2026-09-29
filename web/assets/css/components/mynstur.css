@@ -1,0 +1,92 @@
+/* mynstur.css — regex-mynstur og svör á mbl-síðunni (#23).
+   Hegðunin er í assets/js/mbl-regex.js; hér er aðeins útlitið.            */
+
+/* Grid-börn fá sjálfgefið min-width: auto og löng mynsturlína myndi þá
+   ýta síðunni út fyrir skjáinn. Með 0 skrunar <pre> sjálft, ekki síðan. */
+.gagnahluti > *,
+.mynstur > *,
+.mynstur [data-gogn-efni] > * { min-width: 0; }
+
+.mynstur {
+  display: grid;
+  gap: var(--bil-4);
+  padding: var(--bil-6) var(--bil-4);
+  background: var(--bak-upphaekkad);
+  border: var(--rammi-breidd) solid var(--rammi);
+  border-left: var(--rammi-breidd-breid) solid var(--adal-400);
+  border-radius: var(--radius);
+  scroll-margin-top: var(--bil-24);
+}
+
+.mynstur > *,
+.mynstur [data-gogn-efni] > * { margin-block: 0; }
+
+.mynstur h3 { margin-top: 0; }
+
+.mynstur__lysing dt,
+.mynstur__tolur dt {
+  font-size: var(--texti-xs);
+  font-weight: var(--thyngd-feit);
+  text-transform: uppercase;
+  letter-spacing: var(--stafabil-vitt);
+  color: var(--texti-daufur);
+}
+
+.mynstur__lysing { margin: 0; }
+.mynstur__lysing dd { margin: var(--bil-1) 0 var(--bil-3); max-width: var(--breidd-lesmals); }
+.mynstur__lysing dd:last-child { margin-bottom: 0; }
+
+.mynstur__spurning {
+  font-family: var(--letur-fyrirsogn);
+  font-size: var(--texti-lg);
+}
+
+/* Svarið og talningarnar í röð; brotnar í línur á mjóum skjá. */
+.mynstur__tolur {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bil-3) var(--bil-8);
+  margin: 0;
+}
+
+.mynstur__tolur dd {
+  margin: var(--bil-1) 0 0;
+  font-size: var(--texti-lg);
+  font-weight: var(--thyngd-medium);
+  font-variant-numeric: tabular-nums;
+  color: var(--texti);
+}
+
+.mynstur__titill { margin-top: var(--bil-2); font-size: var(--texti-base); }
+
+.mynstur__heiti { font-size: var(--texti-sm); color: var(--texti-daufur); }
+
+/* Mynstrin eru kóði, ekki skraut: læsileg, óflúruð og skruna innan eigin
+   ramma (overflow-x í base.css). */
+.mynstur__kodi {
+  margin: 0;
+  font-size: var(--texti-sm);
+  line-height: var(--linuhaed-venjuleg);
+  white-space: pre;
+}
+
+.mynstur__takmorkun {
+  padding-top: var(--bil-3);
+  border-top: var(--rammi-breidd) solid var(--rammi);
+  font-size: var(--texti-sm);
+  color: var(--texti-daufur);
+}
+
+.mynstur__takmorkun strong { color: var(--texti); }
+
+.mynstur-svar { font-weight: var(--thyngd-medium); }
+
+.mynstur-tengill {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--smellisvaedi);
+}
+
+@media (min-width: 48rem) {
+  .mynstur { padding: var(--bil-6); }
+}

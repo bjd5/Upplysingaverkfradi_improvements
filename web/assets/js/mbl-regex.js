@@ -1,107 +1,88 @@
-/* mbl-regex.js — síðusértækt efni „Reglulegar segðir á fréttasíðu“ (#23).
-
-   Allar tölur, svör og mynstur koma úr mbl.json gegnum gagnalagið. Enginn
-   regex-strengur mbl-æfingarinnar er í þessari skrá. Mynstrin fara á síðuna
-   sem textContent, svo þau eru birt sem texti og aldrei túlkuð sem HTML.   */
+/* mbl-regex.js — teiknarar síðunnar „Reglulegar segðir á fréttasíðu“ (#23).
+   Svör og mynstur koma úr mbl.json (gogn = svörin fimm, lysigogn = eintakið).
+   Enginn regex-strengur æfingarinnar er hér; allt fer inn sem textContent. */
 
 (function () {
   "use strict";
 
   const data = window.SiteData;
-  const sections = window.DataSection;
-  // Lykill verður hluti af slóð (#svar-…); annað snið er gagnavilla.
-  const KEY_FORMAT = /^[a-z0-9-]+$/;
-  const ANCHOR_PREFIX = "svar-";
+  const KEY_FORMAT = /^[a-z0-9-]+$/;  // lykillinn verður #svar-<lykill>
+  // Sýnishorn er aðeins birt í greinum merktum data-mbl-synishorn (ekki
+  // fréttatexti) og aðeins ef það er stutt — höfundarréttur, sjá síðuna.
+  const MAX_SAMPLE = 200;
 
   function element(tag, className, text) {
     const node = document.createElement(tag);
     if (className) node.className = className;
-    if (text !== undefined) node.textContent = text;
+    if (text !== undefined) node.textContent = String(text);
     return node;
   }
 
   function anchorId(answer) {
-    if (!KEY_FORMAT.test(String(answer.lykill))) {
+    if (!KEY_FORMAT.test(answer.lykill)) {
       throw new data.DataError("Ógildur lykill svars: „" + answer.lykill + "“.");
     }
-    return ANCHOR_PREFIX + answer.lykill;
+    return "svar-" + answer.lykill;
   }
 
-  function twoDigits(value) {
-    return String(value).padStart(2, "0");
-  }
-
-  /** ISO-tími → „16. september 2026 kl. 12:08:51 UTC“. */
-  function formatDateTime(iso) {
-    const date = new Date(iso);
-    return data.formatDate(iso) + " kl. " + twoDigits(date.getUTCHours()) + ":" +
-           twoDigits(date.getUTCMinutes()) + ":" + twoDigits(date.getUTCSeconds()) + " UTC";
-  }
-
-  // VERBOSE-mynstrin eru inndregin í Python-skránni. Aðeins sameiginlegi
-  // inndrátturinn og auðar línur í endana fara; engu öðru er breytt.
+  // VERBOSE-mynstrin eru inndregin í Python-skránni. Aðeins sameiginlegur
+  // inndráttur og auðar endalínur fara; engu öðru er breytt.
   function dedent(pattern) {
     const lines = pattern.replace(/^\s*\n|\n\s*$/g, "").split("\n");
-    const indents = lines.filter(function (line) { return line.trim() !== ""; })
-      .map(function (line) { return line.length - line.trimStart().length; });
-    const indent = Math.min.apply(null, indents);
-    return lines.map(function (line) { return line.slice(indent); }).join("\n");
-  }
-
-  function code(text) {
-    return element("code", "", String(text));
+    const indent = Math.min.apply(null, lines.filter(function (l) { return l.trim(); })
+      .map(function (l) { return l.length - l.trimStart().length; }));
+    return lines.map(function (l) { return l.slice(indent); }).join("\n");
   }
 
   // Skrunanlegur kóðareitur verður að nást með lyklaborði (regla 3.3).
-  function codeBlock(pattern) {
-    const pre = element("pre", "mynstur__kodi");
+  function codeBlock(target, heading, name, flags, text) {
+    target.appendChild(element("h4", "mynstur__titill", heading));
+    if (name) {
+      const meta = target.appendChild(element("p", "mynstur__heiti"));
+      meta.appendChild(element("code", "", name));
+      if (flags) meta.append(" · flögg: ", element("code", "", flags));
+    }
+    const pre = target.appendChild(element("pre", "mynstur__kodi"));
     pre.tabIndex = 0;
-    pre.appendChild(code(dedent(pattern)));
-    return pre;
+    pre.appendChild(element("code", "", text));
   }
 
   function fact(list, term, value) {
     const row = list.appendChild(element("div"));
-    row.appendChild(element("dt", "", term));
-    row.appendChild(element("dd", "", value));
+    row.append(element("dt", "", term), element("dd", "", value));
   }
 
-  function patternBlock(target, heading, name, flags, pattern) {
-    target.appendChild(element("h4", "mynstur__titill", heading));
-    const meta = target.appendChild(element("p", "mynstur__heiti"));
-    meta.appendChild(code(name));
-    if (flags) {
-      meta.appendChild(document.createTextNode(" · flögg: "));
-      meta.appendChild(code(flags));
-    }
-    target.appendChild(codeBlock(pattern));
-  }
-
-  function fillPattern(target, answer) {
+  function fillPattern(slot, answer) {
+    const target = slot.querySelector("[data-gogn-efni]");
     target.appendChild(element("p", "mynstur__spurning", answer.spurning));
     const facts = target.appendChild(element("dl", "mynstur__tolur"));
-    fact(facts, "Svar", data.formatNumber(answer.svar));
+    fact(facts, "Svar", answer.svar);
     fact(facts, "Samsvaranir alls", data.formatNumber(answer.tilvik));
     fact(facts, "Ólík gildi", data.formatNumber(answer.einstok));
     if (answer.afmorkun_mynstur) {
-      patternBlock(target, "Afmörkun á undan", answer.afmorkun_heiti, "",
-                   answer.afmorkun_mynstur);
+      codeBlock(target, "Afmörkun á undan", answer.afmorkun_heiti, "",
+                dedent(answer.afmorkun_mynstur));
     }
-    patternBlock(target, "Mynstrið", answer.mynstur_heiti, answer.mynstur_flogg,
-                 answer.mynstur);
+    codeBlock(target, "Mynstrið", answer.mynstur_heiti, answer.mynstur_flogg,
+              dedent(answer.mynstur));
+    if ("mblSynishorn" in slot.dataset && answer.synishorn.length <= MAX_SAMPLE) {
+      codeBlock(target, "Sýnishorn úr eintakinu", "", "", answer.synishorn);
+    }
     const limit = target.appendChild(element("p", "mynstur__takmorkun"));
-    limit.appendChild(element("strong", "", "Takmörkun: "));
-    limit.appendChild(document.createTextNode(answer.takmarkanir));
+    limit.append(element("strong", "", "Takmörkun: "), answer.takmarkanir);
   }
 
-  sections.registerRenderer("mbl-eintak", function (doc, section) {
+  window.DataSection.registerRenderer("mbl-eintak", function (doc, section) {
+    const iso = doc.lysigogn.eintak.sott;
+    // Ísland er á UTC allt árið, svo UTC-tíminn er líka íslenskur tími.
+    const time = new Date(iso).toISOString().slice(11, 19);
     section.querySelector("[data-mbl-sott]").textContent =
-      formatDateTime(doc.gogn.uppruni.sott);
+      data.formatDate(iso) + " kl. " + time + " UTC";
     section.querySelector("[data-mbl-eintok]").textContent =
-      data.formatNumber(doc.gogn.eintok.length);
+      data.formatNumber(doc.lysigogn.eintok.length);
   });
 
-  sections.registerRenderer("mbl-svor", function (doc, section) {
+  window.DataSection.registerRenderer("mbl-svor", function (doc, section) {
     const table = element("table", "gagnatafla");
     table.appendChild(element("caption", "", "Spurningarnar, svörin og mynstrin"));
     const head = table.appendChild(element("thead")).appendChild(element("tr"));
@@ -109,29 +90,25 @@
       head.appendChild(element("th", "", heading)).scope = "col";
     });
     const body = table.appendChild(element("tbody"));
-    doc.gogn.svor.forEach(function (answer) {
+    doc.gogn.forEach(function (answer) {
       const id = anchorId(answer);
       if (!document.getElementById(id)) {
         throw new data.DataError("Mynstrið „" + answer.lykill + "“ á sér engan stað á síðunni.");
       }
       const row = body.appendChild(element("tr"));
-      row.appendChild(element("td", "gagnatafla__tala", data.formatNumber(answer.nr)));
-      row.appendChild(element("td", "", answer.spurning));
-      row.appendChild(element("td", "mynstur-svar", data.formatNumber(answer.svar)));
-      const link = element("a", "mynstur-tengill");
+      row.append(element("td", "gagnatafla__tala", data.formatNumber(answer.nr)),
+                 element("td", "", answer.spurning), element("td", "mynstur-svar", answer.svar));
+      const link = row.appendChild(element("td")).appendChild(element("a", "mynstur-tengill"));
       link.href = "#" + id;
-      link.appendChild(code(answer.mynstur_heiti));
-      row.appendChild(element("td")).appendChild(link);
+      link.appendChild(element("code", "", answer.mynstur_heiti));
     });
     const wrapper = element("div", "tafla-umgjord");
     wrapper.appendChild(table);
     section.querySelector("[data-gogn-efni]").appendChild(wrapper);
   });
 
-  sections.registerRenderer("mbl-mynstur", function (doc, section) {
-    const answers = new Map(doc.gogn.svor.map(function (answer) {
-      return [answer.lykill, answer];
-    }));
+  window.DataSection.registerRenderer("mbl-mynstur", function (doc, section) {
+    const answers = new Map(doc.gogn.map(function (a) { return [a.lykill, a]; }));
     const slots = section.querySelectorAll("[data-mbl-svar]");
     // Svar án mynsturs á síðunni (eða öfugt) má ekki hverfa hljóðlaust (regla 8).
     if (slots.length !== answers.size) {
@@ -143,7 +120,7 @@
       if (!answer) {
         throw new data.DataError("Svarið „" + slot.dataset.mblSvar + "“ er ekki í gögnunum.");
       }
-      fillPattern(slot.querySelector("[data-gogn-efni]"), answer);
+      fillPattern(slot, answer);
     });
   });
 })();
