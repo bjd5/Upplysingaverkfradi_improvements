@@ -37,6 +37,9 @@ python3 -m unittest discover -s tests            # prófin (Python 3.12+)
   prentar fingrafar; tvær hreinar byggingar eiga að gefa það sama.
 - **Migration er aldrei breytt** eftir keyrslu — keyrarinn stöðvast ef SHA-256
   hennar breytist. Ný migration fær næsta númer.
+- **Enginn pakki þarf** nema til að teikna myndritin upp á nýtt:
+  `pip install -r config/requirements-myndrit.txt` (matplotlib, sjá
+  `docs/myndrit.md`). Prófin sem teikna sleppa sér án hans.
 
 ## Nýtt efni úr gamla verkefninu
 
