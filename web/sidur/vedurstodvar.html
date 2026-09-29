@@ -81,7 +81,7 @@
               í <a href="../gogn/vedurstodvar.json">gagnaskránni</a>.</p>
             </noscript>
             <div data-gogn-efni hidden>
-              <p class="vedur-eintak__dags">Sótt <strong data-vedur-dags="uppruni.sott"></strong></p>
+              <p class="vedur-eintak__dags">Sótt <strong data-vedur-sott></strong></p>
               <p class="vedur-eintak__skyring">Stöðvaskráin breytist þegar stöð er sett upp
               eða lögð niður. Allt á síðunni lýsir skránni þennan dag, ekki eins og
               hún er núna.</p>
@@ -121,27 +121,27 @@
           <noscript>
             <p class="gogn-stada">Svarið er sett inn með JavaScript. Án þess má lesa
             það beint úr <a href="../gogn/vedurstodvar.json">gagnaskránni</a>
-            (reiturinn <code>svor.naesta_virka</code>).</p>
+            (reiturinn <code>lysigogn.svor.naesta_virka</code>).</p>
           </noscript>
           <div data-gogn-efni hidden>
             <div class="vedur-svar__spjald">
               <p class="vedur-svar__inngangur">Forritið á að lesa</p>
               <p class="vedur-svar__stod">
-                <span data-gogn-reitur="svor.naesta_virka.nafn"></span>
-                <span class="vedur-svar__audkenni">stöð nr. <span data-vedur-texti="svor.naesta_virka.station_id"></span></span>
+                <span data-gogn-reitur="lysigogn.svor.naesta_virka.nafn"></span>
+                <span class="vedur-svar__audkenni">stöð nr. <span data-vedur-texti="lysigogn.svor.naesta_virka.audkenni"></span></span>
               </p>
               <dl class="vedur-svar__tolur">
                 <div>
                   <dt>Fjarlægð frá VR-II</dt>
-                  <dd><span data-gogn-reitur="svor.naesta_virka.metrar"></span> m</dd>
+                  <dd><span data-gogn-reitur="lysigogn.svor.naesta_virka.metrar"></span> m</dd>
                 </div>
                 <div>
                   <dt>Mælir frá</dt>
-                  <dd data-vedur-texti="svor.naesta_virka.fyrsta_ar"></dd>
+                  <dd data-vedur-texti="lysigogn.svor.naesta_virka.upphafsar"></dd>
                 </div>
                 <div>
                   <dt>Staða</dt>
-                  <dd data-vedur-stada="svor.naesta_virka"></dd>
+                  <dd data-vedur-stada="lysigogn.svor.naesta_virka"></dd>
                 </div>
               </dl>
             </div>
@@ -184,27 +184,23 @@
             <dl class="stadreyndir vedur-hnit">
               <div>
                 <dt>Staður</dt>
-                <dd data-gogn-reitur="vidmidunarpunktur.heiti"></dd>
+                <dd data-gogn-reitur="lysigogn.vidmidunarpunktur.heiti"></dd>
               </div>
               <div>
                 <dt>Breidd, lengd</dt>
-                <dd><span data-gogn-reitur="vidmidunarpunktur.breidd"></span>; <span data-gogn-reitur="vidmidunarpunktur.lengd"></span></dd>
+                <dd><span data-gogn-reitur="lysigogn.vidmidunarpunktur.breidd"></span>; <span data-gogn-reitur="lysigogn.vidmidunarpunktur.lengd"></span></dd>
               </div>
               <div>
                 <dt>Radíus kassans</dt>
-                <dd><span data-gogn-reitur="vidmidunarpunktur.radius_km"></span> km</dd>
+                <dd><span data-gogn-reitur="lysigogn.vidmidunarpunktur.radius_km"></span> km</dd>
               </div>
               <div>
                 <dt>Kassinn, breidd</dt>
-                <dd><span data-gogn-reitur="vidmidunarpunktur.kassi.breidd_min"></span> til <span data-gogn-reitur="vidmidunarpunktur.kassi.breidd_max"></span></dd>
+                <dd><span data-gogn-reitur="lysigogn.vidmidunarpunktur.kassi.min_breidd"></span> til <span data-gogn-reitur="lysigogn.vidmidunarpunktur.kassi.max_breidd"></span></dd>
               </div>
               <div>
                 <dt>Kassinn, lengd</dt>
-                <dd><span data-gogn-reitur="vidmidunarpunktur.kassi.lengd_min"></span> til <span data-gogn-reitur="vidmidunarpunktur.kassi.lengd_max"></span></dd>
-              </div>
-              <div>
-                <dt>Leyfi gagnanna</dt>
-                <dd data-gogn-reitur="uppruni.leyfi"></dd>
+                <dd><span data-gogn-reitur="lysigogn.vidmidunarpunktur.kassi.min_lengd"></span> til <span data-gogn-reitur="lysigogn.vidmidunarpunktur.kassi.max_lengd"></span></dd>
               </div>
             </dl>
           </div>
@@ -237,11 +233,12 @@
           <noscript>
             <p class="gogn-stada">Taflan yfir síurnar er byggð með JavaScript. Án þess
             má lesa fjöldann beint úr <a href="../gogn/vedurstodvar.json">gagnaskránni</a>
-            (reiturinn <code>beidnir</code>).</p>
+            (reiturinn <code>lysigogn.beidnir</code>).</p>
           </noscript>
           <div data-gogn-efni hidden>
-            <p>Frosna eintakið er ósíaða svarið. Síurnar eru reiknaðar úr því með sömu
-            skilyrðum og gamla skriftan sendi þjónustunni.</p>
+            <p>Frosna eintakið er ósíaða svarið, með
+            <span data-gogn-reitur="lysigogn.sokn.fjoldi_stodva"></span> stöðvum. Síurnar
+            eru reiknaðar úr því með sömu skilyrðum og gamla skriftan sendi þjónustunni.</p>
           </div>
         </section>
 
@@ -254,7 +251,7 @@
           <noscript>
             <p class="gogn-stada">Taflan yfir stöðvarnar er byggð með JavaScript. Án
             þess má lesa þær beint úr <a href="../gogn/vedurstodvar.json">gagnaskránni</a>
-            (reiturinn <code>stodvar_i_kassa</code>).</p>
+            (reiturinn <code>gogn</code>).</p>
           </noscript>
           <div data-gogn-efni hidden>
             <p class="vedur-skyring">
@@ -271,48 +268,49 @@
           <noscript>
             <p class="gogn-stada">Svörin eru sett inn með JavaScript. Án þess má lesa
             þau beint úr <a href="../gogn/vedurstodvar.json">gagnaskránni</a>
-            (reiturinn <code>svor</code>).</p>
+            (reiturinn <code>lysigogn.svor</code>).</p>
           </noscript>
           <div data-gogn-efni hidden>
             <h3>Hver er næsta veðurstöð við VR-II og er hún enn í notkun?</h3>
-            <p><strong data-gogn-reitur="svor.naesta.nafn"></strong>
-            (<span data-vedur-texti="svor.naesta.station_id"></span>),
-            <span data-gogn-reitur="svor.naesta.metrar"></span> m frá húsinu.
-            Staða: <span data-vedur-stada="svor.naesta"></span>.</p>
+            <p><strong data-gogn-reitur="gogn.0.nafn"></strong>
+            (<span data-vedur-texti="gogn.0.audkenni"></span>),
+            <span data-gogn-reitur="gogn.0.metrar"></span> m frá húsinu.
+            Staða: <span data-vedur-stada="gogn.0"></span>.</p>
 
             <h3>Hver er næsta virka stöðin og hversu miklu munar?</h3>
-            <p><strong data-gogn-reitur="svor.naesta_virka.nafn"></strong>
-            (<span data-vedur-texti="svor.naesta_virka.station_id"></span>),
-            <span data-gogn-reitur="svor.naesta_virka.metrar"></span> m frá VR-II.
-            Næsta aflagða stöð er <span data-gogn-reitur="svor.naesta_aflogd.nafn"></span>
-            (<span data-vedur-texti="svor.naesta_aflogd.station_id"></span>) í
-            <span data-gogn-reitur="svor.naesta_aflogd.metrar"></span> m, sem hætti
-            mælingum <span data-vedur-texti="svor.naesta_aflogd.lokaar"></span>.</p>
-            <p>Munurinn er <span data-gogn-reitur="svor.munur_metrar"></span> m. Röðun
+            <p><strong data-gogn-reitur="lysigogn.svor.naesta_virka.nafn"></strong>
+            (<span data-vedur-texti="lysigogn.svor.naesta_virka.audkenni"></span>),
+            <span data-gogn-reitur="lysigogn.svor.naesta_virka.metrar"></span> m frá VR-II.
+            Næsta aflagða stöð er <span data-gogn-reitur="lysigogn.svor.naesta_aflagda.nafn"></span>
+            (<span data-vedur-texti="lysigogn.svor.naesta_aflagda.audkenni"></span>) í
+            <span data-gogn-reitur="lysigogn.svor.naesta_aflagda.metrar"></span> m, sem hætti
+            mælingum <span data-vedur-texti="lysigogn.svor.naesta_aflagda.lokaar"></span>.</p>
+            <p>Munurinn er <span data-gogn-reitur="lysigogn.svor.munur_metrar"></span> m. Röðun
             eftir fjarlægð einni saman getur því skilað stöð sem mælir ekki lengur.</p>
 
             <h3>Hversu margar stöðvanna eru virkar?</h3>
-            <p><span data-gogn-reitur="svor.fjoldi_virkra"></span> af
-            <span data-gogn-reitur="svor.fjoldi_allra"></span>, eða um
-            <span data-gogn-reitur="svor.hlutfall_virkra_prosent"></span> %. Skráin er
-            því ekki listi yfir stöðvar í rekstri heldur allar stöðvar sem Veðurstofan
-            þekkir, virkar og aflagðar.</p>
+            <p><span data-gogn-reitur="lysigogn.svor.fjoldi_virkra"></span> af
+            <span data-gogn-reitur="lysigogn.svor.fjoldi_allra"></span>, eða um
+            <span data-gogn-reitur="lysigogn.svor.hlutfall_virkra_prosent"></span> %.
+            Hinar <span data-gogn-reitur="lysigogn.svor.fjoldi_aflagdra"></span> eru
+            aflagðar. Skráin er því ekki listi yfir stöðvar í rekstri heldur allar
+            stöðvar sem Veðurstofan þekkir.</p>
 
             <h3>Hvaða reitur segir hvort stöð dugi fyrir veðrið núna?</h3>
             <p><code>ending</code>. Tómt gildi þýðir að stöðin mælir enn. Sama skilyrði
             má senda með beiðninni sem <code>active=true</code> og láta þjóninn sía.</p>
 
             <h3>Dygði sama stöð til að bera saman við veður fyrir
-            <span data-vedur-texti="svor.ar_aftur_i_timann"></span> árum?</h3>
-            <p><strong data-vedur-texti="svor.naesta_virka_naer_aftur"></strong>.
-            <span data-gogn-reitur="svor.naesta_virka.nafn"></span> hóf mælingar
-            <span data-vedur-texti="svor.naesta_virka.fyrsta_ar"></span>, en
-            viðmiðunarárið er <span data-vedur-texti="svor.vidmidunarar"></span>.</p>
+            <span data-vedur-texti="lysigogn.svor.ar_aftur_i_timann"></span> árum?</h3>
+            <p><strong data-vedur-janei="lysigogn.svor.valin_naer_aftur"></strong>.
+            <span data-gogn-reitur="lysigogn.svor.naesta_virka.nafn"></span> hóf mælingar
+            <span data-vedur-texti="lysigogn.svor.naesta_virka.upphafsar"></span>, en
+            viðmiðunarárið er <span data-vedur-texti="lysigogn.svor.vidmidunarar"></span>.</p>
             <p>Næsta virka stöð sem nær svo langt aftur er
-            <span data-gogn-reitur="svor.langtimastod.nafn"></span>
-            (<span data-vedur-texti="svor.langtimastod.station_id"></span>) í
-            <span data-gogn-reitur="svor.langtimastod.metrar"></span> m, sem mælir frá
-            <span data-vedur-texti="svor.langtimastod.fyrsta_ar"></span>. Nálægð og
+            <span data-gogn-reitur="lysigogn.svor.langtimastod.nafn"></span>
+            (<span data-vedur-texti="lysigogn.svor.langtimastod.audkenni"></span>) í
+            <span data-gogn-reitur="lysigogn.svor.langtimastod.metrar"></span> m, sem mælir frá
+            <span data-vedur-texti="lysigogn.svor.langtimastod.upphafsar"></span>. Nálægð og
             samfelld tímaröð eru tvö ólík skilyrði.</p>
           </div>
         </section>
@@ -344,8 +342,8 @@
           </noscript>
           <div data-gogn-efni hidden>
             <p><strong>Stuttur mælitími.</strong>
-            <span data-gogn-reitur="svor.naesta_virka.nafn"></span> hóf mælingar
-            <span data-vedur-texti="svor.naesta_virka.fyrsta_ar"></span> og á engar
+            <span data-gogn-reitur="lysigogn.svor.naesta_virka.nafn"></span> hóf mælingar
+            <span data-vedur-texti="lysigogn.svor.naesta_virka.upphafsar"></span> og á engar
             mælingar frá því fyrir þann tíma.</p>
           </div>
         </section>

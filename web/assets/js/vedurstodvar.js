@@ -1,8 +1,12 @@
 /* vedurstodvar.js — síðusértækt efni Veðurstöðvasíðunnar (issue #22).
 
-   gagnahluti.js fyllir data-gogn-reitur. Hér er það sem reitir ná ekki yfir:
-   ártöl og auðkenni (án þúsundapunkts), já/nei, staða stöðvar í orðum,
-   sóknardagsetningin og töflurnar tvær. Allt úr vedurstodvar.json.         */
+   gagnahluti.js fyllir data-gogn-reitur. Hér er það sem reitir ná ekki yfir,
+   allt úr vedurstodvar.json og með sömu slóðavenju (lysigogn. / gogn.):
+     data-vedur-texti="slóð"  ártal eða auðkenni, án þúsundapunkts (1963)
+     data-vedur-janei="slóð"  já/nei-gildi
+     data-vedur-stada="slóð"  staða stöðvar í orðum og með tákni
+     data-vedur-sott          sóknardagurinn (uppfaert = tími frosna svarsins)
+   og töflurnar tvær: síurnar og stöðvarnar eftir fjarlægð. Engin námundun. */
 
 (function () {
   "use strict";
@@ -10,38 +14,46 @@
   const data = window.SiteData;
   const layer = window.DataSection;
 
-  function lookup(doc, path) {
-    const value = data.valueAt(doc.gogn, path);
-    if (value === undefined || value === null) {
-      throw new data.DataError("Gildið „" + path + "“ er ekki í „vedurstodvar.json“.");
+  function objectAt(doc, path) {
+    const value = data.valueAt(doc, path);
+    if (/^(lysigogn|gogn)\./.test(path) && value !== null && typeof value === "object") {
+      return value;
     }
-    return value;
+    throw new data.DataError("Gildið „" + path + "“ er ekki í gagnaskránni.");
   }
 
-  // Ártal og auðkenni eru heiti, ekki magn: 1963, ekki 1.963.
-  function plain(value) {
-    if (typeof value === "boolean") return value ? "Já" : "Nei";
-    return String(value);
+  // Tómt lokaár (ending) þýðir að stöðin mælir enn — sama skilyrði og active=true.
+  function isActive(station) {
+    return station.lokaar === null;
   }
 
-  // Staðan í orðum og með tákni; liturinn er aldrei einn um merkinguna (3.3).
+  // Liturinn er aldrei einn um merkinguna: orð og tákn (regla 3.3).
   function statusText(station) {
-    return station.virk ? "✓ Virk — mælir enn" : "✕ Aflögð — hætti " + station.lokaar;
+    return isActive(station) ? "✓ Virk — mælir enn" : "✕ Aflögð — hætti " + station.lokaar;
+  }
+
+  function each(section, hook, fill) {
+    section.querySelectorAll("[" + hook + "]").forEach(function (el) {
+      el.textContent = fill(el.getAttribute(hook));
+    });
   }
 
   function fillHooks(doc, section) {
-    section.querySelectorAll("[data-vedur-texti]").forEach(function (el) {
-      el.textContent = plain(lookup(doc, el.dataset.vedurTexti));
+    each(section, "data-vedur-texti", function (path) {
+      return String(data.fieldAt(doc, path));
     });
-    section.querySelectorAll("[data-vedur-stada]").forEach(function (el) {
-      el.textContent = statusText(lookup(doc, el.dataset.vedurStada));
+    each(section, "data-vedur-janei", function (path) {
+      const value = data.valueAt(doc, path);
+      if (typeof value !== "boolean") throw new data.DataError("„" + path + "“ er ekki já/nei.");
+      return value ? "Já" : "Nei";
     });
-    section.querySelectorAll("[data-vedur-dags]").forEach(function (el) {
-      el.textContent = data.formatDate(lookup(doc, el.dataset.vedurDags));
+    each(section, "data-vedur-stada", function (path) {
+      return statusText(objectAt(doc, path));
     });
+    each(section, "data-vedur-sott", function () { return data.formatDate(doc.uppfaert); });
   }
 
-  // Tafla sem skrunar lárétt þarf að ná fókus svo lyklaborð geti skrunað henni.
+  // Tafla sem skrunar lárétt þarf fókus svo lyklaborð geti skrunað henni.
   function addTable(section, wrapper, label) {
     wrapper.tabIndex = 0;
     wrapper.setAttribute("aria-label", label);
@@ -55,52 +67,48 @@
     addTable(section, layer.buildTable({
       caption: "Fjöldi stöðva sem hver sía skilar úr eintakinu",
       columns: [
-        { heading: "Sía", key: "sia" },
+        { heading: "Sía", key: "faeribreytur" },
+        { heading: "Hvað hún biður um", key: "lysing" },
         { heading: "Stöðvar", key: "fjoldi", numeric: true }
       ],
-      rows: lookup(doc, "beidnir")
+      rows: objectAt(doc, "lysigogn.beidnir")
     }), "Síurnar");
   });
 
+  // Raðirnar í gogn eru þegar raðaðar eftir fjarlægð, næsta fyrst.
   layer.registerRenderer("vedurstodvar-stodvar", function (doc, section) {
     fillHooks(doc, section);
-    const stations = lookup(doc, "stodvar_i_kassa");
-    const chosen = lookup(doc, "svor.naesta_virka.station_id");
-    const longest = Math.max.apply(null, stations.map(function (s) { return s.metrar; }));
-    const rows = stations.map(function (s) {
-      return {
-        rod: s.rod,
-        stod: s.nafn + " (" + s.station_id + ")",
-        metrar: s.metrar,
-        timabil: s.virk ? "frá " + s.fyrsta_ar : s.fyrsta_ar + "–" + s.lokaar,
-        stada: (s.virk ? "✓ Virk" : "✕ Aflögð") +
-               (s.station_id === chosen ? " ★ forritið les" : "")
-      };
-    });
+    const chosen = objectAt(doc, "lysigogn.svor.naesta_virka").audkenni;
+    const longest = Math.max.apply(null, doc.gogn.map(function (s) { return s.metrar; }));
     const wrapper = layer.buildTable({
-      caption: "Stöðvarnar " + data.formatNumber(stations.length) +
-               " innan kassans um VR-II, raðaðar eftir fjarlægð",
+      caption: "Stöðvarnar " + data.formatNumber(doc.gogn.length) +
+               " innan kassans um VR-II, næsta fyrst",
       columns: [
-        { heading: "Röð", key: "rod", numeric: true },
         { heading: "Stöð (auðkenni)", key: "stod" },
         { heading: "Fjarlægð (m)", key: "metrar", numeric: true },
         { heading: "Mælingar", key: "timabil" },
         { heading: "Staða", key: "stada" }
       ],
-      rows: rows
+      rows: doc.gogn.map(function (s) {
+        return {
+          stod: s.nafn + " (" + s.audkenni + ")",
+          metrar: s.metrar,
+          timabil: isActive(s) ? "frá " + s.upphafsar : s.upphafsar + "–" + s.lokaar,
+          stada: (isActive(s) ? "✓ Virk" : "✕ Aflögð") +
+                 (s.audkenni === chosen ? " ★ forritið les" : "")
+        };
+      })
     });
     wrapper.querySelectorAll("tbody tr").forEach(function (tr, i) {
-      const s = stations[i];
-      if (!s.virk) tr.className = "vedur-rod--aflogd";
-      if (s.station_id === chosen) tr.className = "vedur-rod--valin";
-      // Súlan er sjónræn endurtekning á tölunni við hliðina; skjálesari les töluna.
-      const bar = document.createElement("meter");
+      const s = doc.gogn[i];
+      if (s.audkenni === chosen) tr.className = "vedur-rod--valin";
+      else if (!isActive(s)) tr.className = "vedur-rod--aflogd";
+      // Súlan endurtekur töluna sjónrænt; skjálesari les töluna sjálfa.
+      const bar = tr.children[1].appendChild(document.createElement("meter"));
       bar.className = "vedur-sula";
-      bar.min = 0;
       bar.max = longest;
       bar.value = s.metrar;
       bar.setAttribute("aria-hidden", "true");
-      tr.children[2].appendChild(bar);
     });
     addTable(section, wrapper, "Stöðvarnar eftir fjarlægð");
   });
