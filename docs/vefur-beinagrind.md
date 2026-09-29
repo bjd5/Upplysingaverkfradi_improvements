@@ -154,10 +154,12 @@ Ein eining = ein CSS-skrá í `web/assets/css/components/`.
 | Næstu skref | `naesta-skref.css` | Þrír tenglar neðst — engin síða er blindgata |
 | Kort | `kort.css` | Efnisspjöld í rasti (forsíða) |
 | Hetja | `hetja.css` | Kynningarsvæði forsíðu og hnappastílar |
-| Staða gagna | `stada-gagna.css` | Uppfærsludagsetning úr `web/gogn/` |
+| Staða gagna | `stada-gagna.css` | Uppfærsludagsetning og heimild úr `web/gogn/` |
+| Gagnahluti | `gagnahluti.css` | Hleðslu-, villu- og varaleiðarástand gagnahluta; gagnatöflur |
 
-Aðeins ein JavaScript-skrá er í notkun: `valmynd.js` (og `stada-gagna.js` á
-forsíðunni). Báðar eru með `defer`.
+JavaScript: `valmynd.js` á öllum síðum, og á gagnasíðum sameiginlega
+gagnalagið `gogn.js` + `gagnahluti.js` (issue #19). Allar með `defer`.
+Mynstrið sem síðuverkin nota er í [`vefur-gogn.md`](vefur-gogn.md).
 
 ---
 

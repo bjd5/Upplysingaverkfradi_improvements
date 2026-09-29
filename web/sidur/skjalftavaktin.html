@@ -13,7 +13,12 @@
   <link rel="stylesheet" href="../assets/css/components/sidu-haus.css">
   <link rel="stylesheet" href="../assets/css/components/bidstada.css">
   <link rel="stylesheet" href="../assets/css/components/naesta-skref.css">
+  <link rel="stylesheet" href="../assets/css/components/stada-gagna.css">
+  <link rel="stylesheet" href="../assets/css/components/gagnahluti.css">
   <script src="../assets/js/valmynd.js" defer></script>
+  <script src="../assets/js/gogn.js" defer></script>
+  <script src="../assets/js/gagnahluti.js" defer></script>
+  <script src="../assets/js/skjalftavaktin.js" defer></script>
 </head>
 <body class="sida">
 
@@ -78,6 +83,36 @@
 
       <article class="efni" aria-labelledby="efni-titill">
         <h2 id="efni-titill">Greiningin</h2>
+
+        <section class="gagnahluti" data-gogn="skjalftar.json"
+                 data-gogn-teiknari="skjalftar-manudir" aria-labelledby="urtak-titill">
+          <h3 id="urtak-titill">Úrtakið í tölum</h3>
+          <noscript>
+            <p class="gogn-stada">Tölurnar hér eru settar inn með JavaScript. Án
+            þess má lesa þær beint úr <a href="../gogn/skjalftar.json">gagnaskránni</a>.</p>
+          </noscript>
+          <div data-gogn-efni hidden>
+            <dl class="stadreyndir">
+              <div>
+                <dt>Atburðir</dt>
+                <dd data-gogn-reitur="samantekt.atburdir"></dd>
+              </div>
+              <div>
+                <dt>Dagar í úrtakinu</dt>
+                <dd data-gogn-reitur="samantekt.dagar"></dd>
+              </div>
+              <div>
+                <dt>Dagar án atburðar</dt>
+                <dd data-gogn-reitur="samantekt.dagar_an_atburda"></dd>
+              </div>
+              <div>
+                <dt>Miðgildi dýptar (km)</dt>
+                <dd data-gogn-reitur="samantekt.dypt_km.midgildi"></dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
         <div class="bidstada">
           <p class="bidstada__merki">
             <span class="bidstada__punktur" aria-hidden="true"></span>
