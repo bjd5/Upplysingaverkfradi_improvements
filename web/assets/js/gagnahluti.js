@@ -5,7 +5,7 @@
      <section data-gogn="skjalftar.json" [data-gogn-teiknari="nafn"]>
        <noscript>…varaleið án JavaScript…</noscript>
        <div data-gogn-efni hidden>
-         … <span data-gogn-reitur="samantekt.atburdir"></span> …
+         … <span data-gogn-reitur="lysigogn.samantekt.atburdir"></span> …
        </div>
        [<p class="stada-gagna" data-gogn-uppruni>…</p>]
      </section>
@@ -68,6 +68,7 @@
    * síðan ekki). Tölur fá íslenskt snið, en eru ekki námundaðar.
    * @param {{caption: string, columns: Array<{heading: string, key: string,
    *          numeric?: boolean}>, rows: Array<Object>}} spec
+   * rows eru venjulega doc.gogn (raðirnar) eða listi úr doc.lysigogn.
    * @returns {HTMLDivElement}
    */
   function buildTable(spec) {
@@ -99,22 +100,16 @@
 
   /**
    * Síðuskrá skráir teiknara fyrir efni sem reitir ná ekki yfir (töflur o.fl.):
-   * render(skjal, hluti), þar sem skjal = {uppfaert, heimild, gogn}. Kasti
+   * render(skjal, hluti), þar sem skjal = {uppfaert, heimild, gogn, lysigogn}. Kasti
    * teiknarinn villu birtist hún í hlutanum eins og aðrar villur.
    */
   function registerRenderer(name, render) {
     renderers.set(name, render);
   }
 
-  function fillFields(section, doc, fileName) {
+  function fillFields(section, doc) {
     section.querySelectorAll("[data-gogn-reitur]").forEach(function (field) {
-      const path = field.dataset.gognReitur;
-      const value = data.valueAt(doc.gogn, path);
-      if (typeof value !== "number" && typeof value !== "string") {
-        throw new data.DataError("Gildið „" + path + "“ er ekki í „" + fileName + "“.",
-                                 fileName);
-      }
-      field.textContent = data.formatNumber(value);
+      field.textContent = data.formatNumber(data.fieldAt(doc, field.dataset.gognReitur));
     });
   }
 
@@ -164,7 +159,7 @@
 
     return data.load(fileName)
       .then(function (doc) {
-        fillFields(section, doc, fileName);
+        fillFields(section, doc);
         runRenderer(section, doc, fileName);
         section.querySelectorAll("[data-gogn-efni]").forEach(function (content) {
           content.hidden = false;

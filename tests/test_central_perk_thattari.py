@@ -1,7 +1,7 @@
 """Próf fyrir lestur, þáttun og söngmerkingu Central Perk-greiningarinnar (#14, P2.6).
 
 Netlaus og án handrita (issue #3): allur texti er saminn hér eða í
-``central_perk_gervihandrit``. Hvert skilyrði er líka prófað þar sem það á að
+``central_perk_hjalp``. Hvert skilyrði er líka prófað þar sem það á að
 BRESTA (kafli 6) — t.d. söngmerking utan Central Perk, tilsvar annarrar
 persónu sem nefnir söng, og þröskuldurinn 19/20 málsgreinar.
 
@@ -15,13 +15,13 @@ import unittest
 from pathlib import Path
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
-from central_perk_gervihandrit import THATTUR_0306  # noqa: E402
+from central_perk_hjalp import THATTUR_0306  # noqa: E402
 
 from vinnsla.central_perk_lestur import (  # noqa: E402
     Block, blocks_from_html, clean_text, read_blocks,
 )
 from vinnsla.central_perk_mynstur import MIN_PARAGRAPHS_FOR_P_FORMAT  # noqa: E402
-from vinnsla.central_perk_songur import (  # noqa: E402
+from vinnsla.central_perk_greining import (  # noqa: E402
     audit_candidates, marks_phoebe_singing, phoebe_singing_scenes,
 )
 from vinnsla.central_perk_thattari import (  # noqa: E402

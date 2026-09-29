@@ -7,7 +7,7 @@ aðeins því eintaki sem var lesið, ekki mbl.is almennt.
 
 Mynstrin eru geymd hér — og afrituð inn í grunninn með hverri niðurstöðu — því
 regla 8 krefst rekjanleika: án mynstursins er ekki hægt að sjá hvers vegna talan
-varð þessi.
+varð þessi. Neðst er hreinsunin sem sýnilegu orðin (spurning 4) þurfa.
 
 Finnist mynstur ekki er kastað :class:`UtdrattarVilla`. Þögult núll eða tómur
 listi er ekki í boði (regla 6): breyting á HTML-sniði mbl.is á að verða sýnileg
@@ -16,7 +16,9 @@ strax í stað þess að framleiða trúverðuga en ranga tölu.
 
 from __future__ import annotations
 
+import html
 import re
+import unicodedata
 from dataclasses import dataclass
 
 
@@ -195,3 +197,51 @@ def flaggaheiti(mynstur: re.Pattern[str]) -> str:
     """
     nofn = [flagg.name for flagg in re.RegexFlag if flagg.name and mynstur.flags & flagg]
     return "|".join(sorted(nofn))
+
+
+# --- Sýnilegur texti og orðatalning (spurning 4) --------------------------------
+#
+# Eina spurningin sem þarf fjölþrepa hreinsun áður en mynstrinu er beitt. Röð
+# þrepanna ræður niðurstöðunni og er því skjalfest hér.
+#
+# Hreinsunin fer fram í þessari röð:
+#
+# 1. HTML-athugasemdir og blokkir sem skila engum sýnilegum texta (``head``,
+#    ``script``, ``style``, ``template``, ``noscript``) eru fjarlægðar með
+#    innihaldinu.
+# 2. Öðrum töggum er skipt út fyrir **bil** svo orð sitt hvorum megin við tagg
+#    límist ekki saman.
+# 3. HTML-tákn á borð við ``&nbsp;``, ``&amp;`` og ``&#173;`` eru afkóðuð.
+# 4. Unicode er samræmt (NFC), mjúk bandstrik felld burt, bandstrikaafbrigði
+#    samræmd og há-/lágstafir jafnaðir.
+
+# Mjúkt bandstrik er skiptingarmerki, ekki stafur — það hverfur úr orðinu.
+MJUKT_BANDSTRIK = "­"
+
+# Öll bandstrikaafbrigði eru lesin sem sama bandstrikið svo „ferða-lög“ og
+# „ferða‑lög“ (U+2011) teljist eitt og sama orðið.
+BANDSTRIKAAFBRIGDI = "‐‑‒–—−"
+BANDSTRIK = "-"
+
+
+def synilegur_texti(html_texti: str) -> str:
+    """Skilar þeim texta HTML-svarsins sem stendur eftir fyrir lesanda.
+
+    Sjá þrepin fjögur í athugasemdinni hér að ofan. Skilar samræmdum lágstafatexta.
+    """
+    texti = html_texti
+    for mynstur in MYNSTUR_OSYNILEGT:
+        texti = mynstur.sub(" ", texti)
+
+    texti = MYNSTUR_TAGG.sub(" ", texti)
+    texti = html.unescape(texti)
+    texti = unicodedata.normalize("NFC", texti)
+    texti = texti.replace(MJUKT_BANDSTRIK, "")
+    for afbrigdi in BANDSTRIKAAFBRIGDI:
+        texti = texti.replace(afbrigdi, BANDSTRIK)
+    return texti.lower()
+
+
+def synileg_ord(html_texti: str) -> list[str]:
+    """Skilar sýnilegu orðunum í birtingarröð, hreinsuðum og lágstöfuðum."""
+    return MYNSTUR_ORD.findall(synilegur_texti(html_texti))

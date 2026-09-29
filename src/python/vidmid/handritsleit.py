@@ -1,4 +1,4 @@
-"""Leit að samfelldum handritstexta í Friends-talnaskránum sem eru í git.
+"""Leit að samfelldum handritstexta í Friends-talnaskránum og byggðu gömlu síðunni.
 
 Þetta repo er opið og Friends-handritin eru höfundarréttarvarin. Valkostur A í
 issue #3 leyfir afleiddu **tölurnar** í git — línufjölda, senur, hlutföll,
@@ -21,9 +21,14 @@ Tólið **prentar ekki innihald** brotlegs strengs, aðeins staðsetningu og
 mælingar. Væri hann handritstexti myndi prentunin afrita hann í logga og
 CI-úttök — nákvæmlega það sem á að koma í veg fyrir.
 
-**Afmörkun:** leitin les aðeins JSON- og CSV-talnaskrárnar sem
-`handritsreitir.py` telur upp. Byggðu HTML-síðurnar í `docs/vidmid/vefur/` og
-`search.json` eru utan hennar, og hrein keyrsla segir ekkert um þær — sjá
+4. **HTML og JSON** — í `web/`, `docs/` og `data/processed/`, og í byggðu
+   gömlu síðunni sem er aðeins í frosna commit-inu (git-tagið `vidmid-frosid`)
+   — eru auk þess skönnuð eftir enskum tilsvörum í handritasniði
+   (`vefleit.py`). Í trénu er ekkert undanþegið. Í frosna commit-inu eru
+   línurnar úr þætti 0101 sem ákvörðun (b) í issue #3 leyfir undanþegnar ein og
+   ein með frystri SHA-256; hver ný lína fellir prófið.
+
+**Afmörkun:** handritstexti án `Nafn:` er utan leitarinnar — sjá
 docs/adferdafraedi.md, kafla 1.5.2.
 
 Keyrsla:
@@ -44,19 +49,27 @@ from pathlib import Path
 from typing import Iterator
 
 try:  # keyrt beint: python3 src/python/vidmid/handritsleit.py
+    import vefleit
     from handritsreitir import (
         MOPPUR,
         ORDATHAK_GAGNAREITS,
         STAKAR_SKRAR,
         UNDANTEKNINGAR,
+        FROSID_COMMIT,
+        VEFMOPPUR,
+        VEFUNDANTEKNINGAR,
         VIDAUKAR,
     )
 except ImportError:  # flutt inn sem eining innan pakkans
+    from . import vefleit
     from .handritsreitir import (
         MOPPUR,
         ORDATHAK_GAGNAREITS,
         STAKAR_SKRAR,
         UNDANTEKNINGAR,
+        FROSID_COMMIT,
+        VEFMOPPUR,
+        VEFUNDANTEKNINGAR,
         VIDAUKAR,
     )
 
@@ -236,13 +249,19 @@ def leita(rot: Path = ROT) -> tuple[list[Frava], dict[str, int]]:
         "skrar": len(skannadar),
         "strengir": fjoldi_strengja,
         "undantekningar": len(UNDANTEKNINGAR),
-        "fravik": len(fravik),
     }
+    if VEFMOPPUR:
+        vef_fravik, vef_talning = vefleit.leita(
+            rot, VEFMOPPUR, FROSID_COMMIT, VEFUNDANTEKNINGAR
+        )
+        fravik.extend(Frava(*eitt) for eitt in vef_fravik)
+        talning.update(vef_talning)
+    talning["fravik"] = len(fravik)
     return fravik, talning
 
 
 def stadfesta() -> int:
-    """Skilar 0 sé enginn samfelldur handritstexti í talnaskránum, annars 1."""
+    """Skilar 0 sé enginn óundanþeginn handritstexti í skönnuðu skránum, annars 1."""
     fravik, talning = leita()
     if fravik:
         # Regla 6: villur eru aldrei þaggaðar.
@@ -255,12 +274,14 @@ def stadfesta() -> int:
         return 1
 
     log.info(
-        "%d talnaskrár, %d strengjagildi, %d undanþágur — engin samfelld setning "
-        "(HTML-síður viðmiðsins eru utan leitarinnar)",
+        "%d talnaskrár, %d strengjagildi, %d undanþágur — engin samfelld setning",
         talning["skrar"],
         talning["strengir"],
         talning["undantekningar"],
     )
+    for tiltaekt, skilabod in vefleit.lysing(talning, FROSID_COMMIT):
+        # Regla 6: ekki þagað þótt frosna commit-ið vanti (grunnt klón).
+        (log.info if tiltaekt else log.warning)("%s", skilabod)
     return 0
 
 

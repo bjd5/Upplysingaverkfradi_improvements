@@ -11,7 +11,9 @@
   const data = window.SiteData;
 
   window.DataSection.registerRenderer("skjalftar-manudir", function (doc, section) {
-    const rows = doc.gogn.manudir.map(function (row) {
+    // Mánaðasamantektin er í lysigogn; daglegu raðirnar (doc.gogn) eiga heima
+    // í HTML-töflu myndritsins, sem verður að virka án JavaScript (#17).
+    const rows = doc.lysigogn.manudir.map(function (row) {
       return { manudur: data.formatMonth(row.manudur), dagar: row.dagar,
                atburdir: row.atburdir };
     });

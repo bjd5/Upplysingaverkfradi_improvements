@@ -1,6 +1,6 @@
 """Próf fyrir talningar Phoebe-greiningarinnar (issue #14, pakki P2.5).
 
-Netlaus og á gervihandritum einum (``friends_gervihandrit``). Væntu tölurnar
+Netlaus og á gervihandritum einum (``phoebe_hjalp``). Væntu tölurnar
 eru **handtaldar** úr gervihandritunum — ekki lesnar úr úttaki kóðans, svo
 prófið geti ekki lagað sig að villu. Samanburður við raunhandritin er í
 ``test_phoebe_uttak``.
@@ -20,7 +20,7 @@ from collections import Counter
 from pathlib import Path
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
-from friends_gervihandrit import skrifa_gervihandrit  # noqa: E402
+from phoebe_hjalp import skrifa_gervihandrit  # noqa: E402
 
 from vinnsla.friends_thattari import parse_episode  # noqa: E402
 from vinnsla.phoebe_greining import analyse  # noqa: E402

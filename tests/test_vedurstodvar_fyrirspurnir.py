@@ -58,6 +58,8 @@ VAENTAR_FYRIRSPURNIR = frozenset(
         "vedurstodvar-naesta-aflagda-stod",
         "vedurstodvar-naesta-virka-langtimastod",
         "vedurstodvar-kassi-eftir-fjarlaegd",
+        # Sóknin úr fetch_log — `uppfaert` í web/gogn/vedurstodvar.json (#15).
+        "vedurstodvar-sokn",
     }
 )
 

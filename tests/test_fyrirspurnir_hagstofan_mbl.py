@@ -1,7 +1,7 @@
 """Hagstofu- og mbl-fyrirspurnirnar bornar við viðmiðið (issue #11).
 
 Viðmiðið er lesið úr ``docs/vidmid/vidmid.json`` með sömu uppflettingum og
-``test_hagstofan_vidmid.py`` og ``mbl_vidmid.py`` nota. Munurinn á þeim prófum
+``test_hagstofan_vidmid.py`` og ``mbl_hjalp.py`` nota. Munurinn á þeim prófum
 og þessum: þar var SQL-ið strengur í prófinu og námundaði sjálft; hér er það
 skráin sem síðan byggir á, óafrúnnuð, og námundað er í birtingarnákvæmni
 gömlu síðunnar (einn aukastafur) með Python.
@@ -15,7 +15,7 @@ import unittest
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 from fyrirspurnir_grunnur import HAGSTOFAN_TAFLA, MBL_EINTAK, hladinn_grunnur
-from mbl_vidmid import FROSNA_EINTAKID, vidmidstolur
+from mbl_hjalp import FROSNA_EINTAKID, vidmidstolur
 
 # Eining, ekki föll úr henni — annars keyrði unittest prófin hennar tvisvar.
 import test_hagstofan_vidmid as hagvidmid  # noqa: E402
