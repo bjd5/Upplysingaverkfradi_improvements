@@ -176,6 +176,45 @@ def skrifa_atomiskt(slod: Path, baeti: bytes) -> None:
         raise
 
 
+def skrifa_allar_atomiskt(mappa: Path, skrar: dict[str, bytes]) -> list[Path]:
+    """Skrifar margar skrár saman: allar leysa eldri af hólmi, eða engin.
+
+    :func:`skrifa_atomiskt` ver hverja skrá fyrir sig, en falli skrif þriðju
+    skrárinnar (fullur diskur) hefðu fyrstu tvær þegar verið leystar af hólmi og
+    síðan lesið blöndu af nýjum og gömlum gögnum. Hér eru **allar** tímabundnu
+    skrárnar skrifaðar og samstilltar á disk fyrst; aðeins þá er þeim skipt inn
+    með :func:`os.replace`. Falli eitthvað í fyrri áfanganum er engin markskrá
+    snert og allar tímabundnar skrár fjarlægðar.
+    """
+    mappa = Path(mappa)
+    if not mappa.is_dir():
+        raise UtflutningsVilla(f"Úttaksmappan er ekki til: {mappa}")
+    for heiti in skrar:
+        if Path(heiti).name != heiti:
+            raise UtflutningsVilla(f"Skráarheiti má ekki innihalda möppu: {heiti!r}")
+
+    timabundnar: dict[str, str] = {}
+    try:
+        for heiti, baeti in skrar.items():
+            lysing, timabundin = tempfile.mkstemp(
+                dir=mappa, prefix=FORSKEYTI_TIMABUNDIN + heiti + ".", suffix=VIDSKEYTI_TIMABUNDIN
+            )
+            timabundnar[heiti] = timabundin
+            with os.fdopen(lysing, "wb") as skra:
+                os.fchmod(skra.fileno(), HEIMILDIR_SKRAR)
+                skra.write(baeti)
+                skra.flush()
+                os.fsync(skra.fileno())
+    except BaseException:
+        for timabundin in timabundnar.values():
+            Path(timabundin).unlink(missing_ok=True)
+        raise
+
+    for heiti, timabundin in timabundnar.items():
+        os.replace(timabundin, mappa / heiti)
+    return [mappa / heiti for heiti in skrar]
+
+
 def skrifa_umslag(mappa: Path, skraarheiti: str, umslag: dict[str, Any]) -> Path:
     """Sannreynir, raðar og skrifar umslagið atómískt. Skilar slóð skrárinnar."""
     slod = Path(mappa) / skraarheiti

@@ -20,12 +20,11 @@ from hjalp import ROT  # noqa: E402
 
 from gagnagrunnur.keyrari import keyra  # noqa: E402
 from gagnagrunnur.tenging import tenging  # noqa: E402
-from vinnsla import hagstofan, vedurstodvar_hledsla  # noqa: E402
+from keyrsla.hledsla import hlada_ollum  # noqa: E402
 
 # Keyrarinn varar við götum í migration-númerum og hleðslurnar skrá hvert
 # skref. Hvorugt er það sem prófin mæla.
-for _heiti in ("gagnagrunnur.keyrari", "vinnsla.hagstofan", "vinnsla.vedurstodvar_hledsla",
-               "utflutningur.flytja_ut"):
+for _heiti in ("gagnagrunnur.keyrari", "keyrsla", "vinnsla", "utflutningur.flytja_ut"):
     logging.getLogger(_heiti).setLevel(logging.ERROR)
 
 VIDMID_JSON = ROT / "docs" / "vidmid" / "vidmid.json"
@@ -34,12 +33,11 @@ VEDURSTODVAR_RA = ROT / "data" / "raw" / "vedurstodvar"
 
 
 def byggja_grunn(slod: Path) -> Path:
-    """Keyrir migrations og hleður Hagstofunni og veðurstöðvunum í nýjan grunn."""
+    """Keyrir migrations og hleður öllum söfnunum í nýjan grunn — eins og ``--skref hlada``."""
     with tenging(slod) as samband:
         keyra(samband)
     with tenging(slod) as samband:
-        hagstofan.hlada(samband)
-        vedurstodvar_hledsla.hlada(samband)
+        hlada_ollum(samband)
     return slod
 
 
