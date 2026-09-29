@@ -112,7 +112,7 @@ def lesa_provenance(mappa: Path = FROSID) -> dict:
     if not slod.is_file():
         raise HledsluVilla(
             f"Vantar {stutt_slod(slod)} — hrágagn án uppruna fer ekki í grunninn "
-            "(regla 4). Keyrðu src/python/sofnun/frysta_vedurstodvar.py fyrst."
+            "(regla 4). Keyrðu scripts/saekja-gogn.sh vedurstodvar fyrst."
         )
     skjal = json.loads(slod.read_text(encoding="utf-8"))
     vantar = [reitur for reitur in PROVENANCE_REITIR if not skjal.get(reitur)]

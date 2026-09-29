@@ -31,7 +31,7 @@ import sys
 from collections.abc import Callable, Sequence
 from dataclasses import dataclass, field
 
-from . import hagstofan, mbl, skjalftar, tmdb, vedurstodvar
+from . import hagstofan, sofn
 from .frosid import FrosidVilla
 from .hagstofan import HagstofuVilla
 from .hragogn import HragagnaVilla, Svar
@@ -47,11 +47,11 @@ VAENTAR_VILLUR = (HttpVilla, FrosidVilla, HagstofuVilla, HragagnaVilla)
 
 # Heiti safns -> (aðgerð, lýsing fyrir lesanda). Röðin ræður keyrsluröð `allt`.
 SOFN: dict[str, tuple[Callable[..., object], str]] = {
-    "skjalftar": (skjalftar.saekja_skjalfta, "Jarðskjálftar á Reykjanesi"),
+    "skjalftar": (sofn.saekja_skjalfta, "Jarðskjálftar á Reykjanesi"),
     "hagstofan": (hagstofan.saekja_hagstofuna, "Brautskráning af háskólastigi"),
-    "vedurstodvar": (vedurstodvar.saekja_stodvar, "Stöðvalisti Veðurstofunnar"),
-    "mbl": (mbl.saekja_forsidu, "Fréttayfirlit mbl.is"),
-    "tmdb": (tmdb.saekja_tmdb, "Friends og hlutverk Phoebe hjá TMDB"),
+    "vedurstodvar": (sofn.saekja_stodvar, "Stöðvalisti Veðurstofunnar"),
+    "mbl": (sofn.saekja_forsidu, "Fréttayfirlit mbl.is"),
+    "tmdb": (sofn.saekja_tmdb, "Friends og hlutverk Phoebe hjá TMDB"),
 }
 
 
@@ -117,12 +117,12 @@ def keyra(heiti: Sequence[str], *, thvinga: bool = False) -> Nidurstada:
 
 def samantekt(nidurstada: Nidurstada) -> None:
     """Skráir niðurstöðuna í eina línu á hvern flokk."""
-    for texti, sofn in (
+    for texti, heiti in (
         ("úr data/raw/ (ekkert kall)", nidurstada.ur_safni),
         ("sótt af netinu", nidurstada.sott),
     ):
-        if sofn:
-            log.info("%d %s: %s", len(sofn), texti, ", ".join(sofn))
+        if heiti:
+            log.info("%d %s: %s", len(heiti), texti, ", ".join(heiti))
     if nidurstada.ovirk:
         log.warning(
             "%d óvirk (stillingu vantar): %s",

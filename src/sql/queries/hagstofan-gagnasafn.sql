@@ -1,23 +1,15 @@
 -- hagstofan-gagnasafn.sql
--- Spurning: Hvaða tafla Hagstofunnar liggur í grunninum — auðkenni, heiti,
---           heimild, slóð og hvenær hún var sótt?
--- Síða: web/sidur/hagstofan.html (heimild, sóknardagsetning og slóð þjónustunnar)
--- Breytur: engar
+-- Spurning: Hvaða tafla er þetta, hvaðan var hún sótt og hvenær?
+-- Síða: web/sidur/hagstofan.html (heimild, slóð þjónustunnar og sóknardagsetning)
+-- Breytur:
+--   ?1 töfluauðkenni Hagstofunnar (dataset_id, t.d. SKO04208b)
 --
--- Auðkennið (id) er breytan sem hinar Hagstofufyrirspurnirnar taka; útflutningurinn
--- les það hér í stað þess að slá töfluheitið inn í kóða.
---
--- `updated` er viljandi ekki valið: frysta svarið gefur 9999-12-31T23:59:59Z,
--- sem er ekki dagsetning (sjá 003). Sóknartíminn er fetched_at. loaded_at er
--- klukkan við hleðslu og á ekkert erindi á síðuna.
+-- fetched_at er okkar eigin sóknartími úr provenance.json og verður `uppfaert`
+-- í web/gogn/hagstofan.json (#15). `updated` úr svarinu (9999-12-31T23:59:59Z)
+-- er ekki nothæf dagsetning og er aðeins flutt út sem lýsigagn; sama um
+-- `decimals` (0 þótt gildin hafi aukastaf).
 
-SELECT id,
-       label,
-       source,
-       endpoint,
-       fetched_at,
-       jsonstat_version,
-       value_count,
-       raw_file
+SELECT id, label, source, endpoint, fetched_at, updated,
+       jsonstat_version, decimals, value_count, raw_file
 FROM hagstofan_datasets
-ORDER BY id;
+WHERE id = ?;

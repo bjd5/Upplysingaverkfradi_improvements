@@ -23,7 +23,7 @@ from unittest import mock
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 
-from sofnun import hagstofan, http, mbl, skjalftar, stillingar, tmdb, vedurstodvar  # noqa: E402
+from sofnun import hagstofan, http, sofn, stillingar  # noqa: E402
 from sofnun.frosid import frosid_svar  # noqa: E402
 from sofnun.http import TILRAUNIR, HttpVilla  # noqa: E402
 from sofnun.stillingar import StillingaVilla  # noqa: E402
@@ -59,12 +59,12 @@ class FrosidRepoProf(unittest.TestCase):
         self.addCleanup(umhverfi.stop)
 
     def test_skjalftar_koma_ur_raw(self) -> None:
-        svar = skjalftar.saekja_skjalfta(opnari=bannadur_opnari)
+        svar = sofn.saekja_skjalfta(opnari=bannadur_opnari)
         self.assertTrue(svar.ur_safni)
         self.assertEqual(svar.slod_skrar.name, "events.json")
 
     def test_vedurstodvar_koma_ur_raw(self) -> None:
-        svar = vedurstodvar.saekja_stodvar(opnari=bannadur_opnari)
+        svar = sofn.saekja_stodvar(opnari=bannadur_opnari)
         self.assertTrue(svar.ur_safni)
         self.assertTrue(svar.slod_skrar.name.startswith("stations-"))
 
@@ -77,7 +77,7 @@ class FrosidRepoProf(unittest.TestCase):
         self.assertEqual(gogn.slod_skrar.name, "response.json")
 
     def test_mbl_kemur_ur_raw(self) -> None:
-        svar = mbl.saekja_forsidu(opnari=bannadur_opnari)
+        svar = sofn.saekja_forsidu(opnari=bannadur_opnari)
         self.assertTrue(svar.ur_safni)
         self.assertTrue(svar.slod_skrar.name.endswith(".html"))
 
@@ -86,12 +86,12 @@ class FrosidRepoProf(unittest.TestCase):
         lysigogn = json.loads(
             next((RAUNVERULEG_RAW / "mbl").glob("mbl-*.json")).read_text(encoding="utf-8")
         )
-        self.assertEqual(mbl.BEIDNI.slod, lysigogn["source_url"])
+        self.assertEqual(sofn.MBL_BEIDNI.slod, lysigogn["source_url"])
 
     def test_nominatim_er_ekki_lengur_sott(self) -> None:
         """Hnit VR-II eru frosin í vinnslulaginu, ekki flett upp í hverri keyrslu."""
-        self.assertFalse(hasattr(vedurstodvar, "saekja_hnit_vr_ii"))
-        self.assertFalse(hasattr(vedurstodvar, "NOMINATIM_BEIDNI"))
+        self.assertFalse(hasattr(sofn, "saekja_hnit_vr_ii"))
+        self.assertFalse(hasattr(sofn, "NOMINATIM_BEIDNI"))
 
 
 class TmdbLykilsProf(unittest.TestCase):
@@ -104,7 +104,7 @@ class TmdbLykilsProf(unittest.TestCase):
         with mock.patch.dict(os.environ, {}, clear=True):
             with mock.patch.object(stillingar, "lesa_env_skra", dict):
                 with self.assertRaises(StillingaVilla) as gripid:
-                    tmdb.saekja_tmdb(opnari=bannadur_opnari)
+                    sofn.saekja_tmdb(opnari=bannadur_opnari)
         bod = str(gripid.exception)
         self.assertIn("TMDB_TOKEN", bod)          # nefnir breytuna
         self.assertIn(".env", bod)                # segir hvar hún er sett
@@ -115,7 +115,7 @@ class TmdbLykilsProf(unittest.TestCase):
         with mock.patch.dict(os.environ, {}, clear=True):
             with mock.patch.object(stillingar, "lesa_env_skra", dict):
                 with self.assertRaises(StillingaVilla):
-                    tmdb.leynihausar()
+                    sofn.leynihausar()
 
 
 class SofnunarProf(unittest.TestCase):
@@ -146,7 +146,7 @@ class EndurtilraunaProf(SofnunarProf):
     def test_endurtilraunir_stodvast_med_thaki(self) -> None:
         tengill = Gervitengill(*[http_villa(503)] * (TILRAUNIR + 5))
         with self.assertRaises(HttpVilla):
-            skjalftar.saekja_skjalfta(
+            sofn.saekja_skjalfta(
                 rot=self.rot, opnari=tengill, sofa=self.svefn.append
             )
         self.assertEqual(len(tengill.beidnir), TILRAUNIR)
@@ -156,7 +156,7 @@ class EndurtilraunaProf(SofnunarProf):
         """HTTP 404 lagast ekki við að spyrja aftur — ein tilraun og svo villa."""
         tengill = Gervitengill(http_villa(404))
         with self.assertRaises(HttpVilla):
-            vedurstodvar.saekja_stodvar(
+            sofn.saekja_stodvar(
                 rot=self.rot, opnari=tengill, sofa=self.svefn.append
             )
         self.assertEqual(len(tengill.beidnir), 1)
@@ -165,7 +165,7 @@ class EndurtilraunaProf(SofnunarProf):
         """Bilun skilar ekki tómu svari og skrifar ekkert hálft í data/raw/."""
         tengill = Gervitengill(*[http_villa(500)] * TILRAUNIR)
         with self.assertRaises(HttpVilla) as gripid:
-            vedurstodvar.saekja_stodvar(
+            sofn.saekja_stodvar(
                 rot=self.rot, opnari=tengill, sofa=self.svefn.append
             )
         self.assertIn("ekkert var vistað", str(gripid.exception))
@@ -177,7 +177,7 @@ class LykilsLekaProf(SofnunarProf):
 
     def saekja_tmdb(self, *svor: object) -> tuple[object, object]:
         tengill = Gervitengill(*svor)
-        nidurstada = tmdb.saekja_tmdb(
+        nidurstada = sofn.saekja_tmdb(
             lykill=LYKILL, rot=self.rot, opnari=tengill, sofa=self.svefn.append
         )
         return nidurstada, tengill
@@ -230,14 +230,14 @@ class FrosidMblProf(SofnunarProf):
 
     def test_frosid_eintak_er_skilad_an_kalls(self) -> None:
         self.frysta_eintak()
-        svar = mbl.saekja_forsidu(rot=self.rot, opnari=bannadur_opnari)
+        svar = sofn.saekja_forsidu(rot=self.rot, opnari=bannadur_opnari)
         self.assertTrue(svar.ur_safni)
         self.assertEqual(svar.baeti, b"<html>frosid</html>")
 
     def test_thvinga_saekir_nytt_an_ad_yfirskrifa(self) -> None:
         frosid = self.frysta_eintak()
         nytt = Gervisvar(baeti=b"<html>nytt</html>", efnistegund="text/html")
-        svar = mbl.saekja_forsidu(
+        svar = sofn.saekja_forsidu(
             thvinga=True, rot=self.rot, opnari=Gervitengill(nytt),
             sofa=self.svefn.append,
         )
@@ -248,12 +248,12 @@ class FrosidMblProf(SofnunarProf):
     def test_frosna_eintakid_er_afram_vidmidid(self) -> None:
         """Eftir nýja sókn skilar sjálfgefin keyrsla samt frosna eintakinu."""
         self.frysta_eintak()
-        mbl.saekja_forsidu(
+        sofn.saekja_forsidu(
             thvinga=True, rot=self.rot,
             opnari=Gervitengill(Gervisvar(baeti=b"<html>nytt</html>", efnistegund="text/html")),
             sofa=self.svefn.append,
         )
-        svar = mbl.saekja_forsidu(rot=self.rot, opnari=bannadur_opnari)
+        svar = sofn.saekja_forsidu(rot=self.rot, opnari=bannadur_opnari)
         self.assertEqual(svar.baeti, b"<html>frosid</html>")
 
 

@@ -1,0 +1,13 @@
+# Valkvæð pakkaskrá: aðeins til að TEIKNA myndritin upp á nýtt.
+#
+# Samþykkt í issue #17 (27.9.2026) eingöngu fyrir src/python/utflutningur/.
+# Allt annað í verkefninu — söfnun, vinnsla, grunnur og prófin — keyrir á
+# Python-staðalsafninu einu; próf sem teikna sleppa sér án þessa pakka.
+#
+# Útgáfan er fest því hún stendur í <dc:title> hverrar SVG-skrár í
+# web/assets/img/, og samanburðarprófið á vistuðu skránum sleppir sér með
+# annarri útgáfu. Sjá docs/myndrit.md, kafla 8.
+#
+#   python3.12 -m venv .venv
+#   .venv/bin/pip install -r config/requirements-myndrit.txt
+matplotlib==3.11.2

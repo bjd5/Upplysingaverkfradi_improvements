@@ -11,7 +11,7 @@ séu réttar — það er gert í ``test_mbl_svor.py``:
 * Skilyrðin í ``005_mbl_regex.sql`` hafna tómri niðurstöðu og svari án eintaks.
 
 Allar fyrirspurnir eru með breytum (regla 5). Prófin eru netlaus og nota
-gervieintök úr ``mbl_gervigogn`` — frosna eintakinu er aldrei skrifað (regla 10).
+gervieintök úr ``mbl_hjalp`` — frosna eintakinu er aldrei skrifað (regla 10).
 
     python3 -m unittest discover -s tests
 """
@@ -26,8 +26,8 @@ from pathlib import Path
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
 
 from gagnagrunnur.tenging import opna  # noqa: E402
-from mbl_gervigogn import GERVI_HTML, GERVI_SVOR, skrifa_eintak  # noqa: E402
-from mbl_grunnur import GrunnProf  # noqa: E402
+from mbl_hjalp import GERVI_HTML, GERVI_SVOR, skrifa_eintak  # noqa: E402
+from mbl_hjalp import GrunnProf  # noqa: E402
 from vinnsla.mbl_eintak import lesa_eintak  # noqa: E402
 from vinnsla.mbl_hledsla import (  # noqa: E402
     SVOR_A_EINTAK,

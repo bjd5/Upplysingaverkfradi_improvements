@@ -50,8 +50,6 @@ ENDING = ".sql"
 # Tæmandi listi. Ný fyrirspurn = ný skrá + ný lína hér; prófið krefst þess að
 # listinn og mappan segi sömu sögu, svo hvorugt verði eftir.
 FYRIRSPURNIR: frozenset[str] = frozenset({
-    # Uppruni safna sem skrá sig í fetch_log (Hagstofan, veðurstöðvar)
-    "gagnasofnun-skraning",
     # Skjálftavaktin
     "skjalftar-dagleg-talning",
     "skjalftar-dagleg-samantekt",
@@ -60,10 +58,13 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "skjalftar-staerd-eftir-kvarda",
     "skjalftar-dypt",
     # Hagstofan
-    "hagstofan-gagnasafn",
     "hagstofan-hlutfoll",
     "hagstofan-munur",
     "hagstofan-summur",
+    "hagstofan-gagnasafn",
+    "hagstofan-fyrirspurn",
+    "hagstofan-viddir",
+    "hagstofan-kodabok",
     # Veðurstöðvar
     "vedurstodvar-allar-stodvar",
     "vedurstodvar-fjoldi-stodva",
@@ -76,6 +77,7 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "vedurstodvar-naesta-aflagda-stod",
     "vedurstodvar-naesta-virka-langtimastod",
     "vedurstodvar-kassi-eftir-fjarlaegd",
+    "vedurstodvar-sokn",
     # mbl.is
     "mbl-eintok",
     "mbl-svor",
@@ -87,6 +89,12 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "friends-plass-eftir-thattarod",
     "friends-interaction-lift",
     "friends-nafntilvik-eftir-thattarod",
+    # Central Perk (migration 007)
+    "central-perk-samantekt",
+    "central-perk-hopar",
+    "central-perk-handrit",
+    "central-perk-songhandrit",
+    "central-perk-segdir",
 })
 
 # Skráarheiti hvers leyfðs heitis, reiknað úr listanum sjálfum (aldrei úr inntaki).
