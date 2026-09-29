@@ -2,7 +2,8 @@
 #
 # Endurbyggir SQL-grunninn frá grunni: eyðir honum og býr hann til aftur úr
 # src/sql/migrations/ og frystu gögnunum — data/raw/ og Friends-tölunum í
-# data/processed/phoebe-stats/ (issue #3). Öll fimm söfnin eru hlaðin (#39).
+# data/processed/phoebe-stats/ og central-perk-frosid/ (issue #3). Öll sex
+# söfnin eru hlaðin (#39).
 #
 # Þetta er PRÓFIÐ á reglu 5 — grunnurinn er afleiða, ekki frumgagn. Gangi
 # þetta ekki upp er eitthvað í grunninum sem hvergi á sér heimild, og þá er

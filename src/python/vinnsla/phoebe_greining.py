@@ -6,9 +6,8 @@ gerði, og skilar öllum niðurstöðunum í einum hlut, ``Analysis``, sem
 skýrslu- og úttakseiningarnar lesa:
 
 1. **Lesa og þátta** — ``friends_handrit`` + ``friends_thattari``.
-2. **Telja** — ``phoebe_plass`` (plássið), ``phoebe_nafntilvik`` (nærvera),
-   ``phoebe_tengsl`` (tengsl og ``interaction_lift``), ``phoebe_ordafordi``
-   og ``phoebe_thema``.
+2. **Telja** — ``phoebe_plass`` (plássið), ``phoebe_thema`` (nærvera og þemu),
+   ``phoebe_tengsl`` (tengsl og ``interaction_lift``) og ``phoebe_ordafordi``.
 
 Eingöngu staðalsafnið (regla 10).
 """
@@ -22,25 +21,29 @@ from pathlib import Path
 try:  # keyrt sem eining innan pakkans
     from .friends_handrit import transcript_paths
     from .friends_thattari import LINE_KINDS, OTHER, Episode, parse_episode
-    from .phoebe_nafntilvik import Mentions, count_mentions
     from .phoebe_ordafordi import Vocabulary, count_vocabulary, distinctive_words
     from .phoebe_plass import Screentime, count_screentime
     from .phoebe_skilgreiningar import ALIAS_TERMS, SIGNATURE_TOPICS, pct
     from .phoebe_tengsl import (
         count_interactions, guest_rows, interaction_matrix, season_talker_rows, talker_rows,
     )
-    from .phoebe_thema import ALL_SCOPE, PHOEBE_SCOPE, corpus_counts, people_by_season, signature_phrases
+    from .phoebe_thema import (
+        ALL_SCOPE, PHOEBE_SCOPE, Mentions, corpus_counts, count_mentions, people_by_season,
+        signature_phrases,
+    )
 except ImportError:  # keyrt beint úr möppunni
     from friends_handrit import transcript_paths
     from friends_thattari import LINE_KINDS, OTHER, Episode, parse_episode
-    from phoebe_nafntilvik import Mentions, count_mentions
     from phoebe_ordafordi import Vocabulary, count_vocabulary, distinctive_words
     from phoebe_plass import Screentime, count_screentime
     from phoebe_skilgreiningar import ALIAS_TERMS, SIGNATURE_TOPICS, pct
     from phoebe_tengsl import (
         count_interactions, guest_rows, interaction_matrix, season_talker_rows, talker_rows,
     )
-    from phoebe_thema import ALL_SCOPE, PHOEBE_SCOPE, corpus_counts, people_by_season, signature_phrases
+    from phoebe_thema import (
+        ALL_SCOPE, PHOEBE_SCOPE, Mentions, corpus_counts, count_mentions, people_by_season,
+        signature_phrases,
+    )
 
 
 @dataclass(frozen=True)

@@ -2,7 +2,7 @@
 
 Krafa verkefnisins er að nýja síðan sýni sömu tölur og sú gamla
 (``docs/endurbygging.md``, kafli 2). Viðmiðið er ``docs/vidmid/vidmid.json``,
-lesið úr byggðu gömlu síðunni af ``src/python/vidmid/tolur.py``.
+fryst úr byggðu gömlu síðunni (tagið ``vidmid-frosid``).
 
 Tvennt skiptir máli um aðferðina:
 
@@ -29,8 +29,7 @@ from hjalp import ROT  # noqa: E402
 
 from vinnsla.jardskjalftar import lesa_skjalfta  # noqa: E402
 from vinnsla.jardskjalftar_afmorkun import lesa_afmorkun  # noqa: E402
-from vinnsla.jardskjalftar_samantekt import draga_saman  # noqa: E402
-from vinnsla.jardskjalftar_talning import dagleg_talning, manadartalning  # noqa: E402
+from vinnsla.jardskjalftar_talning import dagleg_talning, draga_saman, manadartalning  # noqa: E402
 
 VIDMID_JSON = ROT / "docs" / "vidmid" / "vidmid.json"
 SIDA = "capstone/earthquakes.html"

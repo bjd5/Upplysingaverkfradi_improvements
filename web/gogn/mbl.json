@@ -1,113 +1,112 @@
 {
- "uppfaert": "2026-09-16T12:08:51+00:00",
- "heimild": "mbl.is — mbl.is/frettir (höfundarréttarvarið fréttaefni — aðeins niðurstöður birtar)",
- "gogn": {
-  "uppruni": {
-   "thjonusta": "mbl.is",
-   "slod": "https://www.mbl.is/frettir/",
-   "leyfi": "höfundarréttarvarið fréttaefni — aðeins niðurstöður birtar",
-   "sott": "2026-09-16T12:08:51+00:00",
-   "hragogn": "data/raw/mbl/mbl-20260916T120851Z.html",
-   "md5": "c2c83bddb8ed41357b7b1b8ab51a6457",
-   "baeti": 367351,
-   "http_stada": 200
-  },
-  "eintok": [
-   {
-    "sott": "2026-09-16T12:08:51+00:00",
-    "slod": "https://www.mbl.is/frettir/",
-    "skra": "mbl-20260916T120851Z.html",
-    "md5": "c2c83bddb8ed41357b7b1b8ab51a6457",
-    "baeti": 367351,
-    "http_stada": 200
-   }
+  "uppfaert": "2026-09-16T12:08:51+00:00",
+  "heimild": "mbl.is — www.mbl.is/frettir/ (höfundarréttarvarið fréttaefni; aðeins niðurstöður birtar)",
+  "gogn": [
+    {
+      "nr": 1,
+      "lykill": "einstakar-frettir",
+      "spurning": "Hversu margar einstakar fréttir eru á síðunni?",
+      "gildi": 43,
+      "svar": "43 einstakar fréttir",
+      "eining": "fréttir",
+      "mynstur_heiti": "MYNSTUR_FRETTASLOD",
+      "mynstur": "\n    href\\s*=\\s*[\"']\n    (?:https?://(?:www\\.)?mbl\\.is)?\n    (?P<path>/frettir/[a-z][a-z0-9_-]*/\\d{4}/\\d{2}/\\d{2}/[a-z0-9_-]+/)\n    (?=[\"'?\\#])\n    ",
+      "mynstur_flogg": "UNICODE|VERBOSE",
+      "afmorkun_heiti": null,
+      "afmorkun_mynstur": null,
+      "tilvik": 99,
+      "einstok": 43,
+      "synishorn": "/frettir/innlent/2026/09/16/skipverji_i_dettifossmalinu_eg_for_i_panikk/",
+      "takmarkanir": "Sama grein getur tengst bæði úr mynd og fyrirsögn, svo slóðirnar eru afritahreinsaðar í birtingarröð. Leiðsögu- og flokkahlekkir án dagsetningar teljast ekki með."
+    },
+    {
+      "nr": 2,
+      "lykill": "hitastig-reykjavik",
+      "spurning": "Hvert er hitastigið í Reykjavík?",
+      "gildi": 11,
+      "svar": "11 °C",
+      "eining": "°C",
+      "mynstur_heiti": "MYNSTUR_HITI_REYKJAVIK",
+      "mynstur": "\n    <option\\b(?=[^>]*\\bselected\\b)[^>]*>\\s*Reykjavík\\s*</option>\n    [\\s\\S]{0,2000}?\n    <span\\b(?=[^>]*\\bclass\\s*=\\s*[\"'][^\"']*\\bvalue\\b[^\"']*[\"'])[^>]*>\n    \\s*(?P<temperature>-?\\d+(?:[.,]\\d+)?)\\s*</span>\n    \\s*\n    <span\\b(?=[^>]*\\bclass\\s*=\\s*[\"'][^\"']*\\bunit\\b[^\"']*[\"'])[^>]*>\n    \\s*(?:&deg;|&\\#176;|°)\\s*</span>\n    ",
+      "mynstur_flogg": "UNICODE|VERBOSE",
+      "afmorkun_heiti": null,
+      "afmorkun_mynstur": null,
+      "tilvik": 1,
+      "einstok": 1,
+      "synishorn": "<option value=\"1\" selected=\"selected\">Reykjavík</option> <option value=\"178\">St…lass=\"temp thaw\"> <span class=\"value\">11</span> <span class=\"unit\">&deg;</span>",
+      "takmarkanir": "Talan er lesin úr veðurkassa forsíðunnar á sóknarstundu og lýsir aðeins því augnabliki. Leitin er bundin við 2000 stafa glugga eftir valinni Reykjavík svo hiti annarrar borgar slæðist ekki með."
+    },
+    {
+      "nr": 3,
+      "lykill": "gengi-usd",
+      "spurning": "Hvert er gengi Bandaríkjadals?",
+      "gildi": 121.33,
+      "svar": "121,33 ISK fyrir 1 USD",
+      "eining": "ISK á USD",
+      "mynstur_heiti": "MYNSTUR_USD_GENGI",
+      "mynstur": "\n    \\barrCurrency\\s*\\[\\s*\\d+\\s*\\]\\s*=\\s*\n    new\\s+MakeItem\\s*\\(\\s*\n    (?P<code_quote>[\"'])USD(?P=code_quote)\\s*,\\s*\n    (?P<rate_quote>[\"'])(?P<rate>-?\\d+(?:\\.\\d+)?)(?P=rate_quote)\n    \\s*\\)\\s*;?\n    ",
+      "mynstur_flogg": "UNICODE|VERBOSE",
+      "afmorkun_heiti": "MYNSTUR_SCRIPT_BLOKK",
+      "afmorkun_mynstur": "<script\\b[^>]*>(?P<body>[\\s\\S]*?)</script\\s*>",
+      "tilvik": 1,
+      "einstok": 1,
+      "synishorn": "arrCurrency[1]=new MakeItem(\"USD\", \"121.33\");",
+      "takmarkanir": "Sýnilegi innsláttarreiturinn í HTML-svarinu er tómur; gildið kemur úr JavaScript-blokk og er gengi mbl.is á sóknarstundu, ekki opinbert miðgengi."
+    },
+    {
+      "nr": 4,
+      "lykill": "synileg-ord",
+      "spurning": "Hversu mörg sýnileg orð eru á síðunni?",
+      "gildi": 2188,
+      "svar": "2.188 sýnileg orð",
+      "eining": "orð",
+      "mynstur_heiti": "MYNSTUR_ORD",
+      "mynstur": "[^\\W\\d_]+(?:-[^\\W\\d_]+)*",
+      "mynstur_flogg": "UNICODE",
+      "afmorkun_heiti": "MYNSTUR_OSYNILEGT",
+      "afmorkun_mynstur": "<!--[\\s\\S]*?-->\n<head\\b[^>]*>[\\s\\S]*?(?:</head\\s*>|$)\n<script\\b[^>]*>[\\s\\S]*?(?:</script\\s*>|$)\n<style\\b[^>]*>[\\s\\S]*?(?:</style\\s*>|$)\n<template\\b[^>]*>[\\s\\S]*?(?:</template\\s*>|$)\n<noscript\\b[^>]*>[\\s\\S]*?(?:</noscript\\s*>|$)",
+      "tilvik": 2188,
+      "einstok": 1046,
+      "synishorn": "forsíða menning viðskipti mílur íþróttir fólkið smartland matur ferðalög sporðaköst",
+      "takmarkanir": "„Sýnilegt“ merkir hér texta sem stendur eftir í kyrrstæða HTML-svarinu. Regluleg segð reiknar hvorki CSS-sýnileika á ákveðinni skjástærð né breytingar sem JavaScript gerir á DOM-inu. Flokkaheiti úr leiðsögn eru talin eins og fréttatexti."
+    },
+    {
+      "nr": 5,
+      "lykill": "auglysingareitir",
+      "spurning": "Hversu margir auglýsingareitir eru skilgreindir?",
+      "gildi": 47,
+      "svar": "47 auglýsingareitir",
+      "eining": "reitir",
+      "mynstur_heiti": "MYNSTUR_AUGLYSINGAREITUR",
+      "mynstur": "\n    \\bAds\\.renderSlot\\s*\\(\\s*\n    [\"'](?P<slot>\\d+(?:-\\d+)*)[\"']\\s*,\n    ",
+      "mynstur_flogg": "UNICODE|VERBOSE",
+      "afmorkun_heiti": null,
+      "afmorkun_mynstur": null,
+      "tilvik": 47,
+      "einstok": 47,
+      "synishorn": "Ads.renderSlot('633',",
+      "takmarkanir": "Talan er fjöldi skilgreindra eða umbeðinna reita, ekki staðfestur fjöldi auglýsinga sem birtust: reitirnir eru tómir í kyrrstæða svarinu og skjástærð, samþykki, auglýsingavörn og val auglýsingakerfisins ráða því hvað birtist."
+    }
   ],
-  "svor": [
-   {
-    "nr": 1,
-    "lykill": "einstakar-frettir",
-    "spurning": "Hversu margar einstakar fréttir eru á síðunni?",
-    "gildi": 43,
-    "svar": "43 einstakar fréttir",
-    "eining": "fréttir",
-    "mynstur_heiti": "MYNSTUR_FRETTASLOD",
-    "mynstur": "\n    href\\s*=\\s*[\"']\n    (?:https?://(?:www\\.)?mbl\\.is)?\n    (?P<path>/frettir/[a-z][a-z0-9_-]*/\\d{4}/\\d{2}/\\d{2}/[a-z0-9_-]+/)\n    (?=[\"'?\\#])\n    ",
-    "mynstur_flogg": "UNICODE|VERBOSE",
-    "afmorkun_heiti": null,
-    "afmorkun_mynstur": null,
-    "tilvik": 99,
-    "einstok": 43,
-    "synishorn": "/frettir/innlent/2026/09/16/skipverji_i_dettifossmalinu_eg_for_i_panikk/",
-    "takmarkanir": "Sama grein getur tengst bæði úr mynd og fyrirsögn, svo slóðirnar eru afritahreinsaðar í birtingarröð. Leiðsögu- og flokkahlekkir án dagsetningar teljast ekki með."
-   },
-   {
-    "nr": 2,
-    "lykill": "hitastig-reykjavik",
-    "spurning": "Hvert er hitastigið í Reykjavík?",
-    "gildi": 11,
-    "svar": "11 °C",
-    "eining": "°C",
-    "mynstur_heiti": "MYNSTUR_HITI_REYKJAVIK",
-    "mynstur": "\n    <option\\b(?=[^>]*\\bselected\\b)[^>]*>\\s*Reykjavík\\s*</option>\n    [\\s\\S]{0,2000}?\n    <span\\b(?=[^>]*\\bclass\\s*=\\s*[\"'][^\"']*\\bvalue\\b[^\"']*[\"'])[^>]*>\n    \\s*(?P<temperature>-?\\d+(?:[.,]\\d+)?)\\s*</span>\n    \\s*\n    <span\\b(?=[^>]*\\bclass\\s*=\\s*[\"'][^\"']*\\bunit\\b[^\"']*[\"'])[^>]*>\n    \\s*(?:&deg;|&\\#176;|°)\\s*</span>\n    ",
-    "mynstur_flogg": "UNICODE|VERBOSE",
-    "afmorkun_heiti": null,
-    "afmorkun_mynstur": null,
-    "tilvik": 1,
-    "einstok": 1,
-    "synishorn": "<option value=\"1\" selected=\"selected\">Reykjavík</option> <option value=\"178\">St…lass=\"temp thaw\"> <span class=\"value\">11</span> <span class=\"unit\">&deg;</span>",
-    "takmarkanir": "Talan er lesin úr veðurkassa forsíðunnar á sóknarstundu og lýsir aðeins því augnabliki. Leitin er bundin við 2000 stafa glugga eftir valinni Reykjavík svo hiti annarrar borgar slæðist ekki með."
-   },
-   {
-    "nr": 3,
-    "lykill": "gengi-usd",
-    "spurning": "Hvert er gengi Bandaríkjadals?",
-    "gildi": 121.33,
-    "svar": "121,33 ISK fyrir 1 USD",
-    "eining": "ISK á USD",
-    "mynstur_heiti": "MYNSTUR_USD_GENGI",
-    "mynstur": "\n    \\barrCurrency\\s*\\[\\s*\\d+\\s*\\]\\s*=\\s*\n    new\\s+MakeItem\\s*\\(\\s*\n    (?P<code_quote>[\"'])USD(?P=code_quote)\\s*,\\s*\n    (?P<rate_quote>[\"'])(?P<rate>-?\\d+(?:\\.\\d+)?)(?P=rate_quote)\n    \\s*\\)\\s*;?\n    ",
-    "mynstur_flogg": "UNICODE|VERBOSE",
-    "afmorkun_heiti": "MYNSTUR_SCRIPT_BLOKK",
-    "afmorkun_mynstur": "<script\\b[^>]*>(?P<body>[\\s\\S]*?)</script\\s*>",
-    "tilvik": 1,
-    "einstok": 1,
-    "synishorn": "arrCurrency[1]=new MakeItem(\"USD\", \"121.33\");",
-    "takmarkanir": "Sýnilegi innsláttarreiturinn í HTML-svarinu er tómur; gildið kemur úr JavaScript-blokk og er gengi mbl.is á sóknarstundu, ekki opinbert miðgengi."
-   },
-   {
-    "nr": 4,
-    "lykill": "synileg-ord",
-    "spurning": "Hversu mörg sýnileg orð eru á síðunni?",
-    "gildi": 2188,
-    "svar": "2.188 sýnileg orð",
-    "eining": "orð",
-    "mynstur_heiti": "MYNSTUR_ORD",
-    "mynstur": "[^\\W\\d_]+(?:-[^\\W\\d_]+)*",
-    "mynstur_flogg": "UNICODE",
-    "afmorkun_heiti": "MYNSTUR_OSYNILEGT",
-    "afmorkun_mynstur": "<!--[\\s\\S]*?-->\n<head\\b[^>]*>[\\s\\S]*?(?:</head\\s*>|$)\n<script\\b[^>]*>[\\s\\S]*?(?:</script\\s*>|$)\n<style\\b[^>]*>[\\s\\S]*?(?:</style\\s*>|$)\n<template\\b[^>]*>[\\s\\S]*?(?:</template\\s*>|$)\n<noscript\\b[^>]*>[\\s\\S]*?(?:</noscript\\s*>|$)",
-    "tilvik": 2188,
-    "einstok": 1046,
-    "synishorn": "forsíða menning viðskipti mílur íþróttir fólkið smartland matur ferðalög sporðaköst",
-    "takmarkanir": "„Sýnilegt“ merkir hér texta sem stendur eftir í kyrrstæða HTML-svarinu. Regluleg segð reiknar hvorki CSS-sýnileika á ákveðinni skjástærð né breytingar sem JavaScript gerir á DOM-inu. Flokkaheiti úr leiðsögn eru talin eins og fréttatexti."
-   },
-   {
-    "nr": 5,
-    "lykill": "auglysingareitir",
-    "spurning": "Hversu margir auglýsingareitir eru skilgreindir?",
-    "gildi": 47,
-    "svar": "47 auglýsingareitir",
-    "eining": "reitir",
-    "mynstur_heiti": "MYNSTUR_AUGLYSINGAREITUR",
-    "mynstur": "\n    \\bAds\\.renderSlot\\s*\\(\\s*\n    [\"'](?P<slot>\\d+(?:-\\d+)*)[\"']\\s*,\n    ",
-    "mynstur_flogg": "UNICODE|VERBOSE",
-    "afmorkun_heiti": null,
-    "afmorkun_mynstur": null,
-    "tilvik": 47,
-    "einstok": 47,
-    "synishorn": "Ads.renderSlot('633',",
-    "takmarkanir": "Talan er fjöldi skilgreindra eða umbeðinna reita, ekki staðfestur fjöldi auglýsinga sem birtust: reitirnir eru tómir í kyrrstæða svarinu og skjástærð, samþykki, auglýsingavörn og val auglýsingakerfisins ráða því hvað birtist."
-   }
-  ]
- }
+  "lysigogn": {
+    "eintak": {
+      "sott": "2026-09-16T12:08:51+00:00",
+      "slod": "https://www.mbl.is/frettir/",
+      "hraskra": "data/raw/mbl/mbl-20260916T120851Z.html",
+      "md5": "c2c83bddb8ed41357b7b1b8ab51a6457",
+      "baeti": 367351,
+      "http_stada": 200
+    },
+    "eintok": [
+      {
+        "sott": "2026-09-16T12:08:51+00:00",
+        "slod": "https://www.mbl.is/frettir/",
+        "hraskra": "data/raw/mbl/mbl-20260916T120851Z.html",
+        "md5": "c2c83bddb8ed41357b7b1b8ab51a6457",
+        "baeti": 367351,
+        "http_stada": 200
+      }
+    ],
+    "aukastafir": 2
+  }
 }

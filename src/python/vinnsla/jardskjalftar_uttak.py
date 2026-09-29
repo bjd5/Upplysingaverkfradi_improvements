@@ -14,7 +14,7 @@ skrifar því **aðeins** afleiddar töflur í ``data/processed/`` og aldrei í
 
 * ``events.csv`` — ein lína á atburð, dálkar í sömu röð og taflan ``earthquakes``.
 * ``daily.csv`` — ein lína á hvern UTC-dag, líka dagana með núll atburði.
-* ``samantekt.json`` — lýsandi tölfræði úrtaksins (sjá ``jardskjalftar_samantekt``).
+* ``samantekt.json`` — lýsandi tölfræði úrtaksins (sjá ``jardskjalftar_talning.draga_saman``).
 
 Úttakið er **hrein afleiða hrágagnanna**: það inniheldur engan keyrslutíma og
 engan vegguklukkustimpil, svo tvær keyrslur á sömu gögnum gefa sömu bæti.
@@ -41,13 +41,11 @@ from pathlib import Path
 try:  # keyrt sem eining innan pakkans (venjulega leiðin)
     from .jardskjalftar import Skjalfti, lesa_skjalfta
     from .jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, lesa_afmorkun
-    from .jardskjalftar_samantekt import Samantekt, draga_saman
-    from .jardskjalftar_talning import DagsTalning, dagleg_talning
+    from .jardskjalftar_talning import DagsTalning, Samantekt, dagleg_talning, draga_saman
 except ImportError:  # keyrt beint úr möppunni
     from jardskjalftar import Skjalfti, lesa_skjalfta
     from jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, lesa_afmorkun
-    from jardskjalftar_samantekt import Samantekt, draga_saman
-    from jardskjalftar_talning import DagsTalning, dagleg_talning
+    from jardskjalftar_talning import DagsTalning, Samantekt, dagleg_talning, draga_saman
 
 log = logging.getLogger(__name__)
 

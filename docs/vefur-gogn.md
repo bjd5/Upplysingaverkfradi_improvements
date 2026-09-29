@@ -7,6 +7,32 @@ mynstrinu sem þær eiga að fylgja. Reglurnar sjálfar eru í
 
 ---
 
+## 0. Sniðið sem lagið les
+
+Útflutningurinn (`src/python/utflutningur/json_skrif.py`) skrifar hverja skrá í
+`web/gogn/` á föstu sniði, og `gogn.js` hafnar öllu öðru:
+
+```json
+{
+  "uppfaert": "2026-09-10T11:46:23+00:00",
+  "heimild":  "Veðurstofa Íslands — api.vedur.is/quakes/events (CC BY 4.0)",
+  "gogn":     [ {"dagur": "2023-11-01", "fjoldi": 1, …}, … ],
+  "lysigogn": { "samantekt": {"atburdir": 334, …}, "manudir": [ … ], … }
+}
+```
+
+| Reitur | Krafa | Hvað |
+|---|---|---|
+| `uppfaert` | skylda | ISO 8601 með tímabelti |
+| `heimild` | skylda | óauður texti |
+| `gogn` | skylda | **alltaf listi af röðum** (hlutum) — aðalgögn skrárinnar |
+| `lysigogn` | valfrjálst (ekki í `yfirlit.json`) | hlutur: það sem síðan þarf til að lesa gögnin — samantektir, afmörkun, fyrirspurn |
+| annað | **bannað** | skránni er hafnað með sýnilegri villu, eins og útflutningurinn gerir |
+
+Hvað er í `gogn` og `lysigogn` hverrar skrár sést best í skránni sjálfri.
+
+---
+
 ## 1. Skrárnar
 
 | Skrá | Hlutverk | Á hvaða síðum |
@@ -53,7 +79,7 @@ Flestar síður þurfa **engan eigin JS**. Tölur eru merktar beint í HTML:
     <dl class="stadreyndir">
       <div>
         <dt>Atburðir</dt>
-        <dd data-gogn-reitur="samantekt.atburdir"></dd>
+        <dd data-gogn-reitur="lysigogn.samantekt.atburdir"></dd>
       </div>
     </dl>
   </div>
@@ -64,10 +90,33 @@ Flestar síður þurfa **engan eigin JS**. Tölur eru merktar beint í HTML:
 |---|---|---|
 | `data-gogn="skra.json"` | já | Gagnahluti. Skráarheiti í `web/gogn/`, án möppu. |
 | `data-gogn-efni` + `hidden` | já, ef reitir | Það sem birtist þegar gögnin eru komin. Falið án JS og við villu — aldrei auðir reitir. |
-| `data-gogn-reitur="a.b.0.c"` | nei | `textContent` fær gildið á þessari slóð **inni í `gogn`**. Verður að vera tala eða strengur. |
+| `data-gogn-reitur="lysigogn.a.b"` | nei | `textContent` fær gildið á slóðinni. Slóðavenjan er í kafla 2.1. Verður að vera tala eða strengur. |
 | `data-gogn-teiknari="nafn"` | nei | Teiknari sem síðuskrá skráði (kafli 3). |
 | `data-gogn-uppruni` | nei | Hvar „Gögn uppfærð … · Heimild: …“ á að standa. Vanti hann bætist `<p class="stada-gagna">` við neðst í hlutanum. |
 | `<noscript>` | já | Varaleið án JavaScript (regla 3.4) — kafli 5. |
+
+### 2.1 Slóðavenjan í `data-gogn-reitur`
+
+Slóðin er lesin **frá rót skjalsins** og **byrjar alltaf á `lysigogn.` eða
+`gogn.`**. Rótin er skrifuð út svo sá sem les HTML-ið sjái strax hvaðan talan
+kemur. Punktur skilur að þrep og tala er sæti í lista (talið frá 0):
+
+| Slóð | Gildi í `skjalftar.json` |
+|---|---|
+| `lysigogn.samantekt.atburdir` | `334` |
+| `lysigogn.samantekt.dypt_km.midgildi` | `4.67` → „4,67“ |
+| `lysigogn.manudir.0.atburdir` | `330` |
+| `gogn.2.fjoldi` | `24` (þriðja röðin) |
+| `samantekt.atburdir` | **villa** — rótina vantar |
+| `uppfaert`, `heimild` | **villa** — upprunalínan birtir þau sjálfkrafa |
+
+Stakar tölur (heildir, miðgildi, fjöldi) eru nær alltaf í `lysigogn`. Raðirnar
+í `gogn` eru fyrir töflur og myndrit (kafli 3); `gogn.<n>.` í reit er aðeins
+fyrir tilvik þar sem röðin er föst. Slóð sem vísar á hlut, lista, `null` eða
+ekkert gefur sýnilega villu í hlutanum, og `tests/test_vefur_gogn.py` fellur á
+sama tilviki áður en það kemst á vefinn.
+
+### 2.2 Ástand
 
 Ástandið sem `gagnahluti.js` setur á hlutann: `data-gogn-stada="hledst"`
 (með `aria-busy="true"` og „Sæki gögn …“ í `role="status"`), svo `"tilbuid"`
@@ -77,20 +126,21 @@ eða `"villa"`.
 
 ## 3. Teiknarar — þegar reitir duga ekki
 
-Töflur og annað sem byggist á listum fer í síðuskrá (`web/assets/js/<síða>.js`)
+Töflur og annað sem byggist á listum — raðirnar í `doc.gogn` eða listi í
+`doc.lysigogn` — fer í síðuskrá (`web/assets/js/<síða>.js`)
 sem skráir teiknara. Hann keyrir **eftir** að reitirnir eru fylltir og **áður**
 en efnið birtist:
 
 ```js
 window.DataSection.registerRenderer("skjalftar-manudir", function (doc, section) {
-  // doc = {uppfaert, heimild, gogn}, þegar staðfest
+  // doc = {uppfaert, heimild, gogn: [raðir], lysigogn}, þegar staðfest
   const table = window.DataSection.buildTable({
     caption: "Atburðir eftir mánuðum",
     columns: [
       { heading: "Mánuður", key: "manudur" },
       { heading: "Atburðir", key: "atburdir", numeric: true }
     ],
-    rows: doc.gogn.manudir
+    rows: doc.lysigogn.manudir        // eða doc.gogn fyrir aðalraðirnar
   });
   section.querySelector("[data-gogn-efni]").appendChild(table);
 });
@@ -111,8 +161,9 @@ helst falið.
 
 | Fall | Skilar |
 |---|---|
-| `load("skra.json")` | `Promise<{uppfaert, heimild, gogn}>`. Hver skrá sótt einu sinni á síðu. Hafnar alltaf með `DataError` með íslenskum skilaboðum. |
-| `valueAt(gogn, "a.b.0")` | Gildið á slóðinni, eða `undefined` |
+| `load("skra.json")` | `Promise<{uppfaert, heimild, gogn, lysigogn}>`. Hver skrá sótt einu sinni á síðu. Hafnar alltaf með `DataError` með íslenskum skilaboðum. |
+| `fieldAt(doc, "lysigogn.a.b")` | Tala eða strengur eftir slóðavenju reitanna (kafli 2.1); annars `DataError` |
+| `valueAt(hlutur, "a.0.b")` | Gildið á punktaslóð í hvaða hlut eða röð sem er, eða `undefined` |
 | `formatNumber(4.67)` | `"4,67"` — sjá kafla 6 |
 | `formatDate("2026-09-10T…")` | `"10. september 2026"` |
 | `formatMonth("2023-11")` | `"nóvember 2023"` |
@@ -124,7 +175,7 @@ helst falið.
 | Fall | Hlutverk |
 |---|---|
 | `registerRenderer(nafn, fn)` | Skráir teiknara: `fn(doc, section)` |
-| `buildTable({caption, columns, rows})` | `<div class="tafla-umgjord"><table class="gagnatafla">…` með `createElement` |
+| `buildTable({caption, columns, rows})` (`columns[].key` er punktaslóð innan raðar) | `<div class="tafla-umgjord"><table class="gagnatafla">…` með `createElement` |
 | `fillStatus(el, iso, texti)` | Fyllir `.stada-gagna`: „Gögn uppfærð … · texti“ |
 | `fillStatusError(el, villa)` | Sama eining í villuástandi: „Villa: …“ |
 
@@ -163,6 +214,10 @@ sniði og `utflutningur/islenskt_snid.py`:
 | `3.0` | `3` (JSON gerir engan greinarmun) |
 | `"43 einstakar fréttir"` | óbreytt — strengir eru þegar sniðnir |
 
+`lysigogn.aukastafir` segir með hve mörgum aukastöfum útflutningurinn námundaði
+— það er **hámark**, ekki birtingarsnið. JS fyllir ekki upp með núllum: `334` í
+skrá með `aukastafir: 2` er „334“, ekki „334,00“.
+
 Þurfi tala að birtast með föstum fjölda aukastafa (t.d. `3,0`) á
 útflutningurinn að skrifa hana sem streng.
 
@@ -183,8 +238,12 @@ líka í console fyrir þróun. Þær eru aldrei þaggaðar og síðan brotnar e
 | Netvilla | „Ekki náðist samband til að sækja „skjalftar.json“.“ |
 | 404 / annar kóði | „Gagnaskráin „…“ fannst ekki (villa 404).“ / „fékkst ekki (villa 500).“ |
 | Ekki gilt JSON | „Gagnaskráin „…“ er gölluð.“ |
-| Snið rangt | „Í gagnaskrána „…“ vantar reitinn „heimild“.“ o.s.frv. |
-| Reitur ekki til | „Gildið „samantekt.x“ er ekki í „…“.“ |
+| Skyldureit vantar | „Í gagnaskrána „…“ vantar reitinn „heimild“.“ |
+| `gogn` ekki listi af röðum | „Gögnin í „…“ eru ekki listi af röðum.“ |
+| `lysigogn` ekki hlutur | „Lýsigögnin í „…“ eru á röngu sniði.“ |
+| Óþekktur reitur | „Óþekktur reitur „…“ í „…“.“ |
+| Reitur vísar ekki á tölu/texta | „Gildið „lysigogn.samantekt.x“ er ekki tala eða texti í gagnaskránni.“ |
+| Slóð án rótar | „Slóðin „samantekt.x“ verður að byrja á „lysigogn.“ eða „gogn.“.“ |
 | Teiknari ekki skráður | „Enginn teiknari er skráður undir „…“.“ |
 
 Villuboxið (`.gogn-villa`, `role="alert"`) byrjar á „Ekki tókst að birta
@@ -197,12 +256,14 @@ viðbót; textinn ber merkinguna (regla 3.3).
 
 `tests/test_vefur_gogn.py` (staðalsafnið eitt) staðfestir: aðeins `gogn.js`
 kallar í `fetch`; ekkert `innerHTML`/`eval`; lagið hleðst á undan notendum
-sínum; hver `data-gogn`-skrá er til og á sniði reglu 5.4; hver
-`data-gogn-reitur` vísar á tölu eða streng í skránni; hver gagnahluti hefur
+sínum; hver `data-gogn`-skrá er til og á sniði reglu 5.4 (`gogn` listi af
+röðum, `lysigogn` hlutur, engir aðrir reitir); hver `data-gogn-reitur` byrjar á
+`lysigogn.` eða `gogn.` og vísar á tölu eða streng í skránni; hver gagnahluti hefur
 `<noscript>` og falið efni; hver hook, teiknari og CSS-klasi sem JS notar er
 til; og JS-skrárnar eru undir 300 línum og 30 KB samanlagt.
 
 Vafraprófin (Chromium, Playwright) eru handkeyrð og ekki í `unittest`-safninu.
-Þau staðfestu 28.9.2026: engin villa í console, gögnin birtast, fimm
-villutilvik birtast á síðunni, síðan virkar án JS, og 320 px í báðum þemum
+Þau staðfestu 29.9.2026, á nýja sniðinu: engin villa í console, gögnin
+birtast, níu villutilvik birtast á síðunni (þ.m.t. `gogn` ekki listi),
+tafla úr 61 `gogn`-röð fær íslenskt snið, síðan virkar án JS, og 320 px í báðum þemum
 án lárétts skruns.
