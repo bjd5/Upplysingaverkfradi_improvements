@@ -23,7 +23,7 @@ import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma f
 from central_perk_grunnur import (  # noqa: E402
     inngangstala, songhandrit, vidmidstala,
 )
-from central_perk_vidmid import VIDMIDSMAPPA, svg_points  # noqa: E402
+from central_perk_hjalp import VIDMIDSMAPPA, svg_points  # noqa: E402
 from friends_grunnur import opna_med_toflum  # noqa: E402
 
 from gagnagrunnur import fyrirspurnir  # noqa: E402
@@ -114,7 +114,7 @@ class HladidProf(unittest.TestCase):
     # --- handritastigið ----------------------------------------------------
 
     def test_handritastig_endurgerir_punkta_myndarinnar(self) -> None:
-        """Borið við óháðan SVG-lestur P2.6 (tests/central_perk_vidmid.py)."""
+        """Borið við óháðan SVG-lestur P2.6 (tests/central_perk_hjalp.py)."""
         ur_sql = {r["episode_code"]: (r["group_key"], f"{r['phoebe_share_pct']:.1f}")
                   for r in fyrirspurnir.keyra(self.samband, "central-perk-handrit")}
         self.assertEqual(ur_sql, svg_points())
