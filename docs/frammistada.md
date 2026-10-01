@@ -41,9 +41,7 @@ Stærsta síðan (`skjalftavaktin.html`) er um 20 % af þakinu.
 - **Án JavaScript:** allar síður læsilegar (12/12), engin lárétt skrun
   (`scrollWidth` = 320). Gagnareitir og myndrit fyllast aðeins með JavaScript.
 - **Console:** engin villa á neinni síðu, með og án JavaScript.
-- **Þekkt frávik (320 px, með JavaScript):** `hagstofan.html` hefur
-  `scrollWidth` 648 og `skjalftavaktin.html` 660, þ.e. lárétt skrun, sem
-  brýtur reglu 3.5. Það er óskylt stærðinni og bíður lagfæringar.
+
 
 ## 2. Hvernig mælingin er endurtekin
 
