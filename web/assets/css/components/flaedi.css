@@ -1,0 +1,59 @@
+/* flaedi.css — gagnaflæðið sem röð skrefa með ör á milli.
+   Röðin stendur í HTML-inu sjálfu, svo hún les eins án CSS og án JS. */
+
+.flaedi {
+  list-style: none;
+  margin: 0 0 var(--bil-6);
+  padding: 0;
+  display: grid;
+  gap: var(--bil-6);
+}
+
+.flaedi__skref {
+  position: relative;
+  padding: var(--bil-4);
+  background: var(--bak-upphaekkad);
+  border: var(--rammi-breidd) solid var(--rammi-sterkur);
+  border-left: var(--rammi-breidd-breid) solid var(--tengill);
+  border-radius: var(--radius);
+}
+
+/* Örin er skraut; röðin og textinn bera merkinguna (regla 3.3). */
+.flaedi__skref:not(:last-child)::after {
+  content: "\2193";
+  position: absolute;
+  left: var(--bil-4);
+  top: 100%;
+  height: var(--bil-6);
+  line-height: var(--bil-6);
+  color: var(--texti-daufur);
+}
+
+.flaedi__heiti {
+  display: block;
+  font-weight: var(--thyngd-feit);
+  color: var(--texti);
+}
+
+.flaedi__lysing {
+  display: block;
+  font-size: var(--texti-sm);
+  color: var(--texti-daufur);
+}
+
+@media (min-width: 64rem) {
+  .flaedi {
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--bil-8);
+  }
+
+  .flaedi__skref:not(:last-child)::after {
+    content: "\2192";
+    left: 100%;
+    top: var(--bil-4);
+    width: var(--bil-8);
+    height: auto;
+    line-height: inherit;
+    text-align: center;
+  }
+}
