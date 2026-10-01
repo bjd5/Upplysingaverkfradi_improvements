@@ -19,7 +19,7 @@ hvernig aðgengi er tryggt og hvernig mælingin er endurtekin. Reglurnar eru í
 | Töflur | `<caption>` og `th scope="col"`; töflur úr JavaScript koma úr `buildTable` sem setur hvort tveggja |
 | Myndir | Engar `<img>` eru á síðunum; engin myndrit eru birt enn. Myndrit úr Python fá gagnatöflu (sjá [`myndrit.md`](myndrit.md)) |
 | Snertifletir | `--smellisvaedi` er 44 px; tenglar í valmynd, brauðmylsnu og kortum fylla það |
-| Mjór skjár | Ekkert lárétt skrun á 320 px; töflur skruna innan `.tafla-umgjord` |
+| Mjór skjár | Ekkert lárétt skrun á 320 px; töflur skruna innan `.tafla-umgjord`, gagnahlutar nota `minmax(0, 1fr)` og heimildarlínan brýtur langt heiti |
 | Án JavaScript | Allt meginmál og öll valmynd er í HTML; gagnahlutar hafa `<noscript>` með tengli á JSON-skrána |
 
 ---
@@ -34,22 +34,22 @@ gildið á hverri síðu; lágmark er 4,5:1 (3:1 fyrir stóran texta).
 | Síða | Ljóst | Dökkt | Textahnútar | Niðurstaða |
 |---|---|---|---|---|
 | `index.html` | 5,50 | 6,29 | 86 | stenst |
-| `sidur/skjalftavaktin.html` | 4,69 | 6,29 | 75 | stenst |
+| `sidur/skjalftavaktin.html` | 5,50 | 6,29 | 351 | stenst |
 | `sidur/friends-gagnasagan.html` | 4,69 | 6,29 | 57 | stenst |
-| `sidur/phoebe-tolfraedi.html` | 4,69 | 6,29 | 59 | stenst |
-| `sidur/phoebe-central-perk.html` | 4,69 | 6,29 | 59 | stenst |
+| `sidur/phoebe-tolfraedi.html` | 5,50 | 6,29 | 322 | stenst |
+| `sidur/phoebe-central-perk.html` | 5,50 | 6,29 | 147 | stenst |
 | `sidur/phoebe-tmdb.html` | 4,69 | 6,29 | 58 | stenst |
 | `sidur/uppahalds-video.html` | 4,69 | 6,29 | 55 | stenst |
 | `sidur/phoebe-tribute.html` | 4,69 | 6,29 | 55 | stenst |
-| `sidur/hagstofan.html` | 4,69 | 6,29 | 58 | stenst |
-| `sidur/vedurstodvar.html` | 4,69 | 6,29 | 56 | stenst |
-| `sidur/mbl-regex.html` | 4,69 | 6,29 | 56 | stenst |
-| `sidur/adferdafraedi.html` | 4,69 | 6,29 | 72 | stenst |
+| `sidur/hagstofan.html` | 5,50 | 6,29 | 253 | stenst |
+| `sidur/vedurstodvar.html` | 4,69 | 6,29 | 246 | stenst |
+| `sidur/mbl-regex.html` | 5,50 | 6,29 | 126 | stenst |
+| `sidur/adferdafraedi.html` | 5,50 | 6,29 | 144 | stenst |
 
-Lægsta ljósa gildið (4,69) er „Efni í vinnslu“ í biðstöðueiningunni; lægsta
-dökka (6,29) er flokksmerkið í síðuhaus. Efnisleg gögn á síðunum eru enn
-fá — tölurnar breytast þegar síðuverkin bæta við texta, svo prófin í kafla 4
-gæta lykilparanna.
+Lægsta ljósa gildið (4,69) er „Efni í vinnslu“ á biðstöðusíðunum; lægsta
+dökka (6,29) er flokksmerkið í síðuhaus. Mælt á sameinuðum kóða
+(`claude/bold-gates-66qscg`); tölurnar breytast þegar efni bætist við, svo
+prófin í kafla 4 gæta lykilparanna.
 
 ### Lykilpör úr `tokens.css`
 
@@ -73,12 +73,12 @@ Reiknað úr token-gildunum (prófað í `tests/test_vefur_adgengi.py`). Dálkar
 | Gátlisti | Niðurstaða |
 |---|---|
 | `lang`, ein `h1`, fyrirsagnir, kennileiti | Stenst á öllum 12 síðum |
-| Textaandstæða í báðum þemum | Stenst, sjá kafla 2 |
+| Textaandstæða í báðum þemum | Stenst, sjá kafla 2. **Lagað:** svör á `mbl-regex` voru 1,63:1 í dökku þema (`--adal-700`); nota nú `--tengill-yfir` |
 | Litur ekki eina merkingin | Stenst (valmynd: `aria-current` + fylling + feitt letur; stöðumerki hafa texta) |
 | Lyklaborð: fyrsta Tab, fókusumgjörð | Stenst. Fyrsta Tab fer á „Fara beint í efni“; allir fókusanlegir hlutir hafa umgjörð |
 | Töflur | Stenst (ein tafla, á Skjálftavaktinni: `caption` + `scope="col"`) |
 | Snertifletir 44 × 44 px | **Lagað:** brauðmylsnutengillinn „Þema“ var 39 px breiður; fær `min-width`. Aðrir stakir tenglar ≥ 44 × 44 |
-| 320 px án lárétts skruns | Stenst á öllum 12 síðum í báðum þemum |
+| 320 px án lárétts skruns | **Lagað:** `hagstofan` (648 px) og `skjalftavaktin` (660 px) skrunuðu lárétt því súla gagnahlutans þandist út; `gagnahluti.css` og `stada-gagna.css` laga það. Nú 320 á öllum 12 síðum |
 | Console án villu eða viðvörunar | **Lagað:** tvær villur á Skjálftavaktinni (sjá hér að neðan). Engin villa á neinni síðu eftir það |
 | Án JavaScript | Stenst: meginmál og valmynd eru í HTML; Skjálftavaktin sýnir tengil á JSON-skrána |
 
