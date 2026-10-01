@@ -4,6 +4,8 @@
 
 .gagnahluti {
   display: grid;
+  /* minmax(0, …): breið tafla má ekki þenja súluna út fyrir skjáinn (regla 3.5). */
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--bil-4);
   margin-block: var(--bil-8);
 }
@@ -14,6 +16,7 @@
    heldur efninu földu án JS og í villuástandi. */
 .gagnahluti [data-gogn-efni]:not([hidden]) {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--bil-6);
 }
 
