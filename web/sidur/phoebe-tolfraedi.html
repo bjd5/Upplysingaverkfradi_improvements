@@ -14,7 +14,14 @@
   <link rel="stylesheet" href="../assets/css/components/sidu-haus.css">
   <link rel="stylesheet" href="../assets/css/components/bidstada.css">
   <link rel="stylesheet" href="../assets/css/components/naesta-skref.css">
+  <link rel="stylesheet" href="../assets/css/components/stada-gagna.css">
+  <link rel="stylesheet" href="../assets/css/components/gagnahluti.css">
+  <link rel="stylesheet" href="../assets/css/components/myndrit.css">
+  <link rel="stylesheet" href="../assets/css/components/stolparit.css">
   <script src="../assets/js/valmynd.js" defer></script>
+  <script src="../assets/js/gogn.js" defer></script>
+  <script src="../assets/js/gagnahluti.js" defer></script>
+  <script src="../assets/js/phoebe-myndrit.js" defer></script>
 </head>
 <body class="sida">
 
@@ -64,18 +71,18 @@
         <div class="sidu-haus__adal">
           <p class="sidu-haus__flokkur">Friends 02 · Tölfræði</p>
           <h1>Plass, nærvera og tengsl Phoebe</h1>
-          <p class="sidu-haus__inngangur">Hversu mikið pláss fær Phoebe Buffay í Friends? Línur, senur og samtöl hennar borin saman við hinar aðalpersónurnar fimm.</p>
+          <p class="sidu-haus__inngangur">Fær Phoebe sinn sjötta hluta af plássinu í Friends? Þrjú mælitæki svara því: pláss, nærvera og tengsl.</p>
         </div>
         <aside class="sidu-haus__hlid" aria-labelledby="stadreyndir-titill">
           <h2 class="sidu-haus__hlid-titill" id="stadreyndir-titill">Um þessa síðu</h2>
           <dl class="stadreyndir">
             <div>
               <dt>Heimild</dt>
-              <dd>Handrit Friends — 236 þættir</dd>
+              <dd>Handrit Friends, afrit aðdáenda</dd>
             </div>
             <div>
-              <dt>Mælieiningar</dt>
-              <dd>Línur, senur og samtalspör</dd>
+              <dt>Mælitæki</dt>
+              <dd>Pláss, nærvera og tengsl</dd>
             </div>
             <div>
               <dt>Höfundarréttur</dt>
@@ -83,24 +90,169 @@
             </div>
             <div>
               <dt>Staða síðunnar</dt>
-              <dd>Beinagrind — greining í vinnslu</dd>
+              <dd>Greining birt</dd>
             </div>
           </dl>
         </aside>
       </div>
 
-      <article class="efni" aria-labelledby="efni-titill">
-        <h2 id="efni-titill">Greiningin</h2>
-        <div class="bidstada">
-          <p class="bidstada__merki">
-            <span class="bidstada__punktur" aria-hidden="true"></span>
-            Efni í vinnslu
-          </p>
-          <p class="bidstada__skyring">
-            Greiningin birtist hér þegar gögnin eru tilbúin. Þangað til má lesa
-            um <a href="adferdafraedi.html">aðferðina</a>.
-          </p>
+      <article class="efni" aria-labelledby="efni-titill" data-skra="phoebe-tolfraedi.json">
+        <h2 id="efni-titill">Spurningin</h2>
+        <p>Sex vinir deila þáttunum. Jafn hlutur væri einn sjötti hvert. Fær Phoebe sinn hluta?</p>
+
+        <h2 id="svar-titill">Stutta svarið</h2>
+        <dl class="stadreyndir">
+            <div><dt>Hlutdeild Phoebe af línum vinanna sex (%)</dt><dd data-rod="lysigogn.plass_alls[persona=Phoebe]" data-reitur="hlutdeild_prosent">14,72</dd></div>
+            <div><dt>Jafn hlutur, einn sjötti (%)</dt><dd data-rod="lysigogn" data-reitur="jafn_hlutur_prosent">16,67</dd></div>
+            <div><dt>Sæti Phoebe eftir línum, af sex</dt><dd data-rod="lysigogn.plass_alls[persona=Phoebe]" data-reitur="saeti">6</dd></div>
+        </dl>
+        <p>Nei, ekki alveg. Phoebe er í sjötta sæti og undir jöfnum hlut í öllum tíu þáttaröðum. Hún er þó oft nefnd, og tveir vinir tala meira við hana en málgleði þeirra skýrir.</p>
+
+        <h2 id="maelitaeki-titill">Þrjú mælitæki</h2>
+        <div class="gagnahluti" data-gogn="phoebe-tolfraedi.json" data-gogn-teiknari="phoebe-tolfraedi">
+        <noscript>
+          <p class="gogn-stada">Myndritin eru teiknuð með JavaScript. Án þess má lesa
+          tölurnar í töflunum hér á síðunni eða í <a href="../gogn/phoebe-tolfraedi.json">gagnaskránni</a>.</p>
+        </noscript>
+
+          <section aria-labelledby="plass-titill">
+            <h3 id="plass-titill">1. Pláss</h3>
+            <p>Plássið er hlutdeild Phoebe af línum vinanna sex. Hver þáttaröð fær eina súlu; strikaða línan sýnir jafnan hlut.</p>
+        <figure class="myndrit">
+          <div data-gogn-efni hidden>
+            <div data-myndrit="plass"></div>
+          </div>
+          <figcaption class="myndrit__skyring">Hlutdeild Phoebe af línum vinanna sex, eftir þáttaröðum.</figcaption>
+          <details class="myndrit__gogn">
+            <summary>Sjá tölurnar sem töflu</summary>
+          <div class="tafla-umgjord"><table class="gagnatafla">
+              <caption>Línur og hlutdeild vinanna sex yfir alla þættina</caption>
+              <thead><tr><th scope="col">Persóna</th><th scope="col" class="gagnatafla__tala">Línur</th><th scope="col" class="gagnatafla__tala">Hlutdeild (%)</th><th scope="col" class="gagnatafla__tala">Sæti</th></tr></thead>
+              <tbody>
+              <tr data-rod="lysigogn.plass_alls[persona=Rachel]"><th scope="row">Rachel</th><td class="gagnatafla__tala" data-reitur="linur">9.259</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">18,22</td><td class="gagnatafla__tala" data-reitur="saeti">1</td></tr>
+              <tr data-rod="lysigogn.plass_alls[persona=Ross]"><th scope="row">Ross</th><td class="gagnatafla__tala" data-reitur="linur">9.058</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">17,82</td><td class="gagnatafla__tala" data-reitur="saeti">2</td></tr>
+              <tr data-rod="lysigogn.plass_alls[persona=Chandler]"><th scope="row">Chandler</th><td class="gagnatafla__tala" data-reitur="linur">8.446</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">16,62</td><td class="gagnatafla__tala" data-reitur="saeti">3</td></tr>
+              <tr data-rod="lysigogn.plass_alls[persona=Monica]"><th scope="row">Monica</th><td class="gagnatafla__tala" data-reitur="linur">8.395</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">16,52</td><td class="gagnatafla__tala" data-reitur="saeti">4</td></tr>
+              <tr data-rod="lysigogn.plass_alls[persona=Joey]"><th scope="row">Joey</th><td class="gagnatafla__tala" data-reitur="linur">8.183</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">16,1</td><td class="gagnatafla__tala" data-reitur="saeti">5</td></tr>
+              <tr data-rod="lysigogn.plass_alls[persona=Phoebe]"><th scope="row">Phoebe</th><td class="gagnatafla__tala" data-reitur="linur">7.483</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">14,72</td><td class="gagnatafla__tala" data-reitur="saeti">6</td></tr>
+              </tbody>
+          </table></div>
+          <div class="tafla-umgjord"><table class="gagnatafla">
+              <caption>Phoebe eftir þáttaröðum</caption>
+              <thead><tr><th scope="col">Þáttaröð</th><th scope="col" class="gagnatafla__tala">Línur</th><th scope="col" class="gagnatafla__tala">Hlutdeild (%)</th><th scope="col" class="gagnatafla__tala">Sæti af sex</th></tr></thead>
+              <tbody>
+              <tr data-rod="gogn[thattarod=1,persona=Phoebe]"><th scope="row">1</th><td class="gagnatafla__tala" data-reitur="linur">637</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">13,34</td><td class="gagnatafla__tala" data-reitur="saeti">6</td></tr>
+              <tr data-rod="gogn[thattarod=2,persona=Phoebe]"><th scope="row">2</th><td class="gagnatafla__tala" data-reitur="linur">666</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">14,6</td><td class="gagnatafla__tala" data-reitur="saeti">5</td></tr>
+              <tr data-rod="gogn[thattarod=3,persona=Phoebe]"><th scope="row">3</th><td class="gagnatafla__tala" data-reitur="linur">793</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">15,13</td><td class="gagnatafla__tala" data-reitur="saeti">5</td></tr>
+              <tr data-rod="gogn[thattarod=4,persona=Phoebe]"><th scope="row">4</th><td class="gagnatafla__tala" data-reitur="linur">711</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">14,45</td><td class="gagnatafla__tala" data-reitur="saeti">6</td></tr>
+              <tr data-rod="gogn[thattarod=5,persona=Phoebe]"><th scope="row">5</th><td class="gagnatafla__tala" data-reitur="linur">813</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">15,17</td><td class="gagnatafla__tala" data-reitur="saeti">6</td></tr>
+              <tr data-rod="gogn[thattarod=6,persona=Phoebe]"><th scope="row">6</th><td class="gagnatafla__tala" data-reitur="linur">787</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">14,21</td><td class="gagnatafla__tala" data-reitur="saeti">6</td></tr>
+              <tr data-rod="gogn[thattarod=7,persona=Phoebe]"><th scope="row">7</th><td class="gagnatafla__tala" data-reitur="linur">800</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">14,84</td><td class="gagnatafla__tala" data-reitur="saeti">6</td></tr>
+              <tr data-rod="gogn[thattarod=8,persona=Phoebe]"><th scope="row">8</th><td class="gagnatafla__tala" data-reitur="linur">771</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">14,72</td><td class="gagnatafla__tala" data-reitur="saeti">5</td></tr>
+              <tr data-rod="gogn[thattarod=9,persona=Phoebe]"><th scope="row">9</th><td class="gagnatafla__tala" data-reitur="linur">808</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">15,13</td><td class="gagnatafla__tala" data-reitur="saeti">6</td></tr>
+              <tr data-rod="gogn[thattarod=10,persona=Phoebe]"><th scope="row">10</th><td class="gagnatafla__tala" data-reitur="linur">697</td><td class="gagnatafla__tala" data-reitur="hlutdeild_prosent">15,62</td><td class="gagnatafla__tala" data-reitur="saeti">4</td></tr>
+              </tbody>
+          </table></div>
+          </details>
+        </figure>
+          </section>
+
+          <section aria-labelledby="naervera-titill">
+            <h3 id="naervera-titill">2. Nærvera</h3>
+            <p>Nærveran mælir hve oft nafn Phoebe kemur fyrir í tali, á hvern þátt. Persóna getur verið nefnd þótt hún eigi enga línu í senunni.</p>
+        <figure class="myndrit">
+          <div data-gogn-efni hidden>
+            <div data-myndrit="naervera"></div>
+          </div>
+          <figcaption class="myndrit__skyring">Nafn Phoebe í tali á hvern þátt, eftir þáttaröðum.</figcaption>
+          <details class="myndrit__gogn">
+            <summary>Sjá tölurnar sem töflu</summary>
+          <div class="tafla-umgjord"><table class="gagnatafla">
+              <caption>Nafn Phoebe í tali eftir þáttaröðum</caption>
+              <thead><tr><th scope="col">Þáttaröð</th><th scope="col" class="gagnatafla__tala">Þættir</th><th scope="col" class="gagnatafla__tala">Nafn í tali</th><th scope="col" class="gagnatafla__tala">Á þátt</th></tr></thead>
+              <tbody>
+              <tr data-rod="lysigogn.naervera[thattarod=1]"><th scope="row">1</th><td class="gagnatafla__tala" data-reitur="thaettir">24</td><td class="gagnatafla__tala" data-reitur="i_tali">99</td><td class="gagnatafla__tala" data-reitur="i_tali_a_thatt">4,12</td></tr>
+              <tr data-rod="lysigogn.naervera[thattarod=2]"><th scope="row">2</th><td class="gagnatafla__tala" data-reitur="thaettir">24</td><td class="gagnatafla__tala" data-reitur="i_tali">125</td><td class="gagnatafla__tala" data-reitur="i_tali_a_thatt">5,21</td></tr>
+              <tr data-rod="lysigogn.naervera[thattarod=3]"><th scope="row">3</th><td class="gagnatafla__tala" data-reitur="thaettir">25</td><td class="gagnatafla__tala" data-reitur="i_tali">132</td><td class="gagnatafla__tala" data-reitur="i_tali_a_thatt">5,28</td></tr>
+              <tr data-rod="lysigogn.naervera[thattarod=4]"><th scope="row">4</th><td class="gagnatafla__tala" data-reitur="thaettir">24</td><td class="gagnatafla__tala" data-reitur="i_tali">119</td><td class="gagnatafla__tala" data-reitur="i_tali_a_thatt">4,96</td></tr>
+              <tr data-rod="lysigogn.naervera[thattarod=5]"><th scope="row">5</th><td class="gagnatafla__tala" data-reitur="thaettir">24</td><td class="gagnatafla__tala" data-reitur="i_tali">210</td><td class="gagnatafla__tala" data-reitur="i_tali_a_thatt">8,75</td></tr>
+              <tr data-rod="lysigogn.naervera[thattarod=6]"><th scope="row">6</th><td class="gagnatafla__tala" data-reitur="thaettir">25</td><td class="gagnatafla__tala" data-reitur="i_tali">164</td><td class="gagnatafla__tala" data-reitur="i_tali_a_thatt">6,56</td></tr>
+              <tr data-rod="lysigogn.naervera[thattarod=7]"><th scope="row">7</th><td class="gagnatafla__tala" data-reitur="thaettir">24</td><td class="gagnatafla__tala" data-reitur="i_tali">163</td><td class="gagnatafla__tala" data-reitur="i_tali_a_thatt">6,79</td></tr>
+              <tr data-rod="lysigogn.naervera[thattarod=8]"><th scope="row">8</th><td class="gagnatafla__tala" data-reitur="thaettir">24</td><td class="gagnatafla__tala" data-reitur="i_tali">123</td><td class="gagnatafla__tala" data-reitur="i_tali_a_thatt">5,12</td></tr>
+              <tr data-rod="lysigogn.naervera[thattarod=9]"><th scope="row">9</th><td class="gagnatafla__tala" data-reitur="thaettir">24</td><td class="gagnatafla__tala" data-reitur="i_tali">150</td><td class="gagnatafla__tala" data-reitur="i_tali_a_thatt">6,25</td></tr>
+              <tr data-rod="lysigogn.naervera[thattarod=10]"><th scope="row">10</th><td class="gagnatafla__tala" data-reitur="thaettir">18</td><td class="gagnatafla__tala" data-reitur="i_tali">100</td><td class="gagnatafla__tala" data-reitur="i_tali_a_thatt">5,56</td></tr>
+              </tbody>
+          </table></div>
+          </details>
+        </figure>
+          </section>
+
+          <section aria-labelledby="tengsl-titill">
+            <h3 id="tengsl-titill">3. Tengsl</h3>
+            <p>Tengslin mæla hve oft vinur talar rétt á undan eða eftir Phoebe. Málglaður vinur gerir það oftar hvort sem er.</p>
+            <p>Leiðréttingin deilir hlutdeild vinarins í samskiptum við Phoebe með hlutdeild hans í línum vinanna fimm. Gildi yfir einum þýðir að hann talar oftar við hana en málgleðin ein skýrir.</p>
+        <figure class="myndrit">
+          <div data-gogn-efni hidden>
+            <div data-myndrit="tengsl"></div>
+          </div>
+          <figcaption class="myndrit__skyring">Leiðrétt tengsl hvers vinar við Phoebe. Strikaða línan er gildið einn.</figcaption>
+          <details class="myndrit__gogn">
+            <summary>Sjá tölurnar sem töflu</summary>
+          <div class="tafla-umgjord"><table class="gagnatafla">
+              <caption>Samskipti vinanna fimm við Phoebe</caption>
+              <thead><tr><th scope="col">Persóna</th><th scope="col" class="gagnatafla__tala">Hlutdeild í samskiptum (%)</th><th scope="col" class="gagnatafla__tala">Hlutdeild í línum (%)</th><th scope="col" class="gagnatafla__tala">Lift</th></tr></thead>
+              <tbody>
+              <tr data-rod="lysigogn.tengsl[persona=Monica]"><th scope="row">Monica</th><td class="gagnatafla__tala" data-reitur="hlutdeild_radskipta_prosent">25,44</td><td class="gagnatafla__tala" data-reitur="vaent_hlutdeild_prosent">19,37</td><td class="gagnatafla__tala" data-reitur="lift">1,314</td></tr>
+              <tr data-rod="lysigogn.tengsl[persona=Rachel]"><th scope="row">Rachel</th><td class="gagnatafla__tala" data-reitur="hlutdeild_radskipta_prosent">25,29</td><td class="gagnatafla__tala" data-reitur="vaent_hlutdeild_prosent">21,36</td><td class="gagnatafla__tala" data-reitur="lift">1,184</td></tr>
+              <tr data-rod="lysigogn.tengsl[persona=Joey]"><th scope="row">Joey</th><td class="gagnatafla__tala" data-reitur="hlutdeild_radskipta_prosent">18,1</td><td class="gagnatafla__tala" data-reitur="vaent_hlutdeild_prosent">18,88</td><td class="gagnatafla__tala" data-reitur="lift">0,958</td></tr>
+              <tr data-rod="lysigogn.tengsl[persona=Ross]"><th scope="row">Ross</th><td class="gagnatafla__tala" data-reitur="hlutdeild_radskipta_prosent">16,61</td><td class="gagnatafla__tala" data-reitur="vaent_hlutdeild_prosent">20,9</td><td class="gagnatafla__tala" data-reitur="lift">0,795</td></tr>
+              <tr data-rod="lysigogn.tengsl[persona=Chandler]"><th scope="row">Chandler</th><td class="gagnatafla__tala" data-reitur="hlutdeild_radskipta_prosent">14,57</td><td class="gagnatafla__tala" data-reitur="vaent_hlutdeild_prosent">19,49</td><td class="gagnatafla__tala" data-reitur="lift">0,747</td></tr>
+              </tbody>
+          </table></div>
+          </details>
+        </figure>
+          </section>
         </div>
+
+      <h2 id="skilgreiningar-titill">Skilgreiningar</h2>
+      <dl class="stadreyndir">
+        <div>
+          <dt>Lína</dt>
+          <dd>Ein tilsvarsblokk, „Nafn: texti“. Hóplínur á borð við „All:“ eru ekki eignaðar neinum.</dd>
+        </div>
+        <div>
+          <dt>Orð</dt>
+          <dd>Töluð orð. Svigainnskot eins og „(hlær)“ eru sviðsleiðbeiningar og teljast ekki með.</dd>
+        </div>
+        <div>
+          <dt>Sena</dt>
+          <dd>Ný sena hefst í hvert sinn sem lína byrjar á „[Scene: …]“.</dd>
+        </div>
+        <div>
+          <dt>Phoebe</dt>
+          <dd>Phoebe Buffay. Phoebe Sr., Ursula og Mrs Buffay teljast ekki með.</dd>
+        </div>
+      </dl>
+
+      <h2 id="grunnur-titill">Gagnagrunnurinn</h2>
+      <p>Handritin eru lesin inn í SQL-gagnagrunn. Aðeins samantektir fara þaðan út á síðuna, aldrei texti handritanna.</p>
+      <dl class="stadreyndir" data-skra="phoebe-tolfraedi.json">
+            <div><dt>Handritsskrár</dt><dd data-rod="lysigogn.umfang" data-reitur="handritsskrar">227</dd></div>
+            <div><dt>Sýndir þættir</dt><dd data-rod="lysigogn.umfang" data-reitur="thaettir">236</dd></div>
+            <div><dt>Skrár með tvo þætti</dt><dd data-rod="lysigogn.umfang" data-reitur="skrar_med_tvo_thaetti">9</dd></div>
+            <div><dt>Undanskildar skrár</dt><dd data-rod="lysigogn.umfang" data-reitur="undanskildar_skrar">2</dd></div>
+            <div><dt>Tilsvarslínur</dt><dd data-rod="lysigogn.umfang.thattunargaedi" data-reitur="tilsvor">61.161</dd></div>
+            <div><dt>Óflokkaðar blokkir (%)</dt><dd data-rod="lysigogn.umfang.thattunargaedi" data-reitur="oflokkad_prosent">2,95</dd></div>
+      </dl>
+
+        <h2 id="takmarkanir-titill">Takmarkanir</h2>
+        <ul>
+          <li>Handritin eru afrit aðdáenda, ekki opinber texti. Talningar lýsa afritunum, ekki þáttunum sjálfum.</li>
+          <li>Í afritunum eru innsláttarvillur og ósamræmi í nöfnum, og hluti textans flokkast ekki.</li>
+          <li>Safnið delvinso/friends er notað því það lagar brotna HTML-byggingu í tveimur skrám. Niðurstöðurnar eru ekki háðar valinu.</li>
+          <li>Línufjöldi mælir ekki gæði hlutverks. Tengslin eru lýsandi, ekki orsakasamband.</li>
+          <li>Aðeins talnaniðurstöður eru birtar, enginn texti handritanna.</li>
+        </ul>
       </article>
 
       <nav class="naesta-skref" aria-labelledby="naesta-skref-titill">

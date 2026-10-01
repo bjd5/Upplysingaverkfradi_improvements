@@ -1,0 +1,39 @@
+/* stolparit.css — láréttar súlur teiknaðar í assets/js/phoebe-myndrit.js (issue #24)
+
+   Litirnir koma úr --myndrit-* (mældir í docs/myndrit.md). Viðmiðslínan er
+   strikuð og með texta — liturinn er aldrei eina merkingin (regla 3.3).      */
+
+.stolparit {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.stolparit__texti,
+.stolparit__gildi {
+  font-size: var(--texti-xs);
+  font-family: var(--letur-texti);
+  fill: var(--myndrit-texti);
+}
+
+.stolparit__gildi { font-weight: var(--thyngd-medium); }
+
+.stolparit__sula { fill: var(--myndrit-flotur); }
+
+.stolparit__grind {
+  stroke: var(--myndrit-grind);
+  stroke-width: var(--rammi-breidd);
+}
+
+.stolparit__vidmid {
+  stroke: var(--myndrit-null);
+  stroke-width: var(--fokus-breidd);
+  stroke-dasharray: var(--bil-1) var(--bil-1);
+}
+
+.stolparit__vidmid-texti {
+  font-size: var(--texti-xs);
+  font-family: var(--letur-texti);
+  font-weight: var(--thyngd-medium);
+  fill: var(--myndrit-null);
+}
