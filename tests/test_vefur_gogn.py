@@ -187,10 +187,12 @@ class GagnaskrarTest(unittest.TestCase):
     def test_hver_reitur_er_tala_eda_strengur_i_skranni(self) -> None:
         for sida in SIDUR:
             for hluti in greina_gogn(sida).hlutar:
-                gogn = lesa_gagnaskra(hluti["skra"])["gogn"]
+                skjal = lesa_gagnaskra(hluti["skra"])
                 for slod in hluti["reitir"]:
                     with self.subTest(sida=sida, reitur=slod):
-                        gildi = fletta(gogn, slod)
+                        # „lysigogn.“ leitar í lýsigögnum skrárinnar, annars í gogn.
+                        gildi = (fletta(skjal, slod) if slod.startswith("lysigogn.")
+                                 else fletta(skjal["gogn"], slod))
                         self.assertIsInstance(gildi, (int, float, str))
                         self.assertNotIsInstance(gildi, bool)
 
