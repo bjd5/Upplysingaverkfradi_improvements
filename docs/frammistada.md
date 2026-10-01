@@ -10,42 +10,40 @@ Mælt með Chromium 320 px breiðum, kaldri skyndiminni, yfir `localhost`.
 body, án þjöppunar þar sem þjónninn þjappar ekki — raunþjónn með gzip er
 minni). Allar tölur eru bæti.
 
-| Síða | Body | Flutningur | JSON sem hlaðið er |
+| Síða | Body | Flutningur | JSON og myndir sem hlaðið er |
 |---|---:|---:|---|
-| `index.html` | 50.762 | 53.044 | `yfirlit.json` |
-| `sidur/adferdafraedi.html` | 33.918 | 35.794 | — |
+| `index.html` | 51.199 | 53.481 | `yfirlit.json` |
+| `sidur/adferdafraedi.html` | 43.898 | 45.963 | — |
 | `sidur/friends-gagnasagan.html` | 32.637 | 34.513 | — |
-| `sidur/hagstofan.html` | 32.533 | 34.409 | — |
-| `sidur/mbl-regex.html` | 32.474 | 34.350 | — |
-| `sidur/phoebe-central-perk.html` | 32.636 | 34.512 | — |
+| `sidur/hagstofan.html` | 70.115 | 72.958 | `hagstofan.json` |
+| `sidur/mbl-regex.html` | 60.041 | 63.069 | `mbl.json` |
+| `sidur/phoebe-central-perk.html` | 66.409 | 69.810 | `central-perk.json` |
 | `sidur/phoebe-tmdb.html` | 32.576 | 34.452 | — |
-| `sidur/phoebe-tolfraedi.html` | 32.706 | 34.582 | — |
+| `sidur/phoebe-tolfraedi.html` | 90.836 | 94.238 | `phoebe-tolfraedi.json` |
 | `sidur/phoebe-tribute.html` | 32.391 | 34.267 | — |
-| `sidur/skjalftavaktin.html` | 59.170 | 62.010 | `skjalftar.json` |
+| `sidur/skjalftavaktin.html` | 99.857 | 102.893 | `skjalftar.json` + 1 SVG-mynd |
 | `sidur/uppahalds-video.html` | 32.500 | 34.376 | — |
-| `sidur/vedurstodvar.html` | 32.491 | 34.367 | — |
+| `sidur/vedurstodvar.html` | 44.536 | 46.600 | — |
 
-Stærsta síðan er um 12 % af þakinu.
+Stærsta síðan (`skjalftavaktin.html`) er um 20 % af þakinu.
 
 - **Ytri beiðnir:** engar. Allar beiðnir fara á sama upprunann; engin CDN,
   engin framework.
 - **Letur:** engin vefletur eru hlaðin. Tokens vísa í kerfisletur, svo
   engin þyngd er sótt.
-- **Myndir:** engin `<img>` er á síðunum núna. SVG-myndir í
-  `web/assets/img/` (favicon og myndrit) eru teiknaðar vektorar úr Python;
-  SVG er réttara en WebP fyrir línur og texta og er því undanskilið
-  WebP-kröfunni. Rastamyndir skulu vera WebP með `width`, `height` og
-  `loading="lazy"` neðan við fold.
-- **JSON:** aðeins skrárnar sem síða sækir telja. `hagstofan.json`,
-  `mbl.json`, `phoebe-tolfraedi.json` og `vedurstodvar.json` eru ekki sóttar
-  af neinni síðu enn.
+- **Myndir:** aðeins `skjalftavaktin.html` hefur `<img>` (SVG-myndrit, ljóst og
+  dökkt; vafrinn sækir eina). SVG er réttara en WebP fyrir línur og texta og
+  er undanskilið WebP-kröfunni. Rastamyndir skulu vera WebP með `width`,
+  `height` og `loading="lazy"` neðan við fold.
+- **JSON:** hver síða sækir aðeins sína skrá. `vedurstodvar.json` er ekki sótt
+  af neinni síðu.
 - **Skriftur:** allar með `defer`.
-- **Án JavaScript:** allar síður eru læsilegar og engin lárétt skrun
-  (`scrollWidth` = 320). Efnið í `main` er til staðar; gagnareitir fyllast
-  aðeins með JavaScript.
-- **Console:** engin villa nema á `skjalftavaktin.html`, þar sem
-  `samantekt.*` vantar í `skjalftar.json` (óskylt stærðinni; prófið
-  `test_vefur_gogn` fellur af sömu ástæðu).
+- **Án JavaScript:** allar síður læsilegar (12/12), engin lárétt skrun
+  (`scrollWidth` = 320). Gagnareitir og myndrit fyllast aðeins með JavaScript.
+- **Console:** engin villa á neinni síðu, með og án JavaScript.
+- **Þekkt frávik (320 px, með JavaScript):** `hagstofan.html` hefur
+  `scrollWidth` 648 og `skjalftavaktin.html` 660, þ.e. lárétt skrun, sem
+  brýtur reglu 3.5. Það er óskylt stærðinni og bíður lagfæringar.
 
 ## 2. Hvernig mælingin er endurtekin
 
