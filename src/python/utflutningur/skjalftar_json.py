@@ -1,15 +1,18 @@
 """Útflutningur Skjálftavaktarinnar í ``web/gogn/skjalftar.json`` (issue #15, #20).
 
 Tölurnar koma **eingöngu úr grunninum** (migration 002) gegnum
-``src/sql/queries/skjalftar-*.sql``. Skráin ber það sem
-``web/sidur/skjalftavaktin.html`` þarf:
+``src/sql/queries/skjalftar-*.sql``. ``gogn`` er hlutur — síðan les reiti
+inni í ``gogn`` (``data-gogn-reitur``, docs/vefur-gogn.md), svo samantektin
+verður að vera þar en ekki í ``lysigogn``:
 
-* ``gogn`` — ein lína á hvern UTC-dag tímabilsins, **líka dagana án atburðar**:
-  fjöldi atburða og hlaupandi 7 daga meðaltal (glugginn endar á deginum;
-  ``dagar_i_glugga`` < 7 fyrstu sex dagana).
-* ``lysigogn`` — beiðnin sem var send og afmörkun hennar, samantektin
-  (334 atburðir, 61 dagur, dagleg dreifing, dýpt), stærð innan hvers
-  stærðarkvarða og mánaðarsamtölurnar.
+* ``samantekt`` — 334 atburðir, 61 dagur, dagleg dreifing og dýpt.
+* ``dagar`` — ein lína á hvern UTC-dag tímabilsins, **líka dagana án
+  atburðar**: fjöldi atburða og hlaupandi 7 daga meðaltal (glugginn endar á
+  deginum; ``dagar_i_glugga`` < 7 fyrstu sex dagana).
+* ``staerd_eftir_kvarda`` — stærð innan hvers kvarða; ``manudir`` — mánaðartölur;
+  ``syni`` — fyrstu átta atburðirnir, frumgildin óbreytt.
+
+``lysigogn`` geymir söfnunarlýsinguna: beiðnina sem var send og afmörkun hennar.
 
 **Af hverju ``uppfaert`` er sóknartíminn úr provenance.json.** Migration 002
 geymir ekki hvenær svarið var sótt og skjálftahleðslan skráir sig ekki í
@@ -112,6 +115,16 @@ def _manudir(samband: Connection) -> list[dict[str, Any]]:
     ]
 
 
+def _syni(samband: Connection) -> list[dict[str, Any]]:
+    """Fyrstu atburðirnir með frumgildin óbreytt — lesandinn sér hvað er í hrágögnunum."""
+    return [
+        {"audkenni": r["event_id"], "timi": r["occurred_at"], "staerd": r["magnitude"],
+         "kvardi": r["magnitude_type"], "dypt_km": r["depth_km"],
+         "breidd": r["latitude"], "lengd": r["longitude"]}
+        for r in fyrirspurnir.keyra(samband, "skjalftar-syni")
+    ]
+
+
 def byggja(samband: Connection, provenance: Path = PROVENANCE) -> dict[str, Any]:
     """Les grunninn og skilar sannreyndu umslagi fyrir ``skjalftar.json``."""
     uppruni = lesa_provenance(provenance)
@@ -121,14 +134,18 @@ def byggja(samband: Connection, provenance: Path = PROVENANCE) -> dict[str, Any]
     samantekt = _samantekt(samband)
     if samantekt["dagar"] != len(gogn) or samantekt["atburdir"] != sum(d["fjoldi"] for d in gogn):
         raise UtflutningsVilla("Samantektin og dagatalningin segja ekki sömu sögu.")
+    efni = {
+        "samantekt": samantekt,
+        "dagar": gogn,
+        "staerd_eftir_kvarda": _staerdir(samband),
+        "manudir": _manudir(samband),
+        "syni": _syni(samband),
+    }
     lysigogn = {
         "sokn": {"endapunktur": uppruni["endpoint"], "faeribreytur": uppruni["parameters"],
                  "hraskra": HRASKRA, "leyfi": uppruni["license"],
                  "leyfi_slod": uppruni.get("license_url")},
-        "samantekt": samantekt,
-        "staerd_eftir_kvarda": _staerdir(samband),
-        "manudir": _manudir(samband),
         "aukastafir": AUKASTAFIR,
     }
     return byggja_umslag(uppfaert=uppruni["fetched_at_utc"], heimild=_heimild(uppruni),
-                         gogn=gogn, lysigogn=lysigogn)
+                         gogn=efni, lysigogn=lysigogn)

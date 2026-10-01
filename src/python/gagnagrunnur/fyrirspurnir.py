@@ -57,6 +57,7 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "skjalftar-manadartalning",
     "skjalftar-staerd-eftir-kvarda",
     "skjalftar-dypt",
+    "skjalftar-syni",
     # Hagstofan
     "hagstofan-hlutfoll",
     "hagstofan-munur",
