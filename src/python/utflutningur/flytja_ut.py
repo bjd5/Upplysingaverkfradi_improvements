@@ -39,7 +39,8 @@ from typing import Any
 from gagnagrunnur.fyrirspurnir import FyrirspurnaVilla
 from gagnagrunnur.tenging import ROT, opna, slod_grunns
 
-from . import hagstofan_json, mbl_json, phoebe_json, skjalftar_json, vedurstodvar_json
+from . import central_perk_json, hagstofan_json, mbl_json, phoebe_json, skjalftar_json
+from . import vedurstodvar_json
 from . import yfirlit_json
 from .json_skrif import UtflutningsVilla, sem_baeti, skrifa_allar_atomiskt
 
@@ -54,6 +55,7 @@ UTFLUTNINGAR: dict[str, Callable[[Connection], dict[str, Any]]] = {
     vedurstodvar_json.SKRAARHEITI: vedurstodvar_json.byggja,
     mbl_json.SKRAARHEITI: mbl_json.byggja,
     phoebe_json.SKRAARHEITI: phoebe_json.byggja,
+    central_perk_json.SKRAARHEITI: central_perk_json.byggja,
 }
 
 
@@ -65,10 +67,8 @@ SKRAR: tuple[str, ...] = (*UTFLUTNINGAR, yfirlit_json.SKRAARHEITI)
 UTFLUTNINGSVILLUR = (UtflutningsVilla, FyrirspurnaVilla, sqlite3.Error, OSError)
 
 # Söfn sem eru hlaðin í grunninn en eiga enn engan útflutning (#15).
-# Central Perk er í grunninum (#71, migration 007) en á ekki útflutning enn;
 # TMDB var aldrei fryst og er ekki í grunninum.
 AN_UTFLUTNINGS: tuple[str, ...] = (
-    "Central Perk (phoebe-central-perk.html)",
     "TMDB (phoebe-tmdb.html) — ekki í grunninum",
 )
 
