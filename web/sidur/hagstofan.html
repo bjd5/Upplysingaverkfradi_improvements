@@ -12,9 +12,13 @@
   <link rel="stylesheet" href="../assets/css/components/braudmylsna.css">
   <link rel="stylesheet" href="../assets/css/components/undirvalmynd.css">
   <link rel="stylesheet" href="../assets/css/components/sidu-haus.css">
-  <link rel="stylesheet" href="../assets/css/components/bidstada.css">
+  <link rel="stylesheet" href="../assets/css/components/stada-gagna.css">
+  <link rel="stylesheet" href="../assets/css/components/gagnahluti.css">
   <link rel="stylesheet" href="../assets/css/components/naesta-skref.css">
   <script src="../assets/js/valmynd.js" defer></script>
+  <script src="../assets/js/gogn.js" defer></script>
+  <script src="../assets/js/gagnahluti.js" defer></script>
+  <script src="../assets/js/hagstofan.js" defer></script>
 </head>
 <body class="sida">
 
@@ -62,7 +66,7 @@
         <div class="sidu-haus__adal">
           <p class="sidu-haus__flokkur">Viðauki A · Vefþjónustur</p>
           <h1>Brautskráning af háskólastigi</h1>
-          <p class="sidu-haus__inngangur">Hve stór hluti þeirra sem hófu háskólanám 2017 hafði lokið því sex árum síðar, eftir námssviði og kyni. Tölurnar koma frá Hagstofu Íslands.</p>
+          <p class="sidu-haus__inngangur">Hve stór hluti háskólanema hafði lokið námi sex árum eftir innritun, eftir námssviði og kyni. Tölurnar koma frá Hagstofu Íslands.</p>
         </div>
         <aside class="sidu-haus__hlid" aria-labelledby="stadreyndir-titill">
           <h2 class="sidu-haus__hlid-titill" id="stadreyndir-titill">Um þessa síðu</h2>
@@ -79,26 +83,67 @@
               <dt>Snið</dt>
               <dd>json-stat2</dd>
             </div>
-            <div>
-              <dt>Staða síðunnar</dt>
-              <dd>Beinagrind — greining í vinnslu</dd>
-            </div>
           </dl>
         </aside>
       </div>
 
       <article class="efni" aria-labelledby="efni-titill">
-        <h2 id="efni-titill">Greiningin</h2>
-        <div class="bidstada">
-          <p class="bidstada__merki">
-            <span class="bidstada__punktur" aria-hidden="true"></span>
-            Efni í vinnslu
-          </p>
-          <p class="bidstada__skyring">
-            Greiningin birtist hér þegar gögnin eru tilbúin. Þangað til má lesa
-            um <a href="adferdafraedi.html">aðferðina</a>.
-          </p>
-        </div>
+        <h2 id="efni-titill">Niðurstaðan</h2>
+
+        <section class="gagnahluti" data-gogn="hagstofan.json"
+                 data-gogn-teiknari="hagstofan-nidurstodur"
+                 aria-labelledby="nidurstada-titill">
+          <h3 id="nidurstada-titill">Hve margir luku náminu?</h3>
+          <noscript>
+            <p class="gogn-stada">Tölurnar eru settar inn með JavaScript. Án þess má lesa
+            þær í <a href="../gogn/hagstofan.json">gagnaskránni</a>.</p>
+          </noscript>
+          <div data-gogn-efni hidden>
+            <dl class="stadreyndir">
+              <div>
+                <dt>Brautskráðir, öll svið og bæði kyn</dt>
+                <dd><span data-gogn-reitur="0.brautskradir"></span>%</dd>
+              </div>
+              <div>
+                <dt>Brautskráðir, karlar</dt>
+                <dd><span data-gogn-reitur="1.brautskradir"></span>%</dd>
+              </div>
+              <div>
+                <dt>Brautskráðar, konur</dt>
+                <dd><span data-gogn-reitur="2.brautskradir"></span>%</dd>
+              </div>
+              <div>
+                <dt>Brautskráðir í verkfræði</dt>
+                <dd><span data-gogn-reitur="9.brautskradir"></span>%</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <h2 id="adferd-titill">Aðferðin</h2>
+        <p>PxWeb er vefþjónusta Hagstofunnar. Hún geymir hverja töflu með víddum, svo sem námssviði og kyni.</p>
+        <p>Við sendum POST-beiðni með skjali sem velur gildi í hverri vídd. Þjónustan svarar í json-stat2, sniði sem lýsir víddunum og geymir mælingarnar í einum flötum lista.</p>
+        <p>Árgangurinn er einn og tímapunkturinn fastur. Innritunarárið er það nýjasta sem hefur fengið fullar sex árin í töflunni; eldri árgangar eru ekki bornir saman hér.</p>
+
+        <section class="gagnahluti" data-gogn="hagstofan.json"
+                 data-gogn-teiknari="hagstofan-adferd"
+                 aria-labelledby="beidni-titill">
+          <h3 id="beidni-titill">Beiðnin og svarið</h3>
+          <noscript>
+            <p class="gogn-stada">Beiðnin og svarið eru sett inn með JavaScript. Án þess má lesa
+            þau í <a href="../gogn/hagstofan.json">gagnaskránni</a>.</p>
+          </noscript>
+          <div data-gogn-efni hidden></div>
+        </section>
+
+        <h2 id="takmarkanir-titill">Takmarkanir</h2>
+        <p>Tölurnar mæla stöðuna sex árum eftir innritun, ekki hvort nám kláraðist á tilsettum tíma.</p>
+        <p>Þær eru prósentur, ekki fjöldi, svo óvissa og marktækni eru ekki metnar. Aðeins einn árgangur er skoðaður, svo engin þróun er mæld.</p>
+
+        <h2 id="heimild-titill">Heimild</h2>
+        <p>Hagstofa Íslands, nemendaskrá og prófaskrá. Taflan SKO04208b er sótt í gegnum
+        <a href="https://px.hagstofa.is/pxis/api/v1/is/Samfelag/skolamal/4_haskolastig/1_hsProf/SKO04208b.px">PxWeb-viðmót Hagstofunnar</a>.
+        Sóknardagsetningin stendur undir hverjum gagnahluta hér að ofan.</p>
       </article>
 
       <nav class="naesta-skref" aria-labelledby="naesta-skref-titill">
