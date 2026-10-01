@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="../assets/css/components/braudmylsna.css">
   <link rel="stylesheet" href="../assets/css/components/undirvalmynd.css">
   <link rel="stylesheet" href="../assets/css/components/sidu-haus.css">
-  <link rel="stylesheet" href="../assets/css/components/bidstada.css">
+  <link rel="stylesheet" href="../assets/css/components/flaedi.css">
+  <link rel="stylesheet" href="../assets/css/components/gagnahluti.css">
   <link rel="stylesheet" href="../assets/css/components/naesta-skref.css">
   <script src="../assets/js/valmynd.js" defer></script>
 </head>
@@ -77,11 +78,11 @@
             </div>
             <div>
               <dt>Skjölun</dt>
-              <dd><code>docs/heimildir.md</code> og <code>docs/adferdafraedi.md</code></dd>
+              <dd>Heimildir, takmarkanir og rekjanleiki á þessari síðu</dd>
             </div>
             <div>
               <dt>Staða síðunnar</dt>
-              <dd>Beinagrind — kaflar í vinnslu</dd>
+              <dd>Fullbúin — fimm kaflar</dd>
             </div>
           </dl>
         </aside>
@@ -91,56 +92,220 @@
 
         <h2 id="flaedi-titill">Gagnaflæðið</h2>
         <p>
-          Hvert skref skilar skrá sem næsta skref les. Þess vegna má
-          endurreikna hverja tölu frá upprunalegu svari vefþjónustunnar.
+          Gögnin fara í eina átt, í fimm skrefum. Hvert skref skilar skrá sem
+          næsta skref les.
         </p>
-        <ol>
-          <li>
-            <strong>Söfnun.</strong> Kallað er í vefþjónustuna og svarið vistað
-            óbreytt í <code>data/raw/</code> með tímastimpli. Hrágögnum er
-            aldrei breytt eftir á.
+        <ol class="flaedi">
+          <li class="flaedi__skref">
+            <span class="flaedi__heiti">Vefþjónusta</span>
+            <span class="flaedi__lysing">Veðurstofan, Hagstofan, mbl.is</span>
           </li>
-          <li>
-            <strong>Hreinsun.</strong> Gögnin eru samræmd, villur skráðar og
-            forsendur sem gefnar eru skjalfestar.
+          <li class="flaedi__skref">
+            <span class="flaedi__heiti">Hrágögn</span>
+            <span class="flaedi__lysing"><code>data/raw/</code> — svarið óbreytt, með tímastimpli</span>
           </li>
-          <li>
-            <strong>Geymsla.</strong> Hreinsuðu gögnin fara í SQL-grunninn, sem
-            verður eingöngu til úr númeruðum migration-skrám.
+          <li class="flaedi__skref">
+            <span class="flaedi__heiti">SQL-grunnur</span>
+            <span class="flaedi__lysing">Hreinsað og geymt; byggt úr númeruðum migration-skrám</span>
           </li>
-          <li>
-            <strong>Útflutningur.</strong> Niðurstöður eru fluttar út sem JSON
-            í <code>web/gogn/</code>, með uppfærsludagsetningu.
+          <li class="flaedi__skref">
+            <span class="flaedi__heiti">JSON-skrár</span>
+            <span class="flaedi__lysing"><code>web/gogn/</code> — með uppfærsludagsetningu</span>
+          </li>
+          <li class="flaedi__skref">
+            <span class="flaedi__heiti">Vefsíðan</span>
+            <span class="flaedi__lysing">Les aðeins JSON-skrárnar</span>
           </li>
         </ol>
         <p>
-          Síðan les aðeins tilbúnar skrár, aldrei vefþjónustu eða gagnagrunn
-          beint. Þess vegna er hún hröð og virkar þótt þjónusta liggi niðri.
+          Síðan talar aldrei við vefþjónustu eða gagnagrunn. Þess vegna er hún
+          hröð og virkar þótt þjónusta liggi niðri, og engin tala breytist án
+          þess að gögnin séu sótt og unnin upp á nýtt.
+        </p>
+        <p>
+          Hrágögnum er aldrei breytt eftir á. Gagnagrunnurinn og JSON-skrárnar
+          eru afleiður og eru endurbyggð úr hrágögnunum.
         </p>
 
         <h2 id="heimildir">Heimildir</h2>
-        <div class="bidstada">
-          <p class="bidstada__merki">
-            <span class="bidstada__punktur" aria-hidden="true"></span>
-            Efni í vinnslu
-          </p>
-          <p class="bidstada__skyring">
-            Hér birtist hvaðan hvert gagnasafn kom: þjónusta, slóð, dagsetning
-            og breytur.
-          </p>
+        <p>
+          Ein færsla á hvert gagnasafn. Skjálftagögnin og veðurstöðvagögnin eru
+          með leyfið CC BY 4.0, sem krefst þess að vísað sé til Veðurstofu
+          Íslands.
+        </p>
+        <div class="tafla-umgjord">
+          <table class="gagnatafla">
+            <caption>Gagnasöfn, þjónusta, sóknardagsetning og leyfi</caption>
+            <thead>
+              <tr>
+                <th scope="col">Gagnasafn</th>
+                <th scope="col">Þjónusta og slóð</th>
+                <th scope="col">Sótt (UTC)</th>
+                <th scope="col">Leyfi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Jarðskjálftar</th>
+                <td>Veðurstofa Íslands, Quakes API:
+                  <a href="https://api.vedur.is/quakes/openapi.json"><code>api.vedur.is/quakes/events</code></a></td>
+                <td>10. september 2026</td>
+                <td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Hagstofan</th>
+                <td>Hagstofa Íslands, PxWeb API:
+                  <a href="https://px.hagstofa.is/pxis/api/v1/is/Samfelag/skolamal/4_haskolastig/1_hsProf/SKO04208b.px"><code>px.hagstofa.is</code> — tafla SKO04208b</a></td>
+                <td>10. september 2026</td>
+                <td>Ekki staðfest</td>
+              </tr>
+              <tr>
+                <th scope="row">Veðurstöðvar</th>
+                <td>Veðurstofa Íslands, Weather API:
+                  <a href="https://api.vedur.is/weather/openapi.json"><code>api.vedur.is/weather/stations</code></a></td>
+                <td>24. september 2026</td>
+                <td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+              </tr>
+              <tr>
+                <th scope="row">mbl.is</th>
+                <td>Vefsíða, ekki vefþjónusta:
+                  <a href="https://www.mbl.is/frettir/"><code>mbl.is/frettir</code></a></td>
+                <td>16. september 2026</td>
+                <td>Ekkert gefið; höfundarréttarvarið. Aðeins talningar birtast.</td>
+              </tr>
+              <tr>
+                <th scope="row">Friends-handrit</th>
+                <td>Afrit aðdáenda í safni
+                  <a href="https://github.com/delvinso/friends-tv-show-analysis"><code>delvinso/friends-tv-show-analysis</code></a>,
+                  commit a4641fe frá 21. febrúar 2019</td>
+                <td>Greint 17. september 2026</td>
+                <td>MIT á kóða safnsins, ekki endilega á handritunum. Handritin sjálf eru ekki birt; aðeins tölur um þau.</td>
+              </tr>
+              <tr>
+                <th scope="row">TMDB</th>
+                <td>The Movie Database API v3:
+                  <a href="https://developer.themoviedb.org/reference/tv-series-details">skjölun</a></td>
+                <td>Ekki sótt</td>
+                <td>Ekkert eintak til, svo engin tala er birt</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <p>
+          Hnit Veðurstofunnar í Reykjavík (VR-II) voru flett upp í Nominatim
+          (OpenStreetMap) 3. september 2026. Leyfi þeirrar uppflettingar er ekki
+          staðfest.
+        </p>
 
         <h2 id="takmarkanir">Takmarkanir</h2>
-        <div class="bidstada">
-          <p class="bidstada__merki">
-            <span class="bidstada__punktur" aria-hidden="true"></span>
-            Efni í vinnslu
-          </p>
-          <p class="bidstada__skyring">
-            Hér birtast þekktar takmarkanir gagnanna, meðal annars hvaða
-            niðurstöður eru bundnar við tiltekna dagsetningu.
-          </p>
-        </div>
+        <p>
+          Takmarkanirnar eru hér á einum stað. Engin þeirra er falin á
+          einstökum síðum.
+        </p>
+
+        <h3>Jarðskjálftaúrtakið nær aðeins yfir hrinuna</h3>
+        <p>
+          Glugginn er 61 dagur utan um þekkta hrinu: 330 af 334 atburðum eru í
+          nóvember og 187 á einum degi. Miðgildi atburða á dag er 0 og 43 dagar
+          eru án atburðar, svo meðaltalið, 5,5 á dag, lýsir engum degi. Rólegt
+          viðmiðunartímabil vantar.
+        </p>
+
+        <h3>Stærðarkvarðar eru ekki sambærilegir</h3>
+        <p>
+          Kvarðarnir <code>Mlw</code> og <code>Mw</code> eru ólíkir og blandast
+          aldrei. Hér er aðeins <code>Mlw</code>, eins og Veðurstofan skráir
+          hann. Hann er ekki Richter-kvarðinn, þótt tölurnar líti eins út.
+        </p>
+
+        <h3>Fylgni er ekki orsök</h3>
+        <p>
+          Skjálftaskráin mælir ekki kvikumagn og getur því ekki sagt hvort kvika
+          hafi safnast fyrir. Eins er það lýsandi fylgni, ekki sönnun, að
+          Phoebe tali hlutfallslega meira í þáttum þar sem hún syngur.
+        </p>
+
+        <h3>Hagstofutölurnar mæla stöðuna sex árum eftir innritun</h3>
+        <p>
+          Þær segja ekki hvort nám kláraðist á tilsettum tíma. Þær eru
+          prósentur, ekki fjöldi, svo óvissa og marktækni eru ekki metnar.
+          Aðeins einn árgangur (2017) er skoðaður, svo engin þróun er mæld.
+        </p>
+
+        <h3>Veðurstöðvarnar og mbl-eintakið eru frosin</h3>
+        <p>
+          Stöðvalistinn er eintak frá einum degi; breytingar eftir hann koma
+          ekki fram. mbl-eintakið er ein fréttasíða á einu augnabliki og segir
+          ekkert um fréttaflutning almennt.
+        </p>
+
+        <h3>mbl-tölurnar eru aðrar en á gömlu síðunni</h3>
+        <p>
+          Gamla síðan notaði eintak frá 7. september 2026 sem er glatað. Hér er
+          eintak frá 16. september. Tölurnar eru endurskapanlegar héðan í frá,
+          en samanburðurinn við gömlu síðuna tapaðist.
+        </p>
+
+        <h3>Handritin eru afrit aðdáenda, ekki opinber</h3>
+        <p>
+          Í þeim eru innsláttarvillur og ósamræmi í nöfnum, og 2,95% blokka
+          flokkast ekki. Talningar lýsa þessum afritum, ekki þáttunum sjálfum.
+        </p>
+
+        <h3>TMDB-gögnin vantar</h3>
+        <p>
+          Þau voru aldrei varðveitt og eru ekki sótt hér, svo ekkert er birt um
+          leikara eða þáttafjölda úr þeirri heimild.
+        </p>
+
+        <h3>Leyfi sumra gagna er óstaðfest</h3>
+        <p>
+          Leyfi Hagstofugagnanna og Nominatim-uppflettingarinnar hefur ekki
+          fundist. Ekkert úr þeim er fullyrt umfram það sem heimildin sjálf gefur.
+        </p>
+
+        <h2 id="rekjanleiki">Rekjanleiki</h2>
+        <p>
+          Hver tala á síðunni á sér leið aftur í hrágögn. Tökum 334 skjálfta
+          sem dæmi.
+        </p>
+        <ol>
+          <li>
+            Talan stendur í JSON-skránni
+            <a href="../gogn/skjalftar.json"><code>skjalftar.json</code></a>,
+            sem ber uppfærsludagsetningu og heimild.
+          </li>
+          <li>
+            Hún er reiknuð með fyrirspurn í SQL-grunninum. Fyrirspurnin tekur
+            breytur og er aldrei sett saman úr texta.
+          </li>
+          <li>
+            Grunnurinn er hlaðinn úr <code>data/raw/vedur-quakes/</code>, þar
+            sem svarið er geymt óbreytt: 93.233 bæti, SHA-256
+            <code>a535359e…71fa9a</code>.
+          </li>
+          <li>
+            Skráin <code>provenance.json</code> í sömu möppu segir hvaða slóð
+            var sótt, hvenær og með hvaða síum.
+          </li>
+        </ol>
+        <p>
+          Leiðin liggur líka til baka: sama skipun staðfestir að hrágögnin séu
+          ósnert.
+        </p>
+        <pre><code>python3 src/python/vidmid/provenance.py stadfesta</code></pre>
+
+        <h2 id="endurkeyranleiki">Endurkeyranleiki</h2>
+        <p>
+          Gagnagrunninn má eyða og byggja upp á ný án nets. Tvær hreinar
+          byggingar úr sömu hrágögnum eiga að gefa sama fingrafar, sem er
+          samantekt á innihaldi grunnsins.
+        </p>
+        <p>
+          Hrágögnin eru frosin með SHA-256 hverrar skráar. Viðmið úr gamla
+          verkefninu geymir 417 efnislegar tölur sem gamla síðan birti. Það
+          segir hvað sú síða birti, ekki hvað er rétt.
+        </p>
 
       </article>
 
