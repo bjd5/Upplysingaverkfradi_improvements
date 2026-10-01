@@ -200,7 +200,7 @@ kallar í `fetch`; ekkert `innerHTML`/`eval`; lagið hleðst á undan notendum
 sínum; hver `data-gogn`-skrá er til og á sniði reglu 5.4; hver
 `data-gogn-reitur` vísar á tölu eða streng í skránni; hver gagnahluti hefur
 `<noscript>` og falið efni; hver hook, teiknari og CSS-klasi sem JS notar er
-til; og JS-skrárnar eru undir 300 línum og 30 KB samanlagt.
+til; og JS-skrárnar eru undir 300 línum og 60 KB samanlagt.
 
 Vafraprófin (Chromium, Playwright) eru handkeyrð og ekki í `unittest`-safninu.
 Þau staðfestu 28.9.2026: engin villa í console, gögnin birtast, fimm

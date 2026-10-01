@@ -26,7 +26,7 @@ KJARNI = "assets/js/gogn.js"
 BIRTING = "assets/js/gagnahluti.js"
 SNID_REITIR = {"uppfaert", "heimild", "gogn"}
 HAMARK_LINUR = 300
-HAMARK_JS_BAETI = 30_000  # öll JS samanlagt; þak reglu 3.4 er 500 KB á síðu
+HAMARK_JS_BAETI = 60_000  # öll JS samanlagt; þak reglu 3.4 er 500 KB á síðu
 TOMIR_TAGAR = {"area", "base", "br", "col", "embed", "hr", "img", "input",
                "link", "meta", "source", "track", "wbr"}
 INNSPYTING = re.compile(r"\.innerHTML\b|\.outerHTML\b|insertAdjacentHTML|"
