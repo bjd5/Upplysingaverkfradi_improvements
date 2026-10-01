@@ -37,6 +37,7 @@ from dataclasses import dataclass
 from .vedurstodvar_faersla import Stod
 from .vedurstodvar_samanburdur import (
     AR_AFTUR_I_TIMANN,
+    METRAR_I_KM,
     RADIUS_KM,
     VIDMIDSAR,
     VR_II_BREIDD,
@@ -45,7 +46,6 @@ from .vedurstodvar_samanburdur import (
     kassi,
 )
 
-METRAR_I_KM = 1000
 PROSENT = 100
 
 

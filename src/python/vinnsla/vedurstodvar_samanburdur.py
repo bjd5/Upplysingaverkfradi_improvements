@@ -49,6 +49,11 @@ JORD_RADIUS_KM = 6371.0088
 VALIN_STOD = 1469  # stöðin sem gamla síðan valdi fyrir VR-II
 AR_AFTUR_I_TIMANN = 50
 VIDMIDSAR = 2026  # árið sem gamla síðan var byggð; 50 ár aftur = 1976
+# Kassinn um VR-II: breiddargráða er ~111 km og hnitin rúnnuð á fjóra
+# aukastafi, eins og í WKT-strengnum sem gamla skriftan sendi.
+KM_I_BREIDDARGRADU = 111.0
+HNITA_AUKASTAFIR = 4
+METRAR_I_KM = 1000
 
 # Staðreyndir sem viðmiðið fullyrðir í vedurstofa-nidurstada.md og
 # vedurstofa-svor.md. Þær eru ekki í töflu og því ekki þáttanlegar; þær eru
@@ -117,13 +122,13 @@ def kassi(breidd: float, lengd: float, radius_km: float) -> tuple[float, float, 
     111·cos(breidd). Hnitin eru rúnnuð á fjóra aukastafi eins og WKT-strengurinn
     sem var sendur, svo kassinn sé sá sami og þjónustan sá.
     """
-    d_breidd = radius_km / 111.0
-    d_lengd = radius_km / (111.0 * math.cos(math.radians(breidd)))
+    d_breidd = radius_km / KM_I_BREIDDARGRADU
+    d_lengd = radius_km / (KM_I_BREIDDARGRADU * math.cos(math.radians(breidd)))
     return (
-        round(lengd - d_lengd, 4),
-        round(breidd - d_breidd, 4),
-        round(lengd + d_lengd, 4),
-        round(breidd + d_breidd, 4),
+        round(lengd - d_lengd, HNITA_AUKASTAFIR),
+        round(breidd - d_breidd, HNITA_AUKASTAFIR),
+        round(lengd + d_lengd, HNITA_AUKASTAFIR),
+        round(breidd + d_breidd, HNITA_AUKASTAFIR),
     )
 
 
@@ -175,7 +180,8 @@ def lesa_vidmid_siur() -> dict[str, int]:
 def svor_nuna(stodvar: list[dict]) -> dict[str, tuple[int, str, int]]:
     """Reiknar sömu þrjú stöðvaval og viðmiðið fullyrðir, með fjarlægð í metrum."""
     med_fjarlaegd = sorted(
-        (dict(stod, metrar=round(haversine_km(VR_II_BREIDD, VR_II_LENGD, stod["lat"], stod["lon"]) * 1000))
+        (dict(stod, metrar=round(haversine_km(VR_II_BREIDD, VR_II_LENGD, stod["lat"], stod["lon"])
+                                 * METRAR_I_KM))
          for stod in stodvar if stod.get("lat") is not None and stod.get("lon") is not None),
         key=lambda stod: stod["metrar"],
     )

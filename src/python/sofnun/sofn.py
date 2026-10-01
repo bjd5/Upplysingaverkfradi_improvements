@@ -45,6 +45,13 @@ ENDIR = "2024-01-01T00:00:00+00:00"
 # fjögur.
 MARGHYRNINGUR = "POLYGON((-23 64.1,-23 63.7,-21.5 63.7,-21.5 64.1,-23 64.1))"
 
+# Stærðar- og dýptarmörk úrtaksins, bæði meðtalin. Heiltölur eins og í frosnu
+# beiðninni: `3.0` í stað `3` gæfi aðra beiðni og þar með annað fingrafar.
+STAERD_MIN = 3
+STAERD_MAX = 7
+DYPT_MIN_KM = 0
+DYPT_MAX_KM = 50
+
 # Opinbert útgáfunúmer þjónustunnar, ekki leyndarmál. Fast gildi svo svarsniðið
 # breytist ekki undir okkur þótt Veðurstofan gefi út nýja útgáfu.
 UTGAFA_THJONUSTU = "2026-08-06"
@@ -62,10 +69,10 @@ SKJALFTA_BEIDNI = Beidni(
     breytur={
         "start_time": UPPHAF,
         "end_time": ENDIR,
-        "depth_min": 0,
-        "depth_max": 50,
-        "size_min": 3,
-        "size_max": 7,
+        "depth_min": DYPT_MIN_KM,
+        "depth_max": DYPT_MAX_KM,
+        "size_min": STAERD_MIN,
+        "size_max": STAERD_MAX,
         "polygon": MARGHYRNINGUR,
         "type": "earthquake",
         "evaluation_mode": "manual",
