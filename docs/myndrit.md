@@ -188,9 +188,7 @@ rúmast líka í vafranum. Afleiðing: `DejaVu Sans` stendur í `font-family` í
 ## 7. Notkun á síðu (HTML-brot)
 
 Brotið sýnir mynstrið sem #20 setur á síðuna. Það er **ekki** í `web/sidur/`.
-Stíllinn fer í nýja skrá `web/assets/css/components/myndrit.css` um leið og
-síða tekur myndina í notkun (ónotuð stílskrá er ekki geymd, regla 6); ekkert
-inline (regla 2).
+Stíllinn er `web/assets/css/components/myndrit.css`; ekkert inline (regla 2).
 
 ```html
 <link rel="stylesheet" href="../assets/css/components/myndrit.css">
