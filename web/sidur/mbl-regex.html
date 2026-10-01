@@ -12,9 +12,14 @@
   <link rel="stylesheet" href="../assets/css/components/braudmylsna.css">
   <link rel="stylesheet" href="../assets/css/components/undirvalmynd.css">
   <link rel="stylesheet" href="../assets/css/components/sidu-haus.css">
-  <link rel="stylesheet" href="../assets/css/components/bidstada.css">
+  <link rel="stylesheet" href="../assets/css/components/mbl-regex.css">
+  <link rel="stylesheet" href="../assets/css/components/stada-gagna.css">
+  <link rel="stylesheet" href="../assets/css/components/gagnahluti.css">
   <link rel="stylesheet" href="../assets/css/components/naesta-skref.css">
   <script src="../assets/js/valmynd.js" defer></script>
+  <script src="../assets/js/gogn.js" defer></script>
+  <script src="../assets/js/gagnahluti.js" defer></script>
+  <script src="../assets/js/mbl-regex.js" defer></script>
 </head>
 <body class="sida">
 
@@ -62,39 +67,48 @@
         <div class="sidu-haus__adal">
           <p class="sidu-haus__flokkur">Viðauki C · Reglulegar segðir</p>
           <h1>Reglulegar segðir á fréttaforsíðu</h1>
-          <p class="sidu-haus__inngangur">Fyrirsagnir, tenglar og tímar dregnir út úr fréttasíðu mbl.is með reglulegum segðum. Greint er vistað eintak, ekki síðan eins og hún er í dag.</p>
+          <p class="sidu-haus__inngangur">Fimm spurningar um forsíðu mbl.is, svarað með reglulegum segðum. Mynstrin eru sýnd, hvert með svarinu sem það gaf.</p>
         </div>
         <aside class="sidu-haus__hlid" aria-labelledby="stadreyndir-titill">
           <h2 class="sidu-haus__hlid-titill" id="stadreyndir-titill">Um þessa síðu</h2>
           <dl class="stadreyndir">
             <div>
               <dt>Heimild</dt>
-              <dd>mbl.is — vistuð forsíða</dd>
+              <dd>mbl.is/frettir — eitt vistað eintak</dd>
             </div>
             <div>
               <dt>Aðferð</dt>
               <dd>Reglulegar segðir (<code>re</code> í Python-staðalsafninu)</dd>
             </div>
             <div>
-              <dt>Staða síðunnar</dt>
-              <dd>Beinagrind — greining í vinnslu</dd>
+              <dt>Sótt</dt>
+              <dd>16. september 2026</dd>
             </div>
           </dl>
         </aside>
       </div>
 
       <article class="efni" aria-labelledby="efni-titill">
-        <h2 id="efni-titill">Greiningin</h2>
-        <div class="bidstada">
-          <p class="bidstada__merki">
-            <span class="bidstada__punktur" aria-hidden="true"></span>
-            Efni í vinnslu
-          </p>
-          <p class="bidstada__skyring">
-            Greiningin birtist hér þegar gögnin eru tilbúin. Þangað til má lesa
-            um <a href="adferdafraedi.html">aðferðina</a>.
-          </p>
+        <h2 id="efni-titill">Fimm spurningar, fimm mynstur</h2>
+
+        <div class="mbl-vidvorun">
+          <p>Forsíða fréttamiðils breytist í sífellu. Tölurnar eiga aðeins við þetta eina eintak, sótt 16. september 2026, ekki við síðuna í dag.</p>
+          <p>Þær víkja frá gömlu útgáfunni þessarar síðu. Eintakið sem hún byggði á, frá 7. september 2026, er glatað. <a href="adferdafraedi.html">Nánar um takmarkanir</a>.</p>
         </div>
+
+        <section class="gagnahluti" data-gogn="mbl.json"
+                 data-gogn-teiknari="mbl-svor" aria-labelledby="eintak-titill">
+          <h3 id="eintak-titill">Eintakið sem var lesið</h3>
+          <noscript>
+            <p class="gogn-stada">Svörin og mynstrin eru sett inn með JavaScript. Án
+            þess má lesa þau úr <a href="../gogn/mbl.json">gagnaskránni</a>.</p>
+          </noscript>
+          <div data-gogn-efni hidden>
+            <dl class="stadreyndir" data-mbl-eintak></dl>
+            <p>Mynstrin hér að neðan eru ekki staðgengill HTML-þáttara. Þau lesa texta eintaksins eins og hann stendur, ekki uppbyggingu síðunnar.</p>
+            <div class="mbl-spjold" data-mbl-spjold></div>
+          </div>
+        </section>
       </article>
 
       <nav class="naesta-skref" aria-labelledby="naesta-skref-titill">

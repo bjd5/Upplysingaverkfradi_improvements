@@ -106,15 +106,10 @@
     renderers.set(name, render);
   }
 
-  const LYSIGOGN_FORSKEYTI = "lysigogn.";
-
   function fillFields(section, doc, fileName) {
     section.querySelectorAll("[data-gogn-reitur]").forEach(function (field) {
       const path = field.dataset.gognReitur;
-      // „lysigogn.“ vísar á lýsigögn skrárinnar (t.d. samantekt), annars er leitað í gogn.
-      const value = path.indexOf(LYSIGOGN_FORSKEYTI) === 0
-        ? data.valueAt(doc, path)
-        : data.valueAt(doc.gogn, path);
+      const value = data.valueAt(doc.gogn, path);
       if (typeof value !== "number" && typeof value !== "string") {
         throw new data.DataError("Gildið „" + path + "“ er ekki í „" + fileName + "“.",
                                  fileName);

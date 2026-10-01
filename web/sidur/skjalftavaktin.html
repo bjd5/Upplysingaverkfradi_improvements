@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components/braudmylsna.css">
   <link rel="stylesheet" href="../assets/css/components/sidu-haus.css">
-  <link rel="stylesheet" href="../assets/css/components/bidstada.css">
+  <link rel="stylesheet" href="../assets/css/components/myndrit.css">
   <link rel="stylesheet" href="../assets/css/components/naesta-skref.css">
   <link rel="stylesheet" href="../assets/css/components/stada-gagna.css">
   <link rel="stylesheet" href="../assets/css/components/gagnahluti.css">
@@ -69,14 +69,6 @@
               <dt>Tímabil</dt>
               <dd>1. nóvember 2023 – 1. janúar 2024</dd>
             </div>
-            <div>
-              <dt>Umfang</dt>
-              <dd>334 skráðir atburðir</dd>
-            </div>
-            <div>
-              <dt>Staða síðunnar</dt>
-              <dd>Beinagrind — greining í vinnslu</dd>
-            </div>
           </dl>
         </aside>
       </div>
@@ -84,45 +76,215 @@
       <article class="efni" aria-labelledby="efni-titill">
         <h2 id="efni-titill">Greiningin</h2>
 
-        <section class="gagnahluti" data-gogn="skjalftar.json"
-                 data-gogn-teiknari="skjalftar-manudir" aria-labelledby="urtak-titill">
-          <h3 id="urtak-titill">Úrtakið í tölum</h3>
+        <section class="gagnahluti" data-gogn="skjalftar.json" aria-labelledby="nidurstada-titill">
+          <h3 id="nidurstada-titill">Niðurstaðan</h3>
           <noscript>
             <p class="gogn-stada">Tölurnar hér eru settar inn með JavaScript. Án
             þess má lesa þær beint úr <a href="../gogn/skjalftar.json">gagnaskránni</a>.</p>
           </noscript>
           <div data-gogn-efni hidden>
+            <p>Hrinan var stutt og snörp. Af <span data-gogn-reitur="samantekt.atburdir"></span>
+            skjálftum urðu <span data-gogn-reitur="manudir.0.atburdir"></span> í nóvember,
+            og <span data-gogn-reitur="samantekt.daglegur_fjoldi.hamark"></span> á einum degi.</p>
+            <p><span data-gogn-reitur="samantekt.dagar_an_atburda"></span> af
+            <span data-gogn-reitur="samantekt.dagar"></span> dögum liðu án nokkurs skjálfta.</p>
+          </div>
+        </section>
+
+        <section class="gagnahluti" data-gogn="skjalftar.json" aria-labelledby="urtak-titill">
+          <h3 id="urtak-titill">Úrtakið</h3>
+          <noscript>
+            <p class="gogn-stada">Tölurnar hér eru settar inn með JavaScript. Án
+            þess má lesa þær beint úr <a href="../gogn/skjalftar.json">gagnaskránni</a>.</p>
+          </noscript>
+          <p>Aðeins yfirfarnir skjálftar af stærð 3 til 7, á 0–50 km dýpi, innan
+          reits á Reykjanesskaga. Nákvæm beiðni er í kaflanum um rekjanleika.</p>
+          <div data-gogn-efni hidden>
             <dl class="stadreyndir">
               <div>
                 <dt>Atburðir</dt>
-                <dd data-gogn-reitur="lysigogn.samantekt.atburdir"></dd>
+                <dd data-gogn-reitur="samantekt.atburdir"></dd>
               </div>
               <div>
                 <dt>Dagar í úrtakinu</dt>
-                <dd data-gogn-reitur="lysigogn.samantekt.dagar"></dd>
+                <dd data-gogn-reitur="samantekt.dagar"></dd>
               </div>
               <div>
                 <dt>Dagar án atburðar</dt>
-                <dd data-gogn-reitur="lysigogn.samantekt.dagar_an_atburda"></dd>
+                <dd data-gogn-reitur="samantekt.dagar_an_atburda"></dd>
+              </div>
+              <div>
+                <dt>Flestir atburðir á einum degi</dt>
+                <dd data-gogn-reitur="samantekt.daglegur_fjoldi.hamark"></dd>
               </div>
               <div>
                 <dt>Miðgildi dýptar (km)</dt>
-                <dd data-gogn-reitur="lysigogn.samantekt.dypt_km.midgildi"></dd>
+                <dd data-gogn-reitur="samantekt.dypt_km.midgildi"></dd>
               </div>
             </dl>
           </div>
         </section>
 
-        <div class="bidstada">
-          <p class="bidstada__merki">
-            <span class="bidstada__punktur" aria-hidden="true"></span>
-            Efni í vinnslu
-          </p>
-          <p class="bidstada__skyring">
-            Greiningin birtist hér þegar gögnin eru tilbúin. Þangað til má lesa
-            um <a href="adferdafraedi.html">aðferðina</a>.
-          </p>
-        </div>
+        <section aria-labelledby="timaror-titill">
+          <h3 id="timaror-titill">Tímaröð með dögum án atburðar</h3>
+          <p>Hver súla er einn dagur. Opinn hringur merkir dag án skjálfta.</p>
+          <figure class="myndrit" aria-labelledby="skjalftar-dagar-skyring">
+            <picture>
+              <source srcset="../assets/img/skjalftar-dagar-dokkt.svg"
+                      media="(prefers-color-scheme: dark)">
+              <img class="myndrit__mynd"
+                   src="../assets/img/skjalftar-dagar-ljost.svg"
+                   width="640" height="360" loading="lazy" decoding="async"
+                   alt="Stöplarit af fjölda skjálfta á dag á Reykjanesi frá 1. nóvember til 31. desember 2023. Virknin er mest 3.–11. nóvember og nær hámarki 10. nóvember með 187 atburði. Eftir miðjan nóvember eru flestir dagar án atburðar, 43 af 61 degi. Allar tölur eru í töflunni hér fyrir neðan.">
+            </picture>
+            <figcaption class="myndrit__skyring" id="skjalftar-dagar-skyring">
+              Skjálftar á hverjum degi. Y-ásinn er á lograkvarða.
+              Heimild: Veðurstofa Íslands (CC BY 4.0).
+            </figcaption>
+            <details class="myndrit__gogn">
+              <summary>Sjá tölurnar sem töflu (61 dagur)</summary>
+              <div class="tafla-umgjord">
+                <table>
+                  <caption class="skjalesari">Skjálftar á dag, 1. nóvember–31. desember 2023</caption>
+                  <thead>
+                    <tr><th scope="col">Dagur (UTC)</th><th scope="col">Atburðir</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1. nóv. 2023</td><td>1</td></tr>
+                    <tr><td>2. nóv. 2023</td><td>3</td></tr>
+                    <tr><td>3. nóv. 2023</td><td>24</td></tr>
+                    <tr><td>4. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>5. nóv. 2023</td><td>26</td></tr>
+                    <tr><td>6. nóv. 2023</td><td>1</td></tr>
+                    <tr><td>7. nóv. 2023</td><td>2</td></tr>
+                    <tr><td>8. nóv. 2023</td><td>2</td></tr>
+                    <tr><td>9. nóv. 2023</td><td>24</td></tr>
+                    <tr><td>10. nóv. 2023</td><td>187</td></tr>
+                    <tr><td>11. nóv. 2023</td><td>51</td></tr>
+                    <tr><td>12. nóv. 2023</td><td>3</td></tr>
+                    <tr><td>13. nóv. 2023</td><td>1</td></tr>
+                    <tr><td>14. nóv. 2023</td><td>2</td></tr>
+                    <tr><td>15. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>16. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>17. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>18. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>19. nóv. 2023</td><td>1</td></tr>
+                    <tr><td>20. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>21. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>22. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>23. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>24. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>25. nóv. 2023</td><td>1</td></tr>
+                    <tr><td>26. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>27. nóv. 2023</td><td>1</td></tr>
+                    <tr><td>28. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>29. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>30. nóv. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>1. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>2. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>3. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>4. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>5. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>6. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>7. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>8. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>9. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>10. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>11. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>12. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>13. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>14. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>15. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>16. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>17. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>18. des. 2023</td><td>3</td></tr>
+                    <tr><td>19. des. 2023</td><td>1</td></tr>
+                    <tr><td>20. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>21. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>22. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>23. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>24. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>25. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>26. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>27. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>28. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>29. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>30. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                    <tr><td>31. des. 2023</td><td class="myndrit__null">0 — enginn atburður</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </figure>
+        </section>
+
+        <section class="gagnahluti" data-gogn="skjalftar.json"
+                 data-gogn-teiknari="skjalftar-tolur" aria-labelledby="tolur-titill">
+          <h3 id="tolur-titill">Stærð, mánuðir og hrátt sýni</h3>
+          <noscript>
+            <p class="gogn-stada">Töflurnar hér eru settar inn með JavaScript. Án
+            þess má lesa tölurnar beint úr <a href="../gogn/skjalftar.json">gagnaskránni</a>.</p>
+          </noscript>
+          <div data-gogn-efni hidden>
+            <h4>Stærð eftir kvarða</h4>
+            <p>Hver stærðarkvarði er sér. Kvarðar eru aldrei lagðir saman.</p>
+            <div data-skjalftar-tafla="staerd"></div>
+            <h4>Mánuðir</h4>
+            <div data-skjalftar-tafla="manudir"></div>
+            <h4>Hrátt sýni</h4>
+            <p>Átta fyrstu færslurnar eins og Veðurstofan skráir þær.</p>
+            <div data-skjalftar-tafla="syni"></div>
+            <dl class="stadreyndir">
+              <div>
+                <dt>Auðkenni</dt>
+                <dd>Einkvæmt númer atburðarins hjá Veðurstofunni.</dd>
+              </div>
+              <div>
+                <dt>Tími (UTC)</dt>
+                <dd>Hvenær skjálftinn varð, á heimstíma.</dd>
+              </div>
+              <div>
+                <dt>Stærð og kvarði</dt>
+                <dd>Stærð skjálftans og kvarðinn sem hún er mæld á.</dd>
+              </div>
+              <div>
+                <dt>Dýpt (km)</dt>
+                <dd>Dýpi upptakanna undir yfirborði, í kílómetrum.</dd>
+              </div>
+              <div>
+                <dt>Breidd og lengd</dt>
+                <dd>Staðsetning upptakanna í gráðum.</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <section class="gagnahluti" data-gogn="skjalftar.json"
+                 data-gogn-teiknari="skjalftar-sokn" aria-labelledby="rekjanleiki-titill">
+          <h3 id="rekjanleiki-titill">Rekjanleiki</h3>
+          <noscript>
+            <p class="gogn-stada">Taflan hér er sett inn með JavaScript. Án
+            þess má lesa beiðnina í <a href="../gogn/skjalftar.json">gagnaskránni</a>.</p>
+          </noscript>
+          <p>Hver tala á síðunni kemur úr þessari einu beiðni.</p>
+          <div data-gogn-efni hidden>
+            <div data-skjalftar-tafla="sokn"></div>
+          </div>
+        </section>
+
+        <section aria-labelledby="takmarkanir-titill">
+          <h3 id="takmarkanir-titill">Takmarkanir</h3>
+          <ul>
+            <li><strong>Aðeins hrinan.</strong> Úrtakið er gluggi utan um þekkta hrinu.
+            Meðaltal lýsir engum degi og rólegt viðmiðunartímabil vantar.</li>
+            <li><strong>Kvarðar blandast ekki.</strong> Mlw og Mw eru ólíkir kvarðar. Hér er
+            aðeins Mlw, og hann er ekki Richter-kvarðinn.</li>
+            <li><strong>Fylgni er ekki orsök.</strong> Skráin mælir ekki kvikumagn og getur
+            því ekki sagt hvort kvika hafi safnast fyrir.</li>
+          </ul>
+          <p>Allar takmarkanir gagnanna eru á
+          <a href="adferdafraedi.html#takmarkanir">aðferðafræðisíðunni</a>.</p>
+        </section>
       </article>
 
       <nav class="naesta-skref" aria-labelledby="naesta-skref-titill">

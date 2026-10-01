@@ -17,6 +17,7 @@ prófum hvers safns (fluttar inn sem einingar, svo unittest keyri ekki prófin
 from __future__ import annotations
 
 import csv
+import json
 import sqlite3
 import tempfile
 import unittest
@@ -30,7 +31,7 @@ from mbl_hjalp import FROSNA_EINTAKID, SULKA_EFTIR_LYKLI, VIDMIDSKAFLI, VIDMIDSS
 
 import test_jardskjalftar_vidmid as skjvidmid  # noqa: E402
 
-from utflutningur import mbl_json, phoebe_json, skjalftar_json  # noqa: E402
+from utflutningur import central_perk_json, mbl_json, phoebe_json, skjalftar_json  # noqa: E402
 from utflutningur.flytja_ut import flytja_ut  # noqa: E402
 
 PHOEBE_SKRAR = ROT / "data" / "processed" / "phoebe-stats"
@@ -90,7 +91,8 @@ class Skjalftar(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         umslag = _lesa(skjalftar_json.SKRAARHEITI)
-        cls.dagar, cls.lysi = umslag["gogn"], umslag["lysigogn"]
+        cls.dagar, cls.lysi = umslag["gogn"]["dagar"], umslag["gogn"]
+        cls.sokn = umslag["lysigogn"]["sokn"]
 
     def test_yfirlitstolurnar(self) -> None:
         s, yfir = self.lysi["samantekt"], skjvidmid._yfirlitsgildi
@@ -105,6 +107,23 @@ class Skjalftar(unittest.TestCase):
         self.assertEqual([dypt["lagmark"], dypt["hamark"]],
                          yfir("0,07–11,26", "bil", "Dýpt:")["bil"])
         self.assertEqual(dypt["midgildi"], yfir("4,67", "desimal", "Dýpt:")["gildi"])
+
+    def test_hratt_syni_er_fyrstu_atburdirnir_obreyttir_ur_hragognunum(self) -> None:
+        hra = json.loads((ROT / "data" / "raw" / "vedur-quakes" / "events.json")
+                         .read_text("utf-8"))["features"]
+        for syni, atburdur in zip(self.lysi["syni"], hra):
+            with self.subTest(audkenni=syni["audkenni"]):
+                eig = atburdur["properties"]
+                self.assertEqual((syni["audkenni"], syni["timi"], syni["staerd"], syni["dypt_km"]),
+                                 (eig["event_id"], eig["time"], eig["magnitude"], eig["depth"]))
+                self.assertEqual((syni["lengd"], syni["breidd"]),
+                                 tuple(atburdur["geometry"]["coordinates"]))
+        self.assertEqual(len(self.lysi["syni"]), 8)
+
+    def test_soknin_er_i_lysigognum_en_samantektin_i_gognum(self) -> None:
+        self.assertEqual(self.sokn["faeribreytur"]["size_min"], 3)
+        self.assertEqual(self.sokn["faeribreytur"]["system"], "sil")
+        self.assertNotIn("sokn", self.lysi)
 
     def test_staerdartaflan(self) -> None:
         (mlw,) = self.lysi["staerd_eftir_kvarda"]
@@ -186,6 +205,43 @@ class Phoebe(unittest.TestCase):
                 self.assertEqual(ut[int(v["season"])]["i_tali_a_thatt"],
                                  float(v["dialogue_mentions_per_episode"]))
         self.assertEqual(ut[1]["i_tali_a_thatt"], 4.12)  # 99/24 = 4,125 — ekki 4,13
+
+    def test_hlutdeild_alls_og_jafn_hlutur(self) -> None:
+        plass = self.lysi["plass_alls"]
+        self.assertAlmostEqual(sum(r["hlutdeild_prosent"] for r in plass), 100, delta=0.05)
+        self.assertEqual(self.lysi["jafn_hlutur_prosent"], 16.67)  # 100/6
+
+
+class CentralPerk(unittest.TestCase):
+    """Útflutningurinn borinn við frosnu samantektina (docs/vidmid/generated/)."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        umslag = _lesa(central_perk_json.SKRAARHEITI)
+        cls.hopar = {r["hopur"]: r for r in umslag["gogn"]}
+        cls.samantekt = umslag["lysigogn"]["samantekt"]
+        cls.vidmid = ug.lesa_json(
+            ROT / "docs" / "vidmid" / "generated" / "phoebe-central-perk-summary.json")
+
+    def test_hopar_namundadir_ur_frosnu_samantektinni(self) -> None:
+        self.assertEqual(set(self.hopar), set(self.vidmid["groups"]))
+        for lykill, v in self.vidmid["groups"].items():
+            with self.subTest(hopur=lykill):
+                r = self.hopar[lykill]
+                self.assertEqual(r["handrit"], v["n"])
+                self.assertEqual(r["midgildi_prosent"], round(100 * v["median_phoebe_share"], 1))
+                self.assertEqual(r["medaltal_prosent"], round(100 * v["mean_phoebe_share"], 1))
+                self.assertEqual(r["midgildi_hlutfall"],
+                                 round(v["median_friends_to_phoebe_ratio"], 2))
+
+    def test_samantekt(self) -> None:
+        self.assertEqual(self.samantekt["handrit"], self.vidmid["transcript_files"])
+        self.assertEqual(self.samantekt["songhandrit"], self.vidmid["singing_files"])
+        self.assertEqual(self.samantekt["songsenur"], self.vidmid["singing_scenes"])
+        self.assertEqual(self.samantekt["munur_midgilda_stig"],
+                         round(self.vidmid["median_difference_percentage_points"], 1))
+        self.assertEqual(sum(r["handrit"] for r in self.hopar.values()),
+                         self.samantekt["handrit"])
 
 
 if __name__ == "__main__":

@@ -53,7 +53,7 @@ Flestar síður þurfa **engan eigin JS**. Tölur eru merktar beint í HTML:
     <dl class="stadreyndir">
       <div>
         <dt>Atburðir</dt>
-        <dd data-gogn-reitur="lysigogn.samantekt.atburdir"></dd>
+        <dd data-gogn-reitur="samantekt.atburdir"></dd>
       </div>
     </dl>
   </div>
@@ -64,7 +64,7 @@ Flestar síður þurfa **engan eigin JS**. Tölur eru merktar beint í HTML:
 |---|---|---|
 | `data-gogn="skra.json"` | já | Gagnahluti. Skráarheiti í `web/gogn/`, án möppu. |
 | `data-gogn-efni` + `hidden` | já, ef reitir | Það sem birtist þegar gögnin eru komin. Falið án JS og við villu — aldrei auðir reitir. |
-| `data-gogn-reitur="a.b.0.c"` | nei | `textContent` fær gildið á þessari slóð **inni í `gogn`**; slóð sem byrjar á `lysigogn.` leitar í lýsigögnum skrárinnar. Verður að vera tala eða strengur. |
+| `data-gogn-reitur="a.b.0.c"` | nei | `textContent` fær gildið á þessari slóð **inni í `gogn`**. Verður að vera tala eða strengur. |
 | `data-gogn-teiknari="nafn"` | nei | Teiknari sem síðuskrá skráði (kafli 3). |
 | `data-gogn-uppruni` | nei | Hvar „Gögn uppfærð … · Heimild: …“ á að standa. Vanti hann bætist `<p class="stada-gagna">` við neðst í hlutanum. |
 | `<noscript>` | já | Varaleið án JavaScript (regla 3.4) — kafli 5. |
@@ -184,7 +184,7 @@ líka í console fyrir þróun. Þær eru aldrei þaggaðar og síðan brotnar e
 | 404 / annar kóði | „Gagnaskráin „…“ fannst ekki (villa 404).“ / „fékkst ekki (villa 500).“ |
 | Ekki gilt JSON | „Gagnaskráin „…“ er gölluð.“ |
 | Snið rangt | „Í gagnaskrána „…“ vantar reitinn „heimild“.“ o.s.frv. |
-| Reitur ekki til | „Gildið „lysigogn.samantekt.x“ er ekki í „…“.“ |
+| Reitur ekki til | „Gildið „samantekt.x“ er ekki í „…“.“ |
 | Teiknari ekki skráður | „Enginn teiknari er skráður undir „…“.“ |
 
 Villuboxið (`.gogn-villa`, `role="alert"`) byrjar á „Ekki tókst að birta
@@ -200,9 +200,30 @@ kallar í `fetch`; ekkert `innerHTML`/`eval`; lagið hleðst á undan notendum
 sínum; hver `data-gogn`-skrá er til og á sniði reglu 5.4; hver
 `data-gogn-reitur` vísar á tölu eða streng í skránni; hver gagnahluti hefur
 `<noscript>` og falið efni; hver hook, teiknari og CSS-klasi sem JS notar er
-til; og JS-skrárnar eru undir 300 línum og 30 KB samanlagt.
+til; og JS-skrárnar eru undir 300 línum og 60 KB samanlagt.
 
 Vafraprófin (Chromium, Playwright) eru handkeyrð og ekki í `unittest`-safninu.
 Þau staðfestu 28.9.2026: engin villa í console, gögnin birtast, fimm
 villutilvik birtast á síðunni, síðan virkar án JS, og 320 px í báðum þemum
 án lárétts skruns.
+
+---
+
+## 9. Phoebe-síðurnar: súlur úr JS og töflur í HTML (issue #24)
+
+`phoebe-tolfraedi.html` og `phoebe-central-perk.html` sameina tvö mynstur:
+
+- **Myndritið** er teiknað af `web/assets/js/phoebe-myndrit.js` með
+  `createElementNS` inn í `[data-myndrit]`, í stíl `components/stolparit.css`
+  (litir úr `--myndrit-*`). Það er viðbót: súlurnar byrja í núlli og viðmiðslína
+  er strikuð og nefnd með orðum. matplotlib er ekki notað hér — SVG úr Python
+  (`myndrit.md`) bíður þess að pakkinn sé settur upp.
+- **Taflan** við hvert myndrit er í HTML-inu sjálfu og virkar án JS. Hver tala
+  er rekjanleg: `data-reitur` (lykill), næsta `data-rod` ofar (röðin, t.d.
+  `gogn[thattarod=1,persona=Phoebe]`) og næsta `data-skra` ofar (gagnaskráin).
+  `tests/test_vefur_phoebe.py` ber textann saman við gagnaskrána á íslensku
+  sniði og fellur ef tala í HTML víkur frá henni.
+
+`data-gogn-reitur` nær aðeins inn í `gogn`, ekki `lysigogn`. Tölur sem búa í
+`lysigogn` fara því í töflur með `data-rod`, og teiknarinn les þær beint úr
+skjalinu.

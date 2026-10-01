@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="../assets/css/components/braudmylsna.css">
   <link rel="stylesheet" href="../assets/css/components/undirvalmynd.css">
   <link rel="stylesheet" href="../assets/css/components/sidu-haus.css">
-  <link rel="stylesheet" href="../assets/css/components/bidstada.css">
+  <link rel="stylesheet" href="../assets/css/components/frosid.css">
+  <link rel="stylesheet" href="../assets/css/components/gagnahluti.css">
   <link rel="stylesheet" href="../assets/css/components/naesta-skref.css">
   <script src="../assets/js/valmynd.js" defer></script>
 </head>
@@ -62,7 +63,7 @@
         <div class="sidu-haus__adal">
           <p class="sidu-haus__flokkur">Viðauki B · Vefþjónustur</p>
           <h1>Veðurstöðvar Veðurstofunnar</h1>
-          <p class="sidu-haus__inngangur">Hvar veðurstöðvar landsins standa, í hvaða hæð og hvernig þær dreifast um landshlutana. Stöðvaskráin breytist, svo hér er greint eintak frá einum degi.</p>
+          <p class="sidu-haus__inngangur">Hvaða veðurstöðvar standast síurnar í beiðni til Veðurstofunnar. Stöðvaskráin breytist, svo þetta er eintak frá einum degi.</p>
         </div>
         <aside class="sidu-haus__hlid" aria-labelledby="stadreyndir-titill">
           <h2 class="sidu-haus__hlid-titill" id="stadreyndir-titill">Um þessa síðu</h2>
@@ -73,28 +74,113 @@
             </div>
             <div>
               <dt>Eining</dt>
-              <dd>Ein færsla á hverja stöð</dd>
+              <dd>Ein færsla á hverja stöð, 778 alls</dd>
             </div>
             <div>
               <dt>Staða síðunnar</dt>
-              <dd>Beinagrind — greining í vinnslu</dd>
+              <dd>Frosið eintak frá 24. september 2026</dd>
             </div>
           </dl>
         </aside>
       </div>
 
+      <section class="frosid" aria-labelledby="frosid-titill">
+        <h2 class="frosid__titill" id="frosid-titill">Frosið eintak</h2>
+        <p class="frosid__dagur">Sótt <time datetime="2026-09-24">24. september 2026</time></p>
+        <p class="frosid__skyring">Stöðvaskráin breytist þegar stöð er sett upp eða tekin niður. Tölurnar hér sýna stöðuna þennan dag, ekki stöðuna núna.</p>
+      </section>
+
       <article class="efni" aria-labelledby="efni-titill">
         <h2 id="efni-titill">Greiningin</h2>
-        <div class="bidstada">
-          <p class="bidstada__merki">
-            <span class="bidstada__punktur" aria-hidden="true"></span>
-            Efni í vinnslu
-          </p>
-          <p class="bidstada__skyring">
-            Greiningin birtist hér þegar gögnin eru tilbúin. Þangað til má lesa
-            um <a href="adferdafraedi.html">aðferðina</a>.
-          </p>
-        </div>
+
+        <section aria-labelledby="endapunktur-titill">
+          <h3 id="endapunktur-titill">Endapunkturinn og færibreyturnar</h3>
+          <p>Beiðnin fer á <code>api.vedur.is/weather/stations</code> og skilar stöðvaskrá Veðurstofunnar. Án færibreyta kemur öll skráin: 778 stöðvar, virkar og aflagðar.</p>
+          <div class="tafla-umgjord">
+            <table class="gagnatafla">
+              <caption>Færibreytur beiðninnar</caption>
+              <thead><tr><th scope="col">Færibreyta</th><th scope="col">Hvað hún gerir</th></tr></thead>
+              <tbody>
+                <tr><th scope="row"><code>station_id=</code></th><td>Sækir eina stöð eftir auðkenni.</td></tr>
+                <tr><th scope="row"><code>active=true</code></th><td>Skilar aðeins stöðvum sem mæla enn.</td></tr>
+                <tr><th scope="row"><code>polygon</code></th><td>Skilar aðeins stöðvum innan marghyrnings, hér 5 km kassa um VR-II.</td></tr>
+                <tr><th scope="row"><code>ending</code></th><td>Svarreitur, ekki færibreyta: tómur þýðir að stöðin mælir enn, ártal að hún hætti það ár.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Mat á því hvort stöð nýtist byggir á <code>ending</code>. Hnit VR-II eru 64,1386922, -21,9556406.</p>
+        </section>
+
+        <section aria-labelledby="beidnir-titill">
+          <h3 id="beidnir-titill">Beiðnirnar fimm</h3>
+          <div class="tafla-umgjord">
+            <table class="gagnatafla">
+              <caption>Fjöldi stöðva í svari við hverri beiðni</caption>
+              <thead><tr><th scope="col">Færibreytur</th><th scope="col">Hvað beiðnin biður um</th><th scope="col" class="gagnatafla__tala">Stöðvar í svari</th></tr></thead>
+              <tbody>
+            <tr><th scope="row"><code>engin sía</code></th><td>Allar stöðvar sem þjónustan þekkir</td><td class="gagnatafla__tala">778</td></tr>
+            <tr><th scope="row"><code>active=true</code></th><td>Aðeins stöðvar sem mæla enn</td><td class="gagnatafla__tala">343</td></tr>
+            <tr><th scope="row"><code>polygon</code></th><td>Aðeins stöðvar innan 5 km kassans um VR-II</td><td class="gagnatafla__tala">21</td></tr>
+            <tr><th scope="row"><code>polygon + active=true</code></th><td>Hvort tveggja í sömu beiðni</td><td class="gagnatafla__tala">9</td></tr>
+            <tr><th scope="row"><code>station_id=1469</code></th><td>Stöðin sem forritið les, sótt beint</td><td class="gagnatafla__tala">1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section aria-labelledby="svor-titill">
+          <h3 id="svor-titill">Svörin við spurningunum</h3>
+          <h4>Hver er næsta stöð við VR-II og mælir hún enn?</h4>
+          <p>Reykjavík Hljómskálagarður (1469), 639 m frá húsinu. Reiturinn <code>ending</code> er tómur, svo stöðin mælir enn.</p>
+          <h4>Hver er næsta aflagða stöð og hve miklu munar?</h4>
+          <p>Sjómannaskóli (2), 689 m frá húsinu. Hún hætti 1963. Aðeins 50 m skilja stöðvarnar að, svo fjarlægðin ein getur bent á ónothæfa stöð.</p>
+          <h4>Hve margar stöðvar eru virkar?</h4>
+          <p>343 af 778, eða um 44%. Hinar 435 eru aflagðar.</p>
+          <h4>Hvaða reitur segir hvort stöð dugi núna?</h4>
+          <p><code>ending</code>. Tómt gildi þýðir að stöðin mælir enn. Sömu síu má senda sem <code>active=true</code> og láta þjóninn sjá um hana.</p>
+          <h4>Dugir sama stöð til samanburðar við veður fyrir 50 árum?</h4>
+          <p>Nei. Reykjavík Hljómskálagarður (1469) hóf mælingar 2022 og á ekkert frá 1976. Næsta virka stöð sem nær svo langt aftur er Reykjavík (1), 2.547 m frá húsinu, sem mælir frá 1920.</p>
+        </section>
+
+        <section aria-labelledby="stodvar-titill">
+          <h3 id="stodvar-titill">Stöðvarnar sem standast síurnar</h3>
+          <p>21 stöðvar eru innan kassans um VR-II. Af þeim eru 9 virkar og standast <code>active=true</code> líka. Raðað eftir fjarlægð.</p>
+          <div class="tafla-umgjord">
+            <table class="gagnatafla" id="stodvataflan">
+              <caption>Stöðvar innan 5 km kassans, eintak frá 24. september 2026</caption>
+              <thead><tr><th scope="col">Stöð</th><th scope="col" class="gagnatafla__tala">Auðkenni</th><th scope="col" class="gagnatafla__tala">Frá</th><th scope="col" class="gagnatafla__tala">Til</th><th scope="col">Staða</th><th scope="col" class="gagnatafla__tala">Fjarlægð (m)</th></tr></thead>
+              <tbody>
+            <tr><th scope="row">Reykjavík Hljómskálagarður</th><td class="gagnatafla__tala">1469</td><td class="gagnatafla__tala">2022</td><td class="gagnatafla__tala">tómt</td><td>Virk</td><td class="gagnatafla__tala">639</td></tr>
+            <tr><th scope="row">Sjómannaskóli</th><td class="gagnatafla__tala">2</td><td class="gagnatafla__tala">1961</td><td class="gagnatafla__tala">1963</td><td>Aflögð</td><td class="gagnatafla__tala">689</td></tr>
+            <tr><th scope="row">Einarsnes í Skerjafirði</th><td class="gagnatafla__tala">31561</td><td class="gagnatafla__tala">1998</td><td class="gagnatafla__tala">2011</td><td>Aflögð</td><td class="gagnatafla__tala">890</td></tr>
+            <tr><th scope="row">Reykjavíkurflugvöllur</th><td class="gagnatafla__tala">1477</td><td class="gagnatafla__tala">2001</td><td class="gagnatafla__tala">tómt</td><td>Virk</td><td class="gagnatafla__tala">1.350</td></tr>
+            <tr><th scope="row">Reykjavíkurhöfn</th><td class="gagnatafla__tala">1574</td><td class="gagnatafla__tala">1998</td><td class="gagnatafla__tala">1998</td><td>Aflögð</td><td class="gagnatafla__tala">1.669</td></tr>
+            <tr><th scope="row">Reykjavík sólgeislun</th><td class="gagnatafla__tala">7470</td><td class="gagnatafla__tala">2022</td><td class="gagnatafla__tala">2025</td><td>Aflögð</td><td class="gagnatafla__tala">2.532</td></tr>
+            <tr><th scope="row">Reykjavík tilraunastöð</th><td class="gagnatafla__tala">7477</td><td class="gagnatafla__tala">2018</td><td class="gagnatafla__tala">2022</td><td>Aflögð</td><td class="gagnatafla__tala">2.546</td></tr>
+            <tr><th scope="row">Reykjavík</th><td class="gagnatafla__tala">1</td><td class="gagnatafla__tala">1920</td><td class="gagnatafla__tala">tómt</td><td>Virk</td><td class="gagnatafla__tala">2.547</td></tr>
+            <tr><th scope="row">Reykjavík</th><td class="gagnatafla__tala">1470</td><td class="gagnatafla__tala">2021</td><td class="gagnatafla__tala">tómt</td><td>Virk</td><td class="gagnatafla__tala">2.548</td></tr>
+            <tr><th scope="row">Gróðrarstöðin í Reykjavík</th><td class="gagnatafla__tala">6</td><td class="gagnatafla__tala">1923</td><td class="gagnatafla__tala">1928</td><td>Aflögð</td><td class="gagnatafla__tala">2.772</td></tr>
+            <tr><th scope="row">Reykjavík turnþak</th><td class="gagnatafla__tala">7474</td><td class="gagnatafla__tala">2000</td><td class="gagnatafla__tala">tómt</td><td>Virk</td><td class="gagnatafla__tala">2.788</td></tr>
+            <tr><th scope="row">Reykjavík S</th><td class="gagnatafla__tala">4</td><td class="gagnatafla__tala">2015</td><td class="gagnatafla__tala">2024</td><td>Aflögð</td><td class="gagnatafla__tala">2.852</td></tr>
+            <tr><th scope="row">Reykjavík búveðurstöð</th><td class="gagnatafla__tala">7475</td><td class="gagnatafla__tala">2000</td><td class="gagnatafla__tala">2024</td><td>Aflögð</td><td class="gagnatafla__tala">2.869</td></tr>
+            <tr><th scope="row">Reykjavík sólgeislun - Bústaðavegur</th><td class="gagnatafla__tala">7476</td><td class="gagnatafla__tala">2007</td><td class="gagnatafla__tala">2025</td><td>Aflögð</td><td class="gagnatafla__tala">2.872</td></tr>
+            <tr><th scope="row">Reykjavík - Bústaðavegur</th><td class="gagnatafla__tala">1475</td><td class="gagnatafla__tala">1993</td><td class="gagnatafla__tala">tómt</td><td>Virk</td><td class="gagnatafla__tala">2.882</td></tr>
+            <tr><th scope="row">Eyjargrandi í Reykjavík</th><td class="gagnatafla__tala">1575</td><td class="gagnatafla__tala">1998</td><td class="gagnatafla__tala">1998</td><td>Aflögð</td><td class="gagnatafla__tala">3.334</td></tr>
+            <tr><th scope="row">Sólland í Reykjavík</th><td class="gagnatafla__tala">5</td><td class="gagnatafla__tala">1964</td><td class="gagnatafla__tala">1972</td><td>Aflögð</td><td class="gagnatafla__tala">3.621</td></tr>
+            <tr><th scope="row">Seltjarnarnes Suðurnes</th><td class="gagnatafla__tala">1471</td><td class="gagnatafla__tala">2019</td><td class="gagnatafla__tala">tómt</td><td>Virk</td><td class="gagnatafla__tala">4.122</td></tr>
+            <tr><th scope="row">Sundahöfn í Reykjavík</th><td class="gagnatafla__tala">1576</td><td class="gagnatafla__tala">1998</td><td class="gagnatafla__tala">1998</td><td>Aflögð</td><td class="gagnatafla__tala">4.479</td></tr>
+            <tr><th scope="row">Kópavogur Fossvogsdalur</th><td class="gagnatafla__tala">1472</td><td class="gagnatafla__tala">2021</td><td class="gagnatafla__tala">tómt</td><td>Virk</td><td class="gagnatafla__tala">5.193</td></tr>
+            <tr><th scope="row">Viðey</th><td class="gagnatafla__tala">21577</td><td class="gagnatafla__tala">2025</td><td class="gagnatafla__tala">tómt</td><td>Virk</td><td class="gagnatafla__tala">5.531</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section aria-labelledby="takmarkanir-titill">
+          <h3 id="takmarkanir-titill">Takmarkanir</h3>
+          <p>Eintakið er frosið. Stöð sem bætist við eða hverfur eftir 24. september 2026 kemur hér ekki fram fyrr en nýtt eintak er sótt.</p>
+          <p>Nálægð og löng mæliröð eru ólík skilyrði. Sama stöð uppfyllir sjaldnast bæði.</p>
+        </section>
       </article>
 
       <nav class="naesta-skref" aria-labelledby="naesta-skref-titill">

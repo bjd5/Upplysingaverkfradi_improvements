@@ -26,7 +26,7 @@ KJARNI = "assets/js/gogn.js"
 BIRTING = "assets/js/gagnahluti.js"
 SNID_REITIR = {"uppfaert", "heimild", "gogn"}
 HAMARK_LINUR = 300
-HAMARK_JS_BAETI = 30_000  # öll JS samanlagt; þak reglu 3.4 er 500 KB á síðu
+HAMARK_JS_BAETI = 60_000  # öll JS samanlagt; þak reglu 3.4 er 500 KB á síðu
 TOMIR_TAGAR = {"area", "base", "br", "col", "embed", "hr", "img", "input",
                "link", "meta", "source", "track", "wbr"}
 INNSPYTING = re.compile(r"\.innerHTML\b|\.outerHTML\b|insertAdjacentHTML|"
@@ -187,12 +187,10 @@ class GagnaskrarTest(unittest.TestCase):
     def test_hver_reitur_er_tala_eda_strengur_i_skranni(self) -> None:
         for sida in SIDUR:
             for hluti in greina_gogn(sida).hlutar:
-                skjal = lesa_gagnaskra(hluti["skra"])
+                gogn = lesa_gagnaskra(hluti["skra"])["gogn"]
                 for slod in hluti["reitir"]:
                     with self.subTest(sida=sida, reitur=slod):
-                        # „lysigogn.“ leitar í lýsigögnum skrárinnar, annars í gogn.
-                        gildi = (fletta(skjal, slod) if slod.startswith("lysigogn.")
-                                 else fletta(skjal["gogn"], slod))
+                        gildi = fletta(gogn, slod)
                         self.assertIsInstance(gildi, (int, float, str))
                         self.assertNotIsInstance(gildi, bool)
 
