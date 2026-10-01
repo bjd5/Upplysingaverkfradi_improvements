@@ -11,7 +11,16 @@
   const data = window.SiteData;
 
   window.DataSection.registerRenderer("skjalftar-manudir", function (doc, section) {
-    const rows = doc.gogn.manudir.map(function (row) {
+    // Skráin geymir einn dag per línu; taflan sýnir mánuði.
+    const months = new Map();
+    doc.gogn.forEach(function (day) {
+      const key = day.dagur.slice(0, 7);
+      const month = months.get(key) || { manudur: key, dagar: 0, atburdir: 0 };
+      month.dagar += 1;
+      month.atburdir += day.fjoldi;
+      months.set(key, month);
+    });
+    const rows = Array.from(months.values()).map(function (row) {
       return { manudur: data.formatMonth(row.manudur), dagar: row.dagar,
                atburdir: row.atburdir };
     });

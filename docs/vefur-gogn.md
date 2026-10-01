@@ -53,7 +53,7 @@ Flestar síður þurfa **engan eigin JS**. Tölur eru merktar beint í HTML:
     <dl class="stadreyndir">
       <div>
         <dt>Atburðir</dt>
-        <dd data-gogn-reitur="samantekt.atburdir"></dd>
+        <dd data-gogn-reitur="lysigogn.samantekt.atburdir"></dd>
       </div>
     </dl>
   </div>
@@ -64,7 +64,7 @@ Flestar síður þurfa **engan eigin JS**. Tölur eru merktar beint í HTML:
 |---|---|---|
 | `data-gogn="skra.json"` | já | Gagnahluti. Skráarheiti í `web/gogn/`, án möppu. |
 | `data-gogn-efni` + `hidden` | já, ef reitir | Það sem birtist þegar gögnin eru komin. Falið án JS og við villu — aldrei auðir reitir. |
-| `data-gogn-reitur="a.b.0.c"` | nei | `textContent` fær gildið á þessari slóð **inni í `gogn`**. Verður að vera tala eða strengur. |
+| `data-gogn-reitur="a.b.0.c"` | nei | `textContent` fær gildið á þessari slóð **inni í `gogn`**; slóð sem byrjar á `lysigogn.` leitar í lýsigögnum skrárinnar. Verður að vera tala eða strengur. |
 | `data-gogn-teiknari="nafn"` | nei | Teiknari sem síðuskrá skráði (kafli 3). |
 | `data-gogn-uppruni` | nei | Hvar „Gögn uppfærð … · Heimild: …“ á að standa. Vanti hann bætist `<p class="stada-gagna">` við neðst í hlutanum. |
 | `<noscript>` | já | Varaleið án JavaScript (regla 3.4) — kafli 5. |
@@ -184,7 +184,7 @@ líka í console fyrir þróun. Þær eru aldrei þaggaðar og síðan brotnar e
 | 404 / annar kóði | „Gagnaskráin „…“ fannst ekki (villa 404).“ / „fékkst ekki (villa 500).“ |
 | Ekki gilt JSON | „Gagnaskráin „…“ er gölluð.“ |
 | Snið rangt | „Í gagnaskrána „…“ vantar reitinn „heimild“.“ o.s.frv. |
-| Reitur ekki til | „Gildið „samantekt.x“ er ekki í „…“.“ |
+| Reitur ekki til | „Gildið „lysigogn.samantekt.x“ er ekki í „…“.“ |
 | Teiknari ekki skráður | „Enginn teiknari er skráður undir „…“.“ |
 
 Villuboxið (`.gogn-villa`, `role="alert"`) byrjar á „Ekki tókst að birta

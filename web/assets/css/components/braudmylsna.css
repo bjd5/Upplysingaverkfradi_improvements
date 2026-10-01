@@ -26,6 +26,8 @@
 .braudmylsna a {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: var(--smellisvaedi);
   min-height: var(--smellisvaedi);
   color: var(--texti-daufur);
 }
