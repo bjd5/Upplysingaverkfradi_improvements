@@ -9,7 +9,8 @@ verður að vera þar en ekki í ``lysigogn``:
 * ``dagar`` — ein lína á hvern UTC-dag tímabilsins, **líka dagana án
   atburðar**: fjöldi atburða og hlaupandi 7 daga meðaltal (glugginn endar á
   deginum; ``dagar_i_glugga`` < 7 fyrstu sex dagana).
-* ``staerd_eftir_kvarda`` — stærð innan hvers kvarða; ``manudir`` — mánaðartölur.
+* ``staerd_eftir_kvarda`` — stærð innan hvers kvarða; ``manudir`` — mánaðartölur;
+  ``syni`` — fyrstu átta atburðirnir, frumgildin óbreytt.
 
 ``lysigogn`` geymir söfnunarlýsinguna: beiðnina sem var send og afmörkun hennar.
 
@@ -114,6 +115,16 @@ def _manudir(samband: Connection) -> list[dict[str, Any]]:
     ]
 
 
+def _syni(samband: Connection) -> list[dict[str, Any]]:
+    """Fyrstu atburðirnir með frumgildin óbreytt — lesandinn sér hvað er í hrágögnunum."""
+    return [
+        {"audkenni": r["event_id"], "timi": r["occurred_at"], "staerd": r["magnitude"],
+         "kvardi": r["magnitude_type"], "dypt_km": r["depth_km"],
+         "breidd": r["latitude"], "lengd": r["longitude"]}
+        for r in fyrirspurnir.keyra(samband, "skjalftar-syni")
+    ]
+
+
 def byggja(samband: Connection, provenance: Path = PROVENANCE) -> dict[str, Any]:
     """Les grunninn og skilar sannreyndu umslagi fyrir ``skjalftar.json``."""
     uppruni = lesa_provenance(provenance)
@@ -128,6 +139,7 @@ def byggja(samband: Connection, provenance: Path = PROVENANCE) -> dict[str, Any]
         "dagar": gogn,
         "staerd_eftir_kvarda": _staerdir(samband),
         "manudir": _manudir(samband),
+        "syni": _syni(samband),
     }
     lysigogn = {
         "sokn": {"endapunktur": uppruni["endpoint"], "faeribreytur": uppruni["parameters"],

@@ -17,6 +17,7 @@ prófum hvers safns (fluttar inn sem einingar, svo unittest keyri ekki prófin
 from __future__ import annotations
 
 import csv
+import json
 import sqlite3
 import tempfile
 import unittest
@@ -106,6 +107,18 @@ class Skjalftar(unittest.TestCase):
         self.assertEqual([dypt["lagmark"], dypt["hamark"]],
                          yfir("0,07–11,26", "bil", "Dýpt:")["bil"])
         self.assertEqual(dypt["midgildi"], yfir("4,67", "desimal", "Dýpt:")["gildi"])
+
+    def test_hratt_syni_er_fyrstu_atburdirnir_obreyttir_ur_hragognunum(self) -> None:
+        hra = json.loads((ROT / "data" / "raw" / "vedur-quakes" / "events.json")
+                         .read_text("utf-8"))["features"]
+        for syni, atburdur in zip(self.lysi["syni"], hra):
+            with self.subTest(audkenni=syni["audkenni"]):
+                eig = atburdur["properties"]
+                self.assertEqual((syni["audkenni"], syni["timi"], syni["staerd"], syni["dypt_km"]),
+                                 (eig["event_id"], eig["time"], eig["magnitude"], eig["depth"]))
+                self.assertEqual((syni["lengd"], syni["breidd"]),
+                                 tuple(atburdur["geometry"]["coordinates"]))
+        self.assertEqual(len(self.lysi["syni"]), 8)
 
     def test_soknin_er_i_lysigognum_en_samantektin_i_gognum(self) -> None:
         self.assertEqual(self.sokn["faeribreytur"]["size_min"], 3)
