@@ -411,6 +411,44 @@ gagninu og `frysting.json` staðfestir að það sé óbreytt
 (`src/python/vidmid/provenance.py stadfesta`). Hvaða skrifta les hvaða
 safn er í [`../data/raw/README.md`](../data/raw/README.md).
 
+### 5.1 Samanburður við gamla verkefnið
+
+Viðmiðið er gamla síðan, fryst í [`vidmid/`](vidmid/README.md): `vidmid.json`
+geymir 417 efnislegar tölur hennar. Prófin lesa væntu gildin þaðan; engin tala
+er handskrifuð. Víki tala frá viðmiðinu er það villa þar til annað er sannað.
+
+Sex tölur sanna að endurbyggingin hafi tekist (#16):
+
+| Mæling | Viðmið | Heiti í `vidmid.json` | Borið saman í |
+|---|---:|---|---|
+| Jarðskjálftar | 334 | `jarðskjálftar` | vinnslu, grunni, JSON |
+| Dagar í tímaröð | 61 | `dagar í glugganum` | vinnslu, grunni, JSON |
+| Handritsskrár greindar | 227 | `handritsskrár` | grunni, JSON |
+| Þættir | 236 | `þættir` | grunni, JSON |
+| Línur greindar (tilsvör) | 61.161 | `tilsvör` | grunni, JSON |
+| Óflokkaðar blokkir | 2,95 % | `óflokkað hlutfall` | grunni, JSON |
+
+`tests/test_heildarsamanburdur.py` keyrir `main.py --skref vinna`, `hlada` og
+`flytja-ut` í röð, án nets, með grunn og úttak í tímabundinni möppu. Hver tala
+er borin við viðmiðið á hverju stigi, og prófið sannar að ruglað viðmið eða
+skemmt úttak falli.
+
+Síðan les `web/gogn/`; `test_flytja_ut` staðfestir að skrárnar þar séu
+bætaeins og nýr útflutningur. Aðrar tölur viðmiðsins eru bornar saman safn
+fyrir safn í `test_*_vidmid.py`, `test_heildarhledsla.py` og
+`test_utflutningur_*.py`.
+
+Friends-tölurnar eru ekki endurreiknaðar í keyrslunni: handritin eru utan
+repo-sins (1.5.1) og hleðslan les frosnu tölurnar. Sé `FRIENDS_HANDRIT_MAPPA`
+stillt ber `test_phoebe_uttak` endurreikninginn við þær, bæti fyrir bæti.
+
+`safna` er ekki keyrt: TMDB var aldrei fryst, og væri lykill til sækti skrefið
+það af netinu.
+
+```bash
+PYTHON=python3.12 python3.12 -m unittest discover -s tests -p test_heildarsamanburdur.py
+```
+
 ---
 
 ## 6. Takmarkanir
