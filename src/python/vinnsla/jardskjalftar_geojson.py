@@ -14,10 +14,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-try:  # keyrt sem eining innan pakkans
-    from .jardskjalftar_afmorkun import SkjalftaVilla
-except ImportError:  # keyrt beint úr möppunni
-    from jardskjalftar_afmorkun import SkjalftaVilla
+from .jardskjalftar_afmorkun import SkjalftaVilla
 
 GEOMETRY_LYKLAR = frozenset({"type", "coordinates"})
 

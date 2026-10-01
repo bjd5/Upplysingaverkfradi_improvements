@@ -40,24 +40,14 @@ import sys
 from pathlib import Path
 from typing import Sequence
 
-try:  # keyrt sem eining innan pakkans
-    from .central_perk_greining import EpisodeResult, analyse, audit_lines
-    from .central_perk_mynstur import (
-        CENTRAL_PERK_GROUP, DOCUMENTED_PATTERNS, GROUP_ORDER, MAIN_CAST, PHOEBE_SINGS,
-    )
-    from .friends_handrit import (
-        EXCLUDED_FILES, ROT, SOURCE_COMMIT, SOURCE_REPOSITORY, TranscriptError, transcript_paths,
-    )
-    from .phoebe_uttak import ensure_outside_web, write_csv, write_json
-except ImportError:  # keyrt beint úr möppunni
-    from central_perk_greining import EpisodeResult, analyse, audit_lines
-    from central_perk_mynstur import (
-        CENTRAL_PERK_GROUP, DOCUMENTED_PATTERNS, GROUP_ORDER, MAIN_CAST, PHOEBE_SINGS,
-    )
-    from friends_handrit import (
-        EXCLUDED_FILES, ROT, SOURCE_COMMIT, SOURCE_REPOSITORY, TranscriptError, transcript_paths,
-    )
-    from phoebe_uttak import ensure_outside_web, write_csv, write_json
+from .central_perk_greining import EpisodeResult, analyse, audit_lines
+from .central_perk_mynstur import (
+    CENTRAL_PERK_GROUP, DOCUMENTED_PATTERNS, GROUP_ORDER, MAIN_CAST, PHOEBE_SINGS,
+)
+from .friends_handrit import (
+    EXCLUDED_FILES, ROT, SOURCE_COMMIT, SOURCE_REPOSITORY, TranscriptError, transcript_paths,
+)
+from .phoebe_uttak import ensure_outside_web, write_csv, write_json
 
 log = logging.getLogger(__name__)
 

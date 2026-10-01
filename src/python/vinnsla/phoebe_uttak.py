@@ -31,28 +31,16 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-try:  # keyrt sem eining innan pakkans
-    from .friends_handrit import ROT, TranscriptError
-    from .phoebe_greining import Analysis, analyse
-    from .phoebe_ordafordi import DISTINCTIVE_FIELDS
-    from .phoebe_samningur import (
-        MATRIX_FIELDS, MENTIONS_FIELDS, PHRASE_FIELDS, SCREENTIME_FIELDS, SPEAKS_WITH_FIELDS,
-        matrix_rows, mentions_rows, metadata, screentime_rows, speaks_with_rows, summary,
-    )
-    from .phoebe_skyrslur import (
-        extra_stats_report, mentions_report, screentime_report, top_talkers_report,
-    )
-except ImportError:  # keyrt beint úr möppunni
-    from friends_handrit import ROT, TranscriptError
-    from phoebe_greining import Analysis, analyse
-    from phoebe_ordafordi import DISTINCTIVE_FIELDS
-    from phoebe_samningur import (
-        MATRIX_FIELDS, MENTIONS_FIELDS, PHRASE_FIELDS, SCREENTIME_FIELDS, SPEAKS_WITH_FIELDS,
-        matrix_rows, mentions_rows, metadata, screentime_rows, speaks_with_rows, summary,
-    )
-    from phoebe_skyrslur import (
-        extra_stats_report, mentions_report, screentime_report, top_talkers_report,
-    )
+from .friends_handrit import ROT, TranscriptError
+from .phoebe_greining import Analysis, analyse
+from .phoebe_ordafordi import DISTINCTIVE_FIELDS
+from .phoebe_samningur import (
+    MATRIX_FIELDS, MENTIONS_FIELDS, PHRASE_FIELDS, SCREENTIME_FIELDS, SPEAKS_WITH_FIELDS,
+    matrix_rows, mentions_rows, metadata, screentime_rows, speaks_with_rows, summary,
+)
+from .phoebe_skyrslur import (
+    extra_stats_report, mentions_report, screentime_report, top_talkers_report,
+)
 
 log = logging.getLogger(__name__)
 

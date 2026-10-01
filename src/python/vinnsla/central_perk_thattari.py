@@ -16,18 +16,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Sequence
 
-try:  # keyrt sem eining innan pakkans
-    from .central_perk_lestur import Block, clean_text
-    from .central_perk_mynstur import (
-        CENTRAL_PERK, NAME_ALIAS_PATTERNS, SCENE_START_RE, SPEAKER_RE, STAGE_DIRECTION_RE,
-        WORD_RE,
-    )
-except ImportError:  # keyrt beint úr möppunni
-    from central_perk_lestur import Block, clean_text
-    from central_perk_mynstur import (
-        CENTRAL_PERK, NAME_ALIAS_PATTERNS, SCENE_START_RE, SPEAKER_RE, STAGE_DIRECTION_RE,
-        WORD_RE,
-    )
+from .central_perk_lestur import Block, clean_text
+from .central_perk_mynstur import (
+    CENTRAL_PERK, NAME_ALIAS_PATTERNS, SCENE_START_RE, SPEAKER_RE, STAGE_DIRECTION_RE,
+    WORD_RE,
+)
 
 
 @dataclass(frozen=True)

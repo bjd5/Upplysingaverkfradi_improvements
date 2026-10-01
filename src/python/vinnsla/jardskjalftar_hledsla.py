@@ -35,12 +35,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from sqlite3 import Connection
 
-try:  # keyrt sem eining innan pakkans (venjulega leiðin)
-    from .jardskjalftar import Skjalfti, lesa_skjalfta, talning_eftir_degi
-    from .jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, dagar, lesa_afmorkun
-except ImportError:  # keyrt beint úr möppunni
-    from jardskjalftar import Skjalfti, lesa_skjalfta, talning_eftir_degi
-    from jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, dagar, lesa_afmorkun
+from .jardskjalftar import Skjalfti, lesa_skjalfta, talning_eftir_degi
+from .jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, dagar, lesa_afmorkun
 
 log = logging.getLogger(__name__)
 

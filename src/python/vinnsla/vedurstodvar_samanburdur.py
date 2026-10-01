@@ -15,7 +15,7 @@ slegnar inn hér; töflur sem eru slegnar inn tvisvar fara á skjön.
 
 Keyrsla frá rót verkefnisins::
 
-    python3 src/python/vinnsla/vedurstodvar_samanburdur.py
+    PYTHONPATH=src/python python3 -m vinnsla.vedurstodvar_samanburdur
 
 Netlaust — les aðeins frosin gögn. Eingöngu staðalsafnið (regla 10).
 """
@@ -28,10 +28,7 @@ import math
 import sys
 from pathlib import Path
 
-try:  # keyrt beint: python3 src/python/vinnsla/vedurstodvar_samanburdur.py
-    from vedurstodvar_skjal import skrifa_skjal
-except ImportError:  # flutt inn sem eining innan pakkans
-    from .vedurstodvar_skjal import skrifa_skjal
+from .vedurstodvar_skjal import skrifa_skjal
 
 ROT = Path(__file__).resolve().parents[3]
 FROSID = ROT / "data" / "raw" / "vedurstodvar"

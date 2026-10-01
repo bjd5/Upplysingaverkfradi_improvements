@@ -38,14 +38,9 @@ import sys
 from dataclasses import asdict, dataclass, fields
 from pathlib import Path
 
-try:  # keyrt sem eining innan pakkans (venjulega leiðin)
-    from .jardskjalftar import Skjalfti, lesa_skjalfta
-    from .jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, lesa_afmorkun
-    from .jardskjalftar_talning import DagsTalning, Samantekt, dagleg_talning, draga_saman
-except ImportError:  # keyrt beint úr möppunni
-    from jardskjalftar import Skjalfti, lesa_skjalfta
-    from jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, lesa_afmorkun
-    from jardskjalftar_talning import DagsTalning, Samantekt, dagleg_talning, draga_saman
+from .jardskjalftar import Skjalfti, lesa_skjalfta
+from .jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, lesa_afmorkun
+from .jardskjalftar_talning import DagsTalning, Samantekt, dagleg_talning, draga_saman
 
 log = logging.getLogger(__name__)
 

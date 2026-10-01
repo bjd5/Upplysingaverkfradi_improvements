@@ -18,18 +18,11 @@ from dataclasses import dataclass
 from html.parser import HTMLParser
 from pathlib import Path
 
-try:  # keyrt sem eining innan pakkans
-    from .central_perk_mynstur import (
-        BREAK_MARKER, BREAK_MARKER_RE, INLINE_SPACE_RE, LINE_GAP_RE,
-        MIN_PARAGRAPHS_FOR_P_FORMAT, SPACE_RE, TRANSCRIPT_DECODE_ERRORS, TRANSCRIPT_ENCODING,
-    )
-    from .friends_handrit import TranscriptError
-except ImportError:  # keyrt beint úr möppunni
-    from central_perk_mynstur import (
-        BREAK_MARKER, BREAK_MARKER_RE, INLINE_SPACE_RE, LINE_GAP_RE,
-        MIN_PARAGRAPHS_FOR_P_FORMAT, SPACE_RE, TRANSCRIPT_DECODE_ERRORS, TRANSCRIPT_ENCODING,
-    )
-    from friends_handrit import TranscriptError
+from .central_perk_mynstur import (
+    BREAK_MARKER, BREAK_MARKER_RE, INLINE_SPACE_RE, LINE_GAP_RE,
+    MIN_PARAGRAPHS_FOR_P_FORMAT, SPACE_RE, TRANSCRIPT_DECODE_ERRORS, TRANSCRIPT_ENCODING,
+)
+from .friends_handrit import TranscriptError
 
 NBSP = "\xa0"
 
