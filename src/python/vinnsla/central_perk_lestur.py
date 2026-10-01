@@ -72,6 +72,7 @@ class ParagraphParser(HTMLParser):
         self._source_index = 0
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        """``<p>`` byrjar málsgrein; ``<br>`` innan hennar verður ``BREAK_MARKER``."""
         if tag.lower() == "p":
             # Nýtt `<p>` lokar þeirri fyrri þótt `</p>` vanti.
             self._flush()
@@ -80,19 +81,23 @@ class ParagraphParser(HTMLParser):
             self._parts.append(BREAK_MARKER)
 
     def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        """``<br/>`` og ``<p/>`` eru meðhöndluð eins og opnunarmerki."""
         self.handle_starttag(tag, attrs)
 
     def handle_endtag(self, tag: str) -> None:
+        """``</p>`` lokar málsgreininni."""
         if tag.lower() == "p":
             self._flush()
             self._inside_paragraph = False
 
     def handle_data(self, data: str) -> None:
+        """Safnar texta málsgreinarinnar."""
         # Texti utan `<p>` (titill, kreditlínur í `<h1>`/`<b>`) er hunsaður.
         if self._inside_paragraph:
             self._parts.append(data)
 
     def close(self) -> None:
+        """Lýkur lestri og skráir síðustu málsgreinina, þótt ``</p>`` vanti."""
         super().close()
         self._flush()
 

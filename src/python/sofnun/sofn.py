@@ -14,6 +14,8 @@ Aukabreytur ``saekja_*``-fallanna fara óbreyttar í ``sofnun.http.saekja``
 
 from __future__ import annotations
 
+from typing import Any
+
 from . import stillingar
 from .beidni import Beidni
 from .frosid import frosid_svar
@@ -76,7 +78,7 @@ SKJALFTA_BEIDNI = Beidni(
 )
 
 
-def saekja_skjalfta(**rok) -> Svar:
+def saekja_skjalfta(**rok: Any) -> Svar:
     """Sækir skjálftaúrtakið og vistar það óbreytt í ``data/raw/vedur-quakes/``."""
     return saekja(SKJALFTA_BEIDNI, hamark_baeta=HAMARK_SVARS, **rok)
 
@@ -108,7 +110,7 @@ STODVA_BEIDNI = Beidni(
 )
 
 
-def saekja_stodvar(**rok) -> Svar:
+def saekja_stodvar(**rok: Any) -> Svar:
     """Sækir ósíaða stöðvalistann í ``data/raw/vedurstodvar/``."""
     return saekja(STODVA_BEIDNI, **rok)
 
@@ -138,7 +140,7 @@ MBL_BEIDNI = Beidni(
 )
 
 
-def saekja_forsidu(*, thvinga: bool = False, **rok) -> Svar:
+def saekja_forsidu(*, thvinga: bool = False, **rok: Any) -> Svar:
     """Skilar frosna eintakinu, eða sækir nýtt sé ``thvinga=True``.
 
     Nýtt eintak er vistað við hlið frosna eintaksins og yfirskrifar það ekki.
@@ -202,7 +204,7 @@ def leynihausar(lykill: str | None = None) -> dict[str, str]:
     return {"Authorization": f"Bearer {gildi}"}
 
 
-def saekja_tmdb(*, lykill: str | None = None, **rok) -> tuple[Svar, Svar]:
+def saekja_tmdb(*, lykill: str | None = None, **rok: Any) -> tuple[Svar, Svar]:
     """Sækir þátt og leikaraskrá og skilar báðum svörum."""
     hausar = leynihausar(lykill)
     thattur = saekja(THATTAR_BEIDNI, leynihausar=hausar, **rok)

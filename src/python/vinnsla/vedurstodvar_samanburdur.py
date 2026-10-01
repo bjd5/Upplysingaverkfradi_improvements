@@ -229,6 +229,7 @@ def byggja_samanburd() -> dict:
 
 
 def main(rok: list[str] | None = None) -> int:
+    """Handvirk keyrsla: skrifar samanburðarskjalið, eða prentar JSON með ``--prenta``."""
     thattari = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     thattari.add_argument("--prenta", action="store_true", help="prenta JSON í stað þess að skrifa skjalið")
     stillingar = thattari.parse_args(rok)

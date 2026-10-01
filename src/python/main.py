@@ -115,6 +115,7 @@ SKREF = {
 
 
 def main(rok: list[str] | None = None) -> int:
+    """Keyrir skrefin sem ``--skref`` biður um; skilar 0 ef allt tókst, annars 1."""
     thattari = argparse.ArgumentParser(description="Gagnaflæði rannsóknarverkefnisins")
     thattari.add_argument(
         "--skref",
