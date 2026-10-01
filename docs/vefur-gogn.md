@@ -206,3 +206,24 @@ Vafraprófin (Chromium, Playwright) eru handkeyrð og ekki í `unittest`-safninu
 Þau staðfestu 28.9.2026: engin villa í console, gögnin birtast, fimm
 villutilvik birtast á síðunni, síðan virkar án JS, og 320 px í báðum þemum
 án lárétts skruns.
+
+---
+
+## 9. Phoebe-síðurnar: súlur úr JS og töflur í HTML (issue #24)
+
+`phoebe-tolfraedi.html` og `phoebe-central-perk.html` sameina tvö mynstur:
+
+- **Myndritið** er teiknað af `web/assets/js/phoebe-myndrit.js` með
+  `createElementNS` inn í `[data-myndrit]`, í stíl `components/stolparit.css`
+  (litir úr `--myndrit-*`). Það er viðbót: súlurnar byrja í núlli og viðmiðslína
+  er strikuð og nefnd með orðum. matplotlib er ekki notað hér — SVG úr Python
+  (`myndrit.md`) bíður þess að pakkinn sé settur upp.
+- **Taflan** við hvert myndrit er í HTML-inu sjálfu og virkar án JS. Hver tala
+  er rekjanleg: `data-reitur` (lykill), næsta `data-rod` ofar (röðin, t.d.
+  `gogn[thattarod=1,persona=Phoebe]`) og næsta `data-skra` ofar (gagnaskráin).
+  `tests/test_vefur_phoebe.py` ber textann saman við gagnaskrána á íslensku
+  sniði og fellur ef tala í HTML víkur frá henni.
+
+`data-gogn-reitur` nær aðeins inn í `gogn`, ekki `lysigogn`. Tölur sem búa í
+`lysigogn` fara því í töflur með `data-rod`, og teiknarinn les þær beint úr
+skjalinu.

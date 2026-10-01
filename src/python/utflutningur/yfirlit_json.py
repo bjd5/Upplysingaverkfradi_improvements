@@ -17,7 +17,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from . import hagstofan_json, mbl_json, phoebe_json, skjalftar_json, vedurstodvar_json
+from . import central_perk_json, hagstofan_json, mbl_json, phoebe_json, skjalftar_json
+from . import vedurstodvar_json
 from .json_skrif import UtflutningsVilla, byggja_umslag
 
 SKRAARHEITI = "yfirlit.json"
@@ -30,6 +31,7 @@ SIDUR: dict[str, str] = {
     vedurstodvar_json.SKRAARHEITI: "sidur/vedurstodvar.html",
     mbl_json.SKRAARHEITI: "sidur/mbl-regex.html",
     phoebe_json.SKRAARHEITI: "sidur/phoebe-tolfraedi.html",
+    central_perk_json.SKRAARHEITI: "sidur/phoebe-central-perk.html",
 }
 
 
