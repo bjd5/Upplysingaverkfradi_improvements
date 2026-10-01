@@ -1,0 +1,77 @@
+# Birtir web/ á GitHub Pages: https://bjd5.github.io/Upplysingaverkfradi_improvements/
+# (issue #28).
+#
+# Enginn byggingarferill. web/ er þegar tilbúin static síða (regla 1.1) og er
+# birt nákvæmlega eins og hún liggur í repo-inu. Á undan birtingu er staðfest
+# að gagnaskrárnar í web/gogn/ séu til og á sniði útflutningsins og að engin
+# tilvísun brotni undir undirslóðinni. Bregðist það er ekkert birt og eldri
+# útgáfa síðunnar stendur óbreytt.
+#
+# Pages þarf að virkja einu sinni í repo-inu:
+#   Settings → Pages → Build and deployment → Source: GitHub Actions
+
+name: Birting á GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Sjálfgefið má aðeins lesa repo-ið. Birtingarstarfið eitt fær meira.
+permissions:
+  contents: read
+
+# Ein birting í einu. Nýrri keyrsla bíður í stað þess að rjúfa þá sem er í
+# gangi, svo birting stöðvist aldrei í miðjum klíðum.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  stadfesta:
+    name: Staðfesta og pakka web/
+    # Python 3.12 fylgir Ubuntu 24.04; útflutningseiningarnar þurfa 3.12.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Sækja repo-ið
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Staðfesta gagnaskrár í web/gogn/
+        run: scripts/stadfesta-vef.sh
+        env:
+          PYTHON: python3.12
+
+      - name: Staðfesta tilvísanir undir undirslóð
+        working-directory: tests
+        run: python3.12 -m unittest -v test_vefur.UndirslodTest test_vefur.TenglarTest.test_allar_slodir_eru_til
+
+      - name: Pakka web/ til birtingar
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: web
+
+  birta:
+    name: Birta á GitHub Pages
+    needs: stadfesta
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    # Aðeins hér: pages til að birta, id-token svo Pages geti staðfest að
+    # birtingin komi úr þessu workflow-i. Annað (líka contents) er lokað.
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.birting.outputs.page_url }}
+    steps:
+      # Fellur með skýrri villu ef Pages hefur ekki verið virkjað með
+      # „GitHub Actions“ sem uppruna.
+      - name: Undirbúa Pages
+        uses: actions/configure-pages@v6
+
+      - name: Birta
+        id: birting
+        uses: actions/deploy-pages@v5

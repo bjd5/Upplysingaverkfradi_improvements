@@ -3,7 +3,8 @@
 Beinagrindin er afrituð í þrettán HTML-skrár af því að verkefnið hefur engan
 byggingarferil. Þessi próf eru trygging fyrir því að afritin haldist í takt
 þegar síðuverkin fylla efnishlutana. Síðunum er skipt í þrjá flokka —
-Þema, Friends og Viðauka — sjá docs/vefur-beinagrind.md.
+Þema, Friends og Viðauka — sjá docs/vefur-beinagrind.md. UndirslodTest
+staðfestir að web/ virki óbreytt undir undirslóð GitHub Pages (issue #28).
 
 Keyrt með staðalsafninu einu:  python3 -m unittest discover -s tests
 """
@@ -13,8 +14,9 @@ import re
 import unittest
 from collections import deque
 from html.parser import HTMLParser
+from urllib.parse import urlsplit
 
-VEFUR = pathlib.Path(__file__).resolve().parent.parent / "web"
+VEFUR =pathlib.Path(__file__).resolve().parent.parent / "web"
 
 THEMA = [
     "sidur/skjalftavaktin.html",
@@ -37,6 +39,12 @@ SIDUR = ["index.html"] + THEMA + FRIENDS + VIDAUKI
 
 HAMARK_SMELLIR = 3
 
+CSS_SLOD = re.compile(r"""url\(\s*["']?([^"')\s]+)|@import\s+["']([^"']+)""")
+JS_ATHUGASEMD = re.compile(r"/\*.*?\*/|^\s*//[^\n]*", re.DOTALL | re.MULTILINE)
+JS_STRENGUR = re.compile(r'"((?:[^"\\\n]|\\.)*)"|\'((?:[^\'\\\n]|\\.)*)\'')
+# gogn.js reiknar slóð gagnanna frá sjálfri sér, ekki frá síðunni (docs/vefur-gogn.md).
+JS_GRUNNSLOD = re.compile(r'new URL\(\s*"([^"]+)"\s*,\s*document\.currentScript\.src\s*\)')
+
 
 def lesa(sida: str) -> str:
     return (VEFUR / sida).read_text(encoding="utf-8")
@@ -58,6 +66,7 @@ class Safnari(HTMLParser):
         self.myndir: list[dict] = []
         self.skriftur: list[dict] = []
         self.stilar: list[str] = []
+        self.slodir: list[str] = []  # öll href og src, af hvaða tagi sem er
         self.atburdarof: list[str] = []
         self.stiltag = False
         self.innri_skrifta: list[str] = []
@@ -68,6 +77,8 @@ class Safnari(HTMLParser):
         for nafn in eig:
             if nafn.startswith("on"):
                 self.atburdarof.append("%s[%s]" % (tag, nafn))
+            if nafn in ("href", "src") and eig[nafn]:
+                self.slodir.append(eig[nafn])
         if tag in ("h1", "h2", "h3", "h4", "h5", "h6"):
             self.fyrirsagnir.append(int(tag[1]))
         elif tag == "a" and "href" in eig:
@@ -95,6 +106,26 @@ def greina(sida: str) -> Safnari:
     safnari = Safnari()
     safnari.feed(lesa(sida))
     return safnari
+
+
+def stadbundnar_slodir() -> list:
+    """(skrá frá rót web/, slóð) fyrir hverja staðbundna tilvísun í HTML og CSS.
+
+    Öll href og src á síðunum, af hvaða tagi sem er, og url()/@import í CSS.
+    Ytri slóðir (https:, mailto:, data:) og hreinir kaflatenglar (#efni) eru
+    ekki skrár og falla út; fyrirspurn og kaflamerki eru skorin af.
+    """
+    allar = [(sida, slod) for sida in SIDUR for slod in greina(sida).slodir]
+    for skra in sorted((VEFUR / "assets" / "css").rglob("*.css")):
+        heiti = skra.relative_to(VEFUR).as_posix()
+        texti = SjonraentKerfiTest._an_athugasemda(skra)
+        allar += [(heiti, url or innflutt) for url, innflutt in CSS_SLOD.findall(texti)]
+    ut = []
+    for skra, slod in allar:
+        an_kafla = re.split(r"[?#]", slod, maxsplit=1)[0]
+        if an_kafla and not urlsplit(an_kafla).scheme:
+            ut.append((skra, an_kafla))
+    return ut
 
 
 class AdskilnadurTest(unittest.TestCase):
@@ -231,14 +262,12 @@ class TenglarTest(unittest.TestCase):
         return ut
 
     def test_allar_slodir_eru_til(self) -> None:
-        for sida in SIDUR:
-            safnari = greina(sida)
-            slodir = self._innri(safnari, sida)
-            slodir += [stadfaera(sida, s) for s in safnari.stilar]
-            slodir += [stadfaera(sida, s["src"]) for s in safnari.skriftur]
-            for slod in slodir:
-                with self.subTest(sida=sida, slod=slod):
-                    self.assertTrue((VEFUR / slod).exists(), "brotin slóð")
+        for skra, slod in stadbundnar_slodir():
+            with self.subTest(skra=skra, slod=slod):
+                mark = VEFUR / stadfaera(skra, slod)
+                if mark.is_dir():
+                    mark = mark / "index.html"  # vefþjónninn sýnir index.html möppunnar
+                self.assertTrue(mark.is_file(), "brotin slóð")
 
     def test_engar_munadarlausar_sidur(self) -> None:
         skrar = {str(p.relative_to(VEFUR)) for p in VEFUR.rglob("*.html")}
@@ -291,6 +320,43 @@ class SjonraentKerfiTest(unittest.TestCase):
             hreint = lina.strip()
             if hreint and not hreint.startswith(("--", "/*", "*", "}", "{", ":root")):
                 self.fail("dökkt þema skilgreinir annað en tokens: %r" % hreint)
+
+
+class UndirslodTest(unittest.TestCase):
+    """Issue #28 — web/ virkar undir bjd5.github.io/Upplysingaverkfradi_improvements/.
+
+    Slóð sem byrjar á „/“ vísar á rót lénsins, ekki síðunnar, og slóð út fyrir
+    web/ er ekki til á vefþjóninum. Að hver tilvísun vísi á skrá prófar
+    TenglarTest; gagnaskrárnar sem JS sækir eftir data-gogn prófar test_vefur_gogn.
+    """
+
+    def test_engin_slod_fra_rot_lensins(self) -> None:
+        for skra, slod in stadbundnar_slodir():
+            with self.subTest(skra=skra, slod=slod):
+                self.assertFalse(slod.startswith("/"), "vísar á rót lénsins")
+
+    def test_engin_slod_ut_fyrir_web(self) -> None:
+        for skra, slod in stadbundnar_slodir():
+            with self.subTest(skra=skra, slod=slod):
+                mark = stadfaera(skra, slod)
+                self.assertFalse(mark == ".." or mark.startswith("../"), "fer út fyrir web/")
+
+    def test_js_saekir_adeins_afstaedar_slodir(self) -> None:
+        grunnslodir = []
+        for skra in sorted((VEFUR / "assets" / "js").glob("*.js")):
+            heiti = skra.relative_to(VEFUR).as_posix()
+            kodi = JS_ATHUGASEMD.sub("", skra.read_text("utf-8"))
+            for tvofaldur, einfaldur in JS_STRENGUR.findall(kodi):
+                with self.subTest(skra=heiti, strengur=tvofaldur or einfaldur):
+                    self.assertFalse((tvofaldur or einfaldur).startswith("/"),
+                                     "slóð frá rót lénsins")
+            grunnslodir += [(heiti, slod) for slod in JS_GRUNNSLOD.findall(kodi)]
+        self.assertTrue(grunnslodir, "gogn.js reiknar ekki slóð gagnanna frá sjálfri sér")
+        for heiti, slod in grunnslodir:
+            with self.subTest(skra=heiti, grunnslod=slod):
+                mark = stadfaera(heiti, slod)
+                self.assertFalse(mark.startswith("../"), "fer út fyrir web/")
+                self.assertTrue((VEFUR / mark).is_dir(), "mappan er ekki til")
 
 
 if __name__ == "__main__":

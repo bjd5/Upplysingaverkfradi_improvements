@@ -202,6 +202,15 @@ sínum; hver `data-gogn`-skrá er til og á sniði reglu 5.4; hver
 `<noscript>` og falið efni; hver hook, teiknari og CSS-klasi sem JS notar er
 til; og JS-skrárnar eru undir 300 línum og 30 KB samanlagt.
 
+**Á undan birtingu** (`.github/workflows/pages.yml`, við hvert push á `main`)
+keyrir `scripts/stadfesta-vef.sh`: hver skrá í `web/gogn/` stenst sama snið og
+útflutningurinn skrifar (`json_skrif.sem_baeti`), engin útflutt skrá vantar og
+hver gagnaskrá sem síða vísar í er til. Annars er ekkert birt.
+
+`UndirslodTest` (`tests/test_vefur.py`) keyrir líka á undan birtingu: engin slóð
+í HTML, CSS eða JS byrjar á `/` né fer út fyrir `web/`, svo síðan virkar undir
+`bjd5.github.io/Upplysingaverkfradi_improvements/`.
+
 Vafraprófin (Chromium, Playwright) eru handkeyrð og ekki í `unittest`-safninu.
 Þau staðfestu 28.9.2026: engin villa í console, gögnin birtast, fimm
 villutilvik birtast á síðunni, síðan virkar án JS, og 320 px í báðum þemum
