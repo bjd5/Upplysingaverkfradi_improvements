@@ -68,6 +68,7 @@ Fleiri skipanir:
 PYTHON=python3.12 scripts/endurbyggja-grunn.sh        # eyðir grunninum, byggir aftur, prentar fingrafar
 PYTHON=python3.12 scripts/saekja-gogn.sh listi        # söfnin; `<safn> --thvinga` sækir nýtt eintak af netinu
 python3.12 src/python/vidmid/provenance.py stadfesta  # frosnu gögnin óbreytt (SHA-256)
+PYTHON=python3.12 scripts/stadfesta-vef.sh            # web/ tilbúin til birtingar — sama athugun og birtingin gerir
 ```
 
 Tvær endurbyggingar í röð eiga að prenta sama fingrafar.
