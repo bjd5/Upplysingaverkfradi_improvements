@@ -2,7 +2,7 @@
 
 Flutt úr ``src/phoebe_central_perk.py`` (commit ``2865ed6``): ``Dialogue``,
 ``is_scene_start``, ``is_central_perk_scene``, ``normalise_speaker``,
-``count_words``, ``parse_dialogue`` og ``block_contexts``.
+``count_words`` og ``block_contexts``.
 
 Þessi þáttari er **sér** frá ``friends_thattari`` (P2.5) af ásettu ráði:
 ræðumannamynstrið, orðamynstrið og ``normalise_speaker`` (sem skilar
@@ -14,23 +14,20 @@ Eingöngu staðalsafnið (regla 10).
 from __future__ import annotations
 
 from dataclasses import dataclass
-from pathlib import Path
 from typing import Sequence
 
 try:  # keyrt sem eining innan pakkans
-    from .central_perk_lestur import Block, clean_text, read_blocks
+    from .central_perk_lestur import Block, clean_text
     from .central_perk_mynstur import (
         CENTRAL_PERK, NAME_ALIAS_PATTERNS, SCENE_START_RE, SPEAKER_RE, STAGE_DIRECTION_RE,
         WORD_RE,
     )
-    from .friends_handrit import episode_code
 except ImportError:  # keyrt beint úr möppunni
-    from central_perk_lestur import Block, clean_text, read_blocks
+    from central_perk_lestur import Block, clean_text
     from central_perk_mynstur import (
         CENTRAL_PERK, NAME_ALIAS_PATTERNS, SCENE_START_RE, SPEAKER_RE, STAGE_DIRECTION_RE,
         WORD_RE,
     )
-    from friends_handrit import episode_code
 
 
 @dataclass(frozen=True)
@@ -133,9 +130,3 @@ def dialogue_from_blocks(episode_id: str, blocks: Sequence[Block]) -> list[Dialo
             source_index=context.block.source_index,
         ))
     return dialogue
-
-
-def parse_dialogue(path: Path) -> tuple[list[Block], list[Dialogue]]:
-    """Les eitt handrit og skilar (blokkir, tilsvör)."""
-    blocks = read_blocks(path)
-    return blocks, dialogue_from_blocks(episode_code(path), blocks)

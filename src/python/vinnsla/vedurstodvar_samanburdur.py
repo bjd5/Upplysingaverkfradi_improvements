@@ -58,7 +58,6 @@ VIDMID_SVOR = {
     "naesta_aflogd": (2, "Sjómannaskóli", 689),
     "langtimastod": (1, "Reykjavík", 2547),
 }
-VIDMID_1469_START = 2022
 
 
 class SamanburdarVilla(RuntimeError):
