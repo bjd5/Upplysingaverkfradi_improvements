@@ -1,0 +1,197 @@
+/* vedurstodvar.css — einingar sem aðeins Veðurstöðvasíðan notar (issue #22).
+   Hegðunin er í assets/js/vedurstodvar.js. Öll gildi koma úr tokens.css.
+   Staða stöðvar er alltaf í orðum og með tákni; liturinn er viðbót (3.3).   */
+
+/* --- Frosið eintak: sóknardagsetningin efst, ofan við fold ---------------- */
+.vedur-eintak {
+  display: grid;
+  gap: var(--bil-1);
+  margin: 0 0 var(--bil-4);
+  padding: var(--bil-3) var(--bil-4);
+  background: var(--ahersla-100);
+  border-left: var(--rammi-breidd-breid) solid var(--ahersla-500);
+  border-radius: var(--radius);
+}
+
+.vedur-eintak > *,
+.vedur-eintak [data-gogn-efni] > * { margin: 0; }
+
+.vedur-eintak [data-gogn-efni]:not([hidden]) { display: grid; }
+
+.vedur-eintak__merki {
+  font-size: var(--texti-xs);
+  font-weight: var(--thyngd-feit);
+  letter-spacing: var(--stafabil-vitt);
+  text-transform: uppercase;
+  color: var(--ahersla-700);
+}
+
+.vedur-eintak__takn { margin-right: var(--bil-1); }
+
+.vedur-eintak__dags {
+  font-family: var(--letur-fyrirsogn);
+  font-size: var(--texti-lg);
+  line-height: var(--linuhaed-thett);
+  color: var(--texti);
+}
+
+/* Fyrirvarinn er fastur texti: hann stendur líka án JavaScript. */
+.vedur-fyrirvari {
+  margin: var(--bil-4) 0 0;
+  padding-left: var(--bil-4);
+  border-left: var(--rammi-breidd-breid) solid var(--ahersla-500);
+  font-size: var(--texti-sm);
+  color: var(--texti);
+}
+
+/* Upprunalínan sem gagnahluti.js bætir við: þétt hér, svo fyrirsögnin haldist
+   ofan við fold í síma. Textinn er óbreyttur. */
+.vedur-eintak .stada-gagna {
+  gap: var(--bil-2);
+  padding: 0;
+  background: none;
+  border: 0;
+  font-size: var(--texti-xs);
+  color: var(--texti);
+}
+
+/* --- Svarið: stöðin sem forritið les ------------------------------------- */
+.vedur-svar__spjald {
+  display: grid;
+  gap: var(--bil-2);
+  padding: var(--bil-6);
+  background: var(--bak-upphaekkad);
+  border: var(--rammi-breidd) solid var(--rammi);
+  border-left: var(--rammi-breidd-breid) solid var(--adal-400);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--skuggi-sm);
+}
+
+.vedur-svar__spjald > * { margin: 0; }
+
+.vedur-svar__inngangur {
+  font-size: var(--texti-xs);
+  font-weight: var(--thyngd-feit);
+  letter-spacing: var(--stafabil-vitt);
+  text-transform: uppercase;
+  color: var(--texti-daufur);
+}
+
+.vedur-svar__stod {
+  font-family: var(--letur-fyrirsogn);
+  font-size: var(--texti-2xl);
+  line-height: var(--linuhaed-thett);
+  color: var(--texti);
+}
+
+.vedur-svar__audkenni {
+  display: block;
+  margin-top: var(--bil-1);
+  font-family: var(--letur-texti);
+  font-size: var(--texti-sm);
+  color: var(--texti-daufur);
+}
+
+.vedur-svar__tolur {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--bil-4);
+  margin: var(--bil-4) 0 0;
+}
+
+.vedur-svar__tolur dt {
+  font-size: var(--texti-xs);
+  letter-spacing: var(--stafabil-vitt);
+  text-transform: uppercase;
+  color: var(--texti-daufur);
+}
+
+.vedur-svar__tolur dd {
+  margin: var(--bil-1) 0 0;
+  font-size: var(--texti-lg);
+  font-weight: var(--thyngd-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Síurnar ------------------------------------------------------------- */
+.vedur-siur { margin: 0; display: grid; gap: var(--bil-4); }
+.vedur-siur dd { margin: var(--bil-1) 0 0; max-width: var(--breidd-lesmals); }
+
+.vedur-athugasemd {
+  padding: var(--bil-4) var(--bil-6);
+  background: var(--bak-upphaekkad);
+  border: var(--rammi-breidd) solid var(--rammi);
+  border-left: var(--rammi-breidd-breid) solid var(--advorun);
+  border-radius: var(--radius);
+}
+
+.vedur-hnit { max-width: var(--breidd-lesmals); }
+
+/* --- Stöðvataflan og súlurnar -------------------------------------------- */
+.vedur-skyring {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bil-2) var(--bil-6);
+  max-width: none;
+  font-size: var(--texti-sm);
+  color: var(--texti-daufur);
+}
+
+.vedur-merki { font-weight: var(--thyngd-feit); }
+.vedur-merki--virk   { color: var(--i-lagi); }
+.vedur-merki--aflogd { color: var(--texti-daufur); }
+.vedur-merki--valin  { color: var(--ahersla-700); }
+
+.vedur-rod--aflogd td { color: var(--texti-daufur); }
+
+.vedur-rod--valin td {
+  background: var(--adal-50);
+  font-weight: var(--thyngd-feit);
+}
+
+.vedur-sula {
+  display: block;
+  inline-size: 100%;
+  min-inline-size: var(--bil-24);
+  block-size: var(--bil-2);
+  margin-top: var(--bil-1);
+  appearance: none;
+  background: var(--bak-daufur);
+  border: 0;
+  border-radius: var(--radius-pilla);
+}
+
+@media (min-width: 48rem) {
+  .vedur-sula { min-inline-size: calc(var(--bil-24) * 2); }
+}
+
+/* Söluaðilaforskeyti hvert í sinni reglu: óþekkt forskeyti í lista ógildir
+   alla regluna. */
+.vedur-sula::-webkit-meter-bar {
+  background: var(--bak-daufur);
+  border: 0;
+  border-radius: var(--radius-pilla);
+  block-size: var(--bil-2);
+}
+
+.vedur-sula::-webkit-meter-optimum-value {
+  background: var(--tengill);
+  border-radius: var(--radius-pilla);
+}
+
+.vedur-sula::-moz-meter-bar {
+  background: var(--tengill);
+  border-radius: var(--radius-pilla);
+}
+
+.vedur-rod--aflogd .vedur-sula::-webkit-meter-optimum-value {
+  background: var(--texti-daufur);
+}
+
+.vedur-rod--aflogd .vedur-sula::-moz-meter-bar {
+  background: var(--texti-daufur);
+}
+
+/* --- Takmarkanir --------------------------------------------------------- */
+.vedur-takmarkanir { margin: 0; padding-left: var(--bil-6); }
+.vedur-takmarkanir li + li { margin-top: var(--bil-3); }
