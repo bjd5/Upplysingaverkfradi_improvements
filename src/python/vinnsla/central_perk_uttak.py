@@ -47,7 +47,8 @@ from .central_perk_mynstur import (
 from .friends_handrit import (
     EXCLUDED_FILES, ROT, SOURCE_COMMIT, SOURCE_REPOSITORY, TranscriptError, transcript_paths,
 )
-from .phoebe_uttak import ensure_outside_web, write_csv, write_json
+from .phoebe_uttak import write_csv, write_json
+from .varnagli import krefjast_utan_vefs
 
 log = logging.getLogger(__name__)
 
@@ -166,7 +167,7 @@ def write_outputs(results: Sequence[EpisodeResult],
                   directory: Path | str | None = None) -> list[Path]:
     """Skrifar skrárnar fjórar í ``directory`` (sjálfgefið ``OUTPUT_DIR``)."""
     folder = Path(directory) if directory is not None else OUTPUT_DIR
-    ensure_outside_web(folder)
+    krefjast_utan_vefs(folder)
     folder.mkdir(parents=True, exist_ok=True)
     write_json(folder / SUMMARY_FILE, summarise(results))
     write_csv(folder / EPISODES_FILE, EPISODE_FIELDS, episode_rows(results))

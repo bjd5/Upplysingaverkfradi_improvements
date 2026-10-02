@@ -34,6 +34,7 @@ from pathlib import Path
 
 from gagnagrunnur.tenging import ROT
 
+from .varnagli import krefjast_utan_vefs
 from .vedurstodvar_hledsla import FROSID, lesa_eintak, stutt_slod
 from .vedurstodvar_mat import Mat, MatVilla, StodIFjarlaegd, meta
 from .vedurstodvar_samanburdur import VR_II_HEIMILD
@@ -41,7 +42,6 @@ from .vedurstodvar_samanburdur import VR_II_HEIMILD
 log = logging.getLogger(__name__)
 
 UNNID = ROT / "data" / "processed" / "vedurstodvar"
-VEFGOGN = ROT / "web" / "gogn"
 MATSKRA = "mat.json"
 
 
@@ -84,20 +84,6 @@ def mat_sem_skjal(mat: Mat, provenance: dict, eintak: Path) -> dict:
     }
 
 
-def krefjast_utan_vefs(mappa: Path) -> None:
-    """Stöðvar skrif inn í ``web/gogn/`` eða undirmöppu hennar.
-
-    Vinnslan á aldrei að skrifa í birtingarlagið (kafli 0). Rétt sjálfgefin
-    slóð á ekki að vera eina vörnin.
-    """
-    rett = mappa.resolve()
-    if rett == VEFGOGN or VEFGOGN in rett.parents:
-        raise MatVilla(
-            f"Vinnslan skrifar ekki í {VEFGOGN}. Þangað fer aðeins JSON frá "
-            "útflutningslaginu eftir að grunnurinn hefur verið byggður (kafli 0)."
-        )
-
-
 def vinna_vedurstodvar(
     frosid: Path = FROSID, mappa: Path | str | None = None
 ) -> tuple[Path, Mat]:
@@ -109,7 +95,7 @@ def vinna_vedurstodvar(
     skrá verður til.
     """
     mappa = Path(mappa) if mappa is not None else UNNID
-    krefjast_utan_vefs(mappa)
+    krefjast_utan_vefs(mappa, MatVilla)
 
     provenance, eintak, stodvar = lesa_eintak(frosid)
     mat = meta(stodvar)

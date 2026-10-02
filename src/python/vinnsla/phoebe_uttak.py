@@ -41,11 +41,11 @@ from .phoebe_samningur import (
 from .phoebe_skyrslur import (
     extra_stats_report, mentions_report, screentime_report, top_talkers_report,
 )
+from .varnagli import krefjast_utan_vefs
 
 log = logging.getLogger(__name__)
 
 OUTPUT_DIR = ROT / "data" / "processed" / "phoebe-stats"
-WEB_DATA_DIR = ROT / "web" / "gogn"
 JSON_INDENT = 2
 # csv-einingin skrifar \r\n sjálfgefið og frosna viðmiðið ber þau bæti.
 CSV_LINE_TERMINATOR = "\r\n"
@@ -114,20 +114,10 @@ def write_csv(path: Path, fields: list[str], rows: list[dict]) -> None:
         writer.writerows(rows)
 
 
-def ensure_outside_web(directory: Path) -> None:
-    """Stöðvar skrif inn í ``web/gogn/`` — vinnslan skrifar aldrei í birtingarlagið."""
-    resolved = directory.resolve()
-    if resolved == WEB_DATA_DIR or WEB_DATA_DIR in resolved.parents:
-        raise ValueError(
-            f"Vinnslan skrifar ekki í {WEB_DATA_DIR}. Þangað fer aðeins JSON frá "
-            "útflutningslaginu eftir að grunnurinn hefur verið byggður (kafli 0)."
-        )
-
-
 def write_outputs(a: Analysis, directory: Path | str | None = None) -> list[Path]:
     """Skrifar allar skrárnar í ``directory`` (sjálfgefið ``data/processed/phoebe-stats``)."""
     folder = Path(directory) if directory is not None else OUTPUT_DIR
-    ensure_outside_web(folder)
+    krefjast_utan_vefs(folder)
     folder.mkdir(parents=True, exist_ok=True)
     written = []
     for item in output_files(a):
