@@ -1,19 +1,22 @@
 /* undirvalmynd.css — systursíður innan sama efnisflokks.
-   Notuð á Phoebe-síðunum þremur svo enginn þeirra sé blindgata.        */
+   Situr í bandinu efst á undirsíðu (sjá sidu-haus.css) svo enginn þeirra
+   sé blindgata.                                                          */
 
 .undirvalmynd {
-  margin-bottom: var(--bil-8);
-  padding-bottom: var(--bil-4);
-  border-bottom: var(--rammi-breidd) solid var(--rammi);
+  padding-block: var(--bil-2) var(--bil-4);
+  /* Bandið (sjá sidu-haus.css) nær einni línu niður fyrir eininguna svo
+     engin rauf sjáist milli hennar og næstu einingar í bandinu. */
+  border-image: linear-gradient(var(--bak-band) 0 0) fill 0 / 0 /
+                0 100vmax var(--rammi-breidd);
 }
 
 .undirvalmynd__titill {
   margin: 0 0 var(--bil-2);
   font-family: var(--letur-texti);
   font-size: var(--texti-xs);
-  font-weight: var(--thyngd-feit);
+  font-weight: var(--thyngd-halffeit);
   text-transform: uppercase;
-  letter-spacing: var(--stafabil-vitt);
+  letter-spacing: var(--stafabil-breitt);
   color: var(--texti-daufur);
 }
 
@@ -42,9 +45,11 @@
   font-size: var(--texti-sm);
   font-weight: var(--thyngd-medium);
   text-decoration: none;
+  transition: border-color var(--hradi) var(--ferill),
+              color var(--hradi) var(--ferill);
 }
 .undirvalmynd a:hover {
-  border-color: var(--rammi-sterkur);
+  border-color: var(--adal-200);
   color: var(--texti);
 }
 

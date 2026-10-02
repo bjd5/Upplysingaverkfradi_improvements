@@ -1,37 +1,55 @@
-/* kort.css — efnisspjöld í rasti */
+/* kort.css — efnisspjöld í rasti (forsíða) */
 
 .kort-raster {
   display: grid;
-  gap: var(--bil-6);
+  gap: var(--bil-4);
   grid-template-columns: 1fr;
 }
 
 @media (min-width: 40rem) {
-  .kort-raster { grid-template-columns: repeat(2, 1fr); }
+  .kort-raster { grid-template-columns: repeat(2, 1fr); gap: var(--bil-6); }
 }
 @media (min-width: 64rem) {
   .kort-raster--thrju { grid-template-columns: repeat(3, 1fr); }
+  .kort-raster--fjogur { grid-template-columns: repeat(4, 1fr); }
 }
 
 .kort {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: var(--bil-6);
+  overflow: hidden;
+  padding: var(--bil-8) var(--bil-6) var(--bil-4);
   background: var(--bak-upphaekkad);
   border: var(--rammi-breidd) solid var(--rammi);
   border-radius: var(--radius-lg);
   box-shadow: var(--skuggi-sm);
-  transition: box-shadow var(--hradi) var(--ferill),
-              border-color var(--hradi) var(--ferill),
-              transform var(--hradi) var(--ferill);
+  transition: box-shadow var(--hradi-haegt) var(--ferill),
+              border-color var(--hradi-haegt) var(--ferill),
+              transform var(--hradi-haegt) var(--ferill);
 }
 
-.kort:hover {
-  box-shadow: var(--skuggi);
-  border-color: var(--rammi-sterkur);
+/* Gullið strik efst sem rennur inn við yfirsvif og fókus. */
+.kort::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-top: var(--rammi-breidd-breid) solid var(--merki-lina);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--hradi-haegt) var(--ferill);
+}
+
+.kort:hover,
+.kort:focus-within {
+  border-color: var(--adal-200);
+  box-shadow: var(--skuggi-lg);
   transform: translateY(calc(-1 * var(--lyfta)));
 }
+.kort:hover::before,
+.kort:focus-within::before { transform: scaleX(1); }
 
 /* Fókusumgjörðin á að umlykja allt kortið, ekki bara textatengilinn. */
 .kort:focus-within {
@@ -40,24 +58,37 @@
 }
 .kort:focus-within .kort__tengill:focus-visible { outline: none; }
 
+/* Númerið: lítið, skáletrað og gyllt, með hárlínu út að jaðri. */
 .kort__tala {
-  font-family: var(--letur-fyrirsogn);
-  font-size: var(--texti-2xl);
-  color: var(--tengill);
-  line-height: 1;
-  margin-bottom: var(--bil-2);
+  display: flex;
+  align-items: center;
+  gap: var(--bil-3);
+  margin-bottom: var(--bil-6);
   max-width: none;
+  font-family: var(--letur-fyrirsogn);
+  font-size: var(--texti-base);
+  font-style: italic;
+  line-height: 1;
+  color: var(--texti-ahersla);
+}
+.kort__tala::after {
+  content: "";
+  flex: 1;
+  border-top: var(--rammi-breidd) solid var(--rammi);
 }
 
 .kort h3 {
-  margin: 0 0 var(--bil-2);
-  font-size: var(--texti-lg);
+  margin: 0 0 var(--bil-3);
+  font-family: var(--letur-fyrirsogn);
+  font-size: var(--texti-xl);
+  font-weight: var(--thyngd-venjuleg);
+  line-height: var(--linuhaed-thett);
 }
 
 .kort p {
   color: var(--texti-daufur);
   font-size: var(--texti-sm);
-  margin-bottom: var(--bil-4);
+  margin-bottom: var(--bil-6);
   flex: 1;
 }
 
@@ -67,15 +98,56 @@
 .kort__tengill {
   display: inline-flex;
   align-items: center;
+  gap: var(--bil-2);
   min-height: var(--smellisvaedi);
-  font-weight: var(--thyngd-medium);
-  text-decoration: none;
   margin-top: auto;
+  font-size: var(--texti-xs);
+  font-weight: var(--thyngd-halffeit);
+  letter-spacing: var(--stafabil-vitt);
+  text-transform: uppercase;
+  text-decoration: none;
 }
-.kort__tengill::after { content: " →"; }
+.kort__tengill::after {
+  content: "→";
+  content: "→" / "";
+  transition: transform var(--hradi-haegt) var(--ferill);
+}
+.kort:hover .kort__tengill::after { transform: translateX(var(--lyfta)); }
 .kort__tengill::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: var(--radius-lg);
+}
+
+/* --- Aðalkort: eitt verkefni yfir allt rastið, með skjálftahringjum ------ */
+.kort--adal { grid-column: 1 / -1; }
+
+@media (min-width: 48rem) {
+  .kort--adal {
+    min-height: 20rem;
+    padding: var(--bil-12) 48% var(--bil-8) var(--bil-10);
+  }
+  .kort--adal h3 { font-size: var(--texti-2xl); }
+  .kort--adal p { font-size: var(--texti-base); }
+
+  /* Skraut eingöngu: smellir fara í gegn í tengilinn (pointer-events). */
+  .kort--adal::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 42%;
+    pointer-events: none;
+    border-left: var(--rammi-breidd) solid var(--rammi);
+    background:
+      radial-gradient(circle at 50% 50%, transparent 30%, var(--bak-band) 72%),
+      radial-gradient(circle at 50% 50%, var(--ahersla-500) 0 var(--bil-1), transparent calc(var(--bil-1) + var(--rammi-breidd))),
+      repeating-radial-gradient(circle at 50% 50%,
+        transparent 0 var(--bil-6),
+        var(--adal-200) var(--bil-6) calc(var(--bil-6) + var(--rammi-breidd))),
+      var(--bak-band);
+    transition: transform var(--hradi-haegt) var(--ferill);
+  }
 }

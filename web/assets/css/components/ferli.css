@@ -1,0 +1,71 @@
+/* ferli.css — gagnaferlið í skrefum (forsíða): ein lína, gullpunktur við
+   hvert skref og númer í skáletri. Röðin sjálf er í <ol>, númerin eru skraut. */
+
+.ferli {
+  display: grid;
+  gap: var(--bil-8) 0;
+  grid-template-columns: 1fr;
+  margin: 0 0 var(--bil-8);
+  padding: 0;
+  list-style: none;
+  counter-reset: ferli;
+}
+
+@media (min-width: 40rem) {
+  .ferli { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 64rem) {
+  .ferli { grid-template-columns: repeat(4, 1fr); }
+}
+
+.ferli__skref {
+  position: relative;
+  max-width: none;
+  padding: var(--bil-8) var(--bil-6) 0 0;
+  border-top: var(--rammi-breidd) solid var(--rammi-sterkur);
+  counter-increment: ferli;
+}
+
+.ferli__skref::before {
+  content: counter(ferli, decimal-leading-zero);
+  content: counter(ferli, decimal-leading-zero) / "";
+  display: block;
+  margin-bottom: var(--bil-2);
+  font-family: var(--letur-fyrirsogn);
+  font-style: italic;
+  font-size: var(--texti-base);
+  color: var(--texti-ahersla);
+}
+
+/* Punkturinn situr á línunni, við upphaf hvers skrefs. */
+.ferli__skref::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--punktur) / -2);
+  left: 0;
+  width: var(--punktur);
+  height: var(--punktur);
+  border-radius: 50%;
+  background: var(--merki-lina);
+  box-shadow: 0 0 0 var(--bil-1) var(--bak);
+}
+
+.ferli__titill {
+  margin: 0 0 var(--bil-2);
+  font-family: var(--letur-fyrirsogn);
+  font-size: var(--texti-xl);
+  font-weight: var(--thyngd-venjuleg);
+}
+
+.ferli__skref p {
+  margin: 0;
+  font-size: var(--texti-sm);
+  color: var(--texti-daufur);
+}
+
+.ferli__tengill a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--smellisvaedi);
+  font-weight: var(--thyngd-medium);
+}

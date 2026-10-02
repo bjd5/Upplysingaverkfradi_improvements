@@ -3,6 +3,30 @@
    Skjáþrepin (40/48/64rem) eru skráð efst í tokens.css.
    =========================================================================== */
 
+/* --- Dökkir fletir ------------------------------------------------------- */
+/* Hetjan og fóturinn eru dökkblá í báðum þemum. Í stað þess að skrifa nýja
+   stíla fyrir allt sem þar stendur eru hlutverkalitirnir endurskilgreindir
+   innan flatarins — sama aðferð og dökka þemað notar (regla 3.1).          */
+.hetja,
+.fotur {
+  --bak:            var(--dokkt-bak);
+  --bak-upphaekkad: var(--dokkt-upphaekkad);
+  --bak-daufur:     var(--dokkt-upphaekkad);
+  --texti:          var(--dokkt-texti);
+  --texti-daufur:   var(--dokkt-texti-daufur);
+  --rammi:          var(--dokkt-rammi);
+  --rammi-sterkur:  var(--dokkt-rammi-sterkur);
+  --tengill:        var(--dokkt-tengill);
+  --tengill-yfir:   var(--dokkt-tengill-yfir);
+  --fokus:          var(--dokkt-ahersla);
+  --texti-ahersla:  var(--dokkt-ahersla);
+  --adal-200:       var(--dokkt-rammi-sterkur);
+  --adal-400:       var(--dokkt-ahersla);
+  --hringir:        var(--dokkt-hringir);
+  background: var(--bak);
+  color: var(--texti);
+}
+
 /* --- Grind --------------------------------------------------------------- */
 .umgjord {
   width: 100%;
@@ -16,9 +40,70 @@
 }
 
 .sida { display: flex; flex-direction: column; min-height: 100vh; }
-main { flex: 1; padding-block: var(--bil-8) var(--bil-16); }
+/* Ekkert bil efst: hetjan (forsíða) og bandið (undirsíður) liggja upp við
+   hausinn og sjá sjálf um loftið.                                         */
+main { flex: 1; padding-block: 0 var(--bil-20); }
 
-.hluti { margin-block: var(--bil-12); }
+.hluti { margin-block: var(--bil-16); }
+.hluti:last-child { margin-bottom: 0; }
+
+@media (min-width: 64rem) {
+  .hluti { margin-block: var(--bil-24); }
+}
+
+/* Kaflahaus á forsíðu: yfirmerki og fyrirsögn til vinstri, lýsing til hægri. */
+.hluti__haus {
+  display: grid;
+  gap: var(--bil-2) var(--bil-12);
+  margin-bottom: var(--bil-8);
+  padding-bottom: var(--bil-6);
+  border-bottom: var(--rammi-breidd) solid var(--rammi);
+}
+.hluti__haus h2 { margin: 0; font-size: var(--texti-3xl); }
+
+@media (min-width: 64rem) {
+  .hluti__haus {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: end;
+  }
+}
+
+.hluti__lysing {
+  margin: 0;
+  color: var(--texti-daufur);
+}
+
+/* --- Meginmál undirsíðu ------------------------------------------------- */
+/* Kaflafyrirsagnir fá stutta gullínu ofan við sig: rólegt, endurtekið mynstur
+   sem skiptir löngum síðum í lesanlega kafla.                              */
+.efni h2::before {
+  content: "";
+  display: block;
+  width: var(--merki-breidd);
+  margin-bottom: var(--bil-4);
+  border-top: var(--rammi-breidd-breid) solid var(--merki-lina);
+}
+.efni > :first-child { margin-top: 0; }
+
+/* --- Yfirmerki: stutt gullína og hástafir ofan við fyrirsögn ------------- */
+.yfirmerki {
+  display: flex;
+  align-items: center;
+  gap: var(--bil-3);
+  margin: 0 0 var(--bil-4);
+  max-width: none;
+  font-size: var(--texti-xs);
+  font-weight: var(--thyngd-halffeit);
+  letter-spacing: var(--stafabil-breitt);
+  text-transform: uppercase;
+  color: var(--texti-ahersla);
+}
+.yfirmerki::before {
+  content: "";
+  flex: none;
+  width: var(--merki-breidd);
+  border-top: var(--rammi-breidd) solid var(--merki-lina);
+}
 
 /* --- Stökkva yfir í efni (fyrsti tengill á hverri síðu, regla 3.3) ------- */
 .stokk-tengill {
@@ -53,6 +138,18 @@ main { flex: 1; padding-block: var(--bil-8) var(--bil-16); }
   }
 }
 
+/* Þar sem vafrinn styður móðu verður fasti hausinn hálfgegnsær: efnið
+   rennur mjúklega undir hann. Annars stendur gegnheill litur. */
+@supports (backdrop-filter: blur(1em)) or (-webkit-backdrop-filter: blur(1em)) {
+  @media (min-width: 64rem) {
+    .haus {
+      background: var(--bak-haus);
+      -webkit-backdrop-filter: saturate(1.8) blur(var(--haus-thoka));
+      backdrop-filter: saturate(1.8) blur(var(--haus-thoka));
+    }
+  }
+}
+
 .haus__innihald {
   display: flex;
   align-items: center;
@@ -61,23 +158,44 @@ main { flex: 1; padding-block: var(--bil-8) var(--bil-16); }
   min-height: var(--haed-haus);
 }
 
+/* Merkið: blár reitur með gullpunkti (skjálftamiðja) og heitið í tveimur
+   þyngdum. Reiturinn er skraut og ber enga merkingu (regla 3.3).          */
 .haus__merki {
   display: inline-flex;
   align-items: center;
   min-height: var(--smellisvaedi);
   font-family: var(--letur-fyrirsogn);
   font-size: var(--texti-lg);
-  font-weight: var(--thyngd-feit);
   color: var(--texti);
   text-decoration: none;
   letter-spacing: var(--stafabil-thett);
   white-space: nowrap;
 }
-.haus__merki span { color: var(--tengill); }
+.haus__merki::before {
+  content: "";
+  flex: none;
+  margin-right: var(--bil-3);
+  width: var(--bil-8);
+  height: var(--bil-8);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 68% 32%, var(--ahersla-300) 0 18%, transparent 19%),
+    radial-gradient(circle at 68% 32%, transparent 0 34%, var(--adal-400) 35% 39%, transparent 40%),
+    radial-gradient(circle at 68% 32%, transparent 0 58%, var(--adal-700) 59% 63%, transparent 64%),
+    var(--adal-500);
+  box-shadow: var(--skuggi-sm);
+}
+.haus__merki span { color: var(--texti-ahersla); font-style: italic; }
+.haus__merki:hover { color: var(--texti); }
 
 /* Á 320px þarf merkið að rúmast við hlið valmyndarhnappsins (regla 3.5). */
 @media (max-width: 40rem) {
   .haus__merki { font-size: var(--texti-base); }
+  .haus__merki::before {
+    width: var(--bil-6);
+    height: var(--bil-6);
+    margin-right: var(--bil-2);
+  }
 }
 
 /* --- Aðalvalmynd --------------------------------------------------------- */
@@ -89,16 +207,17 @@ main { flex: 1; padding-block: var(--bil-8) var(--bil-16); }
   gap: var(--bil-2);
   min-height: var(--smellisvaedi);
   min-width: var(--smellisvaedi);
-  padding: var(--bil-2) var(--bil-3);
-  background: none;
-  border: var(--rammi-breidd) solid var(--rammi-sterkur);
-  border-radius: var(--radius);
+  padding: var(--bil-2) var(--bil-4);
+  background: var(--bak-upphaekkad);
+  border: var(--rammi-breidd) solid var(--rammi);
+  border-radius: var(--radius-pilla);
   color: var(--texti);
   font: inherit;
   font-size: var(--texti-sm);
+  font-weight: var(--thyngd-medium);
   cursor: pointer;
 }
-.valmynd__hnappur:hover { background: var(--bak-daufur); }
+.valmynd__hnappur:hover { border-color: var(--rammi-sterkur); }
 
 .valmynd__listi {
   list-style: none;
@@ -112,10 +231,11 @@ main { flex: 1; padding-block: var(--bil-8) var(--bil-16); }
 .valmynd__listi li { max-width: none; }
 
 .valmynd__tengill {
+  position: relative;
   display: flex;
   align-items: center;
   min-height: var(--smellisvaedi);
-  padding: var(--bil-2) var(--bil-3);
+  padding: var(--bil-2) var(--bil-4);
   color: var(--texti-daufur);
   text-decoration: none;
   border-radius: var(--radius);
@@ -123,24 +243,31 @@ main { flex: 1; padding-block: var(--bil-8) var(--bil-16); }
   font-weight: var(--thyngd-medium);
   white-space: nowrap;
 }
-.valmynd__tengill:hover {
-  background: var(--bak-daufur);
-  color: var(--texti);
+.valmynd__tengill:hover { color: var(--texti); background: var(--bak-daufur); }
+
+/* Strikið undir merktum lið — lögun, ekki litur einn og sér (regla 3.3). */
+.valmynd__tengill::after {
+  content: "";
+  position: absolute;
+  left: var(--bil-4);
+  right: var(--bil-4);
+  bottom: var(--bil-1);
+  border-top: var(--rammi-breidd-breid) solid transparent;
+  border-radius: var(--radius-pilla);
 }
 
-/* Núverandi síða er ALLTAF merkt — bakgrunnur OG þyngd, ekki litur einn
+/* Núverandi síða er ALLTAF merkt — strik, flötur OG þyngd, ekki litur einn
    og sér (reglur 3.2 og 3.3).                                              */
 .valmynd__tengill[aria-current="page"] {
-  color: var(--tengill);
+  color: var(--texti);
   background: var(--adal-50);
   font-weight: var(--thyngd-feit);
 }
+.valmynd__tengill[aria-current="page"]::after { border-top-color: var(--merki-lina); }
 
 /* Núverandi hluti (systursíða innan sama efnisflokks) — mildari merking. */
-.valmynd__tengill[aria-current="true"] {
-  color: var(--texti);
-  box-shadow: inset 0 calc(-1 * var(--rammi-breidd-breid)) 0 var(--adal-200);
-}
+.valmynd__tengill[aria-current="true"] { color: var(--texti); }
+.valmynd__tengill[aria-current="true"]::after { border-top-color: var(--adal-200); }
 
 /* Farsímar og spjaldtölvur.
 
@@ -165,28 +292,29 @@ main { flex: 1; padding-block: var(--bil-8) var(--bil-16); }
     left: 0;
     right: 0;
     top: 100%;
+    z-index: var(--lag-yfirlag);
     flex-direction: column;
     flex-wrap: nowrap;
     background: var(--bak-upphaekkad);
     border-bottom: var(--rammi-breidd) solid var(--rammi);
     padding: var(--bil-2) var(--bil-4) var(--bil-4);
-    box-shadow: var(--skuggi);
+    box-shadow: var(--skuggi-lg);
   }
   .valmynd[data-js="virkt"][data-opin="true"] .valmynd__listi { display: flex; }
 }
 
 /* --- Fótur --------------------------------------------------------------- */
 .fotur {
-  background: var(--bak-upphaekkad);
-  border-top: var(--rammi-breidd) solid var(--rammi);
-  padding-block: var(--bil-12) var(--bil-8);
+  position: relative;
+  padding-block: var(--bil-16) var(--bil-8);
   font-size: var(--texti-sm);
   color: var(--texti-daufur);
+  border-top: var(--rammi-breidd-breid) solid var(--merki-lina);
 }
 
 .fotur__raster {
   display: grid;
-  gap: var(--bil-8);
+  gap: var(--bil-10) var(--bil-8);
   grid-template-columns: 1fr;
 }
 
@@ -200,15 +328,26 @@ main { flex: 1; padding-block: var(--bil-8) var(--bil-16); }
 .fotur h2 {
   font-size: var(--texti-xs);
   font-family: var(--letur-texti);
-  font-weight: var(--thyngd-feit);
+  font-weight: var(--thyngd-halffeit);
   text-transform: uppercase;
-  letter-spacing: var(--stafabil-vitt);
-  color: var(--texti);
-  margin: 0 0 var(--bil-3);
+  letter-spacing: var(--stafabil-breitt);
+  color: var(--texti-ahersla);
+  margin: 0 0 var(--bil-4);
 }
 
+/* Fyrsti dálkurinn kynnir verkefnið: heitið í stóru klassísku letri. */
+.fotur__raster > div:first-child h2 {
+  font-family: var(--letur-fyrirsogn);
+  font-size: var(--texti-xl);
+  font-weight: var(--thyngd-venjuleg);
+  letter-spacing: var(--stafabil-thett);
+  text-transform: none;
+  color: var(--texti);
+}
+.fotur__raster > div:first-child p { max-width: 24rem; }
+
 .fotur ul { list-style: none; margin: 0; padding: 0; }
-.fotur li { margin-bottom: var(--bil-1); max-width: none; }
+.fotur li { max-width: none; }
 
 .fotur__tengill {
   display: inline-flex;
@@ -216,13 +355,19 @@ main { flex: 1; padding-block: var(--bil-8) var(--bil-16); }
   min-height: var(--smellisvaedi);
   min-width: var(--smellisvaedi);
   color: var(--texti-daufur);
+  text-decoration: none;
 }
-.fotur__tengill:hover { color: var(--tengill); }
+.fotur__tengill:hover {
+  color: var(--texti);
+  text-decoration: underline;
+  text-decoration-color: var(--merki-lina);
+}
 
 .fotur__botn {
-  margin-top: var(--bil-8);
-  padding-top: var(--bil-4);
+  margin-top: var(--bil-12);
+  padding-top: var(--bil-6);
   border-top: var(--rammi-breidd) solid var(--rammi);
   font-size: var(--texti-xs);
+  letter-spacing: var(--stafabil-vitt);
 }
 .fotur__botn p { max-width: none; margin: 0; }

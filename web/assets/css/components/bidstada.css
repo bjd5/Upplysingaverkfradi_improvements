@@ -2,8 +2,13 @@
    Beinagrindin lofar engu sem hún hefur ekki (regla 8).                 */
 
 .bidstada {
+  position: relative;
   padding: var(--bil-8);
-  background: var(--bak-upphaekkad);
+  background:
+    repeating-linear-gradient(-45deg,
+      transparent 0 var(--bil-3),
+      var(--bak-daufur) var(--bil-3) calc(var(--bil-3) + var(--rammi-breidd))),
+    var(--bak-upphaekkad);
   border: var(--rammi-breidd) dashed var(--rammi-sterkur);
   border-radius: var(--radius-lg);
 }
@@ -13,8 +18,12 @@
   align-items: center;
   gap: var(--bil-2);
   margin: 0 0 var(--bil-3);
+  padding: var(--bil-1) var(--bil-3);
+  background: var(--bak-upphaekkad);
+  border: var(--rammi-breidd) solid var(--rammi);
+  border-radius: var(--radius-pilla);
   font-size: var(--texti-xs);
-  font-weight: var(--thyngd-feit);
+  font-weight: var(--thyngd-halffeit);
   text-transform: uppercase;
   letter-spacing: var(--stafabil-vitt);
   color: var(--advorun);
@@ -23,8 +32,8 @@
 
 /* Táknið er skraut — textinn ber merkinguna einn og sér (regla 3.3). */
 .bidstada__punktur {
-  width: var(--bil-2);
-  height: var(--bil-2);
+  width: var(--punktur);
+  height: var(--punktur);
   border-radius: 50%;
   background: var(--advorun);
   flex-shrink: 0;

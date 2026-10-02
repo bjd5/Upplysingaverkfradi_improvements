@@ -17,7 +17,8 @@
   gap: var(--bil-6);
 }
 
-.gagnahluti [data-gogn-efni] table { margin-bottom: 0; }
+.gagnahluti [data-gogn-efni] table,
+.gagnahluti .tafla-umgjord { margin-bottom: 0; }
 
 /* Hleðsla og varaleið án JS: hlutlaus texti, ekki villa. */
 .gogn-stada {
@@ -56,13 +57,4 @@
 .gagnatafla__tala {
   text-align: right;
   font-variant-numeric: tabular-nums;
-}
-
-.gagnatafla caption {
-  caption-side: top;
-  padding-bottom: var(--bil-2);
-  text-align: left;
-  font-size: var(--texti-sm);
-  font-weight: var(--thyngd-medium);
-  color: var(--texti);
 }

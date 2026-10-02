@@ -2,19 +2,17 @@
    Engin síða má vera blindgata (regla 3.2).                             */
 
 .naesta-skref {
-  margin-top: var(--bil-16);
-  padding-top: var(--bil-8);
+  margin-top: var(--bil-20);
+  padding-top: var(--bil-10);
   border-top: var(--rammi-breidd) solid var(--rammi);
 }
 
 .naesta-skref__titill {
   margin: 0 0 var(--bil-6);
-  font-family: var(--letur-texti);
-  font-size: var(--texti-xs);
-  font-weight: var(--thyngd-feit);
-  text-transform: uppercase;
-  letter-spacing: var(--stafabil-vitt);
-  color: var(--texti-daufur);
+  font-family: var(--letur-fyrirsogn);
+  font-size: var(--texti-xl);
+  font-weight: var(--thyngd-venjuleg);
+  color: var(--texti);
 }
 
 .naesta-skref ul {
@@ -33,34 +31,50 @@
 .naesta-skref li { max-width: none; }
 
 .naesta-skref a {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--bil-1);
+  gap: var(--bil-2);
   height: 100%;
   min-height: var(--smellisvaedi);
-  padding: var(--bil-4) var(--bil-6);
+  padding: var(--bil-6);
   background: var(--bak-upphaekkad);
   border: var(--rammi-breidd) solid var(--rammi);
-  border-left: var(--rammi-breidd-breid) solid var(--adal-400);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--skuggi-sm);
   text-decoration: none;
   color: var(--texti);
-  transition: border-color var(--hradi) var(--ferill),
-              box-shadow var(--hradi) var(--ferill);
+  transition: border-color var(--hradi-haegt) var(--ferill),
+              box-shadow var(--hradi-haegt) var(--ferill),
+              transform var(--hradi-haegt) var(--ferill);
 }
 .naesta-skref a:hover {
-  border-color: var(--rammi-sterkur);
-  border-left-color: var(--adal-500);
-  box-shadow: var(--skuggi-sm);
+  border-color: var(--adal-200);
+  box-shadow: var(--skuggi-lg);
+  transform: translateY(calc(-1 * var(--lyfta)));
   color: var(--texti);
 }
 
 .naesta-skref__hlutverk {
   font-size: var(--texti-xs);
+  font-weight: var(--thyngd-halffeit);
   text-transform: uppercase;
-  letter-spacing: var(--stafabil-vitt);
-  color: var(--texti-daufur);
+  letter-spacing: var(--stafabil-breitt);
+  color: var(--texti-ahersla);
 }
 
-.naesta-skref__heiti { font-weight: var(--thyngd-medium); }
-.naesta-skref__heiti::after { content: " →"; }
+.naesta-skref__heiti {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--bil-3);
+  font-family: var(--letur-fyrirsogn);
+  font-size: var(--texti-lg);
+}
+.naesta-skref__heiti::after {
+  content: "→";
+  content: "→" / "";
+  color: var(--tengill);
+  transition: transform var(--hradi-haegt) var(--ferill);
+}
+.naesta-skref a:hover .naesta-skref__heiti::after { transform: translateX(var(--lyfta)); }

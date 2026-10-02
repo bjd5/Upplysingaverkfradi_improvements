@@ -1,38 +1,96 @@
-/* hetja.css — kynningarsvæði efst á forsíðu */
+/* hetja.css — kynningarsvæði efst á forsíðu og hnappastílar.
+   Hetjan er dökkur flötur: litirnir koma úr .hetja í layout.css.          */
 
 .hetja {
+  /* Skjálftamiðjan: til hægri á breiðum skjá, í horninu á mjóum svo hún
+     lendi aldrei undir textanum. */
+  --midja: 78% 46%;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding-block: var(--bil-16) var(--bil-12);
-  border-bottom: var(--rammi-breidd) solid var(--rammi);
   background:
-    radial-gradient(60rem 28rem at 15% -10%, var(--adal-50), transparent 70%),
+    radial-gradient(56rem 32rem at 90% -10%, var(--dokkt-ljomi), transparent 70%),
     var(--bak);
+  border-bottom: var(--rammi-breidd) solid var(--rammi);
 }
 
-.hetja__merkimidi {
-  display: inline-block;
-  margin-bottom: var(--bil-4);
-  padding: var(--bil-1) var(--bil-3);
-  background: var(--ahersla-100);
-  color: var(--ahersla-700);
-  border-radius: var(--radius-pilla);
-  font-size: var(--texti-xs);
-  font-weight: var(--thyngd-medium);
-  letter-spacing: var(--stafabil-vitt);
-  text-transform: uppercase;
-  max-width: none;
+@media (min-width: 64rem) {
+  .hetja { padding-block: var(--bil-24) var(--bil-16); }
 }
 
-.hetja h1 { margin-bottom: var(--bil-4); }
+/* Skjálftahringir: bylgjur frá gullinni skjálftamiðju til hægri. Hreint
+   skraut úr hallalitum — engin mynd að hlaða og engin merking (regla 3.3). */
+.hetja::before,
+.hetja::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hetja::before {
+  background:
+    radial-gradient(circle at var(--midja), var(--ahersla-300) 0 var(--bil-1), transparent calc(var(--bil-1) + var(--rammi-breidd))),
+    radial-gradient(circle at var(--midja), transparent 0 var(--bil-4), var(--ahersla-500) var(--bil-4) calc(var(--bil-4) + var(--rammi-breidd)), transparent 0),
+    repeating-radial-gradient(circle at var(--midja),
+      transparent 0 var(--bil-10),
+      var(--hringir) var(--bil-10) calc(var(--bil-10) + var(--rammi-breidd)));
+}
+
+/* Hringirnir dofna út frá miðjunni svo textinn standi alltaf á hreinum fleti. */
+.hetja::after {
+  background:
+    radial-gradient(ellipse 46rem 30rem at var(--midja), transparent 10%, var(--bak) 75%),
+    linear-gradient(90deg, var(--bak) 25%, transparent 70%);
+}
+
+@media (max-width: 47.99rem) {
+  .hetja { --midja: 100% 8%; }
+  .hetja::after {
+    background: radial-gradient(ellipse 30rem 24rem at var(--midja), transparent 10%, var(--bak) 70%);
+  }
+}
+
+.hetja__merkimidi { margin-bottom: var(--bil-6); }
+
+.hetja h1 {
+  max-width: 19ch;
+  margin-bottom: var(--bil-6);
+  font-size: var(--texti-4xl);
+  line-height: var(--linuhaed-thett);
+}
+
+/* Seinni hluti fyrirsagnarinnar í gulli og skáletri — áherslan í titlinum. */
+.hetja h1 em {
+  font-style: italic;
+  color: var(--texti-ahersla);
+}
 
 .hetja__inngangur {
   font-size: var(--texti-lg);
+  line-height: var(--linuhaed-venjuleg);
   color: var(--texti-daufur);
-  max-width: var(--breidd-lesmals);
-  margin-bottom: var(--bil-8);
+  max-width: 34rem;
+  margin-bottom: var(--bil-10);
 }
 
 .hetja__adgerdir { display: flex; flex-wrap: wrap; gap: var(--bil-3); }
 
+/* Staða gagnanna neðst í hetjunni: hárlína yfir og lágstemmdur texti. */
+.hetja__stada {
+  margin-top: var(--bil-16);
+  padding-top: var(--bil-6);
+  border-top: var(--rammi-breidd) solid var(--rammi);
+}
+.hetja__stada .stada-gagna {
+  padding: 0;
+  background: none;
+  border: 0;
+}
+
+/* --- Hnappar ------------------------------------------------------------- */
 .hnappur {
   display: inline-flex;
   align-items: center;
@@ -40,28 +98,39 @@
   gap: var(--bil-2);
   min-height: var(--smellisvaedi);
   padding: var(--bil-3) var(--bil-6);
-  border-radius: var(--radius);
+  border-radius: var(--radius-pilla);
   font-size: var(--texti-sm);
-  font-weight: var(--thyngd-medium);
+  font-weight: var(--thyngd-halffeit);
   text-decoration: none;
   transition: background var(--hradi) var(--ferill),
+              border-color var(--hradi) var(--ferill),
+              color var(--hradi) var(--ferill),
               transform var(--hradi) var(--ferill);
 }
 
 .hnappur--adal {
-  background: var(--adal-500);
-  color: var(--texti-a-lit);
-  border: var(--rammi-breidd) solid var(--adal-500);
+  background: var(--ahersla-300);
+  color: var(--adal-900);
+  border: var(--rammi-breidd) solid var(--ahersla-300);
+}
+.hnappur--adal::after {
+  content: "→";
+  content: "→" / "";
+  transition: transform var(--hradi) var(--ferill);
 }
 .hnappur--adal:hover {
-  background: var(--adal-700);
-  color: var(--texti-a-lit);
-  transform: translateY(calc(-1 * var(--lyfta)));
+  background: var(--ahersla-200);
+  border-color: var(--ahersla-200);
+  color: var(--adal-900);
 }
+.hnappur--adal:hover::after { transform: translateX(var(--lyfta)); }
 
 .hnappur--aukinn {
-  background: var(--bak-upphaekkad);
+  background: transparent;
   color: var(--texti);
   border: var(--rammi-breidd) solid var(--rammi-sterkur);
 }
-.hnappur--aukinn:hover { background: var(--bak-daufur); color: var(--texti); }
+.hnappur--aukinn:hover {
+  border-color: var(--texti);
+  color: var(--texti);
+}

@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="assets/css/components/hetja.css">
   <link rel="stylesheet" href="assets/css/components/kort.css">
   <link rel="stylesheet" href="assets/css/components/stada-gagna.css">
+  <link rel="stylesheet" href="assets/css/components/ferli.css">
   <script src="assets/js/valmynd.js" defer></script>
   <script src="assets/js/gogn.js" defer></script>
   <script src="assets/js/gagnahluti.js" defer></script>
@@ -42,8 +43,8 @@
 
     <section class="hetja">
       <div class="umgjord">
-        <p class="hetja__merkimidi">Rannsóknarverkefni · 2026</p>
-        <h1>Gögn úr vefþjónustum, greind og gerð skiljanleg</h1>
+        <p class="yfirmerki hetja__merkimidi">Rannsóknarverkefni · 2026</p>
+        <h1>Gögn úr vefþjónustum, greind og <em>gerð skiljanleg</em></h1>
         <p class="hetja__inngangur">
           Þrír flokkar: þemaverkefnið um jarðskjálfta á Reykjanesi,
           Friends-greiningar og viðauki. Hver tala er rekjanleg aftur í
@@ -53,29 +54,34 @@
           <a class="hnappur hnappur--adal" href="#thema">Skoða efnið</a>
           <a class="hnappur hnappur--aukinn" href="sidur/adferdafraedi.html">Lesa aðferðafræðina</a>
         </div>
+
+        <section class="hetja__stada" aria-labelledby="stada-titill">
+          <h2 id="stada-titill" class="skjalesari">Staða gagna</h2>
+          <!-- Textinn hér er sjálfgefinn ef JavaScript er slökkt (regla 3.4). -->
+          <p class="stada-gagna" data-stada-gagna="yfirlit.json">
+            <span class="stada-gagna__punktur" aria-hidden="true"></span>
+            <span><strong>Gagnasafn:</strong> dagsetning síðustu uppfærslu
+            birtist hér.</span>
+          </p>
+        </section>
       </div>
     </section>
 
     <div class="umgjord">
 
-      <section class="hluti" aria-labelledby="stada-titill">
-        <h2 id="stada-titill" class="skjalesari">Staða gagna</h2>
-        <!-- Textinn hér er sjálfgefinn ef JavaScript er slökkt (regla 3.4). -->
-        <p class="stada-gagna" data-stada-gagna="yfirlit.json">
-          <span class="stada-gagna__punktur" aria-hidden="true"></span>
-          <span><strong>Gagnasafn:</strong> dagsetning síðustu uppfærslu
-          birtist hér.</span>
-        </p>
-      </section>
-
       <section class="hluti" id="thema" aria-labelledby="thema-titill">
-        <h2 id="thema-titill">Þema</h2>
-        <p>
-          Jarðskjálftavirknin á Reykjanesskaga, frá atburðaskrá Veðurstofunnar
-          til greiningar.
-        </p>
+        <div class="hluti__haus">
+          <div>
+            <p class="yfirmerki">01 — Þemaverkefnið</p>
+            <h2 id="thema-titill">Þema</h2>
+          </div>
+          <p class="hluti__lysing">
+            Jarðskjálftavirknin á Reykjanesskaga, frá atburðaskrá Veðurstofunnar
+            til greiningar.
+          </p>
+        </div>
         <div class="kort-raster kort-raster--thrju">
-          <article class="kort">
+          <article class="kort kort--adal">
             <p class="kort__tala" aria-hidden="true">01</p>
             <h3>Skjálftavaktin</h3>
             <p>Jarðskjálftavirkni á Reykjanesskaga frá nóvember 2023 fram í janúar 2024.</p>
@@ -85,11 +91,16 @@
       </section>
 
       <section class="hluti" id="friends" aria-labelledby="friends-titill">
-        <h2 id="friends-titill">Friends</h2>
-        <p>
-          Sex síður um sjónvarpsþættina Friends og persónuna Phoebe Buffay —
-          gagnasagan, þrjár greiningar og tvær persónulegri síður.
-        </p>
+        <div class="hluti__haus">
+          <div>
+            <p class="yfirmerki">02 — Sjónvarpsgreining</p>
+            <h2 id="friends-titill">Friends</h2>
+          </div>
+          <p class="hluti__lysing">
+            Sex síður um sjónvarpsþættina Friends og persónuna Phoebe Buffay —
+            gagnasagan, þrjár greiningar og tvær persónulegri síður.
+          </p>
+        </div>
         <div class="kort-raster kort-raster--thrju">
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">01</p>
@@ -131,12 +142,17 @@
       </section>
 
       <section class="hluti" id="vidauki" aria-labelledby="vidauki-titill">
-        <h2 id="vidauki-titill">Viðauki</h2>
-        <p>
-          Æfingar úr lotum námskeiðsins — vefþjónustur og reglulegar segðir —
-          ásamt aðferðafræði verkefnisins.
-        </p>
-        <div class="kort-raster kort-raster--thrju">
+        <div class="hluti__haus">
+          <div>
+            <p class="yfirmerki">03 — Æfingar og aðferð</p>
+            <h2 id="vidauki-titill">Viðauki</h2>
+          </div>
+          <p class="hluti__lysing">
+            Æfingar úr lotum námskeiðsins — vefþjónustur og reglulegar segðir —
+            ásamt aðferðafræði verkefnisins.
+          </p>
+        </div>
+        <div class="kort-raster kort-raster--fjogur">
           <article class="kort">
             <p class="kort__tala" aria-hidden="true">A</p>
             <h3>Brautskráning af háskólastigi</h3>
@@ -164,14 +180,40 @@
         </div>
       </section>
 
-      <section class="hluti" aria-labelledby="adferd-titill">
-        <h2 id="adferd-titill">Hvernig gögnin verða til</h2>
-        <p>
-          Gögnin eru sótt frá vefþjónustum, vistuð óbreytt, hreinsuð og sett
-          í gagnagrunn. Síðan les aðeins tilbúnar niðurstöður og talar aldrei
-          sjálf við vefþjónustu.
-        </p>
-        <p>
+      <section class="hluti ferli-hluti" aria-labelledby="adferd-titill">
+        <div class="hluti__haus">
+          <div>
+            <p class="yfirmerki">Aðferðin</p>
+            <h2 id="adferd-titill">Hvernig gögnin verða til</h2>
+          </div>
+          <p class="hluti__lysing">
+            Fjögur skref í einni átt. Síðan les aðeins tilbúnar niðurstöður og
+            talar aldrei sjálf við vefþjónustu.
+          </p>
+        </div>
+        <ol class="ferli">
+          <li class="ferli__skref">
+            <h3 class="ferli__titill">Sótt</h3>
+            <p>Gögnin eru sótt frá opnum vefþjónustum og vistuð óbreytt, með
+            tímastimpli.</p>
+          </li>
+          <li class="ferli__skref">
+            <h3 class="ferli__titill">Hreinsuð</h3>
+            <p>Hver færsla er sannreynd og hreinsuð. Upprunalegu svörunum er
+            aldrei breytt.</p>
+          </li>
+          <li class="ferli__skref">
+            <h3 class="ferli__titill">Geymd</h3>
+            <p>Hreinsuðu gögnin fara í SQL-gagnagrunn sem má endurbyggja frá
+            grunni hvenær sem er.</p>
+          </li>
+          <li class="ferli__skref">
+            <h3 class="ferli__titill">Birt</h3>
+            <p>Niðurstöðurnar eru fluttar út í tilbúnar skrár sem síðan les,
+            með dagsetningu og heimild.</p>
+          </li>
+        </ol>
+        <p class="ferli__tengill">
           <a href="sidur/adferdafraedi.html">Lesa aðferðafræðina í heild</a>
         </p>
       </section>

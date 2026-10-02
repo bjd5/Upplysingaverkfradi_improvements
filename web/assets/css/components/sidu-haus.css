@@ -2,62 +2,61 @@
    Svarar þremur spurningum strax (regla 3.2):
      Hvar er ég?           flokkur + fyrirsögn
      Hvað er hér?          inngangur
-     Hvert get ég farið?   staðreyndadálkur og tenglar til hliðar        */
+     Hvert get ég farið?   staðreyndadálkur og tenglar til hliðar
+
+   Brauðmylsnan, undirvalmyndin og síðuhausinn mynda saman eitt litað band
+   sem nær út að jöðrum skjásins. Bandið er border-image sem teygir sig út
+   fyrir eininguna til hliðanna; það er aðeins málað, víkkar ekki síðuna, svo
+   ekkert lárétt skrun verður til (regla 3.5). Neðsta línan er hluti af sama
+   hallalit.                                                               */
 
 .sidu-haus {
   display: grid;
   gap: var(--bil-8);
   grid-template-columns: 1fr;
-  padding-bottom: var(--bil-8);
-  border-bottom: var(--rammi-breidd) solid var(--rammi);
+  margin-bottom: var(--bil-12);
+  padding-block: var(--bil-6) var(--bil-12);
+  border-image:
+    linear-gradient(to top, var(--rammi) var(--rammi-breidd), var(--bak-band) 0)
+    fill 0 / 0 / 0 100vmax;
 }
 
 @media (min-width: 64rem) {
   .sidu-haus {
     grid-template-columns: 1fr var(--breidd-hlidar);
-    gap: var(--bil-12);
+    gap: var(--bil-16);
     align-items: start;
+    padding-block: var(--bil-10) var(--bil-16);
   }
 }
 
-.sidu-haus__flokkur {
-  display: inline-block;
-  margin: 0 0 var(--bil-3);
-  padding: var(--bil-1) var(--bil-3);
-  background: var(--ahersla-100);
-  color: var(--ahersla-700);
-  border-radius: var(--radius-pilla);
-  font-size: var(--texti-xs);
-  font-weight: var(--thyngd-medium);
-  letter-spacing: var(--stafabil-vitt);
-  text-transform: uppercase;
-  max-width: none;
-}
-
-.sidu-haus h1 { margin-bottom: var(--bil-4); }
+.sidu-haus h1 { margin-bottom: var(--bil-6); }
 
 .sidu-haus__inngangur {
   font-size: var(--texti-lg);
+  line-height: var(--linuhaed-venjuleg);
   color: var(--texti-daufur);
   margin-bottom: 0;
 }
 
 /* --- Staðreyndadálkur til hliðar ---------------------------------------- */
 .sidu-haus__hlid {
+  position: relative;
   padding: var(--bil-6);
   background: var(--bak-upphaekkad);
   border: var(--rammi-breidd) solid var(--rammi);
-  border-radius: var(--radius-lg);
+  border-top: var(--rammi-breidd-breid) solid var(--merki-lina);
+  border-radius: var(--radius);
+  box-shadow: var(--skuggi);
 }
 
 .sidu-haus__hlid-titill {
   margin: 0 0 var(--bil-4);
-  font-family: var(--letur-texti);
-  font-size: var(--texti-xs);
-  font-weight: var(--thyngd-feit);
-  text-transform: uppercase;
-  letter-spacing: var(--stafabil-vitt);
-  color: var(--texti-daufur);
+  font-family: var(--letur-fyrirsogn);
+  font-size: var(--texti-lg);
+  font-weight: var(--thyngd-venjuleg);
+  letter-spacing: var(--stafabil-thett);
+  color: var(--texti);
 }
 
 .stadreyndir { margin: 0; }
@@ -71,6 +70,7 @@
 
 .stadreyndir dt {
   font-size: var(--texti-xs);
+  font-weight: var(--thyngd-halffeit);
   text-transform: uppercase;
   letter-spacing: var(--stafabil-vitt);
   color: var(--texti-daufur);
@@ -81,4 +81,21 @@
   font-size: var(--texti-sm);
   color: var(--texti);
   overflow-wrap: anywhere;
+}
+
+/* Staðreyndir í meginmáli (t.d. úrtak eða eintak): rist á breiðum skjá svo
+   stuttar tölur standi hlið við hlið í stað langs dálks.                   */
+@media (min-width: 48rem) {
+  .efni .stadreyndir {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    gap: 0 var(--bil-8);
+  }
+  .efni .stadreyndir > div,
+  .efni .stadreyndir > div:first-child,
+  .efni .stadreyndir > div:last-child {
+    padding-block: var(--bil-4);
+    border-top: 0;
+    border-bottom: var(--rammi-breidd) solid var(--rammi);
+  }
 }

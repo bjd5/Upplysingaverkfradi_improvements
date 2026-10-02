@@ -2,32 +2,52 @@
 
 .stada-gagna {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--bil-3);
   max-width: none;
-  padding: var(--bil-4) var(--bil-6);
-  background: var(--bak-daufur);
+  padding: var(--bil-3) var(--bil-4);
+  background: var(--bak-upphaekkad);
   border: var(--rammi-breidd) solid var(--rammi);
-  border-left: var(--rammi-breidd-breid) solid var(--adal-400);
   border-radius: var(--radius);
-  font-size: var(--texti-sm);
+  font-size: var(--texti-xs);
+  line-height: var(--linuhaed-midlungs);
   color: var(--texti-daufur);
 }
 
+/* Lifandi punktur: hringur sem breiðist hægt út. Skraut eingöngu — textinn
+   segir það sama, og hreyfingin hverfur með prefers-reduced-motion.       */
 .stada-gagna__punktur {
-  width: var(--bil-2);
-  height: var(--bil-2);
+  position: relative;
+  width: var(--punktur);
+  height: var(--punktur);
   border-radius: 50%;
+  /* Miðjað við fyrstu línu textans, líka þegar hann brotnar í fleiri. */
+  margin-top: calc((1lh - var(--punktur)) / 2);
   background: var(--i-lagi);
   flex-shrink: 0;
 }
 
+.stada-gagna > :last-child { flex: 1; min-width: 0; }
+.stada-gagna__punktur::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: inherit;
+  animation: stada-puls var(--hradi-puls) var(--ferill) infinite;
+}
+
+@keyframes stada-puls {
+  from { transform: scale(1); opacity: 0.6; }
+  to   { transform: scale(3); opacity: 0; }
+}
+
 /* Litur er aldrei eina merkingin — textinn segir það sama (regla 3.3) */
-.stada-gagna strong { color: var(--texti); font-weight: var(--thyngd-medium); }
+.stada-gagna strong { color: var(--texti); font-weight: var(--thyngd-halffeit); }
 
 /* Villuástand sem gagnahluti.js setur — textinn byrjar á „Villa:“ (regla 3.3) */
 .stada-gagna[data-stada="villa"] {
-  border-left-color: var(--villa);
+  border-color: var(--villa);
 }
 .stada-gagna[data-stada="villa"] .stada-gagna__punktur { background: var(--villa); }
+.stada-gagna[data-stada="villa"] .stada-gagna__punktur::after { animation: none; }

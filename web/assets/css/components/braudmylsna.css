@@ -1,15 +1,20 @@
-/* braudmylsna.css — slóð notanda (skylda á öllum undirsíðum, regla 3.2) */
+/* braudmylsna.css — slóð notanda (skylda á öllum undirsíðum, regla 3.2).
+   Brauðmylsnan er efsti hluti bandsins sem sidu-haus.css lýsir.           */
 
 .braudmylsna {
-  padding-block: var(--bil-4) 0;
+  padding-block: var(--bil-6) var(--bil-2);
   font-size: var(--texti-sm);
+  /* Bandið (sjá sidu-haus.css) nær einni línu niður fyrir eininguna svo
+     engin rauf sjáist milli hennar og næstu einingar í bandinu. */
+  border-image: linear-gradient(var(--bak-band) 0 0) fill 0 / 0 /
+                0 100vmax var(--rammi-breidd);
 }
 
 .braudmylsna ol {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--bil-2);
+  gap: 0 var(--bil-2);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -20,7 +25,7 @@
 .braudmylsna li + li::before {
   content: "/";
   margin-right: var(--bil-2);
-  color: var(--gra-400);
+  color: var(--rammi-sterkur);
 }
 
 .braudmylsna a {
@@ -28,8 +33,12 @@
   align-items: center;
   min-height: var(--smellisvaedi);
   color: var(--texti-daufur);
+  text-decoration: none;
 }
-.braudmylsna a:hover { color: var(--tengill); }
+.braudmylsna a:hover {
+  color: var(--tengill);
+  text-decoration: underline;
+}
 
 .braudmylsna [aria-current="page"] {
   color: var(--texti);

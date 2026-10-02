@@ -110,14 +110,29 @@ sjálfur ber `bidstada`-einingu sem lofar engum tölum (regla 8).
 Öll gildi eru í `web/assets/css/tokens.css`. Prófin staðfesta að **engin
 px-tala og enginn harðkóðaður litur** sé í neinni annarri CSS-skrá.
 
-- **Litir:** einn aðallitur (blágrænt), einn áherslulitur (brennt appelsínugult),
-  sjö þrepa grátónaskali og þrír merkingarlitir.
-- **Letur:** tvær fjölskyldur — Georgia-stafli á fyrirsagnir, kerfisstafli á
-  lesmál (auk einbreiðs stafla fyrir kóðabrot). Sjö föst stærðarþrep.
+- **Litir:** einn aðallitur (djúpblátt blek, `--adal-*`), einn áherslulitur
+  (gull, `--ahersla-*`), sjö þrepa grátónaskali með köldum undirtóni og þrír
+  merkingarlitir. Gullið er notað sparlega: stuttar línur við yfirmerki,
+  fókusumgjörð, merkt valmynd og áhersluorð í fyrirsögn forsíðunnar.
+- **Letur:** tvær fjölskyldur — klassískt fyrirsagnaletur (Iowan Old Style,
+  Charter, Georgia …) í venjulegri þyngd á `h1`/`h2`, kerfisstafli á lesmál og
+  undirfyrirsagnir (auk einbreiðs stafla fyrir kóðabrot). Átta föst
+  stærðarþrep; `--texti-4xl` er aðeins í fyrirsögn forsíðunnar. Ekkert letur
+  er sótt af neti.
 - **Bil:** 4px grunneining; öll bil eru margfeldi af henni (`--bil-1` … `--bil-24`).
 - **Dökkt þema:** `prefers-color-scheme: dark` endurskilgreinir **eingöngu**
   tokens — engir nýir stílar. Prófin falla ef eitthvað annað en breyta er
   skilgreint þar.
+- **Dökkir fletir:** hetjan á forsíðunni og fóturinn eru dökkblá í báðum
+  þemum. `layout.css` endurskilgreinir hlutverkalitina (`--texti`, `--rammi`,
+  `--tengill` …) innan þeirra úr `--dokkt-*` í `tokens.css`, svo einingar þar
+  inni (t.d. staða gagna) lagast sjálfkrafa — sama aðferð og dökka þemað.
+- **Bandið:** brauðmylsna, undirvalmynd og síðuhaus undirsíðu mynda saman
+  eitt ljósblátt band (`--bak-band`) sem nær út að jöðrum skjásins. Það er
+  `border-image` sem er aðeins málað út fyrir eininguna, svo síðan víkkar ekki
+  og ekkert lárétt skrun verður til.
+- **Skraut:** skjálftahringirnir í hetjunni, á aðalkortinu og í merkinu eru
+  hallalitir úr tokens — engar myndir að hlaða og engin merking (regla 3.3).
 
 ### Tvær skráðar undantekningar
 
@@ -132,12 +147,12 @@ px-tala og enginn harðkóðaður litur** sé í neinni annarri CSS-skrá.
 
 ### Birtuskil
 
-Upprunalegu níu síðurnar voru mældar í báðum þemum: hvert einasta textaelement stenst
-WCAG 2.1 AA (4.5:1, eða 3:1 fyrir stórt letur). Tvö gildi þurfti að laga í
-dökka þemanu og bæði voru leyst í tokens — aðvörunarliturinn var of dökkur, og
-merkt valmyndarsíða notaði bakgrunnslit sem texta. Fjórar síður bættust við
-í flokkuninni 2026-09-28. Þær nota sömu einingar og tokens en hafa ekki
-verið mældar sérstaklega.
+Allar tólf síðurnar voru mældar sjálfvirkt í báðum þemum eftir endurhönnunina
+2026-10-02: hver textaeining á síðunni (2.916 talsins) borin saman við
+bakgrunninn sem hún stendur á, með WCAG 2.1-formúlunni. **Allar standast AA**
+(4.5:1, eða 3:1 fyrir stórt letur). Lægsta mæling er 4,79:1 í ljósu þema
+(tákn á gullfleti Veðurstöðvasíðunnar) og 6,9:1 í dökku. Mælt með vafranum
+sjálfum, svo litirnir eru þeir sem birtast, eftir að tokens hafa verið leyst.
 
 ---
 
@@ -152,8 +167,10 @@ Ein eining = ein CSS-skrá í `web/assets/css/components/`.
 | Undirvalmynd | `undirvalmynd.css` | Systursíður (Phoebe-síðurnar þrjár) |
 | Biðstaða | `bidstada.css` | Heiðarlegur staðgengill fyrir efni sem vantar |
 | Næstu skref | `naesta-skref.css` | Þrír tenglar neðst — engin síða er blindgata |
-| Kort | `kort.css` | Efnisspjöld í rasti (forsíða) |
-| Hetja | `hetja.css` | Kynningarsvæði forsíðu og hnappastílar |
+| Kort | `kort.css` | Efnisspjöld í rasti (forsíða); `kort--adal` yfir allt rastið |
+| Hetja | `hetja.css` | Dökkt kynningarsvæði forsíðu, skjálftahringir og hnappastílar |
+| Ferli | `ferli.css` | Gagnaferlið í fjórum skrefum (forsíða) |
+| Lykiltölur | `lykiltolur.css` | Fáar lykiltölur í spjöldum efst í niðurstöðu |
 | Staða gagna | `stada-gagna.css` | Uppfærsludagsetning og heimild úr `web/gogn/` |
 | Gagnahluti | `gagnahluti.css` | Hleðslu-, villu- og varaleiðarástand gagnahluta; gagnatöflur |
 
@@ -209,4 +226,5 @@ kennileiti, brauðmylsnu, stafréttan haus og fót, að allar slóðir séu til,
 engin síða sé munaðarlaus, þriggja smella þakið, og að engin px-tala eða litur
 sé utan `tokens.css`.
 
-Mæld þyngd fyrstu hleðslu: **29–32 KB** á síðu (þak reglu 3.4: 500 KB).
+Mæld þyngd fyrstu hleðslu, með gögnum og óþjöppuð: **44–93 KB** á síðu
+(þak reglu 3.4: 500 KB).
