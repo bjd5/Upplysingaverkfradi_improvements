@@ -12,7 +12,7 @@ frávikum · `❌` stenst ekki. Aðgengi er í [`adgengi.md`](adgengi.md), stær
 | 4 | Lyklaborð og `alt` | ✅ | „Fara beint í efni“ fyrst á öllum síðum, fókusumgjörð og snertifletir ≥ 44 px mæld; engar `<img>` á síðunum. Firefox, Safari og skjálesarar óprófaðir. |
 | 5 | Engin villa í console | ✅ | Sömu 12 × 2 × 2 keyrslur: engin villa og engin viðvörun. |
 | 6 | Engin leyndarmál | ✅ | Hvorki í trénu né í öllum 294 commitum: enginn `.env`, lykill, token né einkalykill. Eina fundið er gervi-JWT í `tests/test_uppruni_flokkun.py`. `tests/test_vefur_birting.py` gætir `web/`. |
-| 7 | Efni á íslensku, kóðaheiti á ensku | ❌ | Efni á íslensku ✅; SQL-töflur á ensku ✅; **Python-föll og breytur eru víða á íslensku** — frávik 4. |
+| 7 | Efni á íslensku; kóðaheiti skv. reglu 1.2 | ✅ | Efni á íslensku; SQL-töflur og dálkar á ensku; íslensk heiti í Python eru leyfð án séríslenskra stafa (regla 1.2). |
 | 8 | Commit með lýsandi skilaboðum | ✅ | Öll 159 commit utan samruna eru á forminu `svið: hvað var gert`. |
 
 ## Frávik
@@ -24,10 +24,6 @@ frávikum · `❌` stenst ekki. Aðgengi er í [`adgengi.md`](adgengi.md), stær
    (gagnatöflur), `test_hagstofan_hledsla.py` 361, `vefleit.py` 302.
 3. **Skráaheiti með hástöfum:** `README.md` (venja) og tímastimplar frystu
    hrágagnanna (`…T120851Z.json`), sem provenance vísar í og eru því ekki endurnefnd.
-4. **Íslensk kóðaheiti.** Af 529 Python-föllum bera a.m.k. 115 íslensk orð
-   (`lesa_skjalfta`, `kassi_eftir_fjarlaegd`). Regla 1.2 vill ensk kóðaheiti.
-   Endurnöfnun snertir prófin og alla útflutningsleiðina. Ákvörðun er óteknin:
-   breyta reglunni eða endurnefna.
 
 ## Opið
 
