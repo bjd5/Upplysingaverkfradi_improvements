@@ -88,7 +88,7 @@ class EndurhledslaProf(unittest.TestCase):
         cls.stimplar_a = lesa(cls.grunnur, HLEDSLUSTIMPILL_SQL)
 
         # Án sekúndumarka gæti keyrslustimpillinn stemmt af tilviljun og
-        # sönnunin fyrir því að seinni hleðslan skrifaði væri engin (kafli 15).
+        # sönnunin fyrir því að seinni hleðslan skrifaði væri engin (kafli 6).
         bida_yfir_sekundumork(time.time())
         cls.seinni = keyra_hledslu(cls.grunnur)
         cls.fingrafar_b = reikna_fingrafar(cls.grunnur)
@@ -138,7 +138,7 @@ class FingrafarNaemiProf(unittest.TestCase):
 
     Án þessa gæti ``A == B`` staðist af því að fingrafarið hunsaði
     ``fetch_log.id`` — og þá væri prófið að ofan staðfesting sem getur ekki
-    fallið (kafli 15).
+    fallið (kafli 6).
     """
 
     @classmethod

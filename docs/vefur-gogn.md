@@ -262,6 +262,15 @@ röðum, `lysigogn` hlutur, engir aðrir reitir); hver `data-gogn-reitur` byrjar
 `<noscript>` og falið efni; hver hook, teiknari og CSS-klasi sem JS notar er
 til; og JS-skrárnar eru undir 300 línum og 30 KB samanlagt.
 
+**Á undan birtingu** (`.github/workflows/pages.yml`, við hvert push á `main`)
+keyrir `scripts/stadfesta-vef.sh`: hver skrá í `web/gogn/` stenst sama snið og
+útflutningurinn skrifar (`json_skrif.sem_baeti`), engin útflutt skrá vantar og
+hver gagnaskrá sem síða vísar í er til. Annars er ekkert birt.
+
+`UndirslodTest` (`tests/test_vefur.py`) keyrir líka á undan birtingu: engin slóð
+í HTML, CSS eða JS byrjar á `/` né fer út fyrir `web/`, svo síðan virkar undir
+`bjd5.github.io/Upplysingaverkfradi_improvements/`.
+
 Vafraprófin (Chromium, Playwright) eru handkeyrð og ekki í `unittest`-safninu.
 Þau staðfestu 29.9.2026, á nýja sniðinu: engin villa í console, gögnin
 birtast, níu villutilvik birtast á síðunni (þ.m.t. `gogn` ekki listi),

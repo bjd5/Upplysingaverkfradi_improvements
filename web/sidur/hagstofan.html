@@ -12,9 +12,15 @@
   <link rel="stylesheet" href="../assets/css/components/braudmylsna.css">
   <link rel="stylesheet" href="../assets/css/components/undirvalmynd.css">
   <link rel="stylesheet" href="../assets/css/components/sidu-haus.css">
-  <link rel="stylesheet" href="../assets/css/components/bidstada.css">
   <link rel="stylesheet" href="../assets/css/components/naesta-skref.css">
+  <link rel="stylesheet" href="../assets/css/components/stada-gagna.css">
+  <link rel="stylesheet" href="../assets/css/components/gagnahluti.css">
+  <link rel="stylesheet" href="../assets/css/components/lykiltolur.css">
+  <link rel="stylesheet" href="../assets/css/components/brotlina.css">
   <script src="../assets/js/valmynd.js" defer></script>
+  <script src="../assets/js/gogn.js" defer></script>
+  <script src="../assets/js/gagnahluti.js" defer></script>
+  <script src="../assets/js/hagstofan.js" defer></script>
 </head>
 <body class="sida">
 
@@ -62,7 +68,7 @@
         <div class="sidu-haus__adal">
           <p class="sidu-haus__flokkur">Viðauki A · Vefþjónustur</p>
           <h1>Brautskráning af háskólastigi</h1>
-          <p class="sidu-haus__inngangur">Hve stór hluti þeirra sem hófu háskólanám 2017 hafði lokið því sex árum síðar, eftir námssviði og kyni. Tölurnar koma frá Hagstofu Íslands.</p>
+          <p class="sidu-haus__inngangur">Hve stór hluti eins innritunarárgangs í bakkalárnámi hafði brautskráðst sex árum síðar, eftir námssviði og kyni. Tölurnar koma frá Hagstofu Íslands.</p>
         </div>
         <aside class="sidu-haus__hlid" aria-labelledby="stadreyndir-titill">
           <h2 class="sidu-haus__hlid-titill" id="stadreyndir-titill">Um þessa síðu</h2>
@@ -80,26 +86,198 @@
               <dd>json-stat2</dd>
             </div>
             <div>
+              <dt>Leyfi</dt>
+              <dd>Óstaðfest — <a href="#takmarkanir-titill">sjá takmarkanir</a></dd>
+            </div>
+            <div>
               <dt>Staða síðunnar</dt>
-              <dd>Beinagrind — greining í vinnslu</dd>
+              <dd>Fullbúin: niðurstaða, svör, aðferð og takmarkanir</dd>
             </div>
           </dl>
         </aside>
       </div>
 
-      <article class="efni" aria-labelledby="efni-titill">
-        <h2 id="efni-titill">Greiningin</h2>
-        <div class="bidstada">
-          <p class="bidstada__merki">
-            <span class="bidstada__punktur" aria-hidden="true"></span>
-            Efni í vinnslu
-          </p>
-          <p class="bidstada__skyring">
-            Greiningin birtist hér þegar gögnin eru tilbúin. Þangað til má lesa
-            um <a href="adferdafraedi.html">aðferðina</a>.
-          </p>
+      <article class="efni" data-gogn="hagstofan.json" data-gogn-teiknari="hagstofan"
+               aria-labelledby="nidurstada-titill">
+        <h2 id="nidurstada-titill">Niðurstaðan</h2>
+        <p>Staða eins innritunarárgangs sex árum eftir innritun, í prósentum af
+        hópnum. Hver nemandi er í einum af þremur flokkum: brautskráður,
+        fallinn brott eða enn í námi.</p>
+        <noscript>
+          <p class="gogn-stada">Tölurnar og töflurnar á þessari síðu eru settar
+          inn með JavaScript. Án þess má lesa þær beint úr
+          <a href="../gogn/hagstofan.json">gagnaskránni</a>.</p>
+        </noscript>
+        <div data-gogn-efni hidden>
+          <p>Innritunarár <strong data-gogn-reitur="lysigogn.afmorkun.0.gildi"></strong>,
+          tímapunktur <code data-gogn-reitur="lysigogn.afmorkun.1.kodi"></code>
+          (<span data-gogn-reitur="lysigogn.afmorkun.1.gildi"></span>). Öll
+          námssvið, bæði kyn:</p>
+          <dl class="lykiltolur">
+            <div class="lykiltolur__lidur">
+              <dt data-gogn-reitur="lysigogn.stodur.0.heiti"></dt>
+              <dd><span data-gogn-reitur="gogn.0.brautskradir"></span> %</dd>
+            </div>
+            <div class="lykiltolur__lidur">
+              <dt data-gogn-reitur="lysigogn.stodur.1.heiti"></dt>
+              <dd><span data-gogn-reitur="gogn.0.brottfallnir"></span> %</dd>
+            </div>
+            <div class="lykiltolur__lidur">
+              <dt data-gogn-reitur="lysigogn.stodur.2.heiti"></dt>
+              <dd><span data-gogn-reitur="gogn.0.enn_i_nami"></span> %</dd>
+            </div>
+          </dl>
+          <div data-hagstofan-tafla="svid"></div>
+          <p class="stada-gagna brotlina" data-gogn-uppruni></p>
         </div>
+
+        <h3>Munurinn í prósentustigum</h3>
+        <p>Munurinn er alltaf hópur A mínus hópur B. Örin og orðið segja hvort
+        A er hærri eða lægri, svo liturinn ber aldrei merkinguna einn.</p>
+        <div data-gogn-efni hidden>
+          <div data-hagstofan-tafla="munir"></div>
+        </div>
+        <p>Þetta er lýsandi samanburður á einum árgangi, ekki mæling á áhrifum
+        þess að velja tiltekið námssvið.</p>
+
+        <h2 id="svor-titill">Svör við æfingaspurningunum</h2>
+
+        <h3>Hvers vegna leggjast flokkarnir saman í 100?</h3>
+        <p>Flokkarnir þrír ná yfir sama hóp á sama tímapunkti, og hver nemandi
+        er í nákvæmlega einum þeirra. Summan er því 100 %, en námundun í einn
+        aukastaf getur gefið 99,9 eða 100,1.</p>
+        <p>„Brautskráðir alls“ nær líka yfir þá sem luku öðru námi. Það
+        jafngildir ekki því að allir hafi lokið bakkalárgráðu á sviðinu sem
+        þeir hófu nám á.</p>
+        <div data-gogn-efni hidden>
+          <div data-hagstofan-tafla="summur"></div>
+        </div>
+
+        <h3>Hvers vegna duga tvö innritunarár ekki til að meta þróun?</h3>
+        <p>Lýsigögn töflunnar bjóða aðeins tvö innritunarár. Tveir punktar sýna
+        mun milli árganga en greina ekki varanlega þróun frá tilviljun,
+        samsetningu hópanna eða breyttu námsumhverfi.</p>
+        <div data-gogn-efni hidden>
+          <p>Fyrirspurnin velur auk þess aðeins innritunarárið
+          <span data-gogn-reitur="lysigogn.afmorkun.0.gildi"></span>, svo hér er
+          engin breyting milli árganga reiknuð.</p>
+        </div>
+
+        <h3>Breytist myndin þegar skipt er eftir kyni?</h3>
+        <div data-gogn-efni hidden>
+          <p>Í verkfræði er brautskráningarhlutfall karla
+          <span data-gogn-reitur="gogn.10.brautskradir"></span> % og kvenna
+          <span data-gogn-reitur="gogn.11.brautskradir"></span> %. Munurinn
+          (konur − karlar) er <span data-gogn-reitur="lysigogn.munir.1.prosentustig"></span>
+          prósentustig. Á öllum sviðum saman er sami munur
+          <span data-gogn-reitur="lysigogn.munir.2.prosentustig"></span> prósentustig.</p>
+          <div data-hagstofan-tafla="kyn"></div>
+        </div>
+        <p>Samanburðurinn fer því eftir því hvort eitt svið er skoðað eða öll
+        saman. Án fjölda nemenda er hvorki óvissa né marktækni metin, og „Alls“
+        er ekki einfalt meðaltal kynjanna.</p>
+
+        <h2 id="adferd-titill">Aðferðin</h2>
+
+        <h3>Þjónustan</h3>
+        <p>Hagstofan býður opna PxWeb-vefþjónustu sem krefst hvorki auðkenningar
+        né lykils. <code>GET</code> á slóð töflunnar skilar lýsigögnum;
+        <code>POST</code> á sömu slóð með fyrirspurn skilar völdum gögnum.
+        Engu er breytt hjá Hagstofunni.</p>
+        <div data-gogn-efni hidden>
+          <dl class="stadreyndir">
+            <div>
+              <dt>Tafla</dt>
+              <dd data-gogn-reitur="lysigogn.tafla.audkenni"></dd>
+            </div>
+            <div>
+              <dt>Heiti töflunnar</dt>
+              <dd data-gogn-reitur="lysigogn.tafla.heiti"></dd>
+            </div>
+            <div>
+              <dt>Frumheimild</dt>
+              <dd data-gogn-reitur="lysigogn.tafla.uppruni"></dd>
+            </div>
+            <div>
+              <dt>Slóð þjónustunnar</dt>
+              <dd><code data-gogn-reitur="lysigogn.tafla.endapunktur"></code></dd>
+            </div>
+            <div>
+              <dt>Útgáfa json-stat</dt>
+              <dd data-gogn-reitur="lysigogn.tafla.jsonstat_utgafa"></dd>
+            </div>
+          </dl>
+        </div>
+        <p>Dagsetningin í línunni „Gögn uppfærð“ er sóknartíminn: hvenær
+        svarið var sótt og vistað. Leyfi Hagstofunnar fyrir endurbirtingu er
+        óstaðfest.</p>
+
+        <h3>Fyrirspurnin</h3>
+        <p>Fyrirspurnin er send sem JSON með <code>POST</code>. Hver vídd fær
+        <code>filter: item</code> og lista af kóðum, svo svarið inniheldur
+        nákvæmlega þá sneið sem beðið er um.</p>
+        <p>Hún er birt hér orðrétt, eins og hún var send. Án hennar er svarið
+        ekki endurskapanlegt, því sama slóð skilar hverju sem beðið er um.</p>
+        <div data-gogn-efni hidden>
+          <pre tabindex="0" aria-label="Fyrirspurnin sem var send"><code data-hagstofan-fyrirspurn></code></pre>
+        </div>
+
+        <h3>Hvernig json-stat2 er lesið</h3>
+        <p>Svarið geymir öll gildin í einum flötum lista, <code>value</code>.
+        Víddalýsingin segir hvernig á að lesa hann: <code>id</code> gefur röð
+        víddanna, <code>size</code> fjölda kóða í hverri og
+        <code>category.index</code> sæti hvers kóða.</p>
+        <p>Síðasta víddin breytist hraðast, eins og aftasti stafurinn í
+        kílómetramæli. Röð lykla í <code>label</code> er aldrei notuð til að
+        para saman gildi.</p>
+        <div data-gogn-efni hidden>
+          <div data-hagstofan-tafla="viddir"></div>
+          <p>Margfeldi stærðanna er <span data-hagstofan-margfeldi></span> =
+          <strong data-gogn-reitur="lysigogn.tafla.fjoldi_gilda"></strong> gildi
+          í <code>value</code>.</p>
+          <p>Dæmi: brautskráðar konur í verkfræði eru í sætum
+          <span data-hagstofan-daemi="saeti"></span> (talið frá 0). Flata sætið
+          er því <code>value[<span data-hagstofan-daemi="flatt"></span>]</code>,
+          og þar stendur <strong data-hagstofan-daemi="gildi"></strong>.</p>
+        </div>
+
+        <h3>Frá svari á síðu</h3>
+        <p>Svarið er vistað óbreytt, lesið inn í SQL-gagnagrunn og tölurnar
+        dregnar út með nefndum fyrirspurnum. Mismunirnir eru reiknaðir í SQL.
+        Allt er námundað í einn aukastaf við útflutning; síðan sjálf námundar
+        ekkert.</p>
+        <p>Nánar um vinnulagið á <a href="adferdafraedi.html">aðferðafræðisíðunni</a>.</p>
       </article>
+
+      <section class="efni" aria-labelledby="takmarkanir-titill">
+        <h2 id="takmarkanir-titill">Takmarkanir</h2>
+        <ul>
+          <li><strong>Sex ár, ekki á tilsettum tíma.</strong> Tímapunkturinn
+          <code>n+3</code> merkir sex árum eftir innritun. Tölurnar segja ekki
+          hve margir luku þriggja ára námi á þremur árum.</li>
+          <li><strong>Prósentur, ekki fjöldi.</strong> Án fjölda nemenda er
+          hvorki óvissa né marktækni metin, og lítill munur getur verið
+          tilviljun.</li>
+          <li><strong>Einn árgangur.</strong> Aðeins eitt innritunarár er valið,
+          svo engin þróun er mæld.</li>
+          <li><strong>Námundun.</strong> Hlutföllin eru með einum aukastaf, svo
+          summa flokkanna getur orðið 99,9 eða 100,1 í stað 100. Það er ekki
+          villa í gögnunum.</li>
+          <li><strong>Núll í aukastaf fellur niður.</strong> Tala eins og 5,0
+          birtist sem 5; gildið er það sama.</li>
+          <li><strong>Uppfærslutími Hagstofunnar er ónothæfur.</strong> Reitur
+          svarsins, <code>updated</code>, geymir gervidagsetningu langt inni í
+          framtíðinni. Dagsetningin á síðunni er því sóknartími okkar.</li>
+          <li><strong>Aukastafalýsingin stenst ekki.</strong> Svarið segir að
+          gildin hafi enga aukastafi þótt þau hafi einn. Raunveruleg gildi eru
+          varðveitt.</li>
+          <li><strong>Leyfi óstaðfest.</strong> Skilmálar Hagstofunnar um
+          endurbirtingu voru ekki lesnir þegar gögnin voru sótt, og leyfið er
+          því ekki staðfest.</li>
+          <li><strong>Lýsandi, ekki orsakir.</strong> Munur milli sviða eða kynja
+          segir ekkert um áhrif námsvals.</li>
+        </ul>
+      </section>
 
       <nav class="naesta-skref" aria-labelledby="naesta-skref-titill">
         <h2 class="naesta-skref__titill" id="naesta-skref-titill">Hvert get ég farið næst?</h2>

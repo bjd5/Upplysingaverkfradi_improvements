@@ -6,7 +6,7 @@ Hér er hún prófuð, í báðar áttir. Leitin á byggðu gömlu síðunni
 (`vefleit.py`, ákvörðun b í issue #3) er prófuð í tests/test_vefleit.py;
 afmörkunin er í docs/adferdafraedi.md, kafla 1.5.2.
 
-Lærdómur úr docs/agenta-verkefni.md, kafla 15: *staðfesting sem getur stemmt af
+Lærdómur úr docs/agenta-verkefni.md, kafla 6: *staðfesting sem getur stemmt af
 tilviljun er ekki staðfesting.* Þess vegna er ekki nóg að leitin skili engu á
 raunskránum — prófið keyrir hana líka á gervisetningu og fellur ef hún **finnur
 hana ekki**. Leit sem finnur aldrei neitt væri annars græn að eilífu.

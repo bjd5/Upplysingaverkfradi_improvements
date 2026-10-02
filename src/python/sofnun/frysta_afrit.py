@@ -146,6 +146,7 @@ def frysta(upprunarot: Path = SJALFGEFINN_UPPRUNI) -> int:
 
 
 def main(rok: list[str] | None = None) -> int:
+    """Handvirk keyrsla: afritar söfnin úr ``--uppruni`` og skráir þau."""
     thattari = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     thattari.add_argument(
         "--uppruni",

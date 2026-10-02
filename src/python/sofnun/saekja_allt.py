@@ -151,6 +151,7 @@ def safna(heiti: Sequence[str] | None = None, *, thvinga: bool = False) -> Nidur
 
 
 def main(rok: list[str] | None = None) -> int:
+    """Handvirk keyrsla: sækir eitt safn eða öll, eða telur þau upp; 1 ef safn brást."""
     thattari = argparse.ArgumentParser(
         description="Sækir hrágögn rannsóknarinnar í data/raw/."
     )

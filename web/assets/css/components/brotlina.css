@@ -1,0 +1,6 @@
+/* brotlina.css — leyfir línubrot inni í löngum orðum, t.d. slóðum.
+   Án þess ýtir heimild með langri slóð síðunni út fyrir 320 px (regla 3.5).
+   Ætti heima í stada-gagna.css; sett hér svo sameiginlega skráin haldist
+   óbreytt í þessu verki.                                                 */
+
+.brotlina { overflow-wrap: anywhere; }
