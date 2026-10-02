@@ -12,20 +12,20 @@ minni). Allar tölur eru bæti.
 
 | Síða | Body | Flutningur | JSON og myndir sem hlaðið er |
 |---|---:|---:|---|
-| `index.html` | 51.199 | 53.481 | `yfirlit.json` |
-| `sidur/adferdafraedi.html` | 43.898 | 45.963 | — |
-| `sidur/friends-gagnasagan.html` | 32.637 | 34.513 | — |
-| `sidur/hagstofan.html` | 70.115 | 72.958 | `hagstofan.json` |
-| `sidur/mbl-regex.html` | 60.041 | 63.069 | `mbl.json` |
-| `sidur/phoebe-central-perk.html` | 66.409 | 69.810 | `phoebe-central-perk.json` |
-| `sidur/phoebe-tmdb.html` | 32.576 | 34.452 | — |
-| `sidur/phoebe-tolfraedi.html` | 90.836 | 94.238 | `phoebe-tolfraedi.json` |
-| `sidur/phoebe-tribute.html` | 32.391 | 34.267 | — |
-| `sidur/skjalftavaktin.html` | 99.857 | 102.893 | `skjalftar.json` + 1 SVG-mynd |
-| `sidur/uppahalds-video.html` | 32.500 | 34.376 | — |
-| `sidur/vedurstodvar.html` | 44.536 | 46.600 | — |
+| `index.html` | 53.148 | 55.430 | `yfirlit.json` |
+| `sidur/adferdafraedi.html` | 44.134 | 46.199 | — |
+| `sidur/friends-gagnasagan.html` | 32.698 | 34.574 | — |
+| `sidur/hagstofan.html` | 81.445 | 84.660 | `hagstofan.json` |
+| `sidur/mbl-regex.html` | 76.895 | 79.924 | `mbl.json` |
+| `sidur/phoebe-central-perk.html` | 95.868 | 99.270 | `phoebe-central-perk.json` |
+| `sidur/phoebe-tmdb.html` | 32.637 | 34.513 | — |
+| `sidur/phoebe-tolfraedi.html` | 92.962 | 96.364 | `phoebe-tolfraedi.json` |
+| `sidur/phoebe-tribute.html` | 32.452 | 34.328 | — |
+| `sidur/skjalftavaktin.html` | 101.322 | 104.358 | `skjalftar.json` + 1 SVG-mynd |
+| `sidur/uppahalds-video.html` | 32.561 | 34.437 | — |
+| `sidur/vedurstodvar.html` | 82.585 | 85.614 | `vedurstodvar.json` |
 
-Stærsta síðan (`skjalftavaktin.html`) er um 20 % af þakinu.
+Stærsta síðan (`sidur/skjalftavaktin.html`) er um 20 % af þakinu.
 
 - **Ytri beiðnir:** engar. Allar beiðnir fara á sama upprunann; engin CDN,
   engin framework.
@@ -35,8 +35,7 @@ Stærsta síðan (`skjalftavaktin.html`) er um 20 % af þakinu.
   dökkt; vafrinn sækir eina). SVG er réttara en WebP fyrir línur og texta og
   er undanskilið WebP-kröfunni. Rastamyndir skulu vera WebP með `width`,
   `height` og `loading="lazy"` neðan við fold.
-- **JSON:** hver síða sækir aðeins sína skrá. `vedurstodvar.json` er ekki sótt
-  af neinni síðu.
+- **JSON:** hver gagnasíða sækir aðeins sína skrá; forsíðan sækir `yfirlit.json`.
 - **Skriftur:** allar með `defer`.
 - **Án JavaScript:** allar síður læsilegar (12/12), engin lárétt skrun
   (`scrollWidth` = 320). Gagnareitir og myndrit fyllast aðeins með JavaScript.

@@ -5,7 +5,7 @@ Hver útflutningseining skilar **umslagi** á föstu sniði::
     {
       "uppfaert": "2026-09-24T11:22:18+00:00",
       "heimild": "Veðurstofa Íslands — api.vedur.is/weather/stations (CC BY 4.0)",
-      "gogn": [ ... ] | { ... },
+      "gogn": [ ... ],
       "lysigogn": { ... }          # valfrjálst
     }
 
@@ -84,7 +84,7 @@ def utc_timastimpill(texti: str) -> str:
 def byggja_umslag(
     uppfaert: str,
     heimild: str,
-    gogn: list[Any] | dict[str, Any],
+    gogn: list[Any],
     lysigogn: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Setur saman umslagið í fastri reitaröð og sannreynir það."""
@@ -126,10 +126,10 @@ def sannreyna_umslag(umslag: dict[str, Any]) -> None:
     if not isinstance(heimild, str) or not heimild.strip():
         raise UtflutningsVilla("'heimild' verður að vera óauður texti — hver tala á sér uppruna (regla 8).")
     gogn = umslag["gogn"]
-    if not isinstance(gogn, (list, dict)) or not gogn:
+    if not isinstance(gogn, list) or not gogn:
         raise UtflutningsVilla(
-            "'gogn' verður að vera listi eða hlutur með minnst einni færslu. Tómt "
-            "úr gagnasafni þýðir að lesturinn úr grunninum mistókst."
+            "'gogn' verður að vera listi með minnst einni færslu. Tómur listi úr "
+            "gagnasafni þýðir að lesturinn úr grunninum mistókst."
         )
     if REITUR_LYSIGOGN in umslag and not isinstance(umslag[REITUR_LYSIGOGN], dict):
         raise UtflutningsVilla("'lysigogn' verður að vera hlutur ef hann er með.")

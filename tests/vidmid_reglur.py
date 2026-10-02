@@ -25,7 +25,7 @@ SKJALFTAR_VAL = {"0052": "min_lengd", "0053": "max_lengd", "0054": "min_breidd",
 
 def _skjalftavaktin(a: Afgreidsla) -> None:
     d = lesa_gogn("skjalftar")
-    g, sokn = d["gogn"], d["lysigogn"]["sokn"]["faeribreytur"]
+    g, sokn = d["lysigogn"], d["lysigogn"]["sokn"]["faeribreytur"]
     hnit = [float(x) for x in re.findall(r"-?\d+(?:\.\d+)?", sokn["polygon"])]
     lengdir, breiddir = hnit[0::2], hnit[1::2]
     val = {"min_lengd": min(lengdir), "max_lengd": max(lengdir),
@@ -47,7 +47,7 @@ def _skjalftavaktin(a: Afgreidsla) -> None:
     a.bera("0111", sm["dypt_km"]["midgildi"], "Miðgildi dýptar (km)")
     for nr, lykill in (("0112", "fjoldi"), ("0113", "lagmark"), ("0114", "hamark"), ("0115", "midgildi")):
         a.bera(nr, kv[lykill], f"Stærðartafla Mlw: {lykill}")
-    dagar = {x["dagur"]: x["fjoldi"] for x in g["dagar"]}
+    dagar = {x["dagur"]: x["fjoldi"] for x in d["gogn"]}
     manudir = {x["manudur"]: x["atburdir"] for x in g["manudir"]}
     manudur_toflu = ""
     for nr in a.milli("0117", "0239"):
@@ -68,7 +68,7 @@ def _skjalftavaktin(a: Afgreidsla) -> None:
 
 def _forsida(a: Afgreidsla) -> None:
     d = lesa_gogn("skjalftar")
-    a.bera("0002", d["gogn"]["samantekt"]["dagar"], "Dagar í glugganum")
+    a.bera("0002", d["lysigogn"]["samantekt"]["dagar"], "Dagar í glugganum")
     a.bera("0005", [d["lysigogn"]["sokn"]["faeribreytur"]["size_min"],
                     d["lysigogn"]["sokn"]["faeribreytur"]["size_max"]], "Stærðarsvið")
 
@@ -210,13 +210,13 @@ def _phoebe_tolfraedi(a: Afgreidsla) -> None:
 
 
 def _central_perk(a: Afgreidsla) -> None:
-    d = lesa_gogn("central-perk")
-    hopar = {x["hopur"]: x for x in d["gogn"]}
+    d = lesa_gogn("phoebe-central-perk")
+    hopar = {x["hopur"]: x for x in d["lysigogn"]["hopar"]}
     sm = d["lysigogn"]["samantekt"]
     ph = hopar["phoebe_sings"]
     ekki, cp = hopar["no_central_perk"], hopar["central_perk"]
     for nr in ("0003", "0038"):
-        a.bera(nr, sm["handrit"], "Handritaskrár í greiningu")
+        a.bera(nr, sm["handritsskrar"], "Handritaskrár í greiningu")
     a.bera("0001", sm["songsenur"], "Söngsenur")
     a.bera("0054", sm["songsenur"], "Söngsenur")
     for nr in ("0002", "0055"):
@@ -225,17 +225,17 @@ def _central_perk(a: Afgreidsla) -> None:
     a.bera("0016", ph["midgildi_prosent"], "Miðgildi hlutdeildar: Phoebe syngur (%)")
     for nr in ("0005", "0013"):
         a.bera(nr, cp["midgildi_prosent"], "Miðgildi hlutdeildar: Central Perk án söngs (%)")
-    a.bera("0006", sm["munur_midgilda_stig"], "Munur miðgilda (prósentustig)")
-    a.bera("0007", round(ph["midgildi_hlutfall"], 1), "Hinir fimm á móti Phoebe: syngur")
-    a.bera("0017", round(ph["midgildi_hlutfall"], 1), "Hinir fimm á móti Phoebe: syngur")
-    a.bera("0008", round(cp["midgildi_hlutfall"], 1), "Hinir fimm á móti Phoebe: án söngs")
-    a.bera("0014", round(cp["midgildi_hlutfall"], 1), "Hinir fimm á móti Phoebe: án söngs")
+    a.bera("0006", sm["munur_midgilda_prosentustig"], "Munur miðgilda (prósentustig)")
+    a.bera("0007", round(ph["hinir_fimm_a_moti_phoebe"], 1), "Hinir fimm á móti Phoebe: syngur")
+    a.bera("0017", round(ph["hinir_fimm_a_moti_phoebe"], 1), "Hinir fimm á móti Phoebe: syngur")
+    a.bera("0008", round(cp["hinir_fimm_a_moti_phoebe"], 1), "Hinir fimm á móti Phoebe: án söngs")
+    a.bera("0014", round(cp["hinir_fimm_a_moti_phoebe"], 1), "Hinir fimm á móti Phoebe: án söngs")
     a.bera("0009", ekki["handrit"], "Handrit án Central Perk-senu")
     a.bera("0010", ekki["midgildi_prosent"], "Miðgildi hlutdeildar: engin sena (%)")
-    a.bera("0011", round(ekki["midgildi_hlutfall"], 1), "Hinir fimm á móti Phoebe: engin sena")
+    a.bera("0011", round(ekki["hinir_fimm_a_moti_phoebe"], 1), "Hinir fimm á móti Phoebe: engin sena")
     a.bera("0012", cp["handrit"], "Handrit í Central Perk án söngs")
     a.bera("0015", ph["handrit"], "Handrit þar sem Phoebe syngur")
-    a.bera("0039", sm["handrit"] + 2, "Skrár í delvinso/friends (227 + 2 undanskildar)")
+    a.bera("0039", sm["handritsskrar"] + 2, "Skrár í delvinso/friends (227 + 2 undanskildar)")
     a.sleppa(["0000", "0046", "0051", "0052", "0065", "0066"], EKKI_BORID,
              "tala í aðferðalýsingu eða tilvísun í aðra greiningu, ekki niðurstaða")
     a.sleppa("0063", EKKI_VID, "innfelling á upprunahandriti var tekin út (höfundaréttur, issue #3)")
@@ -250,7 +250,7 @@ def _regex_inngangur(a: Afgreidsla) -> None:
 
 def _friends_index(a: Afgreidsla) -> None:
     ly = lesa_gogn("phoebe-tolfraedi")["lysigogn"]["umfang"]
-    cp = lesa_gogn("central-perk")["lysigogn"]["samantekt"]
+    cp = lesa_gogn("phoebe-central-perk")["lysigogn"]["samantekt"]
     skrar_alls = ly["handritsskrar"] + ly["undanskildar_skrar"]
     for nr in ("0001", "0004", "0013"):
         a.bera(nr, skrar_alls, "Handritaskrár í safninu", "talan stemmir aðeins sem 227 + 2 undanskildar")

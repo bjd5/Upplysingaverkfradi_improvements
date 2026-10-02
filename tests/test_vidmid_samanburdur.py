@@ -109,7 +109,7 @@ class StadfestarTolur(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.vidmid = lesa_vidmid()
-        cls.skjalftar = lesa_gogn("skjalftar")["gogn"]["samantekt"]
+        cls.skjalftar = lesa_gogn("skjalftar")["lysigogn"]["samantekt"]
         ly = lesa_gogn("phoebe-tolfraedi")["lysigogn"]
         cls.umfang, cls.gaedi = ly["umfang"], ly["umfang"]["thattunargaedi"]
         cls.linur = {x["persona"]: x["linur"] for x in ly["plass_alls"]}

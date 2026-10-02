@@ -16,7 +16,7 @@ hvernig aðgengi er tryggt og hvernig mælingin er endurtekin. Reglurnar eru í
 | Stökktengill | „Fara beint í efni“ er fyrsti tengill allra síðna og birtist við fókus |
 | Fókus | Ein umgjörð í `base.css` (`:focus-visible`, 3 px, token `--fokus`). Kort á forsíðu teikna hana utan um allt kortið |
 | Núverandi síða | `aria-current` plús fylltur flötur — aldrei litur einn og sér |
-| Töflur | `<caption>` og `th scope="col"`; töflur úr JavaScript koma úr `buildTable` sem setur hvort tveggja |
+| Töflur | Stenst: 20 töflur á 7 síðum, allar með `caption` og `th` |
 | Myndir | Engar `<img>` eru á síðunum; engin myndrit eru birt enn. Myndrit úr Python fá gagnatöflu (sjá [`myndrit.md`](myndrit.md)) |
 | Snertifletir | `--smellisvaedi` er 44 px; tenglar í valmynd, brauðmylsnu og kortum fylla það |
 | Mjór skjár | Ekkert lárétt skrun á 320 px; töflur skruna innan `.tafla-umgjord`, gagnahlutar nota `minmax(0, 1fr)` og heimildarlínan brýtur langt heiti |
@@ -41,9 +41,9 @@ gildið á hverri síðu; lágmark er 4,5:1 (3:1 fyrir stóran texta).
 | `sidur/phoebe-tmdb.html` | 4,69 | 6,29 | 58 | stenst |
 | `sidur/uppahalds-video.html` | 4,69 | 6,29 | 55 | stenst |
 | `sidur/phoebe-tribute.html` | 4,69 | 6,29 | 55 | stenst |
-| `sidur/hagstofan.html` | 5,50 | 6,29 | 253 | stenst |
-| `sidur/vedurstodvar.html` | 4,69 | 6,29 | 246 | stenst |
-| `sidur/mbl-regex.html` | 5,50 | 6,29 | 126 | stenst |
+| `sidur/hagstofan.html` | 5,50 | 6,29 | 323 | stenst |
+| `sidur/vedurstodvar.html` | 5,01 | 6,29 | 322 | stenst |
+| `sidur/mbl-regex.html` | 5,50 | 6,29 | 260 | stenst |
 | `sidur/adferdafraedi.html` | 5,50 | 6,29 | 144 | stenst |
 
 Lægsta ljósa gildið (4,69) er „Efni í vinnslu“ á biðstöðusíðunum; lægsta
@@ -73,27 +73,23 @@ Reiknað úr token-gildunum (prófað í `tests/test_vefur_adgengi.py`). Dálkar
 | Gátlisti | Niðurstaða |
 |---|---|
 | `lang`, ein `h1`, fyrirsagnir, kennileiti | Stenst á öllum 12 síðum |
-| Textaandstæða í báðum þemum | Stenst, sjá kafla 2. **Lagað:** svör á `mbl-regex` voru 1,63:1 í dökku þema (`--adal-700`); nota nú `--tengill-yfir` |
+| Textaandstæða í báðum þemum | Stenst, sjá kafla 2 |
 | Litur ekki eina merkingin | Stenst (valmynd: `aria-current` + fylling + feitt letur; stöðumerki hafa texta) |
 | Lyklaborð: fyrsta Tab, fókusumgjörð | Stenst. Fyrsta Tab fer á „Fara beint í efni“; allir fókusanlegir hlutir hafa umgjörð |
 | Töflur | Stenst (ein tafla, á Skjálftavaktinni: `caption` + `scope="col"`) |
-| Snertifletir 44 × 44 px | **Lagað:** brauðmylsnutengillinn „Þema“ var 39 px breiður; fær `min-width`. Aðrir stakir tenglar ≥ 44 × 44 |
-| 320 px án lárétts skruns | **Lagað:** `hagstofan` (648 px) og `skjalftavaktin` (660 px) skrunuðu lárétt því súla gagnahlutans þandist út; `gagnahluti.css` og `stada-gagna.css` laga það. Nú 320 á öllum 12 síðum |
-| Console án villu eða viðvörunar | **Lagað:** tvær villur á Skjálftavaktinni (sjá hér að neðan). Engin villa á neinni síðu eftir það |
+| Snertifletir 44 × 44 px | Stenst fyrir takka, valmynd og brauðmylsnu. **Frávik:** stökktenglaröðin „Á þessari síðu“ á `mbl-regex.html` er 17 px há; undanþága WCAG 2.5.8 á við tengla í setningum, en regla 3.5 (44 px) leyfir hana ekki |
+| 320 px án lárétts skruns | Stenst: `scrollWidth` = breidd gluggans á öllum 12 síðum, ljóst og dökkt |
+| Console án villu eða viðvörunar | Stenst á öllum 12 síðum, ljóst og dökkt, 320 og 1280 px |
 | Án JavaScript | Stenst: meginmál og valmynd eru í HTML; Skjálftavaktin sýnir tengil á JSON-skrána |
-
-Lagfæringarnar á Skjálftavaktinni: gagnahlutinn leitaði að `samantekt` inni í
-`gogn` en útflutningurinn geymir hana í `lysigogn` (reitir byrja nú á
-`lysigogn.`), og mánaðartaflan bjóst við mánaðaskrá en skráin geymir einn dag
-per línu (teiknarinn tekur nú dagana saman í mánuði).
 
 ### Ekki staðfest
 
 - Skjálesarar (NVDA, VoiceOver) voru ekki prófaðir; athugað var með
   merkingu HTML og fókusröð, ekki upplesinn texta.
 - Aðeins Chromium. Firefox og Safari eru ótestuð.
-- Myndrit eru ekki á síðunum enn, svo textaleg samsvörun þeirra er óprófuð
-  á síðunum sjálfum (hún er skilgreind í `myndrit.md`).
+- Myndrit eru fjögur SVG á Phoebe-síðunum (með `role="img"` og lýsingu sem vísar í
+  töfluna) og ein mynd á Skjálftavaktinni (`alt` á íslensku). Textaleg samsvörun
+  er athuguð með prófum, ekki með skjálesara.
 - Snertiflötur inni í löngum texta (inline tenglar) er undanskilinn
   samkvæmt WCAG 2.5.8.
 

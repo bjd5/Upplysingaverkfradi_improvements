@@ -64,11 +64,6 @@ class UmslagProf(unittest.TestCase):
         with self.assertRaises(UtflutningsVilla):
             byggja_umslag(UPPFAERT, HEIMILD, [])
 
-    def test_gogn_ma_vera_hlutur_en_ekki_tomur(self) -> None:
-        self.assertEqual(byggja_umslag(UPPFAERT, HEIMILD, {"a": 1})["gogn"], {"a": 1})
-        with self.assertRaises(UtflutningsVilla):
-            byggja_umslag(UPPFAERT, HEIMILD, {})
-
     def test_aud_heimild_er_hafnad(self) -> None:
         with self.assertRaises(UtflutningsVilla):
             byggja_umslag(UPPFAERT, "  ", [1])

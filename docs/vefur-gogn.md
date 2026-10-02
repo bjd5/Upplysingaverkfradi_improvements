@@ -294,6 +294,6 @@ tafla úr 61 `gogn`-röð fær íslenskt snið, síðan virkar án JS, og 320 px
   `tests/test_vefur_phoebe.py` ber textann saman við gagnaskrána á íslensku
   sniði og fellur ef tala í HTML víkur frá henni.
 
-`data-gogn-reitur` nær aðeins inn í `gogn`, ekki `lysigogn`. Tölur sem búa í
-`lysigogn` fara því í töflur með `data-rod`, og teiknarinn les þær beint úr
-skjalinu.
+Tölur sem búa í `lysigogn` (samantektir, hópar) eru í töflum með `data-rod`
+og teiknarinn les þær beint úr skjalinu. Staka tölu í texta má líka fylla með
+`data-gogn-reitur="lysigogn.…"` (kafli 2.1).

@@ -1,7 +1,394 @@
 {
   "uppfaert": "2026-09-10T11:46:23+00:00",
   "heimild": "Veðurstofa Íslands — api.vedur.is/quakes/events (CC BY 4.0)",
-  "gogn": {
+  "gogn": [
+    {
+      "dagur": "2023-11-01",
+      "fjoldi": 1,
+      "medaltal_7d": 1.0,
+      "dagar_i_glugga": 1
+    },
+    {
+      "dagur": "2023-11-02",
+      "fjoldi": 3,
+      "medaltal_7d": 2.0,
+      "dagar_i_glugga": 2
+    },
+    {
+      "dagur": "2023-11-03",
+      "fjoldi": 24,
+      "medaltal_7d": 9.33,
+      "dagar_i_glugga": 3
+    },
+    {
+      "dagur": "2023-11-04",
+      "fjoldi": 0,
+      "medaltal_7d": 7.0,
+      "dagar_i_glugga": 4
+    },
+    {
+      "dagur": "2023-11-05",
+      "fjoldi": 26,
+      "medaltal_7d": 10.8,
+      "dagar_i_glugga": 5
+    },
+    {
+      "dagur": "2023-11-06",
+      "fjoldi": 1,
+      "medaltal_7d": 9.17,
+      "dagar_i_glugga": 6
+    },
+    {
+      "dagur": "2023-11-07",
+      "fjoldi": 2,
+      "medaltal_7d": 8.14,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-08",
+      "fjoldi": 2,
+      "medaltal_7d": 8.29,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-09",
+      "fjoldi": 24,
+      "medaltal_7d": 11.29,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-10",
+      "fjoldi": 187,
+      "medaltal_7d": 34.57,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-11",
+      "fjoldi": 51,
+      "medaltal_7d": 41.86,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-12",
+      "fjoldi": 3,
+      "medaltal_7d": 38.57,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-13",
+      "fjoldi": 1,
+      "medaltal_7d": 38.57,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-14",
+      "fjoldi": 2,
+      "medaltal_7d": 38.57,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-15",
+      "fjoldi": 0,
+      "medaltal_7d": 38.29,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-16",
+      "fjoldi": 0,
+      "medaltal_7d": 34.86,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-17",
+      "fjoldi": 0,
+      "medaltal_7d": 8.14,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-18",
+      "fjoldi": 0,
+      "medaltal_7d": 0.86,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-19",
+      "fjoldi": 1,
+      "medaltal_7d": 0.57,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-20",
+      "fjoldi": 0,
+      "medaltal_7d": 0.43,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-21",
+      "fjoldi": 0,
+      "medaltal_7d": 0.14,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-22",
+      "fjoldi": 0,
+      "medaltal_7d": 0.14,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-23",
+      "fjoldi": 0,
+      "medaltal_7d": 0.14,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-24",
+      "fjoldi": 0,
+      "medaltal_7d": 0.14,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-25",
+      "fjoldi": 1,
+      "medaltal_7d": 0.29,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-26",
+      "fjoldi": 0,
+      "medaltal_7d": 0.14,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-27",
+      "fjoldi": 1,
+      "medaltal_7d": 0.29,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-28",
+      "fjoldi": 0,
+      "medaltal_7d": 0.29,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-29",
+      "fjoldi": 0,
+      "medaltal_7d": 0.29,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-11-30",
+      "fjoldi": 0,
+      "medaltal_7d": 0.29,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-01",
+      "fjoldi": 0,
+      "medaltal_7d": 0.29,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-02",
+      "fjoldi": 0,
+      "medaltal_7d": 0.14,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-03",
+      "fjoldi": 0,
+      "medaltal_7d": 0.14,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-04",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-05",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-06",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-07",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-08",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-09",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-10",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-11",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-12",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-13",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-14",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-15",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-16",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-17",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-18",
+      "fjoldi": 3,
+      "medaltal_7d": 0.43,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-19",
+      "fjoldi": 1,
+      "medaltal_7d": 0.57,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-20",
+      "fjoldi": 0,
+      "medaltal_7d": 0.57,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-21",
+      "fjoldi": 0,
+      "medaltal_7d": 0.57,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-22",
+      "fjoldi": 0,
+      "medaltal_7d": 0.57,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-23",
+      "fjoldi": 0,
+      "medaltal_7d": 0.57,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-24",
+      "fjoldi": 0,
+      "medaltal_7d": 0.57,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-25",
+      "fjoldi": 0,
+      "medaltal_7d": 0.14,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-26",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-27",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-28",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-29",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-30",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    },
+    {
+      "dagur": "2023-12-31",
+      "fjoldi": 0,
+      "medaltal_7d": 0.0,
+      "dagar_i_glugga": 7
+    }
+  ],
+  "lysigogn": {
+    "sokn": {
+      "endapunktur": "https://api.vedur.is/quakes/events",
+      "faeribreytur": {
+        "start_time": "2023-11-01T00:00:00+00:00",
+        "end_time": "2024-01-01T00:00:00+00:00",
+        "depth_min": 0,
+        "depth_max": 50,
+        "size_min": 3,
+        "size_max": 7,
+        "polygon": "POLYGON((-23 64.1,-23 63.7,-21.5 63.7,-21.5 64.1,-23 64.1))",
+        "type": "earthquake",
+        "evaluation_mode": "manual",
+        "format": "json",
+        "system": "sil"
+      },
+      "hraskra": "data/raw/vedur-quakes/events.json",
+      "leyfi": "CC BY 4.0",
+      "leyfi_slod": "https://creativecommons.org/licenses/by/4.0/"
+    },
     "samantekt": {
       "atburdir": 334,
       "dagar": 61,
@@ -17,374 +404,6 @@
         "midgildi": 4.67
       }
     },
-    "dagar": [
-      {
-        "dagur": "2023-11-01",
-        "fjoldi": 1,
-        "medaltal_7d": 1.0,
-        "dagar_i_glugga": 1
-      },
-      {
-        "dagur": "2023-11-02",
-        "fjoldi": 3,
-        "medaltal_7d": 2.0,
-        "dagar_i_glugga": 2
-      },
-      {
-        "dagur": "2023-11-03",
-        "fjoldi": 24,
-        "medaltal_7d": 9.33,
-        "dagar_i_glugga": 3
-      },
-      {
-        "dagur": "2023-11-04",
-        "fjoldi": 0,
-        "medaltal_7d": 7.0,
-        "dagar_i_glugga": 4
-      },
-      {
-        "dagur": "2023-11-05",
-        "fjoldi": 26,
-        "medaltal_7d": 10.8,
-        "dagar_i_glugga": 5
-      },
-      {
-        "dagur": "2023-11-06",
-        "fjoldi": 1,
-        "medaltal_7d": 9.17,
-        "dagar_i_glugga": 6
-      },
-      {
-        "dagur": "2023-11-07",
-        "fjoldi": 2,
-        "medaltal_7d": 8.14,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-08",
-        "fjoldi": 2,
-        "medaltal_7d": 8.29,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-09",
-        "fjoldi": 24,
-        "medaltal_7d": 11.29,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-10",
-        "fjoldi": 187,
-        "medaltal_7d": 34.57,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-11",
-        "fjoldi": 51,
-        "medaltal_7d": 41.86,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-12",
-        "fjoldi": 3,
-        "medaltal_7d": 38.57,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-13",
-        "fjoldi": 1,
-        "medaltal_7d": 38.57,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-14",
-        "fjoldi": 2,
-        "medaltal_7d": 38.57,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-15",
-        "fjoldi": 0,
-        "medaltal_7d": 38.29,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-16",
-        "fjoldi": 0,
-        "medaltal_7d": 34.86,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-17",
-        "fjoldi": 0,
-        "medaltal_7d": 8.14,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-18",
-        "fjoldi": 0,
-        "medaltal_7d": 0.86,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-19",
-        "fjoldi": 1,
-        "medaltal_7d": 0.57,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-20",
-        "fjoldi": 0,
-        "medaltal_7d": 0.43,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-21",
-        "fjoldi": 0,
-        "medaltal_7d": 0.14,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-22",
-        "fjoldi": 0,
-        "medaltal_7d": 0.14,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-23",
-        "fjoldi": 0,
-        "medaltal_7d": 0.14,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-24",
-        "fjoldi": 0,
-        "medaltal_7d": 0.14,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-25",
-        "fjoldi": 1,
-        "medaltal_7d": 0.29,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-26",
-        "fjoldi": 0,
-        "medaltal_7d": 0.14,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-27",
-        "fjoldi": 1,
-        "medaltal_7d": 0.29,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-28",
-        "fjoldi": 0,
-        "medaltal_7d": 0.29,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-29",
-        "fjoldi": 0,
-        "medaltal_7d": 0.29,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-11-30",
-        "fjoldi": 0,
-        "medaltal_7d": 0.29,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-01",
-        "fjoldi": 0,
-        "medaltal_7d": 0.29,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-02",
-        "fjoldi": 0,
-        "medaltal_7d": 0.14,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-03",
-        "fjoldi": 0,
-        "medaltal_7d": 0.14,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-04",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-05",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-06",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-07",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-08",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-09",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-10",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-11",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-12",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-13",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-14",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-15",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-16",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-17",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-18",
-        "fjoldi": 3,
-        "medaltal_7d": 0.43,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-19",
-        "fjoldi": 1,
-        "medaltal_7d": 0.57,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-20",
-        "fjoldi": 0,
-        "medaltal_7d": 0.57,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-21",
-        "fjoldi": 0,
-        "medaltal_7d": 0.57,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-22",
-        "fjoldi": 0,
-        "medaltal_7d": 0.57,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-23",
-        "fjoldi": 0,
-        "medaltal_7d": 0.57,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-24",
-        "fjoldi": 0,
-        "medaltal_7d": 0.57,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-25",
-        "fjoldi": 0,
-        "medaltal_7d": 0.14,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-26",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-27",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-28",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-29",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-30",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      },
-      {
-        "dagur": "2023-12-31",
-        "fjoldi": 0,
-        "medaltal_7d": 0.0,
-        "dagar_i_glugga": 7
-      }
-    ],
     "staerd_eftir_kvarda": [
       {
         "kvardi": "Mlw",
@@ -479,28 +498,7 @@
         "breidd": 63.86898,
         "lengd": -22.46119
       }
-    ]
-  },
-  "lysigogn": {
-    "sokn": {
-      "endapunktur": "https://api.vedur.is/quakes/events",
-      "faeribreytur": {
-        "start_time": "2023-11-01T00:00:00+00:00",
-        "end_time": "2024-01-01T00:00:00+00:00",
-        "depth_min": 0,
-        "depth_max": 50,
-        "size_min": 3,
-        "size_max": 7,
-        "polygon": "POLYGON((-23 64.1,-23 63.7,-21.5 63.7,-21.5 64.1,-23 64.1))",
-        "type": "earthquake",
-        "evaluation_mode": "manual",
-        "format": "json",
-        "system": "sil"
-      },
-      "hraskra": "data/raw/vedur-quakes/events.json",
-      "leyfi": "CC BY 4.0",
-      "leyfi_slod": "https://creativecommons.org/licenses/by/4.0/"
-    },
+    ],
     "aukastafir": 2
   }
 }

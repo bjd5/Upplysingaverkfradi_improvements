@@ -32,7 +32,8 @@ def _dagsetning(iso: str) -> str:
 class TaflaUndirMyndritiTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.gogn = json.loads(GOGN.read_text("utf-8"))["gogn"]
+        skjal = json.loads(GOGN.read_text("utf-8"))
+        cls.dagar, cls.samantekt = skjal["gogn"], skjal["lysigogn"]["samantekt"]
         cls.sida = lesa(SIDA)
 
     def test_taflan_er_sama_og_dagalistinn_i_gagnaskranni(self) -> None:
@@ -40,18 +41,18 @@ class TaflaUndirMyndritiTest(unittest.TestCase):
         vaent = [
             (_dagsetning(d["dagur"]),
              "0 — enginn atburður" if d["fjoldi"] == 0 else f"{d['fjoldi']:,}".replace(",", "."))
-            for d in self.gogn["dagar"]
+            for d in self.dagar
         ]
         self.assertEqual(lesid, vaent)
 
     def test_nulldagar_eru_merktir_med_ordum_en_ekki_lit_einum(self) -> None:
-        nulldagar = sum(1 for d in self.gogn["dagar"] if d["fjoldi"] == 0)
+        nulldagar = sum(1 for d in self.dagar if d["fjoldi"] == 0)
         self.assertEqual(self.sida.count("0 — enginn atburður"), nulldagar)
-        self.assertEqual(nulldagar, self.gogn["samantekt"]["dagar_an_atburda"])
+        self.assertEqual(nulldagar, self.samantekt["dagar_an_atburda"])
 
     def test_alt_textinn_nefnir_tolur_ur_gagnaskranni(self) -> None:
         alt = ALT.search(self.sida).group(1)
-        samantekt = self.gogn["samantekt"]
+        samantekt = self.samantekt
         for tala in (samantekt["daglegur_fjoldi"]["hamark"], samantekt["dagar_an_atburda"],
                      samantekt["dagar"]):
             with self.subTest(tala=tala):

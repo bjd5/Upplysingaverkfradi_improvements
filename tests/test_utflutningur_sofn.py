@@ -91,8 +91,7 @@ class Skjalftar(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         umslag = _lesa(skjalftar_json.SKRAARHEITI)
-        cls.dagar, cls.lysi = umslag["gogn"]["dagar"], umslag["gogn"]
-        cls.sokn = umslag["lysigogn"]["sokn"]
+        cls.dagar, cls.lysi = umslag["gogn"], umslag["lysigogn"]
 
     def test_yfirlitstolurnar(self) -> None:
         s, yfir = self.lysi["samantekt"], skjvidmid._yfirlitsgildi
@@ -119,11 +118,6 @@ class Skjalftar(unittest.TestCase):
                 self.assertEqual((syni["lengd"], syni["breidd"]),
                                  tuple(atburdur["geometry"]["coordinates"]))
         self.assertEqual(len(self.lysi["syni"]), 8)
-
-    def test_soknin_er_i_lysigognum_en_samantektin_i_gognum(self) -> None:
-        self.assertEqual(self.sokn["faeribreytur"]["size_min"], 3)
-        self.assertEqual(self.sokn["faeribreytur"]["system"], "sil")
-        self.assertNotIn("sokn", self.lysi)
 
     def test_staerdartaflan(self) -> None:
         (mlw,) = self.lysi["staerd_eftir_kvarda"]
