@@ -23,7 +23,7 @@ from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-ROT = Path(__file__).resolve().parents[3]
+from gagnagrunnur.tenging import ROT
 PROVENANCE = ROT / "data" / "raw" / "vedur-quakes" / "provenance.json"
 
 # POLYGON((lengd breidd,lengd breidd,...)) eins og beiðnin sendi hann.

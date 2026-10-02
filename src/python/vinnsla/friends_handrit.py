@@ -24,7 +24,7 @@ import os
 import re
 from pathlib import Path
 
-ROT = Path(__file__).resolve().parents[3]
+from gagnagrunnur.tenging import ROT
 
 # Submodule (issue #3, ákvörðun a): git geymir gitlink, aldrei handritin sjálf.
 DEFAULT_TRANSCRIPT_DIR = ROT / "data" / "raw" / "friends-handrit" / "season"

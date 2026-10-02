@@ -29,6 +29,7 @@ import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma f
 from hjalp import ROT  # noqa: E402
 
 from vinnsla import vedurstodvar_uttak as uttak  # noqa: E402
+from vinnsla.varnagli import VEFGOGN  # noqa: E402
 from vinnsla.vedurstodvar_hledsla import FROSID, HledsluVilla, lesa_eintak  # noqa: E402
 from vinnsla.vedurstodvar_mat import MatVilla, meta  # noqa: E402
 from vinnsla.vedurstodvar_samanburdur import AR_AFTUR_I_TIMANN, lesa_vidmid_siur  # noqa: E402
@@ -181,14 +182,11 @@ class UttakMatsins(unittest.TestCase):
         self.assertFalse((self.mappa / "ut" / uttak.MATSKRA).exists())
 
     def test_skrifar_ekki_i_web_gogn(self) -> None:
-        for mappa in (uttak.VEFGOGN, uttak.VEFGOGN / "vedurstodvar"):
+        # Varnaglinn sjálfur er prófaður í test_varnagli.py; hér að matið noti hann.
+        for mappa in (VEFGOGN, VEFGOGN / "vedurstodvar"):
             with self.subTest(mappa=mappa), self.assertRaisesRegex(MatVilla, "web"):
                 uttak.vinna_vedurstodvar(mappa=mappa)
-
-    def test_systurmappa_web_gogn_er_leyfd(self) -> None:
-        # Varnaglinn ber saman möppur, ekki strengi: "gogn-x" er ekki "gogn".
-        uttak.krefjast_utan_vefs(self.mappa / "web" / "gogn")
-        uttak.krefjast_utan_vefs(uttak.VEFGOGN.with_name("gogn-annad"))
+        self.assertFalse((VEFGOGN / "vedurstodvar").exists())
 
 
 if __name__ == "__main__":
