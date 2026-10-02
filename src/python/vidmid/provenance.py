@@ -107,6 +107,7 @@ def stadfesta(skrar: tuple[Path, ...] = (FRYSTING, PROVENANCE), rot: Path = ROT)
 
 
 def main(rok: list[str] | None = None) -> int:
+    """Handvirk keyrsla: ``stadfesta`` skilar 0 séu frosnu gögnin ósnert, annars 1."""
     thattari = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     thattari.add_argument("adgerd", choices=["stadfesta"])
     thattari.parse_args(rok)

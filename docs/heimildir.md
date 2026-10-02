@@ -23,7 +23,7 @@ python3 src/python/vidmid/provenance.py stadfesta  # hrágögnin og viðmiðið
 | Hagstofan | Hagstofa Íslands — PxWeb API | 2026-09-10T09:02:26Z | óstaðfest | engin |
 | Veðurstöðvar | Veðurstofa Íslands — Weather API | 2026-09-24T11:22:18Z | **CC BY 4.0** | engin |
 | mbl.is | mbl.is (vefsíða, ekki API) | 2026-09-16T12:08:51Z | ekkert gefið | engin |
-| TMDB | The Movie Database API v3 | **ekki sótt** | — | Bearer-lykill |
+| TMDB | The Movie Database API v3 | **ekki sótt** (#75) | óstaðfest | Bearer-lykill |
 
 ### 1.1 Jarðskjálftar — Veðurstofa Íslands
 
@@ -133,12 +133,12 @@ fyrr en það er sótt á ný.
 
 | Atriði | Gildi |
 |---|---|
-| Safn sem var greint | `delvinso/friends-tv-show-analysis` (`https://github.com/delvinso/friends-tv-show-analysis`) — í upprunaverkefninu lesið úr `data/external/delvinso-friends/season/*.html`. Fyrri útgáfa þessarar færslu nefndi það ranglega `delvinso/friends`, og þess vegna var nafnlausu `git fetch` hafnað |
-| Commit sem var greint | `a4641fed3d95bb9d9c7ba23681604c692f9b392a` |
+| Safn sem var greint | `delvinso/friends-tv-show-analysis` (`https://github.com/delvinso/friends-tv-show-analysis`) — í upprunaverkefninu lesið úr `data/external/delvinso-friends/season/*.html`. Styttra heitið `delvinso/friends` (í `006_friends.sql` og `web/gogn/`) er rangt; sú slóð er ekki aðgengileg nafnlaust |
+| Commit sem var greint | `a4641fed3d95bb9d9c7ba23681604c692f9b392a` — `master` vísar enn á það (`git ls-remote`, 1.10.2026) |
 | Dagsetning þess commits | **2019-02-21T14:44:22-05:00** (commit-dagsetning), staðfest 28.9.2026 með nafnlausu `git fetch` — safnið er opinbert |
 | Í þessu repo-i | git **submodule** á `data/raw/friends-handrit`, fest á sama commit. Git geymir aðeins slóð og SHA (gitlink), engan texta; venjulegt `git clone` sækir það ekki. Endurkeyrsla: `git submodule update --init data/raw/friends-handrit` (issue #3, ákvörðun a) |
-| Upphaflegur uppruni | `fangj/friends` (github.com/fangj/friends, birt á `fangj.github.io/friends`); delvinso-safnið er afleiða af því |
-| Commit samanburðarsafnsins | `0e0e7b0f08c0ccb4a80b4f3beab22fbaa1ccca91`, dagsett **2016-10-02** (19:50:51 +08:00) |
+| Upphaflegur uppruni | `fangj/friends` (`https://github.com/fangj/friends`, birt á `fangj.github.io/friends`); delvinso-safnið er afleiða af því |
+| Commit samanburðarsafnsins | `0e0e7b0f08c0ccb4a80b4f3beab22fbaa1ccca91`, dagsett **2016-10-02** (19:50:51 +08:00) — `master` vísar enn á það (`git ls-remote`, 1.10.2026) |
 | Hvernig SHA-in voru lesin | `git ls-tree` á gitlink-færslum submodule-anna í upprunarepo-inu @ `2865ed6` |
 | Hvenær þau voru pinnuð | `delvinso`: commit `c58e9b6` í upprunarepo-inu, 2026-08-27 (færði submodule-ið undir `data/external/`). `fangj`: commit `88d4ca4`, 2026-08-24 (bætti submodule-unum við) |
 | Umfang | 227 handritsskrár = 236 sýndir þættir (níu skrár geyma tvo þætti) |
@@ -217,7 +217,8 @@ ekki. Þau verða að koma úr heimildunum sjálfum þegar þær eru sóttar.
 |---|---|---|
 | Hnit VR-II | 64,1386922, −21,9556406 | Nominatim (OpenStreetMap), flett upp 2026-09-03 |
 | Jarðarradíus í fjarlægðarreikningi | 6371,0088 km | `src/python/vinnsla/vedurstodvar_samanburdur.py` |
-| Python | eingöngu staðalsafnið — engir pakkar, engin framework (regla 10) | `CLAUDE.md` |
+| Python | 3.12+, staðalsafnið eitt (regla 10) | `CLAUDE.md`, `src/python/gagnagrunnur/tenging.py` |
+| matplotlib | 3.11.2, **eingöngu** til að teikna myndritin í `src/python/utflutningur/` | [#17](https://github.com/bjd5/Upplysingaverkfradi_improvements/issues/17#issuecomment-5857519732), [`myndrit.md`](myndrit.md) kafli 8 |
 
 ---
 
@@ -229,10 +230,10 @@ staðhæfingu á vefsíðunni fyrr en hún er staðfest.
 | # | Spurning | Af hverju hún er opin | Hver á að leysa |
 |---|---|---|---|
 | 1 | Hvaða leyfi gildir um Hagstofugögnin? | `provenance.json` safnsins skráir ekkert leyfi og skilmálar Hagstofunnar voru ekki lesnir í upprunaverkefninu | P1.3 / P4.3 |
-| 2 | Hvaða leyfi gildir um Nominatim-uppflettinguna? | Hnitin voru flett upp en leyfi ekki skráð | P1.4 |
+| 2 | Hvaða slóð og leyfi gilda um Nominatim-uppflettinguna? | Hnitin og dagsetningin eru skráð, en hvorki slóð beiðninnar né leyfi | P1.4 |
 | 3 | Af hverju stærð 3–7 og dýpt 0–50 km? | Mörkin eru í kóðanum og í hverri lýsingu, en **rökstuðningur þeirra er hvergi skráður** | Björn (issue #2) |
 | 4 | Af hverju aðeins `evaluation_mode=manual`? | Skjalfest er *hvað* sían útilokar (sjálfvirkar greiningar), ekki *af hverju* það val var tekið | Björn (issue #2) |
 | 5 | Skilmálar mbl.is fyrir vistun og greiningu eintaks | Engin skilmálalesning er skráð í provenance | P4.3 |
 | 6 | Frumheimildirnar í kafla 3 | Hvorug hefur verið sótt; þær eru teknar upp úr viðmiðinu | P0.4 framhald |
 | 7 | Uppfærslutími Hagstofusvarsins | Svarið gefur `updated = 9999-12-31T23:59:59Z`, sem er ekki nothæf dagsetning | P1.3 |
-| 8 | ~~Dagsetning `delvinso` @ `a4641fe` — og er safnið enn aðgengilegt?~~ | **Leyst 28.9.2026.** Rétt heiti er `delvinso/friends-tv-show-analysis`; fetch var áður hafnað því slóðin `delvinso/friends` var röng. Safnið er opinbert og aðgengilegt nafnlaust, commit-dagsetningin er 2019-02-21, og það er nú submodule á `data/raw/friends-handrit` (kafli 2.1) | lokið (issue #3) |
+| 8 | Leyfi og skilmálar TMDB | Ekkert eintak hefur verið sótt og skilmálarnir ekki lesnir; `TMDB_TOKEN` vantar | #75 |

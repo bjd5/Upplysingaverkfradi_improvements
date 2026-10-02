@@ -30,14 +30,10 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 
-try:  # keyrt sem eining innan pakkans
-    from .jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, lesa_afmorkun
-    from .jardskjalftar_geojson import hlutur, hnit, lesa_features, tala, texti
-except ImportError:  # keyrt beint úr möppunni
-    from jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, lesa_afmorkun
-    from jardskjalftar_geojson import hlutur, hnit, lesa_features, tala, texti
+from .jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, lesa_afmorkun
+from .jardskjalftar_geojson import hlutur, hnit, lesa_features, tala, texti
 
-ROT = Path(__file__).resolve().parents[3]
+from gagnagrunnur.tenging import ROT
 ATBURDIR = ROT / "data" / "raw" / "vedur-quakes" / "events.json"
 
 # Regex 1 — UTC-tímastimpill verður daglykill. Nafngreindi hópurinn gefur

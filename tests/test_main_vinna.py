@@ -64,6 +64,8 @@ class VinnslaProf(unittest.TestCase):
         with (
             mock.patch.dict(os.environ, umhverfi, clear=True),
             mock.patch.object(main, "GOGN_UNNIN", self.unnid),
+            # main() býr til möppu grunnsins; án þessa yrði data/db/ til í repo-inu.
+            mock.patch.object(main, "GAGNAGRUNNUR", Path(self._tmp.name) / "db" / "r.sqlite"),
         ):
             return main.main(["--skref", "vinna"])
 

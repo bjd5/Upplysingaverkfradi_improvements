@@ -4,6 +4,8 @@
   eftir heiti hennar. Tölurnar eru **lesnar** þaðan, aldrei handskrifaðar í
   prófin, og hver uppfletting krefst nákvæmlega einnar samsvörunar — tvær
   samsvaranir gerðu það tvírætt hvaða tala er borin saman.
+* ``vidmid_aukastafir`` segir á hve mörgum aukastöfum kommutala er borin
+  saman: þeim sem gamla síðan sýndi. Vikmörk (``delta``) hleypa nágrönnum í gegn.
 * ``Afrit`` er tímabundið afrit af talnamöppunni og provenance-skránni.
   Prófin sem þurfa gallaða skrá skemma afritið, aldrei frumritin (regla 10),
   og geta „endurundirritað“ afritið svo SHA-staðfestingin hleypi gallanum
@@ -17,6 +19,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import shutil
 import tempfile
 from pathlib import Path
@@ -29,6 +32,8 @@ from gagnagrunnur.tenging import opna  # noqa: E402
 from vinnsla.friends_skrar import PROVENANCE, SAFN, STATS_MAPPA  # noqa: E402
 
 VIDMID = ROT / "docs" / "vidmid" / "vidmid.json"
+# Íslensk tugabrot: komma og svo aukastafirnir („2,95 %“, „61.161“ hefur enga).
+AUKASTAFIR = re.compile(r",(\d+)")
 
 
 def vidmid_gildi(heiti: str, stadfestar: list[dict] | None = None) -> float | int:
@@ -41,6 +46,22 @@ def vidmid_gildi(heiti: str, stadfestar: list[dict] | None = None) -> float | in
             f"{heiti!r} á {len(samsvaranir)} samsvaranir í vidmid.json, ekki eina."
         )
     return samsvaranir[0]["gildi"]
+
+
+def vidmid_aukastafir(heiti: str) -> int:
+    """Aukastafir tölunnar eins og gamla síðan birti hana („2,95 %“ -> 2).
+
+    Lesið úr textanum á síðunni, ekki úr fleytitölunni: JSON geymir 2,90 sem
+    2.9 og týnir aukastaf. Allir staðir tölunnar í HTML-inu verða að sýna
+    jafnmarga aukastafi, og tala sem stendur hvergi þar er villa.
+    """
+    skjal = json.loads(VIDMID.read_text(encoding="utf-8"))
+    (stadfest,) = [s for s in skjal["stadfestar"] if s["heiti"] == heiti]
+    textar = [r["texti"] for r in skjal["gogn"] if r["id"] in stadfest["stadir_i_html"]]
+    fjoldi = {len(m.group(1)) if (m := AUKASTAFIR.search(t)) else 0 for t in textar}
+    if len(textar) != len(stadfest["stadir_i_html"]) or len(fjoldi) != 1:
+        raise AssertionError(f"{heiti!r}: aukastafir ekki ótvíræðir í {textar}.")
+    return fjoldi.pop()
 
 
 def opna_med_toflum(mappa: Path):

@@ -251,6 +251,7 @@ def fingrafar(samband: Connection) -> str:
 
 
 def main(rok: list[str] | None = None) -> int:
+    """Handvirk keyrsla: prentar fingrafar grunnsins, eða lýsinguna með ``--texti``."""
     thattari = argparse.ArgumentParser(description="Fingrafar af SQL-grunninum")
     thattari.add_argument(
         "slod", nargs="?", default=None, help="Slóð á grunninn (sjálfgefið: úr tenging)"

@@ -94,11 +94,6 @@ def nuna_utc() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def timastimpill() -> str:
-    """Skilar tímastimpli sem má nota í skráarheiti (regla 1.2 — ASCII, engin bil)."""
-    return datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-
-
 def sha256_af(skra: Path) -> str:
     """Reiknar SHA-256 af skrá, lesinni í bútum svo stórar skrár rúmist í minni."""
     summa = hashlib.sha256()
@@ -231,14 +226,4 @@ def skra_safn(faersla: dict) -> None:
     """Bætir safni (eða uppfærir það) í ``frysting.json``."""
     skjal = lesa_frystingu()
     skjal["sofn"][faersla["heiti"]] = faersla
-    skrifa_frystingu(skjal)
-
-
-def skra_ofryst(heiti: str, af_hverju: str, hvad_vantar: str) -> None:
-    """Skráir safn sem EKKI tókst að frysta, og af hverju (regla 6 — engin þögn)."""
-    skjal = lesa_frystingu()
-    skjal["ofryst"] = [faersla for faersla in skjal.get("ofryst", []) if faersla["heiti"] != heiti]
-    skjal["ofryst"].append(
-        {"heiti": heiti, "af_hverju": af_hverju, "hvad_vantar": hvad_vantar, "skrad_utc": nuna_utc()}
-    )
     skrifa_frystingu(skjal)

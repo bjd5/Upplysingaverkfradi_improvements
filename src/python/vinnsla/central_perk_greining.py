@@ -22,28 +22,16 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Sequence
 
-try:  # keyrt sem eining innan pakkans
-    from .central_perk_lestur import Block, read_blocks
-    from .central_perk_mynstur import (
-        CENTRAL_PERK_GROUP, MAIN_CAST, MUSIC_RE, NO_CENTRAL_PERK, PHOEBE,
-        PHOEBE_PERFORMANCE_RE, PHOEBE_SINGS, SINGING_CUE_RE, SPEAKER_RE,
-    )
-    from .central_perk_thattari import (
-        block_contexts, dialogue_from_blocks, is_central_perk_scene, is_scene_start,
-        normalise_speaker,
-    )
-    from .friends_handrit import episode_code, transcript_paths
-except ImportError:  # keyrt beint úr möppunni
-    from central_perk_lestur import Block, read_blocks
-    from central_perk_mynstur import (
-        CENTRAL_PERK_GROUP, MAIN_CAST, MUSIC_RE, NO_CENTRAL_PERK, PHOEBE,
-        PHOEBE_PERFORMANCE_RE, PHOEBE_SINGS, SINGING_CUE_RE, SPEAKER_RE,
-    )
-    from central_perk_thattari import (
-        block_contexts, dialogue_from_blocks, is_central_perk_scene, is_scene_start,
-        normalise_speaker,
-    )
-    from friends_handrit import episode_code, transcript_paths
+from .central_perk_lestur import Block, read_blocks
+from .central_perk_mynstur import (
+    CENTRAL_PERK_GROUP, MAIN_CAST, MUSIC_RE, NO_CENTRAL_PERK, PHOEBE,
+    PHOEBE_PERFORMANCE_RE, PHOEBE_SINGS, SINGING_CUE_RE, SPEAKER_RE,
+)
+from .central_perk_thattari import (
+    block_contexts, dialogue_from_blocks, is_central_perk_scene, is_scene_start,
+    normalise_speaker,
+)
+from .friends_handrit import episode_code, transcript_paths
 
 
 # --- Skref 3: söngmerking -------------------------------------------------------

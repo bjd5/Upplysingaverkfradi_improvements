@@ -16,20 +16,12 @@ import math
 from collections import Counter
 from dataclasses import dataclass, field
 
-try:  # keyrt sem eining innan pakkans
-    from .friends_thattari import Episode, spoken_words
-    from .phoebe_plass import friend_lines
-    from .phoebe_skilgreiningar import (
-        LIFT_DECIMALS, MAX_DISTINCTIVE_ROWS, MIN_WORD_LENGTH, MIN_WORD_TOTAL,
-        PER_TEN_THOUSAND, PERCENT_DECIMALS, PHOEBE, PRIOR_SIZE, STOPWORDS,
-    )
-except ImportError:  # keyrt beint úr möppunni
-    from friends_thattari import Episode, spoken_words
-    from phoebe_plass import friend_lines
-    from phoebe_skilgreiningar import (
-        LIFT_DECIMALS, MAX_DISTINCTIVE_ROWS, MIN_WORD_LENGTH, MIN_WORD_TOTAL,
-        PER_TEN_THOUSAND, PERCENT_DECIMALS, PHOEBE, PRIOR_SIZE, STOPWORDS,
-    )
+from .friends_thattari import Episode, spoken_words
+from .phoebe_plass import friend_lines
+from .phoebe_skilgreiningar import (
+    LIFT_DECIMALS, MAX_DISTINCTIVE_ROWS, MIN_WORD_LENGTH, MIN_WORD_TOTAL,
+    PER_TEN_THOUSAND, PERCENT_DECIMALS, PHOEBE, PRIOR_SIZE, STOPWORDS,
+)
 
 # Dálkar sérkennilegu orðanna, fastir svo tóm tafla (lítið úrtak þar sem
 # ekkert orð nær MIN_WORD_TOTAL) verði tóm skrá með haus en ekki villa.

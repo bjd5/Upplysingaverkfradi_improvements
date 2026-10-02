@@ -28,7 +28,10 @@ SNID_REITIR = {"uppfaert", "heimild", "gogn"}
 LYSIGOGN = "lysigogn"
 REITARAETUR = ("gogn", LYSIGOGN)  # sama venja og FIELD_ROOTS í gogn.js
 HAMARK_LINUR = 300
-HAMARK_JS_BAETI = 30_000  # öll JS samanlagt; þak reglu 3.4 er 500 KB á síðu
+# JS sem EIN síða hleður. Regla 3.4 setur þakið á hverja síðu (500 KB fyrir allt),
+# svo samtala allra JS-skráa á vefnum mælir ekkert sem nokkur vafri hleður.
+HAMARK_JS_BAETI_A_SIDU = 30_000
+SKRIFTA = re.compile(r'<script\b[^>]*\bsrc="([^"]+)"')
 TOMIR_TAGAR = {"area", "base", "br", "col", "embed", "hr", "img", "input",
                "link", "meta", "source", "track", "wbr"}
 INNSPYTING = re.compile(r"\.innerHTML\b|\.outerHTML\b|insertAdjacentHTML|"
@@ -266,13 +269,22 @@ class FrammistadaTest(unittest.TestCase):
     """Regla 3.4 og 6: litlar skrár, eitt hlutverk hver."""
 
     def test_js_skrar_eru_litlar(self) -> None:
-        samtals = 0
         for skra in js_skrar():
             with self.subTest(skra=skra.name):
                 texti = skra.read_text("utf-8")
                 self.assertLessEqual(len(texti.splitlines()), HAMARK_LINUR)
-                samtals += len(texti.encode("utf-8"))
-        self.assertLessEqual(samtals, HAMARK_JS_BAETI)
+
+    def test_js_sem_hver_sida_hledur_er_undir_thaki(self) -> None:
+        sidur = sorted(VEFUR.rglob("*.html"))
+        self.assertTrue(sidur)
+        for sida in sidur:
+            with self.subTest(sida=str(sida.relative_to(VEFUR))):
+                slodir = SKRIFTA.findall(sida.read_text("utf-8"))
+                skrar = [(sida.parent / slod).resolve() for slod in slodir]
+                for skra in skrar:
+                    self.assertTrue(skra.is_file(), f"{sida.name} vísar á {skra}, sem er ekki til")
+                baeti = sum(skra.stat().st_size for skra in skrar)
+                self.assertLessEqual(baeti, HAMARK_JS_BAETI_A_SIDU)
 
 
 if __name__ == "__main__":

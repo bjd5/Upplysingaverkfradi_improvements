@@ -32,7 +32,7 @@ from hjalp import PYTHON_ROT, ROT  # noqa: E402
 
 import main  # noqa: E402
 from central_perk_grunnur import inngangstala  # noqa: E402
-from friends_grunnur import vidmid_gildi  # noqa: E402
+from friends_grunnur import vidmid_aukastafir, vidmid_gildi  # noqa: E402
 from gagnagrunnur.fingrafar import _oruggt_nafn  # noqa: E402
 from keyrsla import hledsla  # noqa: E402
 from mbl_hjalp import SVOR_SQL  # noqa: E402
@@ -72,6 +72,42 @@ def keyra_hledslu(grunnur: Path) -> subprocess.CompletedProcess[str]:
         cwd=ROT,
         timeout=BIDTIMI_SEK,
     )
+
+
+def bera_vid_vidmid(prof: unittest.TestCase, fengid: object, heiti: str) -> None:
+    """Fengið gildi á móti viðmiðinu; kommutala á nákvæmni gömlu síðunnar.
+
+    Vikmörk duga ekki: 2,94 og 2,96 eru báðar innan 0,01 frá 2,95. Kommutala er
+    því námunduð á jafnmarga aukastafi og síðan sýndi og krafist jafnaðar.
+    """
+    vaent = vidmid_gildi(heiti)
+    if isinstance(vaent, float):
+        fengid = round(fengid, vidmid_aukastafir(heiti))
+    prof.assertEqual(fengid, vaent)
+
+
+class NakvaemniProf(unittest.TestCase):
+    """Kommutalan fellur strax utan nákvæmni viðmiðsins (kafli 6)."""
+
+    HEITI = "óflokkað hlutfall"
+
+    def setUp(self) -> None:
+        self.vaent = vidmid_gildi(self.HEITI)
+        self.threp = 10 ** -vidmid_aukastafir(self.HEITI)
+
+    def test_nagrannar_falla(self) -> None:
+        """2,94 og 2,96 — og allt sem námundast að þeim."""
+        for fravik in (-1, 1, -0.6, 0.6):
+            fengid = self.vaent + fravik * self.threp
+            with self.subTest(fengid=fengid), self.assertRaises(AssertionError):
+                bera_vid_vidmid(self, fengid, self.HEITI)
+
+    def test_innan_namundunar_stenst(self) -> None:
+        """2,95 sjálf, og óafrúnnuð tala sem síðan sýndi sem 2,95."""
+        for fravik in (0, -0.4, 0.4):
+            fengid = self.vaent + fravik * self.threp
+            with self.subTest(fengid=fengid):
+                bera_vid_vidmid(self, fengid, self.HEITI)
 
 
 class HeildarhledslaProf(unittest.TestCase):
@@ -151,11 +187,7 @@ class HeildarhledslaProf(unittest.TestCase):
         """227 handritsskrár, 61.161 tilsvör o.s.frv. — allt úr vidmid.json."""
         for heiti, fyrirspurn in FJOLDATOLUR:
             with self.subTest(heiti=heiti):
-                vaent = vidmid_gildi(heiti)
-                if isinstance(vaent, float):
-                    self.assertAlmostEqual(self.eitt(fyrirspurn), vaent, delta=0.01)
-                else:
-                    self.assertEqual(self.eitt(fyrirspurn), vaent)
+                bera_vid_vidmid(self, self.eitt(fyrirspurn), heiti)
 
     def test_central_perk(self) -> None:
         """227 handritsskrár, 19 sönghandrit, 24 söngsenur — úr vidmid.json."""

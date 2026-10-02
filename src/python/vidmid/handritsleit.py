@@ -289,6 +289,7 @@ AÐGERÐIR = {"stadfesta": stadfesta}
 
 
 def main(rok: list[str] | None = None) -> int:
+    """Handvirk keyrsla: ``stadfesta`` skilar 0 sé ekkert frávik, annars 1."""
     thattari = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     thattari.add_argument("adgerd", choices=[*AÐGERÐIR], help="stadfesta")
     return AÐGERÐIR[thattari.parse_args(rok).adgerd]()

@@ -13,12 +13,8 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 
-try:  # keyrt sem eining innan pakkans
-    from .friends_thattari import PERSON, Episode, Line, spoken_words
-    from .phoebe_skilgreiningar import FRIENDS, PERCENT_DECIMALS, PHOEBE, pct
-except ImportError:  # keyrt beint úr möppunni
-    from friends_thattari import PERSON, Episode, Line, spoken_words
-    from phoebe_skilgreiningar import FRIENDS, PERCENT_DECIMALS, PHOEBE, pct
+from .friends_thattari import PERSON, Episode, Line, spoken_words
+from .phoebe_skilgreiningar import FRIENDS, PERCENT_DECIMALS, PHOEBE, pct
 
 
 @dataclass(frozen=True)
