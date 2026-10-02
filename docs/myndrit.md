@@ -81,12 +81,12 @@ Litahlutverkin eru skilgreind í `tokens.css` undir `--myndrit-*` og mæld gegn
 
 | Hlutverk | Token | Ljóst | Dökkt | Krafa |
 |---|---|---|---|---|
-| súluflötur | `--myndrit-flotur` | `#12657d` á `#ffffff` — **6,60:1** | `#6cbcd4` á `#121a23` — **8,17:1** | 4,5:1 |
-| núll-merki | `--myndrit-null` | `#9a4614` á `#ffffff` — **6,44:1** | `#e08a4a` á `#121a23` — **6,60:1** | 4,5:1 |
-| ásmerkingar, titill | `--myndrit-texti` | `#1e2935` — **14,75:1** | `#eceff3` — **15,20:1** | 4,5:1 |
-| heimildarlína | `--myndrit-texti-dauft` | `#4f5d6e` — **6,72:1** | `#b4bfcc` — **9,41:1** | 4,5:1 |
-| ásar | `--myndrit-as` | `#4f5d6e` — **6,72:1** | `#b4bfcc` — **9,41:1** | 3,0:1 |
-| hjálparlínur | `--myndrit-grind` | 1,86:1 | 1,66:1 | ekki mælt — skraut |
+| súluflötur | `--myndrit-flotur` | `#22437f` á `#ffffff` — **9,64:1** | `#8fb0ec` á `#141b28` — **7,88:1** | 4,5:1 |
+| núll-merki | `--myndrit-null` | `#87631a` á `#ffffff` — **5,48:1** | `#e3c47d` á `#141b28` — **10,24:1** | 4,5:1 |
+| ásmerkingar, titill | `--myndrit-texti` | `#1a2230` — **15,96:1** | `#e9ecf2` — **14,58:1** | 4,5:1 |
+| heimildarlína | `--myndrit-texti-dauft` | `#4e596c` — **7,07:1** | `#a3adc0` — **7,64:1** | 4,5:1 |
+| ásar | `--myndrit-as` | `#4e596c` — **7,07:1** | `#a3adc0` — **7,64:1** | 3,0:1 |
+| hjálparlínur | `--myndrit-grind` | 1,40:1 | 1,31:1 | ekki mælt — skraut |
 
 Súlan og núll-merkið eru mæld gegn **4,5:1** þótt WCAG 1.4.11 krefjist aðeins
 3:1 fyrir grafík, því #17 krefst 4,5:1 fyrir myndritið. Ásarnir fá 3:1: þeir
@@ -97,16 +97,16 @@ eru lesin af ásmerkingunum — og mega því vera daufar.
 eitthvert hlutverk fer undir kröfu sína í hvoru þema sem er. Prófið er líka
 keyrt á falsaðri `tokens.css` til að sýna að það bresti — sitt í hvoru þema.
 
-### Súla gegn núll-merki: 1,02:1 og 1,24:1
+### Súla gegn núll-merki: 1,76:1 og 1,30:1
 
-Súluflöturinn og núll-merkið hafa nánast sama ljósstyrk (ljóst 1,02:1, dökkt
-1,24:1). **Það er ásættanlegt, og tokenin eru látin standa**, af tveimur ástæðum:
+Súluflöturinn og núll-merkið hafa svipaðan ljósstyrk (ljóst 1,76:1, dökkt
+1,30:1). **Það er ásættanlegt, og tokenin eru látin standa**, af tveimur ástæðum:
 
 1. Munurinn er ekki borinn af lit. Súludagur er fylltur ferhyrningur sem rís upp
    ásinn; núll-dagur er **opinn hringur** við grunnlínuna, og skýringin nefnir
    hann með orðum: *„Enginn atburður í úrtakinu (0)“*. Á gráskalaútprenti eða
    hjá litblindum lesanda greinast dagarnir á lögun og texta.
-2. Litablærinn er blágrænn gegn brenndu appelsínugulu — parið sem helst
+2. Litablærinn er blár gegn gulli — parið sem helst
    aðgreinanlegt í algengustu litblindu (rauð-græn). Liturinn er því viðbót
    ofan á lögunina, ekki í stað hennar.
 
@@ -165,8 +165,8 @@ að falla á mun sem segir ekkert um gögnin.
 
 | Skrá | Bæti | gzip -9 |
 |---|---|---|
-| `web/assets/img/skjalftar-dagar-ljost.svg` | 23.387 | 3.362 |
-| `web/assets/img/skjalftar-dagar-dokkt.svg` | 23.387 | 3.362 |
+| `web/assets/img/skjalftar-dagar-ljost.svg` | 23.387 | 3.357 |
+| `web/assets/img/skjalftar-dagar-dokkt.svg` | 23.387 | 3.360 |
 
 Vafrinn sækir **aðeins aðra** skrána (`<picture>` velur eftir þema), svo
 myndritið kostar um 23 KB af 500 KB þakinu. Prófið `test_skrarnar_eru_undir_thakinu`

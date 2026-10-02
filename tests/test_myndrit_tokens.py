@@ -69,10 +69,10 @@ class TokensTest(unittest.TestCase):
         self.assertEqual({LJOST, DOKKT}, set(self.themu))
 
     def test_tilvisanir_eru_uppleystar(self) -> None:
-        # --bak-upphaekkad er bein gildi, --texti vísar í --gra-700 með var().
+        # --bak-upphaekkad er bein gildi, --texti vísar í --gra-800 með var().
         ljost = self.themu[LJOST]
         self.assertEqual("#ffffff", ljost.litur("--bak-upphaekkad"))
-        self.assertEqual(ljost.litur("--gra-700"), ljost.litur("--texti"))
+        self.assertEqual(ljost.litur("--gra-800"), ljost.litur("--texti"))
 
     def test_dokkt_thema_erfir_thad_sem_thad_endurskilgreinir_ekki(self) -> None:
         ljost, dokkt = self.themu[LJOST], self.themu[DOKKT]
@@ -138,8 +138,8 @@ class MyndritaKrofurTest(unittest.TestCase):
     sé ekki grænt af tilviljun (lærdómurinn af #47).
     """
 
-    # Grátónn undir 4,5:1 á hvítu (3,45:1) en yfir henni á --gra-800 (5,08:1),
-    # svo aðeins ljósa þemað á að falla.
+    # Grátónn undir 4,5:1 á hvítu (3,45:1) en yfir henni á dökka myndritsbakinu
+    # (5,00:1), svo aðeins ljósa þemað á að falla.
     OF_DAUFT = "#8a8a8a"
 
     def test_raunverulegu_tokens_standast(self) -> None:
@@ -181,7 +181,7 @@ class MyndritaKrofurTest(unittest.TestCase):
     def test_fellur_ef_dokka_themad_fer_undir(self) -> None:
         # Aðeins dökka þemað breytist: --ahersla-700 er endurskilgreint þar.
         themu = self._falsad(
-            ("--ahersla-700:    #e08a4a;", "--ahersla-700:    #6b4a33;")
+            ("--ahersla-700:    #e3c47d;", "--ahersla-700:    #6b4a33;")
         )
         fallnar = myndrit_litir.fallnar(themu)
         self.assertEqual([f"{DOKKT}: núll-merki"], [m.heiti for m in fallnar])
