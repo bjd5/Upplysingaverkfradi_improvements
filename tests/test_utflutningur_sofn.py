@@ -17,6 +17,7 @@ prófum hvers safns (fluttar inn sem einingar, svo unittest keyri ekki prófin
 from __future__ import annotations
 
 import csv
+import json
 import sqlite3
 import tempfile
 import unittest
@@ -30,7 +31,7 @@ from mbl_hjalp import FROSNA_EINTAKID, SULKA_EFTIR_LYKLI, VIDMIDSKAFLI, VIDMIDSS
 
 import test_jardskjalftar_vidmid as skjvidmid  # noqa: E402
 
-from utflutningur import mbl_json, phoebe_json, skjalftar_json  # noqa: E402
+from utflutningur import central_perk_json, mbl_json, phoebe_json, skjalftar_json  # noqa: E402
 from utflutningur.flytja_ut import flytja_ut  # noqa: E402
 
 PHOEBE_SKRAR = ROT / "data" / "processed" / "phoebe-stats"
@@ -105,6 +106,18 @@ class Skjalftar(unittest.TestCase):
         self.assertEqual([dypt["lagmark"], dypt["hamark"]],
                          yfir("0,07–11,26", "bil", "Dýpt:")["bil"])
         self.assertEqual(dypt["midgildi"], yfir("4,67", "desimal", "Dýpt:")["gildi"])
+
+    def test_hratt_syni_er_fyrstu_atburdirnir_obreyttir_ur_hragognunum(self) -> None:
+        hra = json.loads((ROT / "data" / "raw" / "vedur-quakes" / "events.json")
+                         .read_text("utf-8"))["features"]
+        for syni, atburdur in zip(self.lysi["syni"], hra):
+            with self.subTest(audkenni=syni["audkenni"]):
+                eig = atburdur["properties"]
+                self.assertEqual((syni["audkenni"], syni["timi"], syni["staerd"], syni["dypt_km"]),
+                                 (eig["event_id"], eig["time"], eig["magnitude"], eig["depth"]))
+                self.assertEqual((syni["lengd"], syni["breidd"]),
+                                 tuple(atburdur["geometry"]["coordinates"]))
+        self.assertEqual(len(self.lysi["syni"]), 8)
 
     def test_staerdartaflan(self) -> None:
         (mlw,) = self.lysi["staerd_eftir_kvarda"]
@@ -186,6 +199,11 @@ class Phoebe(unittest.TestCase):
                 self.assertEqual(ut[int(v["season"])]["i_tali_a_thatt"],
                                  float(v["dialogue_mentions_per_episode"]))
         self.assertEqual(ut[1]["i_tali_a_thatt"], 4.12)  # 99/24 = 4,125 — ekki 4,13
+
+    def test_hlutdeild_alls_og_jafn_hlutur(self) -> None:
+        plass = self.lysi["plass_alls"]
+        self.assertAlmostEqual(sum(r["hlutdeild_prosent"] for r in plass), 100, delta=0.05)
+        self.assertEqual(self.lysi["jafn_hlutur_prosent"], 16.67)  # 100/6
 
 
 if __name__ == "__main__":

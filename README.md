@@ -130,3 +130,12 @@ scripts/yfirfara-uppruna.sh
 ```
 
 Verklagið er í [`docs/uppruni.md`](docs/uppruni.md).
+
+## Skjölun
+
+| Skjal | Efni |
+|---|---|
+| [`docs/adferdafraedi.md`](docs/adferdafraedi.md) · [`docs/heimildir.md`](docs/heimildir.md) · [`docs/takmarkanir.md`](docs/takmarkanir.md) | Aðferð, heimildir og takmarkanir |
+| [`docs/samanburdur.md`](docs/samanburdur.md) | Tölur nýju síðunnar borðnar við gömlu síðuna |
+| [`docs/adgengi.md`](docs/adgengi.md) · [`docs/frammistada.md`](docs/frammistada.md) | Mælt aðgengi og stærð |
+| [`docs/verklok.md`](docs/verklok.md) | Gátlisti reglu 9 fyrir verkefnið í heild, með frávikum |

@@ -260,7 +260,7 @@ sínum; hver `data-gogn`-skrá er til og á sniði reglu 5.4 (`gogn` listi af
 röðum, `lysigogn` hlutur, engir aðrir reitir); hver `data-gogn-reitur` byrjar á
 `lysigogn.` eða `gogn.` og vísar á tölu eða streng í skránni; hver gagnahluti hefur
 `<noscript>` og falið efni; hver hook, teiknari og CSS-klasi sem JS notar er
-til; og JS-skrárnar eru undir 300 línum og 30 KB samanlagt.
+til; og JS-skrárnar eru undir 300 línum og 60 KB samanlagt.
 
 **Á undan birtingu** (`.github/workflows/pages.yml`, við hvert push á `main`)
 keyrir `scripts/stadfesta-vef.sh`: hver skrá í `web/gogn/` stenst sama snið og
@@ -276,3 +276,24 @@ Vafraprófin (Chromium, Playwright) eru handkeyrð og ekki í `unittest`-safninu
 birtast, níu villutilvik birtast á síðunni (þ.m.t. `gogn` ekki listi),
 tafla úr 61 `gogn`-röð fær íslenskt snið, síðan virkar án JS, og 320 px í báðum þemum
 án lárétts skruns.
+
+---
+
+## 9. Phoebe-síðurnar: súlur úr JS og töflur í HTML (issue #24)
+
+`phoebe-tolfraedi.html` og `phoebe-central-perk.html` sameina tvö mynstur:
+
+- **Myndritið** er teiknað af `web/assets/js/phoebe-myndrit.js` með
+  `createElementNS` inn í `[data-myndrit]`, í stíl `components/stolparit.css`
+  (litir úr `--myndrit-*`). Það er viðbót: súlurnar byrja í núlli og viðmiðslína
+  er strikuð og nefnd með orðum. matplotlib er ekki notað hér — SVG úr Python
+  (`myndrit.md`) bíður þess að pakkinn sé settur upp.
+- **Taflan** við hvert myndrit er í HTML-inu sjálfu og virkar án JS. Hver tala
+  er rekjanleg: `data-reitur` (lykill), næsta `data-rod` ofar (röðin, t.d.
+  `gogn[thattarod=1,persona=Phoebe]`) og næsta `data-skra` ofar (gagnaskráin).
+  `tests/test_vefur_phoebe.py` ber textann saman við gagnaskrána á íslensku
+  sniði og fellur ef tala í HTML víkur frá henni.
+
+Tölur sem búa í `lysigogn` (samantektir, hópar) eru í töflum með `data-rod`
+og teiknarinn les þær beint úr skjalinu. Staka tölu í texta má líka fylla með
+`data-gogn-reitur="lysigogn.…"` (kafli 2.1).

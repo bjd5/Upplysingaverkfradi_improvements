@@ -512,36 +512,42 @@
         "persona": "Rachel",
         "linur": 9259,
         "ord": 100730,
+        "hlutdeild_prosent": 18.22,
         "saeti": 1
       },
       {
         "persona": "Ross",
         "linur": 9058,
         "ord": 98040,
+        "hlutdeild_prosent": 17.82,
         "saeti": 2
       },
       {
         "persona": "Chandler",
         "linur": 8446,
         "ord": 89604,
+        "hlutdeild_prosent": 16.62,
         "saeti": 3
       },
       {
         "persona": "Monica",
         "linur": 8395,
         "ord": 85379,
+        "hlutdeild_prosent": 16.52,
         "saeti": 4
       },
       {
         "persona": "Joey",
         "linur": 8183,
         "ord": 89915,
+        "hlutdeild_prosent": 16.1,
         "saeti": 5
       },
       {
         "persona": "Phoebe",
         "linur": 7483,
         "ord": 83788,
+        "hlutdeild_prosent": 14.72,
         "saeti": 6
       }
     ],
@@ -734,6 +740,7 @@
         "nefnir_oftast_fjoldi": 25
       }
     ],
+    "jafn_hlutur_prosent": 16.67,
     "aukastafir": 2
   }
 }

@@ -31,3 +31,6 @@
   border-left-color: var(--villa);
 }
 .stada-gagna[data-stada="villa"] .stada-gagna__punktur { background: var(--villa); }
+
+/* Langt heimildarheiti má brjótast í stað þess að þenja síðuna (regla 3.5) */
+.stada-gagna > span { min-width: 0; overflow-wrap: anywhere; }

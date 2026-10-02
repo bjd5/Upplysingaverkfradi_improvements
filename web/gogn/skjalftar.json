@@ -425,6 +425,80 @@
         "atburdir": 4
       }
     ],
+    "syni": [
+      {
+        "audkenni": "SIL1235710",
+        "timi": "2023-11-01T00:56:41.645Z",
+        "staerd": 3.74,
+        "kvardi": "Mlw",
+        "dypt_km": 5.126,
+        "breidd": 63.86282,
+        "lengd": -22.52034
+      },
+      {
+        "audkenni": "SIL1237655",
+        "timi": "2023-11-02T20:35:42.458Z",
+        "staerd": 3.51,
+        "kvardi": "Mlw",
+        "dypt_km": 5.323,
+        "breidd": 63.87746,
+        "lengd": -22.40409
+      },
+      {
+        "audkenni": "SIL1237654",
+        "timi": "2023-11-02T20:36:19.828Z",
+        "staerd": 3.2,
+        "kvardi": "Mlw",
+        "dypt_km": 5.167,
+        "breidd": 63.87901,
+        "lengd": -22.40572
+      },
+      {
+        "audkenni": "SIL1237848",
+        "timi": "2023-11-02T22:20:47.762Z",
+        "staerd": 3.17,
+        "kvardi": "Mlw",
+        "dypt_km": 5.571,
+        "breidd": 63.87825,
+        "lengd": -22.3897
+      },
+      {
+        "audkenni": "SIL1238125",
+        "timi": "2023-11-03T01:18:44.371Z",
+        "staerd": 3.33,
+        "kvardi": "Mlw",
+        "dypt_km": 3.047,
+        "breidd": 63.86742,
+        "lengd": -22.45596
+      },
+      {
+        "audkenni": "SIL1238502",
+        "timi": "2023-11-03T03:51:22.327Z",
+        "staerd": 4.48,
+        "kvardi": "Mlw",
+        "dypt_km": 5.022,
+        "breidd": 63.88125,
+        "lengd": -22.47486
+      },
+      {
+        "audkenni": "SIL1238591",
+        "timi": "2023-11-03T04:25:41.676Z",
+        "staerd": 4.61,
+        "kvardi": "Mlw",
+        "dypt_km": 4.164,
+        "breidd": 63.86647,
+        "lengd": -22.47388
+      },
+      {
+        "audkenni": "SIL1238608",
+        "timi": "2023-11-03T04:31:25.814Z",
+        "staerd": 3.54,
+        "kvardi": "Mlw",
+        "dypt_km": 2.983,
+        "breidd": 63.86898,
+        "lengd": -22.46119
+      }
+    ],
     "aukastafir": 2
   }
 }

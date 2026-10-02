@@ -14,7 +14,14 @@
   <link rel="stylesheet" href="../assets/css/components/sidu-haus.css">
   <link rel="stylesheet" href="../assets/css/components/bidstada.css">
   <link rel="stylesheet" href="../assets/css/components/naesta-skref.css">
+  <link rel="stylesheet" href="../assets/css/components/stada-gagna.css">
+  <link rel="stylesheet" href="../assets/css/components/gagnahluti.css">
+  <link rel="stylesheet" href="../assets/css/components/myndrit.css">
+  <link rel="stylesheet" href="../assets/css/components/stolparit.css">
   <script src="../assets/js/valmynd.js" defer></script>
+  <script src="../assets/js/gogn.js" defer></script>
+  <script src="../assets/js/gagnahluti.js" defer></script>
+  <script src="../assets/js/phoebe-myndrit.js" defer></script>
 </head>
 <body class="sida">
 
@@ -64,18 +71,18 @@
         <div class="sidu-haus__adal">
           <p class="sidu-haus__flokkur">Friends 03 · Söngur</p>
           <h1>Söngur Phoebe í Central Perk</h1>
-          <p class="sidu-haus__inngangur">Hvenær Phoebe syngur á kaffihúsinu Central Perk og hvernig atriðin dreifast yfir þáttaraðirnar tíu.</p>
+          <p class="sidu-haus__inngangur">Í hve mörgum handritum syngur Phoebe í Central Perk, og talar hún hlutfallslega meira í þeim?</p>
         </div>
         <aside class="sidu-haus__hlid" aria-labelledby="stadreyndir-titill">
           <h2 class="sidu-haus__hlid-titill" id="stadreyndir-titill">Um þessa síðu</h2>
           <dl class="stadreyndir">
             <div>
               <dt>Heimild</dt>
-              <dd>Handrit Friends — 236 þættir</dd>
+              <dd>Handrit Friends, afrit aðdáenda</dd>
             </div>
             <div>
-              <dt>Mælieining</dt>
-              <dd>Söngatriði á þáttaröð</dd>
+              <dt>Mælitæki</dt>
+              <dd>Miðgildi hlutdeildar eftir þremur hópum handrita</dd>
             </div>
             <div>
               <dt>Höfundarréttur</dt>
@@ -83,24 +90,105 @@
             </div>
             <div>
               <dt>Staða síðunnar</dt>
-              <dd>Beinagrind — greining í vinnslu</dd>
+              <dd>Greining birt</dd>
             </div>
           </dl>
         </aside>
       </div>
 
-      <article class="efni" aria-labelledby="efni-titill">
-        <h2 id="efni-titill">Greiningin</h2>
-        <div class="bidstada">
-          <p class="bidstada__merki">
-            <span class="bidstada__punktur" aria-hidden="true"></span>
-            Efni í vinnslu
-          </p>
-          <p class="bidstada__skyring">
-            Greiningin birtist hér þegar gögnin eru tilbúin. Þangað til má lesa
-            um <a href="adferdafraedi.html">aðferðina</a>.
-          </p>
+      <article class="efni" aria-labelledby="efni-titill" data-skra="phoebe-central-perk.json">
+        <h2 id="efni-titill">Spurningin</h2>
+        <p>Í hve mörgum handritum syngur Phoebe í Central Perk, og talar hún hlutfallslega meira þar?</p>
+
+        <h2 id="svar-titill">Stutta svarið</h2>
+        <dl class="stadreyndir">
+            <div><dt>Handrit alls</dt><dd data-rod="lysigogn.samantekt" data-reitur="handritsskrar">227</dd></div>
+            <div><dt>Handrit þar sem Phoebe syngur</dt><dd data-rod="lysigogn.samantekt" data-reitur="songhandrit">19</dd></div>
+            <div><dt>Söngsenur</dt><dd data-rod="lysigogn.samantekt" data-reitur="songsenur">24</dd></div>
+            <div><dt>Munur á miðgildum söngs og annarra Central Perk-handrita (prósentustig)</dt><dd data-rod="lysigogn.samantekt" data-reitur="munur_midgilda_prosentustig">4,2</dd></div>
+        </dl>
+        <p>Hún syngur í fáum handritum, en í þeim á hún stærri hlut af orðunum. Munurinn er lýsandi fylgni, ekki sönnun á orsök.</p>
+
+        <h2 id="adferd-titill">Hvernig er það mælt?</h2>
+        <p>Hvert handrit fær hlutdeild: orð Phoebe deilt með orðum vinanna sex í því handriti. Handritunum er skipt í þrjá hópa og miðgildi hlutdeildar borið saman.</p>
+        <ul>
+          <li><strong>Engin Central Perk-sena:</strong> engin sviðsfyrirsögn nefnir Central Perk.</li>
+          <li><strong>Central Perk án söngs:</strong> Central Perk-sena, en enginn skýr söngur Phoebe.</li>
+          <li><strong>Phoebe syngur:</strong> Phoebe syngur í Central Perk-senu og söngurinn er skýrt merktur.</li>
+        </ul>
+        <p>Aðeins skýrar söngmerkingar teljast. Óljós söngur er viljandi látinn eiga sig, svo raunverulegur söngur getur leynst í hópnum án söngs.</p>
+        <p>Miðgildi er gildið í miðjunni. Stakt handrit með óvenju mikið eða lítið hefur lítil áhrif á það.</p>
+
+        <h2 id="nidurstada-titill">Niðurstaðan</h2>
+        <div class="gagnahluti" data-gogn="phoebe-central-perk.json" data-gogn-teiknari="central-perk-hopar">
+        <noscript>
+          <p class="gogn-stada">Myndritin eru teiknuð með JavaScript. Án þess má lesa
+          tölurnar í töflunum hér á síðunni eða í <a href="../gogn/phoebe-central-perk.json">gagnaskránni</a>.</p>
+        </noscript>
+        <figure class="myndrit">
+          <div data-gogn-efni hidden>
+            <div data-myndrit="hopar"></div>
+          </div>
+          <figcaption class="myndrit__skyring">Miðgildi hlutdeildar Phoebe af orðum vinanna sex, eftir hópum handrita.</figcaption>
+          <details class="myndrit__gogn">
+            <summary>Sjá tölurnar sem töflu</summary>
+          <div class="tafla-umgjord"><table class="gagnatafla">
+              <caption>Þrír samanburðarhópar</caption>
+              <thead><tr><th scope="col">Hópur</th><th scope="col" class="gagnatafla__tala">Handrit</th><th scope="col" class="gagnatafla__tala">Miðgildi hlutdeildar (%)</th><th scope="col" class="gagnatafla__tala">Meðaltal (%)</th><th scope="col" class="gagnatafla__tala">Orð hinna fimm á hvert orð Phoebe</th></tr></thead>
+              <tbody>
+              <tr data-rod="lysigogn.hopar[hopur=no_central_perk]"><th scope="row">Engin Central Perk-sena</th><td class="gagnatafla__tala" data-reitur="handrit">33</td><td class="gagnatafla__tala" data-reitur="midgildi_prosent">13,1</td><td class="gagnatafla__tala" data-reitur="medaltal_prosent">14,6</td><td class="gagnatafla__tala" data-reitur="hinir_fimm_a_moti_phoebe">6,7</td></tr>
+              <tr data-rod="lysigogn.hopar[hopur=central_perk]"><th scope="row">Central Perk án söngs</th><td class="gagnatafla__tala" data-reitur="handrit">175</td><td class="gagnatafla__tala" data-reitur="midgildi_prosent">14,4</td><td class="gagnatafla__tala" data-reitur="medaltal_prosent">15,3</td><td class="gagnatafla__tala" data-reitur="hinir_fimm_a_moti_phoebe">5,9</td></tr>
+              <tr data-rod="lysigogn.hopar[hopur=phoebe_sings]"><th scope="row">Phoebe syngur</th><td class="gagnatafla__tala" data-reitur="handrit">19</td><td class="gagnatafla__tala" data-reitur="midgildi_prosent">18,6</td><td class="gagnatafla__tala" data-reitur="medaltal_prosent">19,4</td><td class="gagnatafla__tala" data-reitur="hinir_fimm_a_moti_phoebe">4,4</td></tr>
+              </tbody>
+          </table></div>
+          </details>
+        </figure>
         </div>
+
+      <h2 id="skilgreiningar-titill">Skilgreiningar</h2>
+      <dl class="stadreyndir">
+        <div>
+          <dt>Lína</dt>
+          <dd>Ein tilsvarsblokk, „Nafn: texti“. Hóplínur á borð við „All:“ eru ekki eignaðar neinum.</dd>
+        </div>
+        <div>
+          <dt>Orð</dt>
+          <dd>Töluð orð. Svigainnskot eins og „(hlær)“ eru sviðsleiðbeiningar og teljast ekki með.</dd>
+        </div>
+        <div>
+          <dt>Sena</dt>
+          <dd>Ný sena hefst í hvert sinn sem lína byrjar á „[Scene: …]“.</dd>
+        </div>
+        <div>
+          <dt>Phoebe</dt>
+          <dd>Phoebe Buffay. Phoebe Sr., Ursula og Mrs Buffay teljast ekki með.</dd>
+        </div>
+        <div>
+          <dt>Handrit</dt>
+          <dd>Ein handritsskrá. Skrá með tvo þætti telst einu sinni.</dd>
+        </div>
+      </dl>
+
+      <h2 id="grunnur-titill">Gagnagrunnurinn</h2>
+      <p>Handritin eru lesin inn í SQL-gagnagrunn. Aðeins samantektir fara þaðan út á síðuna, aldrei texti handritanna.</p>
+      <dl class="stadreyndir" data-skra="phoebe-tolfraedi.json">
+            <div><dt>Handritsskrár</dt><dd data-rod="lysigogn.umfang" data-reitur="handritsskrar">227</dd></div>
+            <div><dt>Sýndir þættir</dt><dd data-rod="lysigogn.umfang" data-reitur="thaettir">236</dd></div>
+            <div><dt>Skrár með tvo þætti</dt><dd data-rod="lysigogn.umfang" data-reitur="skrar_med_tvo_thaetti">9</dd></div>
+            <div><dt>Undanskildar skrár</dt><dd data-rod="lysigogn.umfang" data-reitur="undanskildar_skrar">2</dd></div>
+            <div><dt>Tilsvarslínur</dt><dd data-rod="lysigogn.umfang.thattunargaedi" data-reitur="tilsvor">61.161</dd></div>
+            <div><dt>Óflokkaðar blokkir (%)</dt><dd data-rod="lysigogn.umfang.thattunargaedi" data-reitur="oflokkad_prosent">2,95</dd></div>
+      </dl>
+
+        <h2 id="takmarkanir-titill">Takmarkanir</h2>
+        <ul>
+          <li>Handritin eru afrit aðdáenda, ekki opinber texti. Talningar lýsa afritunum, ekki þáttunum sjálfum.</li>
+          <li>Í afritunum eru innsláttarvillur og ósamræmi í nöfnum, og hluti textans flokkast ekki.</li>
+          <li>Safnið delvinso/friends er notað því það lagar brotna HTML-byggingu í tveimur skrám. Niðurstöðurnar eru ekki háðar valinu.</li>
+          <li>Söngur kemur fyrir í fáum handritum, svo miðgildi þess hóps byggir á litlu úrtaki.</li>
+          <li>Orð eru talin með örlítið annarri reglu en á síðunni um plássið. Hlutdeildin er því ekki sambærileg við hana.</li>
+          <li>Aðeins talnaniðurstöður eru birtar, enginn texti handritanna.</li>
+        </ul>
       </article>
 
       <nav class="naesta-skref" aria-labelledby="naesta-skref-titill">

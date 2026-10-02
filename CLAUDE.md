@@ -104,7 +104,15 @@ hraða og örugga.
   | SQL | `001_kebab_case.sql` | `snake_case` | `snake_case` töflur |
   | C++ | `snake_case.cpp/.h` | `snake_case` | `PascalCase` |
   | Java | `PascalCase.java` | `camelCase` | `PascalCase` |
-- Kóðaheiti (breytur, föll, töflur) eru á **ensku**. Efni og skjölun á **íslensku**.
+- **Kóðaheiti** (breytur, föll, klasar, CSS-klasar) mega vera á **íslensku eða
+  ensku**, en alltaf **án séríslenskra stafa** (`þ`→`th`, `ð`→`d`, `æ`→`ae`,
+  `ö`→`o`, `á é í ó ú ý`→`a e i o u y`): `lesa_skjalfta`, ekki `lesa_skjálfta`.
+  - **Hvert heiti er á einu máli:** `lesa_skjalfta` eða `read_quakes`, ekki
+    `lesa_quakes`. Íslenskt heiti er réttast þar sem hugtakið er íslenskt
+    (`hagstofan`, `þáttaröð`→`thattarod`); annars er enskt heiti valið.
+  - **SQL-töflur og dálkar eru áfram á ensku** (`earthquakes`,
+    `enrolment_year`) — migrations eru þannig og breytast ekki eftir keyrslu.
+  - Efni og skjölun eru á **íslensku**.
 
 ---
 
@@ -259,7 +267,7 @@ Verk telst ekki klárað fyrr en allt þetta stenst:
 4. Lyklaborðsrötun og `alt`-textar í lagi.
 5. Engin villa í console vafrans.
 6. Engin leyndarmál í kóðanum.
-7. Efni á íslensku, kóðaheiti á ensku.
+7. Efni á íslensku; kóðaheiti samkvæmt reglu 1.2.
 8. Breytingin er committuð með lýsandi skilaboðum.
 
 ---
@@ -273,5 +281,5 @@ Verk telst ekki klárað fyrr en allt þetta stenst:
 - Ekki skrifa inline stíla eða inline script "bara til að prófa".
 - Ekki breyta gögnum í `data/raw/` né JSON í `web/gogn/` handvirkt.
 - Ekki keyra eyðandi skipanir á gagnagrunn eða git-sögu án staðfestingar.
-- Efni sem notandi les er á **íslensku**. Kóðaheiti á ensku.
+- Efni sem notandi les er á **íslensku**. Kóðaheiti samkvæmt reglu 1.2.
 - Þegar þú klárar: segðu hvaða reglur úr kafla 9 þú staðfestir og hverjar ekki.

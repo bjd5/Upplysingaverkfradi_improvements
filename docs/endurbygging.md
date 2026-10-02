@@ -62,7 +62,7 @@ er heldur ekki í frosna viðmiðinu. Þrjár Friends-síður eru biðsíður.
 | Friends | `web/sidur/friends-gagnasagan.html` | Hvaðan handritin koma *(biðstaða)* | 6 |
 | Friends | `web/sidur/phoebe-tolfraedi.html` | Plass, nærvera og tengsl Phoebe | 6 |
 | Friends | `web/sidur/phoebe-central-perk.html` | Söngur Phoebe í Central Perk | 6 |
-| Friends | `web/sidur/phoebe-tmdb.html` | Hlutverkið í TMDB | 5 |
+| Friends | `web/sidur/phoebe-tmdb.html` | Hlutverkið í TMDB *(biðstaða: lykil vantar)* | 5 |
 | Friends | `web/sidur/uppahalds-video.html` | Uppáhaldsmyndbönd *(biðstaða)* | — |
 | Friends | `web/sidur/phoebe-tribute.html` | Til heiðurs Phoebe *(biðstaða)* | — |
 | Viðauki A | `web/sidur/hagstofan.html` | Brautskráning af háskólastigi | 2 |
@@ -80,14 +80,13 @@ umfangi ([`uppruni.md`](uppruni.md)).
 
 Hver fasi byggir á þeim á undan.
 
-0. **Gagnabjörgun** — frysta gögnin, höfundaréttur, heimildir. Ekkert annað
-   hefst fyrr en þessu er lokið.
-1. **Gagnalag (SQL)** — migration-keyrari, svo schema + hleðsla á hvert safn
-   (óháð innbyrðis).
-2. **Python-pípan** — söfnun, vinnsla, útflutningur, klofið í skrár undir 300
-   línum. Endar á prófi sem staðfestir að tölurnar séu óbreyttar.
-3. **Vefsíðan** — beinagrind og sjónrænt kerfi, svo ein síða í einu.
-4. **Gæði og útgáfa** — aðgengi, frammistaða, birting, skjölun.
+| Fasi | Efni | Staða |
+|---|---|---|
+| 0 | **Gagnabjörgun** — frysta gögnin, höfundaréttur, heimildir | lokið; TMDB ófryst (lykil vantar) |
+| 1 | **Gagnalag (SQL)** — migration-keyrari, schema og hleðsla á hvert safn | lokið; sex söfn hlaðin |
+| 2 | **Python-pípan** — söfnun, vinnsla, útflutningur, allt undir 300 línum | lokið; samanburður við viðmið í [`samanburdur.md`](samanburdur.md) |
+| 3 | **Vefsíðan** — beinagrind og sjónrænt kerfi, svo ein síða í einu | lokið, nema þrjár biðsíður og TMDB |
+| 4 | **Gæði og útgáfa** — [aðgengi](adgengi.md), [frammistaða](frammistada.md), birting, skjölun | lokið; birting bíður þess að Pages sé kveikt |
 
 ## 5. Ákvarðanir
 
@@ -120,6 +119,18 @@ uppfyllir aðgengiskröfuna (regla 3.3) í sama skrefi ([`myndrit.md`](myndrit.m
 4. **Tölurnar standast samanburð við gamla verkefnið**; skráðu hann í PR-inu.
 5. **Engir nýir pakkar, framework eða CDN án þess að spyrja** (regla 10).
 6. **Ljúktu með gátlista reglu 9.**
+
+## 6. Ákvarðanir
+
+Stutt yfirlit; rökin eru í skjölunum sem vísað er í.
+
+| Ákvörðun | Niðurstaða | Nánar |
+|---|---|---|
+| Höfundaréttur Friends-handritanna (#3) | **Valkostur A:** aðeins afleiddar tölur í repo-inu, handritin aldrei. Safnið er submodule sem er ekki sótt sjálfkrafa. | [`adferdafraedi.md`](adferdafraedi.md) 1.5.1 |
+| Myndrit án framework (#17) | **Valkostur A:** matplotlib teiknar SVG við útflutning, eingöngu í `src/python/utflutningur/`; litir úr `tokens.css`. Notað fyrir Skjálftavaktina. | [`myndrit.md`](myndrit.md) kafli 1 |
+| Myndrit Phoebe-síðnanna | Súlur teiknaðar af vanilla JS í stíl `--myndrit-*`, með gagnatöflu í HTML-inu sem virkar án JS. Frosnu SVG-myndirnar hafa hvítan bakgrunn og henta ekki í dökku þema. | [`vefur-gogn.md`](vefur-gogn.md) kafli 9 |
+| Umfang síðunnar | Rannsóknarefnið eingöngu; lotusíður og tokenmælaborð fóru ekki yfir. | kafli 3 hér |
+| mbl-eintakið | Nýtt eintak (16.9.2026); það gamla (7.9.2026) er glatað. | [`takmarkanir.md`](takmarkanir.md) |
 
 ## 7. Áhættuskrá
 

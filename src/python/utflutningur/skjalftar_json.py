@@ -7,7 +7,8 @@ Tölurnar koma **eingöngu úr grunninum** (migration 002) gegnum
 * ``gogn`` — ein lína á hvern UTC-dag tímabilsins, **líka dagana án atburðar**:
   fjöldi atburða og hlaupandi 7 daga meðaltal (glugginn endar á deginum;
   ``dagar_i_glugga`` < 7 fyrstu sex dagana).
-* ``lysigogn`` — beiðnin sem var send og afmörkun hennar, samantektin
+* ``lysigogn`` — beiðnin sem var send og afmörkun hennar, fyrstu átta atburðirnir
+  óbreyttir (``syni``), samantektin
   (334 atburðir, 61 dagur, dagleg dreifing, dýpt), stærð innan hvers
   stærðarkvarða og mánaðarsamtölurnar.
 
@@ -112,6 +113,16 @@ def _manudir(samband: Connection) -> list[dict[str, Any]]:
     ]
 
 
+def _syni(samband: Connection) -> list[dict[str, Any]]:
+    """Fyrstu atburðirnir með frumgildin óbreytt — lesandinn sér hvað er í hrágögnunum."""
+    return [
+        {"audkenni": r["event_id"], "timi": r["occurred_at"], "staerd": r["magnitude"],
+         "kvardi": r["magnitude_type"], "dypt_km": r["depth_km"],
+         "breidd": r["latitude"], "lengd": r["longitude"]}
+        for r in fyrirspurnir.keyra(samband, "skjalftar-syni")
+    ]
+
+
 def byggja(samband: Connection, provenance: Path = PROVENANCE) -> dict[str, Any]:
     """Les grunninn og skilar sannreyndu umslagi fyrir ``skjalftar.json``."""
     uppruni = lesa_provenance(provenance)
@@ -128,6 +139,7 @@ def byggja(samband: Connection, provenance: Path = PROVENANCE) -> dict[str, Any]
         "samantekt": samantekt,
         "staerd_eftir_kvarda": _staerdir(samband),
         "manudir": _manudir(samband),
+        "syni": _syni(samband),
         "aukastafir": AUKASTAFIR,
     }
     return byggja_umslag(uppfaert=uppruni["fetched_at_utc"], heimild=_heimild(uppruni),

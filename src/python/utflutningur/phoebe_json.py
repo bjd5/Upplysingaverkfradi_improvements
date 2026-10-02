@@ -6,7 +6,8 @@ Les **eingöngu** úr grunninum (migration 006) gegnum
 * ``gogn`` — **pláss** eftir þáttaröð: ein lína á hvern vin í hverri
   þáttaröð (10 × 6) með línum, orðum, hlutdeild í línum þáttaraðarinnar og
   sæti innan hennar. Tímaröðin sem síðan teiknar.
-* ``lysigogn.plass_alls`` — línur og orð hvers vinar yfir alla þættina.
+* ``lysigogn.plass_alls`` — línur, orð og hlutdeild hvers vinar yfir alla
+  þættina; ``jafn_hlutur_prosent`` er sjötti hlutinn (100/6) til samanburðar.
 * ``lysigogn.tengsl`` — ræðuskipti við Phoebe leiðrétt fyrir málgleði (lift).
 * ``lysigogn.naervera`` — nafntilvik Phoebe eftir þáttaröð.
 * ``lysigogn.umfang`` og ``uppruni`` — 227 handritsskrár, 236 þættir,
@@ -78,8 +79,12 @@ def _plass_eftir_thattarod(samband: Connection) -> list[dict[str, Any]]:
 
 
 def _plass_alls(samband: Connection) -> list[dict[str, Any]]:
+    radir = _keyra(samband, "friends-plass-alls")
+    # Hlutdeild af línum vinanna sex, svo hún sé sambærileg við sjötta hlutann.
+    samtals = sum(r["lines"] for r in radir)
     return [{"persona": r["character_name"], "linur": r["lines"], "ord": r["words"],
-             "saeti": r["rank_by_lines"]} for r in _keyra(samband, "friends-plass-alls")]
+             "hlutdeild_prosent": _runna(100 * r["lines"] / samtals),
+             "saeti": r["rank_by_lines"]} for r in radir]
 
 
 def _tengsl(samband: Connection) -> list[dict[str, Any]]:
@@ -111,12 +116,14 @@ def byggja(samband: Connection) -> dict[str, Any]:
     safn = uppruni["transcript_repository"]
     heimild = (f"{safn} @ {uppruni['transcript_commit'][:7]} — {GITHUB}{safn} "
                f"({uppruni['licence']})")
+    plass = _plass_alls(samband)
     lysigogn = {
         "uppruni": _uppruni(uppruni),
         "umfang": _umfang(samband),
-        "plass_alls": _plass_alls(samband),
+        "plass_alls": plass,
         "tengsl": _tengsl(samband),
         "naervera": _naervera(samband),
+        "jafn_hlutur_prosent": _runna(100 / len(plass)),
         "aukastafir": AUKASTAFIR,
     }
     return byggja_umslag(uppfaert=uppruni["analysis_generated_utc"], heimild=heimild,

@@ -31,7 +31,7 @@ Fastar reglur:
   - Commit-skilaboð: `svið: hvað var gert` (regla 7).
   - Committaðu og ýttu upp eftir HVERT áfangaskref, ekki í lokin — lota getur
     stöðvast fyrirvaralaust og ókommituð vinna tapast (kafli 6).
-  - Efni á ÍSLENSKU, kóðaheiti á ensku. Texti stuttur (regla 3.6).
+  - Efni á ÍSLENSKU, kóðaheiti samkvæmt reglu 1.2. Texti stuttur (regla 3.6).
   - Engir nýir pakkar, framework eða CDN án þess að spyrja (regla 10).
   - Aldrei handbreyta data/raw/ né web/gogn/ (regla 10).
   - Engin skrá yfir ~300 línur; villur aldrei þaggaðar (regla 6).
