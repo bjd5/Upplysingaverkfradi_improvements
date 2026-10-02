@@ -11,9 +11,9 @@ frávikum · `❌` stenst ekki. Aðgengi er í [`adgengi.md`](adgengi.md), stær
 | 3 | Sími (320 px) og borðtölva | ✅ | 12 síður × ljóst/dökkt × 320 og 1280 px í Chromium: `scrollWidth` = breidd gluggans alls staðar. |
 | 4 | Lyklaborð og `alt` | ✅ | „Fara beint í efni“ fyrst á öllum síðum, fókusumgjörð og snertifletir ≥ 44 px mæld; engar `<img>` á síðunum. Firefox, Safari og skjálesarar óprófaðir. |
 | 5 | Engin villa í console | ✅ | Sömu 12 × 2 × 2 keyrslur: engin villa og engin viðvörun. |
-| 6 | Engin leyndarmál | ✅ | Hvorki í trénu né í öllum 293 commitum: enginn `.env`, lykill, token né einkalykill. Eina fundið er gervi-JWT í `tests/test_uppruni_flokkun.py`. `tests/test_vefur_birting.py` gætir `web/`. |
+| 6 | Engin leyndarmál | ✅ | Hvorki í trénu né í öllum 294 commitum: enginn `.env`, lykill, token né einkalykill. Eina fundið er gervi-JWT í `tests/test_uppruni_flokkun.py`. `tests/test_vefur_birting.py` gætir `web/`. |
 | 7 | Efni á íslensku, kóðaheiti á ensku | ❌ | Efni á íslensku ✅; SQL-töflur á ensku ✅; **Python-föll og breytur eru víða á íslensku** — frávik 4. |
-| 8 | Commit með lýsandi skilaboðum | ✅ | Öll 158 commit utan samruna eru á forminu `svið: hvað var gert`. |
+| 8 | Commit með lýsandi skilaboðum | ✅ | Öll 159 commit utan samruna eru á forminu `svið: hvað var gert`. |
 
 ## Frávik
 
