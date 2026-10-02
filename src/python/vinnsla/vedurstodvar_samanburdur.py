@@ -30,7 +30,7 @@ from pathlib import Path
 
 from .vedurstodvar_skjal import skrifa_skjal
 
-ROT = Path(__file__).resolve().parents[3]
+from gagnagrunnur.tenging import ROT
 FROSID = ROT / "data" / "raw" / "vedurstodvar"
 VIDMID_SIUR = ROT / "docs" / "vidmid" / "generated" / "vedurstofa-siur.md"
 UTTAK = ROT / "docs" / "vedurstodvar-samanburdur.md"

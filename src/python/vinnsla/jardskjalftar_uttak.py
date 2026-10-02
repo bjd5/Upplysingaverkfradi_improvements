@@ -45,7 +45,7 @@ from .varnagli import krefjast_utan_vefs
 
 log = logging.getLogger(__name__)
 
-ROT = Path(__file__).resolve().parents[3]
+from gagnagrunnur.tenging import ROT
 UNNID = ROT / "data" / "processed" / "earthquakes"
 
 ATBURDASKRA = "events.csv"
