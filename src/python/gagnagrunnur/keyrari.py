@@ -61,6 +61,7 @@ class Migration:
 
     @property
     def skraarheiti(self) -> str:
+        """Heiti migration-skrárinnar án möppu, t.d. ``001_gagnasofnun.sql``."""
         return self.slod.name
 
 

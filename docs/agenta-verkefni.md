@@ -4,9 +4,6 @@ Endurbyggingin brotin í pakka sem **einn agent klárar í einni lotu**.
 Hver pakki = eitt issue = ein grein = eitt PR. Samhengið er í
 [`endurbygging.md`](endurbygging.md), reglurnar í [`../CLAUDE.md`](../CLAUDE.md).
 
-Prompt loknu pakkanna (P0.1–P0.4, P1.1, P2.1, P3.1) eru í git-sögu þessa
-skjals, síðast í commit `781fd7d`.
-
 ---
 
 ## 1. Notkun
@@ -53,8 +50,8 @@ Fastar reglur:
 
 ## 3. Pakkarnir
 
-`✅` lokið · `🟢` laust · `⏸` blokkað · `👤` Björn, ekki agent.
-Staðan er frá **28.9.2026**, eftir samruna PR #50–#60.
+`✅` lokið · `🔄` í vinnslu · `🟢` laust · `⏸` blokkað · `👤` Björn, ekki agent.
+Staðan er frá **1.10.2026**: `main` @ `5f32e31`, eftir samruna PR #73.
 
 ### Bylgja 0 — björgun og grunnur
 
@@ -64,28 +61,23 @@ Staðan er frá **28.9.2026**, eftir samruna PR #50–#60.
 | **P0.2** Lesa viðmiðstölur úr byggðu síðunni | #30 | `--persona-analyzer` | ✅ |
 | **P0.3** Frysta hrágögn + `.gitignore` | #2 | `--persona-devops` | ✅ |
 | **P0.4** Heimildir og aðferðafræði | #4 | `--persona-scribe=en` | ✅ |
-| **P0.5** Höfundaréttarákvörðun | #3 | 👤 | ✅ valkostur A, framkvæmd PR #56 |
+| **P0.5** Höfundaréttarákvörðun | #3 | 👤 | ✅ valkostur A, PR #56 og #70 |
 | **P0.6** Myndritaákvörðun | #17 | 👤 | ✅ matplotlib |
 
-- **P0.5 → valkostur A:** handritin fara aldrei í repo-ið, aðeins afleiddu
-  tölurnar.
-- **P0.6 → matplotlib:** Python teiknar SVG við útflutning, litir úr
-  `tokens.css`, gagnatafla í HTML-inu. Leyft **eingöngu** í
-  `src/python/utflutningur/`; prófin keyra áfram á staðalsafninu og próf sem
-  þarfnast matplotlib sleppa sér.
-- TMDB náðist ekki að frysta — `TMDB_TOKEN` vantar (`data/raw/frysting.json`).
+Ákvarðanirnar P0.5 og P0.6 með rökum: [`endurbygging.md`](endurbygging.md),
+kafli 5. TMDB náðist ekki að frysta — `TMDB_TOKEN` vantar (#75).
 
 ### Bylgja 1 — gagnalag
 
 | Pakki | Issue | Persóna | Staða | Blokkað af |
 |---|---|---|---|---|
-| **P1.1** Migration-keyrari og tengilag | #5 | `--persona-backend` | ✅ | — |
+| **P1.1** Migration-keyrari og tengilag | #5 | `--persona-backend` | ✅ PR #35 | — |
 | **P1.2** Skjálftavaktin: schema + hleðsla | #6 | `--persona-backend` | ✅ PR #40 | — |
 | **P1.3** Hagstofan: schema + hleðsla | #7 | `--persona-backend` | ✅ PR #41 | — |
 | **P1.4** Veðurstöðvar: schema + hleðsla | #8 | `--persona-backend` | ✅ PR #42 | — |
 | **P1.5** mbl.is: schema + hleðsla | #9 | `--persona-backend` | ✅ PR #46 | — |
-| **P1.6** Friends: schema + hleðsla | #10 | `--persona-backend` | ✅ PR #59 | — |
-| **P1.7** Fyrirspurnir | #11 | `--persona-backend` | 🟢 | — |
+| **P1.6** Friends: schema + hleðsla | #10 | `--persona-backend` | ✅ PR #59 og #71 | — |
+| **P1.7** Fyrirspurnir | #11 | `--persona-backend` | ✅ PR #62 | — |
 
 Staðfestar tölur: 334 atburðir · 61 dagur (#6) · 36 gildi (#7) · 778 stöðvar,
 343 með NULL lokaár (#8) · öll fimm svör æfingarinnar (#9). Allar hleðslur og
@@ -101,81 +93,53 @@ vinnslur eru tengdar `hlada()` og `vinna()` í `main.py` (#39, PR #60).
 | **P2.4** Kljúfa `vedurstofa_stodvar.py` (637 l.) | #14 | `--persona-refactorer` | ✅ PR #52 | — |
 | **P2.5** Kljúfa `phoebe_analysis.py` (1.199 l.) | #14 | `--persona-refactorer` | ✅ PR #53 | — |
 | **P2.6** Kljúfa `phoebe_central_perk.py` (877 l.) | #14 | `--persona-refactorer` | ✅ PR #58 | — |
-| **P2.4** Kljúfa `vedurstofa_stodvar.py` (637 l.) | #14 | `--persona-refactorer` | 🟢 | — |
-| **P2.5** Kljúfa `phoebe_analysis.py` (1.199 l.) | #14 | `--persona-refactorer` | 🟢 | — |
-| **P2.6** Kljúfa `phoebe_central_perk.py` (877 l.) | #14 | `--persona-refactorer` | 🟢 | — |
-| **P2.7** Útflutningur í `web/gogn/` | #15 | `--persona-backend` | ⏸ | P1.7 |
-| **P2.8** Próf og samanburður við viðmið | #16 | `--persona-qa` | ⏸ | P2.7 |
+| **P2.7** Útflutningur í `web/gogn/` | #15 | `--persona-backend` | 🔄 PR #68 og #69 sameinuð; PR #76 opið | — |
+| **P2.8** Próf og samanburður við viðmið | #16 | `--persona-qa` | 🔄 í vinnslu | — |
+| TMDB: frysting, grunnur, útflutningur | #75 | `--persona-backend` | ⏸ | `TMDB_TOKEN` 👤 |
 
-Viðmiðið fyrir P2.8 er **417 efnislegar tölur** í `docs/vidmid/vidmid.json`
-(440 áður; 23 voru á tokenmælaborðinu sem var fjarlægt 28.9.2026).
+PR-in fjögur undir #14 eru sameinuð; frágangur issue-sins er 🔄 í vinnslu.
+Viðmiðið fyrir P2.8 er **417 efnislegar tölur** í `docs/vidmid/vidmid.json`.
 
 ### Bylgja 3 — vefsíðan
 
 | Pakki | Issue | Persóna | Staða | Blokkað af |
 |---|---|---|---|---|
 | **P3.1** Beinagrind og sjónrænt kerfi | #18 | `--persona-frontend` | ✅ PR #36 | — |
-| **P3.2** JS-gagnahleðsla | #19 | `--persona-frontend` | ⏸ | P2.7 |
-| **P3.3** Myndritalag | #17 | `--persona-frontend` | ✅ PR #57 | — |
-| **P3.4** Síða: Skjálftavaktin | #20 | `--persona-frontend` | ⏸ | P3.2, P3.3 |
-| **P3.5** Síða: Hagstofan | #21 | `--persona-frontend` | ⏸ | P3.2 |
-| **P3.6** Síða: Veðurstöðvar | #22 | `--persona-frontend` | ⏸ | P3.2 |
-| **P3.7** Síða: mbl.is regex | #23 | `--persona-frontend` | ⏸ | P3.2 |
-| **P3.8** Síða: Phoebe-tölfræði | #24 | `--persona-frontend` | ⏸ | P3.2, P3.3 |
-| **P3.9** Síða: Central Perk | #24 | `--persona-frontend` | ⏸ | P3.2, P3.3 |
-| **P3.10** Síða: TMDB | #24 | `--persona-frontend` | ⏸ | P3.2 |
-| **P3.11** Síða: aðferðafræði | #25 | `--persona-scribe=en` | 🟢 | — |
+| **P3.2** JS-gagnahleðsla | #19 | `--persona-frontend` | ✅ PR #72; PR #74 opið (lagar rautt `main`) | — |
+| **P3.3** Myndritalag | #17 | `--persona-frontend` | ✅ PR #57 og #66 | — |
+| **P3.4** Síða: Skjálftavaktin | #20 | `--persona-frontend` | 🔄 í vinnslu | — |
+| **P3.5** Síða: Hagstofan | #21 | `--persona-frontend` | 🔄 PR #77 opið | — |
+| **P3.6** Síða: Veðurstöðvar | #22 | `--persona-frontend` | 🔄 PR #78 opið | — |
+| **P3.7** Síða: mbl.is regex | #23 | `--persona-frontend` | 🔄 PR #79 opið | — |
+| **P3.8** Síða: Phoebe-tölfræði | #24 | `--persona-frontend` | 🔄 í vinnslu | — |
+| **P3.9** Síða: Central Perk | #24 | `--persona-frontend` | 🔄 í vinnslu | PR #76 (gögnin) |
+| **P3.10** Síða: TMDB | #24 | `--persona-frontend` | 🔄 í vinnslu | #75 (gögnin) |
+| **P3.11** Síða: aðferðafræði | #25 | `--persona-scribe=en` | 🔄 í vinnslu | — |
 
 ### Bylgja 4 — gæði og útgáfa
 
 | Pakki | Issue | Persóna | Staða | Blokkað af |
 |---|---|---|---|---|
-| **P4.1** Aðgengisúttekt | #26 | `--persona-frontend` | ⏸ | P3.4–P3.11 |
-| **P4.2** Frammistöðuúttekt | #27 | `--persona-performance` | ⏸ | P3.4–P3.11 |
-| **P4.3** Leyndarmálaúttekt | #28 | `--persona-security` | ⏸ | P3.4–P3.11 |
-| **P4.4** Birting á Pages | #28 | `--persona-devops` | ⏸ | P4.1–P4.3 |
-| **P4.5** README og verklok | #29 | `--persona-scribe=en` | ⏸ | P4.4 |
-
-### Laust núna
-
-Laus: **P1.7** (fyrirspurnir, #11) og **P3.11** (aðferðafræðisíðan, #25). Þau
-snerta engar sömu skrár og má vinna samhliða. Lokið nýlega: **#44** (PR #51) og
-**#47** (PR #55). Á #3 eru enn tvær opnar spurningar Björns (`adferdafraedi.md`,
-1.5.1).
-
-Prompt fyrir bylgjur 2–4 eru skrifuð þegar pakkinn losnar, á sama sniði og hér.
+| **P4.1** Aðgengisúttekt | #26 | `--persona-frontend` | 🔄 í vinnslu | — |
+| **P4.2** Frammistöðuúttekt | #27 | `--persona-performance` | 🔄 í vinnslu | — |
+| **P4.3** Leyndarmálaúttekt | #28 | `--persona-security` | 🔄 í vinnslu | — |
+| **P4.4** Birting á Pages | #28 | `--persona-devops` | 🔄 í vinnslu | — |
+| **P4.5** README og verklok | #29 | `--persona-scribe=en` | 🔄 README og skjöl | gátlistinn og samanburðurinn: P4.4 og síðurnar |
 
 ---
 
-## 4. Prompt: P1.6 — schema og hleðsla
+## 4. Laust og blokkað
 
-✅ **Lokið** í PR #59 (`006_friends.sql`). Promptið er í git-sögunni.
+**Laust:** ekkert — allt sem ekki er blokkað er í vinnslu eða í opnu PR.
 
-## 5. Prompt: P1.7 — endurnýtanlegar fyrirspurnir
+**Blokkað:** TMDB (#75) og þar með gögn P3.10 bíða `TMDB_TOKEN` frá Birni.
+Gátlisti reglu 9 og samanburðartafla #29 bíða birtingar (#28) og síðnanna.
 
-**Persóna:** `--persona-backend` · **Issue:** #11 · 🟢 **Laust**
+## 5. Prompt
 
-```text
-[HAUSINN úr kafla 2]
-
-Verk: issue #11 — fyrirspurnirnar sem síðurnar byggja á fara í
-src/sql/queries/, ein .sql-skrá á hverja, með athugasemd efst: hvaða spurningu
-hún svarar og hvaða síða notar hana.
-
-Að minnsta kosti:
-  - Daglegur fjöldi jarðskjálfta MEÐ núlldögum (LEFT JOIN á earthquake_days).
-  - Miðgildi og dreifing stærðar INNAN hvers kvarða (GROUP BY magnitude_type).
-  - Hlaupandi 7 daga meðaltal:
-    AVG(...) OVER (ORDER BY utc_day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW)
-  - Röðun persóna eftir plássi: RANK() OVER (PARTITION BY season)
-  - interaction_lift sem CTE í læsilegum þrepum.
-
-Python les skrárnar í stað þess að geyma SQL í strengjum. Skrárnar geyma
-?-staðgengla, ALDREI innsett gildi (regla 5). Próf keyra hverja fyrirspurn.
-
-Lokið: engin SQL-strengjasamsetning eftir í Python, og hver fyrirspurn ber
-athugasemd um spurninguna sem hún svarar.
-```
+Prompt hvers pakka er hausinn (kafli 2) og síðan verkið, skrifað þegar pakkinn
+losnar. Prompt loknu pakkanna eru í git-sögu þessa skjals
+(`git log -p -- docs/agenta-verkefni.md`).
 
 ## 6. Verklag sem reynslan setti
 

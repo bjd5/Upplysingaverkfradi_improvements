@@ -18,18 +18,11 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 
-try:  # keyrt sem eining innan pakkans
-    from .friends_thattari import PERSON, Episode, speaker_lines
-    from .phoebe_skilgreiningar import (
-        ADDRESS_EDGE_WORDS, FRIENDS, LIFT_DECIMALS, MAX_GUEST_ROWS, OTHER_FRIENDS,
-        PERCENT_DECIMALS, PHOEBE, PHOEBE_NAME_RE, pct,
-    )
-except ImportError:  # keyrt beint úr möppunni
-    from friends_thattari import PERSON, Episode, speaker_lines
-    from phoebe_skilgreiningar import (
-        ADDRESS_EDGE_WORDS, FRIENDS, LIFT_DECIMALS, MAX_GUEST_ROWS, OTHER_FRIENDS,
-        PERCENT_DECIMALS, PHOEBE, PHOEBE_NAME_RE, pct,
-    )
+from .friends_thattari import PERSON, Episode, speaker_lines
+from .phoebe_skilgreiningar import (
+    ADDRESS_EDGE_WORDS, FRIENDS, LIFT_DECIMALS, MAX_GUEST_ROWS, OTHER_FRIENDS,
+    PERCENT_DECIMALS, PHOEBE, PHOEBE_NAME_RE, pct,
+)
 
 
 @dataclass

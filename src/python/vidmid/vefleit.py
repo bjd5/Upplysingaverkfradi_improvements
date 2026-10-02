@@ -133,11 +133,6 @@ def einingar_texta(texti: str, vidauki: str) -> list[str]:
     raise ValueError(f"Óþekkt skráarsnið: {vidauki}")
 
 
-def einingar(slod: Path) -> list[str]:
-    """Textaeiningar skráar á diski."""
-    return einingar_texta(slod.read_text(encoding="utf-8"), slod.suffix)
-
-
 def _skera_vid_islensku(texti: str) -> str:
     """Texti fram að fyrsta orði með íslenskum staf."""
     ord_ = texti.split()

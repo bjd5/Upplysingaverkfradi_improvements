@@ -22,8 +22,8 @@ fylgir skilyrðum sem öll eru uppfyllt hér:
 | Litur aldrei eina merkingarberan (regla 3.3) | Núll-dagar fá sérstaka lögun og texta — kafli 4. |
 | Gagnatafla í HTML-inu | HTML-brotið í kafla 7. |
 
-Rökin fyrir valinu (JS-laus síða, engin framework) eru á issue-inu. Skráning
-þeirra í `docs/adferdafraedi.md` tilheyrir issue #3 og er ekki gerð hér.
+Rökin fyrir valinu (JS-laus síða, engin framework) eru á issue-inu og í
+[`endurbygging.md`](endurbygging.md), kafla 5.
 
 ---
 

@@ -58,6 +58,7 @@ class Safn:
 
     @property
     def merki(self) -> str:
+        """Heiti safnsins með issue-númeri, eins og það birtist í skráningu og villum."""
         return f"{self.heiti} (#{self.issue})"
 
 

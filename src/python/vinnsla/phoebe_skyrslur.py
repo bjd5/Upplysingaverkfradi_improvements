@@ -11,20 +11,12 @@ Eingöngu staðalsafnið (regla 10).
 
 from __future__ import annotations
 
-try:  # keyrt sem eining innan pakkans
-    from .phoebe_greining import Analysis
-    from .phoebe_ordafordi import upper_median
-    from .phoebe_skilgreiningar import (
-        EFFECTIVE_TIE_PCT, FRIENDS, MAX_DISTINCTIVE_IN_REPORT, MIN_LINES_FOR_SHARE_RANKING,
-        PERCENT_DECIMALS, PEOPLE, PHOEBE, TOP_EPISODES, pct,
-    )
-except ImportError:  # keyrt beint úr möppunni
-    from phoebe_greining import Analysis
-    from phoebe_ordafordi import upper_median
-    from phoebe_skilgreiningar import (
-        EFFECTIVE_TIE_PCT, FRIENDS, MAX_DISTINCTIVE_IN_REPORT, MIN_LINES_FOR_SHARE_RANKING,
-        PERCENT_DECIMALS, PEOPLE, PHOEBE, TOP_EPISODES, pct,
-    )
+from .phoebe_greining import Analysis
+from .phoebe_ordafordi import upper_median
+from .phoebe_skilgreiningar import (
+    EFFECTIVE_TIE_PCT, FRIENDS, MAX_DISTINCTIVE_IN_REPORT, MIN_LINES_FOR_SHARE_RANKING,
+    PERCENT_DECIMALS, PEOPLE, PHOEBE, TOP_EPISODES, pct,
+)
 
 
 def _best(rows: list[dict], key: str) -> str:

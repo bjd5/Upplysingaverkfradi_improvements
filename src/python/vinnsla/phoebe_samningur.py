@@ -19,22 +19,13 @@ Eingöngu staðalsafnið (regla 10).
 
 from __future__ import annotations
 
-try:  # keyrt sem eining innan pakkans
-    from .friends_handrit import DOUBLE_EPISODE_FILES, EXCLUDED_FILES, SOURCE_COMMIT
-    from .friends_thattari import ACTION, OTHER, PERSON, SCENE
-    from .phoebe_greining import Analysis
-    from .phoebe_skilgreiningar import (
-        DISPLAY_ORDER, FRIENDS, MAX_GUESTS_IN_CONTRACT, PERCENT_DECIMALS, PHOEBE,
-        SHARE_DECIMALS, TITLES,
-    )
-except ImportError:  # keyrt beint úr möppunni
-    from friends_handrit import DOUBLE_EPISODE_FILES, EXCLUDED_FILES, SOURCE_COMMIT
-    from friends_thattari import ACTION, OTHER, PERSON, SCENE
-    from phoebe_greining import Analysis
-    from phoebe_skilgreiningar import (
-        DISPLAY_ORDER, FRIENDS, MAX_GUESTS_IN_CONTRACT, PERCENT_DECIMALS, PHOEBE,
-        SHARE_DECIMALS, TITLES,
-    )
+from .friends_handrit import DOUBLE_EPISODE_FILES, EXCLUDED_FILES, SOURCE_COMMIT
+from .friends_thattari import ACTION, OTHER, PERSON, SCENE
+from .phoebe_greining import Analysis
+from .phoebe_skilgreiningar import (
+    DISPLAY_ORDER, FRIENDS, MAX_GUESTS_IN_CONTRACT, PERCENT_DECIMALS, PHOEBE,
+    SHARE_DECIMALS, TITLES,
+)
 
 GENERATOR = "src/python/vinnsla/phoebe_uttak.py"
 SUMMARY_NOTE = ("Raunniðurstoður ur src/python/vinnsla/phoebe_uttak.py. "

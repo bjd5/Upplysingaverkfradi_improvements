@@ -22,20 +22,12 @@ from collections import Counter, defaultdict
 from collections.abc import Iterator
 from dataclasses import dataclass
 
-try:  # keyrt sem eining innan pakkans
-    from .friends_thattari import ACTION, PAREN_RE, PERSON, SCENE, Episode, Line
-    from .phoebe_plass import SeasonCounts
-    from .phoebe_skilgreiningar import (
-        FRIENDS, OTHER_NAME_RES, PEOPLE, PERCENT_DECIMALS, PHOEBE, PHOEBE_FORMAL_RE,
-        PHOEBE_NAME_RE, PHOEBE_NICK_RE, SIGNATURE_PHRASES,
-    )
-except ImportError:  # keyrt beint úr möppunni
-    from friends_thattari import ACTION, PAREN_RE, PERSON, SCENE, Episode, Line
-    from phoebe_plass import SeasonCounts
-    from phoebe_skilgreiningar import (
-        FRIENDS, OTHER_NAME_RES, PEOPLE, PERCENT_DECIMALS, PHOEBE, PHOEBE_FORMAL_RE,
-        PHOEBE_NAME_RE, PHOEBE_NICK_RE, SIGNATURE_PHRASES,
-    )
+from .friends_thattari import ACTION, PAREN_RE, PERSON, SCENE, Episode, Line
+from .phoebe_plass import SeasonCounts
+from .phoebe_skilgreiningar import (
+    FRIENDS, OTHER_NAME_RES, PEOPLE, PERCENT_DECIMALS, PHOEBE, PHOEBE_FORMAL_RE,
+    PHOEBE_NAME_RE, PHOEBE_NICK_RE, SIGNATURE_PHRASES,
+)
 
 
 # --- Nærvera: nafntilvik ------------------------------------------------------

@@ -94,6 +94,7 @@ class Nidurstada:
 
     @property
     def aflagdar(self) -> int:
+        """Fjöldi stöðva í eintakinu sem eru ekki lengur virkar."""
         return self.fjoldi - self.virkar
 
 

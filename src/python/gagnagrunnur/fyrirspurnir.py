@@ -95,6 +95,8 @@ FYRIRSPURNIR: frozenset[str] = frozenset({
     "central-perk-handrit",
     "central-perk-songhandrit",
     "central-perk-segdir",
+    "central-perk-uppruni",
+    "central-perk-frosnar-skrar",
 })
 
 # Skráarheiti hvers leyfðs heitis, reiknað úr listanum sjálfum (aldrei úr inntaki).

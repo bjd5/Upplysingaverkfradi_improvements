@@ -26,14 +26,13 @@ from sqlite3 import Connection, Row
 
 from gagnagrunnur import fyrirspurnir
 
-from .vedurstodvar_samanburdur import haversine_km
+from .vedurstodvar_samanburdur import METRAR_I_KM, haversine_km
 
 # Forskeyti skránna í src/sql/queries/. Heiti fallanna hér eru með undirstriki
 # (``naesta_virka_stod``), skrárnar með bandstriki (regla 1.2).
 FORSKEYTI = "vedurstodvar-"
 
 FJARLAEGDARFALL = "fjarlaegd_metrar"
-METRAR_I_KM = 1000.0
 
 FyrirspurnaVilla = fyrirspurnir.FyrirspurnaVilla
 
