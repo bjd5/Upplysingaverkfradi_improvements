@@ -23,6 +23,7 @@ from __future__ import annotations
 import json
 import logging
 from pathlib import Path
+from typing import Any
 
 from .beidni import Beidni
 from .frosid import frosid_svar
@@ -159,7 +160,7 @@ def frosin_hagstofa(rot: Path = HRAGOGN) -> tuple[Svar, Svar] | None:
     return None
 
 
-def saekja_hagstofuna(*, thvinga: bool = False, **rok) -> tuple[Svar, Svar]:
+def saekja_hagstofuna(*, thvinga: bool = False, **rok: Any) -> tuple[Svar, Svar]:
     """Sækir lýsigögn og gögn, í þeirri röð, og skilar báðum svörum.
 
     Sé frosna eintakið til er ekkert kall sent og það skilað óbreytt (regla 4).

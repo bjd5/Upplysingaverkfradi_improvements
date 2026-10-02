@@ -1,48 +1,65 @@
-# Birting á web/ á GitHub Pages (issue #28).
-# Engin byggingarskref: web/ er þegar tilbúin. Það eina sem keyrir á undan er
-# staðfesting sem stöðvar birtinguna ef gagnaskrá vantar, slóð brotnar á
-# undirslóð eða leyndarmál sést (tests/test_vefur_birting.py).
-name: Birta vefinn
+# Birtir web/ á GitHub Pages: https://bjd5.github.io/Upplysingaverkfradi_improvements/
+# (issue #28).
+#
+# Enginn byggingarferill. web/ er þegar tilbúin static síða (regla 1.1) og er
+# birt nákvæmlega eins og hún liggur í repo-inu. Á undan birtingu er staðfest
+# að gagnaskrárnar í web/gogn/ séu til og á sniði útflutningsins og að engin
+# tilvísun brotni undir undirslóðinni. Bregðist það er ekkert birt og eldri
+# útgáfa síðunnar stendur óbreytt.
+#
+# Pages þarf að virkja einu sinni í repo-inu:
+#   Settings → Pages → Build and deployment → Source: GitHub Actions
+
+name: Birting á GitHub Pages
 
 on:
   push:
     branches: [main]
-    paths:
-      - "web/**"
-      - "tests/test_vefur_birting.py"
-      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
-# Þröngt sjálfgefið; aðeins birtingarskrefið fær meira.
+# Sjálfgefið má aðeins lesa repo-ið. Birtingarstarfið eitt fær meira.
 permissions:
   contents: read
 
-# Ein birting í einu; hálfbirt útgáfa er ekki rofin.
+# Ein birting í einu. Nýrri keyrsla bíður í stað þess að rjúfa þá sem er í
+# gangi, svo birting stöðvist aldrei í miðjum klíðum.
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
   stadfesta:
+    name: Staðfesta og pakka web/
+    # Python 3.12 fylgir Ubuntu 24.04; útflutningseiningarnar þurfa 3.12.
     runs-on: ubuntu-24.04
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - name: Staðfesta gagnaskrár, slóðir og leyndarmál
-        run: python3 -m unittest discover -s tests -p "test_vefur_birting.py" -v
+      - name: Sækja repo-ið
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
-  pakka:
-    needs: stadfesta
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - name: Staðfesta gagnaskrár í web/gogn/
+        run: scripts/stadfesta-vef.sh
+        env:
+          PYTHON: python3.12
+
+      - name: Staðfesta tilvísanir undir undirslóð
+        working-directory: tests
+        run: python3.12 -m unittest -v test_vefur.UndirslodTest test_vefur.TenglarTest.test_allar_slodir_eru_til
+
+      - name: Pakka web/ til birtingar
+        uses: actions/upload-pages-artifact@v5
         with:
           path: web
 
   birta:
-    needs: pakka
+    name: Birta á GitHub Pages
+    needs: stadfesta
     runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    # Aðeins hér: pages til að birta, id-token svo Pages geti staðfest að
+    # birtingin komi úr þessu workflow-i. Annað (líka contents) er lokað.
     permissions:
       pages: write
       id-token: write
@@ -50,5 +67,11 @@ jobs:
       name: github-pages
       url: ${{ steps.birting.outputs.page_url }}
     steps:
-      - id: birting
-        uses: actions/deploy-pages@v4
+      # Fellur með skýrri villu ef Pages hefur ekki verið virkjað með
+      # „GitHub Actions“ sem uppruna.
+      - name: Undirbúa Pages
+        uses: actions/configure-pages@v6
+
+      - name: Birta
+        id: birting
+        uses: actions/deploy-pages@v5

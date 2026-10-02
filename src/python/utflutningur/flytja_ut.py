@@ -6,7 +6,7 @@ Síðasta skref gagnaflæðisins (kafli 0 í CLAUDE.md)::
 
 Hver eining í ``UTFLUTNINGAR`` les eitt gagnasafn úr grunninum og skilar
 sannreyndu umslagi (``utflutningur.json_skrif``): skjálftar, Hagstofan,
-veðurstöðvar, mbl.is og Phoebe-tölfræðin. ``yfirlit.json`` (forsíðan) er
+veðurstöðvar, mbl.is, Phoebe-tölfræðin og Central Perk. ``yfirlit.json`` (forsíðan) er
 reiknað úr umslögunum. Söfnin í ``AN_UTFLUTNINGS`` eiga enn engan útflutning;
 hver keyrsla segir það í viðvörun svo það gleymist ekki (regla 6).
 
@@ -67,9 +67,10 @@ SKRAR: tuple[str, ...] = (*UTFLUTNINGAR, yfirlit_json.SKRAARHEITI)
 UTFLUTNINGSVILLUR = (UtflutningsVilla, FyrirspurnaVilla, sqlite3.Error, OSError)
 
 # Söfn sem eru hlaðin í grunninn en eiga enn engan útflutning (#15).
-# TMDB var aldrei fryst og er ekki í grunninum.
+# TMDB var aldrei fryst (TMDB_TOKEN vantar, data/raw/frysting.json → ofryst)
+# og er því hvorki í grunninum né útflutt.
 AN_UTFLUTNINGS: tuple[str, ...] = (
-    "TMDB (phoebe-tmdb.html) — ekki í grunninum",
+    "TMDB (phoebe-tmdb.html) — aldrei fryst, ekki í grunninum",
 )
 
 

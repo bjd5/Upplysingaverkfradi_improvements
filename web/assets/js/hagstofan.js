@@ -1,8 +1,9 @@
-/* hagstofan.js — töflur og beiðnin á síðu Hagstofunnar (issue #21).
+/* hagstofan.js — töflur og json-stat2-dæmið á Hagstofusíðunni (issue #21).
 
-   Tölurnar sem standa einar og sér eru data-gogn-reitir í HTML. Hér eru
-   aðeins töflurnar og aðferðin, sem reitir ná ekki yfir. Allt kemur úr
-   hagstofan.json (gogn + lysigogn); engin tala er skrifuð í þessa skrá.    */
+   Stakar tölur fyllir gagnahluti.js út frá data-gogn-reitur. Hér er aðeins
+   það sem byggist á listum: töflurnar, fyrirspurnin og dæmið um hvernig
+   flati value-listinn er lesinn. Allt kemur úr web/gogn/hagstofan.json;
+   hér er hvorki námundað né fyllt upp með núllum (docs/vefur-gogn.md).    */
 
 (function () {
   "use strict";
@@ -10,167 +11,153 @@
   const data = window.SiteData;
   const section = window.DataSection;
 
-  // Sýnishorn úr flata listanum: fyrstu stöðurnar og sú síðasta.
-  const SAMPLE_POSITIONS = [0, 1, 2, 3, 12, "last"];
-  const JSON_INDENT = 2;
+  const ALL = "Alls";
+  // Summa flokka sem ná yfir allan hópinn; frávik stafar af námundun.
+  const WHOLE = 100;
+  // Dæmið: brautskráðar konur í verkfræði. Víddir með einum völdum kóða
+  // taka hann sjálfkrafa.
+  const EXAMPLE = { "Nemendur": "5", "Námssvið": "07", "Kyn": "2" };
+  const EXAMPLE_GROUP = { namssvid_kodi: "07", kyn_kodi: "2" };
 
-  function heading(text) {
-    const node = document.createElement("h3");
-    node.textContent = text;
-    return node;
+  function slot(root, name) {
+    const target = root.querySelector("[data-hagstofan-tafla='" + name + "']");
+    if (!target) throw new data.DataError("Staðinn fyrir töfluna „" + name + "“ vantar.");
+    return target;
   }
 
-  function percent(value) {
-    return data.formatNumber(value) + "%";
-  }
-
-  function resultTable(doc) {
-    const rows = doc.gogn.map(function (row) {
-      return {
-        namssvid: row.namssvid, kyn: row.kyn,
-        brautskradir: percent(row.brautskradir), brottfallnir: percent(row.brottfallnir),
-        enn_i_nami: percent(row.enn_i_nami), samtals: percent(row.samtals)
-      };
+  /** buildTable gefur aðeins dálkafyrirsagnir; fremstu dálkarnir eru raðafyrirsagnir. */
+  function table(spec, rowHeaders) {
+    const wrapper = section.buildTable(spec);
+    wrapper.querySelectorAll("tbody tr").forEach(function (tr) {
+      Array.prototype.slice.call(tr.cells, 0, rowHeaders).forEach(function (td) {
+        const th = document.createElement("th");
+        th.scope = "row";
+        th.textContent = td.textContent;
+        tr.replaceChild(th, td);
+      });
     });
-    const labels = {};
-    doc.lysigogn.stodur.forEach(function (status) { labels[status.reitur] = status.heiti; });
-    return section.buildTable({
-      caption: "Hlutfall innritaðra eftir stöðu sex árum síðar",
-      columns: [
-        { heading: "Námssvið", key: "namssvid" },
-        { heading: "Kyn", key: "kyn" },
-        { heading: labels.brautskradir, key: "brautskradir", numeric: true },
-        { heading: labels.brottfallnir, key: "brottfallnir", numeric: true },
-        { heading: labels.enn_i_nami, key: "enn_i_nami", numeric: true },
-        { heading: "Samtals", key: "samtals", numeric: true }
-      ],
-      rows: rows
+    return wrapper;
+  }
+
+  function statusColumns(doc) {
+    return doc.lysigogn.stodur.map(function (status) {
+      return { heading: status.heiti + " (%)", key: status.reitur, numeric: true };
     });
   }
 
-  function differenceTable(doc) {
-    const rows = doc.lysigogn.munir.map(function (diff) {
-      return { lysing: diff.lysing, munur: data.formatNumber(diff.prosentustig) };
-    });
-    return section.buildTable({
-      caption: "Munur á brautskráningarhlutfalli, í prósentustigum",
-      columns: [
-        { heading: "Samanburður", key: "lysing" },
-        { heading: "Munur", key: "munur", numeric: true }
-      ],
-      rows: rows
-    });
+  function groupLabel(group) {
+    return group.namssvid + " · " + group.kyn;
   }
 
-  function constraintTable(doc) {
-    return section.buildTable({
-      caption: "Afmörkun beiðninnar",
-      columns: [
-        { heading: "Vídd", key: "heiti" },
-        { heading: "Kóði", key: "kodi" },
-        { heading: "Gildi", key: "gildi" }
-      ],
-      rows: doc.lysigogn.afmorkun
-    });
+  /** Ör + formerki + orð: merkingin er aldrei í lit einum (regla 3.3). */
+  function difference(points) {
+    const text = data.formatNumber(Math.abs(points));
+    if (points > 0) return "▲ +" + text + " (A hærri)";
+    if (points < 0) return "▼ −" + text + " (A lægri)";
+    return "= 0 (jafnt)";
   }
 
-  function requestBlock(doc) {
-    const pre = document.createElement("pre");
-    pre.tabIndex = 0;
-    pre.setAttribute("aria-label", "Beiðnin sjálf, query.json");
-    const code = document.createElement("code");
-    code.textContent = JSON.stringify(doc.lysigogn.fyrirspurn, null, JSON_INDENT);
-    pre.appendChild(code);
-    return pre;
+  function renderResults(doc, root) {
+    const rows = doc.gogn;
+    slot(root, "svid").appendChild(table({
+      caption: "Staða árgangsins eftir námssviði, bæði kyn",
+      columns: [{ heading: "Námssvið", key: "namssvid" }].concat(statusColumns(doc)),
+      rows: rows.filter(function (row) { return row.kyn_kodi === ALL; })
+    }, 1));
+    slot(root, "kyn").appendChild(table({
+      caption: "Staða árgangsins eftir námssviði og kyni",
+      columns: [{ heading: "Námssvið", key: "namssvid" }, { heading: "Kyn", key: "kyn" }]
+        .concat(statusColumns(doc)),
+      rows: rows.filter(function (row) { return row.kyn_kodi !== ALL; })
+    }, 2));
+    slot(root, "summur").appendChild(table({
+      caption: "Summa flokkanna þriggja í hverjum hópi",
+      columns: [{ heading: "Námssvið", key: "namssvid" }, { heading: "Kyn", key: "kyn" },
+                { heading: "Summa (%)", key: "samtals", numeric: true },
+                { heading: "Skýring", key: "skyring" }],
+      rows: rows.map(function (row) {
+        return { namssvid: row.namssvid, kyn: row.kyn, samtals: row.samtals,
+                 skyring: row.samtals === WHOLE ? "= 100" : "≈ 100 — námundun" };
+      })
+    }, 2));
+    slot(root, "munir").appendChild(table({
+      caption: "Munur á brautskráningarhlutfalli, hópur A − hópur B",
+      columns: [{ heading: "Samanburður", key: "lysing" }, { heading: "Hópur A", key: "a" },
+                { heading: "Hópur B", key: "b" }, { heading: "Munur (prósentustig)", key: "munur" }],
+      rows: doc.lysigogn.munir.map(function (item) {
+        return { lysing: item.lysing, a: groupLabel(item.a), b: groupLabel(item.b),
+                 munur: difference(item.prosentustig) };
+      })
+    }, 1));
   }
 
-  function selectedValues(dimension) {
+  function selectedCodes(dimension) {
     return dimension.gildi
       .filter(function (value) { return value.valid; })
-      .sort(function (a, b) { return a.stada - b.stada; });
+      .sort(function (x, y) { return x.stada - y.stada; });
   }
 
-  function dimensionTable(doc) {
-    const rows = doc.lysigogn.viddir.map(function (dimension) {
-      const chosen = selectedValues(dimension);
-      return {
-        stada: dimension.stada, heiti: dimension.heiti,
-        valin: chosen.length, af: dimension.gildi.length
-      };
+  function renderJsonStat(doc, root) {
+    const dimensions = doc.lysigogn.viddir.slice().sort(function (x, y) {
+      return x.stada - y.stada;
     });
-    const total = doc.lysigogn.tafla.fjoldi_gilda;
-    return section.buildTable({
-      caption: "Víddalýsingin: sex víddir. Flati listinn hefur " + data.formatNumber(total) +
-               " gildi, eitt fyrir hverja samsetningu.",
-      columns: [
-        { heading: "Röð", key: "stada", numeric: true },
-        { heading: "Vídd", key: "heiti" },
-        { heading: "Valin gildi", key: "valin", numeric: true },
-        { heading: "Til í töflunni", key: "af", numeric: true }
-      ],
-      rows: rows
-    });
-  }
+    root.querySelector("[data-hagstofan-fyrirspurn]").textContent =
+      JSON.stringify(doc.lysigogn.fyrirspurn, null, 2);
 
-  // Les stöðu i í flata listanum: síðasta víddin breytist hraðast.
-  function decodePosition(dimensions, position) {
-    const parts = {};
-    let rest = position;
-    for (let i = dimensions.length - 1; i >= 0; i--) {
-      const chosen = selectedValues(dimensions[i]);
-      parts[dimensions[i].kodi] = chosen[rest % chosen.length];
-      rest = Math.floor(rest / chosen.length);
+    slot(root, "viddir").appendChild(table({
+      caption: "Víddir svarsins í röð id, með size og category.index",
+      columns: [{ heading: "Vídd", key: "heiti" }, { heading: "size", key: "staerd", numeric: true },
+                { heading: "Valdir kóðar í röð", key: "valdir" },
+                { heading: "Aðrir kóðar í lýsigögnum", key: "adrir" }],
+      rows: dimensions.map(function (dimension) {
+        return {
+          heiti: dimension.heiti, staerd: dimension.staerd,
+          valdir: selectedCodes(dimension).map(function (value) {
+            return value.kodi === value.heiti ? value.kodi : value.kodi + " = " + value.heiti;
+          }).join("; "),
+          adrir: dimension.gildi.filter(function (value) { return !value.valid; })
+            .map(function (value) { return value.heiti; }).join("; ") || "—"
+        };
+      })
+    }, 1));
+
+    const sizes = dimensions.map(function (dimension) { return dimension.staerd; });
+    const product = sizes.reduce(function (a, b) { return a * b; }, 1);
+    if (product !== doc.lysigogn.tafla.fjoldi_gilda) {
+      throw new data.DataError("Margfeldi víddanna stemmir ekki við fjölda gilda.");
     }
-    return parts;
+    root.querySelector("[data-hagstofan-margfeldi]").textContent = sizes.join(" × ");
+
+    // Sama regla og þáttarinn notar: síðasta víddin breytist hraðast.
+    const positions = dimensions.map(function (dimension) {
+      const code = EXAMPLE[dimension.kodi] || selectedCodes(dimension)[0].kodi;
+      const value = dimension.gildi.find(function (item) { return item.kodi === code; });
+      if (!value || !value.valid) {
+        throw new data.DataError("Kóðinn „" + code + "“ er ekki í fyrirspurninni.");
+      }
+      return value.stada;
+    });
+    const flat = positions.reduce(function (index, position, i) {
+      return index * sizes[i] + position;
+    }, 0);
+    const row = doc.gogn.find(function (item) {
+      return item.namssvid_kodi === EXAMPLE_GROUP.namssvid_kodi &&
+             item.kyn_kodi === EXAMPLE_GROUP.kyn_kodi;
+    });
+    const status = doc.lysigogn.stodur.find(function (item) {
+      return item.kodi === EXAMPLE["Nemendur"];
+    });
+    if (!row || !status) throw new data.DataError("Röðina í dæminu vantar í gögnin.");
+    const fill = function (part, text) {
+      root.querySelector("[data-hagstofan-daemi='" + part + "']").textContent = text;
+    };
+    fill("saeti", positions.join(", "));
+    fill("flatt", String(flat));
+    fill("gildi", data.formatNumber(row[status.reitur]));
   }
 
-  function positionTable(doc) {
-    const dimensions = doc.lysigogn.viddir.slice().sort(function (a, b) {
-      return a.stada - b.stada;
-    });
-    const total = doc.lysigogn.tafla.fjoldi_gilda;
-    const field = {};
-    doc.lysigogn.stodur.forEach(function (status) { field[status.kodi] = status.reitur; });
-    const rows = SAMPLE_POSITIONS.map(function (sample) {
-      const position = sample === "last" ? total - 1 : sample;
-      const parts = decodePosition(dimensions, position);
-      const line = doc.gogn.find(function (row) {
-        return row.namssvid_kodi === parts["Námssvið"].kodi && row.kyn_kodi === parts["Kyn"].kodi;
-      });
-      return {
-        stada: "value[" + position + "]",
-        nemendur: parts["Nemendur"].heiti, namssvid: parts["Námssvið"].heiti,
-        kyn: parts["Kyn"].heiti,
-        gildi: percent(line[field[parts["Nemendur"].kodi]])
-      };
-    });
-    return section.buildTable({
-      caption: "Hvernig staða í listanum vísar á mælingu",
-      columns: [
-        { heading: "Staða", key: "stada" },
-        { heading: "Nemendur", key: "nemendur" },
-        { heading: "Námssvið", key: "namssvid" },
-        { heading: "Kyn", key: "kyn" },
-        { heading: "Gildi", key: "gildi", numeric: true }
-      ],
-      rows: rows
-    });
-  }
-
-  function append(parent, nodes) {
-    nodes.forEach(function (node) { parent.appendChild(node); });
-  }
-
-  section.registerRenderer("hagstofan-nidurstodur", function (doc, host) {
-    append(host.querySelector("[data-gogn-efni]"),
-           [differenceTable(doc), resultTable(doc)]);
-  });
-
-  section.registerRenderer("hagstofan-adferd", function (doc, host) {
-    append(host.querySelector("[data-gogn-efni]"), [
-      heading("Afmörkunin"), constraintTable(doc),
-      heading("Beiðnin sjálf"), requestBlock(doc),
-      heading("Svarið: víddir og flatur listi"), dimensionTable(doc), positionTable(doc)
-    ]);
+  section.registerRenderer("hagstofan", function (doc, root) {
+    renderResults(doc, root);
+    renderJsonStat(doc, root);
   });
 })();

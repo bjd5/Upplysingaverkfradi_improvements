@@ -38,6 +38,7 @@ hraða og örugga.
 ├── CLAUDE.md                  # þetta skjal (reglurnar)
 ├── README.md                  # hvað verkefnið er + hvernig á að keyra það
 ├── .gitignore
+├── .github/workflows/         # GitHub Actions — birting web/ á Pages (engin bygging)
 │
 ├── web/                       # ← STATIC VEFSÍÐAN (það sem birtist á netinu)
 │   ├── index.html             # forsíða

@@ -25,8 +25,13 @@ CSS = VEFUR / "assets" / "css"
 KJARNI = "assets/js/gogn.js"
 BIRTING = "assets/js/gagnahluti.js"
 SNID_REITIR = {"uppfaert", "heimild", "gogn"}
+LYSIGOGN = "lysigogn"
+REITARAETUR = ("gogn", LYSIGOGN)  # sama venja og FIELD_ROOTS í gogn.js
 HAMARK_LINUR = 300
-HAMARK_JS_BAETI = 60_000  # öll JS samanlagt; þak reglu 3.4 er 500 KB á síðu
+# JS sem EIN síða hleður. Regla 3.4 setur þakið á hverja síðu (500 KB fyrir allt),
+# svo samtala allra JS-skráa á vefnum mælir ekkert sem nokkur vafri hleður.
+HAMARK_JS_BAETI_A_SIDU = 30_000
+SKRIFTA = re.compile(r'<script\b[^>]*\bsrc="([^"]+)"')
 TOMIR_TAGAR = {"area", "base", "br", "col", "embed", "hr", "img", "input",
                "link", "meta", "source", "track", "wbr"}
 INNSPYTING = re.compile(r"\.innerHTML\b|\.outerHTML\b|insertAdjacentHTML|"
@@ -42,7 +47,7 @@ def lesa_gagnaskra(heiti: str) -> dict:
 
 
 def fletta(gogn, slod: str):
-    """Sama uppfletting og SiteData.valueAt í gogn.js."""
+    """Sama uppfletting og SiteData.valueAt í gogn.js (slóð frá rót skjalsins)."""
     for lykill in slod.split("."):
         if isinstance(gogn, list) and lykill.isdigit() and int(lykill) < len(gogn):
             gogn = gogn[int(lykill)]
@@ -176,7 +181,13 @@ class GagnaskrarTest(unittest.TestCase):
                 self.assertTrue((GOGN / heiti).is_file(), "gagnaskráin er ekki til")
                 skjal = lesa_gagnaskra(heiti)
                 self.assertLessEqual(SNID_REITIR, set(skjal))
-                self.assertIsInstance(skjal["gogn"], (dict, list))
+                self.assertLessEqual(set(skjal), SNID_REITIR | {LYSIGOGN},
+                                     "óþekktur reitur — gogn.js hafnar skránni")
+                self.assertIsInstance(skjal["gogn"], list)
+                self.assertTrue(all(isinstance(r, dict) for r in skjal["gogn"]),
+                                "gogn verður að vera listi af röðum")
+                if LYSIGOGN in skjal:
+                    self.assertIsInstance(skjal[LYSIGOGN], dict)
 
     def test_yfirlitid_visar_a_skrar_sem_eru_til(self) -> None:
         for faersla in lesa_gagnaskra("yfirlit.json")["gogn"]:
@@ -187,10 +198,12 @@ class GagnaskrarTest(unittest.TestCase):
     def test_hver_reitur_er_tala_eda_strengur_i_skranni(self) -> None:
         for sida in SIDUR:
             for hluti in greina_gogn(sida).hlutar:
-                gogn = lesa_gagnaskra(hluti["skra"])["gogn"]
+                skjal = lesa_gagnaskra(hluti["skra"])
                 for slod in hluti["reitir"]:
                     with self.subTest(sida=sida, reitur=slod):
-                        gildi = fletta(gogn, slod)
+                        self.assertIn(slod.split(".")[0], REITARAETUR,
+                                      "slóð reits byrjar á lysigogn. eða gogn.")
+                        gildi = fletta(skjal, slod)
                         self.assertIsInstance(gildi, (int, float, str))
                         self.assertNotIsInstance(gildi, bool)
 
@@ -256,13 +269,22 @@ class FrammistadaTest(unittest.TestCase):
     """Regla 3.4 og 6: litlar skrár, eitt hlutverk hver."""
 
     def test_js_skrar_eru_litlar(self) -> None:
-        samtals = 0
         for skra in js_skrar():
             with self.subTest(skra=skra.name):
                 texti = skra.read_text("utf-8")
                 self.assertLessEqual(len(texti.splitlines()), HAMARK_LINUR)
-                samtals += len(texti.encode("utf-8"))
-        self.assertLessEqual(samtals, HAMARK_JS_BAETI)
+
+    def test_js_sem_hver_sida_hledur_er_undir_thaki(self) -> None:
+        sidur = sorted(VEFUR.rglob("*.html"))
+        self.assertTrue(sidur)
+        for sida in sidur:
+            with self.subTest(sida=str(sida.relative_to(VEFUR))):
+                slodir = SKRIFTA.findall(sida.read_text("utf-8"))
+                skrar = [(sida.parent / slod).resolve() for slod in slodir]
+                for skra in skrar:
+                    self.assertTrue(skra.is_file(), f"{sida.name} vísar á {skra}, sem er ekki til")
+                baeti = sum(skra.stat().st_size for skra in skrar)
+                self.assertLessEqual(baeti, HAMARK_JS_BAETI_A_SIDU)
 
 
 if __name__ == "__main__":

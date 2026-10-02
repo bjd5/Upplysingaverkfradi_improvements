@@ -1,0 +1,1243 @@
+{
+  "uppfaert": "2026-09-17T09:47:17+00:00",
+  "heimild": "delvinso/friends-tv-show-analysis @ a4641fe — github.com/delvinso/friends-tv-show-analysis (Handritin: afrit aðdáenda á höfundarréttarvörðu efni, ekkert leyfi á textanum; MIT delvinso nær yfir kóðann. Aðeins tölur, þáttakóðar og segðir geymdar — valkostur A, issue #3.)",
+  "gogn": [
+    {
+      "handrit": "0123",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 17.4
+    },
+    {
+      "handrit": "0203",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 21.9
+    },
+    {
+      "handrit": "0205",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 11.6
+    },
+    {
+      "handrit": "0206",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 24.1
+    },
+    {
+      "handrit": "0211",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 20.4
+    },
+    {
+      "handrit": "0215",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 10.5
+    },
+    {
+      "handrit": "0216",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 15.9
+    },
+    {
+      "handrit": "0302",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 9.6
+    },
+    {
+      "handrit": "0309",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 8.2
+    },
+    {
+      "handrit": "0412",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 22.5
+    },
+    {
+      "handrit": "0423",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 25.4
+    },
+    {
+      "handrit": "0501",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 4.9
+    },
+    {
+      "handrit": "0503",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 31.2
+    },
+    {
+      "handrit": "0508",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 10.7
+    },
+    {
+      "handrit": "0519",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 13.1
+    },
+    {
+      "handrit": "0523",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 17.2
+    },
+    {
+      "handrit": "0606",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 16.1
+    },
+    {
+      "handrit": "0609",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 12.3
+    },
+    {
+      "handrit": "0701",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 11.9
+    },
+    {
+      "handrit": "0708",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 15.5
+    },
+    {
+      "handrit": "0712",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 10.8
+    },
+    {
+      "handrit": "0801",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 14.3
+    },
+    {
+      "handrit": "0803",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 11.0
+    },
+    {
+      "handrit": "0804",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 6.1
+    },
+    {
+      "handrit": "0809",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 10.2
+    },
+    {
+      "handrit": "0820",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 11.1
+    },
+    {
+      "handrit": "0823",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 15.5
+    },
+    {
+      "handrit": "0901",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 13.7
+    },
+    {
+      "handrit": "0908",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 9.7
+    },
+    {
+      "handrit": "0910",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 8.6
+    },
+    {
+      "handrit": "0912",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 19.4
+    },
+    {
+      "handrit": "1001",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 20.2
+    },
+    {
+      "handrit": "1016",
+      "hopur": "no_central_perk",
+      "hlutdeild_prosent": 11.9
+    },
+    {
+      "handrit": "0102",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 6.8
+    },
+    {
+      "handrit": "0103",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 22.4
+    },
+    {
+      "handrit": "0104",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 14.4
+    },
+    {
+      "handrit": "0105",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 9.8
+    },
+    {
+      "handrit": "0106",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 8.2
+    },
+    {
+      "handrit": "0107",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 15.9
+    },
+    {
+      "handrit": "0108",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 11.2
+    },
+    {
+      "handrit": "0109",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 10.1
+    },
+    {
+      "handrit": "0112",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 17.3
+    },
+    {
+      "handrit": "0113",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 17.2
+    },
+    {
+      "handrit": "0114",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 10.4
+    },
+    {
+      "handrit": "0115",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 14.3
+    },
+    {
+      "handrit": "0116",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 21.9
+    },
+    {
+      "handrit": "0117",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 11.8
+    },
+    {
+      "handrit": "0118",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 11.4
+    },
+    {
+      "handrit": "0119",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 7.2
+    },
+    {
+      "handrit": "0120",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 6.2
+    },
+    {
+      "handrit": "0121",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 5.6
+    },
+    {
+      "handrit": "0122",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 21.6
+    },
+    {
+      "handrit": "0124",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 9.0
+    },
+    {
+      "handrit": "0201",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 20.3
+    },
+    {
+      "handrit": "0202",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 11.2
+    },
+    {
+      "handrit": "0204",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 19.2
+    },
+    {
+      "handrit": "0207",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 16.8
+    },
+    {
+      "handrit": "0209",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 28.4
+    },
+    {
+      "handrit": "0210",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.8
+    },
+    {
+      "handrit": "0214",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 7.5
+    },
+    {
+      "handrit": "0219",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 10.8
+    },
+    {
+      "handrit": "0220",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 16.6
+    },
+    {
+      "handrit": "0221",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 25.8
+    },
+    {
+      "handrit": "0222",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 14.4
+    },
+    {
+      "handrit": "0223",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 22.5
+    },
+    {
+      "handrit": "0224",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 18.3
+    },
+    {
+      "handrit": "0301",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 15.5
+    },
+    {
+      "handrit": "0303",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 26.2
+    },
+    {
+      "handrit": "0304",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 22.2
+    },
+    {
+      "handrit": "0305",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 28.0
+    },
+    {
+      "handrit": "0306",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 18.9
+    },
+    {
+      "handrit": "0307",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 16.3
+    },
+    {
+      "handrit": "0308",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.9
+    },
+    {
+      "handrit": "0310",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 10.7
+    },
+    {
+      "handrit": "0311",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 5.8
+    },
+    {
+      "handrit": "0312",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 7.3
+    },
+    {
+      "handrit": "0313",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 11.5
+    },
+    {
+      "handrit": "0316",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 9.4
+    },
+    {
+      "handrit": "0317",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 22.4
+    },
+    {
+      "handrit": "0318",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 32.7
+    },
+    {
+      "handrit": "0319",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 6.4
+    },
+    {
+      "handrit": "0320",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 13.4
+    },
+    {
+      "handrit": "0321",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 9.4
+    },
+    {
+      "handrit": "0322",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 17.4
+    },
+    {
+      "handrit": "0324",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 21.1
+    },
+    {
+      "handrit": "0325",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 38.2
+    },
+    {
+      "handrit": "0403",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 13.7
+    },
+    {
+      "handrit": "0404",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 25.4
+    },
+    {
+      "handrit": "0406",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 18.9
+    },
+    {
+      "handrit": "0407",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.2
+    },
+    {
+      "handrit": "0408",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.5
+    },
+    {
+      "handrit": "0409",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 15.7
+    },
+    {
+      "handrit": "0411",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 35.6
+    },
+    {
+      "handrit": "0413",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 9.4
+    },
+    {
+      "handrit": "0414",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 11.9
+    },
+    {
+      "handrit": "0415",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 7.0
+    },
+    {
+      "handrit": "0416",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.9
+    },
+    {
+      "handrit": "0417",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 23.7
+    },
+    {
+      "handrit": "0419",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 11.9
+    },
+    {
+      "handrit": "0420",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 8.8
+    },
+    {
+      "handrit": "0421",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 4.1
+    },
+    {
+      "handrit": "0422",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 19.4
+    },
+    {
+      "handrit": "0502",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 9.5
+    },
+    {
+      "handrit": "0504",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 18.3
+    },
+    {
+      "handrit": "0505",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 5.7
+    },
+    {
+      "handrit": "0506",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 15.8
+    },
+    {
+      "handrit": "0507",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.0
+    },
+    {
+      "handrit": "0509",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 19.4
+    },
+    {
+      "handrit": "0510",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 17.4
+    },
+    {
+      "handrit": "0511",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 15.5
+    },
+    {
+      "handrit": "0512",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 5.6
+    },
+    {
+      "handrit": "0513",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 32.5
+    },
+    {
+      "handrit": "0514",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 27.0
+    },
+    {
+      "handrit": "0515",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 17.3
+    },
+    {
+      "handrit": "0516",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 21.5
+    },
+    {
+      "handrit": "0517",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 11.6
+    },
+    {
+      "handrit": "0518",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 10.8
+    },
+    {
+      "handrit": "0520",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 4.9
+    },
+    {
+      "handrit": "0521",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 22.3
+    },
+    {
+      "handrit": "0522",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 17.4
+    },
+    {
+      "handrit": "0601",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 19.2
+    },
+    {
+      "handrit": "0602",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 19.3
+    },
+    {
+      "handrit": "0604",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 14.8
+    },
+    {
+      "handrit": "0605",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 20.3
+    },
+    {
+      "handrit": "0607",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 11.3
+    },
+    {
+      "handrit": "0608",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 10.9
+    },
+    {
+      "handrit": "0610",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 9.7
+    },
+    {
+      "handrit": "0611",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 18.0
+    },
+    {
+      "handrit": "0612",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 7.3
+    },
+    {
+      "handrit": "0613",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 9.8
+    },
+    {
+      "handrit": "0614",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 10.5
+    },
+    {
+      "handrit": "0617",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 7.5
+    },
+    {
+      "handrit": "0618",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 14.2
+    },
+    {
+      "handrit": "0619",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 16.5
+    },
+    {
+      "handrit": "0620",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 8.4
+    },
+    {
+      "handrit": "0621",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.3
+    },
+    {
+      "handrit": "0622",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 18.1
+    },
+    {
+      "handrit": "0623",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 24.2
+    },
+    {
+      "handrit": "0624",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 9.7
+    },
+    {
+      "handrit": "0702",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.0
+    },
+    {
+      "handrit": "0703",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 13.0
+    },
+    {
+      "handrit": "0704",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 6.6
+    },
+    {
+      "handrit": "0705",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 19.5
+    },
+    {
+      "handrit": "0706",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.7
+    },
+    {
+      "handrit": "0707",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 7.0
+    },
+    {
+      "handrit": "0709",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 16.2
+    },
+    {
+      "handrit": "0710",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 22.8
+    },
+    {
+      "handrit": "0711",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 22.8
+    },
+    {
+      "handrit": "0713",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 24.6
+    },
+    {
+      "handrit": "0714",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 18.7
+    },
+    {
+      "handrit": "0715",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 17.4
+    },
+    {
+      "handrit": "0716",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 9.3
+    },
+    {
+      "handrit": "0717",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 6.1
+    },
+    {
+      "handrit": "0718",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 16.6
+    },
+    {
+      "handrit": "0719",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 13.6
+    },
+    {
+      "handrit": "0720",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 6.8
+    },
+    {
+      "handrit": "0721",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 16.1
+    },
+    {
+      "handrit": "0722",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 10.3
+    },
+    {
+      "handrit": "0723",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 11.5
+    },
+    {
+      "handrit": "0802",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 21.5
+    },
+    {
+      "handrit": "0805",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 14.8
+    },
+    {
+      "handrit": "0806",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 23.4
+    },
+    {
+      "handrit": "0807",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 15.8
+    },
+    {
+      "handrit": "0808",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 10.1
+    },
+    {
+      "handrit": "0811",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 14.4
+    },
+    {
+      "handrit": "0812",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 6.3
+    },
+    {
+      "handrit": "0813",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 15.2
+    },
+    {
+      "handrit": "0814",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 14.5
+    },
+    {
+      "handrit": "0815",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 14.5
+    },
+    {
+      "handrit": "0816",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 8.4
+    },
+    {
+      "handrit": "0817",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 21.9
+    },
+    {
+      "handrit": "0818",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 20.9
+    },
+    {
+      "handrit": "0819",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 5.6
+    },
+    {
+      "handrit": "0821",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 11.8
+    },
+    {
+      "handrit": "0822",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 8.7
+    },
+    {
+      "handrit": "0902",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 10.7
+    },
+    {
+      "handrit": "0903",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 16.8
+    },
+    {
+      "handrit": "0904",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 28.2
+    },
+    {
+      "handrit": "0905",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 18.4
+    },
+    {
+      "handrit": "0906",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 23.1
+    },
+    {
+      "handrit": "0907",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 24.6
+    },
+    {
+      "handrit": "0909",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.1
+    },
+    {
+      "handrit": "0911",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.8
+    },
+    {
+      "handrit": "0913",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 9.7
+    },
+    {
+      "handrit": "0914",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 17.5
+    },
+    {
+      "handrit": "0915",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 22.3
+    },
+    {
+      "handrit": "0916",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 25.2
+    },
+    {
+      "handrit": "0917",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 13.1
+    },
+    {
+      "handrit": "0918",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.8
+    },
+    {
+      "handrit": "0919",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 15.7
+    },
+    {
+      "handrit": "0920",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 9.1
+    },
+    {
+      "handrit": "0921",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 16.2
+    },
+    {
+      "handrit": "0922",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 17.9
+    },
+    {
+      "handrit": "0923-0924",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 9.6
+    },
+    {
+      "handrit": "1002",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 15.4
+    },
+    {
+      "handrit": "1003",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 13.8
+    },
+    {
+      "handrit": "1004",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.7
+    },
+    {
+      "handrit": "1005",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 17.8
+    },
+    {
+      "handrit": "1006",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 14.4
+    },
+    {
+      "handrit": "1007",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 22.2
+    },
+    {
+      "handrit": "1008",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 16.4
+    },
+    {
+      "handrit": "1009",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 11.4
+    },
+    {
+      "handrit": "1010",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 17.1
+    },
+    {
+      "handrit": "1011",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 12.5
+    },
+    {
+      "handrit": "1012",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 29.4
+    },
+    {
+      "handrit": "1013",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 13.6
+    },
+    {
+      "handrit": "1014",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 17.6
+    },
+    {
+      "handrit": "1015",
+      "hopur": "central_perk",
+      "hlutdeild_prosent": 15.3
+    },
+    {
+      "handrit": "0101",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 8.9
+    },
+    {
+      "handrit": "0110",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 27.0
+    },
+    {
+      "handrit": "0111",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 14.6
+    },
+    {
+      "handrit": "0208",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 12.9
+    },
+    {
+      "handrit": "0212-0213",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 18.6
+    },
+    {
+      "handrit": "0217",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 24.2
+    },
+    {
+      "handrit": "0218",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 17.0
+    },
+    {
+      "handrit": "0314",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 25.1
+    },
+    {
+      "handrit": "0315",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 19.4
+    },
+    {
+      "handrit": "0323",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 31.9
+    },
+    {
+      "handrit": "0401",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 30.1
+    },
+    {
+      "handrit": "0402",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 17.2
+    },
+    {
+      "handrit": "0405",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 19.4
+    },
+    {
+      "handrit": "0410",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 12.4
+    },
+    {
+      "handrit": "0418",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 19.3
+    },
+    {
+      "handrit": "0603",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 13.8
+    },
+    {
+      "handrit": "0615-0616",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 14.6
+    },
+    {
+      "handrit": "0810",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 24.4
+    },
+    {
+      "handrit": "1017-1018",
+      "hopur": "phoebe_sings",
+      "hlutdeild_prosent": 17.2
+    }
+  ],
+  "lysigogn": {
+    "samantekt": {
+      "handritsskrar": 227,
+      "songhandrit": 19,
+      "songsenur": 24,
+      "munur_midgilda_prosentustig": 4.2
+    },
+    "hopar": [
+      {
+        "hopur": "no_central_perk",
+        "heiti": "Engin Central Perk-sena",
+        "handrit": 33,
+        "midgildi_prosent": 13.1,
+        "medaltal_prosent": 14.6,
+        "hinir_fimm_a_moti_phoebe": 6.7
+      },
+      {
+        "hopur": "central_perk",
+        "heiti": "Central Perk, enginn Phoebe-söngur",
+        "handrit": 175,
+        "midgildi_prosent": 14.4,
+        "medaltal_prosent": 15.3,
+        "hinir_fimm_a_moti_phoebe": 5.9
+      },
+      {
+        "hopur": "phoebe_sings",
+        "heiti": "Phoebe syngur í Central Perk",
+        "handrit": 19,
+        "midgildi_prosent": 18.6,
+        "medaltal_prosent": 19.4,
+        "hinir_fimm_a_moti_phoebe": 4.4
+      }
+    ],
+    "songhandrit": [
+      "0101",
+      "0110",
+      "0111",
+      "0208",
+      "0212-0213",
+      "0217",
+      "0218",
+      "0314",
+      "0315",
+      "0323",
+      "0401",
+      "0402",
+      "0405",
+      "0410",
+      "0418",
+      "0603",
+      "0615-0616",
+      "0810",
+      "1017-1018"
+    ],
+    "segdir": [
+      {
+        "heiti": "SCENE_START_RE",
+        "mynstur": "^\\s*(?:\\[[^]]*\\b(?:scene|cut|later|time lapse|back at|meanwhile|opening credits|closing credits)\\b|\\([^)]*\\b(?:scene|cut to|cut back|later|time lapse|back at|meanwhile)\\b)",
+        "gripur": "Byrjun senu. Blokk sem hefst á hornklofa eða sviga með orði á borð við `Scene`, `Cut to`, `Later` eða `Time lapse` hækkar senuteljarann og ræður hvort næstu tilsvör eru í Central Perk (ef fyrirsögnin nefnir staðinn).",
+        "sleppur": "Senuskipti sem umritari skrifaði án hornklofa eða sviga, og senur sem gerast í Central Perk án þess að fyrirsögnin nefni staðinn."
+      },
+      {
+        "heiti": "SPEAKER_RE",
+        "mynstur": "^\\s*([^:\\n]{1,100}):\\s*(.*)$",
+        "gripur": "Tilsvar á forminu `Nafn: texti`. Fyrri hópurinn er ræðumaður (færður á kanónískt nafn með `NAME_ALIASES`), sá seinni línan sjálf.",
+        "sleppur": "Tilsvör þar sem umritari sleppti tvípunktinum, og sviðslýsingar sem innihalda tvípunkt innan fyrstu 100 stafa lenda sem „ræðumaður“ sem engin aðalpersóna á og eru þá ekki taldar."
+      },
+      {
+        "heiti": "SINGING_CUE_RE",
+        "mynstur": "[\\[(][^)\\]]*\\b(?:singing|sings|sung|starts? to (?:play and )?sing)\\b[^)\\]]*[\\])]",
+        "gripur": "Skýr söngmerking í svigum eða hornklofum í tilsvari Phoebe: `(singing)`, `(sings)`, `(sung)`, `(starts to sing)`. Senan telst söngsena aðeins ef hún er í Central Perk.",
+        "sleppur": "Söngur sem umritari merkti ekki, eða merkti með orðum sem segðin leitar ekki að (`(humming)`, `(plays guitar)`). Misheppnaða byrjunin í `0107`, þar sem Phoebe slær einn hljóm áður en rafmagnið fer, fellur því utan."
+      },
+      {
+        "heiti": "PHOEBE_PERFORMANCE_RE",
+        "mynstur": "(?:\\bphoebe(?:'s|’s)?\\b.{0,80}\\b(?:is singing|performing|finishing up a song)\\b|\\bboth\\b.{0,40}\\bphoebe\\b.{0,80}\\bsinging\\b)",
+        "gripur": "Sviðslýsing sem segir að Phoebe sé að koma fram: „Phoebe is singing“, „Phoebe's performing“, „Phoebe … finishing up a song“, „both … Phoebe … singing“. Grípur söng sem er lýst í sviðsfyrirsögn eða sjálfstæðri sviðslýsingu frekar en inni í tilsvari.",
+        "sleppur": "Lýsingar með annarri orðanotkun (`Phoebe plays`, `Phoebe strums`) og tilvik þar sem nafnið og sögnin standa lengra en 80 stöfum hvort frá öðru."
+      },
+      {
+        "heiti": "STAGE_DIRECTION_RE",
+        "mynstur": "\\([^)]*\\)|\\[[^]]*\\]|\\{[^}]*\\}",
+        "gripur": "Sviðsleiðbeiningar innan tilsvars: `(laughs)`, `[to Joey]`, `{pause}`. Þær eru klipptar burt áður en orð eru talin.",
+        "sleppur": "Óparaður svigi (t.d. `(laughs` án lokunar) sleppur í gegn og orðin í honum teljast töluð."
+      },
+      {
+        "heiti": "WORD_RE",
+        "mynstur": "[A-Za-z]+(?:['’][A-Za-z]+)?",
+        "gripur": "Eitt talað orð: enskir bókstafir, með einni úrfellingu leyfðri (`don't`). Fjöldi samsvarana er orðafjöldi tilsvarsins.",
+        "sleppur": "Tölur (`2`) og bandstrikuð orð telja sem tvö (`well-known` → `well`, `known`). Það hefur sömu áhrif á allar persónur og skekkir ekki hlutföll."
+      }
+    ],
+    "uppruni": {
+      "handritasafn": "delvinso/friends-tv-show-analysis",
+      "handritasafn_commit": "a4641fed3d95bb9d9c7ba23681604c692f9b392a",
+      "greining": "Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe",
+      "greining_commit": "2865ed6",
+      "greiningarskrifta": "src/phoebe_central_perk.py",
+      "leyfi": "Handritin: afrit aðdáenda á höfundarréttarvörðu efni, ekkert leyfi á textanum; MIT delvinso nær yfir kóðann. Aðeins tölur, þáttakóðar og segðir geymdar — valkostur A, issue #3."
+    },
+    "aukastafir": 1
+  }
+}

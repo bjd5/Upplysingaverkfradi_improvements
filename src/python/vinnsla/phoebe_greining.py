@@ -18,32 +18,18 @@ from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 
-try:  # keyrt sem eining innan pakkans
-    from .friends_handrit import transcript_paths
-    from .friends_thattari import LINE_KINDS, OTHER, Episode, parse_episode
-    from .phoebe_ordafordi import Vocabulary, count_vocabulary, distinctive_words
-    from .phoebe_plass import Screentime, count_screentime
-    from .phoebe_skilgreiningar import ALIAS_TERMS, SIGNATURE_TOPICS, pct
-    from .phoebe_tengsl import (
-        count_interactions, guest_rows, interaction_matrix, season_talker_rows, talker_rows,
-    )
-    from .phoebe_thema import (
-        ALL_SCOPE, PHOEBE_SCOPE, Mentions, corpus_counts, count_mentions, people_by_season,
-        signature_phrases,
-    )
-except ImportError:  # keyrt beint úr möppunni
-    from friends_handrit import transcript_paths
-    from friends_thattari import LINE_KINDS, OTHER, Episode, parse_episode
-    from phoebe_ordafordi import Vocabulary, count_vocabulary, distinctive_words
-    from phoebe_plass import Screentime, count_screentime
-    from phoebe_skilgreiningar import ALIAS_TERMS, SIGNATURE_TOPICS, pct
-    from phoebe_tengsl import (
-        count_interactions, guest_rows, interaction_matrix, season_talker_rows, talker_rows,
-    )
-    from phoebe_thema import (
-        ALL_SCOPE, PHOEBE_SCOPE, Mentions, corpus_counts, count_mentions, people_by_season,
-        signature_phrases,
-    )
+from .friends_handrit import transcript_paths
+from .friends_thattari import LINE_KINDS, OTHER, Episode, parse_episode
+from .phoebe_ordafordi import Vocabulary, count_vocabulary, distinctive_words
+from .phoebe_plass import Screentime, count_screentime
+from .phoebe_skilgreiningar import ALIAS_TERMS, SIGNATURE_TOPICS, pct
+from .phoebe_tengsl import (
+    count_interactions, guest_rows, interaction_matrix, season_talker_rows, talker_rows,
+)
+from .phoebe_thema import (
+    ALL_SCOPE, PHOEBE_SCOPE, Mentions, corpus_counts, count_mentions, people_by_season,
+    signature_phrases,
+)
 
 
 @dataclass(frozen=True)

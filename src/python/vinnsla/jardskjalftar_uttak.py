@@ -38,18 +38,14 @@ import sys
 from dataclasses import asdict, dataclass, fields
 from pathlib import Path
 
-try:  # keyrt sem eining innan pakkans (venjulega leiðin)
-    from .jardskjalftar import Skjalfti, lesa_skjalfta
-    from .jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, lesa_afmorkun
-    from .jardskjalftar_talning import DagsTalning, Samantekt, dagleg_talning, draga_saman
-except ImportError:  # keyrt beint úr möppunni
-    from jardskjalftar import Skjalfti, lesa_skjalfta
-    from jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, lesa_afmorkun
-    from jardskjalftar_talning import DagsTalning, Samantekt, dagleg_talning, draga_saman
+from .jardskjalftar import Skjalfti, lesa_skjalfta
+from .jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, lesa_afmorkun
+from .jardskjalftar_talning import DagsTalning, Samantekt, dagleg_talning, draga_saman
+from .varnagli import krefjast_utan_vefs
 
 log = logging.getLogger(__name__)
 
-ROT = Path(__file__).resolve().parents[3]
+from gagnagrunnur.tenging import ROT
 UNNID = ROT / "data" / "processed" / "earthquakes"
 
 ATBURDASKRA = "events.csv"
@@ -105,7 +101,7 @@ def skrifa_uttak(
     útflutningslaginu eftir að grunnurinn hefur verið byggður (kafli 0).
     """
     mappa = Path(mappa) if mappa is not None else UNNID
-    _krefjast_utan_vefs(mappa)
+    krefjast_utan_vefs(mappa, SkjalftaVilla)
 
     atburdaskra = mappa / ATBURDASKRA
     dagaskra = mappa / DAGASKRA
@@ -148,20 +144,6 @@ def vinna_skjalfta(
         samantekt.dagar_an_atburda,
     )
     return uttak
-
-
-def _krefjast_utan_vefs(mappa: Path) -> None:
-    """Stöðvar skrif inn í ``web/gogn/``.
-
-    Vinnslan á aldrei að skrifa í birtingarlagið. Þetta er varnagli við flæðið
-    í kafla 0, ekki snyrting: rétt slóð á ekki að vera eina vörnin.
-    """
-    vefgogn = ROT / "web" / "gogn"
-    if mappa.resolve() == vefgogn or vefgogn in mappa.resolve().parents:
-        raise SkjalftaVilla(
-            f"Vinnslan skrifar ekki í {vefgogn}. Þangað fer aðeins JSON frá "
-            "útflutningslaginu eftir að grunnurinn hefur verið byggður (kafli 0)."
-        )
 
 
 def _keyra_eina_serd() -> int:
