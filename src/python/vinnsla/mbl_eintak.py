@@ -22,7 +22,7 @@ from pathlib import Path
 
 from sofnun.beidni import sha256_af
 
-ROT = Path(__file__).resolve().parents[3]
+from gagnagrunnur.tenging import ROT
 MBL_MAPPA = ROT / "data" / "raw" / "mbl"
 
 # Svar sem er ekki 200 lýsir ekki fréttasíðunni og á ekkert erindi í útdrátt.

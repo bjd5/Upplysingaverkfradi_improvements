@@ -30,10 +30,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-try:  # keyrt sem eining innan pakkans
-    from .friends_handrit import aired_episodes, episode_code, html_title, read_html, season_of
-except ImportError:  # keyrt beint úr möppunni
-    from friends_handrit import aired_episodes, episode_code, html_title, read_html, season_of
+from .friends_handrit import aired_episodes, episode_code, html_title, read_html, season_of
 
 SCENE = "scene"
 ACTION = "action"

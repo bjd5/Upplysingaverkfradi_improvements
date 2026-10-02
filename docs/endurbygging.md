@@ -1,7 +1,7 @@
 # Endurbygging — frá Quarto-bók yfir í static vefsíðu með SQL-grunni
 
-Leiðarvísir fyrir agenta: hvaðan verkefnið kemur, hvaða gögn mega ekki tapast
-og í hvaða röð verkin eru unnin. [CLAUDE.md](../CLAUDE.md) segir *hvernig*;
+Leiðarvísir fyrir agenta: hvaðan verkefnið kemur, hvaða gögn mega ekki tapast,
+hvað var ákveðið og í hvaða röð verkin eru unnin. [CLAUDE.md](../CLAUDE.md) segir *hvernig*;
 þetta skjal segir *hvað*.
 
 **Upprunarepo:** `Upplysingaverkfraedi/idn302g-2026-team-friends-phoebe` (lokað) ·
@@ -42,20 +42,18 @@ hluti gagnanna var geymdur í gamla repo-inu:
 | 5 | TMDB — Phoebe/Friends | `api.themoviedb.org` (lykill) | `gitignore`-að | **Há** |
 | 6 | Friends-handrit — 227 skrár, 236 þættir, 61.161 lína | Tvö submodule einstaklinga | Pinnuð SHA | Miðlungs + **höfundaréttur** |
 
-Söfn 3–5 voru hvergi geymd. **Fyrsta verkið var því að frysta öll söfnin í
-`data/raw/` með provenance og SHA-256** (fasi 0).
+Söfn 3–5 voru hvergi geymd. **Söfn 1–4 eru því fryst í `data/raw/` með
+provenance og SHA-256** (fasi 0), og Friends-tölurnar í `data/processed/`. TMDB
+bíður lykils (#75).
 
-**Höfundaréttur:** þetta repo er opið. Handritin (`fangj/friends`, ekkert leyfi)
-fara aldrei hingað; aðeins talnaniðurstöður um þau (ákvörðun P0.5).
+**Höfundaréttur:** þetta repo er opið. Handritin fara aldrei hingað; aðeins
+talnaniðurstöður um þau (kafli 5).
 
 ## 3. Umfang nýju síðunnar
 
-Ákveðið 2026-09-24: **rannsóknarefnið eingöngu.** Lotusíður námskeiðsins og
-ígrundanir flytjast ekki. Tokenmælaborðið var fjarlægt alveg, líka úr frosna
-viðmiðinu (2026-09-28).
-
-**Breytt 2026-09-28:** efninu er skipt í **Þema**, **Friends** og **Viðauka**,
-og þrjár Friends-biðsíður bætast við. Lotusíður án gagna flytjast áfram ekki.
+**Rannsóknarefnið eingöngu**, skipt í **Þema**, **Friends** og **Viðauka**.
+Lotusíður námskeiðsins, ígrundanir og tokenmælaborðið flytjast ekki; mælaborðið
+er heldur ekki í frosna viðmiðinu. Þrjár Friends-síður eru biðsíður.
 
 | Flokkur | Slóð | Efni | Safn |
 |---|---|---|---|
@@ -91,7 +89,29 @@ Hver fasi byggir á þeim á undan.
 3. **Vefsíðan** — beinagrind og sjónrænt kerfi, svo ein síða í einu.
 4. **Gæði og útgáfa** — aðgengi, frammistaða, birting, skjölun.
 
-## 5. Reglur fyrir agenta
+## 5. Ákvarðanir
+
+Björn tók báðar 27.9.2026. Hér er niðurstaðan og rökin; útfærslan er í
+skjölunum sem vísað er í.
+
+**Höfundaréttur Friends-handritanna — valkostur A**
+([#3](https://github.com/bjd5/Upplysingaverkfradi_improvements/issues/3#issuecomment-5857519562)).
+Handritin fara aldrei í repo-ið; aðeins afleiddu tölurnar eru í git
+(`data/processed/phoebe-stats/`, `central-perk-frosid/`), og delvinso-safnið er
+submodule sem geymir slóð og SHA en engan texta (PR #56 og #70). *Rök:* repo-ið
+er opið og handritin eru höfundarréttarvarin afrit aðdáenda, en tölurnar eru
+staðreyndir um textann og nægja síðunni. Verðið: Friends-tölurnar endurreiknast
+aðeins með submodule-inu ([`adferdafraedi.md`](adferdafraedi.md), kafli 1.5.1).
+
+**Myndrit án framework — valkostur A með matplotlib**
+([#17](https://github.com/bjd5/Upplysingaverkfradi_improvements/issues/17#issuecomment-5857519732)).
+Python teiknar SVG með matplotlib við útflutning, gagnataflan er í HTML-inu og
+JavaScript bætir aðeins ofan á. matplotlib er leyft **eingöngu** í
+`src/python/utflutningur/`; prófin keyra á staðalsafninu einu. *Rök:* síðan
+verður að vera læsileg án JavaScript og án framework (regla 3.4), og taflan
+uppfyllir aðgengiskröfuna (regla 3.3) í sama skrefi ([`myndrit.md`](myndrit.md)).
+
+## 6. Reglur fyrir agenta
 
 1. **Lestu [CLAUDE.md](../CLAUDE.md) fyrst.** Regla 1 ræður staðsetningu,
    regla 2 aðskilnaði HTML/CSS/JS.
@@ -101,13 +121,13 @@ Hver fasi byggir á þeim á undan.
 5. **Engir nýir pakkar, framework eða CDN án þess að spyrja** (regla 10).
 6. **Ljúktu með gátlista reglu 9.**
 
-## 6. Áhættuskrá
+## 7. Áhættuskrá
 
 | Áhætta | Mótvægi |
 |---|---|
-| Söfn 3–5 hvergi geymd | Fasi 0 — frysting með SHA-256 |
-| Handritin höfundarréttarvarin, repo-ið opið | Aðeins talnaniðurstöður í git (P0.5) |
+| Söfn 3–5 hvergi geymd | Frysting með SHA-256 (fasi 0); TMDB bíður lykils (#75) |
+| Handritin höfundarréttarvarin, repo-ið opið | Aðeins talnaniðurstöður í git (kafli 5) |
 | Submodule einstaklinga hverfa | Afleiddu tölurnar frystar |
-| Myndrit án framework | matplotlib teiknar SVG við útflutning (P0.6) |
+| Myndrit án framework | matplotlib teiknar SVG við útflutning (kafli 5) |
 | TMDB-lykill lekur | `.env` utan git (regla 4) |
 | Gamla verkefnið breytist áfram | Dagleg yfirferð ([`uppruni.md`](uppruni.md)) |

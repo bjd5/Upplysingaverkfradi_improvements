@@ -14,6 +14,8 @@ Aukabreytur ``saekja_*``-fallanna fara óbreyttar í ``sofnun.http.saekja``
 
 from __future__ import annotations
 
+from typing import Any
+
 from . import stillingar
 from .beidni import Beidni
 from .frosid import frosid_svar
@@ -43,6 +45,13 @@ ENDIR = "2024-01-01T00:00:00+00:00"
 # fjögur.
 MARGHYRNINGUR = "POLYGON((-23 64.1,-23 63.7,-21.5 63.7,-21.5 64.1,-23 64.1))"
 
+# Stærðar- og dýptarmörk úrtaksins, bæði meðtalin. Heiltölur eins og í frosnu
+# beiðninni: `3.0` í stað `3` gæfi aðra beiðni og þar með annað fingrafar.
+STAERD_MIN = 3
+STAERD_MAX = 7
+DYPT_MIN_KM = 0
+DYPT_MAX_KM = 50
+
 # Opinbert útgáfunúmer þjónustunnar, ekki leyndarmál. Fast gildi svo svarsniðið
 # breytist ekki undir okkur þótt Veðurstofan gefi út nýja útgáfu.
 UTGAFA_THJONUSTU = "2026-08-06"
@@ -60,10 +69,10 @@ SKJALFTA_BEIDNI = Beidni(
     breytur={
         "start_time": UPPHAF,
         "end_time": ENDIR,
-        "depth_min": 0,
-        "depth_max": 50,
-        "size_min": 3,
-        "size_max": 7,
+        "depth_min": DYPT_MIN_KM,
+        "depth_max": DYPT_MAX_KM,
+        "size_min": STAERD_MIN,
+        "size_max": STAERD_MAX,
         "polygon": MARGHYRNINGUR,
         "type": "earthquake",
         "evaluation_mode": "manual",
@@ -76,7 +85,7 @@ SKJALFTA_BEIDNI = Beidni(
 )
 
 
-def saekja_skjalfta(**rok) -> Svar:
+def saekja_skjalfta(**rok: Any) -> Svar:
     """Sækir skjálftaúrtakið og vistar það óbreytt í ``data/raw/vedur-quakes/``."""
     return saekja(SKJALFTA_BEIDNI, hamark_baeta=HAMARK_SVARS, **rok)
 
@@ -108,7 +117,7 @@ STODVA_BEIDNI = Beidni(
 )
 
 
-def saekja_stodvar(**rok) -> Svar:
+def saekja_stodvar(**rok: Any) -> Svar:
     """Sækir ósíaða stöðvalistann í ``data/raw/vedurstodvar/``."""
     return saekja(STODVA_BEIDNI, **rok)
 
@@ -138,7 +147,7 @@ MBL_BEIDNI = Beidni(
 )
 
 
-def saekja_forsidu(*, thvinga: bool = False, **rok) -> Svar:
+def saekja_forsidu(*, thvinga: bool = False, **rok: Any) -> Svar:
     """Skilar frosna eintakinu, eða sækir nýtt sé ``thvinga=True``.
 
     Nýtt eintak er vistað við hlið frosna eintaksins og yfirskrifar það ekki.
@@ -202,7 +211,7 @@ def leynihausar(lykill: str | None = None) -> dict[str, str]:
     return {"Authorization": f"Bearer {gildi}"}
 
 
-def saekja_tmdb(*, lykill: str | None = None, **rok) -> tuple[Svar, Svar]:
+def saekja_tmdb(*, lykill: str | None = None, **rok: Any) -> tuple[Svar, Svar]:
     """Sækir þátt og leikaraskrá og skilar báðum svörum."""
     hausar = leynihausar(lykill)
     thattur = saekja(THATTAR_BEIDNI, leynihausar=hausar, **rok)

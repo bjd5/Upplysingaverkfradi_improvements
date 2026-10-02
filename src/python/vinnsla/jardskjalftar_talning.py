@@ -36,12 +36,8 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from statistics import median
 
-try:  # keyrt sem eining innan pakkans (venjulega leiðin)
-    from .jardskjalftar import Skjalfti, talning_eftir_degi
-    from .jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, dagar, lesa_afmorkun
-except ImportError:  # keyrt beint úr möppunni
-    from jardskjalftar import Skjalfti, talning_eftir_degi
-    from jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, dagar, lesa_afmorkun
+from .jardskjalftar import Skjalfti, talning_eftir_degi
+from .jardskjalftar_afmorkun import Afmorkun, SkjalftaVilla, dagar, lesa_afmorkun
 
 # Daglykillinn er á forminu YYYY-MM-DD og mánaðarlykillinn er fyrstu sjö
 # stafirnir hans. Fastinn er nefndur svo talan 7 standi hvergi nakin í kóðanum.
