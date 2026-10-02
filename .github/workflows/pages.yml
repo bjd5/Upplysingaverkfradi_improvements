@@ -1,0 +1,54 @@
+# Birting á web/ á GitHub Pages (issue #28).
+# Engin byggingarskref: web/ er þegar tilbúin. Það eina sem keyrir á undan er
+# staðfesting sem stöðvar birtinguna ef gagnaskrá vantar, slóð brotnar á
+# undirslóð eða leyndarmál sést (tests/test_vefur_birting.py).
+name: Birta vefinn
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - "tests/test_vefur_birting.py"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+# Þröngt sjálfgefið; aðeins birtingarskrefið fær meira.
+permissions:
+  contents: read
+
+# Ein birting í einu; hálfbirt útgáfa er ekki rofin.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  stadfesta:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Staðfesta gagnaskrár, slóðir og leyndarmál
+        run: python3 -m unittest discover -s tests -p "test_vefur_birting.py" -v
+
+  pakka:
+    needs: stadfesta
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+  birta:
+    needs: pakka
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.birting.outputs.page_url }}
+    steps:
+      - id: birting
+        uses: actions/deploy-pages@v4

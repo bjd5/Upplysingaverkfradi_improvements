@@ -42,6 +42,19 @@ python3 src/python/vidmid/provenance.py stadfesta # frosnu gögnin (SHA-256)
   `pip install -r config/requirements-myndrit.txt` (matplotlib, sjá
   `docs/myndrit.md`). Prófin sem teikna sleppa sér án hans.
 
+## Birting
+
+Síðan birtist á GitHub Pages: <https://bjd5.github.io/Upplysingaverkfradi_improvements/>.
+Hver breyting á `web/` í `main` birtir hana aftur, án byggingarskrefa
+(`.github/workflows/pages.yml`).
+
+Á undan birtingu staðfestir `tests/test_vefur_birting.py` að gagnaskrár séu
+heilar, að engin slóð byrji á `/` og að ekkert leyndarmál sé í `web/`. Falli
+það birtist ekkert.
+
+Einu sinni þarf eigandi repo-sins að velja *Settings → Pages → Source:
+GitHub Actions*.
+
 ## Nýtt efni úr gamla verkefninu
 
 Gamla verkefnið er enn í vinnslu. Sjálfvirk lota fer daglega yfir það sem hefur
