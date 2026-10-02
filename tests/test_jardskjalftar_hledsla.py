@@ -3,8 +3,9 @@
 Hin prófin (``test_jardskjalftar.py``) sannreyna lesturinn úr frosna svarinu.
 Hér er prófað það sem aðeins sést **í grunninum sjálfum**:
 
-* fjöldatölurnar sem verkið á að hitta — 334 atburðir, 61 dagur, enginn
-  ``magnitude_type`` ``NULL`` — lesnar með fyrirspurn eftir hleðslu,
+* fjöldatölurnar sem verkið á að hitta — 334 atburðir og 61 dagur, lesin úr
+  ``docs/vidmid/vidmid.json``, og enginn ``magnitude_type`` ``NULL`` — lesnar
+  með fyrirspurn eftir hleðslu,
 * að dagleg talning stemmi **dag fyrir dag** við tölurnar sem gamla síðan
   birti (``docs/vidmid/generated/earthquakes-results.md``); víki tala er það
   villa (regla 8),
@@ -23,6 +24,7 @@ import unittest
 from pathlib import Path
 
 import hjalp  # noqa: F401  — setur src/python á sys.path; verður að koma fyrst
+from friends_grunnur import vidmid_gildi
 from hjalp import ROT  # noqa: E402
 
 from gagnagrunnur.keyrari import keyra  # noqa: E402
@@ -33,8 +35,10 @@ from vinnsla.jardskjalftar_hledsla import hlada  # noqa: E402
 VIDMID = ROT / "docs" / "vidmid" / "generated" / "earthquakes-results.md"
 PROVENANCE = ROT / "data" / "raw" / "vedur-quakes" / "provenance.json"
 
-VAENTIR_ATBURDIR = 334
-VAENTIR_DAGAR = 61
+# Lesnar úr docs/vidmid/vidmid.json (``stadfestar``), ekki handskrifaðar: ein
+# tala, ein heimild. test_heildarhledsla flytur þær inn héðan.
+VAENTIR_ATBURDIR = vidmid_gildi("jarðskjálftar")
+VAENTIR_DAGAR = vidmid_gildi("dagar í glugganum")
 VAENTIR_NULLDAGAR = 43
 VAENT_HAMARK = 187
 VAENTUR_HAMARKSDAGUR = "2023-11-10"
