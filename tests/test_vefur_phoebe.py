@@ -113,7 +113,7 @@ class FullyrdingarIText(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.tol = gagnaskra("phoebe-tolfraedi.json")
-        cls.cp = gagnaskra("central-perk.json")
+        cls.cp = gagnaskra("phoebe-central-perk.json")
 
     def test_phoebe_er_i_sjotta_saeti_og_undir_jofnum_hlut_alla_thattarodina(self) -> None:
         phoebe = sla_upp(self.tol, "lysigogn.plass_alls[persona=Phoebe]")
@@ -128,7 +128,7 @@ class FullyrdingarIText(unittest.TestCase):
         self.assertEqual(len(yfir_einum), 2)
 
     def test_phoebe_syngur_i_faum_handritum_en_a_staerri_hlut(self) -> None:
-        hopar = {r["hopur"]: r for r in self.cp["gogn"]}
+        hopar = {r["hopur"]: r for r in self.cp["lysigogn"]["hopar"]}
         songur = hopar["phoebe_sings"]
         self.assertLess(songur["handrit"], min(r["handrit"] for k, r in hopar.items()
                                                if k != "phoebe_sings"))
@@ -136,7 +136,7 @@ class FullyrdingarIText(unittest.TestCase):
                            max(r["midgildi_prosent"] for k, r in hopar.items()
                                if k != "phoebe_sings"))
         self.assertEqual(sum(r["handrit"] for r in hopar.values()),
-                         self.cp["lysigogn"]["samantekt"]["handrit"])
+                         self.cp["lysigogn"]["samantekt"]["handritsskrar"])
 
 
 if __name__ == "__main__":

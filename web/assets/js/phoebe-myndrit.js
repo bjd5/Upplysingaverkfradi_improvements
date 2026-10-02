@@ -111,7 +111,7 @@
   window.DataSection.registerRenderer("central-perk-hopar", function (doc, section) {
     draw(section, "hopar", {
       title: "Miðgildi hlutdeildar Phoebe af orðum aðalpersónanna eftir hópum, í prósentum",
-      items: doc.gogn.map(function (row) {
+      items: doc.lysigogn.hopar.map(function (row) {
         return { label: row.heiti, value: row.midgildi_prosent };
       }),
       labelWidth: 150, step: 5

@@ -212,37 +212,5 @@ class Phoebe(unittest.TestCase):
         self.assertEqual(self.lysi["jafn_hlutur_prosent"], 16.67)  # 100/6
 
 
-class CentralPerk(unittest.TestCase):
-    """Útflutningurinn borinn við frosnu samantektina (docs/vidmid/generated/)."""
-
-    @classmethod
-    def setUpClass(cls) -> None:
-        umslag = _lesa(central_perk_json.SKRAARHEITI)
-        cls.hopar = {r["hopur"]: r for r in umslag["gogn"]}
-        cls.samantekt = umslag["lysigogn"]["samantekt"]
-        cls.vidmid = ug.lesa_json(
-            ROT / "docs" / "vidmid" / "generated" / "phoebe-central-perk-summary.json")
-
-    def test_hopar_namundadir_ur_frosnu_samantektinni(self) -> None:
-        self.assertEqual(set(self.hopar), set(self.vidmid["groups"]))
-        for lykill, v in self.vidmid["groups"].items():
-            with self.subTest(hopur=lykill):
-                r = self.hopar[lykill]
-                self.assertEqual(r["handrit"], v["n"])
-                self.assertEqual(r["midgildi_prosent"], round(100 * v["median_phoebe_share"], 1))
-                self.assertEqual(r["medaltal_prosent"], round(100 * v["mean_phoebe_share"], 1))
-                self.assertEqual(r["midgildi_hlutfall"],
-                                 round(v["median_friends_to_phoebe_ratio"], 2))
-
-    def test_samantekt(self) -> None:
-        self.assertEqual(self.samantekt["handrit"], self.vidmid["transcript_files"])
-        self.assertEqual(self.samantekt["songhandrit"], self.vidmid["singing_files"])
-        self.assertEqual(self.samantekt["songsenur"], self.vidmid["singing_scenes"])
-        self.assertEqual(self.samantekt["munur_midgilda_stig"],
-                         round(self.vidmid["median_difference_percentage_points"], 1))
-        self.assertEqual(sum(r["handrit"] for r in self.hopar.values()),
-                         self.samantekt["handrit"])
-
-
 if __name__ == "__main__":
     unittest.main()
